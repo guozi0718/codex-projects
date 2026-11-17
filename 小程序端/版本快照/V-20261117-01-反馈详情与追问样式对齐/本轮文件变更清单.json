@@ -1,0 +1,1393 @@
+{
+  "snapshot": "E:\\codex\\小程序\\版本快照\\V-20261117-01-反馈详情与追问样式对齐",
+  "task": "任务\\T-20261117-01-客户反馈详情与操作精简",
+  "date": "2026-11-17",
+  "activityBaselineUnchanged": true,
+  "files": [
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\任务信息.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\任务信息.md",
+      "afterSha256": "6514415BECEF7728E7185707AFC6BFAED08E0799B7FD30B8AF36075B190A6681",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\变更记录.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\变更记录.md",
+      "afterSha256": "C51A121C74C046B3CFAB315BCF0CA7BAA456B69161F58FD1916F8A3150EE93FF",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\add-followup-bottom-shot.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\add-followup-bottom-shot.js",
+      "afterSha256": "B0524084A02879D8FD4B60F089B014557992EA2C71DB10F6790EE7D14AAAB190",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\add-help-shots.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\add-help-shots.js",
+      "afterSha256": "AFA520B7EC25BBE35DF2FE031DC08E6023F5496B263D2E47344CEE477BF82792",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\build-manifests.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\build-manifests.js",
+      "afterSha256": "52B9E06E1C46A2F4F45AAD8571F6021B1503724AFAFA799D3391DC6F574FBF5F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\finalize-demo-notes.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\finalize-demo-notes.js",
+      "afterSha256": "93E88A1B41A9187BB7F9C8ABA7E5A9E2D2354587CA671E262C854991C8A4CCA9",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\fix-demo-notes.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\fix-demo-notes.js",
+      "afterSha256": "F80524A04ACA731D6D8B119336A065B013A34AD970F8C4722B0DDD9A48C0223B",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\fix-demo-notes2.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\fix-demo-notes2.js",
+      "afterSha256": "9DAA4493A773D79A92852C907803076FAA065FE980012EA8CCAEE4A3968EB667",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\fix-duplicate-renderer.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\fix-duplicate-renderer.js",
+      "afterSha256": "9FCE131AA660FC5F8A544EC4D06A5634D74DB8BB086541BD2CAEF734492263A1",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\frame-capture.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\frame-capture.js",
+      "afterSha256": "DB57A036AFC8399C66ED65E5BEED97A11145B2B1C1262A01DDD1CD0FDC472139",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\patch-v0.11.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\patch-v0.11.js",
+      "afterSha256": "AF900CE8F6508DE1C51568DFBB1002CB95CBFD6530F42164BC1805EA709D87A4",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\patch-v0.11.py",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\patch-v0.11.py",
+      "afterSha256": "4850442F254ADAE7ED539EB4E8B10134E235408C983D0771A2CF0D7B49E364A8",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\prepare-before-shot.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\prepare-before-shot.js",
+      "afterSha256": "81C134325C2E002E9AF36B7805C628474A8962DB9512FDD92D456DFFBFF3D95D",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\prepare-capture.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\prepare-capture.js",
+      "afterSha256": "CAFA4C7A952C1F77409C8DC76E1792723A6FDFC425C16484B91ADF9A56CC73D8",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\preview-server.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\preview-server.js",
+      "afterSha256": "1623FED0FA186A9E710A206B2B48556B26C928E8C027B18CA00D4D7CD3DCB6ED",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\refine-v0.11.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\refine-v0.11.js",
+      "afterSha256": "54AA521366D68EC62326CC433AB3FB1C58AD699D8ECECD624A7895CB57AF0709",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\update-demo-notes.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\update-demo-notes.js",
+      "afterSha256": "52311BBA53E9C4745A0B82F6E598344ED5443DBA456F9455088F5422E40DFE9F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\采集原始v010截图.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\采集原始v010截图.js",
+      "afterSha256": "69BF936AAA413E389F8645261634208840465E327A0844B0EA33D13C08E8F167",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\采集手机原型截图.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\工具\\采集手机原型截图.js",
+      "afterSha256": "9FA2DC7561A666B941A6B05DDC176B25C97574DCF76703DD71DF7F7DB3E010E3",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\index.html",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\index.html",
+      "afterSha256": "7E6870791A24BB86ABBD23DF366ACB2CC44BB8296D87D5AEF6D55E3147768CDE",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\parent.html",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\parent.html",
+      "afterSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\teacher.html",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\teacher.html",
+      "afterSha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\定版信息.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\定版信息.md",
+      "afterSha256": "7104CBA86820AF234224AD1B6AE7DC0AF4D58721FB37EC228C0AD6AB68A6C0AF",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-boy.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-boy.png",
+      "afterSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-girl.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-girl.png",
+      "afterSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-man.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-man.png",
+      "afterSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-walle.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-walle.jpg",
+      "afterSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-woman.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\avatar-woman.png",
+      "afterSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\banner-badge.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\banner-badge.jpg",
+      "afterSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\changelog-hero.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\changelog-hero.jpg",
+      "afterSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\demo-feature-bridge.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\demo-feature-bridge.js",
+      "afterSha256": "83FDD97866087DCE8F5264E817EA0F7C16FFFE2D94252B5C53A3205752C04364",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\demo-panel.css",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\demo-panel.css",
+      "afterSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\demo-panel.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\demo-panel.js",
+      "afterSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\dtp.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\dtp.js",
+      "afterSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\duty-store.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\duty-store.js",
+      "afterSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\gate-snap1.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\gate-snap1.jpg",
+      "afterSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\gate-snap2.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\gate-snap2.jpg",
+      "afterSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\gate-snap3.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\gate-snap3.jpg",
+      "afterSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-config.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-config.js",
+      "afterSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-feedback.svg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-feedback.svg",
+      "afterSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-phone.svg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-phone.svg",
+      "afterSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-v1.css",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-v1.css",
+      "afterSha256": "577909A5F01C6A61E2BF67A2F8E916963C186FDF8A41D1E00D1F5C0A4636AFA9",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-v1.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\help-v1.js",
+      "afterSha256": "704900A87AC5BA39A7AFAF5725B37C25319D97FC22121F37A957A0B99D36AB53",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-addchild.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-addchild.png",
+      "afterSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-badge.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-badge.png",
+      "afterSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-checkin.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-checkin.png",
+      "afterSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-dismiss.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-dismiss.png",
+      "afterSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-help.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-help.png",
+      "afterSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-invite.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-invite.png",
+      "afterSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-leave.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-leave.png",
+      "afterSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-switch.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\icon-switch.png",
+      "afterSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\leave-store.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\leave-store.js",
+      "afterSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\legal.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\legal.js",
+      "afterSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\login-bg.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\login-bg.jpg",
+      "afterSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\logo.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\logo.png",
+      "afterSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\notice-entry.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\notice-entry.js",
+      "afterSha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\notice-host-bridge.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\notice-host-bridge.js",
+      "afterSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\parent.css",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\parent.css",
+      "afterSha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\parent.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\parent.js",
+      "afterSha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-cap.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-cap.jpg",
+      "afterSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-duo.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-duo.jpg",
+      "afterSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-full.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-full.jpg",
+      "afterSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-glasses.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-glasses.jpg",
+      "afterSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-qing.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-qing.jpg",
+      "afterSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-sample.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-sample.jpg",
+      "afterSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-side.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-side.jpg",
+      "afterSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-upload.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\photo-upload.jpg",
+      "afterSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\sky-clouds.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\sky-clouds.jpg",
+      "afterSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\sky-me.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\sky-me.jpg",
+      "afterSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\update-check.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\assets\\update-check.js",
+      "afterSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\资料\\来源与范围.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\资料\\来源与范围.md",
+      "afterSha256": "12EBB2D42B18EF3FC2DF337C77DA871CE2D1B4EEE3C70E1EE09535FEF17B83E2",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\资料\\继承版本定版信息-v1.2.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\资料\\继承版本定版信息-v1.2.md",
+      "afterSha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\资料\\页面清单.json",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-家长\\版本-v0.11\\资料\\页面清单.json",
+      "afterSha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\index.html",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\index.html",
+      "afterSha256": "3E8E8AF173D351B39372D2C2CC892147B074FBF208C2B5936BED8CD2796181C1",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\parent.html",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\parent.html",
+      "afterSha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\teacher.html",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\teacher.html",
+      "afterSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\定版信息.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\定版信息.md",
+      "afterSha256": "03986050E183BD640F335DEF6DE95AE6F98F657452B2203F843C3E72DA961986",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-boy.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-boy.png",
+      "afterSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-girl.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-girl.png",
+      "afterSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-man.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-man.png",
+      "afterSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-walle.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-walle.jpg",
+      "afterSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-woman.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\avatar-woman.png",
+      "afterSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\banner-badge.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\banner-badge.jpg",
+      "afterSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\changelog-hero.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\changelog-hero.jpg",
+      "afterSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\demo-feature-bridge.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\demo-feature-bridge.js",
+      "afterSha256": "83FDD97866087DCE8F5264E817EA0F7C16FFFE2D94252B5C53A3205752C04364",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\demo-panel.css",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\demo-panel.css",
+      "afterSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\demo-panel.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\demo-panel.js",
+      "afterSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\dtp.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\dtp.js",
+      "afterSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\duty-store.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\duty-store.js",
+      "afterSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\gate-snap1.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\gate-snap1.jpg",
+      "afterSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\gate-snap2.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\gate-snap2.jpg",
+      "afterSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\gate-snap3.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\gate-snap3.jpg",
+      "afterSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-config.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-config.js",
+      "afterSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-feedback.svg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-feedback.svg",
+      "afterSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-phone.svg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-phone.svg",
+      "afterSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-v1.css",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-v1.css",
+      "afterSha256": "577909A5F01C6A61E2BF67A2F8E916963C186FDF8A41D1E00D1F5C0A4636AFA9",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-v1.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\help-v1.js",
+      "afterSha256": "704900A87AC5BA39A7AFAF5725B37C25319D97FC22121F37A957A0B99D36AB53",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-addchild.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-addchild.png",
+      "afterSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-badge.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-badge.png",
+      "afterSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-checkin.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-checkin.png",
+      "afterSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-dismiss.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-dismiss.png",
+      "afterSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-help.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-help.png",
+      "afterSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-invite.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-invite.png",
+      "afterSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-leave.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-leave.png",
+      "afterSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-switch.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\icon-switch.png",
+      "afterSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\leave-store.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\leave-store.js",
+      "afterSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\legal.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\legal.js",
+      "afterSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\login-bg.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\login-bg.jpg",
+      "afterSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\logo.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\logo.png",
+      "afterSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\notice-entry.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\notice-entry.js",
+      "afterSha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\notice-host-bridge.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\notice-host-bridge.js",
+      "afterSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-cap.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-cap.jpg",
+      "afterSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-duo.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-duo.jpg",
+      "afterSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-full.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-full.jpg",
+      "afterSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-glasses.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-glasses.jpg",
+      "afterSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-qing.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-qing.jpg",
+      "afterSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-sample.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-sample.jpg",
+      "afterSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-side.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-side.jpg",
+      "afterSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-upload.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\photo-upload.jpg",
+      "afterSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\sky-clouds.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\sky-clouds.jpg",
+      "afterSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\sky-me.jpg",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\sky-me.jpg",
+      "afterSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\teacher.css",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\teacher.css",
+      "afterSha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\teacher.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\teacher.js",
+      "afterSha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\update-check.js",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\assets\\update-check.js",
+      "afterSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\资料\\来源与范围.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\资料\\来源与范围.md",
+      "afterSha256": "5C40BE203027CE7D2656D82A21DE42C0D16CA6CD9AA2B40CB44253D84EAB6D98",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\资料\\继承版本定版信息-v1.2.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\资料\\继承版本定版信息-v1.2.md",
+      "afterSha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\资料\\页面清单.json",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\端-教师\\版本-v0.11\\资料\\页面清单.json",
+      "afterSha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\候选文件SHA256.json",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\候选文件SHA256.json",
+      "afterSha256": "0741264F67F919F20E96295D7C1CDA24C9A5C799A518DFFE3B953EECCCAD3C99",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\预览链接.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\预览链接.md",
+      "afterSha256": "66CF571E46B9FAD768C290697B2919D5407725C58A6B539316789EE1D5BED445",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\验证结果.md",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\验证结果.md",
+      "afterSha256": "C742920301D9819444350040343AD04131AFCD14DACF610EBA6E181A55C3AD6E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\截图清单-v0.11.json",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\截图清单-v0.11.json",
+      "afterSha256": "47D8373D4934190B03330FD75CD95E2AE64A48975BD9DB789D3537681078F098",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-反馈详情.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-反馈详情.png",
+      "afterSha256": "9194FD9BD2E65EF8F4E2AA8B71F5EED947F5BF24275F6159CA59A33966757433",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-帮助页.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-帮助页.png",
+      "afterSha256": "1E6870D3D60E214B0753EE6F3A8D284F444D21BF9B03B154FB4DA798DA0B6D5A",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-我的反馈列表.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-我的反馈列表.png",
+      "afterSha256": "152BF4B508D41FAB5A5779AB71FCF3E2F9B22407E19D30000552AC6C1308AAE1",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-提交反馈半屏.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-家长-提交反馈半屏.png",
+      "afterSha256": "13A6F87ABBA21E456DD3DB704CDB5C9AB0B3E9B049BC6F1236E7452BE4288BE1",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-教师-帮助页无反馈入口.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原\\原-教师-帮助页无反馈入口.png",
+      "afterSha256": "524C97C34DF33572A8B14C0697B2AEAE1514ABEE4F216420CB0E7B7306D4BFCA",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-已回复详情与撤回置灰.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-已回复详情与撤回置灰.png",
+      "afterSha256": "7D034DD947BDD468D46B370C895CDD95B0F1FDB9EF84ED0E4C9532A8AA1CE102",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-帮助反馈入口.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-帮助反馈入口.png",
+      "afterSha256": "22877E6C69F3C5D45DA5DBB5F1FBE194F89847F32323913F3184812F73CC1BC5",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-待回复详情双按钮.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-待回复详情双按钮.png",
+      "afterSha256": "FA04AB86DD7E0A19F4D78B02B5391EFCCA178E9B2FAC20B63AA41791217AEB33",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-我的反馈列表.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-我的反馈列表.png",
+      "afterSha256": "1118FD5050793627ACBE74441CD33C396C7F3B7B3854EB8F92026C8DA4C7B23A",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-提交反馈九图表单.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-提交反馈九图表单.png",
+      "afterSha256": "339F0A45D5A95626DC888377B95E61779C9D444D8CA639075BC551FBF724D58E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-撤回确认弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-撤回确认弹窗.png",
+      "afterSha256": "359B56EEC5CCEE2EC823A339C87DC184792C4FDB186DAD7922FFCF8B1E0F28EF",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-追问弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-追问弹窗.png",
+      "afterSha256": "58EC881A2D220A9B8A2BD4968C95694FF286678574327D411848A04AF0ECF534",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-追问附件图片.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-家长-追问附件图片.png",
+      "afterSha256": "58EC881A2D220A9B8A2BD4968C95694FF286678574327D411848A04AF0ECF534",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-已回复详情与撤回置灰.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-已回复详情与撤回置灰.png",
+      "afterSha256": "0E989B9304B31D1F1FEB7A8A932F8A836E1EA9E749C175BA5DB32BF9E8ABEB1D",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-帮助反馈入口.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-帮助反馈入口.png",
+      "afterSha256": "E107F75B3060A586A20A6226DB9842B6A05A1A21E92B16C50227B05D4C2B63DF",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-待回复详情双按钮.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-待回复详情双按钮.png",
+      "afterSha256": "659E1027C5096EDBAD02F51F7E72DCF3438EEF7EB8F309CB5421AF6033ABB75E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-我的反馈列表.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-我的反馈列表.png",
+      "afterSha256": "AE8C79AE904E4F60C9856789920EE46732D545712E2AF88589DD2850B85BD351",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-提交反馈九图表单.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-提交反馈九图表单.png",
+      "afterSha256": "69DF4A224CEBBD8C9E5B0517FB85D7889BFCA466ED024978FA962686884A4849",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-撤回确认弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-撤回确认弹窗.png",
+      "afterSha256": "84084E408E742956228E6492E743861A673FD6E318ED97ACCEF91D6F7EB10DA4",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-追问弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-追问弹窗.png",
+      "afterSha256": "6956B2939413552F11312310A39ADBABE2B3EC96FFF2DC43569677F8E8E23062",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-追问附件图片.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\原-v0.10\\原-v0.10-教师-追问附件图片.png",
+      "afterSha256": "6956B2939413552F11312310A39ADBABE2B3EC96FFF2DC43569677F8E8E23062",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-已回复详情与撤回置灰.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-已回复详情与撤回置灰.png",
+      "afterSha256": "10C0FB7DB119F71276F34ACB64998E80751484983A8F317B28C73AA22D535BE4",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-帮助反馈入口.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-帮助反馈入口.png",
+      "afterSha256": "22877E6C69F3C5D45DA5DBB5F1FBE194F89847F32323913F3184812F73CC1BC5",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-待回复详情双按钮.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-待回复详情双按钮.png",
+      "afterSha256": "0B484E08C8C0899081D90877C787610D392C11D8C958748A325A87730A6C336B",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-我的反馈列表.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-我的反馈列表.png",
+      "afterSha256": "D7C27E142076B7E60C1007D03A8D3BB0E8C9AECB8E9EAB62C7ECFD434225D9E8",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-提交反馈九图表单.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-提交反馈九图表单.png",
+      "afterSha256": "339F0A45D5A95626DC888377B95E61779C9D444D8CA639075BC551FBF724D58E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-撤回确认弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-撤回确认弹窗.png",
+      "afterSha256": "FABFFFC761DC155D29501DA6086E5822AFC8B13A55E5E3BDF674AF24E95F4DB6",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-追问弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-追问弹窗.png",
+      "afterSha256": "B7CCCC61BE3817D37529F9FCD3F5BC91AC5C57D980714F97990F4B80A509733E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-追问附件图片.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-家长-追问附件图片.png",
+      "afterSha256": "1D486681ED61F2A4F21EE09700E9D4E3C7C5593FC1D51DDC01DB11DD30616AC3",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-已回复详情与撤回置灰.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-已回复详情与撤回置灰.png",
+      "afterSha256": "5E4466873FE90012564739347A6FBC1997190422EF535DB0F8809654277BF5F1",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-帮助反馈入口.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-帮助反馈入口.png",
+      "afterSha256": "E107F75B3060A586A20A6226DB9842B6A05A1A21E92B16C50227B05D4C2B63DF",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-待回复详情双按钮.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-待回复详情双按钮.png",
+      "afterSha256": "1121645C960E6A5F8DC7C4BCFA4ECC7A63E0736A1418A4EB08709804663D23A0",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-我的反馈列表.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-我的反馈列表.png",
+      "afterSha256": "9896AE94DA9E8CC4F5E35E1D762302BE6EECC26DEF2233E9169339467BFC892E",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-提交反馈九图表单.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-提交反馈九图表单.png",
+      "afterSha256": "69DF4A224CEBBD8C9E5B0517FB85D7889BFCA466ED024978FA962686884A4849",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-撤回确认弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-撤回确认弹窗.png",
+      "afterSha256": "464FAF57A8F6B40B47B083C99511D1A0E90C809B00E36D9C7193B8CF3A805B5B",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-追问弹窗.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-追问弹窗.png",
+      "afterSha256": "5FD04A8B53DD93A0E2C1792ACFA5D73D6448A5870FBF0AED622F2D991E225B80",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-追问附件图片.png",
+      "beforeSnapshotPath": null,
+      "beforeSha256": null,
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\任务\\T-20261117-01-客户反馈详情与操作精简\\资料\\截图对比\\现-v0.11\\现-v0.11-教师-追问附件图片.png",
+      "afterSha256": "58D2375882602C2918099DFE77E59785C0B1F18756E23B6B6FC5140E4EF25075",
+      "changeType": "新增"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\项目管理\\任务登记.md",
+      "beforeSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改前\\项目管理\\任务登记.md",
+      "beforeSha256": "D405E45CBA9B89D2D62957864D17094B5391917078ED283169E58CCE1C29A6E2",
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\项目管理\\任务登记.md",
+      "afterSha256": "FFB895A295470D0943377F4FA1385F162D76A5BDE1D70BC97EDA6C694B6DC38C",
+      "changeType": "修改"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\项目管理\\待办清单.md",
+      "beforeSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改前\\项目管理\\待办清单.md",
+      "beforeSha256": "FA63AA61A71B21E67FD607915A2C0D282DD104F47604CD99BBA60A82ADCA7F94",
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\项目管理\\待办清单.md",
+      "afterSha256": "7385AC815FBB1BABEAFCB215DE439255ED5BB21D83FE2E86B85B84E52C05FEFF",
+      "changeType": "修改"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\项目管理\\里程碑.md",
+      "beforeSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改前\\项目管理\\里程碑.md",
+      "beforeSha256": "27D4BFA39C86912BA8115EF75E548184148677443291E1E77DB56A3E3C49AB19",
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\项目管理\\里程碑.md",
+      "afterSha256": "EC7B11C5AE387C2C5E62D1B14C1E4E001F248BAAD0495544F26E092068821CDA",
+      "changeType": "修改"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\项目管理\\风险登记.md",
+      "beforeSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改前\\项目管理\\风险登记.md",
+      "beforeSha256": "5FA653B1054BD87E9B7F1972F1AFEE190678C1B8B8F232D1A8DE4E5A11B95239",
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\项目管理\\风险登记.md",
+      "afterSha256": "12CB96B49526C2C0160E8060778CC32893756AD4082D76C319444258E01417D9",
+      "changeType": "修改"
+    },
+    {
+      "sourcePath": "E:\\codex\\小程序\\记忆库\\项目记忆\\用户偏好.md",
+      "beforeSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改前\\记忆库\\项目记忆\\用户偏好.md",
+      "beforeSha256": "30042F84A43E485444A07F5EF2CAA2EF9018DE75E107BAF559ADB82A3A88EB0B",
+      "afterSnapshotPath": "版本快照\\V-20261117-01-反馈详情与追问样式对齐\\修改后-最终核对\\记忆库\\项目记忆\\用户偏好.md",
+      "afterSha256": "FF293D6BDCF3A1441ACED8AA93C4AB6B3F3C76261BE81BB9EEE01F680D94DB09",
+      "changeType": "修改"
+    }
+  ],
+  "note": "快照前保留本项目治理文件；来源候选/既有PRD另存于修改前/来源。项目日志在快照索引更新后最后追加，不纳入本变更清单。"
+}

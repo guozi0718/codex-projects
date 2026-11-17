@@ -1,0 +1,137 @@
+{
+  "task": "T-20261116-04",
+  "snapshot": "V-20261116-05",
+  "baselinePointerSha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+  "candidateChanges": [
+    {
+      "role": "教师",
+      "path": "index.html",
+      "sourceSha256": "3F48693C03EA98078E6585AB8B66DA23CA9C46A7D71A56FCC836C1B5779DB45B",
+      "candidateSha256": "DD15A51577A6231EA5FA23A2FA78E91E31256868992041BF57667A61E7B13F7A"
+    },
+    {
+      "role": "教师",
+      "path": "定版信息.md",
+      "sourceSha256": "414FA9493FFE987BEADF7BAEC6A43C3FE43E7C0F31069E8EA7E86F58670834CF",
+      "candidateSha256": "88D5BBBB9C335634705D9F7AA9B75476EDE69F3DE275E3717BABC0E1C810556C"
+    },
+    {
+      "role": "教师",
+      "path": "assets/demo-feature-bridge.js",
+      "sourceSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+      "candidateSha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF"
+    },
+    {
+      "role": "教师",
+      "path": "assets/help-v1.css",
+      "sourceSha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF",
+      "candidateSha256": "56B719F50F2563BC367F0ED1FA9DF863C2B55C9FAB79EC0E60D19A26FAD6DCB1"
+    },
+    {
+      "role": "教师",
+      "path": "assets/help-v1.js",
+      "sourceSha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B",
+      "candidateSha256": "E2F5941B7AABAB02B507971677A4B7AF572B801FB9E849AB003092675822CA34"
+    },
+    {
+      "role": "教师",
+      "path": "资料/来源与范围.md",
+      "sourceSha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334",
+      "candidateSha256": "237ECD6464CE9FC3D5AA984DC37FA1B65B9597009DF5A0675C194824FB3B2459"
+    },
+    {
+      "role": "家长",
+      "path": "index.html",
+      "sourceSha256": "51F11965B70393E07D699BC0276942074BF34A6C4816A0A6508A39A3E4C03FAD",
+      "candidateSha256": "613259AA66705C5A0776D87E8895519BA6E23BA2E604A9CC5AF61918443E3EF6"
+    },
+    {
+      "role": "家长",
+      "path": "定版信息.md",
+      "sourceSha256": "1D3A9DC9D9F7258A5989CBD32A77173FC52AF964D859E56F6348CA3EE9CD0778",
+      "candidateSha256": "7AA1B52F64A12755C3D3D0BA5C21FEAC9B1E7FDC66DEBF1B7598E6013BDDBF04"
+    },
+    {
+      "role": "家长",
+      "path": "assets/demo-feature-bridge.js",
+      "sourceSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+      "candidateSha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF"
+    },
+    {
+      "role": "家长",
+      "path": "assets/help-v1.css",
+      "sourceSha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF",
+      "candidateSha256": "56B719F50F2563BC367F0ED1FA9DF863C2B55C9FAB79EC0E60D19A26FAD6DCB1"
+    },
+    {
+      "role": "家长",
+      "path": "assets/help-v1.js",
+      "sourceSha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B",
+      "candidateSha256": "E2F5941B7AABAB02B507971677A4B7AF572B801FB9E849AB003092675822CA34"
+    },
+    {
+      "role": "家长",
+      "path": "资料/来源与范围.md",
+      "sourceSha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334",
+      "candidateSha256": "89E9A0C582179A0C9C2B931AFCB244CB5C8113AE4DFE8FBE67FAE59C0BF7D578"
+    }
+  ],
+  "managementChanges": [
+    {
+      "path": "原型协作说明.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/原型协作说明.md",
+      "beforeSha256": "BEAD3A497F579A64E2D0465C07A5AEB26A055BE8C98D9E5C947E708B68D8D060",
+      "afterSha256": "9A7F611D73B63CBCAC5C47B7344E64FDF10197E4535A66BFD6CE527BC8D9647C",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/原型协作说明.md"
+    },
+    {
+      "path": "项目管理/任务登记.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/项目管理/任务登记.md",
+      "beforeSha256": "8C52D4C98A06C22C92729AB4BEA40B9699658EE9ABD38FC51209936E507B1E7A",
+      "afterSha256": "0A70976BDA1FBFCAE3933B95844E0536226D3E268BC04BD1D32284D1A6A50685",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/项目管理/任务登记.md"
+    },
+    {
+      "path": "项目管理/待办清单.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/项目管理/待办清单.md",
+      "beforeSha256": "EB3A0B7EE458D361283852BE3574EB740FB85D17E151D7F1D920264EFE3C21FA",
+      "afterSha256": "9561B34490A513C4B4268607763E6D2B0E10A11DF0B54A1DCA329A97DC6DA505",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/项目管理/待办清单.md"
+    },
+    {
+      "path": "项目管理/里程碑.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/项目管理/里程碑.md",
+      "beforeSha256": "03929315E8553A83F83F4C805AFA6B6B70A0886AFC681752BEA11F34737885EF",
+      "afterSha256": "D8F15137727BB1F3E131592E6CD02E4BB595E1FF41C25ED1F6BE86BA8D1FEEBA",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/项目管理/里程碑.md"
+    },
+    {
+      "path": "项目管理/风险登记.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/项目管理/风险登记.md",
+      "beforeSha256": "FC19663BC0EAEF1B5E9F10ACC979D5139B193FDD1E56C7ABE4F089437A0A0EFE",
+      "afterSha256": "EDE010EAADE46B438697FE41FC3BD82C2528148DBE6E0C60221E0C30CE8F9C29",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/项目管理/风险登记.md"
+    },
+    {
+      "path": "记忆库/项目记忆/技术约束.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/记忆库/项目记忆/技术约束.md",
+      "beforeSha256": "DB1469A09A06CB30B32154916B2C8F3D1C8E422227A032AAB49E644F6B8E9428",
+      "afterSha256": "41DE9CEBD05E0D56A08AB3F1CEE56D944F84CF2DEB58420FBFC3A235D2BC1653",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/记忆库/项目记忆/技术约束.md"
+    },
+    {
+      "path": "记忆库/项目记忆/非正式共识.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/记忆库/项目记忆/非正式共识.md",
+      "beforeSha256": "A6B3963BE57BCD1CF7C30CCC757C291A5718D32F2331CFD4EB2DE7C58BD3CE4A",
+      "afterSha256": "FA0717B098191D696DB2C71EDBB1F25F1799CC5B472B10644E5B645B18C50A96",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/记忆库/项目记忆/非正式共识.md"
+    },
+    {
+      "path": "日志管理.md",
+      "beforePath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改前/项目管理与记忆/日志管理.md",
+      "beforeSha256": "6C852767A2BB713173B8D4B56BFEAB4DBCDDECFC0CCEFE95F708DB40EFB6A0EA",
+      "afterPath": "版本快照/V-20261116-05-反馈建议表单与演示说明补齐/修改后/项目管理与记忆/日志管理.md",
+      "afterSha256": "B62F4B6F4BE7D1D1F96012FE5FF6CA80D6D1812B602BF084F0E3CA036644083E"
+    }
+  ]
+}

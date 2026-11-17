@@ -1,0 +1,51 @@
+[
+  {
+    "path": "E:\\codex\\小程序\\项目管理\\任务登记.md",
+    "beforeSha256": "50D5135651C1A4431B065ED39B3EA0EAAB39F5E69E9D96D0296D4EEC82DB4981",
+    "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-05-客服电话展示优化第一期\\v1.1修改前\\项目文件\\项目管理\\任务登记.md",
+    "afterSha256": "ABE0FDE45E19C57C22B05D52B026382C4C7D7B36771633D5BA0D467341FD82E1",
+    "afterBytes": 9784
+  },
+  {
+    "path": "E:\\codex\\小程序\\项目管理\\待办清单.md",
+    "beforeSha256": "81A6D2B1506A4B98A32B77B13555BA8D0FBDAA72FEDB2858C07320DE43017574",
+    "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-05-客服电话展示优化第一期\\v1.1修改前\\项目文件\\项目管理\\待办清单.md",
+    "afterSha256": "3897DA1C14BB0256C09EE1BA3522C1D499D4D56A01A463A8799F74E6AF88525D",
+    "afterBytes": 6796
+  },
+  {
+    "path": "E:\\codex\\小程序\\项目管理\\里程碑.md",
+    "beforeSha256": "AC3C795D5510FD3F825348238600F146BD1CB9CA05B96752522C72AF54D218A2",
+    "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-05-客服电话展示优化第一期\\v1.1修改前\\项目文件\\项目管理\\里程碑.md",
+    "afterSha256": "1EFB217CF57980FB6F4CF73AB5EB42FBBD5BA86E34E964E94F8961EDA14EAB07",
+    "afterBytes": 5265
+  },
+  {
+    "path": "E:\\codex\\小程序\\项目管理\\风险登记.md",
+    "beforeSha256": "2CF540F24FAD01A4C929A59490B2CC4662459F652EDF0755302EC655F9F1D3EB",
+    "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-05-客服电话展示优化第一期\\v1.1修改前\\项目文件\\项目管理\\风险登记.md",
+    "afterSha256": "2CF540F24FAD01A4C929A59490B2CC4662459F652EDF0755302EC655F9F1D3EB",
+    "afterBytes": 6644
+  },
+  {
+    "path": "E:\\codex\\小程序\\记忆库\\项目记忆\\用户偏好.md",
+    "beforeSha256": "50984F17B4C8DFB3734BC2753A3CA2FEEF0E4E8F1B27F8CE643E748499AE4537",
+    "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-05-客服电话展示优化第一期\\v1.1修改前\\项目文件\\记忆库\\项目记忆\\用户偏好.md",
+    "afterSha256": "50984F17B4C8DFB3734BC2753A3CA2FEEF0E4E8F1B27F8CE643E748499AE4537",
+    "afterBytes": 2170
+  },
+  {
+    "path": "E:\\codex\\小程序\\版本快照\\快照索引.md",
+    "beforeSha256": "0776BEC77794A6403581BBB6A5948D9D79813C5A95F803034351B4CD3449610F",
+    "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-05-客服电话展示优化第一期\\v1.1修改前\\项目文件\\版本快照\\快照索引.md",
+    "afterSha256": "索引自引用不登记",
+    "afterBytes": null
+  },
+  {
+    "path": "E:\\codex\\小程序\\日志管理.md",
+    "beforeSha256": "9F51D8D8CF9162A698CD3C9BBD5C9B641F9A54A4D9FAEB28D8ED7393121110BF",
+    "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-05-客服电话展示优化第一期\\v1.1修改前\\项目文件\\日志管理.md",
+    "afterSha256": "74551B8F1EC8C3D222777B20299A795B0ED7AD2C0867738F8E32A28DD52800F2",
+    "afterBytes": 21880
+  }
+]

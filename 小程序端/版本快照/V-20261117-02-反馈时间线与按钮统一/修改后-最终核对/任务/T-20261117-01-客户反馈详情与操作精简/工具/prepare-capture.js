@@ -1,0 +1,10 @@
+const fs=require('fs'),path=require('path');
+const dir='E:/codex/小程序/任务/T-20261117-01-客户反馈详情与操作精简/工具';
+const server=path.join(dir,'preview-server.js');fs.writeFileSync(server,fs.readFileSync(server,'utf8').replace('56384','56385'),'utf8');
+const file=path.join(dir,'采集手机原型截图.js');let s=fs.readFileSync(file,'utf8');
+s=s.replaceAll('56384','56385').replaceAll('9227','9228').replaceAll('v0.10','v0.11').replaceAll('mini-feedback-v010-capture','mini-feedback-v011-capture');
+s=s.replace("await load(c,'/端-'+rolePath+'/版本-v0.11/index.html#sc-help');await capture(c,'现-v0.11-'+role+'-帮助反馈入口.png');",'');
+s=s.replace("await load(c,'/端-'+rolePath+'/版本-v0.11/index.html#sc-fblist');await evaluate(c,\"openFbDetail('DEMO-'+\"+JSON.stringify(prefix)+\"+'-FB-2026-002')\");await capture(c,'现-v0.11-'+role+'-已回复详情倒序时间线.png');", "await load(c,'/端-'+rolePath+'/版本-v0.11/index.html#sc-fblist');await evaluate(c,\"openFbDetail('DEMO-'+\"+JSON.stringify(prefix)+\"+'-FB-2026-002')\");await capture(c,'现-v0.11-'+role+'-已回复详情与撤回置灰.png');");
+const old="await load(c,'/端-'+rolePath+'/版本-v0.11/index.html#sc-fblist');await evaluate(c,\"openFbDetail('DEMO-'+\"+JSON.stringify(prefix)+\"+'-FB-2026-001');hfRequestWithdraw('DEMO-'+\"+JSON.stringify(prefix)+\"+'-FB-2026-001')\");await capture(c,'现-v0.11-'+role+'-撤回确认弹窗.png');";
+const add="await load(c,'/端-'+rolePath+'/版本-v0.11/index.html#sc-fblist');await evaluate(c,\"openFbDetail('DEMO-'+\"+JSON.stringify(prefix)+\"+'-FB-2026-001')\");await capture(c,'现-v0.11-'+role+'-待回复详情双按钮.png');await evaluate(c,\"hfRequestWithdraw('DEMO-'+\"+JSON.stringify(prefix)+\"+'-FB-2026-001')\");await capture(c,'现-v0.11-'+role+'-撤回确认弹窗.png');";
+if(!s.includes(old))throw Error('withdraw capture sequence not found');s=s.replace(old,add);fs.writeFileSync(file,s,'utf8');

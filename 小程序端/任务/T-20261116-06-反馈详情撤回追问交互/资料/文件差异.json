@@ -1,0 +1,79 @@
+{
+  "sourceVersion": "T-20261116-04 v0.7",
+  "candidateVersion": "T-20261116-06 v0.8",
+  "sourceFileCount": 108,
+  "candidateFileCount": 108,
+  "changeCount": 10,
+  "diff": [
+    {
+      "role": "教师",
+      "status": "modified",
+      "path": "assets\\help-v1.css",
+      "sourceSha256": "F23742133769630892DA689F2C6CE545B7E4FE029723D2534EB7DFF77287F6A4",
+      "candidateSha256": "200A241A67B06691D5CA6EE5C2468B8003256A63EFBC0DE88B0F23FE8691F98B"
+    },
+    {
+      "role": "教师",
+      "status": "modified",
+      "path": "assets\\help-v1.js",
+      "sourceSha256": "4FEDA5023140B554F1779A5AEAFA639DFA4089CF8EC6427169AECB752BB73031",
+      "candidateSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D"
+    },
+    {
+      "role": "教师",
+      "status": "modified",
+      "path": "index.html",
+      "sourceSha256": "DDC35A5D698ECB6A49B24FCD5EB21E9B7CE27B5C6ECCAB6050F82EB07B168162",
+      "candidateSha256": "D81D902856209BF2C5ECDCD99F3D21047C3B9AD1BD87CED46FED5A52663E0972"
+    },
+    {
+      "role": "教师",
+      "status": "modified",
+      "path": "定版信息.md",
+      "sourceSha256": "88D5BBBB9C335634705D9F7AA9B75476EDE69F3DE275E3717BABC0E1C810556C",
+      "candidateSha256": "492A404B0D7B7761110DE1CD5FC1FB07FDDA14D90BCDC4E3B8453F72965DEED9"
+    },
+    {
+      "role": "教师",
+      "status": "modified",
+      "path": "资料\\来源与范围.md",
+      "sourceSha256": "237ECD6464CE9FC3D5AA984DC37FA1B65B9597009DF5A0675C194824FB3B2459",
+      "candidateSha256": "9F50722421C278AF934FE57E9D7063C1E6D86A2CFF402EF511F8CF4D97DD99FE"
+    },
+    {
+      "role": "家长",
+      "status": "modified",
+      "path": "assets\\help-v1.css",
+      "sourceSha256": "F23742133769630892DA689F2C6CE545B7E4FE029723D2534EB7DFF77287F6A4",
+      "candidateSha256": "200A241A67B06691D5CA6EE5C2468B8003256A63EFBC0DE88B0F23FE8691F98B"
+    },
+    {
+      "role": "家长",
+      "status": "modified",
+      "path": "assets\\help-v1.js",
+      "sourceSha256": "FFFC91140D7C67CCB03E36E0954F01E76F181E9188E88972CA3C0DB36A59BB2B",
+      "candidateSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D"
+    },
+    {
+      "role": "家长",
+      "status": "modified",
+      "path": "index.html",
+      "sourceSha256": "51A100367F63213A66B6A7FE37A0F81D177DCCF1132AB1B736AE629756EC9F80",
+      "candidateSha256": "68B3EDF8DB91A3095EDA8F06AC31F75AF2B3CACD8A199ED34F0C40D6B70B30CA"
+    },
+    {
+      "role": "家长",
+      "status": "modified",
+      "path": "定版信息.md",
+      "sourceSha256": "7AA1B52F64A12755C3D3D0BA5C21FEAC9B1E7FDC66DEBF1B7598E6013BDDBF04",
+      "candidateSha256": "AB0A6F7ABD116963895DE0F2726565EEA1B38EE644D907C298CBD9CA89A48DF6"
+    },
+    {
+      "role": "家长",
+      "status": "modified",
+      "path": "资料\\来源与范围.md",
+      "sourceSha256": "89E9A0C582179A0C9C2B931AFCB244CB5C8113AE4DFE8FBE67FAE59C0BF7D578",
+      "candidateSha256": "CADF43C4B0E720B637B402055841BD989CEC70C82154561EA4F322551788926B"
+    }
+  ]
+}

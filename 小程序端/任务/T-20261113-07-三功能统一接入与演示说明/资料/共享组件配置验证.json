@@ -1,0 +1,251 @@
+[
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "list",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "create",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "edit",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "detail",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "schools",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "agents",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "default",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "delete",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "confirm",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "customer-service.list",
+    "mode": "logs",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.replies",
+    "mode": "list",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.replies",
+    "mode": "detail",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.replies",
+    "mode": "reply",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.replies",
+    "mode": "confirm",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.replies",
+    "mode": "notify",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.user-data",
+    "mode": "search",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.user-data",
+    "mode": "person",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.faqs",
+    "mode": "list",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "page": "feedback.faqs",
+    "mode": "faq-edit",
+    "passed": true
+  },
+  {
+    "end": "enterprise",
+    "check": "new package contains no old red-dot implementation; single loader registry",
+    "passed": true
+  },
+  {
+    "end": "school",
+    "page": "school-feedback",
+    "mode": "list",
+    "passed": true
+  },
+  {
+    "end": "school",
+    "page": "school-feedback",
+    "mode": "detail",
+    "passed": true
+  },
+  {
+    "end": "school",
+    "page": "school-feedback",
+    "mode": "reply",
+    "passed": true
+  },
+  {
+    "end": "school",
+    "page": "school-feedback",
+    "mode": "confirm",
+    "passed": true
+  },
+  {
+    "end": "school",
+    "page": "school-feedback",
+    "mode": "notify",
+    "passed": true
+  },
+  {
+    "end": "school",
+    "check": "new package contains no old red-dot implementation; single loader registry",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "list",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "create",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "edit",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "detail",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "schools",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "agents",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "default",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "delete",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "confirm",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "cs",
+    "mode": "logs",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "school-feedback",
+    "mode": "list",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "school-feedback",
+    "mode": "detail",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "school-feedback",
+    "mode": "reply",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "school-feedback",
+    "mode": "confirm",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "page": "school-feedback",
+    "mode": "notify",
+    "passed": true
+  },
+  {
+    "end": "agent",
+    "check": "new package contains no old red-dot implementation; single loader registry",
+    "passed": true
+  }
+]

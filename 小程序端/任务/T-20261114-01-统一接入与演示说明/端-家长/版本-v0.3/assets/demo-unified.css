@@ -1,0 +1,10 @@
+/* Shared prototype explanation adapter. No old dot trigger. */
+#demo-fab>.demo-chip{position:fixed;right:18px;top:14px;z-index:32;border:1px solid #d9c47b;background:#fff8da;color:#655226;border-radius:18px;padding:7px 14px;font:13px/1.4 "Microsoft YaHei",sans-serif;cursor:pointer}
+body[data-demo-hosted=true] #demo-fab>.demo-chip{display:none}
+.demo-pop.web{background:#fff9df!important;z-index:45!important;width:400px;box-sizing:border-box}
+.demo-pop .dp-hd{position:sticky;top:0;z-index:2;background:inherit}.demo-pop button{cursor:pointer}
+.demo-pop [role=button]:focus-visible{outline:2px solid #b88a24;outline-offset:2px}
+.demo-scene-preview{box-sizing:border-box;min-height:240px;padding:40px 20px;text-align:center;background:#fff;border:1px solid #e8e8e8;border-radius:6px;color:#4e5969}
+.demo-scene-preview h3{font-size:18px;margin:0 0 16px}.demo-scene-preview p{margin:0 0 20px;line-height:1.8}.demo-scene-preview button{border:1px solid #01a239;color:#01a239;background:white;padding:6px 16px;border-radius:4px}
+.demo-scene-preview.inline{min-height:0;padding:12px;text-align:left;background:#fff2f0;border-color:#ffccc7;color:#b42318}.demo-scene-preview.inline h3{font-size:14px;margin-bottom:5px}.demo-scene-preview.inline p{margin-bottom:8px}
+.demo-scene-empty{padding:48px 20px!important;text-align:center!important;color:#86909c}.demo-scene-notice{padding:10px 16px;background:#fff5d6;color:#806010;margin-bottom:12px}

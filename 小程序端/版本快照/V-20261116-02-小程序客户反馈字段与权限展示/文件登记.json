@@ -1,0 +1,1421 @@
+{
+  "task": "T-20261116-02-小程序客户反馈字段与权限展示",
+  "snapshot": "V-20261116-02",
+  "baselinePointerSha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+  "candidatePorts": [
+    {
+      "port": "端-教师",
+      "sourceVersion": "v0.5",
+      "candidateVersion": "v0.6",
+      "sourceRoot": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5",
+      "candidateSnapshotRoot": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6",
+      "fileCount": 54,
+      "changedFileCount": 5,
+      "files": [
+        {
+          "relativePath": "index.html",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\index.html",
+          "beforeSha256": "0BC0FD0E19835E201EA2A0172BE8DE81F698D8F29B94E729BF788D58BA1275E1",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\index.html",
+          "afterSha256": "3F48693C03EA98078E6585AB8B66DA23CA9C46A7D71A56FCC836C1B5779DB45B",
+          "changed": true
+        },
+        {
+          "relativePath": "parent.html",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\parent.html",
+          "beforeSha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\parent.html",
+          "afterSha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E",
+          "changed": false
+        },
+        {
+          "relativePath": "teacher.html",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\teacher.html",
+          "beforeSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\teacher.html",
+          "afterSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+          "changed": false
+        },
+        {
+          "relativePath": "定版信息.md",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\定版信息.md",
+          "beforeSha256": "D2175A4DB1FA2A6D157EAB255F9CE739087368FCD4820B9BB5F8F40C0D8A1ED4",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\定版信息.md",
+          "afterSha256": "414FA9493FFE987BEADF7BAEC6A43C3FE43E7C0F31069E8EA7E86F58670834CF",
+          "changed": true
+        },
+        {
+          "relativePath": "assets\\avatar-boy.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\avatar-boy.png",
+          "beforeSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\avatar-boy.png",
+          "afterSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-girl.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\avatar-girl.png",
+          "beforeSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\avatar-girl.png",
+          "afterSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-man.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\avatar-man.png",
+          "beforeSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\avatar-man.png",
+          "afterSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-walle.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\avatar-walle.jpg",
+          "beforeSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\avatar-walle.jpg",
+          "afterSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-woman.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\avatar-woman.png",
+          "beforeSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\avatar-woman.png",
+          "afterSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\banner-badge.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\banner-badge.jpg",
+          "beforeSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\banner-badge.jpg",
+          "afterSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\changelog-hero.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\changelog-hero.jpg",
+          "beforeSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\changelog-hero.jpg",
+          "afterSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\demo-feature-bridge.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\demo-feature-bridge.js",
+          "beforeSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\demo-feature-bridge.js",
+          "afterSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\demo-panel.css",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\demo-panel.css",
+          "beforeSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\demo-panel.css",
+          "afterSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\demo-panel.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\demo-panel.js",
+          "beforeSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\demo-panel.js",
+          "afterSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\dtp.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\dtp.js",
+          "beforeSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\dtp.js",
+          "afterSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\duty-store.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\duty-store.js",
+          "beforeSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\duty-store.js",
+          "afterSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\gate-snap1.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\gate-snap1.jpg",
+          "beforeSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\gate-snap1.jpg",
+          "afterSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\gate-snap2.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\gate-snap2.jpg",
+          "beforeSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\gate-snap2.jpg",
+          "afterSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\gate-snap3.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\gate-snap3.jpg",
+          "beforeSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\gate-snap3.jpg",
+          "afterSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-config.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\help-config.js",
+          "beforeSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\help-config.js",
+          "afterSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-feedback.svg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\help-feedback.svg",
+          "beforeSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\help-feedback.svg",
+          "afterSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-phone.svg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\help-phone.svg",
+          "beforeSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\help-phone.svg",
+          "afterSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-v1.css",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\help-v1.css",
+          "beforeSha256": "B3F169DEAE0D41D58C2C7BEB9A679E94F93336F6DEDC64789CC237A1D121149D",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\help-v1.css",
+          "afterSha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF",
+          "changed": true
+        },
+        {
+          "relativePath": "assets\\help-v1.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\help-v1.js",
+          "beforeSha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\help-v1.js",
+          "afterSha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B",
+          "changed": true
+        },
+        {
+          "relativePath": "assets\\icon-addchild.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-addchild.png",
+          "beforeSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-addchild.png",
+          "afterSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-badge.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-badge.png",
+          "beforeSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-badge.png",
+          "afterSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-checkin.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-checkin.png",
+          "beforeSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-checkin.png",
+          "afterSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-dismiss.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-dismiss.png",
+          "beforeSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-dismiss.png",
+          "afterSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-help.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-help.png",
+          "beforeSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-help.png",
+          "afterSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-invite.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-invite.png",
+          "beforeSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-invite.png",
+          "afterSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-leave.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-leave.png",
+          "beforeSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-leave.png",
+          "afterSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-switch.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\icon-switch.png",
+          "beforeSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\icon-switch.png",
+          "afterSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\leave-store.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\leave-store.js",
+          "beforeSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\leave-store.js",
+          "afterSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\legal.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\legal.js",
+          "beforeSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\legal.js",
+          "afterSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\login-bg.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\login-bg.jpg",
+          "beforeSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\login-bg.jpg",
+          "afterSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\logo.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\logo.png",
+          "beforeSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\logo.png",
+          "afterSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\notice-entry.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\notice-entry.js",
+          "beforeSha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\notice-entry.js",
+          "afterSha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\notice-host-bridge.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\notice-host-bridge.js",
+          "beforeSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\notice-host-bridge.js",
+          "afterSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-cap.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-cap.jpg",
+          "beforeSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-cap.jpg",
+          "afterSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-duo.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-duo.jpg",
+          "beforeSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-duo.jpg",
+          "afterSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-full.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-full.jpg",
+          "beforeSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-full.jpg",
+          "afterSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-glasses.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-glasses.jpg",
+          "beforeSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-glasses.jpg",
+          "afterSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-qing.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-qing.jpg",
+          "beforeSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-qing.jpg",
+          "afterSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-sample.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-sample.jpg",
+          "beforeSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-sample.jpg",
+          "afterSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-side.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-side.jpg",
+          "beforeSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-side.jpg",
+          "afterSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-upload.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\photo-upload.jpg",
+          "beforeSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\photo-upload.jpg",
+          "afterSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\sky-clouds.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\sky-clouds.jpg",
+          "beforeSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\sky-clouds.jpg",
+          "afterSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\sky-me.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\sky-me.jpg",
+          "beforeSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\sky-me.jpg",
+          "afterSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\teacher.css",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\teacher.css",
+          "beforeSha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\teacher.css",
+          "afterSha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\teacher.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\teacher.js",
+          "beforeSha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\teacher.js",
+          "afterSha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\update-check.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\assets\\update-check.js",
+          "beforeSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\assets\\update-check.js",
+          "afterSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+          "changed": false
+        },
+        {
+          "relativePath": "资料\\来源与范围.md",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\资料\\来源与范围.md",
+          "beforeSha256": "52990A22F178142535A87F113CA22FBBA538A08D421C4762ADA14EF315C6FF9A",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\资料\\来源与范围.md",
+          "afterSha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334",
+          "changed": true
+        },
+        {
+          "relativePath": "资料\\继承版本定版信息-v1.2.md",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\资料\\继承版本定版信息-v1.2.md",
+          "beforeSha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\资料\\继承版本定版信息-v1.2.md",
+          "afterSha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653",
+          "changed": false
+        },
+        {
+          "relativePath": "资料\\页面清单.json",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-教师\\版本-v0.5\\资料\\页面清单.json",
+          "beforeSha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-教师\\版本-v0.6\\资料\\页面清单.json",
+          "afterSha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308",
+          "changed": false
+        }
+      ]
+    },
+    {
+      "port": "端-家长",
+      "sourceVersion": "v0.5",
+      "candidateVersion": "v0.6",
+      "sourceRoot": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5",
+      "candidateSnapshotRoot": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6",
+      "fileCount": 54,
+      "changedFileCount": 5,
+      "files": [
+        {
+          "relativePath": "index.html",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\index.html",
+          "beforeSha256": "C593D2B2C1FA0C468E85B8BB125DDF465B08437319CFA7B306AF0DDCCBA94D30",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\index.html",
+          "afterSha256": "51F11965B70393E07D699BC0276942074BF34A6C4816A0A6508A39A3E4C03FAD",
+          "changed": true
+        },
+        {
+          "relativePath": "parent.html",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\parent.html",
+          "beforeSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\parent.html",
+          "afterSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+          "changed": false
+        },
+        {
+          "relativePath": "teacher.html",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\teacher.html",
+          "beforeSha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\teacher.html",
+          "afterSha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1",
+          "changed": false
+        },
+        {
+          "relativePath": "定版信息.md",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\定版信息.md",
+          "beforeSha256": "24A3DCF82CEAB2B5D4D335B05A57D8EE30AF8EC86039C693D2820C80C5218C15",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\定版信息.md",
+          "afterSha256": "1D3A9DC9D9F7258A5989CBD32A77173FC52AF964D859E56F6348CA3EE9CD0778",
+          "changed": true
+        },
+        {
+          "relativePath": "assets\\avatar-boy.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\avatar-boy.png",
+          "beforeSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\avatar-boy.png",
+          "afterSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-girl.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\avatar-girl.png",
+          "beforeSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\avatar-girl.png",
+          "afterSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-man.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\avatar-man.png",
+          "beforeSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\avatar-man.png",
+          "afterSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-walle.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\avatar-walle.jpg",
+          "beforeSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\avatar-walle.jpg",
+          "afterSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\avatar-woman.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\avatar-woman.png",
+          "beforeSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\avatar-woman.png",
+          "afterSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\banner-badge.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\banner-badge.jpg",
+          "beforeSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\banner-badge.jpg",
+          "afterSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\changelog-hero.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\changelog-hero.jpg",
+          "beforeSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\changelog-hero.jpg",
+          "afterSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\demo-feature-bridge.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\demo-feature-bridge.js",
+          "beforeSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\demo-feature-bridge.js",
+          "afterSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\demo-panel.css",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\demo-panel.css",
+          "beforeSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\demo-panel.css",
+          "afterSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\demo-panel.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\demo-panel.js",
+          "beforeSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\demo-panel.js",
+          "afterSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\dtp.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\dtp.js",
+          "beforeSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\dtp.js",
+          "afterSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\duty-store.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\duty-store.js",
+          "beforeSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\duty-store.js",
+          "afterSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\gate-snap1.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\gate-snap1.jpg",
+          "beforeSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\gate-snap1.jpg",
+          "afterSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\gate-snap2.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\gate-snap2.jpg",
+          "beforeSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\gate-snap2.jpg",
+          "afterSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\gate-snap3.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\gate-snap3.jpg",
+          "beforeSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\gate-snap3.jpg",
+          "afterSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-config.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\help-config.js",
+          "beforeSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\help-config.js",
+          "afterSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-feedback.svg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\help-feedback.svg",
+          "beforeSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\help-feedback.svg",
+          "afterSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-phone.svg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\help-phone.svg",
+          "beforeSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\help-phone.svg",
+          "afterSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\help-v1.css",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\help-v1.css",
+          "beforeSha256": "B3F169DEAE0D41D58C2C7BEB9A679E94F93336F6DEDC64789CC237A1D121149D",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\help-v1.css",
+          "afterSha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF",
+          "changed": true
+        },
+        {
+          "relativePath": "assets\\help-v1.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\help-v1.js",
+          "beforeSha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\help-v1.js",
+          "afterSha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B",
+          "changed": true
+        },
+        {
+          "relativePath": "assets\\icon-addchild.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-addchild.png",
+          "beforeSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-addchild.png",
+          "afterSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-badge.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-badge.png",
+          "beforeSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-badge.png",
+          "afterSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-checkin.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-checkin.png",
+          "beforeSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-checkin.png",
+          "afterSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-dismiss.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-dismiss.png",
+          "beforeSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-dismiss.png",
+          "afterSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-help.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-help.png",
+          "beforeSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-help.png",
+          "afterSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-invite.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-invite.png",
+          "beforeSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-invite.png",
+          "afterSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-leave.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-leave.png",
+          "beforeSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-leave.png",
+          "afterSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\icon-switch.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\icon-switch.png",
+          "beforeSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\icon-switch.png",
+          "afterSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\leave-store.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\leave-store.js",
+          "beforeSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\leave-store.js",
+          "afterSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\legal.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\legal.js",
+          "beforeSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\legal.js",
+          "afterSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\login-bg.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\login-bg.jpg",
+          "beforeSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\login-bg.jpg",
+          "afterSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\logo.png",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\logo.png",
+          "beforeSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\logo.png",
+          "afterSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\notice-entry.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\notice-entry.js",
+          "beforeSha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\notice-entry.js",
+          "afterSha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\notice-host-bridge.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\notice-host-bridge.js",
+          "beforeSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\notice-host-bridge.js",
+          "afterSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\parent.css",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\parent.css",
+          "beforeSha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\parent.css",
+          "afterSha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\parent.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\parent.js",
+          "beforeSha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\parent.js",
+          "afterSha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-cap.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-cap.jpg",
+          "beforeSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-cap.jpg",
+          "afterSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-duo.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-duo.jpg",
+          "beforeSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-duo.jpg",
+          "afterSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-full.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-full.jpg",
+          "beforeSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-full.jpg",
+          "afterSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-glasses.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-glasses.jpg",
+          "beforeSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-glasses.jpg",
+          "afterSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-qing.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-qing.jpg",
+          "beforeSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-qing.jpg",
+          "afterSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-sample.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-sample.jpg",
+          "beforeSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-sample.jpg",
+          "afterSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-side.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-side.jpg",
+          "beforeSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-side.jpg",
+          "afterSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\photo-upload.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\photo-upload.jpg",
+          "beforeSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\photo-upload.jpg",
+          "afterSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\sky-clouds.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\sky-clouds.jpg",
+          "beforeSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\sky-clouds.jpg",
+          "afterSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\sky-me.jpg",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\sky-me.jpg",
+          "beforeSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\sky-me.jpg",
+          "afterSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+          "changed": false
+        },
+        {
+          "relativePath": "assets\\update-check.js",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\assets\\update-check.js",
+          "beforeSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\assets\\update-check.js",
+          "afterSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+          "changed": false
+        },
+        {
+          "relativePath": "资料\\来源与范围.md",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\资料\\来源与范围.md",
+          "beforeSha256": "6941A964FE341D546CF32E71DC7E83D104C83FA45CAA626DD2FFCD5EF2DB47AF",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\资料\\来源与范围.md",
+          "afterSha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334",
+          "changed": true
+        },
+        {
+          "relativePath": "资料\\继承版本定版信息-v1.2.md",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\资料\\继承版本定版信息-v1.2.md",
+          "beforeSha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\资料\\继承版本定版信息-v1.2.md",
+          "afterSha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814",
+          "changed": false
+        },
+        {
+          "relativePath": "资料\\页面清单.json",
+          "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\端-家长\\版本-v0.5\\资料\\页面清单.json",
+          "beforeSha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836",
+          "afterPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\端-家长\\版本-v0.6\\资料\\页面清单.json",
+          "afterSha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836",
+          "changed": false
+        }
+      ]
+    }
+  ],
+  "modifiedProjectFiles": [
+    {
+      "path": "原型协作说明.md",
+      "beforeSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\原型协作说明.md",
+      "beforeSha256": "BB9F525C4533DA04B59317E74883619E6119473DA9A6E226352BCC1B6F141D55",
+      "afterPath": "原型协作说明.md",
+      "afterSha256": "BEAD3A497F579A64E2D0465C07A5AEB26A055BE8C98D9E5C947E708B68D8D060",
+      "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\原型协作说明.md"
+    },
+    {
+      "path": "项目管理\\任务登记.md",
+      "beforeSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\项目管理\\任务登记.md",
+      "beforeSha256": "8AF9826A451FCC257BF72870DB172F4A8C096AF4C836B21A98D2B50A26B27007",
+      "afterPath": "项目管理\\任务登记.md",
+      "afterSha256": "ED374D85B9D83F38147C79FADEE5981E5EACC8C8BD11DE94B5EA6AD6BFF6E2C2",
+      "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\项目管理\\任务登记.md"
+    },
+    {
+      "path": "项目管理\\待办清单.md",
+      "beforeSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\项目管理\\待办清单.md",
+      "beforeSha256": "1BBD57F202C44A6BD68ED54C457C8B196EF62FDC508EFFD69E781EB840A039E1",
+      "afterPath": "项目管理\\待办清单.md",
+      "afterSha256": "93596AF472F188890C29F06FE39B868A517AC3CD44D7332BFBB07EC88F1A7CFC",
+      "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\项目管理\\待办清单.md"
+    },
+    {
+      "path": "项目管理\\里程碑.md",
+      "beforeSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\项目管理\\里程碑.md",
+      "beforeSha256": "A4BEB17B59DC1E204C2C45780D94683DFEF6E59FF05FBF3B3C0DEC66020AE3DC",
+      "afterPath": "项目管理\\里程碑.md",
+      "afterSha256": "ED862384CC5CD69CD2A8A7C04433EC831654626DA1EE85E677B89C79C7EABC2C",
+      "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\项目管理\\里程碑.md"
+    },
+    {
+      "path": "项目管理\\风险登记.md",
+      "beforeSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\项目管理\\风险登记.md",
+      "beforeSha256": "063AD1529E4B9FE521DC3BCD483B1868296DAFE62710B83943F60E8257A375D5",
+      "afterPath": "项目管理\\风险登记.md",
+      "afterSha256": "5A9E885F7E7FA1FD518C0A7053431BC106F537893C7FB3602AF96BB09EA952C6",
+      "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\项目管理\\风险登记.md"
+    },
+    {
+      "path": "记忆库\\项目记忆\\技术约束.md",
+      "beforeSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\记忆库\\项目记忆\\技术约束.md",
+      "beforeSha256": "DC09123677E80EF6A5420B2204047C42981A6FBC21DA854D90AF9146F34A20EF",
+      "afterPath": "记忆库\\项目记忆\\技术约束.md",
+      "afterSha256": "DB1469A09A06CB30B32154916B2C8F3D1C8E422227A032AAB49E644F6B8E9428",
+      "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\记忆库\\项目记忆\\技术约束.md"
+    },
+    {
+      "path": "记忆库\\项目记忆\\非正式共识.md",
+      "beforeSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\记忆库\\项目记忆\\非正式共识.md",
+      "beforeSha256": "482E4ECF27CA09E3B3F69271D2717568883A90CA1789077180223BF9A85B0E74",
+      "afterPath": "记忆库\\项目记忆\\非正式共识.md",
+      "afterSha256": "A6B3963BE57BCD1CF7C30CCC757C291A5718D32F2331CFD4EB2DE7C58BD3CE4A",
+      "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\记忆库\\项目记忆\\非正式共识.md"
+    }
+  ],
+  "log": {
+    "beforePath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改前\\原项目管理与记忆\\日志管理.md",
+    "beforeSha256": "2971393714CB2323D3FB1B5E0E7875DB554B208D0762BE133CDA65A5847E1BC3",
+    "afterSnapshotPath": "版本快照\\V-20261116-02-小程序客户反馈字段与权限展示\\修改后\\原项目管理与记忆\\日志管理.md",
+    "afterSha256": "DE21965D13136B19C0C636F561F0CA643F0CACB20D435C129790A0F26F14F7AD",
+    "mainWriteLast": "日志管理.md"
+  },
+  "snapshotIndex": {
+    "beforeSha256": "6574513D3567C341FB2F0D8602388AA37738B62C90994A409DF47FD2092A5CE6",
+    "afterSnapshotPath": "版本快照/V-20261116-02-小程序客户反馈字段与权限展示/修改后/原项目管理与记忆/版本快照/快照索引.md",
+    "selfSha256Omitted": true
+  },
+  "newTaskFiles": [
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\任务信息.md",
+      "sha256": "C14DCE38C73BEE81BD079AFAA017C57E2C04DCA6A15EDF799DE5D51B06F82310"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\变更记录.md",
+      "sha256": "96B9D0E88927743C2D644922D2E24ED64D5406DCDBF75188D7C6906DC117E517"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\验证结果.md",
+      "sha256": "CC792C2584BC899583798C7FAA2DBE30DD02CBC82E41BF660BC9156AB2806DD8"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\index.html",
+      "sha256": "51F11965B70393E07D699BC0276942074BF34A6C4816A0A6508A39A3E4C03FAD"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\parent.html",
+      "sha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\teacher.html",
+      "sha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\定版信息.md",
+      "sha256": "1D3A9DC9D9F7258A5989CBD32A77173FC52AF964D859E56F6348CA3EE9CD0778"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\avatar-boy.png",
+      "sha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\avatar-girl.png",
+      "sha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\avatar-man.png",
+      "sha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\avatar-walle.jpg",
+      "sha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\avatar-woman.png",
+      "sha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\banner-badge.jpg",
+      "sha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\changelog-hero.jpg",
+      "sha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\demo-feature-bridge.js",
+      "sha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\demo-panel.css",
+      "sha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\demo-panel.js",
+      "sha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\dtp.js",
+      "sha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\duty-store.js",
+      "sha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\gate-snap1.jpg",
+      "sha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\gate-snap2.jpg",
+      "sha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\gate-snap3.jpg",
+      "sha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\help-config.js",
+      "sha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\help-feedback.svg",
+      "sha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\help-phone.svg",
+      "sha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\help-v1.css",
+      "sha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\help-v1.js",
+      "sha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-addchild.png",
+      "sha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-badge.png",
+      "sha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-checkin.png",
+      "sha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-dismiss.png",
+      "sha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-help.png",
+      "sha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-invite.png",
+      "sha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-leave.png",
+      "sha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\icon-switch.png",
+      "sha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\leave-store.js",
+      "sha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\legal.js",
+      "sha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\login-bg.jpg",
+      "sha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\logo.png",
+      "sha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\notice-entry.js",
+      "sha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\notice-host-bridge.js",
+      "sha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\parent.css",
+      "sha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\parent.js",
+      "sha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-cap.jpg",
+      "sha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-duo.jpg",
+      "sha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-full.jpg",
+      "sha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-glasses.jpg",
+      "sha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-qing.jpg",
+      "sha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-sample.jpg",
+      "sha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-side.jpg",
+      "sha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\photo-upload.jpg",
+      "sha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\sky-clouds.jpg",
+      "sha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\sky-me.jpg",
+      "sha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\assets\\update-check.js",
+      "sha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\资料\\来源与范围.md",
+      "sha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\资料\\继承版本定版信息-v1.2.md",
+      "sha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\资料\\页面清单.json",
+      "sha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\index.html",
+      "sha256": "3F48693C03EA98078E6585AB8B66DA23CA9C46A7D71A56FCC836C1B5779DB45B"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\parent.html",
+      "sha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\teacher.html",
+      "sha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\定版信息.md",
+      "sha256": "414FA9493FFE987BEADF7BAEC6A43C3FE43E7C0F31069E8EA7E86F58670834CF"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\avatar-boy.png",
+      "sha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\avatar-girl.png",
+      "sha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\avatar-man.png",
+      "sha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\avatar-walle.jpg",
+      "sha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\avatar-woman.png",
+      "sha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\banner-badge.jpg",
+      "sha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\changelog-hero.jpg",
+      "sha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\demo-feature-bridge.js",
+      "sha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\demo-panel.css",
+      "sha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\demo-panel.js",
+      "sha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\dtp.js",
+      "sha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\duty-store.js",
+      "sha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\gate-snap1.jpg",
+      "sha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\gate-snap2.jpg",
+      "sha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\gate-snap3.jpg",
+      "sha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\help-config.js",
+      "sha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\help-feedback.svg",
+      "sha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\help-phone.svg",
+      "sha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\help-v1.css",
+      "sha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\help-v1.js",
+      "sha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-addchild.png",
+      "sha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-badge.png",
+      "sha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-checkin.png",
+      "sha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-dismiss.png",
+      "sha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-help.png",
+      "sha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-invite.png",
+      "sha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-leave.png",
+      "sha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\icon-switch.png",
+      "sha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\leave-store.js",
+      "sha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\legal.js",
+      "sha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\login-bg.jpg",
+      "sha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\logo.png",
+      "sha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\notice-entry.js",
+      "sha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\notice-host-bridge.js",
+      "sha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-cap.jpg",
+      "sha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-duo.jpg",
+      "sha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-full.jpg",
+      "sha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-glasses.jpg",
+      "sha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-qing.jpg",
+      "sha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-sample.jpg",
+      "sha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-side.jpg",
+      "sha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\photo-upload.jpg",
+      "sha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\sky-clouds.jpg",
+      "sha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\sky-me.jpg",
+      "sha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\teacher.css",
+      "sha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\teacher.js",
+      "sha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\assets\\update-check.js",
+      "sha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\资料\\来源与范围.md",
+      "sha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\资料\\继承版本定版信息-v1.2.md",
+      "sha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\资料\\页面清单.json",
+      "sha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\资料\\原型字段映射与权限规则.md",
+      "sha256": "62DD806E3278408F1279CD49E9B5A35C1C3F6A1B11A3B58FA3AAAE245D0CCB65"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\资料\\版本引用与哈希.json",
+      "sha256": "3430122B90F5A2967D850900D2DACC69E52E3CB3EBBAD5615A26857B11426905"
+    },
+    {
+      "path": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\资料\\资料总索引.md",
+      "sha256": "4034A116DA7D0B69060AB08118ADA4B72E2FA71171519E34D173CAAB296316BD"
+    }
+  ]
+}

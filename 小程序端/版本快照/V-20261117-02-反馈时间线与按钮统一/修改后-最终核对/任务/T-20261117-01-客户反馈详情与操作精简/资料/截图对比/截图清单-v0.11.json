@@ -1,0 +1,345 @@
+{
+  "task": "T-20261117-01",
+  "date": "2026-11-17",
+  "capture": "浏览器桌面尺寸呈现原型手机壳后，按手机框元素边界截取；无框外桌面空白。",
+  "sets": {
+    "firstPhaseOriginal": 5,
+    "previousCandidateV010": 16,
+    "currentCandidateV011": 16
+  },
+  "images": [
+    {
+      "set": "原",
+      "fileName": "原-家长-反馈详情.png",
+      "relativePath": "资料/截图对比/原/原-家长-反馈详情.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 24694,
+      "sha256": "9194FD9BD2E65EF8F4E2AA8B71F5EED947F5BF24275F6159CA59A33966757433"
+    },
+    {
+      "set": "原",
+      "fileName": "原-家长-帮助页.png",
+      "relativePath": "资料/截图对比/原/原-家长-帮助页.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 46558,
+      "sha256": "1E6870D3D60E214B0753EE6F3A8D284F444D21BF9B03B154FB4DA798DA0B6D5A"
+    },
+    {
+      "set": "原",
+      "fileName": "原-家长-我的反馈列表.png",
+      "relativePath": "资料/截图对比/原/原-家长-我的反馈列表.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 39745,
+      "sha256": "152BF4B508D41FAB5A5779AB71FCF3E2F9B22407E19D30000552AC6C1308AAE1"
+    },
+    {
+      "set": "原",
+      "fileName": "原-家长-提交反馈半屏.png",
+      "relativePath": "资料/截图对比/原/原-家长-提交反馈半屏.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 95011,
+      "sha256": "13A6F87ABBA21E456DD3DB704CDB5C9AB0B3E9B049BC6F1236E7452BE4288BE1"
+    },
+    {
+      "set": "原",
+      "fileName": "原-教师-帮助页无反馈入口.png",
+      "relativePath": "资料/截图对比/原/原-教师-帮助页无反馈入口.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 48484,
+      "sha256": "524C97C34DF33572A8B14C0697B2AEAE1514ABEE4F216420CB0E7B7306D4BFCA"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-已回复详情与撤回置灰.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-已回复详情与撤回置灰.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 65149,
+      "sha256": "7D034DD947BDD468D46B370C895CDD95B0F1FDB9EF84ED0E4C9532A8AA1CE102"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-帮助反馈入口.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-帮助反馈入口.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 54276,
+      "sha256": "22877E6C69F3C5D45DA5DBB5F1FBE194F89847F32323913F3184812F73CC1BC5"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-待回复详情双按钮.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-待回复详情双按钮.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 49210,
+      "sha256": "FA04AB86DD7E0A19F4D78B02B5391EFCCA178E9B2FAC20B63AA41791217AEB33"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-我的反馈列表.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-我的反馈列表.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 63598,
+      "sha256": "1118FD5050793627ACBE74441CD33C396C7F3B7B3854EB8F92026C8DA4C7B23A"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-提交反馈九图表单.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-提交反馈九图表单.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 38199,
+      "sha256": "339F0A45D5A95626DC888377B95E61779C9D444D8CA639075BC551FBF724D58E"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-撤回确认弹窗.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-撤回确认弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 49200,
+      "sha256": "359B56EEC5CCEE2EC823A339C87DC184792C4FDB186DAD7922FFCF8B1E0F28EF"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-追问弹窗.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-追问弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 52432,
+      "sha256": "58EC881A2D220A9B8A2BD4968C95694FF286678574327D411848A04AF0ECF534"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-家长-追问附件图片.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-家长-追问附件图片.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 52432,
+      "sha256": "58EC881A2D220A9B8A2BD4968C95694FF286678574327D411848A04AF0ECF534"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-已回复详情与撤回置灰.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-已回复详情与撤回置灰.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 62221,
+      "sha256": "0E989B9304B31D1F1FEB7A8A932F8A836E1EA9E749C175BA5DB32BF9E8ABEB1D"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-帮助反馈入口.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-帮助反馈入口.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 54270,
+      "sha256": "E107F75B3060A586A20A6226DB9842B6A05A1A21E92B16C50227B05D4C2B63DF"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-待回复详情双按钮.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-待回复详情双按钮.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 48700,
+      "sha256": "659E1027C5096EDBAD02F51F7E72DCF3438EEF7EB8F309CB5421AF6033ABB75E"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-我的反馈列表.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-我的反馈列表.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 63024,
+      "sha256": "AE8C79AE904E4F60C9856789920EE46732D545712E2AF88589DD2850B85BD351"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-提交反馈九图表单.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-提交反馈九图表单.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 38197,
+      "sha256": "69DF4A224CEBBD8C9E5B0517FB85D7889BFCA466ED024978FA962686884A4849"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-撤回确认弹窗.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-撤回确认弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 48742,
+      "sha256": "84084E408E742956228E6492E743861A673FD6E318ED97ACCEF91D6F7EB10DA4"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-追问弹窗.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-追问弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 52339,
+      "sha256": "6956B2939413552F11312310A39ADBABE2B3EC96FFF2DC43569677F8E8E23062"
+    },
+    {
+      "set": "原-v0.10",
+      "fileName": "原-v0.10-教师-追问附件图片.png",
+      "relativePath": "资料/截图对比/原-v0.10/原-v0.10-教师-追问附件图片.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 52339,
+      "sha256": "6956B2939413552F11312310A39ADBABE2B3EC96FFF2DC43569677F8E8E23062"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-已回复详情与撤回置灰.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-已回复详情与撤回置灰.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 60338,
+      "sha256": "10C0FB7DB119F71276F34ACB64998E80751484983A8F317B28C73AA22D535BE4"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-帮助反馈入口.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-帮助反馈入口.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 54276,
+      "sha256": "22877E6C69F3C5D45DA5DBB5F1FBE194F89847F32323913F3184812F73CC1BC5"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-待回复详情双按钮.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-待回复详情双按钮.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 49496,
+      "sha256": "0B484E08C8C0899081D90877C787610D392C11D8C958748A325A87730A6C336B"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-我的反馈列表.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-我的反馈列表.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 61877,
+      "sha256": "D7C27E142076B7E60C1007D03A8D3BB0E8C9AECB8E9EAB62C7ECFD434225D9E8"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-提交反馈九图表单.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-提交反馈九图表单.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 38199,
+      "sha256": "339F0A45D5A95626DC888377B95E61779C9D444D8CA639075BC551FBF724D58E"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-撤回确认弹窗.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-撤回确认弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 49067,
+      "sha256": "FABFFFC761DC155D29501DA6086E5822AFC8B13A55E5E3BDF674AF24E95F4DB6"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-追问弹窗.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-追问弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 53768,
+      "sha256": "B7CCCC61BE3817D37529F9FCD3F5BC91AC5C57D980714F97990F4B80A509733E"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-家长-追问附件图片.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-家长-追问附件图片.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 48850,
+      "sha256": "1D486681ED61F2A4F21EE09700E9D4E3C7C5593FC1D51DDC01DB11DD30616AC3"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-已回复详情与撤回置灰.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-已回复详情与撤回置灰.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 57538,
+      "sha256": "5E4466873FE90012564739347A6FBC1997190422EF535DB0F8809654277BF5F1"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-帮助反馈入口.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-帮助反馈入口.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 54270,
+      "sha256": "E107F75B3060A586A20A6226DB9842B6A05A1A21E92B16C50227B05D4C2B63DF"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-待回复详情双按钮.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-待回复详情双按钮.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 49437,
+      "sha256": "1121645C960E6A5F8DC7C4BCFA4ECC7A63E0736A1418A4EB08709804663D23A0"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-我的反馈列表.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-我的反馈列表.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 61287,
+      "sha256": "9896AE94DA9E8CC4F5E35E1D762302BE6EECC26DEF2233E9169339467BFC892E"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-提交反馈九图表单.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-提交反馈九图表单.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 38197,
+      "sha256": "69DF4A224CEBBD8C9E5B0517FB85D7889BFCA466ED024978FA962686884A4849"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-撤回确认弹窗.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-撤回确认弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 49132,
+      "sha256": "464FAF57A8F6B40B47B083C99511D1A0E90C809B00E36D9C7193B8CF3A805B5B"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-追问弹窗.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-追问弹窗.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 52922,
+      "sha256": "5FD04A8B53DD93A0E2C1792ACFA5D73D6448A5870FBF0AED622F2D991E225B80"
+    },
+    {
+      "set": "现-v0.11",
+      "fileName": "现-v0.11-教师-追问附件图片.png",
+      "relativePath": "资料/截图对比/现-v0.11/现-v0.11-教师-追问附件图片.png",
+      "width": 309,
+      "height": 669,
+      "bytes": 48699,
+      "sha256": "58D2375882602C2918099DFE77E59785C0B1F18756E23B6B6FC5140E4EF25075"
+    }
+  ]
+}

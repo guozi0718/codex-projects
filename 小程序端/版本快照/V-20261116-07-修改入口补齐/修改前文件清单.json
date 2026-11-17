@@ -1,0 +1,97 @@
+[
+  {
+    "relativePath": "项目管理\\任务登记.md",
+    "sha256": "0A70976BDA1FBFCAE3933B95844E0536226D3E268BC04BD1D32284D1A6A50685",
+    "size": 7724
+  },
+  {
+    "relativePath": "项目管理\\待办清单.md",
+    "sha256": "9561B34490A513C4B4268607763E6D2B0E10A11DF0B54A1DCA329A97DC6DA505",
+    "size": 4965
+  },
+  {
+    "relativePath": "项目管理\\里程碑.md",
+    "sha256": "D8F15137727BB1F3E131592E6CD02E4BB595E1FF41C25ED1F6BE86BA8D1FEEBA",
+    "size": 3937
+  },
+  {
+    "relativePath": "项目管理\\风险登记.md",
+    "sha256": "EDE010EAADE46B438697FE41FC3BD82C2528148DBE6E0C60221E0C30CE8F9C29",
+    "size": 5205
+  },
+  {
+    "relativePath": "记忆库\\项目记忆\\非正式共识.md",
+    "sha256": "FA0717B098191D696DB2C71EDBB1F25F1799CC5B472B10644E5B645B18C50A96",
+    "size": 3549
+  },
+  {
+    "relativePath": "版本快照\\快照索引.md",
+    "sha256": "75E83F2FC1240D6FDA1E24F7A4587601C740E580DF763B2FCBB4B7645D40B8B2",
+    "size": 134777
+  },
+  {
+    "relativePath": "日志管理.md",
+    "sha256": "B62F4B6F4BE7D1D1F96012FE5FF6CA80D6D1812B602BF084F0E3CA036644083E",
+    "size": 13570
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\任务信息.md",
+    "sha256": "8C2917A85539362D36168F7FEF0677173AD57FDAC87616E0CEFEA2C7AD72F681",
+    "size": 3696
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\变更记录.md",
+    "sha256": "AEFDCD5CA8A3EB44718CA4A5ABCADDB1202F27EAA78A09698A41AB6D6DDA260A",
+    "size": 2408
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\验证结果.md",
+    "sha256": "F8EA18AF47656280ABE034905DB2F814AA5A68BD2036BF372CF322EF6A1F6E59",
+    "size": 1336
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\资料\\提交反馈演示说明.md",
+    "sha256": "60B678140C05B07EFC540370152BFF9CB28C17C41917C5A14ACA41080EFA36C5",
+    "size": 4568
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-家长\\版本-v0.7\\index.html",
+    "sha256": "613259AA66705C5A0776D87E8895519BA6E23BA2E604A9CC5AF61918443E3EF6",
+    "size": 385319
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-家长\\版本-v0.7\\定版信息.md",
+    "sha256": "7AA1B52F64A12755C3D3D0BA5C21FEAC9B1E7FDC66DEBF1B7598E6013BDDBF04",
+    "size": 1028
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-家长\\版本-v0.7\\assets\\help-v1.js",
+    "sha256": "E2F5941B7AABAB02B507971677A4B7AF572B801FB9E849AB003092675822CA34",
+    "size": 28653
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-家长\\版本-v0.7\\assets\\help-v1.css",
+    "sha256": "56B719F50F2563BC367F0ED1FA9DF863C2B55C9FAB79EC0E60D19A26FAD6DCB1",
+    "size": 12148
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-教师\\版本-v0.7\\index.html",
+    "sha256": "DD15A51577A6231EA5FA23A2FA78E91E31256868992041BF57667A61E7B13F7A",
+    "size": 280331
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-教师\\版本-v0.7\\定版信息.md",
+    "sha256": "88D5BBBB9C335634705D9F7AA9B75476EDE69F3DE275E3717BABC0E1C810556C",
+    "size": 1039
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-教师\\版本-v0.7\\assets\\help-v1.js",
+    "sha256": "E2F5941B7AABAB02B507971677A4B7AF572B801FB9E849AB003092675822CA34",
+    "size": 28653
+  },
+  {
+    "relativePath": "任务\\T-20261116-04-反馈建议表单与演示说明补齐\\端-教师\\版本-v0.7\\assets\\help-v1.css",
+    "sha256": "56B719F50F2563BC367F0ED1FA9DF863C2B55C9FAB79EC0E60D19A26FAD6DCB1",
+    "size": 12148
+  }
+]

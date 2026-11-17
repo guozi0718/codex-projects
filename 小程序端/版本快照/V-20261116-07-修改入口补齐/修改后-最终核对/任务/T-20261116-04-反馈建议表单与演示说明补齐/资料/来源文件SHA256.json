@@ -1,0 +1,542 @@
+[
+  {
+    "role": "教师",
+    "path": "index.html",
+    "sha256": "3F48693C03EA98078E6585AB8B66DA23CA9C46A7D71A56FCC836C1B5779DB45B"
+  },
+  {
+    "role": "教师",
+    "path": "parent.html",
+    "sha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E"
+  },
+  {
+    "role": "教师",
+    "path": "teacher.html",
+    "sha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F"
+  },
+  {
+    "role": "教师",
+    "path": "定版信息.md",
+    "sha256": "414FA9493FFE987BEADF7BAEC6A43C3FE43E7C0F31069E8EA7E86F58670834CF"
+  },
+  {
+    "role": "教师",
+    "path": "assets/avatar-boy.png",
+    "sha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7"
+  },
+  {
+    "role": "教师",
+    "path": "assets/avatar-girl.png",
+    "sha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB"
+  },
+  {
+    "role": "教师",
+    "path": "assets/avatar-man.png",
+    "sha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847"
+  },
+  {
+    "role": "教师",
+    "path": "assets/avatar-walle.jpg",
+    "sha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F"
+  },
+  {
+    "role": "教师",
+    "path": "assets/avatar-woman.png",
+    "sha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032"
+  },
+  {
+    "role": "教师",
+    "path": "assets/banner-badge.jpg",
+    "sha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D"
+  },
+  {
+    "role": "教师",
+    "path": "assets/changelog-hero.jpg",
+    "sha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F"
+  },
+  {
+    "role": "教师",
+    "path": "assets/demo-feature-bridge.js",
+    "sha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB"
+  },
+  {
+    "role": "教师",
+    "path": "assets/demo-panel.css",
+    "sha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73"
+  },
+  {
+    "role": "教师",
+    "path": "assets/demo-panel.js",
+    "sha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC"
+  },
+  {
+    "role": "教师",
+    "path": "assets/dtp.js",
+    "sha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E"
+  },
+  {
+    "role": "教师",
+    "path": "assets/duty-store.js",
+    "sha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA"
+  },
+  {
+    "role": "教师",
+    "path": "assets/gate-snap1.jpg",
+    "sha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA"
+  },
+  {
+    "role": "教师",
+    "path": "assets/gate-snap2.jpg",
+    "sha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA"
+  },
+  {
+    "role": "教师",
+    "path": "assets/gate-snap3.jpg",
+    "sha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D"
+  },
+  {
+    "role": "教师",
+    "path": "assets/help-config.js",
+    "sha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0"
+  },
+  {
+    "role": "教师",
+    "path": "assets/help-feedback.svg",
+    "sha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C"
+  },
+  {
+    "role": "教师",
+    "path": "assets/help-phone.svg",
+    "sha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076"
+  },
+  {
+    "role": "教师",
+    "path": "assets/help-v1.css",
+    "sha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF"
+  },
+  {
+    "role": "教师",
+    "path": "assets/help-v1.js",
+    "sha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-addchild.png",
+    "sha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-badge.png",
+    "sha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-checkin.png",
+    "sha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-dismiss.png",
+    "sha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-help.png",
+    "sha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-invite.png",
+    "sha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-leave.png",
+    "sha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421"
+  },
+  {
+    "role": "教师",
+    "path": "assets/icon-switch.png",
+    "sha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA"
+  },
+  {
+    "role": "教师",
+    "path": "assets/leave-store.js",
+    "sha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462"
+  },
+  {
+    "role": "教师",
+    "path": "assets/legal.js",
+    "sha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C"
+  },
+  {
+    "role": "教师",
+    "path": "assets/login-bg.jpg",
+    "sha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0"
+  },
+  {
+    "role": "教师",
+    "path": "assets/logo.png",
+    "sha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45"
+  },
+  {
+    "role": "教师",
+    "path": "assets/notice-entry.js",
+    "sha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE"
+  },
+  {
+    "role": "教师",
+    "path": "assets/notice-host-bridge.js",
+    "sha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-cap.jpg",
+    "sha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-duo.jpg",
+    "sha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-full.jpg",
+    "sha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-glasses.jpg",
+    "sha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-qing.jpg",
+    "sha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-sample.jpg",
+    "sha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-side.jpg",
+    "sha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E"
+  },
+  {
+    "role": "教师",
+    "path": "assets/photo-upload.jpg",
+    "sha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C"
+  },
+  {
+    "role": "教师",
+    "path": "assets/sky-clouds.jpg",
+    "sha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114"
+  },
+  {
+    "role": "教师",
+    "path": "assets/sky-me.jpg",
+    "sha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C"
+  },
+  {
+    "role": "教师",
+    "path": "assets/teacher.css",
+    "sha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155"
+  },
+  {
+    "role": "教师",
+    "path": "assets/teacher.js",
+    "sha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037"
+  },
+  {
+    "role": "教师",
+    "path": "assets/update-check.js",
+    "sha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E"
+  },
+  {
+    "role": "教师",
+    "path": "资料/来源与范围.md",
+    "sha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334"
+  },
+  {
+    "role": "教师",
+    "path": "资料/继承版本定版信息-v1.2.md",
+    "sha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653"
+  },
+  {
+    "role": "教师",
+    "path": "资料/页面清单.json",
+    "sha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308"
+  },
+  {
+    "role": "家长",
+    "path": "index.html",
+    "sha256": "51F11965B70393E07D699BC0276942074BF34A6C4816A0A6508A39A3E4C03FAD"
+  },
+  {
+    "role": "家长",
+    "path": "parent.html",
+    "sha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F"
+  },
+  {
+    "role": "家长",
+    "path": "teacher.html",
+    "sha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1"
+  },
+  {
+    "role": "家长",
+    "path": "定版信息.md",
+    "sha256": "1D3A9DC9D9F7258A5989CBD32A77173FC52AF964D859E56F6348CA3EE9CD0778"
+  },
+  {
+    "role": "家长",
+    "path": "assets/avatar-boy.png",
+    "sha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7"
+  },
+  {
+    "role": "家长",
+    "path": "assets/avatar-girl.png",
+    "sha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB"
+  },
+  {
+    "role": "家长",
+    "path": "assets/avatar-man.png",
+    "sha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847"
+  },
+  {
+    "role": "家长",
+    "path": "assets/avatar-walle.jpg",
+    "sha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F"
+  },
+  {
+    "role": "家长",
+    "path": "assets/avatar-woman.png",
+    "sha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032"
+  },
+  {
+    "role": "家长",
+    "path": "assets/banner-badge.jpg",
+    "sha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D"
+  },
+  {
+    "role": "家长",
+    "path": "assets/changelog-hero.jpg",
+    "sha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F"
+  },
+  {
+    "role": "家长",
+    "path": "assets/demo-feature-bridge.js",
+    "sha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB"
+  },
+  {
+    "role": "家长",
+    "path": "assets/demo-panel.css",
+    "sha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73"
+  },
+  {
+    "role": "家长",
+    "path": "assets/demo-panel.js",
+    "sha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC"
+  },
+  {
+    "role": "家长",
+    "path": "assets/dtp.js",
+    "sha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E"
+  },
+  {
+    "role": "家长",
+    "path": "assets/duty-store.js",
+    "sha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA"
+  },
+  {
+    "role": "家长",
+    "path": "assets/gate-snap1.jpg",
+    "sha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA"
+  },
+  {
+    "role": "家长",
+    "path": "assets/gate-snap2.jpg",
+    "sha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA"
+  },
+  {
+    "role": "家长",
+    "path": "assets/gate-snap3.jpg",
+    "sha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D"
+  },
+  {
+    "role": "家长",
+    "path": "assets/help-config.js",
+    "sha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0"
+  },
+  {
+    "role": "家长",
+    "path": "assets/help-feedback.svg",
+    "sha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C"
+  },
+  {
+    "role": "家长",
+    "path": "assets/help-phone.svg",
+    "sha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076"
+  },
+  {
+    "role": "家长",
+    "path": "assets/help-v1.css",
+    "sha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF"
+  },
+  {
+    "role": "家长",
+    "path": "assets/help-v1.js",
+    "sha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-addchild.png",
+    "sha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-badge.png",
+    "sha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-checkin.png",
+    "sha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-dismiss.png",
+    "sha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-help.png",
+    "sha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-invite.png",
+    "sha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-leave.png",
+    "sha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421"
+  },
+  {
+    "role": "家长",
+    "path": "assets/icon-switch.png",
+    "sha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA"
+  },
+  {
+    "role": "家长",
+    "path": "assets/leave-store.js",
+    "sha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462"
+  },
+  {
+    "role": "家长",
+    "path": "assets/legal.js",
+    "sha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C"
+  },
+  {
+    "role": "家长",
+    "path": "assets/login-bg.jpg",
+    "sha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0"
+  },
+  {
+    "role": "家长",
+    "path": "assets/logo.png",
+    "sha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45"
+  },
+  {
+    "role": "家长",
+    "path": "assets/notice-entry.js",
+    "sha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6"
+  },
+  {
+    "role": "家长",
+    "path": "assets/notice-host-bridge.js",
+    "sha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C"
+  },
+  {
+    "role": "家长",
+    "path": "assets/parent.css",
+    "sha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554"
+  },
+  {
+    "role": "家长",
+    "path": "assets/parent.js",
+    "sha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-cap.jpg",
+    "sha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-duo.jpg",
+    "sha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-full.jpg",
+    "sha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-glasses.jpg",
+    "sha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-qing.jpg",
+    "sha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-sample.jpg",
+    "sha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-side.jpg",
+    "sha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E"
+  },
+  {
+    "role": "家长",
+    "path": "assets/photo-upload.jpg",
+    "sha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C"
+  },
+  {
+    "role": "家长",
+    "path": "assets/sky-clouds.jpg",
+    "sha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114"
+  },
+  {
+    "role": "家长",
+    "path": "assets/sky-me.jpg",
+    "sha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C"
+  },
+  {
+    "role": "家长",
+    "path": "assets/update-check.js",
+    "sha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E"
+  },
+  {
+    "role": "家长",
+    "path": "资料/来源与范围.md",
+    "sha256": "DA22849495C6FAFF5DA87DB073014C8D73465EC3DE667CE0800C92C724596334"
+  },
+  {
+    "role": "家长",
+    "path": "资料/继承版本定版信息-v1.2.md",
+    "sha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814"
+  },
+  {
+    "role": "家长",
+    "path": "资料/页面清单.json",
+    "sha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836"
+  }
+]

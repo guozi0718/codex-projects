@@ -1,0 +1,91 @@
+{
+  "task": "T-20261116-08",
+  "version": "v0.10",
+  "capture": "390x844 mobile prototype screen; no empty margins or surrounding desktop canvas",
+  "images": [
+    {
+      "name": "现-v0.10-家长-已回复详情倒序时间线.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 83329,
+      "sha256": "E9678D28526AD608EC25EF50FB8EE2B8FA16F6EC0E5AB6AE953394748AF98C0A"
+    },
+    {
+      "name": "现-v0.10-家长-帮助反馈入口.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 65559,
+      "sha256": "2CFF6A9356C626E3B7F4B9050EE733CCAB3319F203AB678318EC410B5A3B51FF"
+    },
+    {
+      "name": "现-v0.10-家长-我的反馈列表.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 76697,
+      "sha256": "5A6FBF18A78A1279E318D1E6D305149996672773E90FA45B3BB90F7CE581D2C5"
+    },
+    {
+      "name": "现-v0.10-家长-提交反馈九图表单.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 48659,
+      "sha256": "077EF10A81F12D685EC87941E2ABF2E13B830C009A68AF47CC96FF08C1269497"
+    },
+    {
+      "name": "现-v0.10-家长-撤回确认弹窗.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 60317,
+      "sha256": "AF324CE39635976669B15B851CCCDFF5DC2A23DA55D3DCED36D296F6F17050C3"
+    },
+    {
+      "name": "现-v0.10-家长-追问弹窗.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 64193,
+      "sha256": "553BF51A2EBB0D296D162246032404E93A54C57ED066B2266111FA1219743CD5"
+    },
+    {
+      "name": "现-v0.10-教师-已回复详情倒序时间线.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 79465,
+      "sha256": "B19C8C55DDC71D3492091D397406A0704C2BDC0A4F693683FD0D91FBB0ABC590"
+    },
+    {
+      "name": "现-v0.10-教师-帮助反馈入口.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 65558,
+      "sha256": "197F117F50BC303EA7A4613B036F1532DD9CFECB7118C7E29FCE7A28E101350E"
+    },
+    {
+      "name": "现-v0.10-教师-我的反馈列表.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 76294,
+      "sha256": "8F765A1334B90D69CD60E03601666AD8AF1DE49F5B50CBE18682E4588226787E"
+    },
+    {
+      "name": "现-v0.10-教师-提交反馈九图表单.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 48659,
+      "sha256": "077EF10A81F12D685EC87941E2ABF2E13B830C009A68AF47CC96FF08C1269497"
+    },
+    {
+      "name": "现-v0.10-教师-撤回确认弹窗.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 59671,
+      "sha256": "9F330F3DDCE93FD048447EAAABEC61ADA0D731A011AA1B1D68D6A1B73ADC9E45"
+    },
+    {
+      "name": "现-v0.10-教师-追问弹窗.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 64652,
+      "sha256": "6AA6D4C3DAD158C67B1286B1A51243594884579CBCDC5195A70E5FCADF944FBC"
+    }
+  ]
+}

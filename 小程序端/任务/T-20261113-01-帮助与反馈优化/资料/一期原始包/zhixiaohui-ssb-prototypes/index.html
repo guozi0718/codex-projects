@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智小徽 · 产品原型总览</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{
+  /* 对齐家长端「晴空校园」配色：清爽蓝主色 + 金色点缀 + 暖奶油底 */
+  --navy:#2E7CF0; --navy-deep:#1D63D8;
+  --teal:#10B5A2; --cinnabar:#EA4F4A; --amber:#F79A2E;
+  --gold1:#FFD98F; --gold2:#E8A93D;
+  --ink:#233047; --ink-2:#5C6A80; --ink-3:#9AA7BB; --line:#E2EAF4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:linear-gradient(150deg,#DCEBFB 0%,#FDF3E4 100%);min-height:100vh;color:var(--ink);position:relative}
+/* 顶部晴空蓝 hero 带：家长端同款蓝天白云背景（渐变兜底防图片缺失）与底部圆角收边，卡片骑跨边界 */
+body::before{content:"";position:absolute;left:0;right:0;top:0;height:420px;background:linear-gradient(168deg,#6ABAFF 0%,#3D8BFC 60%,#1D63E8 100%);background:url(assets/sky-clouds.jpg) center top/cover no-repeat,linear-gradient(168deg,#6ABAFF 0%,#3D8BFC 60%,#1D63E8 100%);border-radius:0 0 26px 26px}
+.wrap{max-width:1320px;margin:0 auto;padding:56px 28px 70px;position:relative}
+/* 头部 */
+.hd{color:#fff;display:flex;align-items:flex-start;gap:22px;margin-bottom:14px}
+.brand{width:74px;height:74px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(29,99,216,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand img{width:46px;height:auto;display:block}
+.hd h1{font-size:30px;letter-spacing:1px}
+.hd .sub{font-size:13.5px;color:rgba(255,255,255,.78);margin-top:8px;line-height:1.8;max-width:640px}
+.meta{display:flex;gap:10px;margin:18px 0 34px;flex-wrap:wrap}
+.meta span{font-size:12px;color:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:4px 13px;background:rgba(255,255,255,.12)}
+/* 卡片：列数随演示说明开关显示的卡片数自适应（四端全显 4 列，每隐一端减一列，老师端与家长端常显、最少 2 列；见 applyCards 写入的 data-cards） */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:0 auto}
+.cards[data-cards="3"]{grid-template-columns:repeat(3,1fr);max-width:1080px}
+.cards[data-cards="2"]{grid-template-columns:repeat(2,1fr);max-width:760px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(29,99,216,.14);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:.2s;border:1px solid rgba(255,255,255,.6)}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(29,99,216,.22)}
+.card .top{padding:22px 22px 16px;color:#fff;position:relative}
+.card .top .role{font-size:11px;letter-spacing:2px;opacity:.75;white-space:nowrap}
+.card .top h2{font-size:20px;margin-top:5px;padding-right:72px} /* 右侧给设备标签留位 */
+.card .top .dev{position:absolute;right:20px;top:44px;/* 与标题行对齐（2026-10-23 由顶行下移，四列时不再与角色文字重叠） */font-size:11px;border:1px solid rgba(255,255,255,.4);border-radius:12px;padding:3px 10px;color:rgba(255,255,255,.9)}
+/* 顶部渐变对应各端实际主题：运管端深蓝、学校端靛紫、老师端青碧、家长端晴空蓝 */
+.card.t-admin .top{background:linear-gradient(150deg,#5F8DFF,#2458D8)}
+.card.t-school .top{background:linear-gradient(150deg,#9A8CFF,#5B49E0)}
+.card.t-teacher .top{background:linear-gradient(150deg,#2FC9B2,#0B8A7C)}
+.card.t-parent .top{background:linear-gradient(150deg,#6ABAFF,#1D63D8)}
+.card ul{list-style:none;padding:16px 22px 8px;flex:1}
+.card li{font-size:13px;color:var(--ink-2);padding:6.5px 0;border-bottom:1px dashed #EFF4FA;display:flex;gap:9px;line-height:1.55}
+.card li:last-child{border-bottom:none}
+.card li::before{content:"";width:7px;height:8px;clip-path:polygon(50% 0,100% 15%,100% 60%,50% 100%,0 60%,0 15%);background:var(--gold2);flex-shrink:0;margin-top:6px}
+.card .go{margin:10px 22px 20px;text-align:center;border-radius:10px;padding:11px;font-size:14px;font-weight:600;color:#fff;transition:.15s}
+.card.t-admin .go{background:#2F6BFF}
+.card.t-school .go{background:#6A5AE8}
+.card.t-teacher .go{background:var(--teal)}
+.card.t-parent .go{background:var(--navy)}
+.card:active .go{transform:scale(.98)}
+/* 说明 */
+.notes{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 26px;box-shadow:0 2px 10px rgba(29,99,216,.07)}
+.notes h3{font-size:15px;margin-bottom:12px}
+.notes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;font-size:12.5px;color:var(--ink-2);line-height:1.8}
+.notes b{color:var(--ink);display:block;margin-bottom:4px;font-size:13px}
+.notes a{color:var(--navy-deep);font-weight:600;text-decoration:none}
+.notes a:hover{text-decoration:underline}
+.foot{text-align:center;font-size:12px;color:var(--ink-3);margin-top:30px}
+/* 卡片显隐由演示说明内开关控制（localStorage 记忆）：运管端、学校端默认显示；老师端、家长端常显、不设开关（老师端 2026-10-23 去掉开关，旧的 proto-teacher-card 记忆不再读取） */
+body.no-admin .card.t-admin{display:none}
+body.no-school .card.t-school{display:none}
+/* 演示说明（右上角浮动 chip，样式与家长端同款） */
+.demo-fab{position:fixed;top:14px;right:16px;z-index:300}
+.demo-chip{display:flex;align-items:center;gap:7px;background:rgba(15,23,35,.72);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:18px;padding:7px 13px;font-size:12.5px;font-weight:600;backdrop-filter:blur(6px);box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;user-select:none}
+.demo-chip .x{display:inline-flex;width:16px;height:16px;border-radius:50%;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(255,255,255,.45)}
+.demo-pop{display:none;position:absolute;top:42px;right:0;width:288px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 15px;box-shadow:0 14px 40px rgba(29,99,216,.18)}
+.demo-pop.show{display:block;animation:fadein .18s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(-5px)}to{opacity:1}}
+.demo-pop .dt{font-size:12.5px;color:var(--navy);font-weight:600;margin-bottom:4px}
+.demo-pop .dd{font-size:11.5px;color:#5C6A80;line-height:1.65;margin-bottom:10px}
+.demo-pop .sw-row{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#33415E;padding:8px 10px;border:1px solid var(--line);border-radius:9px;margin-bottom:7px;background:#F5F9FE;cursor:pointer;user-select:none;gap:8px}
+.demo-pop .sw{position:relative;width:34px;height:19px;border-radius:10px;background:#C6CCD6;transition:background .18s;flex-shrink:0}
+.demo-pop .sw::after{content:"";position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:#fff;transition:left .18s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.demo-pop .sw.on{background:var(--navy)}
+.demo-pop .sw.on::after{left:17px}
+@media(max-width:1200px){.cards{grid-template-columns:repeat(2,1fr)!important;max-width:760px}}
+@media(max-width:900px){.cards{grid-template-columns:1fr!important;max-width:380px}.notes .grid{grid-template-columns:1fr}body::before{height:460px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="brand"><img src="assets/logo.png" alt="智小徽"></div>
+    <div>
+      <h1>智小徽 · 高保真交互原型</h1>
+      <div class="sub">面向 K12 校园的多租户 IoT + SaaS 平台：无源 RFID 电子校徽 + 人脸融合无感考勤，承载请假、智慧放学、校徽办理与资产生命周期。本页为第一阶段原型入口。</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span>V1.1 · 2026年7月</span><span>第一阶段范围</span><span>无源 UHF + 事件级融合</span><span>云端判定形态</span>
+  </div>
+
+  <div class="cards">
+    <a class='card t-admin' href='admin-trade.html'>
+      <div class="top"><div class="role">PLATFORM OPS · 软硬件服务商</div><h2>运管端 Web</h2><span class="dev">桌面端</span></div>
+      <ul>
+        <li>办理明细：校徽办理主单台账，状态卡片即点即筛，独立详情页（hash 深链）与关联单据互相跳转</li>
+        <li>支付单：一单多笔支付尝试（续付复用、改单换新），业务状态与渠道交易状态分层承载</li>
+        <li>退款单 / 退款流水：按枚勾选自动判定部分/全额，渠道回调级联流转，异常单人工处置</li>
+        <li>办理统计与发票管理，财务结算：对账管理、资金账单</li>
+        <li>客户管理：客户 / 合同 / 开户（监管账号、学校账号）/ 模拟登录</li>
+        <li>设备管理与客服管理：校徽管理、考勤设备、电子班牌；用户反馈、用户数据查询、常见问题配置</li>
+        <li>系统设置：个人中心、角色与账号管理、小程序分享与节假日配置、承运商管理、操作日志（审计留痕实时写入）</li>
+      </ul>
+      <span class="go">进入运管端 →</span>
+    </a>
+    <a class='card t-school' href='school.html'>
+      <div class="top"><div class="role">SCHOOL · 学校管理员</div><h2>学校端 Web</h2><span class="dev">桌面端</span></div>
+      <ul>
+        <li>职务管理：班主任 / 任课老师 / 值周老师 / 全体教职工按班级角色、值周分组与在职状态自动关联；其他职务自定义功能权限（九组权限点）与数据权限（任教班级 / 班主任班级 / 全校 / 指定年级 / 指定班级）</li>
+        <li>职务详情：在任老师添加与移除（提交时按最新数据校验并剔除已持有 / 离职 / 兼任已满的老师）、权限编辑、停用 / 启用 / 删除与防锁死拦截</li>
+        <li>教师管理：教师名单与详情、新增 / 批量导入、分配主职务与兼任（最多 3 项，含已停用）、设为离职 / 恢复在职、注册审核与注册码</li>
+        <li>班级角色：按班维护班主任与任课老师，与老师端名册同源</li>
+        <li>请假管理：全校请假单只读清单与详情（审批、销假在老师端），KPI 卡即点即筛，导出前确认敏感字段</li>
+        <li>操作日志：职务、职务分配、班级角色、教师注册与账号变更、请假单导出实时写入，只读、可筛选导出</li>
+      </ul>
+      <span class="go">进入学校端 →</span>
+    </a>
+    <a class='card t-teacher' href='teacher.html'>
+      <div class="top"><div class="role">TEACHER · 老师 / 班主任</div><h2>老师端小程序</h2><span class="dev">390×844</span></div>
+      <ul>
+        <li>宫格式首页：智能校徽 / 素质评价 / 校园签到 / 智慧放学 / 学生管理 / 老师管理 / 请假七入口</li>
+        <li>素质评价（德育）：班级统计总览 + 发起点评（表扬/待改进联动积分），同步家长端</li>
+        <li>底部三 Tab（首页 / 消息 / 我的），消息未读角标多处联动</li>
+        <li>校园签到：考勤统计总览（数据范围随账号角色：校长=全校，教师=任教班级），班级卡下钻多状态明细；待核学生单个补签 / 批量点名补签 + 代学生请假入口；学生行下钻签到详情（到离校时间轴 + 通行抓拍照片/视频 + 个人月度统计）</li>
+        <li>智慧放学：班级计数进度 + 手动播报 + 去抖限频 + 音屏状态</li>
+        <li>代请假（同人免审）、师长双身份互切（首页头部下拉 /「我的」双入口）</li>
+      </ul>
+      <span class="go">进入老师端 →</span>
+    </a>
+    <a class='card t-parent' href='parent.html'>
+      <div class="top"><div class="role">PARENT · 家长 / 家人</div><h2>家长端小程序</h2><span class="dev">390×844</span></div>
+      <ul>
+        <li>宫格式首页：智能校徽 / 素质评价 / 校园签到 / 智慧放学 / 请假五入口，底部三 Tab（首页 / 消息 / 我的）；头部下拉切换孩子与教师身份</li>
+        <li>素质评价（德育）只读视图：孩子点评记录与星星积分，教师端点评同步</li>
+        <li>校园签到：学生签到详情（到离校时间轴 + 通行抓拍照片/视频 + 月度出勤统计，与教师端同构）；智慧放学：放学播报家长只读视图</li>
+        <li>盾形校徽卡 + 四具名动作：挂失 / 找回 / 补办增办 / 停用（可交互流转）</li>
+        <li>统一「扫一扫」：核对、兜底激活、错拿换发工单、手工编号降级</li>
+        <li>补办全流程：名册带出→传照机审→版面确认（责任分界）→支付→订单状态机</li>
+        <li>请假：发起、退回补充同单迭代、实际到校自动核销</li>
+        <li>添加孩子绑定三通道（名册认领 / 邀请码 / 人工申请）+ 家庭成员管理</li>
+        <li>人脸授权开通 / 退出（opt-out）与告知书签署留痕</li>
+      </ul>
+      <span class="go">进入家长端 →</span>
+    </a>
+  </div>
+
+  <div class="notes">
+    <h3>原型说明</h3>
+    <div class="grid">
+      <div><b>可交互范围</b>各端均为静态高保真原型：页面切换、筛选、弹窗、状态流转（挂失→找回、审批通过、播报触发、支付下单等）均可点击体验；不含真实后端。</div>
+      <div><b>体现的关键设计原则</b>缺席不定罪（软标记不告警）、关联与激活分离、1:N 持有集合等价、退出即不注册、失败必留结构化痕迹、缺勤推送必经人工闸门。</div>
+      <div><b>打开方式</b>直接双击任一 HTML 文件即可在浏览器查看；小程序端按 iPhone 尺寸（390×844）设计，桌面浏览器中以手机壳形式呈现。</div>
+      <div><b>配套页面</b><a href='badge-h5.html'>校徽二维码 H5 兜底页</a>：微信外扫描校徽二维码的落地页（微信内扫码直接打开小程序），零学生信息的公开导流页；微信内/外两种状态经页内演示说明切换。<br><a href='changelog.html'>原型更新日志</a>：每次提交对应一条记录——更新了哪些页面、具体改了什么。</div>
+    </div>
+  </div>
+  <div class="foot">智小徽 第一阶段产品原型 · 依据《产品设计文档 V1.1》构建 · 学生数据均为演示假数据</div>
+</div>
+
+<!-- ===== 演示入口 ===== -->
+<div class="demo-fab" id="demo-fab">
+  <button class="demo-chip" onclick="toggleDemo()">ⓘ 演示说明 <span class="x" onclick="event.stopPropagation();document.getElementById('demo-fab').style.display='none'">✕</span></button>
+  <div class="demo-pop" id="demo-pop"></div>
+</div>
+
+<script>
+/* ---------- 演示说明 ---------- */
+const demoInfo={
+ t:'原型总览',
+ d:'本页为各端原型入口，四张卡片：运管端（入口直达智能校徽台账 admin-trade.html，卡片清单即其侧栏能力；原运管模块——数据看板/批量关联/资产台账/恢复工单/阈值配置/设备与影子——仍可直接打开 admin.html 查看）、学校端 Web（2026-10-23 由「配套页面」文字链升为卡片，school.html，依据设计文档 13.4 的教职工与权限原型）、老师端、家长端。运管端 / 学校端两张由下方开关控制显示（localStorage 记忆），老师端（2026-10-23 去掉开关，此前因未对齐最新设计默认隐藏）与家长端常显，卡片栅格列数随显示数量自适应（4 / 3 / 2 列）。「配套页面」区含校徽二维码 H5 兜底页与原型更新日志（changelog.html，每次 Git 提交同步一条记录）入口。'
+};
+function renderDemo(){
+  document.getElementById('demo-pop').innerHTML='<div class="dt">📋 '+demoInfo.t+'</div><div class="dd">'+demoInfo.d+'</div>'+
+    '<div class="sw-row" onclick="toggleAdmin()">显示运管端原型卡片<span class="sw'+(adminOn()?' on':'')+'"></span></div>'+
+    '<div class="sw-row" onclick="toggleSchool()">显示学校端原型卡片<span class="sw'+(schoolOn()?' on':'')+'"></span></div>';
+}
+function toggleDemo(){renderDemo();document.getElementById('demo-pop').classList.toggle('show')}
+function closeDemo(){document.getElementById('demo-pop').classList.remove('show')}
+/* 演示说明展开时，点击弹层（含 chip）以外区域收起；捕获阶段监听 */
+document.addEventListener('click',e=>{
+  const p=document.getElementById('demo-pop');
+  if(p.classList.contains('show')&&!e.target.closest('#demo-fab'))p.classList.remove('show');
+},true);
+/* ---------- 运管端 / 学校端卡片显隐：默认显示，localStorage 记忆；老师端、家长端常显不设开关（老师端 2026-10-23 去掉开关，不再读取旧的 proto-teacher-card） ---------- */
+function adminOn(){return localStorage.getItem('proto-admin-card')!=='off'}
+function toggleAdmin(){localStorage.setItem('proto-admin-card',adminOn()?'off':'on');applyCards();renderDemo()}
+function schoolOn(){return localStorage.getItem('proto-school-card')!=='off'}
+function toggleSchool(){localStorage.setItem('proto-school-card',schoolOn()?'off':'on');applyCards();renderDemo()}
+function applyCards(){
+  document.body.classList.toggle('no-admin',!adminOn());
+  document.body.classList.toggle('no-school',!schoolOn());
+  /* 可见卡片数写到栅格容器，CSS 按它定列数（老师端、家长端常显，至少 2 张） */
+  document.querySelector('.cards').dataset.cards=2+[adminOn(),schoolOn()].filter(Boolean).length;
+}
+applyCards();
+</script>
+<script src="assets/update-check.js"></script>
+</body>
+</html>

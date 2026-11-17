@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-13",
+  "status": "passed",
+  "results": [
+    {
+      "role": "teacher",
+      "name": "教师",
+      "htmlIdenticalToV12": true,
+      "assetsIdentical": 44,
+      "visited": [
+        "sc-home",
+        "sc-msgs",
+        "sc-me",
+        "sc-apply",
+        "sc-att",
+        "sc-dismiss",
+        "sc-eval",
+        "sc-leave",
+        "sc-stumgr",
+        "sc-help"
+      ],
+      "faqDefaultClosed": true,
+      "crossIdentity": true,
+      "runtimeErrors": [],
+      "missingRequests": []
+    },
+    {
+      "role": "parent",
+      "name": "家长",
+      "htmlIdenticalToV12": true,
+      "assetsIdentical": 44,
+      "visited": [
+        "sc-home",
+        "sc-msgs",
+        "sc-me",
+        "sc-apply",
+        "sc-atthist",
+        "sc-dismiss",
+        "sc-eval",
+        "sc-leave-tab",
+        "sc-kids",
+        "sc-help"
+      ],
+      "faqDefaultClosed": true,
+      "crossIdentity": true,
+      "runtimeErrors": [],
+      "missingRequests": []
+    }
+  ],
+  "limits": [
+    "完整复制并校验全部页面和资源；浏览器验证首页、主要模块和身份互切，未逐一重测全部复杂业务分支。",
+    "保留原型外链、隐藏阶段和演示数据；未接入真实登录、支付、工单或微信服务。"
+  ]
+}

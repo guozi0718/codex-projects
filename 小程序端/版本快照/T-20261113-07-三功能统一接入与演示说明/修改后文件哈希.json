@@ -1,0 +1,515 @@
+{
+  "task": "T-20261113-07-三功能统一接入与演示说明",
+  "created": "2026-11-14T14:18:15.380Z",
+  "files": [
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\任务信息.md",
+      "sha256": "2146580c1bbe35238fe65acf9649e5685b1048fea4cbe3d95a7a15e3e0ed0a7e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\变更说明.md",
+      "sha256": "fe790496d873a7cb5e26707b2a7061cd2cf50d1da532dc339975d562fa875683"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\avatar-boy.png",
+      "sha256": "3c99f5a027de0fa5d6c2676ab0f56fbcd1f4e98f407855ec38e5b3e88c8680b7"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\avatar-girl.png",
+      "sha256": "238c78d621fda0afc9efb0086bcc60426cd0281fbc5a6d76aa8e70e5258c2adb"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\avatar-man.png",
+      "sha256": "38faa47a35ca6f149f9d8510bfbf0cbab4f6ee70d64a1094a2302e444841d847"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\avatar-walle.jpg",
+      "sha256": "4be7141a219377616b4d5c49585a01b12a496bb58197ddfefd194f897007638f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\avatar-woman.png",
+      "sha256": "1b637554eeecd3d9beeb777ff188a510bdd6169411abe9cb6fa04869b3a9f032"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\banner-badge.jpg",
+      "sha256": "3693c21e5b7e072eafed877977f4f088e308ecd8e339a15a841904af386cd93d"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\changelog-hero.jpg",
+      "sha256": "889c8f519e1a59cf0dde83e5c352d6938fddccbef7b9a6d07b51da27bcadf42f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\demo-feature-bridge.js",
+      "sha256": "69ad17b1daba6c28d5f3e8b357e613d0e2afe4ea23aadbb41554f57a4f5cabab"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\demo-panel.css",
+      "sha256": "e348d49e0c982a2f66b8abdbcbbc59872d33fe232627b1f500cc8847d1df2f73"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\demo-panel.js",
+      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\dtp.js",
+      "sha256": "3b7d2780916cbf42d6a253ca7d3dda453c81db3682c1bdc64220ae31b880d68e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\duty-store.js",
+      "sha256": "6f6ad226f667c7b18576f77a1280b99a22f67f1daf3c4fe58d8b5ba9d8d727ba"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\gate-snap1.jpg",
+      "sha256": "5456fc670356cffd912e3052feebbc687cfd6f45e3f820b52e832b01876a22aa"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\gate-snap2.jpg",
+      "sha256": "fe8acb8e45533cedda8037e545c27966a74e64cd658612f3cb4fb428e24c89ca"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\gate-snap3.jpg",
+      "sha256": "8adfeb28b51a844796ea10ce68cc7d319a9f0b2db1aedef6e851f4998b7af34d"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\help-config.js",
+      "sha256": "e14a809dd060b36ee1c1867d348f26b580726a6b3b9a0612208901f3d3d3f0b0"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\help-feedback.svg",
+      "sha256": "f50e151ea1a771c95faa5951082ac1e3ab0ede4ae683ae6c98a71219ab016b8c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\help-phone.svg",
+      "sha256": "ea0e0981a0a5fbefa9d52cf4423051d1da48b475590714d4f0f9201dc709b076"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\help-v1.css",
+      "sha256": "c08a00b5871b732b1872a0a610669fdcdd28dfce9405c53213ec02ad354c759e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\help-v1.js",
+      "sha256": "d1525253ea703f7300fa6bf2c706e1eaa70185ebbd1fde1e660a4563a030151c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-addchild.png",
+      "sha256": "83dbb33509f5882acee160910529666a2a2d83b435e9cc47ea07125569719c6f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-badge.png",
+      "sha256": "79471e1ca460b977f592bc2b85b20b71fe2446161a86f296d5da1b4f3a357dc3"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-checkin.png",
+      "sha256": "309cc819d505840063be0c33281d3370c99d0ce21f900c80f2055b65cb05d239"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-dismiss.png",
+      "sha256": "f2e1a0a0a65036470a1960d5794cb8ca6ef367a2f5603b793ce7b3ce62f9b077"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-help.png",
+      "sha256": "cdbf95b1f49f4b162d504a9905c5512d09b958fd55d64489d4413188c9f831ad"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-invite.png",
+      "sha256": "bd3c355053c0a788fd4e40b3e1b1b8ba8b0b0e6c8a755e48793e064630fb36a2"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-leave.png",
+      "sha256": "8d12f9910feed3572d8ad3673187ee2d12beea7e28ed61272992ab04db19f421"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\icon-switch.png",
+      "sha256": "13bcf30769cb0b2ee3955ac7a4a24660b86ae74dbc8a09d34da198f5c40f32fa"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\leave-store.js",
+      "sha256": "25e966a32f0bdeddf20d77b95d123aa8729bd8bce80e39c09a2d20fbb2cf7462"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\legal.js",
+      "sha256": "104b64c65b8c147023ddf68cc4d18c5ad12c5bcd202687b6a6bb5f443d30374c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\login-bg.jpg",
+      "sha256": "60766850f00af49e8c597c31365bc1ea8b41c023b8452b861959b514a132f5e0"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\logo.png",
+      "sha256": "95ac08975f19e9c9536c3c76969bd32f74c12a65292c9800ef7b9e854566ff45"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\notice-entry.js",
+      "sha256": "1b3a40e94933070429a42471ed5ccf37f3683339a1cf55030b6585765dea27e6"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\notice-host-bridge.js",
+      "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\parent.css",
+      "sha256": "86e27b605addfceb8865209231800438b7270a965017a6a3ab9e22fc771d2554"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\parent.js",
+      "sha256": "543f5433a73413f43cfed65d26336ee6f87b9d0451c048e2af7a112682042106"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-cap.jpg",
+      "sha256": "5d95f2224ce3e00b01536c4d1716fece91a60c230ac230484fd8ba3533b51b8c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-duo.jpg",
+      "sha256": "af16363f6e5c9b73f60d96cccade2af8c38b97a186d393a7923f7b0b466d8fdc"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-full.jpg",
+      "sha256": "075b5c9a0d5eea4e3c2b599a64b90389ee3664df3706ed1cd65b6a381bcee343"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-glasses.jpg",
+      "sha256": "d6f05a73276b68ca9ca0cff8c25f50a4f6c71b50f6444166e571e5ee3b8115c3"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-qing.jpg",
+      "sha256": "598c25b246bf9caf64100e11d03ff71d595bf62023f86a12dae2a863989a7766"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-sample.jpg",
+      "sha256": "21c9d874998d085ac59ea99ec6e57ddec47a5c44c8ca1ee1be21010c07a047e2"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-side.jpg",
+      "sha256": "002c775b72484e16e5e6a514a01a9adae3d2882d8694b855db7a9d33a90ba14e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\photo-upload.jpg",
+      "sha256": "6d80365220c39872f29dcbb94f19cb2147493c7e6de126928b9f049eba74a07c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\sky-clouds.jpg",
+      "sha256": "ef08df8dbf252c6682d67f20b5d043b713649f297d082c044a1bbc4f0f194114"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\sky-me.jpg",
+      "sha256": "b916679fddedcb29bcaa51f1ea45f0b7b6731b02d0b4d96df6b0b842d53fd77c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\assets\\update-check.js",
+      "sha256": "3f137570be5d907d1cea3ddfbbd667acabb769334adeaba47c4584d34929c84e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\index.html",
+      "sha256": "c0646c82daf09ce0800048277000ccc0fe8284b9a2d6c9a7720dbf7cf6c0b60c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\parent.html",
+      "sha256": "0a1fbf13fb11b9c49d290c6f68ebf0a8104eba3cb50026014cf5a95d1cda720f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\teacher.html",
+      "sha256": "c82a41a2087f34053aa72d8ac29446404e5fa5335d5a76c239685b5c1930d8a1"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\定版信息.md",
+      "sha256": "a0703525e9ad937a4487d435e1fdb797ff35fdd7578883f815b9f9afb0c53db9"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\资料\\来源与范围.md",
+      "sha256": "6941a964fe341d546cf32e71dc7e83d104c83fa45caa626dd2ffcd5ef2db47af"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\资料\\继承版本定版信息-v1.2.md",
+      "sha256": "19edfc6ab34d1973b6c1c6eaa4df12f2351926fb89c9fc1fdf120c0628ed6814"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-家长端\\版本-v0.3\\资料\\页面清单.json",
+      "sha256": "d7cc4d1a7a74ab45478f90129c6a1a90527c2bfc320b45291b3e24931ccd2836"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\avatar-boy.png",
+      "sha256": "3c99f5a027de0fa5d6c2676ab0f56fbcd1f4e98f407855ec38e5b3e88c8680b7"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\avatar-girl.png",
+      "sha256": "238c78d621fda0afc9efb0086bcc60426cd0281fbc5a6d76aa8e70e5258c2adb"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\avatar-man.png",
+      "sha256": "38faa47a35ca6f149f9d8510bfbf0cbab4f6ee70d64a1094a2302e444841d847"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\avatar-walle.jpg",
+      "sha256": "4be7141a219377616b4d5c49585a01b12a496bb58197ddfefd194f897007638f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\avatar-woman.png",
+      "sha256": "1b637554eeecd3d9beeb777ff188a510bdd6169411abe9cb6fa04869b3a9f032"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\banner-badge.jpg",
+      "sha256": "3693c21e5b7e072eafed877977f4f088e308ecd8e339a15a841904af386cd93d"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\changelog-hero.jpg",
+      "sha256": "889c8f519e1a59cf0dde83e5c352d6938fddccbef7b9a6d07b51da27bcadf42f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\demo-feature-bridge.js",
+      "sha256": "69ad17b1daba6c28d5f3e8b357e613d0e2afe4ea23aadbb41554f57a4f5cabab"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\demo-panel.css",
+      "sha256": "e348d49e0c982a2f66b8abdbcbbc59872d33fe232627b1f500cc8847d1df2f73"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\demo-panel.js",
+      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\dtp.js",
+      "sha256": "3b7d2780916cbf42d6a253ca7d3dda453c81db3682c1bdc64220ae31b880d68e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\duty-store.js",
+      "sha256": "6f6ad226f667c7b18576f77a1280b99a22f67f1daf3c4fe58d8b5ba9d8d727ba"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\gate-snap1.jpg",
+      "sha256": "5456fc670356cffd912e3052feebbc687cfd6f45e3f820b52e832b01876a22aa"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\gate-snap2.jpg",
+      "sha256": "fe8acb8e45533cedda8037e545c27966a74e64cd658612f3cb4fb428e24c89ca"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\gate-snap3.jpg",
+      "sha256": "8adfeb28b51a844796ea10ce68cc7d319a9f0b2db1aedef6e851f4998b7af34d"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\help-config.js",
+      "sha256": "e14a809dd060b36ee1c1867d348f26b580726a6b3b9a0612208901f3d3d3f0b0"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\help-feedback.svg",
+      "sha256": "f50e151ea1a771c95faa5951082ac1e3ab0ede4ae683ae6c98a71219ab016b8c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\help-phone.svg",
+      "sha256": "ea0e0981a0a5fbefa9d52cf4423051d1da48b475590714d4f0f9201dc709b076"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\help-v1.css",
+      "sha256": "c08a00b5871b732b1872a0a610669fdcdd28dfce9405c53213ec02ad354c759e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\help-v1.js",
+      "sha256": "d1525253ea703f7300fa6bf2c706e1eaa70185ebbd1fde1e660a4563a030151c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-addchild.png",
+      "sha256": "83dbb33509f5882acee160910529666a2a2d83b435e9cc47ea07125569719c6f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-badge.png",
+      "sha256": "79471e1ca460b977f592bc2b85b20b71fe2446161a86f296d5da1b4f3a357dc3"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-checkin.png",
+      "sha256": "309cc819d505840063be0c33281d3370c99d0ce21f900c80f2055b65cb05d239"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-dismiss.png",
+      "sha256": "f2e1a0a0a65036470a1960d5794cb8ca6ef367a2f5603b793ce7b3ce62f9b077"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-help.png",
+      "sha256": "cdbf95b1f49f4b162d504a9905c5512d09b958fd55d64489d4413188c9f831ad"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-invite.png",
+      "sha256": "bd3c355053c0a788fd4e40b3e1b1b8ba8b0b0e6c8a755e48793e064630fb36a2"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-leave.png",
+      "sha256": "8d12f9910feed3572d8ad3673187ee2d12beea7e28ed61272992ab04db19f421"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\icon-switch.png",
+      "sha256": "13bcf30769cb0b2ee3955ac7a4a24660b86ae74dbc8a09d34da198f5c40f32fa"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\leave-store.js",
+      "sha256": "25e966a32f0bdeddf20d77b95d123aa8729bd8bce80e39c09a2d20fbb2cf7462"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\legal.js",
+      "sha256": "104b64c65b8c147023ddf68cc4d18c5ad12c5bcd202687b6a6bb5f443d30374c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\login-bg.jpg",
+      "sha256": "60766850f00af49e8c597c31365bc1ea8b41c023b8452b861959b514a132f5e0"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\logo.png",
+      "sha256": "95ac08975f19e9c9536c3c76969bd32f74c12a65292c9800ef7b9e854566ff45"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\notice-entry.js",
+      "sha256": "a35178daf3b234a95f6953291803ddbd7f7e4456476624acf4bac628956b25ae"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\notice-host-bridge.js",
+      "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-cap.jpg",
+      "sha256": "5d95f2224ce3e00b01536c4d1716fece91a60c230ac230484fd8ba3533b51b8c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-duo.jpg",
+      "sha256": "af16363f6e5c9b73f60d96cccade2af8c38b97a186d393a7923f7b0b466d8fdc"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-full.jpg",
+      "sha256": "075b5c9a0d5eea4e3c2b599a64b90389ee3664df3706ed1cd65b6a381bcee343"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-glasses.jpg",
+      "sha256": "d6f05a73276b68ca9ca0cff8c25f50a4f6c71b50f6444166e571e5ee3b8115c3"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-qing.jpg",
+      "sha256": "598c25b246bf9caf64100e11d03ff71d595bf62023f86a12dae2a863989a7766"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-sample.jpg",
+      "sha256": "21c9d874998d085ac59ea99ec6e57ddec47a5c44c8ca1ee1be21010c07a047e2"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-side.jpg",
+      "sha256": "002c775b72484e16e5e6a514a01a9adae3d2882d8694b855db7a9d33a90ba14e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\photo-upload.jpg",
+      "sha256": "6d80365220c39872f29dcbb94f19cb2147493c7e6de126928b9f049eba74a07c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\sky-clouds.jpg",
+      "sha256": "ef08df8dbf252c6682d67f20b5d043b713649f297d082c044a1bbc4f0f194114"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\sky-me.jpg",
+      "sha256": "b916679fddedcb29bcaa51f1ea45f0b7b6731b02d0b4d96df6b0b842d53fd77c"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\teacher.css",
+      "sha256": "2a997057dbc6ba41236bd376e693e5d80186b51d8ba51e06cc97a0bb111d3155"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\teacher.js",
+      "sha256": "53f195395a768e7f3a7f43f258718b7887d396955379d506ada14e2502efc037"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\assets\\update-check.js",
+      "sha256": "3f137570be5d907d1cea3ddfbbd667acabb769334adeaba47c4584d34929c84e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\index.html",
+      "sha256": "a8ffe945e4097967a9ff9cd2b41079084480046e57cbe7da1827a3c325c1882d"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\parent.html",
+      "sha256": "6749fb025cb312b574bb4781dab73fdaab2135ca9e3dd954aca4e73b620c984e"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\teacher.html",
+      "sha256": "0a1fbf13fb11b9c49d290c6f68ebf0a8104eba3cb50026014cf5a95d1cda720f"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\定版信息.md",
+      "sha256": "29813017c86627ab3d35bcf5aa368b343e9c658a1134f14822d965f244bbf42d"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\资料\\来源与范围.md",
+      "sha256": "52990a22f178142535a87f113ca22fbba538a08d421c4762ada14ef315c6ff9a"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\资料\\继承版本定版信息-v1.2.md",
+      "sha256": "896286eb4186a9c3aee8b16de4ab249149776cf010acfe6095cea11b62b0c653"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-教师端\\版本-v0.3\\资料\\页面清单.json",
+      "sha256": "3f75eb6ee97342e80cd571918c23394bca2fd0be39e05ed7ae3054c99911f308"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\资料\\共享组件配置验证.json",
+      "sha256": "6c1c5cd5d901cdfa978e68f2014f7b4f9176967968936b756261fd1325d8859b"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\资料\\发布登记.json",
+      "sha256": "239475c9c8b18003423ed21d36f27fbb773f0c118a0c3db1c0f0a3c95f688263"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\资料\\固定入口与资源核验.json",
+      "sha256": "44bc7d0ed1a065d03335d059e1b55d3103467dc3005470b005f496110ee5e4e7"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\资料\\浏览器核验与未验项.json",
+      "sha256": "239475c9c8b18003423ed21d36f27fbb773f0c118a0c3db1c0f0a3c95f688263"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\资料\\运行版本文件哈希.json",
+      "sha256": "8959708bbdd8b43f48a06a24082a3df32909406ae953984341175c2927a67c89"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\资料\\通知说明配置验证.json",
+      "sha256": "e16588fc53bfc56d0e2254f0223bf0c1dc4526b749b8b35ce6434439586548b7"
+    },
+    {
+      "path": "E:\\codex\\小程序\\任务\\T-20261113-07-三功能统一接入与演示说明\\资料\\页面说明覆盖登记.json",
+      "sha256": "ec41ece43f31817b94c3ef58c490dbd4a217c529ae60acfd7bca42e1b47229d1"
+    },
+    {
+      "path": "E:\\codex\\小程序\\当前原型基线.json",
+      "sha256": "77ffb926da2679ab3e1b2df3729958d1574936c72e5f94d39100e29cf0726388",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\当前原型基线.json"
+    },
+    {
+      "path": "E:\\codex\\小程序\\项目管理\\任务登记.md",
+      "sha256": "3c9e847cbe5192cc4e56f241dc305712f6e6a20ff7cbba8bd0a5785da627850a",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\项目管理\\任务登记.md"
+    },
+    {
+      "path": "E:\\codex\\小程序\\项目管理\\待办清单.md",
+      "sha256": "f0a6874b35741ffba4168b7ff18a9911d446674376997f5cba580a6a816a53c6",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\项目管理\\待办清单.md"
+    },
+    {
+      "path": "E:\\codex\\小程序\\项目管理\\风险登记.md",
+      "sha256": "04f86564e36cc53b3c784ff0d9791f47d6c7bae790c84560d69aaa26161e88b4",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\项目管理\\风险登记.md"
+    },
+    {
+      "path": "E:\\codex\\小程序\\项目管理\\里程碑.md",
+      "sha256": "f655f8dafea606d8bd4cded43bebc05d2dc48ae2cf5d544f460c41b9229947da",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\项目管理\\里程碑.md"
+    },
+    {
+      "path": "E:\\codex\\小程序\\记忆库\\项目记忆\\技术约束.md",
+      "sha256": "163b38e95eca8bb30d5d003d8020d46e6b8cbde0154c343515d37243b4e6dfad",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\记忆库\\项目记忆\\技术约束.md"
+    },
+    {
+      "path": "E:\\codex\\小程序\\记忆库\\项目记忆\\用户偏好.md",
+      "sha256": "3f1d098bbd789b659d8f429a4220de9b6b8b5c7c8ea0b6dae0afe6e82c3e31df",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\记忆库\\项目记忆\\用户偏好.md"
+    },
+    {
+      "path": "E:\\codex\\小程序\\版本快照\\快照索引.md",
+      "sha256": "9c1865cfd001fcc9f5ba2d5da30e5d77f37a06153a4aebae9eaf4de4a6047700",
+      "snapshot": "E:\\codex\\小程序\\版本快照\\T-20261113-07-三功能统一接入与演示说明\\修改后\\版本快照\\快照索引.md"
+    }
+  ],
+  "plannedLogSHA256": "3875eaa18c17c8effc439bd981e6bafd2bff639394028bf58ab1191f3eec5e75"
+}

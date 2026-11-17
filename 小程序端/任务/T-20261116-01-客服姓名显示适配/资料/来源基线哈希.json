@@ -1,0 +1,542 @@
+[
+  {
+    "role": "教师",
+    "relativePath": "index.html",
+    "sha256": "0bc0fd0e19835e201ea2a0172be8de81f698d8f29b94e729bf788d58ba1275e1"
+  },
+  {
+    "role": "教师",
+    "relativePath": "parent.html",
+    "sha256": "6749fb025cb312b574bb4781dab73fdaab2135ca9e3dd954aca4e73b620c984e"
+  },
+  {
+    "role": "教师",
+    "relativePath": "teacher.html",
+    "sha256": "0a1fbf13fb11b9c49d290c6f68ebf0a8104eba3cb50026014cf5a95d1cda720f"
+  },
+  {
+    "role": "教师",
+    "relativePath": "定版信息.md",
+    "sha256": "d2175a4db1fa2a6d157eab255f9ce739087368fcd4820b9bb5f8f40c0d8a1ed4"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\avatar-boy.png",
+    "sha256": "3c99f5a027de0fa5d6c2676ab0f56fbcd1f4e98f407855ec38e5b3e88c8680b7"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\avatar-girl.png",
+    "sha256": "238c78d621fda0afc9efb0086bcc60426cd0281fbc5a6d76aa8e70e5258c2adb"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\avatar-man.png",
+    "sha256": "38faa47a35ca6f149f9d8510bfbf0cbab4f6ee70d64a1094a2302e444841d847"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\avatar-walle.jpg",
+    "sha256": "4be7141a219377616b4d5c49585a01b12a496bb58197ddfefd194f897007638f"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\avatar-woman.png",
+    "sha256": "1b637554eeecd3d9beeb777ff188a510bdd6169411abe9cb6fa04869b3a9f032"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\banner-badge.jpg",
+    "sha256": "3693c21e5b7e072eafed877977f4f088e308ecd8e339a15a841904af386cd93d"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\changelog-hero.jpg",
+    "sha256": "889c8f519e1a59cf0dde83e5c352d6938fddccbef7b9a6d07b51da27bcadf42f"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\demo-feature-bridge.js",
+    "sha256": "69ad17b1daba6c28d5f3e8b357e613d0e2afe4ea23aadbb41554f57a4f5cabab"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\demo-panel.css",
+    "sha256": "e348d49e0c982a2f66b8abdbcbbc59872d33fe232627b1f500cc8847d1df2f73"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\demo-panel.js",
+    "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\dtp.js",
+    "sha256": "3b7d2780916cbf42d6a253ca7d3dda453c81db3682c1bdc64220ae31b880d68e"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\duty-store.js",
+    "sha256": "6f6ad226f667c7b18576f77a1280b99a22f67f1daf3c4fe58d8b5ba9d8d727ba"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\gate-snap1.jpg",
+    "sha256": "5456fc670356cffd912e3052feebbc687cfd6f45e3f820b52e832b01876a22aa"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\gate-snap2.jpg",
+    "sha256": "fe8acb8e45533cedda8037e545c27966a74e64cd658612f3cb4fb428e24c89ca"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\gate-snap3.jpg",
+    "sha256": "8adfeb28b51a844796ea10ce68cc7d319a9f0b2db1aedef6e851f4998b7af34d"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\help-config.js",
+    "sha256": "e14a809dd060b36ee1c1867d348f26b580726a6b3b9a0612208901f3d3d3f0b0"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\help-feedback.svg",
+    "sha256": "f50e151ea1a771c95faa5951082ac1e3ab0ede4ae683ae6c98a71219ab016b8c"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\help-phone.svg",
+    "sha256": "ea0e0981a0a5fbefa9d52cf4423051d1da48b475590714d4f0f9201dc709b076"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\help-v1.css",
+    "sha256": "b3f169deae0d41d58c2c7beb9a679e94f93336f6dedc64789cc237a1d121149d"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\help-v1.js",
+    "sha256": "e1682c8f52b43fabec8ede113a50687aeea831f56a78e20f0c5c293ac2a3da44"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-addchild.png",
+    "sha256": "83dbb33509f5882acee160910529666a2a2d83b435e9cc47ea07125569719c6f"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-badge.png",
+    "sha256": "79471e1ca460b977f592bc2b85b20b71fe2446161a86f296d5da1b4f3a357dc3"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-checkin.png",
+    "sha256": "309cc819d505840063be0c33281d3370c99d0ce21f900c80f2055b65cb05d239"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-dismiss.png",
+    "sha256": "f2e1a0a0a65036470a1960d5794cb8ca6ef367a2f5603b793ce7b3ce62f9b077"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-help.png",
+    "sha256": "cdbf95b1f49f4b162d504a9905c5512d09b958fd55d64489d4413188c9f831ad"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-invite.png",
+    "sha256": "bd3c355053c0a788fd4e40b3e1b1b8ba8b0b0e6c8a755e48793e064630fb36a2"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-leave.png",
+    "sha256": "8d12f9910feed3572d8ad3673187ee2d12beea7e28ed61272992ab04db19f421"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\icon-switch.png",
+    "sha256": "13bcf30769cb0b2ee3955ac7a4a24660b86ae74dbc8a09d34da198f5c40f32fa"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\leave-store.js",
+    "sha256": "25e966a32f0bdeddf20d77b95d123aa8729bd8bce80e39c09a2d20fbb2cf7462"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\legal.js",
+    "sha256": "104b64c65b8c147023ddf68cc4d18c5ad12c5bcd202687b6a6bb5f443d30374c"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\login-bg.jpg",
+    "sha256": "60766850f00af49e8c597c31365bc1ea8b41c023b8452b861959b514a132f5e0"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\logo.png",
+    "sha256": "95ac08975f19e9c9536c3c76969bd32f74c12a65292c9800ef7b9e854566ff45"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\notice-entry.js",
+    "sha256": "a35178daf3b234a95f6953291803ddbd7f7e4456476624acf4bac628956b25ae"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\notice-host-bridge.js",
+    "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-cap.jpg",
+    "sha256": "5d95f2224ce3e00b01536c4d1716fece91a60c230ac230484fd8ba3533b51b8c"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-duo.jpg",
+    "sha256": "af16363f6e5c9b73f60d96cccade2af8c38b97a186d393a7923f7b0b466d8fdc"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-full.jpg",
+    "sha256": "075b5c9a0d5eea4e3c2b599a64b90389ee3664df3706ed1cd65b6a381bcee343"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-glasses.jpg",
+    "sha256": "d6f05a73276b68ca9ca0cff8c25f50a4f6c71b50f6444166e571e5ee3b8115c3"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-qing.jpg",
+    "sha256": "598c25b246bf9caf64100e11d03ff71d595bf62023f86a12dae2a863989a7766"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-sample.jpg",
+    "sha256": "21c9d874998d085ac59ea99ec6e57ddec47a5c44c8ca1ee1be21010c07a047e2"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-side.jpg",
+    "sha256": "002c775b72484e16e5e6a514a01a9adae3d2882d8694b855db7a9d33a90ba14e"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\photo-upload.jpg",
+    "sha256": "6d80365220c39872f29dcbb94f19cb2147493c7e6de126928b9f049eba74a07c"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\sky-clouds.jpg",
+    "sha256": "ef08df8dbf252c6682d67f20b5d043b713649f297d082c044a1bbc4f0f194114"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\sky-me.jpg",
+    "sha256": "b916679fddedcb29bcaa51f1ea45f0b7b6731b02d0b4d96df6b0b842d53fd77c"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\teacher.css",
+    "sha256": "2a997057dbc6ba41236bd376e693e5d80186b51d8ba51e06cc97a0bb111d3155"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\teacher.js",
+    "sha256": "53f195395a768e7f3a7f43f258718b7887d396955379d506ada14e2502efc037"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\update-check.js",
+    "sha256": "3f137570be5d907d1cea3ddfbbd667acabb769334adeaba47c4584d34929c84e"
+  },
+  {
+    "role": "教师",
+    "relativePath": "资料\\来源与范围.md",
+    "sha256": "52990a22f178142535a87f113ca22fbba538a08d421c4762ada14ef315c6ff9a"
+  },
+  {
+    "role": "教师",
+    "relativePath": "资料\\继承版本定版信息-v1.2.md",
+    "sha256": "896286eb4186a9c3aee8b16de4ab249149776cf010acfe6095cea11b62b0c653"
+  },
+  {
+    "role": "教师",
+    "relativePath": "资料\\页面清单.json",
+    "sha256": "3f75eb6ee97342e80cd571918c23394bca2fd0be39e05ed7ae3054c99911f308"
+  },
+  {
+    "role": "家长",
+    "relativePath": "index.html",
+    "sha256": "c593d2b2c1fa0c468e85b8bb125ddf465b08437319cfa7b306af0ddccba94d30"
+  },
+  {
+    "role": "家长",
+    "relativePath": "parent.html",
+    "sha256": "0a1fbf13fb11b9c49d290c6f68ebf0a8104eba3cb50026014cf5a95d1cda720f"
+  },
+  {
+    "role": "家长",
+    "relativePath": "teacher.html",
+    "sha256": "c82a41a2087f34053aa72d8ac29446404e5fa5335d5a76c239685b5c1930d8a1"
+  },
+  {
+    "role": "家长",
+    "relativePath": "定版信息.md",
+    "sha256": "24a3dcf82ceab2b5d4d335b05a57d8ee30af8ec86039c693d2820c80c5218c15"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\avatar-boy.png",
+    "sha256": "3c99f5a027de0fa5d6c2676ab0f56fbcd1f4e98f407855ec38e5b3e88c8680b7"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\avatar-girl.png",
+    "sha256": "238c78d621fda0afc9efb0086bcc60426cd0281fbc5a6d76aa8e70e5258c2adb"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\avatar-man.png",
+    "sha256": "38faa47a35ca6f149f9d8510bfbf0cbab4f6ee70d64a1094a2302e444841d847"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\avatar-walle.jpg",
+    "sha256": "4be7141a219377616b4d5c49585a01b12a496bb58197ddfefd194f897007638f"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\avatar-woman.png",
+    "sha256": "1b637554eeecd3d9beeb777ff188a510bdd6169411abe9cb6fa04869b3a9f032"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\banner-badge.jpg",
+    "sha256": "3693c21e5b7e072eafed877977f4f088e308ecd8e339a15a841904af386cd93d"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\changelog-hero.jpg",
+    "sha256": "889c8f519e1a59cf0dde83e5c352d6938fddccbef7b9a6d07b51da27bcadf42f"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\demo-feature-bridge.js",
+    "sha256": "69ad17b1daba6c28d5f3e8b357e613d0e2afe4ea23aadbb41554f57a4f5cabab"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\demo-panel.css",
+    "sha256": "e348d49e0c982a2f66b8abdbcbbc59872d33fe232627b1f500cc8847d1df2f73"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\demo-panel.js",
+    "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\dtp.js",
+    "sha256": "3b7d2780916cbf42d6a253ca7d3dda453c81db3682c1bdc64220ae31b880d68e"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\duty-store.js",
+    "sha256": "6f6ad226f667c7b18576f77a1280b99a22f67f1daf3c4fe58d8b5ba9d8d727ba"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\gate-snap1.jpg",
+    "sha256": "5456fc670356cffd912e3052feebbc687cfd6f45e3f820b52e832b01876a22aa"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\gate-snap2.jpg",
+    "sha256": "fe8acb8e45533cedda8037e545c27966a74e64cd658612f3cb4fb428e24c89ca"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\gate-snap3.jpg",
+    "sha256": "8adfeb28b51a844796ea10ce68cc7d319a9f0b2db1aedef6e851f4998b7af34d"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\help-config.js",
+    "sha256": "e14a809dd060b36ee1c1867d348f26b580726a6b3b9a0612208901f3d3d3f0b0"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\help-feedback.svg",
+    "sha256": "f50e151ea1a771c95faa5951082ac1e3ab0ede4ae683ae6c98a71219ab016b8c"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\help-phone.svg",
+    "sha256": "ea0e0981a0a5fbefa9d52cf4423051d1da48b475590714d4f0f9201dc709b076"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\help-v1.css",
+    "sha256": "b3f169deae0d41d58c2c7beb9a679e94f93336f6dedc64789cc237a1d121149d"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\help-v1.js",
+    "sha256": "e1682c8f52b43fabec8ede113a50687aeea831f56a78e20f0c5c293ac2a3da44"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-addchild.png",
+    "sha256": "83dbb33509f5882acee160910529666a2a2d83b435e9cc47ea07125569719c6f"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-badge.png",
+    "sha256": "79471e1ca460b977f592bc2b85b20b71fe2446161a86f296d5da1b4f3a357dc3"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-checkin.png",
+    "sha256": "309cc819d505840063be0c33281d3370c99d0ce21f900c80f2055b65cb05d239"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-dismiss.png",
+    "sha256": "f2e1a0a0a65036470a1960d5794cb8ca6ef367a2f5603b793ce7b3ce62f9b077"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-help.png",
+    "sha256": "cdbf95b1f49f4b162d504a9905c5512d09b958fd55d64489d4413188c9f831ad"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-invite.png",
+    "sha256": "bd3c355053c0a788fd4e40b3e1b1b8ba8b0b0e6c8a755e48793e064630fb36a2"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-leave.png",
+    "sha256": "8d12f9910feed3572d8ad3673187ee2d12beea7e28ed61272992ab04db19f421"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\icon-switch.png",
+    "sha256": "13bcf30769cb0b2ee3955ac7a4a24660b86ae74dbc8a09d34da198f5c40f32fa"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\leave-store.js",
+    "sha256": "25e966a32f0bdeddf20d77b95d123aa8729bd8bce80e39c09a2d20fbb2cf7462"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\legal.js",
+    "sha256": "104b64c65b8c147023ddf68cc4d18c5ad12c5bcd202687b6a6bb5f443d30374c"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\login-bg.jpg",
+    "sha256": "60766850f00af49e8c597c31365bc1ea8b41c023b8452b861959b514a132f5e0"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\logo.png",
+    "sha256": "95ac08975f19e9c9536c3c76969bd32f74c12a65292c9800ef7b9e854566ff45"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\notice-entry.js",
+    "sha256": "1b3a40e94933070429a42471ed5ccf37f3683339a1cf55030b6585765dea27e6"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\notice-host-bridge.js",
+    "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\parent.css",
+    "sha256": "86e27b605addfceb8865209231800438b7270a965017a6a3ab9e22fc771d2554"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\parent.js",
+    "sha256": "543f5433a73413f43cfed65d26336ee6f87b9d0451c048e2af7a112682042106"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-cap.jpg",
+    "sha256": "5d95f2224ce3e00b01536c4d1716fece91a60c230ac230484fd8ba3533b51b8c"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-duo.jpg",
+    "sha256": "af16363f6e5c9b73f60d96cccade2af8c38b97a186d393a7923f7b0b466d8fdc"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-full.jpg",
+    "sha256": "075b5c9a0d5eea4e3c2b599a64b90389ee3664df3706ed1cd65b6a381bcee343"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-glasses.jpg",
+    "sha256": "d6f05a73276b68ca9ca0cff8c25f50a4f6c71b50f6444166e571e5ee3b8115c3"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-qing.jpg",
+    "sha256": "598c25b246bf9caf64100e11d03ff71d595bf62023f86a12dae2a863989a7766"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-sample.jpg",
+    "sha256": "21c9d874998d085ac59ea99ec6e57ddec47a5c44c8ca1ee1be21010c07a047e2"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-side.jpg",
+    "sha256": "002c775b72484e16e5e6a514a01a9adae3d2882d8694b855db7a9d33a90ba14e"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\photo-upload.jpg",
+    "sha256": "6d80365220c39872f29dcbb94f19cb2147493c7e6de126928b9f049eba74a07c"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\sky-clouds.jpg",
+    "sha256": "ef08df8dbf252c6682d67f20b5d043b713649f297d082c044a1bbc4f0f194114"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\sky-me.jpg",
+    "sha256": "b916679fddedcb29bcaa51f1ea45f0b7b6731b02d0b4d96df6b0b842d53fd77c"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\update-check.js",
+    "sha256": "3f137570be5d907d1cea3ddfbbd667acabb769334adeaba47c4584d34929c84e"
+  },
+  {
+    "role": "家长",
+    "relativePath": "资料\\来源与范围.md",
+    "sha256": "6941a964fe341d546cf32e71dc7e83d104c83fa45caa626dd2ffcd5ef2db47af"
+  },
+  {
+    "role": "家长",
+    "relativePath": "资料\\继承版本定版信息-v1.2.md",
+    "sha256": "19edfc6ab34d1973b6c1c6eaa4df12f2351926fb89c9fc1fdf120c0628ed6814"
+  },
+  {
+    "role": "家长",
+    "relativePath": "资料\\页面清单.json",
+    "sha256": "d7cc4d1a7a74ab45478f90129c6a1a90527c2bfc320b45291b3e24931ccd2836"
+  }
+]

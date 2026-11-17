@@ -1,0 +1,60 @@
+{
+  "created": "2026-11-14T14:18:14.886Z",
+  "checks": [
+    {
+      "end": "enterprise",
+      "version": "v0.51",
+      "status": 200,
+      "sha256": "0bc0afaf106a71981009b1aacad81265e1f95824da7aac1133f00eed95be0bfb",
+      "indexAssetReferences": 99,
+      "missing": []
+    },
+    {
+      "end": "school",
+      "version": "v0.43",
+      "status": 200,
+      "sha256": "365d4427a322d0a54580d6e81aa73fb119fb6465fefbfe976e528cc167560ff0",
+      "indexAssetReferences": 29,
+      "missing": []
+    },
+    {
+      "end": "agent",
+      "version": "v0.47",
+      "status": 200,
+      "sha256": "f53af7dfe2db515c467d27675f19d37da5e234365e313900a5d1307ed697ec5f",
+      "indexAssetReferences": 43,
+      "missing": []
+    },
+    {
+      "end": "teacher",
+      "version": "v0.3",
+      "status": 200,
+      "sha256": "a8ffe945e4097967a9ff9cd2b41079084480046e57cbe7da1827a3c325c1882d",
+      "indexAssetReferences": 33,
+      "missing": []
+    },
+    {
+      "end": "parent",
+      "version": "v0.3",
+      "status": 200,
+      "sha256": "c0646c82daf09ce0800048277000ccc0fe8284b9a2d6c9a7720dbf7cf6c0b60c",
+      "indexAssetReferences": 40,
+      "missing": []
+    },
+    {
+      "end": "notice",
+      "version": "V11",
+      "status": 200,
+      "sha256": "a8d73ed1e462366785f36b6bb48649cc2e0b599af85eea34c8985a25979f604b",
+      "indexAssetReferences": 4,
+      "missing": []
+    }
+  ],
+  "browserLatest": [
+    "57192运营反馈列表与说明浮窗可见",
+    "57192学校通知列表可见",
+    "57192代理商客服列表可见",
+    "57192教师/家长帮助页可见"
+  ],
+  "limits": "视口覆盖未改变实际尺寸，窄屏/低高度不计通过；独立窗口及原生小程序栈未验证。"
+}

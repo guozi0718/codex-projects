@@ -1,0 +1,37 @@
+[
+  {
+    "path": "项目管理/任务登记.md",
+    "beforeSha256": "ed374d85b9d83f38147c79fadee5981e5eacc8c8bd11de94b5ea6ad6bff6e2c2",
+    "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\任务登记.md_v20261116_182631_修改前.md",
+    "afterSha256": "8C52D4C98A06C22C92729AB4BEA40B9699658EE9ABD38FC51209936E507B1E7A",
+    "afterSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\项目管理_任务登记_v20261116_183806_修改后.md"
+  },
+  {
+    "path": "项目管理/待办清单.md",
+    "beforeSha256": "93596af472f188890c29f06fe39b868a517ac3cd44d7332bfbb07ec88f1a7cfc",
+    "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\待办清单.md_v20261116_182631_修改前.md",
+    "afterSha256": "EB3A0B7EE458D361283852BE3574EB740FB85D17E151D7F1D920264EFE3C21FA",
+    "afterSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\项目管理_待办清单_v20261116_183806_修改后.md"
+  },
+  {
+    "path": "项目管理/里程碑.md",
+    "beforeSha256": "ed862384cc5cd69cd2a8a7c04433ec831654626da1ee85e677b89c79c7eabc2c",
+    "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\里程碑.md_v20261116_182631_修改前.md",
+    "afterSha256": "03929315E8553A83F83F4C805AFA6B6B70A0886AFC681752BEA11F34737885EF",
+    "afterSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\项目管理_里程碑_v20261116_183806_修改后.md"
+  },
+  {
+    "path": "项目管理/风险登记.md",
+    "beforeSha256": "5a9e885f7e7fa1fd518c0a7053431bc106f537893c7fb3602af96bb09ea952c6",
+    "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\风险登记.md_v20261116_182631_修改前.md",
+    "afterSha256": "FC19663BC0EAEF1B5E9F10ACC979D5139B193FDD1E56C7ABE4F089437A0A0EFE",
+    "afterSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\项目管理_风险登记_v20261116_183806_修改后.md"
+  },
+  {
+    "path": "记忆库/项目记忆/用户偏好.md",
+    "beforeSha256": "3f1d098bbd789b659d8f429a4220de9b6b8b5c7c8ea0b6dae0afe6e82c3e31df",
+    "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\用户偏好.md_v20261116_182631_修改前.md",
+    "afterSha256": "B3F7B45EBD84B43DD50F1248DBF05C0DB2760875C48EE38F54056C6D4F899A34",
+    "afterSnapshot": "E:\\codex\\小程序\\版本快照\\T-20261116-01-客服姓名显示适配\\用户偏好_v20261116_183806_修改后.md"
+  }
+]

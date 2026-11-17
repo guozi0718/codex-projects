@@ -1,0 +1,171 @@
+{
+  "task": "T-20261116-06-反馈详情撤回追问交互",
+  "version": "v0.8",
+  "sourceCandidate": "T-20261116-04 v0.7",
+  "candidateChanges": [
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/assets/help-v1.css",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\共享-help-v1.css",
+      "beforeSha256": "F23742133769630892DA689F2C6CE545B7E4FE029723D2534EB7DFF77287F6A4",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/assets/help-v1.css",
+      "afterSha256": "200A241A67B06691D5CA6EE5C2468B8003256A63EFBC0DE88B0F23FE8691F98B",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/assets/help-v1.js",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\共享-help-v1.js",
+      "beforeSha256": "4FEDA5023140B554F1779A5AEAFA639DFA4089CF8EC6427169AECB752BB73031",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/assets/help-v1.js",
+      "afterSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/index.html",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\教师-index.html",
+      "beforeSha256": "DDC35A5D698ECB6A49B24FCD5EB21E9B7CE27B5C6ECCAB6050F82EB07B168162",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/index.html",
+      "afterSha256": "D81D902856209BF2C5ECDCD99F3D21047C3B9AD1BD87CED46FED5A52663E0972",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/定版信息.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\教师-定版信息.md",
+      "beforeSha256": "88D5BBBB9C335634705D9F7AA9B75476EDE69F3DE275E3717BABC0E1C810556C",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/定版信息.md",
+      "afterSha256": "492A404B0D7B7761110DE1CD5FC1FB07FDDA14D90BCDC4E3B8453F72965DEED9",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/资料/来源与范围.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\教师-来源与范围.md",
+      "beforeSha256": "237ECD6464CE9FC3D5AA984DC37FA1B65B9597009DF5A0675C194824FB3B2459",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/资料/来源与范围.md",
+      "afterSha256": "9F50722421C278AF934FE57E9D7063C1E6D86A2CFF402EF511F8CF4D97DD99FE",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/assets/help-v1.css",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\共享-help-v1.css",
+      "beforeSha256": "F23742133769630892DA689F2C6CE545B7E4FE029723D2534EB7DFF77287F6A4",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/assets/help-v1.css",
+      "afterSha256": "200A241A67B06691D5CA6EE5C2468B8003256A63EFBC0DE88B0F23FE8691F98B",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/assets/help-v1.js",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\共享-help-v1.js",
+      "beforeSha256": "4FEDA5023140B554F1779A5AEAFA639DFA4089CF8EC6427169AECB752BB73031",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/assets/help-v1.js",
+      "afterSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/index.html",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\家长-index.html",
+      "beforeSha256": "51A100367F63213A66B6A7FE37A0F81D177DCCF1132AB1B736AE629756EC9F80",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/index.html",
+      "afterSha256": "68B3EDF8DB91A3095EDA8F06AC31F75AF2B3CACD8A199ED34F0C40D6B70B30CA",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/定版信息.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\家长-定版信息.md",
+      "beforeSha256": "7AA1B52F64A12755C3D3D0BA5C21FEAC9B1E7FDC66DEBF1B7598E6013BDDBF04",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/定版信息.md",
+      "afterSha256": "AB0A6F7ABD116963895DE0F2726565EEA1B38EE644D907C298CBD9CA89A48DF6",
+      "status": "modified"
+    },
+    {
+      "projectPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/资料/来源与范围.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\来源版本-v0.7\\家长-来源与范围.md",
+      "beforeSha256": "89E9A0C582179A0C9C2B931AFCB244CB5C8113AE4DFE8FBE67FAE59C0BF7D578",
+      "afterPath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/资料/来源与范围.md",
+      "afterSha256": "CADF43C4B0E720B637B402055841BD989CEC70C82154561EA4F322551788926B",
+      "status": "modified"
+    }
+  ],
+  "projectAndMemoryChanges": [
+    {
+      "projectPath": "项目管理\\任务登记.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\项目管理\\任务登记.md",
+      "beforeSha256": "CD203303AC9E96FA79C5ADF54B16412858551226AA686D45B0B5B03D7D175904",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\项目管理\\任务登记.md",
+      "afterSha256": "50D5135651C1A4431B065ED39B3EA0EAAB39F5E69E9D96D0296D4EEC82DB4981",
+      "status": "changed"
+    },
+    {
+      "projectPath": "项目管理\\待办清单.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\项目管理\\待办清单.md",
+      "beforeSha256": "FAF4D5903BBC375A4446A08C28783ED5CE6125C97E4C5D291202E3F31EEE6814",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\项目管理\\待办清单.md",
+      "afterSha256": "81A6D2B1506A4B98A32B77B13555BA8D0FBDAA72FEDB2858C07320DE43017574",
+      "status": "changed"
+    },
+    {
+      "projectPath": "项目管理\\里程碑.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\项目管理\\里程碑.md",
+      "beforeSha256": "0E8B6A4C118678E8FE1CF88D67BA243171F08376C03B0A55C3EE83FC8420DEC7",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\项目管理\\里程碑.md",
+      "afterSha256": "AC3C795D5510FD3F825348238600F146BD1CB9CA05B96752522C72AF54D218A2",
+      "status": "changed"
+    },
+    {
+      "projectPath": "项目管理\\风险登记.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\项目管理\\风险登记.md",
+      "beforeSha256": "FBFA69FB05029EB3000E606E302BE9C6C916B769BDB326C2A899E51264F691A6",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\项目管理\\风险登记.md",
+      "afterSha256": "2CF540F24FAD01A4C929A59490B2CC4662459F652EDF0755302EC655F9F1D3EB",
+      "status": "changed"
+    },
+    {
+      "projectPath": "记忆库\\项目记忆\\技术约束.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\记忆库\\项目记忆\\技术约束.md",
+      "beforeSha256": "41DE9CEBD05E0D56A08AB3F1CEE56D944F84CF2DEB58420FBFC3A235D2BC1653",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\记忆库\\项目记忆\\技术约束.md",
+      "afterSha256": "716E2AF33863B783BE4A23380029C5E4BF45CA9BAC7957BAD8902D9F6B8D8C7A",
+      "status": "changed"
+    },
+    {
+      "projectPath": "记忆库\\项目记忆\\用户偏好.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\记忆库\\项目记忆\\用户偏好.md",
+      "beforeSha256": "67A0FAE5C1750E2C3DD3A19D23169CDFACD8431E2D27D666577FFB165BCB42DD",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\记忆库\\项目记忆\\用户偏好.md",
+      "afterSha256": "50984F17B4C8DFB3734BC2753A3CA2FEEF0E4E8F1B27F8CE643E748499AE4537",
+      "status": "changed"
+    },
+    {
+      "projectPath": "记忆库\\项目记忆\\非正式共识.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\记忆库\\项目记忆\\非正式共识.md",
+      "beforeSha256": "FA0717B098191D696DB2C71EDBB1F25F1799CC5B472B10644E5B645B18C50A96",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\记忆库\\项目记忆\\非正式共识.md",
+      "afterSha256": "818F6A0E591B029D77D3F7F2AC32771C322B1C283F3F01FC753D071D30999004",
+      "status": "changed"
+    },
+    {
+      "projectPath": "版本快照\\快照索引.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\版本快照\\快照索引.md",
+      "beforeSha256": "190E32C68B31C1C300E88BCC21548539AC1AE9BACC6E622C34BA78B9EF11B6C7",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\版本快照\\快照索引.md",
+      "afterSha256": "0776BEC77794A6403581BBB6A5948D9D79813C5A95F803034351B4CD3449610F",
+      "status": "changed"
+    },
+    {
+      "projectPath": "日志管理.md",
+      "beforeSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改前\\任务启动时项目文件\\日志管理.md",
+      "beforeSha256": "4A7419434047AAF95A5F543C20541D58384E465526A6F246A97B7C98895629D5",
+      "afterSnapshot": "E:\\codex\\小程序\\版本快照\\V-20261116-06-反馈详情撤回追问交互\\修改后\\日志管理.md",
+      "afterSha256": "9F51D8D8CF9162A698CD3C9BBD5C9B641F9A54A4D9FAEB28D8ED7393121110BF",
+      "status": "changed"
+    },
+    {
+      "projectPath": "当前原型基线.json",
+      "beforeSnapshot": "E:\\codex\\小程序\\当前原型基线.json",
+      "beforeSha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+      "afterSnapshot": "E:\\codex\\小程序\\当前原型基线.json",
+      "afterSha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+      "status": "unchanged"
+    }
+  ],
+  "manifestPolicy": "不登记自身SHA；新增文件清单包含本文件；快照索引不自引用",
+  "baselinePointerSha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E"
+}

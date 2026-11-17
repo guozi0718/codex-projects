@@ -1,0 +1,22 @@
+[
+  {
+    "role": "教师",
+    "relativePath": "assets\\help-v1.js",
+    "sha256": "e1682c8f52b43fabec8ede113a50687aeea831f56a78e20f0c5c293ac2a3da44"
+  },
+  {
+    "role": "教师",
+    "relativePath": "assets\\help-v1.css",
+    "sha256": "b3f169deae0d41d58c2c7beb9a679e94f93336f6dedc64789cc237a1d121149d"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\help-v1.js",
+    "sha256": "e1682c8f52b43fabec8ede113a50687aeea831f56a78e20f0c5c293ac2a3da44"
+  },
+  {
+    "role": "家长",
+    "relativePath": "assets\\help-v1.css",
+    "sha256": "b3f169deae0d41d58c2c7beb9a679e94f93336f6dedc64789cc237a1d121149d"
+  }
+]

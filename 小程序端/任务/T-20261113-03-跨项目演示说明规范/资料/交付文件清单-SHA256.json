@@ -1,0 +1,35 @@
+{
+  "task": "T-20261113-03",
+  "log": "004",
+  "note": "清单不包含自身，以避免循环哈希；完整记录由快照索引补充。",
+  "files": [
+    {
+      "path": "任务信息.md",
+      "sha256": "4d0211f2ef34043bb9d0c37e62e09ba52215cc7ee2df7b94df07bf6428ef07b1"
+    },
+    {
+      "path": "变更记录.md",
+      "sha256": "5f71f0494adf7878f7c072c68aeeaef07823c0e71e2c2f0804b53aa27f22f47c"
+    },
+    {
+      "path": "定版信息.md",
+      "sha256": "22804b91a5ed5aa218259e5e7f06893dce8b9a4af9d60b41a1d3ecc901ddede8"
+    },
+    {
+      "path": "资料/文档与引用能力核验.json",
+      "sha256": "193433bf920731abb92ab47143fce64414ddb3c74a9258936d7cec6281fca0e7"
+    },
+    {
+      "path": "资料/来源核验与范围.json",
+      "sha256": "52c470b91f50313f16e6bee21dc08a43d3bd98178f215b652d279278af9697bc"
+    },
+    {
+      "path": "资料/管理留底.json",
+      "sha256": "0f7971db5c7518ddfc9fd39906331ac72d8faad0d88007712b326c9ce8178270"
+    },
+    {
+      "path": "跨项目原型演示说明统一要求-v1.0.md",
+      "sha256": "8b4d24cd777bf5cd7d9de89f2e159d8d281fba671597d3b293d6e88bb70559ab"
+    }
+  ]
+}

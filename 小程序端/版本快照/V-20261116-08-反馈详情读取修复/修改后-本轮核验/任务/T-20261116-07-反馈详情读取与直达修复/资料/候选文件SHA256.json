@@ -1,0 +1,115 @@
+{
+  "task": "T-20261116-07",
+  "version": "v0.9候选",
+  "status": "待用户评审；活动基线未更新",
+  "candidateFiles": [
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/index.html",
+      "sha256": "E920F906B2DFF839C329A05DE7565823ACD601441C5EF7EA3929BE935061F0D8"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/assets/help-v1.js",
+      "sha256": "7D0A1FAA412F76569166150FE0CC97EF4079AAB69FC1A42F4A5140753F51CE25"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/assets/help-v1.css",
+      "sha256": "200A241A67B06691D5CA6EE5C2468B8003256A63EFBC0DE88B0F23FE8691F98B"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/assets/demo-feature-bridge.js",
+      "sha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/index.html",
+      "sha256": "F81F9F39FAC6AEFD175F8BC95ED5E1F9A011C74A1CE1CEB557780EABC2C18AAC"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/assets/help-v1.js",
+      "sha256": "7D0A1FAA412F76569166150FE0CC97EF4079AAB69FC1A42F4A5140753F51CE25"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/assets/help-v1.css",
+      "sha256": "200A241A67B06691D5CA6EE5C2468B8003256A63EFBC0DE88B0F23FE8691F98B"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/assets/demo-feature-bridge.js",
+      "sha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF"
+    }
+  ],
+  "activityPointer": {
+    "path": "当前原型基线.json",
+    "sha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+    "changed": false
+  },
+  "taskEvidence": [
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/任务信息.md",
+      "sha256": "42B9FE95D937696DA14059A5D9069EFBCA15726EB5EF2950E6AC4998D7B719D2",
+      "bytes": 1146
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/变更记录.md",
+      "sha256": "FB51C87AB5F5F23D0CDA4191CE364F91BFFD307DB53974F552DA42150DD8DD8C",
+      "bytes": 687
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/定版信息.md",
+      "sha256": "0596C60441A7ABE94D1A326D2560A198C6FCF9C3FEB5EB05D4C80B9C88829546",
+      "bytes": 752
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/资料/验证结果.md",
+      "sha256": "F15A52182CB80090FDC298034D7605E65BE2E1EE4617B9BB84F4FCF1A05B77DF",
+      "bytes": 1488
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/资料/本机预览入口.json",
+      "sha256": "D71209EC1AB4490FF1B008F996292B0BA76A659EBA26BADE72DA1CFDBCA78992",
+      "bytes": 387
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/定版信息.md",
+      "sha256": "7AA0E30BB445BC41E588F93F40D72621F6CFCE8651DC98EE6DEEEF48D34DE82A",
+      "bytes": 3921
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/定版信息.md",
+      "sha256": "CCBCE84F1BE40E62F306CE1CEE83ABF8917ADC03D9447F574BE21DCC67A95893",
+      "bytes": 3921
+    }
+  ],
+  "v08ToV09Comparison": [
+    {
+      "role": "教师",
+      "file": "index.html",
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/index.html",
+      "beforeSha256": "D81D902856209BF2C5ECDCD99F3D21047C3B9AD1BD87CED46FED5A52663E0972",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/index.html",
+      "afterSha256": "E920F906B2DFF839C329A05DE7565823ACD601441C5EF7EA3929BE935061F0D8"
+    },
+    {
+      "role": "教师",
+      "file": "assets/help-v1.js",
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/assets/help-v1.js",
+      "beforeSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/assets/help-v1.js",
+      "afterSha256": "7D0A1FAA412F76569166150FE0CC97EF4079AAB69FC1A42F4A5140753F51CE25"
+    },
+    {
+      "role": "家长",
+      "file": "index.html",
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/index.html",
+      "beforeSha256": "68B3EDF8DB91A3095EDA8F06AC31F75AF2B3CACD8A199ED34F0C40D6B70B30CA",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/index.html",
+      "afterSha256": "F81F9F39FAC6AEFD175F8BC95ED5E1F9A011C74A1CE1CEB557780EABC2C18AAC"
+    },
+    {
+      "role": "家长",
+      "file": "assets/help-v1.js",
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/assets/help-v1.js",
+      "beforeSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/assets/help-v1.js",
+      "afterSha256": "7D0A1FAA412F76569166150FE0CC97EF4079AAB69FC1A42F4A5140753F51CE25"
+    }
+  ]
+}

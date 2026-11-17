@@ -1,0 +1,37 @@
+{
+  "task": "T-20261116-02-小程序客户反馈字段与权限展示",
+  "observedAt": "2026-11-16",
+  "baselinePointer": {
+    "path": "当前原型基线.json",
+    "sha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+    "task": "T-20261114-01-统一接入与演示说明",
+    "version": "v0.5",
+    "status": "candidate (pointer unchanged)"
+  },
+  "ports": [
+    {
+      "name": "端-教师",
+      "sourceVersion": "v0.5",
+      "sourceIndexSha256": "0BC0FD0E19835E201EA2A0172BE8DE81F698D8F29B94E729BF788D58BA1275E1",
+      "sourceHelpJsSha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+      "candidateVersion": "v0.6",
+      "candidateIndexSha256": "3F48693C03EA98078E6585AB8B66DA23CA9C46A7D71A56FCC836C1B5779DB45B",
+      "candidateHelpJsSha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B",
+      "candidateHelpCssSha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF",
+      "sourceEntry": "任务\\T-20261114-01-统一接入与演示说明\\端-教师\\版本-v0.5\\index.html",
+      "candidateEntry": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-教师\\版本-v0.6\\index.html"
+    },
+    {
+      "name": "端-家长",
+      "sourceVersion": "v0.5",
+      "sourceIndexSha256": "C593D2B2C1FA0C468E85B8BB125DDF465B08437319CFA7B306AF0DDCCBA94D30",
+      "sourceHelpJsSha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+      "candidateVersion": "v0.6",
+      "candidateIndexSha256": "51F11965B70393E07D699BC0276942074BF34A6C4816A0A6508A39A3E4C03FAD",
+      "candidateHelpJsSha256": "1C74A37F06C89539113E3D90CA5FEBFCF3B53EF4BE79EF8A7FA18486BFCD118B",
+      "candidateHelpCssSha256": "054AC2269B60C7E7F02CD672322AA012681637698CF61B1934816CEEB02573FF",
+      "sourceEntry": "任务\\T-20261114-01-统一接入与演示说明\\端-家长\\版本-v0.5\\index.html",
+      "candidateEntry": "任务\\T-20261116-02-小程序客户反馈字段与权限展示\\端-家长\\版本-v0.6\\index.html"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/guozi0718/codex-projects.git",
+  "repositoryDirectory": "小程序端",
+  "branch": "main",
+  "pagesBase": "https://guozi0718.github.io/codex-projects/小程序端/",
+  "cloneDirectory": "任务/T-20261117-02-GitHub发布与自动同步/工作区/仓库",
+  "excludeDirectories": [
+    "任务/T-20261117-02-GitHub发布与自动同步/工作区"
+  ],
+  "syncPolicy": "后续每次授权修改完成验证、更新管理记录并最后追加日志后，自动执行同步；GitHub Pages随main推送自动部署。不是文件保存监听或定时任务。",
+  "release": {
+    "id": "r2026.11.17.1",
+    "directory": "发布/r2026.11.17.1",
+    "status": "v0.12评审候选，已获本轮上传预览授权，页面尚未定版",
+    "sourceVersion": "任务/T-20261117-01-客户反馈详情与操作精简 教师/家长 v0.12",
+    "ends": [
+      {
+        "role": "teacher",
+        "name": "教师",
+        "source": "任务/T-20261117-01-客户反馈详情与操作精简/端-教师/版本-v0.12",
+        "destination": "端-教师/版本-v0.12"
+      },
+      {
+        "role": "parent",
+        "name": "家长",
+        "source": "任务/T-20261117-01-客户反馈详情与操作精简/端-家长/版本-v0.12",
+        "destination": "端-家长/版本-v0.12"
+      }
+    ],
+    "noticeSource": "E:/claude code/通知（学校或代理商通知家长）/任务/T-20261113-07-三功能统一接入与演示说明/端-通知功能/版本-V11"
+  }
+}

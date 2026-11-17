@@ -1,0 +1,73 @@
+{
+  "sourceReport": "E:\\codex\\代理商web\\任务\\T-20261114-01-统一接入与演示说明\\资料\\代理商会话续验记录.json",
+  "current": {
+    "agent": {
+      "version": "v0.49",
+      "manifestFile": "E:\\codex\\代理商web\\主原型\\活动发布.json",
+      "manifestHash": "4280ba7a23fb80bf0dc8599014d516d0d8457637ca946a95320554adb2e66e9b",
+      "entries": [
+        {
+          "source": "E:\\codex\\代理商web\\任务\\T-20261114-01-统一接入与演示说明\\端-代理商端\\版本-v0.49",
+          "indexHash": "1c51760a07273920634a1a5b28b59a89eae93bd1be702919d78ea60bd69b7c3d",
+          "oldDemoFiles": []
+        }
+      ]
+    },
+    "school": {
+      "version": "v0.43",
+      "manifestFile": "E:\\codex\\学校web\\主原型\\活动发布.json",
+      "manifestHash": "433bf0f2fff61f37e6a47ce119ad1798cf45e15127c5398a8e9dda085316b743",
+      "entries": [
+        {
+          "source": "E:\\codex\\学校web\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-学校端\\版本-v0.43",
+          "indexHash": "365d4427a322d0a54580d6e81aa73fb119fb6465fefbfe976e528cc167560ff0",
+          "oldDemoFiles": []
+        }
+      ]
+    },
+    "enterprise": {
+      "version": "v0.51",
+      "manifestFile": "E:\\codex\\运营后台\\运营后台\\主原型\\活动发布.json",
+      "manifestHash": "d93aa1a865b08502cd978bea4761b47a84a57f51e2a486ca04f023a8a89c1739",
+      "entries": [
+        {
+          "source": "E:\\codex\\运营后台\\运营后台\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-运营后台\\版本-v0.51",
+          "indexHash": "0bc0afaf106a71981009b1aacad81265e1f95824da7aac1133f00eed95be0bfb",
+          "oldDemoFiles": []
+        }
+      ]
+    },
+    "mini": {
+      "version": "v0.5",
+      "manifestFile": "E:\\codex\\小程序\\当前原型基线.json",
+      "manifestHash": "0c1f48687f4dfe95ab625612b609dbd4263ce79f5177ec57348bafa0ef3c1c7e",
+      "entries": [
+        {
+          "name": "教师",
+          "source": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-教师\\版本-v0.5",
+          "indexHash": "0bc0fd0e19835e201ea2a0172be8de81f698d8f29b94e729bf788d58ba1275e1",
+          "oldDemoFiles": []
+        },
+        {
+          "name": "家长",
+          "source": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-家长\\版本-v0.5",
+          "indexHash": "c593d2b2c1fa0c468e85b8bb125ddf465b08437319cfa7b306af0ddccba94d30",
+          "oldDemoFiles": []
+        }
+      ]
+    },
+    "notice": {
+      "version": "V11",
+      "manifestFile": "E:\\claude code\\通知（学校或代理商通知家长）\\当前功能原型.json",
+      "manifestHash": "01b5a776e124d0540cffc6d3850f1b3020026ef178ade27ebd5cabd38ed69b51",
+      "entries": [
+        {
+          "source": "E:\\claude code\\通知（学校或代理商通知家长）\\任务\\T-20261113-07-三功能统一接入与演示说明\\端-通知功能\\版本-V11",
+          "indexHash": "a8d73ed1e462366785f36b6bb48649cc2e0b599af85eea34c8985a25979f604b",
+          "oldDemoFiles": []
+        }
+      ]
+    }
+  },
+  "status": "只登记最新受控引用，不另发布候选"
+}

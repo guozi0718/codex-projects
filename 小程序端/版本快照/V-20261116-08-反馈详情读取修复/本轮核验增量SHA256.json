@@ -1,0 +1,150 @@
+{
+  "snapshot": "V-20261116-08",
+  "task": "T-20261116-07",
+  "preparedAt": "2026-11-16T23:20:47-08:00",
+  "modifiedFiles": [
+    {
+      "path": "项目管理/任务登记.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/项目管理/任务登记.md",
+      "beforeSha256": "D7A67B9E4BF66386D86BDF65BBB290445F1E2963D48BEDE247EB867D0BE5B5BE",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/项目管理/任务登记.md",
+      "afterSha256": "E71CE4CBEA6EE5EADF00CA7776E52B25018213E653FDAC0CDF7E319692DFC9C1",
+      "note": "记录修复与浏览器核验完成"
+    },
+    {
+      "path": "项目管理/待办清单.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/项目管理/待办清单.md",
+      "beforeSha256": "5534D087AD3EC8B72F4A1D38D704204F97A4F5B4A476B7D8C5BBE62AF92A9661",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/项目管理/待办清单.md",
+      "afterSha256": "0BB53C27532BDFCBD758B872611D2820CEDADEC52AF79A3C84265B0BA0E48FA0",
+      "note": "完成修复和链接验收，保留评审项"
+    },
+    {
+      "path": "项目管理/里程碑.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/项目管理/里程碑.md",
+      "beforeSha256": "DAB5FFEDE5D0316CFD2C1F1E8A50AC7BA328D490967BAAC3A2C202FA3A7F270C",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/项目管理/里程碑.md",
+      "afterSha256": "F6EF64E2618C3E9ABDD53596085B55079B43962B8679743B4CF2D108425D4412",
+      "note": "交付里程碑更新"
+    },
+    {
+      "path": "项目管理/风险登记.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/项目管理/风险登记.md",
+      "beforeSha256": "292C5C7E0FF513A238D4DB048B62818046D485F91E8E9F5BCFA56531324DD3D7",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/项目管理/风险登记.md",
+      "afterSha256": "6D7B2D3147788571FEDC609A2A99F25C017A2275043A44879F5C4B92EC1E61DE",
+      "note": "根因缓解，生产风险保留"
+    },
+    {
+      "path": "记忆库/项目记忆/用户偏好.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/记忆库/项目记忆/用户偏好.md",
+      "beforeSha256": "50984F17B4C8DFB3734BC2753A3CA2FEEF0E4E8F1B27F8CE643E748499AE4537",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/记忆库/项目记忆/用户偏好.md",
+      "afterSha256": "1D38B487F89015881AA04F7B52F738D59BEACAC327696EDE978A7871B15BF2BE",
+      "note": "追加直接页面入口偏好"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/任务信息.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/任务信息.md",
+      "beforeSha256": "03FE02C9D06D6ABFABE2495801B4A24334D84C8AEFB91A6057B5A244DFE2C478",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/任务信息.md",
+      "afterSha256": "42B9FE95D937696DA14059A5D9069EFBCA15726EB5EF2950E6AC4998D7B719D2",
+      "note": "修复和浏览器核验完成"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/变更记录.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/变更记录.md",
+      "beforeSha256": "F415754293180E559F7F1506FD8682BDF866A192F4F72618A31BACB4650C4A24",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/变更记录.md",
+      "afterSha256": "FB51C87AB5F5F23D0CDA4191CE364F91BFFD307DB53974F552DA42150DD8DD8C",
+      "note": "补充验证结果"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/定版信息.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/定版信息.md",
+      "beforeSha256": "A32AF0A97633B2EF7AF4A5575566D4E8279AFECB539866DDF20C522A2E0C2B39",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/定版信息.md",
+      "afterSha256": "0596C60441A7ABE94D1A326D2560A198C6FCF9C3FEB5EB05D4C80B9C88829546",
+      "note": "记录验证完成/待用户评审"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/定版信息.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/定版信息.md",
+      "beforeSha256": "B7A93B0104F7B24B2EC5793E64CF3A57825CFFF4361115B714806316C2269A18",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/定版信息.md",
+      "afterSha256": "7AA0E30BB445BC41E588F93F40D72621F6CFCE8651DC98EE6DEEEF48D34DE82A",
+      "note": "记录本机浏览器验证"
+    },
+    {
+      "path": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/定版信息.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/定版信息.md",
+      "beforeSha256": "99F1089F43501D806E947CD100192B80F52961E977639C06E1EE28044FF98C76",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/定版信息.md",
+      "afterSha256": "CCBCE84F1BE40E62F306CE1CEE83ABF8917ADC03D9447F574BE21DCC67A95893",
+      "note": "记录本机浏览器验证"
+    },
+    {
+      "path": "日志管理.md",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/日志管理.md",
+      "beforeSha256": "74551B8F1EC8C3D222777B20299A795B0ED7AD2C0867738F8E32A28DD52800F2",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/日志管理.md",
+      "afterSha256": "C70D99DA738390E4BF14FB8DE958E09153D6E35A14B9C8B12298A3B9FDC71B10",
+      "note": "追加012"
+    }
+  ],
+  "candidateSourceComparisons": [
+    {
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/index.html",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/来源v0.8/端-教师/版本-v0.8/index.html",
+      "beforeSha256": "D81D902856209BF2C5ECDCD99F3D21047C3B9AD1BD87CED46FED5A52663E0972",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/index.html",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/index.html",
+      "afterSha256": "E920F906B2DFF839C329A05DE7565823ACD601441C5EF7EA3929BE935061F0D8",
+      "note": "v0.9候选初始版本；T06/v0.8历史文件保留"
+    },
+    {
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-教师/版本-v0.8/assets/help-v1.js",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/来源v0.8/端-教师/版本-v0.8/assets/help-v1.js",
+      "beforeSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/assets/help-v1.js",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-教师/版本-v0.9/assets/help-v1.js",
+      "afterSha256": "7D0A1FAA412F76569166150FE0CC97EF4079AAB69FC1A42F4A5140753F51CE25",
+      "note": "v0.9候选初始版本；T06/v0.8历史文件保留"
+    },
+    {
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/index.html",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/来源v0.8/端-家长/版本-v0.8/index.html",
+      "beforeSha256": "68B3EDF8DB91A3095EDA8F06AC31F75AF2B3CACD8A199ED34F0C40D6B70B30CA",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/index.html",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/index.html",
+      "afterSha256": "F81F9F39FAC6AEFD175F8BC95ED5E1F9A011C74A1CE1CEB557780EABC2C18AAC",
+      "note": "v0.9候选初始版本；T06/v0.8历史文件保留"
+    },
+    {
+      "beforePath": "任务/T-20261116-06-反馈详情撤回追问交互/端-家长/版本-v0.8/assets/help-v1.js",
+      "beforeSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改前-本轮核验/来源v0.8/端-家长/版本-v0.8/assets/help-v1.js",
+      "beforeSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D",
+      "afterPath": "任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/assets/help-v1.js",
+      "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/任务/T-20261116-07-反馈详情读取与直达修复/端-家长/版本-v0.9/assets/help-v1.js",
+      "afterSha256": "7D0A1FAA412F76569166150FE0CC97EF4079AAB69FC1A42F4A5140753F51CE25",
+      "note": "v0.9候选初始版本；T06/v0.8历史文件保留"
+    }
+  ],
+  "candidateHashManifest": {
+    "path": "任务/T-20261116-07-反馈详情读取与直达修复/资料/候选文件SHA256.json",
+    "sha256": "117C1E11AD6FBABDC7F16344083EF1BA260950099FE17CCFB6F7F6B7A655D001",
+    "candidateFiles": 8
+  },
+  "appendOnlyLog": {
+    "path": "日志管理.md",
+    "beforeSha256": "74551B8F1EC8C3D222777B20299A795B0ED7AD2C0867738F8E32A28DD52800F2",
+    "afterSnapshot": "版本快照/V-20261116-08-反馈详情读取修复/修改后-本轮核验/日志管理.md",
+    "afterSha256": "C70D99DA738390E4BF14FB8DE958E09153D6E35A14B9C8B12298A3B9FDC71B10",
+    "append": "012"
+  },
+  "baseline": {
+    "path": "当前原型基线.json",
+    "sha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+    "changed": false
+  }
+}

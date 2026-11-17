@@ -1,0 +1,34 @@
+{
+  "task": "T-20261116-04-反馈建议表单与演示说明补齐",
+  "sourceTask": "T-20261116-02-小程序客户反馈字段与权限展示",
+  "sourceVersion": "v0.6",
+  "candidateVersion": "v0.7",
+  "baselinePointer": {
+    "path": "当前原型基线.json",
+    "sha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+    "task": "T-20261114-01-统一接入与演示说明",
+    "version": "v0.5",
+    "changed": false
+  },
+  "candidatePorts": [
+    {
+      "role": "教师",
+      "candidateEntry": "任务/T-20261116-04-反馈建议表单与演示说明补齐/端-教师/版本-v0.7/index.html",
+      "indexSha256": "DD15A51577A6231EA5FA23A2FA78E91E31256868992041BF57667A61E7B13F7A",
+      "helpJsSha256": "E2F5941B7AABAB02B507971677A4B7AF572B801FB9E849AB003092675822CA34",
+      "helpCssSha256": "56B719F50F2563BC367F0ED1FA9DF863C2B55C9FAB79EC0E60D19A26FAD6DCB1",
+      "demoBridgeSha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF"
+    },
+    {
+      "role": "家长",
+      "candidateEntry": "任务/T-20261116-04-反馈建议表单与演示说明补齐/端-家长/版本-v0.7/index.html",
+      "indexSha256": "613259AA66705C5A0776D87E8895519BA6E23BA2E604A9CC5AF61918443E3EF6",
+      "helpJsSha256": "E2F5941B7AABAB02B507971677A4B7AF572B801FB9E849AB003092675822CA34",
+      "helpCssSha256": "56B719F50F2563BC367F0ED1FA9DF863C2B55C9FAB79EC0E60D19A26FAD6DCB1",
+      "demoBridgeSha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF"
+    }
+  ],
+  "sourceManifest": "来源文件SHA256.json",
+  "candidateManifest": "候选文件SHA256.json",
+  "fileDifference": "文件差异.json"
+}

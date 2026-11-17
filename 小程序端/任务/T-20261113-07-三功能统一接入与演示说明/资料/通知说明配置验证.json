@@ -1,0 +1,602 @@
+{
+  "contexts": [
+    {
+      "role": "ops",
+      "mode": "list",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "ops",
+      "mode": "edit",
+      "title": "通知编辑",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "编辑与发布",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "format",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "ops",
+      "mode": "detail",
+      "title": "通知详情",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "ops",
+      "mode": "stats",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "ops",
+      "mode": "print",
+      "title": "通知打印",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "ops",
+      "mode": "delete",
+      "title": "delete",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "删除确认",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "school",
+      "mode": "list",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "school",
+      "mode": "edit",
+      "title": "通知编辑",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "编辑与发布",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "format",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "school",
+      "mode": "detail",
+      "title": "通知详情",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "school",
+      "mode": "stats",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "school",
+      "mode": "print",
+      "title": "通知打印",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "school",
+      "mode": "delete",
+      "title": "delete",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "删除确认",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "agent",
+      "mode": "list",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "agent",
+      "mode": "edit",
+      "title": "通知编辑",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "编辑与发布",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "format",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "agent",
+      "mode": "detail",
+      "title": "通知详情",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "agent",
+      "mode": "stats",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "agent",
+      "mode": "print",
+      "title": "通知打印",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "agent",
+      "mode": "delete",
+      "title": "delete",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "删除确认",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "teacher",
+      "mode": "list",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "teacher",
+      "mode": "edit",
+      "title": "通知编辑",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "编辑与发布",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "format",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "teacher",
+      "mode": "detail",
+      "title": "通知详情",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "teacher",
+      "mode": "stats",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "teacher",
+      "mode": "print",
+      "title": "通知打印",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "teacher",
+      "mode": "delete",
+      "title": "delete",
+      "sections": [
+        "入口与对象",
+        "列表和当前Tab",
+        "查看与统计",
+        "删除确认",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "parent",
+      "mode": "list",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "孩子与通知",
+        "内容与附件",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "parent",
+      "mode": "todo",
+      "title": "家校通知",
+      "sections": [
+        "入口与对象",
+        "孩子与通知",
+        "内容与附件",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "parent",
+      "mode": "detail",
+      "title": "通知详情",
+      "sections": [
+        "入口与对象",
+        "孩子与通知",
+        "内容与附件",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "parent",
+      "mode": "sign",
+      "title": "sign",
+      "sections": [
+        "入口与对象",
+        "孩子与通知",
+        "内容与附件",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    },
+    {
+      "role": "parent",
+      "mode": "image",
+      "title": "image",
+      "sections": [
+        "入口与对象",
+        "孩子与通知",
+        "内容与附件",
+        "返回与异常",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "配置、场景呈现和恢复、默认折叠"
+    }
+  ],
+  "note": "配置测试不代替各真实通知状态的逐项业务验收；小程序沿用既有帮助/反馈配置并以真实浏览器另行核验。"
+}

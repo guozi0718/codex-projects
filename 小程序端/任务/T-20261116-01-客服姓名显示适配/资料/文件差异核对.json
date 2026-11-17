@@ -1,0 +1,785 @@
+{
+  "candidateVersion": "v0.6",
+  "baselineTask": "T-20261114-01",
+  "manifestIssues": [],
+  "baselineVersion": "v0.5",
+  "missingCount": 0,
+  "task": "T-20261116-01",
+  "modifiedCount": 6,
+  "unchangedCount": 102,
+  "addedCount": 2,
+  "candidateFileCount": 110,
+  "files": [
+    {
+      "endpoint": "教师",
+      "relativePath": "index.html",
+      "sourceSha256": "0BC0FD0E19835E201EA2A0172BE8DE81F698D8F29B94E729BF788D58BA1275E1",
+      "targetSha256": "0BC0FD0E19835E201EA2A0172BE8DE81F698D8F29B94E729BF788D58BA1275E1",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "parent.html",
+      "sourceSha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E",
+      "targetSha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "teacher.html",
+      "sourceSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "targetSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "定版信息.md",
+      "sourceSha256": "D2175A4DB1FA2A6D157EAB255F9CE739087368FCD4820B9BB5F8F40C0D8A1ED4",
+      "targetSha256": "6B44E8808E6AC0C7DC6A3DD1C481DAB0C131487A70E1F70754E364109EDE180B",
+      "status": "modified"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\avatar-boy.png",
+      "sourceSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "targetSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\avatar-girl.png",
+      "sourceSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "targetSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\avatar-man.png",
+      "sourceSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "targetSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\avatar-walle.jpg",
+      "sourceSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "targetSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\avatar-woman.png",
+      "sourceSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "targetSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\banner-badge.jpg",
+      "sourceSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "targetSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\changelog-hero.jpg",
+      "sourceSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "targetSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\demo-feature-bridge.js",
+      "sourceSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+      "targetSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\demo-panel.css",
+      "sourceSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "targetSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\demo-panel.js",
+      "sourceSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "targetSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\dtp.js",
+      "sourceSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "targetSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\duty-store.js",
+      "sourceSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "targetSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\gate-snap1.jpg",
+      "sourceSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "targetSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\gate-snap2.jpg",
+      "sourceSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "targetSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\gate-snap3.jpg",
+      "sourceSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "targetSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\help-config.js",
+      "sourceSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "targetSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\help-feedback.svg",
+      "sourceSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "targetSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\help-phone.svg",
+      "sourceSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "targetSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\help-v1.css",
+      "sourceSha256": "B3F169DEAE0D41D58C2C7BEB9A679E94F93336F6DEDC64789CC237A1D121149D",
+      "targetSha256": "F2385703B36CCBE1F2EDE4709BD2FB9C44D91DE1C247BE8A5B5C830AC5857F5F",
+      "status": "modified"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\help-v1.js",
+      "sourceSha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+      "targetSha256": "F5FAB7AF5A9AEEE301AA5FE904537B699F97F054A8F5502D6F4A1998F3B3A3D4",
+      "status": "modified"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-addchild.png",
+      "sourceSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "targetSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-badge.png",
+      "sourceSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "targetSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-checkin.png",
+      "sourceSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "targetSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-dismiss.png",
+      "sourceSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "targetSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-help.png",
+      "sourceSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "targetSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-invite.png",
+      "sourceSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "targetSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-leave.png",
+      "sourceSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "targetSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\icon-switch.png",
+      "sourceSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "targetSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\leave-store.js",
+      "sourceSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "targetSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\legal.js",
+      "sourceSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "targetSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\login-bg.jpg",
+      "sourceSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "targetSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\logo.png",
+      "sourceSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "targetSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\notice-entry.js",
+      "sourceSha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE",
+      "targetSha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\notice-host-bridge.js",
+      "sourceSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "targetSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-cap.jpg",
+      "sourceSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "targetSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-duo.jpg",
+      "sourceSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "targetSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-full.jpg",
+      "sourceSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "targetSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-glasses.jpg",
+      "sourceSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "targetSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-qing.jpg",
+      "sourceSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "targetSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-sample.jpg",
+      "sourceSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "targetSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-side.jpg",
+      "sourceSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "targetSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\photo-upload.jpg",
+      "sourceSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "targetSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\sky-clouds.jpg",
+      "sourceSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "targetSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\sky-me.jpg",
+      "sourceSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "targetSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\teacher.css",
+      "sourceSha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155",
+      "targetSha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\teacher.js",
+      "sourceSha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037",
+      "targetSha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "assets\\update-check.js",
+      "sourceSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "targetSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "资料\\来源与范围.md",
+      "sourceSha256": "52990A22F178142535A87F113CA22FBBA538A08D421C4762ADA14EF315C6FF9A",
+      "targetSha256": "52990A22F178142535A87F113CA22FBBA538A08D421C4762ADA14EF315C6FF9A",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "资料\\继承版本定版信息-v1.2.md",
+      "sourceSha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653",
+      "targetSha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "资料\\页面清单.json",
+      "sourceSha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308",
+      "targetSha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "教师",
+      "relativePath": "资料\\定版字段清单.md",
+      "sourceSha256": null,
+      "targetSha256": "9751B47CF5833686E99CAD4F1528803C1E00A0C589D07452FD53FC1FA085F26D",
+      "status": "added"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "index.html",
+      "sourceSha256": "C593D2B2C1FA0C468E85B8BB125DDF465B08437319CFA7B306AF0DDCCBA94D30",
+      "targetSha256": "C593D2B2C1FA0C468E85B8BB125DDF465B08437319CFA7B306AF0DDCCBA94D30",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "parent.html",
+      "sourceSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "targetSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "teacher.html",
+      "sourceSha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1",
+      "targetSha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "定版信息.md",
+      "sourceSha256": "24A3DCF82CEAB2B5D4D335B05A57D8EE30AF8EC86039C693D2820C80C5218C15",
+      "targetSha256": "ADCA4B9C1F987997C2A0610EF46F6D54482E39BBC7B429A1ADEA35CF1A68870A",
+      "status": "modified"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\avatar-boy.png",
+      "sourceSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "targetSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\avatar-girl.png",
+      "sourceSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "targetSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\avatar-man.png",
+      "sourceSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "targetSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\avatar-walle.jpg",
+      "sourceSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "targetSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\avatar-woman.png",
+      "sourceSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "targetSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\banner-badge.jpg",
+      "sourceSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "targetSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\changelog-hero.jpg",
+      "sourceSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "targetSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\demo-feature-bridge.js",
+      "sourceSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+      "targetSha256": "69AD17B1DABA6C28D5F3E8B357E613D0E2AFE4EA23AADBB41554F57A4F5CABAB",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\demo-panel.css",
+      "sourceSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "targetSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\demo-panel.js",
+      "sourceSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "targetSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\dtp.js",
+      "sourceSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "targetSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\duty-store.js",
+      "sourceSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "targetSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\gate-snap1.jpg",
+      "sourceSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "targetSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\gate-snap2.jpg",
+      "sourceSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "targetSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\gate-snap3.jpg",
+      "sourceSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "targetSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\help-config.js",
+      "sourceSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "targetSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\help-feedback.svg",
+      "sourceSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "targetSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\help-phone.svg",
+      "sourceSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "targetSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\help-v1.css",
+      "sourceSha256": "B3F169DEAE0D41D58C2C7BEB9A679E94F93336F6DEDC64789CC237A1D121149D",
+      "targetSha256": "F2385703B36CCBE1F2EDE4709BD2FB9C44D91DE1C247BE8A5B5C830AC5857F5F",
+      "status": "modified"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\help-v1.js",
+      "sourceSha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+      "targetSha256": "F5FAB7AF5A9AEEE301AA5FE904537B699F97F054A8F5502D6F4A1998F3B3A3D4",
+      "status": "modified"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-addchild.png",
+      "sourceSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "targetSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-badge.png",
+      "sourceSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "targetSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-checkin.png",
+      "sourceSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "targetSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-dismiss.png",
+      "sourceSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "targetSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-help.png",
+      "sourceSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "targetSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-invite.png",
+      "sourceSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "targetSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-leave.png",
+      "sourceSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "targetSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\icon-switch.png",
+      "sourceSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "targetSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\leave-store.js",
+      "sourceSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "targetSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\legal.js",
+      "sourceSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "targetSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\login-bg.jpg",
+      "sourceSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "targetSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\logo.png",
+      "sourceSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "targetSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\notice-entry.js",
+      "sourceSha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6",
+      "targetSha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\notice-host-bridge.js",
+      "sourceSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "targetSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\parent.css",
+      "sourceSha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554",
+      "targetSha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\parent.js",
+      "sourceSha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106",
+      "targetSha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-cap.jpg",
+      "sourceSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "targetSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-duo.jpg",
+      "sourceSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "targetSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-full.jpg",
+      "sourceSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "targetSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-glasses.jpg",
+      "sourceSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "targetSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-qing.jpg",
+      "sourceSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "targetSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-sample.jpg",
+      "sourceSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "targetSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-side.jpg",
+      "sourceSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "targetSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\photo-upload.jpg",
+      "sourceSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "targetSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\sky-clouds.jpg",
+      "sourceSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "targetSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\sky-me.jpg",
+      "sourceSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "targetSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "assets\\update-check.js",
+      "sourceSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "targetSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "资料\\来源与范围.md",
+      "sourceSha256": "6941A964FE341D546CF32E71DC7E83D104C83FA45CAA626DD2FFCD5EF2DB47AF",
+      "targetSha256": "6941A964FE341D546CF32E71DC7E83D104C83FA45CAA626DD2FFCD5EF2DB47AF",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "资料\\继承版本定版信息-v1.2.md",
+      "sourceSha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814",
+      "targetSha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "资料\\页面清单.json",
+      "sourceSha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836",
+      "targetSha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836",
+      "status": "unchanged"
+    },
+    {
+      "endpoint": "家长",
+      "relativePath": "资料\\定版字段清单.md",
+      "sourceSha256": null,
+      "targetSha256": "9751B47CF5833686E99CAD4F1528803C1E00A0C589D07452FD53FC1FA085F26D",
+      "status": "added"
+    }
+  ],
+  "sourceFileCount": 108
+}

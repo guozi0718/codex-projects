@@ -1,0 +1,1095 @@
+{
+  "log": "013",
+  "task": "T-20261116-08",
+  "batch": "V-20261116-09-反馈按钮与时间线对齐",
+  "records": [
+    {
+      "file": "项目管理\\任务登记.md",
+      "beforePath": "修改前\\项目管理\\任务登记.md",
+      "beforeSha256": "E71CE4CBEA6EE5EADF00CA7776E52B25018213E653FDAC0CDF7E319692DFC9C1",
+      "afterPath": "修改后-最终核对\\项目管理\\任务登记.md",
+      "afterSha256": "D405E45CBA9B89D2D62957864D17094B5391917078ED283169E58CCE1C29A6E2",
+      "change": "修改"
+    },
+    {
+      "file": "项目管理\\待办清单.md",
+      "beforePath": "修改前\\项目管理\\待办清单.md",
+      "beforeSha256": "0BB53C27532BDFCBD758B872611D2820CEDADEC52AF79A3C84265B0BA0E48FA0",
+      "afterPath": "修改后-最终核对\\项目管理\\待办清单.md",
+      "afterSha256": "FA63AA61A71B21E67FD607915A2C0D282DD104F47604CD99BBA60A82ADCA7F94",
+      "change": "修改"
+    },
+    {
+      "file": "项目管理\\里程碑.md",
+      "beforePath": "修改前\\项目管理\\里程碑.md",
+      "beforeSha256": "F6EF64E2618C3E9ABDD53596085B55079B43962B8679743B4CF2D108425D4412",
+      "afterPath": "修改后-最终核对\\项目管理\\里程碑.md",
+      "afterSha256": "27D4BFA39C86912BA8115EF75E548184148677443291E1E77DB56A3E3C49AB19",
+      "change": "修改"
+    },
+    {
+      "file": "项目管理\\风险登记.md",
+      "beforePath": "修改前\\项目管理\\风险登记.md",
+      "beforeSha256": "6D7B2D3147788571FEDC609A2A99F25C017A2275043A44879F5C4B92EC1E61DE",
+      "afterPath": "修改后-最终核对\\项目管理\\风险登记.md",
+      "afterSha256": "5FA653B1054BD87E9B7F1972F1AFEE190678C1B8B8F232D1A8DE4E5A11B95239",
+      "change": "修改"
+    },
+    {
+      "file": "记忆库\\项目记忆\\用户偏好.md",
+      "beforePath": "修改前\\记忆库\\项目记忆\\用户偏好.md",
+      "beforeSha256": "1D38B487F89015881AA04F7B52F738D59BEACAC327696EDE978A7871B15BF2BE",
+      "afterPath": "修改后-最终核对\\记忆库\\项目记忆\\用户偏好.md",
+      "afterSha256": "30042F84A43E485444A07F5EF2CAA2EF9018DE75E107BAF559ADB82A3A88EB0B",
+      "change": "修改"
+    },
+    {
+      "file": "记忆库\\项目记忆\\非正式共识.md",
+      "beforePath": "修改前\\记忆库\\项目记忆\\非正式共识.md",
+      "beforeSha256": "818F6A0E591B029D77D3F7F2AC32771C322B1C283F3F01FC753D071D30999004",
+      "afterPath": "修改后-最终核对\\记忆库\\项目记忆\\非正式共识.md",
+      "afterSha256": "9F085C23AD236904199211D83646B8BB289F65C4D3433C989F7E117F8A886E5B",
+      "change": "修改"
+    },
+    {
+      "file": "日志管理.md",
+      "beforePath": "修改前\\日志管理.md",
+      "beforeSha256": "C70D99DA738390E4BF14FB8DE958E09153D6E35A14B9C8B12298A3B9FDC71B10",
+      "afterPath": "修改后-最终核对\\日志管理.md",
+      "afterSha256": "124FD643331B7C9FC30234A1FA90BCE8A4653DFE5DB8BD3D2112C47AF327AEEB",
+      "change": "追加日志013（预写快照）"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\任务信息.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\任务信息.md",
+      "afterSha256": "431E132821B9F668BD9EA3DE8CFBB8F1DFEB4B4D006E674758AC9ACC2FB50EDC",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\变更记录.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\变更记录.md",
+      "afterSha256": "4C7277E985E549DB9C01A847381A666A6AFC4BB2C65300BD9A6ECE107DB14B19",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\定版信息.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\定版信息.md",
+      "afterSha256": "4CE51D79B4DB25E84E37AFFA40CE2425FE93A0938B666CA8481A302A442C9841",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\工具\\preview-server.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\工具\\preview-server.js",
+      "afterSha256": "A668987D4556F32C5724786AC57B4220535AED5E78559EDE2DC313619523D9B0",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\工具\\采集手机原型截图.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\工具\\采集手机原型截图.js",
+      "afterSha256": "63AA57084BEAC7DC7438D56A859E5135A3857960F5BF343E3938021FB378A349",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\index.html",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\index.html",
+      "afterSha256": "5B40FB53FE0DFBB6A1DE5F052EFF526C4D4D1EACACFAB7048D4B0EF71266A7B1",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\parent.html",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\parent.html",
+      "afterSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\teacher.html",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\teacher.html",
+      "afterSha256": "C82A41A2087F34053AA72D8AC29446404E5FA5335D5A76C239685B5C1930D8A1",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\定版信息.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\定版信息.md",
+      "afterSha256": "8072FA40778CBB5D9681C7D833FC184DE78F68F43A9A908A3589DB5FCC59B320",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-boy.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-boy.png",
+      "afterSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-girl.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-girl.png",
+      "afterSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-man.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-man.png",
+      "afterSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-walle.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-walle.jpg",
+      "afterSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-woman.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\avatar-woman.png",
+      "afterSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\banner-badge.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\banner-badge.jpg",
+      "afterSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\changelog-hero.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\changelog-hero.jpg",
+      "afterSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\demo-feature-bridge.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\demo-feature-bridge.js",
+      "afterSha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\demo-panel.css",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\demo-panel.css",
+      "afterSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\demo-panel.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\demo-panel.js",
+      "afterSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\dtp.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\dtp.js",
+      "afterSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\duty-store.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\duty-store.js",
+      "afterSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\gate-snap1.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\gate-snap1.jpg",
+      "afterSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\gate-snap2.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\gate-snap2.jpg",
+      "afterSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\gate-snap3.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\gate-snap3.jpg",
+      "afterSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-config.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-config.js",
+      "afterSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-feedback.svg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-feedback.svg",
+      "afterSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-phone.svg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-phone.svg",
+      "afterSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-v1.css",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-v1.css",
+      "afterSha256": "44A685A2E096BF39C51EEDD5FBF053AA9244B017C9E967F6F144F6AFAA12E6AA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-v1.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\help-v1.js",
+      "afterSha256": "D610B9003377585DE68FEEBD5A60D3EC78D5B9E33C01EEA84443FBDC6EA4C8BB",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-addchild.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-addchild.png",
+      "afterSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-badge.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-badge.png",
+      "afterSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-checkin.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-checkin.png",
+      "afterSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-dismiss.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-dismiss.png",
+      "afterSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-help.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-help.png",
+      "afterSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-invite.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-invite.png",
+      "afterSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-leave.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-leave.png",
+      "afterSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-switch.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\icon-switch.png",
+      "afterSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\leave-store.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\leave-store.js",
+      "afterSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\legal.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\legal.js",
+      "afterSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\login-bg.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\login-bg.jpg",
+      "afterSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\logo.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\logo.png",
+      "afterSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\notice-entry.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\notice-entry.js",
+      "afterSha256": "1B3A40E94933070429A42471ED5CCF37F3683339A1CF55030B6585765DEA27E6",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\notice-host-bridge.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\notice-host-bridge.js",
+      "afterSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\parent.css",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\parent.css",
+      "afterSha256": "86E27B605ADDFCEB8865209231800438B7270A965017A6A3AB9E22FC771D2554",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\parent.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\parent.js",
+      "afterSha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-cap.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-cap.jpg",
+      "afterSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-duo.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-duo.jpg",
+      "afterSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-full.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-full.jpg",
+      "afterSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-glasses.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-glasses.jpg",
+      "afterSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-qing.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-qing.jpg",
+      "afterSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-sample.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-sample.jpg",
+      "afterSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-side.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-side.jpg",
+      "afterSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-upload.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\photo-upload.jpg",
+      "afterSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\sky-clouds.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\sky-clouds.jpg",
+      "afterSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\sky-me.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\sky-me.jpg",
+      "afterSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\update-check.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\assets\\update-check.js",
+      "afterSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\资料\\来源与范围.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\资料\\来源与范围.md",
+      "afterSha256": "FA29180FEF9A4CE6E0E45E2FABB5821C2938589577F3906ADF779FFD4D1AE627",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\资料\\继承版本定版信息-v1.2.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\资料\\继承版本定版信息-v1.2.md",
+      "afterSha256": "19EDFC6AB34D1973B6C1C6EAA4DF12F2351926FB89C9FC1FDF120C0628ED6814",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\资料\\页面清单.json",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-家长\\版本-v0.10\\资料\\页面清单.json",
+      "afterSha256": "D7CC4D1A7A74AB45478F90129C6A1A90527C2BFC320B45291B3E24931CCD2836",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\index.html",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\index.html",
+      "afterSha256": "2ECBF6BD10B3013E846A4C072755E70CF16D324B38853AED3AC1252BD33B2DCD",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\parent.html",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\parent.html",
+      "afterSha256": "6749FB025CB312B574BB4781DAB73FDAAB2135CA9E3DD954ACA4E73B620C984E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\teacher.html",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\teacher.html",
+      "afterSha256": "0A1FBF13FB11B9C49D290C6F68EBF0A8104EBA3CB50026014CF5A95D1CDA720F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\定版信息.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\定版信息.md",
+      "afterSha256": "51AAA1CDDD0A8A2CA881C86477C3CD6868D28FFB0BA3903E0BD88C76CCAA053B",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-boy.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-boy.png",
+      "afterSha256": "3C99F5A027DE0FA5D6C2676AB0F56FBCD1F4E98F407855EC38E5B3E88C8680B7",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-girl.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-girl.png",
+      "afterSha256": "238C78D621FDA0AFC9EFB0086BCC60426CD0281FBC5A6D76AA8E70E5258C2ADB",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-man.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-man.png",
+      "afterSha256": "38FAA47A35CA6F149F9D8510BFBF0CBAB4F6EE70D64A1094A2302E444841D847",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-walle.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-walle.jpg",
+      "afterSha256": "4BE7141A219377616B4D5C49585A01B12A496BB58197DDFEFD194F897007638F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-woman.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\avatar-woman.png",
+      "afterSha256": "1B637554EEECD3D9BEEB777FF188A510BDD6169411ABE9CB6FA04869B3A9F032",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\banner-badge.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\banner-badge.jpg",
+      "afterSha256": "3693C21E5B7E072EAFED877977F4F088E308ECD8E339A15A841904AF386CD93D",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\changelog-hero.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\changelog-hero.jpg",
+      "afterSha256": "889C8F519E1A59CF0DDE83E5C352D6938FDDCCBEF7B9A6D07B51DA27BCADF42F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\demo-feature-bridge.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\demo-feature-bridge.js",
+      "afterSha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\demo-panel.css",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\demo-panel.css",
+      "afterSha256": "E348D49E0C982A2F66B8ABDBCBBC59872D33FE232627B1F500CC8847D1DF2F73",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\demo-panel.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\demo-panel.js",
+      "afterSha256": "52F34FF3171C684B27753BC0D985394101FDC2EAE334D2846DEE1CA46F119ACC",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\dtp.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\dtp.js",
+      "afterSha256": "3B7D2780916CBF42D6A253CA7D3DDA453C81DB3682C1BDC64220AE31B880D68E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\duty-store.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\duty-store.js",
+      "afterSha256": "6F6AD226F667C7B18576F77A1280B99A22F67F1DAF3C4FE58D8B5BA9D8D727BA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\gate-snap1.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\gate-snap1.jpg",
+      "afterSha256": "5456FC670356CFFD912E3052FEEBBC687CFD6F45E3F820B52E832B01876A22AA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\gate-snap2.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\gate-snap2.jpg",
+      "afterSha256": "FE8ACB8E45533CEDDA8037E545C27966A74E64CD658612F3CB4FB428E24C89CA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\gate-snap3.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\gate-snap3.jpg",
+      "afterSha256": "8ADFEB28B51A844796EA10CE68CC7D319A9F0B2DB1AEDEF6E851F4998B7AF34D",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-config.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-config.js",
+      "afterSha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-feedback.svg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-feedback.svg",
+      "afterSha256": "F50E151EA1A771C95FAA5951082AC1E3AB0EDE4AE683AE6C98A71219AB016B8C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-phone.svg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-phone.svg",
+      "afterSha256": "EA0E0981A0A5FBEFA9D52CF4423051D1DA48B475590714D4F0F9201DC709B076",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-v1.css",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-v1.css",
+      "afterSha256": "44A685A2E096BF39C51EEDD5FBF053AA9244B017C9E967F6F144F6AFAA12E6AA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-v1.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\help-v1.js",
+      "afterSha256": "D610B9003377585DE68FEEBD5A60D3EC78D5B9E33C01EEA84443FBDC6EA4C8BB",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-addchild.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-addchild.png",
+      "afterSha256": "83DBB33509F5882ACEE160910529666A2A2D83B435E9CC47EA07125569719C6F",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-badge.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-badge.png",
+      "afterSha256": "79471E1CA460B977F592BC2B85B20B71FE2446161A86F296D5DA1B4F3A357DC3",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-checkin.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-checkin.png",
+      "afterSha256": "309CC819D505840063BE0C33281D3370C99D0CE21F900C80F2055B65CB05D239",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-dismiss.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-dismiss.png",
+      "afterSha256": "F2E1A0A0A65036470A1960D5794CB8CA6EF367A2F5603B793CE7B3CE62F9B077",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-help.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-help.png",
+      "afterSha256": "CDBF95B1F49F4B162D504A9905C5512D09B958FD55D64489D4413188C9F831AD",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-invite.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-invite.png",
+      "afterSha256": "BD3C355053C0A788FD4E40B3E1B1B8BA8B0B0E6C8A755E48793E064630FB36A2",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-leave.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-leave.png",
+      "afterSha256": "8D12F9910FEED3572D8AD3673187EE2D12BEEA7E28ED61272992AB04DB19F421",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-switch.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\icon-switch.png",
+      "afterSha256": "13BCF30769CB0B2EE3955AC7A4A24660B86AE74DBC8A09D34DA198F5C40F32FA",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\leave-store.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\leave-store.js",
+      "afterSha256": "25E966A32F0BDEDDF20D77B95D123AA8729BD8BCE80E39C09A2D20FBB2CF7462",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\legal.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\legal.js",
+      "afterSha256": "104B64C65B8C147023DDF68CC4D18C5AD12C5BCD202687B6A6BB5F443D30374C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\login-bg.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\login-bg.jpg",
+      "afterSha256": "60766850F00AF49E8C597C31365BC1EA8B41C023B8452B861959B514A132F5E0",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\logo.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\logo.png",
+      "afterSha256": "95AC08975F19E9C9536C3C76969BD32F74C12A65292C9800EF7B9E854566FF45",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\notice-entry.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\notice-entry.js",
+      "afterSha256": "A35178DAF3B234A95F6953291803DDBD7F7E4456476624ACF4BAC628956B25AE",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\notice-host-bridge.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\notice-host-bridge.js",
+      "afterSha256": "E1B19DDAADDEC8FE4D44FF75C0EB0112A892C627EFF04F0E5AA1C9FB01A0798C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-cap.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-cap.jpg",
+      "afterSha256": "5D95F2224CE3E00B01536C4D1716FECE91A60C230AC230484FD8BA3533B51B8C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-duo.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-duo.jpg",
+      "afterSha256": "AF16363F6E5C9B73F60D96CCCADE2AF8C38B97A186D393A7923F7B0B466D8FDC",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-full.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-full.jpg",
+      "afterSha256": "075B5C9A0D5EEA4E3C2B599A64B90389EE3664DF3706ED1CD65B6A381BCEE343",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-glasses.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-glasses.jpg",
+      "afterSha256": "D6F05A73276B68CA9CA0CFF8C25F50A4F6C71B50F6444166E571E5EE3B8115C3",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-qing.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-qing.jpg",
+      "afterSha256": "598C25B246BF9CAF64100E11D03FF71D595BF62023F86A12DAE2A863989A7766",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-sample.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-sample.jpg",
+      "afterSha256": "21C9D874998D085AC59EA99EC6E57DDEC47A5C44C8CA1EE1BE21010C07A047E2",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-side.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-side.jpg",
+      "afterSha256": "002C775B72484E16E5E6A514A01A9ADAE3D2882D8694B855DB7A9D33A90BA14E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-upload.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\photo-upload.jpg",
+      "afterSha256": "6D80365220C39872F29DCBB94F19CB2147493C7E6DE126928B9F049EBA74A07C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\sky-clouds.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\sky-clouds.jpg",
+      "afterSha256": "EF08DF8DBF252C6682D67F20B5D043B713649F297D082C044A1BBC4F0F194114",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\sky-me.jpg",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\sky-me.jpg",
+      "afterSha256": "B916679FDDEDCB29BCAA51F1EA45F0B7B6731B02D0B4D96DF6B0B842D53FD77C",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\teacher.css",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\teacher.css",
+      "afterSha256": "2A997057DBC6BA41236BD376E693E5D80186B51D8BA51E06CC97A0BB111D3155",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\teacher.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\teacher.js",
+      "afterSha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\update-check.js",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\assets\\update-check.js",
+      "afterSha256": "3F137570BE5D907D1CEA3DDFBBD667ACABB769334ADEABA47C4584D34929C84E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\资料\\来源与范围.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\资料\\来源与范围.md",
+      "afterSha256": "9823043843740BB3EB28075F22102B49BCC02DE1F6A93F64610919DA2B395871",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\资料\\继承版本定版信息-v1.2.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\资料\\继承版本定版信息-v1.2.md",
+      "afterSha256": "896286EB4186A9C3AEE8B16DE4AB249149776CF010ACFE6095CEA11B62B0C653",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\资料\\页面清单.json",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\端-教师\\版本-v0.10\\资料\\页面清单.json",
+      "afterSha256": "3F75EB6EE97342E80CD571918C23394BCA2FD0BE39E05ED7AE3054C99911F308",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\候选文件SHA256.json",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\候选文件SHA256.json",
+      "afterSha256": "784C4196C66442434EB940CC375DC7B6C6830BB9C5597E69166178D68C124A44",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\验证结果.md",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\验证结果.md",
+      "afterSha256": "F54D71AAA50C21C561E7B1515D56E1035AEE05E338AA8F58C779C44A46FC8855",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\截图清单-v0.10.json",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\截图清单-v0.10.json",
+      "afterSha256": "FCD126C3A88C93AEDC007DCD3603C4CB65EEF773040198BA1F7D604B7A08AE82",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\截图清单.json",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\截图清单.json",
+      "afterSha256": "FCD126C3A88C93AEDC007DCD3603C4CB65EEF773040198BA1F7D604B7A08AE82",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-已回复详情倒序时间线.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-已回复详情倒序时间线.png",
+      "afterSha256": "E9678D28526AD608EC25EF50FB8EE2B8FA16F6EC0E5AB6AE953394748AF98C0A",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-帮助反馈入口.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-帮助反馈入口.png",
+      "afterSha256": "2CFF6A9356C626E3B7F4B9050EE733CCAB3319F203AB678318EC410B5A3B51FF",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-我的反馈列表.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-我的反馈列表.png",
+      "afterSha256": "5A6FBF18A78A1279E318D1E6D305149996672773E90FA45B3BB90F7CE581D2C5",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-提交反馈九图表单.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-提交反馈九图表单.png",
+      "afterSha256": "077EF10A81F12D685EC87941E2ABF2E13B830C009A68AF47CC96FF08C1269497",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-撤回确认弹窗.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-撤回确认弹窗.png",
+      "afterSha256": "AF324CE39635976669B15B851CCCDFF5DC2A23DA55D3DCED36D296F6F17050C3",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-追问弹窗.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-家长-追问弹窗.png",
+      "afterSha256": "553BF51A2EBB0D296D162246032404E93A54C57ED066B2266111FA1219743CD5",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-已回复详情倒序时间线.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-已回复详情倒序时间线.png",
+      "afterSha256": "B19C8C55DDC71D3492091D397406A0704C2BDC0A4F693683FD0D91FBB0ABC590",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-帮助反馈入口.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-帮助反馈入口.png",
+      "afterSha256": "197F117F50BC303EA7A4613B036F1532DD9CFECB7118C7E29FCE7A28E101350E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-我的反馈列表.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-我的反馈列表.png",
+      "afterSha256": "8F765A1334B90D69CD60E03601666AD8AF1DE49F5B50CBE18682E4588226787E",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-提交反馈九图表单.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-提交反馈九图表单.png",
+      "afterSha256": "077EF10A81F12D685EC87941E2ABF2E13B830C009A68AF47CC96FF08C1269497",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-撤回确认弹窗.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-撤回确认弹窗.png",
+      "afterSha256": "9F330F3DDCE93FD048447EAAABEC61ADA0D731A011AA1B1D68D6A1B73ADC9E45",
+      "change": "新建候选版本v0.10/资料"
+    },
+    {
+      "file": "任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-追问弹窗.png",
+      "beforePath": "新增评审候选/任务资料",
+      "beforeSha256": null,
+      "afterPath": "修改后-最终核对\\任务\\T-20261116-08-反馈操作与时间线对齐\\资料\\截图对比\\现-v0.10\\现-v0.10-教师-追问弹窗.png",
+      "afterSha256": "6AA6D4C3DAD158C67B1286B1A51243594884579CBCDC5195A70E5FCADF944FBC",
+      "change": "新建候选版本v0.10/资料"
+    }
+  ]
+}

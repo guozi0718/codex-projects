@@ -1,0 +1,14 @@
+/* v0.12：反馈信息状态行、首条提交时间线及成对操作按钮统一 */
+.hf-feedback-type{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0 4px;color:#191744;font-size:13px;font-weight:700}
+.hf-feedback-type .hf-badge{margin-left:auto;flex:none}
+.hf-message-header{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:8px;min-width:0}
+.hf-message-meta{display:flex;align-items:center;gap:7px;min-width:0;overflow:hidden}
+.hf-message-meta b,.hf-message-meta span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hf-message-header time{margin-left:auto;flex:none;white-space:nowrap}
+.hf-detail-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 0 18px}
+.hf-detail-action{width:100%;min-width:0;height:46px;min-height:46px;box-sizing:border-box;border-radius:26px;font-size:14px;padding:0 12px}
+.hf-submit-footer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hf-submit-footer button{width:100%;min-width:0;height:46px;min-height:46px;flex:none;box-sizing:border-box;border-radius:26px;font-size:14px;padding:0 12px}
+#hf-dialog>.hf-form-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#hf-dialog>.hf-form-actions button{width:100%;min-width:0;height:46px;min-height:46px;flex:none;box-sizing:border-box;border-radius:26px;font-size:14px;padding:0 12px}
+.hf-message-withdrawn .hf-message-meta span{color:#788094}

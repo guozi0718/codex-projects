@@ -1,0 +1,170 @@
+[
+  {
+    "srcId": "SRC-CS-01A",
+    "purpose": "第一期原始家长页面",
+    "path": "E:\\codex\\小程序\\任务\\T-20261113-01-帮助与反馈优化\\资料\\一期原始包\\zhixiaohui-ssb-prototypes\\parent.html",
+    "version": "原始一期包",
+    "sha256": "0D6E5C372993898245018D0AF6BCCDA36DF6C9AB6693EBA814C33B526477A1A8",
+    "bytes": 385858
+  },
+  {
+    "srcId": "SRC-CS-01B",
+    "purpose": "第一期原始家长交互脚本",
+    "path": "E:\\codex\\小程序\\任务\\T-20261113-01-帮助与反馈优化\\资料\\一期原始包\\zhixiaohui-ssb-prototypes\\assets\\parent.js",
+    "version": "原始一期包",
+    "sha256": "543F5433A73413F43CFED65D26336EE6F87B9D0451C048E2AF7A112682042106",
+    "bytes": 678798
+  },
+  {
+    "srcId": "SRC-CS-01C",
+    "purpose": "第一期原始教师页面",
+    "path": "E:\\codex\\小程序\\任务\\T-20261113-01-帮助与反馈优化\\资料\\一期原始包\\zhixiaohui-ssb-prototypes\\teacher.html",
+    "version": "原始一期包",
+    "sha256": "82F3ECF2ED6E018926FD553E497386FE2138D52DDAB399CF2D58B4DC17597671",
+    "bytes": 277966
+  },
+  {
+    "srcId": "SRC-CS-01D",
+    "purpose": "第一期原始教师交互脚本",
+    "path": "E:\\codex\\小程序\\任务\\T-20261113-01-帮助与反馈优化\\资料\\一期原始包\\zhixiaohui-ssb-prototypes\\assets\\teacher.js",
+    "version": "原始一期包",
+    "sha256": "53F195395A768E7F3A7F43F258718B7887D396955379D506ADA14E2502EFC037",
+    "bytes": 976423
+  },
+  {
+    "srcId": "SRC-CS-02A",
+    "purpose": "已确认需求与变更记录",
+    "path": "E:\\codex\\小程序\\任务\\T-20261113-01-帮助与反馈优化\\变更记录.md",
+    "version": "T-20261113-01 v1.1 / v1.2修订",
+    "sha256": "5762E0E276DFC93EFFF51E21264E3C36A2FD24DEFEAD461C91E9CCFEFA4B4C54",
+    "bytes": 3149
+  },
+  {
+    "srcId": "SRC-CS-02B",
+    "purpose": "已确认字段与规则锁定记录",
+    "path": "E:\\codex\\小程序\\任务\\T-20261113-01-帮助与反馈优化\\定版信息.md",
+    "version": "T-20261113-01 v1.1 / v1.2修订",
+    "sha256": "EABC5E56CD8C53028EB0717CD998BF27DAFE6BE06135255404AAFD6E1293FA57",
+    "bytes": 3072
+  },
+  {
+    "srcId": "SRC-CS-03A",
+    "purpose": "当前活动原型指针",
+    "path": "E:\\codex\\小程序\\当前原型基线.json",
+    "version": "T-20261114-01 v0.5",
+    "sha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+    "bytes": 1645
+  },
+  {
+    "srcId": "SRC-CS-03B",
+    "purpose": "家长端当前原型入口",
+    "path": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-家长\\版本-v0.5\\index.html",
+    "version": "v0.5",
+    "sha256": "C593D2B2C1FA0C468E85B8BB125DDF465B08437319CFA7B306AF0DDCCBA94D30",
+    "bytes": 385156
+  },
+  {
+    "srcId": "SRC-CS-03C",
+    "purpose": "家长端客服展示逻辑",
+    "path": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-家长\\版本-v0.5\\assets\\help-v1.js",
+    "version": "v0.5",
+    "sha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+    "bytes": 13550
+  },
+  {
+    "srcId": "SRC-CS-03D",
+    "purpose": "家长端客服/FAQ离线演示配置",
+    "path": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-家长\\版本-v0.5\\assets\\help-config.js",
+    "version": "v0.5",
+    "sha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+    "bytes": 3018
+  },
+  {
+    "srcId": "SRC-CS-03E",
+    "purpose": "家长端客服展示样式",
+    "path": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-家长\\版本-v0.5\\assets\\help-v1.css",
+    "version": "v0.5",
+    "sha256": "B3F169DEAE0D41D58C2C7BEB9A679E94F93336F6DEDC64789CC237A1D121149D",
+    "bytes": 7322
+  },
+  {
+    "srcId": "SRC-CS-03F",
+    "purpose": "教师端客服展示逻辑",
+    "path": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-教师\\版本-v0.5\\assets\\help-v1.js",
+    "version": "v0.5",
+    "sha256": "E1682C8F52B43FABEC8EDE113A50687AEEA831F56A78E20F0C5C293AC2A3DA44",
+    "bytes": 13550
+  },
+  {
+    "srcId": "SRC-CS-03G",
+    "purpose": "教师端客服/FAQ离线演示配置",
+    "path": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-教师\\版本-v0.5\\assets\\help-config.js",
+    "version": "v0.5",
+    "sha256": "E14A809DD060B36EE1C1867D348F26B580726A6B3B9A0612208901F3D3D3F0B0",
+    "bytes": 3018
+  },
+  {
+    "srcId": "SRC-CS-03H",
+    "purpose": "教师端客服展示样式",
+    "path": "E:\\codex\\小程序\\任务\\T-20261114-01-统一接入与演示说明\\端-教师\\版本-v0.5\\assets\\help-v1.css",
+    "version": "v0.5",
+    "sha256": "B3F169DEAE0D41D58C2C7BEB9A679E94F93336F6DEDC64789CC237A1D121149D",
+    "bytes": 7322
+  },
+  {
+    "srcId": "SRC-CS-04A",
+    "purpose": "用户参考图1-单客服",
+    "path": "E:\\codex\\小程序\\任务\\T-20261116-05-客服电话展示优化第一期\\资料\\截图\\用户参考图1-单客服.png",
+    "version": "用户附件拷贝",
+    "sha256": "932E141F1AD452B8185EE432E1E177B553BB1DCC6E7A53E97AED694DA039F6BC",
+    "bytes": 1003729
+  },
+  {
+    "srcId": "SRC-CS-04B",
+    "purpose": "用户参考图2-多客服弹窗",
+    "path": "E:\\codex\\小程序\\任务\\T-20261116-05-客服电话展示优化第一期\\资料\\截图\\用户参考图2-多客服弹窗.png",
+    "version": "用户附件拷贝",
+    "sha256": "392C43E9BA2AF202EF50AEFF67DDA929C5A62C3B04EFBA9EB6FA8717ABE9F9D5",
+    "bytes": 995362
+  },
+  {
+    "srcId": "SRC-CS-05A",
+    "purpose": "PRD结构模板",
+    "path": "E:\\codex\\文档模板\\产品需求文档模板-v1.0.md",
+    "version": "模板v1.0",
+    "sha256": "004463DF3B6671EA75C481FD19E73AB6FFE4C2D4E74E6E50C5267BFC5CA2598B",
+    "bytes": 13147
+  },
+  {
+    "srcId": "OUT-原版-家长端帮助与客服-全屏",
+    "purpose": "本次生成的原/现对比截图",
+    "path": "E:\\codex\\小程序\\任务\\T-20261116-05-客服电话展示优化第一期\\资料\\截图\\原版-家长端帮助与客服-全屏.png",
+    "version": "Chrome本地HTML渲染 800x900",
+    "sha256": "586E75B799C915AC37319A4CF5AB5B9B57B4C46ABF84D2E23A83979E33EBFB1C",
+    "bytes": 210136
+  },
+  {
+    "srcId": "OUT-现版-家长端单客服卡片-全屏",
+    "purpose": "本次生成的原/现对比截图",
+    "path": "E:\\codex\\小程序\\任务\\T-20261116-05-客服电话展示优化第一期\\资料\\截图\\现版-家长端单客服卡片-全屏.png",
+    "version": "Chrome本地HTML渲染 800x900",
+    "sha256": "A4A495764A48148991E3A5209D0B6223567C44F462BFAC8DE7EB671F5722CCF4",
+    "bytes": 233789
+  },
+  {
+    "srcId": "OUT-现版-家长端多客服入口-全屏",
+    "purpose": "本次生成的原/现对比截图",
+    "path": "E:\\codex\\小程序\\任务\\T-20261116-05-客服电话展示优化第一期\\资料\\截图\\现版-家长端多客服入口-全屏.png",
+    "version": "Chrome本地HTML渲染 800x900",
+    "sha256": "9164E8498FB76DA49CE0424C97700A13EE98B469AD741939DA56B0B6DC811348",
+    "bytes": 231469
+  },
+  {
+    "srcId": "OUT-现版-家长端多客服弹窗-全屏",
+    "purpose": "本次生成的原/现对比截图",
+    "path": "E:\\codex\\小程序\\任务\\T-20261116-05-客服电话展示优化第一期\\资料\\截图\\现版-家长端多客服弹窗-全屏.png",
+    "version": "Chrome本地HTML渲染 800x900",
+    "sha256": "754DC23F423926D09F65FC8F07960E2261203F363C85D82555E294B44974F592",
+    "bytes": 116764
+  }
+]

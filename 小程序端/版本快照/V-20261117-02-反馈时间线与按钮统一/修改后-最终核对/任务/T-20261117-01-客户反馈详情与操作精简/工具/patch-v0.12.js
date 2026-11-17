@@ -1,0 +1,35 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const base='E:/codex/小程序/任务/T-20261117-01-客户反馈详情与操作精简';
+const tools=path.join(base,'工具'), q=String.fromCharCode(96);
+const newFunctions=fs.readFileSync(path.join(tools,'render-functions-v0.12.js.txt'),'utf8').trim();
+const description=fs.readFileSync(path.join(tools,'detail-demo-v0.12.txt'),'utf8').trim();
+const cssAppend=fs.readFileSync(path.join(tools,'feedback-layout-v0.12.css.txt'),'utf8');
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex').toUpperCase();
+for(const role of ['端-教师','端-家长']){
+ const version=path.join(base,role,'版本-v0.12'), jsPath=path.join(version,'assets','help-v1.js'), cssPath=path.join(version,'assets','help-v1.css');
+ let js=fs.readFileSync(jsPath,'utf8');
+ const start=js.indexOf('function renderFeedbackSummary');
+ const end=js.indexOf('function renderFeedbackDetail',start);
+ if(start<0||end<0)throw new Error('feedback render functions not found: '+role);
+ js=js.slice(0,start)+newFunctions+'\n'+js.slice(end);
+ const dStart=js.indexOf('const detailDescription='), dOpen=js.indexOf(q,dStart), dClose=js.indexOf(q+';',dOpen);
+ if(dStart<0||dOpen<0||dClose<0)throw new Error('detail demo description not found: '+role);
+ js=js.slice(0,dStart)+'const detailDescription='+q+description+q+';'+js.slice(dClose+2);
+ const genericOld='沟通时间线仅展示对外可见消息，按发生时间倒序排列，较新的消息在上；同一时间按服务端消息顺序倒序。';
+ const genericNew='沟通时间线展示首条提交动作、公开处理回复与追问，按发生时间倒序排列，较新的消息在上；同一时间按服务端消息顺序倒序。已撤回记录在原始提交条目标记状态并保留正文。';
+ if(!js.includes(genericOld))throw new Error('generic demo text not found: '+role);
+ js=js.replace(genericOld,genericNew);
+ fs.writeFileSync(jsPath,js,'utf8');
+ fs.appendFileSync(cssPath,'\n'+cssAppend,'utf8');
+ const indexPath=path.join(version,'index.html');let html=fs.readFileSync(indexPath,'utf8');
+ const jsRef='assets/help-v1.js?v='+hash(jsPath).slice(0,12);
+ const cssRef='assets/help-v1.css?v='+hash(cssPath).slice(0,12);
+ html=html.replace(/assets\/help-v1\.js\?v=[A-Fa-f0-9]+/g,jsRef).replace(/assets\/help-v1\.css\?v=[A-Fa-f0-9]+/g,cssRef);
+ fs.writeFileSync(indexPath,html,'utf8');
+ let release=fs.readFileSync(path.join(version,'定版信息.md'),'utf8').replaceAll('v0.11','v0.12');
+ release+='\n\n本版本承接教师/家长 v0.11 评审候选；本轮仅增加首条提交时间线、反馈类型与状态同行右对齐，以及反馈页所有成对按钮同尺寸，已撤回记录显示原始提交及撤回标记。候选待评审，未定版、未发布。\n';
+ fs.writeFileSync(path.join(version,'定版信息.md'),release,'utf8');
+ let scope=fs.readFileSync(path.join(version,'资料','来源与范围.md'),'utf8').replaceAll('v0.11','v0.12');
+ scope+='\n本版本直接继承本任务 v0.11；本轮变更项见任务变更记录，不覆盖 v0.11。\n';
+ fs.writeFileSync(path.join(version,'资料','来源与范围.md'),scope,'utf8');
+}

@@ -1,0 +1,403 @@
+{
+  "generated_at": "2026-11-13 00:13:41",
+  "source": "C:\\Users\\YGZY\\WorkBuddy\\2026-11-11-22-51-44\\outputs\\zhixiaohui-ssb-prototypes",
+  "sandbox_run_root": "C:\\Users\\YGZY\\WorkBuddy\\2026-11-11-22-51-44\\sandbox_skill_audit\\sandbox_ssb_run",
+  "checks": {
+    "static": {
+      "files": 59,
+      "html": 8,
+      "code_files": 20,
+      "missing_local_refs": [],
+      "auto_external_refs": [],
+      "user_initiated_external_navigations": [
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/-NRkiDdUP"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/0CwE4FxMN"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/40LRR3EX1"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/4Ygo7cioJ"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/6vhaOQFra"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/Bb33Bkf58"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/J5M07LorR"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/JrGcjP7ex"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/Ju1-DUNXG"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/LIooc_FJD"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/LlpXh6HVe"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/MmxOnNJRo"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/RmaUBlZOL"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/TLtRDb_VE"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/Ub8tandiK"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/_fhr8onu0"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/aYnri3J6v"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/iHTsxV2hA"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/lzjVJBrBi"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/pux6Stalx"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/qNEDRohZa"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/rVpMhk_VH"
+        ],
+        [
+          "admin-trade.html",
+          "https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/vE3WdNzxs"
+        ],
+        [
+          "parent.html",
+          "https://app.ygzypm.com/sites/kbrrvbkhmwwq2lox-jiazhangduanshangchaunrenlianzhaopian/"
+        ],
+        [
+          "parent.html",
+          "https://rp.mockplus.cn/run/dagSO_Yhio/eESEl-zeh"
+        ],
+        [
+          "parent.html",
+          "https://rp.mockplus.cn/run/dagSO_Yhio/eESEl-zeh?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=1&dt=iphoneX&out=0&rt=1&isFrame=true&moduleID=QJb7NGJnb"
+        ],
+        [
+          "parent.html",
+          "https://rp.mockplus.cn/run/dagSO_Yhio/jrJRxeYU8"
+        ],
+        [
+          "parent.html",
+          "https://rp.mockplus.cn/run/dagSO_Yhio/jrJRxeYU8?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=1&dt=iphoneX&out=0&rt=1&isFrame=true&moduleID=QJb7NGJnb"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/0QNOGeBto"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/1E-26Z8ae"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/1xDV8ZQQc"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/2X_YcEZo5"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/69p_sTNN2"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/A-_XCOpQI"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/CkEvadcST"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/DQTRvsena"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/DcEd3yLhI"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/Hi2_vjUAq"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/LmkOshWUd"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/OBKYDx_LG"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/PAfcS3SBP"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/Qh1H-_u9l"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/SwOOTZvfm"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/TlRw9M0W6"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/TnHNnbJc5"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/VldjOy1Lg"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/Vq1nS4kcU"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/XYA28dsML"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/ZCnzaAN3w"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/ZyzhVUFp1"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/eK_rviuH5"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/hfYdfFcB6_"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/khEla_qlZ"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/ksdn3rsH1"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/kuyrfyTbv"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/lVnbjzpG2"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/na81KTy4s"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/pPpd53ITa"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/qLd2sENCJ"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/rL3Hc2t3Jn"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/zT9wwCvGE"
+        ],
+        [
+          "school.html",
+          "https://rp.mockplus.cn/run/AuEZoeUglv/ZDrSxqryLA/zZiGxbqZ8"
+        ],
+        [
+          "teacher.html",
+          "https://app.ygzypm.com/sites/qnmbw7afetpnnfc-smart-school/"
+        ],
+        [
+          "teacher.html",
+          "https://app.ygzypm.com/sites/qnmbw7afetpnnfc-smart-school/#sc-tatt"
+        ],
+        [
+          "teacher.html",
+          "https://guozi0718.github.io/claude-code/care3/teacher-warning.html"
+        ],
+        [
+          "teacher.html",
+          "https://guozi0718.github.io/codex/%E7%8F%AD%E7%BA%A7%E8%AF%84%E4%BB%B7/%E7%8F%AD%E7%BA%A7%E8%AF%84%E4%BB%B7-%E8%80%81%E5%B8%88%E7%AB%AF-V1.0-%E7%8B%AC%E7%AB%8B%E7%89%88.html"
+        ],
+        [
+          "teacher.html",
+          "https://guozi0718.github.io/codex/%E7%8F%AD%E7%BA%A7%E8%AF%84%E4%BB%B7/%E7%8F%AD%E7%BA%A7%E8%AF%84%E4%BB%B7-%E8%80%81%E5%B8%88%E7%AB%AF-V1.0-%E7%8B%AC%E7%AB%8B%E7%89%88.html#ce-rank"
+        ]
+      ],
+      "invisible_unicode_files": [
+        "assets/teacher.js"
+      ],
+      "finding_counts": {
+        "external_auto_load": 0,
+        "network_api": 0,
+        "credential_exfil": 0,
+        "data_exfiltration": 0,
+        "code_exec": 0,
+        "obfuscation": 0,
+        "prompt_injection": 0
+      },
+      "findings": {}
+    },
+    "syntax": {
+      "checked": 21,
+      "failed": []
+    },
+    "sandbox_selftest": {
+      "probes": [
+        {
+          "probe": "python_network",
+          "blocked_as_expected": true
+        },
+        {
+          "probe": "python_subprocess",
+          "blocked_as_expected": true
+        },
+        {
+          "probe": "python_sensitive_file",
+          "blocked_as_expected": true
+        },
+        {
+          "probe": "node_network",
+          "blocked_as_expected": true
+        },
+        {
+          "probe": "node_child_process",
+          "blocked_as_expected": true
+        }
+      ],
+      "all_blocked": true,
+      "event_kinds": {
+        "BLOCKED_NETWORK_CONNECT": 1,
+        "BLOCKED_SUBPROCESS": 1,
+        "SENSITIVE_FILE_ACCESS": 1,
+        "BLOCKED_HTTP_GET": 1,
+        "BLOCKED_CHILD_PROCESS_execSync": 1
+      },
+      "events_total": 5
+    },
+    "browser_sandbox": {
+      "port": 57830,
+      "results": [
+        {
+          "page": "index.html",
+          "dom_bytes": 13005,
+          "has_wangyao": false,
+          "has_id_panel": false,
+          "has_phone": false,
+          "chrome_errors": "[18748:40308:1113/001347.337:ERROR:chrome\\browser\\extensions\\external_registry_loader_win.cc:147] Missing value path for key Software\\Google\\Chrome\\Extensions\\dngcpimnedloihjnnfngk"
+        },
+        {
+          "page": "teacher.html#sc-home",
+          "dom_bytes": 714948,
+          "has_wangyao": true,
+          "has_id_panel": true,
+          "has_phone": true,
+          "chrome_errors": "[33180:24152:1113/001347.888:ERROR:chrome\\browser\\extensions\\external_registry_loader_win.cc:147] Missing value path for key Software\\Google\\Chrome\\Extensions\\dngcpimnedloihjnnfngk"
+        },
+        {
+          "page": "parent.html#sc-home",
+          "dom_bytes": 736934,
+          "has_wangyao": true,
+          "has_id_panel": true,
+          "has_phone": true,
+          "chrome_errors": "[20380:16372:1113/001348.560:ERROR:chrome\\browser\\extensions\\external_registry_loader_win.cc:147] Missing value path for key Software\\Google\\Chrome\\Extensions\\dngcpimnedloihjnnfngk"
+        },
+        {
+          "page": "school.html",
+          "dom_bytes": 270792,
+          "has_wangyao": true,
+          "has_id_panel": false,
+          "has_phone": false,
+          "chrome_errors": "[28060:40392:1113/001349.136:ERROR:chrome\\browser\\extensions\\external_registry_loader_win.cc:147] Missing value path for key Software\\Google\\Chrome\\Extensions\\dngcpimnedloihjnnfngk"
+        },
+        {
+          "page": "admin.html",
+          "dom_bytes": 109103,
+          "has_wangyao": false,
+          "has_id_panel": false,
+          "has_phone": false,
+          "chrome_errors": "[39308:10604:1113/001349.694:ERROR:chrome\\browser\\extensions\\external_registry_loader_win.cc:147] Missing value path for key Software\\Google\\Chrome\\Extensions\\dngcpimnedloihjnnfngk"
+        }
+      ],
+      "local_http_requests": 42,
+      "request_sample": [
+        "\"GET /index.html HTTP/1.1\" 200 -",
+        "\"GET /assets/logo.png HTTP/1.1\" 200 -",
+        "\"GET /assets/update-check.js HTTP/1.1\" 200 -",
+        "\"GET /assets/sky-clouds.jpg HTTP/1.1\" 200 -",
+        "\"GET /teacher.html HTTP/1.1\" 200 -",
+        "\"GET /assets/teacher.css HTTP/1.1\" 200 -",
+        "\"GET /assets/demo-panel.css HTTP/1.1\" 200 -",
+        "\"GET /assets/icon-badge.png HTTP/1.1\" 200 -",
+        "\"GET /assets/icon-checkin.png HTTP/1.1\" 200 -",
+        "\"GET /assets/icon-leave.png HTTP/1.1\" 200 -",
+        "\"GET /assets/icon-dismiss.png HTTP/1.1\" 200 -",
+        "\"GET /assets/demo-panel.js HTTP/1.1\" 200 -"
+      ],
+      "external_requests_observed": 0,
+      "note": "Chrome launched with --host-resolver-rules=\"MAP * ~NOTFOUND, EXCLUDE 127.0.0.1\"; pages load only from the isolated local server."
+    }
+  },
+  "verdict": {
+    "critical_findings": 0,
+    "pass": true,
+    "auto_external_requests": 0,
+    "user_initiated_external_links": 67,
+    "defender_note": "Windows Defender is disabled (Huorong/Lenovo AV takeover); no AV CLI scan possible. Static + behavioural checks used instead."
+  }
+}

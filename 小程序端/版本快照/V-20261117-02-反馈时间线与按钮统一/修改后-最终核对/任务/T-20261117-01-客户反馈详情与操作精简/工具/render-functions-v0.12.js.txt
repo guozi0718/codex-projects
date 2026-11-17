@@ -1,0 +1,26 @@
+function renderFeedbackSummary(record){
+ const firstMessage=(record.messages||[]).find(message=>message.messageType==='首条反馈');
+ const content=record.firstContent||firstMessage?.content||'';
+ const attachments=firstMessage?.attachments||record.attachments||[];
+ return '<section class="hf-card hf-detail-summary"><div class="hf-feedback-number"><span>反馈编号</span><b>'+esc(record.feedbackNo)+'</b></div><div class="hf-feedback-type"><span>'+esc(record.feedbackType)+'</span>'+badge(record)+'</div><div class="hf-detail-text">'+esc(content)+'</div>'+renderAttachments(attachments)+'</section>';
+}
+function renderMessageTimeline(record){
+ const isVisible=message=>!message.internal&&!message.isInternal&&message.kind!=='internal'&&message.visibility!=='internal'&&message.messageType!=='内部处理';
+ const sourceMessages=(record.messages||[]).filter(isVisible);
+ if(!sourceMessages.some(message=>message.messageType==='首条反馈')&&record.firstContent){
+  sourceMessages.push({messageType:'首条反馈',authorNameSnapshot:record.submitterNameSnapshot||'提交人',content:record.firstContent,attachments:record.attachments||[],createdAt:record.createdAt,displayTime:record.createdAt?timeLabel(new Date(record.createdAt)):'—',serverSequence:0});
+ }
+ const items=sourceMessages.map((message,index)=>{
+  const initial=message.messageType==='首条反馈';
+  return {...message,__index:index,__initial:initial,messageType:initial?(record.status==='已撤回'?'首次反馈（已撤回）':'提交'):message.messageType};
+ });
+ items.sort((a,b)=>(Date.parse(b.createdAt||'')||0)-(Date.parse(a.createdAt||'')||0)||(b.serverSequence||0)-(a.serverSequence||0)||(b.__index||0)-(a.__index||0));
+ if(!items.length)return '';
+ return '<section class="hf-card hf-conversation-card"><h3>沟通记录</h3><div class="hf-timeline">'+items.map(message=>{
+  const removed=!message.__initial&&(!!message.deleted||!!message.withdrawn);
+  const body=removed?(message.messageType==='回复'?'该回复已删除':'该消息已撤回'):message.content;
+  const attachments=removed?[]:(message.attachments||[]);
+  const time=message.displayTime||(message.createdAt?timeLabel(new Date(message.createdAt)):'—');
+  return '<article class="hf-message'+(message.__initial&&record.status==='已撤回'?' hf-message-withdrawn':'')+'"><header class="hf-message-header"><div class="hf-message-meta"><b>'+esc(message.authorNameSnapshot||'提交人')+'</b><span>'+esc(message.messageType||'沟通消息')+'</span></div><time>'+esc(time)+'</time></header><p>'+esc(body||'')+'</p>'+renderAttachments(attachments)+'</article>';
+ }).join('')+'</div></section>';
+}

@@ -1,0 +1,874 @@
+{
+  "scope": "三功能当前配置，不将其他未适配菜单计入覆盖",
+  "contexts": [
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "list",
+      "title": "客服管理",
+      "sections": [
+        "入口与返回",
+        "默认客服与兜底",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "create",
+      "title": "新增客服",
+      "sections": [
+        "入口与返回",
+        "资料与校验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "edit",
+      "title": "编辑客服",
+      "sections": [
+        "入口与返回",
+        "资料与校验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "detail",
+      "title": "详情",
+      "sections": [
+        "入口与返回",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "schools",
+      "title": "关联学校",
+      "sections": [
+        "入口与返回",
+        "学校选择",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "agents",
+      "title": "关联代理商",
+      "sections": [
+        "入口与返回",
+        "代理商关联",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "default",
+      "title": "设置默认客服",
+      "sections": [
+        "入口与返回",
+        "默认客服与兜底",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "delete",
+      "title": "删除客服",
+      "sections": [
+        "入口与返回",
+        "确认与资格复验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "confirm",
+      "title": "确认操作",
+      "sections": [
+        "入口与返回",
+        "确认与资格复验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "customer-service.list",
+      "mode": "logs",
+      "title": "日志",
+      "sections": [
+        "入口与返回",
+        "日志",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.replies",
+      "mode": "list",
+      "title": "问题反馈",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.replies",
+      "mode": "detail",
+      "title": "详情",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.replies",
+      "mode": "reply",
+      "title": "回复反馈",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "字段与校验",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.replies",
+      "mode": "confirm",
+      "title": "确认操作",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.replies",
+      "mode": "notify",
+      "title": "编辑问题",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.user-data",
+      "mode": "search",
+      "title": "用户数据查询",
+      "sections": [
+        "用户定位",
+        "当前资料页签",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.user-data",
+      "mode": "person",
+      "title": "用户数据查询",
+      "sections": [
+        "用户定位",
+        "当前资料页签",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.faqs",
+      "mode": "list",
+      "title": "常见问题配置",
+      "sections": [
+        "常见问题",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "enterprise",
+      "page": "feedback.faqs",
+      "mode": "faq-edit",
+      "title": "编辑问题",
+      "sections": [
+        "常见问题",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "school",
+      "page": "school-feedback",
+      "mode": "list",
+      "title": "问题反馈",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "school",
+      "page": "school-feedback",
+      "mode": "detail",
+      "title": "详情",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "school",
+      "page": "school-feedback",
+      "mode": "reply",
+      "title": "回复反馈",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "字段与校验",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "school",
+      "page": "school-feedback",
+      "mode": "confirm",
+      "title": "确认操作",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "school",
+      "page": "school-feedback",
+      "mode": "notify",
+      "title": "编辑问题",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "list",
+      "title": "客服管理",
+      "sections": [
+        "入口与返回",
+        "默认客服与兜底",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "create",
+      "title": "新增客服",
+      "sections": [
+        "入口与返回",
+        "资料与校验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "edit",
+      "title": "编辑客服",
+      "sections": [
+        "入口与返回",
+        "资料与校验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "detail",
+      "title": "详情",
+      "sections": [
+        "入口与返回",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "schools",
+      "title": "关联学校",
+      "sections": [
+        "入口与返回",
+        "学校选择",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "agents",
+      "title": "关联代理商",
+      "sections": [
+        "入口与返回",
+        "代理商关联",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "default",
+      "title": "设置默认客服",
+      "sections": [
+        "入口与返回",
+        "默认客服与兜底",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "delete",
+      "title": "删除客服",
+      "sections": [
+        "入口与返回",
+        "确认与资格复验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "confirm",
+      "title": "确认操作",
+      "sections": [
+        "入口与返回",
+        "确认与资格复验",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "cs",
+      "mode": "logs",
+      "title": "日志",
+      "sections": [
+        "入口与返回",
+        "日志",
+        "范围与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "school-feedback",
+      "mode": "list",
+      "title": "问题反馈",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "empty",
+        "no-match",
+        "loading",
+        "failed",
+        "timeout",
+        "permission",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "school-feedback",
+      "mode": "detail",
+      "title": "详情",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "school-feedback",
+      "mode": "reply",
+      "title": "回复反馈",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "字段与校验",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "required",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "school-feedback",
+      "mode": "confirm",
+      "title": "确认操作",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "conflict",
+        "submit",
+        "unknown",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    },
+    {
+      "end": "agent",
+      "page": "school-feedback",
+      "mode": "notify",
+      "title": "编辑问题",
+      "sections": [
+        "状态与范围",
+        "沟通与附件",
+        "通知与协作",
+        "入口、返回与失败",
+        "当前区域与字段",
+        "演示边界与恢复"
+      ],
+      "actions": [
+        "failed",
+        "permission",
+        "gone",
+        "restore"
+      ],
+      "checked": "DOM configuration + direct actions + restore + search + 50 open/close"
+    }
+  ],
+  "note": "Notice and mobile contexts use their runtime adapter; browser evidence separately required"
+}

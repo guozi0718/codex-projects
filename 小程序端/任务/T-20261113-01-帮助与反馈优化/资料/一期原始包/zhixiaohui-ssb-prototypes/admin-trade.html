@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智小徽 · 运管端 · 智能校徽</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{
+  --color-primary:#2f6bff;         /* 主色（品牌蓝） */
+  --color-primary-hover:#2458d8;   /* 主色 hover 加深 */
+  --color-primary-soft:#5f8dff;    /* 主色浅化（渐变等） */
+  --color-primary-bg:#eef5ff;      /* 主色淡底（选中态背景/hover 背景） */
+  --color-primary-border:#cfe0ff;  /* 主色淡描边 */
+  --color-bg-page:#f5f7fb;         /* 页面底色（浅灰蓝） */
+  --color-surface:#fff;            /* 卡片/表面 */
+  --color-text-primary:#1f2937;    /* 主文本 */
+  --color-text-secondary:#667085;  /* 次文本 */
+  --color-text-muted:#8a93a2;      /* 弱文本/占位 */
+  --color-border:#e7ebf3;          /* 卡片描边 */
+  --color-divider:#eef1f5;         /* 分隔线 */
+  --color-row-border:#f1f3f7;      /* 表格行分隔 */
+  --color-input-border:#d9deea;    /* 输入控件描边 */
+  --color-neutral-bg:#f5f6f8;      /* 中性淡底 */
+  --color-neutral-border:#e3e7ee;  /* 中性描边 */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--color-bg-page);color:var(--color-text-primary);font-size:13px}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a{color:var(--color-primary);text-decoration:none}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+/* ============ 整体布局 ============ */
+.layout{display:flex;min-height:100vh}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+/* ============ 侧边导航栏 ============ */
+.sider{width:220px;background:var(--color-surface);flex-shrink:0;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--color-divider);transition:width .2s ease}
+.sider-logo{display:flex;align-items:center;gap:10px;padding:0 16px;height:56px;border-bottom:1px solid var(--color-divider);position:sticky;top:0;background:var(--color-surface);z-index:2;flex-shrink:0;white-space:nowrap}
+.sider-logo-ic{width:28px;height:28px;border-radius:8px;background:var(--color-primary-bg);color:var(--color-primary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sider-logo-ic svg{width:16px;height:16px}
+.sider-logo b{font-size:16px;font-weight:700;overflow:hidden}
+.sider-nav{flex:1;padding:6px 0 12px}
+.menu-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#2c3340;padding:10px 16px 6px;cursor:pointer;user-select:none;border-radius:8px}
+.menu-title-ic{width:16px;height:16px;flex-shrink:0}
+.menu-group:has(.menu-item.active) .menu-title{font-weight:600}
+.menu-chev{margin-left:auto;font-size:10px;color:var(--color-text-muted);transition:transform .15s}
+.menu-group.collapsed .menu-chev{transform:rotate(-90deg)}
+.menu-group.collapsed .menu-item{display:none}
+.menu-item{display:flex;align-items:center;width:calc(100% - 24px);margin:2px 12px;padding:9px 12px 9px 34px;border-radius:8px;color:#5f6b7a;font-size:13px;text-align:left;transition:all .12s}
+.menu-item:hover{background:#f4f7ff;color:var(--color-primary)}
+.menu-item.active{background:#eaf1ff;color:var(--color-primary);font-weight:600}
+.menu-item .badge-n{margin-left:auto;background:#f5222d;color:#fff;font-size:10.5px;border-radius:8px;padding:1px 6px;font-weight:400}
+/* 三级菜单：二级项可展开（chevron 同分组折叠语言），三级项再缩进一级 */
+.menu-item .sub-chev{margin-left:auto;font-size:10px;color:var(--color-text-muted);transition:transform .15s;transform:rotate(-90deg)}
+.menu-sub-toggle.open .sub-chev{transform:none}
+.menu-sub{display:none}
+.menu-sub.open{display:block}
+.menu-group.collapsed .menu-sub{display:none}
+.menu-sub-item{padding-left:48px!important;font-size:12.5px}
+.side-foot{padding:12px 16px;font-size:11px;color:var(--color-text-muted);line-height:1.7}
+.sider-toggle-wrap{margin-top:auto;position:sticky;bottom:0;background:#fff;border-top:1px solid var(--color-divider);padding:6px 12px;z-index:1;flex-shrink:0}
+.sider-toggle{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:0;width:100%;cursor:pointer;color:#5f6b7a;font-size:13px;border-radius:8px;transition:background .12s,color .12s;user-select:none}
+.sider-toggle:hover{background:#f5f6f8;color:var(--color-primary);transform:scale(1.05)}
+.sider-toggle .tg-ic{width:16px;height:16px;flex-shrink:0}
+.sider-toggle .tg-text{white-space:nowrap}
+/* 整栏收起（compact） */
+.sider-compact{width:56px}
+.sider-compact .sider-logo{padding:0;justify-content:center;gap:0}
+.sider-compact .sider-logo b{display:none}
+.sider-compact .menu-title{justify-content:center;padding:10px 0;margin:2px 8px}
+.sider-compact .menu-title-ic{width:18px;height:18px}
+.sider-compact .mt-txt,.sider-compact .menu-chev{display:none}
+.sider-compact .menu-item{display:none!important}
+.sider-compact .menu-sub{display:none!important}
+.sider-compact .menu-group:has(.menu-item.active) .menu-title{background:var(--color-primary-bg);color:var(--color-primary)}
+.sider-compact .side-foot{display:none}
+.sider-compact .sider-toggle-wrap{padding:6px 8px}
+.sider-compact .sider-toggle{padding:9px 0;justify-content:center}
+.sider-compact .sider-toggle .tg-text{display:none}
+/* hover 浮窗预览 */
+.menu-popup{position:fixed;background:var(--color-surface);border:1px solid var(--color-divider);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px 0;z-index:120;min-width:170px;max-width:240px;animation:pop-in .15s ease}
+@keyframes pop-in{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:none}}
+.menu-popup .mp-t{font-size:14px;font-weight:600;color:#2c3340;letter-spacing:.3px;padding:6px 14px 4px 18px;border-bottom:1px solid var(--color-divider);margin-bottom:4px}
+.menu-popup .mp-sub{font-size:11px;color:var(--color-text-muted);padding:8px 14px 2px 18px;border-top:1px solid var(--color-divider);margin-top:4px}
+.menu-popup button{display:flex;align-items:center;gap:10px;width:calc(100% - 8px);margin:0 4px;text-align:left;padding:7px 14px;border-radius:6px;font-size:12.5px;color:#5f6b7a;transition:all .12s}
+.menu-popup button:hover{background:#f4f7ff;color:var(--color-primary)}
+.menu-popup button.active{background:#eaf1ff;color:var(--color-primary);font-weight:600}
+/* ============ 顶栏 ============ */
+.topbar{background:var(--color-surface);border-bottom:1px solid var(--color-divider);height:56px;position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:0 24px}
+.crumb{font-size:13px;color:var(--color-text-secondary);white-space:nowrap}
+.crumb b{color:var(--color-text-primary);font-weight:600}
+.spacer{flex:1}
+.back-link{font-size:12px;color:var(--color-text-secondary);white-space:nowrap}
+.back-link:hover{color:var(--color-primary)}
+.bell{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);position:relative;transition:all .15s;flex-shrink:0}
+.bell:hover{background:var(--color-neutral-bg);color:var(--color-primary)}
+.bell svg{width:17px;height:17px}
+.bell .bell-dot{position:absolute;top:8px;right:9px;width:6px;height:6px;border-radius:50%;background:#f5222d}
+.tenant-pill{border:1px solid var(--color-primary-border);border-radius:12px;padding:4px 10px;font-size:12px;color:var(--color-primary);background:var(--color-primary-bg);white-space:nowrap}
+.avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-soft));color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+/* ============ 内容容器与页头 ============ */
+.container{padding:20px 24px 80px;max-width:1600px;width:100%}
+.page-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.page-head h1{font-size:20px;font-weight:700}
+.ph-desc{font-size:12px;color:var(--color-text-muted);margin-top:4px;line-height:1.6}
+.ph-actions{margin-left:auto;display:flex;gap:8px;flex-shrink:0;padding-top:2px}
+section.page{display:none}
+section.page.show{display:block;animation:fade .25s ease}
+.crumb a{color:var(--color-text-secondary);cursor:pointer}
+.crumb a:hover{color:var(--color-primary)}
+/* 办理记录详情：左主信息 + 右时间轴/物流跟踪/关联退款单 */
+.od-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:16px;align-items:start}
+.od-grid .card{margin-bottom:16px}
+.od-grid .card:last-child{margin-bottom:0}
+.od-grid .sec-t:first-child{margin-top:0}
+@media(max-width:1100px){.od-grid{grid-template-columns:1fr}}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* ============ 通用组件 ============ */
+.grid{display:grid;gap:12px}
+.card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:8px;padding:18px 20px}
+.card.flush{padding:0;overflow:hidden}
+.card-note{margin:12px 16px 14px}
+/* KPI 统计卡 */
+.kpi-bar-hd{display:flex;align-items:baseline;gap:10px;font-size:12px;color:var(--color-text-secondary);margin-bottom:8px}
+.kpi-bar-hd .hint{color:var(--color-text-muted);font-size:11.5px}
+.kpi-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}
+.kpi .kpi-label{font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:7px}
+.kpi-ic{width:18px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.kpi-ic svg{width:11px;height:11px}
+.kpi-ic.c1{background:var(--color-primary-bg);color:var(--color-primary)}
+.kpi-ic.c2{background:#f6ffed;color:#52c41a}
+.kpi-ic.c3{background:#fff7e6;color:#fa8c16}
+.kpi-ic.c4{background:#fff1f0;color:#f5222d}
+.kpi-ic.c5{background:#f9f0ff;color:#722ed1}
+.kpi-ic.c6{background:#e6fffb;color:#13c2c2}
+.kpi-ic.c0{background:var(--color-neutral-bg);color:var(--color-text-muted)}
+.kpi .kpi-value{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.3px;margin:6px 0 4px}
+.kpi .kpi-value em{font-style:normal;font-size:13px;font-weight:400;color:var(--color-text-muted);margin-left:3px}
+.kpi .kpi-sub{font-size:11px;color:var(--color-text-muted);line-height:1.6}
+.kpi-click{cursor:pointer;position:relative;transition:border-color .15s,box-shadow .15s}
+.kpi-click:hover{box-shadow:0 4px 14px rgba(15,30,80,.08)}
+.kpi-click.sel{border-color:var(--color-primary);box-shadow:inset 0 0 0 2px var(--color-primary-bg)}
+.kpi-click.sel::after{content:"";position:absolute;top:8px;right:8px;width:6px;height:6px;border-radius:50%;background:var(--color-primary)}
+/* 标签 */
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;white-space:nowrap;border:1px solid transparent}
+.tag-on{background:#f6ffed;color:#52c41a;border-color:#b7eb8f}
+.tag-off{background:var(--color-neutral-bg);color:var(--color-text-secondary);border-color:var(--color-neutral-border)}
+.tag-warn{background:#fff7e6;color:#fa8c16;border-color:#ffd591}
+.tag-danger{background:#fff1f0;color:#f5222d;border-color:#ffa39e}
+.tag-blue{background:#e6f7ff;color:#1890ff;border-color:#91d5ff}
+.tag-cyan{background:#e6fffb;color:#13c2c2;border-color:#87e8de}
+.tag-purple{background:#f9f0ff;color:#722ed1;border-color:#d3adf7}
+/* 按钮 */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--color-input-border);background:#fff;border-radius:8px;font-size:12px;color:#374151;transition:all .15s}
+.btn:hover{border-color:#cfd8ea;color:var(--color-primary);background:#f7f9fc}
+.btn-primary{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+.btn-primary:hover{background:var(--color-primary-hover);border-color:var(--color-primary-hover);color:#fff}
+.btn.sm{padding:4px 10px;font-size:11px}
+.btn.danger{color:#f5222d;border-color:#ffa39e;background:#fff}
+.btn.danger:hover{background:#f5222d;border-color:#f5222d;color:#fff}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+/* 行内操作：文字链接 */
+.act{font-size:12px;color:var(--color-primary);padding:2px 5px;white-space:nowrap}
+.act:hover{text-decoration:underline}
+.act.danger{color:#f5222d}
+/* 数据表格 */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;background:#fafbfe;padding:10px 12px;font-size:12px;color:var(--color-text-secondary);font-weight:500;border-bottom:1px solid var(--color-divider);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--color-row-border);vertical-align:middle}
+tbody tr:hover{background:#fafcff}
+tbody tr:last-child td{border-bottom:none}
+td.empty{padding:40px;text-align:center;color:var(--color-text-muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:#374151;font-variant-numeric:tabular-nums}
+.act .mono{color:inherit} /* 可点击编码随链接用主色，静态编码深灰，消除不可点的蓝色误导 */
+.amt{font-variant-numeric:tabular-nums}
+.sub2{font-size:11px;color:var(--color-text-muted);margin-top:2px}
+/* 详情子表（明细循环） */
+.sub-table th{background:#f0f5ff}
+.sub-table td,.sub-table th{padding:8px 10px;font-size:12px}
+/* 筛选条 */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 16px;border-bottom:1px solid var(--color-divider)}
+.fb-grow{flex:1}
+.search{border:1px solid var(--color-input-border);border-radius:8px;height:30px;padding:0 12px;font-size:12.5px;min-width:220px;font-family:inherit;color:var(--color-text-primary);background:#fff}
+.search:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(47,107,255,.12)}
+.filter-bar select{height:30px;border:1px solid var(--color-input-border);border-radius:8px;font-size:12px;color:#374151;padding:0 8px;background:#fff;font-family:inherit}
+.filter-bar select:focus{outline:none;border-color:var(--color-primary)}
+/* 日期输入：dtp.js 升级后 type 转为 text 并加 .dtp-input，选择器需同时覆盖升级前后两态 */
+.filter-bar input[type=date],.filter-bar .dtp-input{height:30px;border:1px solid var(--color-input-border);border-radius:8px;font-size:12px;color:#374151;padding:0 8px;background:#fff;font-family:inherit}
+.filter-bar input[type=date]:focus,.filter-bar .dtp-input:focus{outline:none;border-color:var(--color-primary)}
+.filter-bar .dtp-input{width:118px;padding-right:28px}
+/* 筛选胶囊与提醒条同为回显 / 通知、非筛选控件，独立于筛选条成行（margin 与筛选条 padding 对齐）：
+   胶囊宽度随筛选条件数量增长、是行内唯一宽度不可控的元素，留在筛选条内会把行尾导出按钮挤到下一行 */
+.fb-active-tip{display:inline-flex;margin:10px 0 2px 16px;align-items:center;gap:6px;font-size:11.5px;color:var(--color-primary);background:var(--color-primary-bg);border:1px solid var(--color-primary-border);border-radius:12px;padding:3px 9px}
+.fb-active-tip i{font-style:normal;cursor:pointer;opacity:.7}
+.fb-active-tip i:hover{opacity:1}
+/* 输入联想 combobox（规范 §筛选条 可选形态，轻量版：输入过滤 + 点选 + × 清除；通用组件 cb*，用于操作人与学校筛选） */
+.fb-combo{position:relative}
+.fb-combo input{height:30px;width:150px;border:1px solid var(--color-input-border);border-radius:8px;font-size:12px;color:#374151;padding:0 24px 0 8px;background:#fff;font-family:inherit}
+.fb-combo input::placeholder{color:#374151}
+.fb-combo input:focus{outline:none;border-color:var(--color-primary)}
+.fb-combo .cb-x{position:absolute;right:8px;top:50%;transform:translateY(-50%);cursor:pointer;color:#9AA3B2;font-style:normal;font-size:13px;line-height:1;display:none}
+.fb-combo .cb-x:hover{color:#374151}
+.fb-combo.has-val .cb-x{display:block}
+.fb-combo-dd{position:absolute;top:34px;left:0;min-width:210px;background:#fff;border:1px solid var(--color-border);border-radius:10px;box-shadow:0 12px 32px rgba(15,30,80,.12);padding:4px;display:none;z-index:30;max-height:240px;overflow:auto}
+.fb-combo.open .fb-combo-dd{display:block}
+.fb-combo-dd .cb-opt{padding:7px 9px;border-radius:6px;font-size:12px;color:#374151;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center;white-space:nowrap}
+.fb-combo-dd .cb-opt:hover{background:var(--color-primary-bg)}
+.fb-combo-dd .cb-opt .u{color:#9AA3B2;font-size:11px}
+.fb-combo-dd .cb-empty{padding:9px;font-size:12px;color:#9AA3B2;text-align:center}
+/* 超窗在途/异常提醒条：默认近 30 天窗口外仍有在途/异常态记录时显示，点击切「不限时间」 */
+/* 超窗提醒条：面向结果集的通知横幅、非筛选控件——独立于筛选条成行（margin 与筛选条 padding 对齐），
+   出现/消失不参与筛选条 flex 布局，不再把行尾导出按钮挤到下一行 */
+.win-warn{margin:10px 16px 2px;padding:7px 12px;background:#FFF7E8;border:1px solid #FFE1B3;border-radius:8px;font-size:12px;color:#C97A12;cursor:pointer}
+.win-warn:hover{background:#FFF1D6}
+/* 分页（对齐 OliveBird mall-members） */
+.pager{padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--color-divider);font-size:12px;color:#666}
+.pager .pgs{display:flex;gap:4px}
+.pager .pg{min-width:28px;height:28px;padding:0 8px;border:1px solid var(--color-input-border);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;background:#fff;color:#374151;user-select:none;font-variant-numeric:tabular-nums;transition:all .12s}
+.pager .pg.on{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+.pager .pg.disabled{opacity:.4;cursor:not-allowed}
+.pager .pg:not(.on):not(.disabled):hover{color:var(--color-primary);border-color:var(--color-primary-border)}
+.pager .pg-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pager .pg-jump{color:#374151}
+.pager .pg-jump input{width:48px;height:28px;padding:0 6px;border:1px solid var(--color-input-border);border-radius:6px;font-size:12px;text-align:center;margin:0 4px;font-family:inherit}
+.pager .pg-jump input:focus{outline:none;border-color:var(--color-primary)}
+.size-sel{height:28px;padding:0 8px;border:1px solid var(--color-input-border);border-radius:6px;font-size:12px;background:#fff;cursor:pointer;font-family:inherit}
+/* 抽屉 */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;display:none}
+.overlay.show{display:block;animation:mask-in .18s}
+@keyframes mask-in{from{opacity:0}to{opacity:1}}
+.drawer{position:fixed;top:0;right:0;width:640px;max-width:94vw;height:100vh;background:#fff;z-index:100;box-shadow:-12px 0 30px rgba(0,0,0,.12);transform:translateX(100%);visibility:hidden;transition:transform .22s ease-out,visibility 0s linear .22s;display:flex;flex-direction:column}
+.drawer.show{transform:none;visibility:visible;transition:transform .22s ease-out}
+.drawer-hd{padding:16px 24px;border-bottom:1px solid var(--color-border);display:flex;align-items:center;gap:10px;flex-shrink:0}
+.drawer-hd h3{font-size:15px;font-weight:600}
+.drawer-hd .x{margin-left:auto;font-size:16px;color:var(--color-text-muted);padding:2px 8px;border-radius:6px;transition:all .12s}
+.drawer-hd .x:hover{background:var(--color-neutral-bg);color:var(--color-text-primary)}
+.drawer-bd{flex:1;overflow-y:auto;padding:20px 24px}
+.drawer-foot{padding:12px 24px;border-top:1px solid var(--color-border);display:flex;justify-content:flex-end;gap:10px;flex-shrink:0}
+/* 弹窗（发起退款 / 置退款关闭） */
+.modal{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:10px;width:560px;max-width:92vw;max-height:84vh;overflow-y:auto;box-shadow:0 20px 60px rgba(14,33,64,.3);animation:pop .22s ease}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}to{opacity:1;transform:none}}
+.modal-hd{padding:18px 24px 0;font-size:15px;font-weight:600}
+.modal-bd{padding:14px 24px 20px;font-size:12.5px;color:var(--color-text-secondary);line-height:1.7}
+.modal-ft{padding:0 24px 20px;display:flex;justify-content:flex-end;gap:10px;align-items:center}
+.ft-sum{margin-right:auto;font-size:12px;color:var(--color-text-muted)}
+/* 文件预览弹层：预览图区域；证件照预览叠加「账号 + 时间」查看水印 */
+.fv-stage{position:relative;background:var(--color-neutral-bg);border:1px solid var(--color-border);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:26px 20px;overflow:hidden;margin-bottom:14px}
+.fv-wm{position:absolute;inset:-30%;display:flex;flex-wrap:wrap;gap:36px 44px;align-items:center;justify-content:center;transform:rotate(-24deg);pointer-events:none}
+.fv-wm span{font-size:11px;color:rgba(55,65,81,.15);white-space:nowrap}
+.form-row{margin-bottom:14px}
+.form-row label{display:block;font-size:12.5px;color:var(--color-text-secondary);margin-bottom:6px}
+.form-row input[type=text]{width:100%;border:1px solid var(--color-input-border);border-radius:8px;height:32px;padding:0 12px;font-size:13px;font-family:inherit;background:#fff;color:var(--color-text-primary)}
+.form-row input[type=text]:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(47,107,255,.12)}
+.form-row input[type=text]::placeholder{color:var(--color-text-muted)}
+.rf-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--color-border);border-radius:8px;margin-bottom:8px;font-size:12.5px;cursor:pointer}
+.rf-item:has(input:checked){border-color:var(--color-primary);background:#f0f5ff}
+.rf-item.dis{opacity:.55;cursor:not-allowed}
+.rf-item input{accent-color:var(--color-primary);width:15px;height:15px;flex-shrink:0}
+.kv{display:flex;font-size:13px;padding:7px 0;border-bottom:1px dashed var(--color-row-border)}
+.kv .k{width:118px;color:var(--color-text-muted);flex-shrink:0}
+.kv .v{color:var(--color-text-primary);min-width:0;word-break:break-all}
+.sec-t{margin:18px 0 8px;font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+.sec-t .sub{font-weight:400;font-size:11.5px;color:var(--color-text-muted)}
+.copy{cursor:pointer;color:var(--color-text-muted);font-size:11px;margin-left:6px}
+.copy:hover{color:var(--color-primary)}
+/* 时间轴 */
+.tl{position:relative;padding-left:20px;margin-top:6px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:#E6EAF1}
+.tl-item{position:relative;padding-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-19px;top:4px;width:8px;height:9px;clip-path:polygon(50% 0,100% 15%,100% 60%,50% 100%,0 60%,0 15%);background:var(--color-primary)}
+.tl-item.red::before{background:#f5222d}
+.tl-item.amber::before{background:#fa8c16}
+.tl-item.gray::before{background:#C3CAD5}
+.tl-item .t1{font-size:13px;font-weight:600}
+/* 流转行时间戳：与节点名同行、弱化为辅助信息（节点名与附注分列两行，对齐 PRD 16.8 的节点名 / 附注两字段） */
+.tl-item .t1 .ts{font-weight:400;font-size:11.5px;color:var(--color-text-muted);margin-left:8px;font-variant-numeric:tabular-nums}
+.tl-item .t2{font-size:12px;color:var(--color-text-muted);margin-top:2px;line-height:1.6}
+/* 提示块 */
+.note{background:var(--color-bg-page);border-left:3px solid var(--color-primary);border-radius:0 8px 8px 0;padding:10px 14px;font-size:12px;color:var(--color-text-secondary);line-height:1.7;margin:12px 0}
+.note.warn{border-left-color:#fa8c16;background:#fff7e6}
+.note.danger{border-left-color:#f5222d;background:#fff1f0}
+/* JSON */
+.json{background:#1f2937;color:#c9d4e5;border-radius:8px;padding:14px 16px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;line-height:1.7;overflow-x:auto;white-space:pre}
+.json .k2{color:#fbbf24}.json .s2{color:#86efac}.json .n2{color:#93c5fd}
+/* toast */
+#toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-16px);background:#333;color:#fff;padding:9px 18px;border-radius:6px;font-size:12.5px;z-index:200;opacity:0;pointer-events:none;transition:.25s;max-width:80vw}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.mt16{margin-top:16px}.mb0{margin-bottom:0}
+/* 演示说明（顶栏 chip + 按当前模块动态说明） */
+.demo-fab{position:relative;z-index:80}
+.demo-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:#fff7e6;border:1px solid #ffe58f;color:#ad6800;font-size:12px;border-radius:12px;cursor:pointer;user-select:none;transition:background .12s,border-color .12s;white-space:nowrap}
+.demo-chip:hover{background:#fff1c4;border-color:#ffd666}
+.demo-chip .x{display:inline-flex;width:14px;height:14px;border-radius:50%;align-items:center;justify-content:center;font-size:9px;color:#ad6800;opacity:.55;transition:opacity .12s,background .12s}
+.demo-chip .x:hover{opacity:1;background:rgba(173,104,0,.15)}
+/* 说明内容内部滚动：浮层限高视口可用高度，长文案不再顶出屏幕；滚动放内层避免裁掉外壳小箭头 */
+@media(max-width:1300px){.kpi-bar{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.sider{display:none}}
+@media(max-width:700px){.kpi-bar{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* 下拉框统一外观（2026-10-30）：去掉浏览器原生箭头，改用右侧留 10px 的自绘箭头；点击不弹原生菜单（macOS 原生菜单会把选中项对齐到框上、盖住框），改由 selOpen 在框下方弹出面板 */
+.filter-bar select,.fsel,.size-sel{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:30px;background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%2386909c' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:12px}
+.filter-bar select.sel-open,.fsel.sel-open,.size-sel.sel-open{border-color:var(--color-primary);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 7.5 6 4l3.5 3.5' fill='none' stroke='%232f6bff' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sel-pop{position:fixed;z-index:1000;background:#fff;border:1px solid var(--color-divider);border-radius:10px;box-shadow:0 12px 32px rgba(15,30,80,.12);padding:4px;overflow-y:auto;max-height:280px;font-size:13px;color:var(--color-text-primary)}
+.sel-pop .sel-opt{display:flex;align-items:center;gap:8px;height:32px;padding:0 10px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.sel-pop .sel-opt:hover{background:#f5f7fa}
+.sel-pop .sel-opt.on{color:var(--color-primary);background:#eef3ff;font-weight:600}
+.sel-pop .sel-opt.dis{color:#c0c4cc;cursor:not-allowed;background:none}
+.sel-pop .sel-grp{height:28px;line-height:28px;padding:0 10px;font-size:12px;color:var(--color-text-secondary,#86909c)}
+</style>
+<script defer src="assets/admin-userbar.js"></script>
+<link rel="stylesheet" href="assets/demo-panel.css">
+<script src="assets/demo-panel.js"></script>
+</head>
+<body>
+
+<div class="layout">
+<aside class="sider" id="sider">
+  <div class="sider-logo">
+    <div class="sider-logo-ic" style="background:none"><img src="assets/logo.png" alt="智小徽" style="width:100%;height:100%;object-fit:contain"></div>
+    <b>智小徽 · 运管端</b>
+  </div>
+  <nav class="sider-nav" id="sider-nav">
+    <!-- 隐藏：本页侧栏分组为「客户管理 / 智能校徽 / 设备管理 / 客服管理 / 财务结算 / 系统设置」，其余运管模块入口暂不展示（移除各 menu-group 的 display:none 即恢复；分组折叠脚本兼容隐藏节点） -->
+    <div class="menu-group" data-group="总览" style="display:none">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="mt-txt">总览</span><span class="menu-chev">▾</span></div>
+      <a class='menu-item' href='/ssb/admin#dash'>数据看板</a>
+    </div>
+    <div class="menu-group" data-group="校徽资产" style="display:none">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span class="mt-txt">校徽资产</span><span class="menu-chev">▾</span></div>
+      <a class='menu-item' href='/ssb/admin#batch'>批量关联<span class="badge-n">1</span></a>
+      <a class='menu-item' href='/ssb/admin#asset'>资产台账</a>
+      <a class='menu-item' href='/ssb/admin#recover'>恢复工单<span class="badge-n">3</span></a>
+    </div>
+    <div class="menu-group" data-group="客户管理">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20c.6-3.4 3-5.2 5.5-5.2s4.9 1.8 5.5 5.2"/><path d="M16 5.2a3.5 3.5 0 010 5.6M17.5 14.9c1.6.7 2.7 2.2 3 5.1"/></svg><span class="mt-txt">客户管理</span><span class="menu-chev">▾</span></div>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/4Ygo7cioJ?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">客户管理</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/rVpMhk_VH?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">合同管理</a>
+      <button class="menu-item menu-sub-toggle" onclick="toggleSubMenu(this)">开户管理<span class="sub-chev">▾</span></button>
+      <div class="menu-sub">
+        <a class="menu-item menu-sub-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/LlpXh6HVe?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">监管账号</a>
+        <a class="menu-item menu-sub-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/JrGcjP7ex?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">学校账号</a>
+      </div>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/TLtRDb_VE?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">模拟登录</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/6vhaOQFra?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">运营管理</a>
+    </div>
+    <div class="menu-group" data-group="智能校徽">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-2.4-1.6L14.2 21l-2.2-1.6L9.8 21l-2.4-1.6L5 21V3z"/><path d="M9 8h6M9 12h6"/></svg><span class="mt-txt">智能校徽</span><span class="menu-chev">▾</span></div>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/Ju1-DUNXG?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">办理统计</a>
+      <button class="menu-item active" data-page="order">办理明细</button>
+      <button class="menu-item" data-page="pay">支付单</button>
+      <button class="menu-item" data-page="refund">退款单</button>
+      <button class="menu-item" data-page="rtxn">退款流水</button>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/LIooc_FJD?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">发票管理</a>
+    </div>
+    <div class="menu-group" data-group="设备管理">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg><span class="mt-txt">设备管理</span><span class="menu-chev">▾</span></div>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/MmxOnNJRo?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">校徽管理</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/J5M07LorR?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">考勤设备</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/Bb33Bkf58?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">电子班牌</a>
+    </div>
+    <div class="menu-group" data-group="客服管理">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.7-3.7 3.7-5.6 7-5.6s6.3 1.9 7 5.6"/></svg><span class="mt-txt">客服管理</span><span class="menu-chev">▾</span></div>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/-NRkiDdUP?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">用户反馈</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/Ub8tandiK?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">用户数据查询</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/pux6Stalx?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">常见问题配置</a>
+    </div>
+    <div class="menu-group" data-group="财务结算">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg><span class="mt-txt">财务结算</span><span class="menu-chev">▾</span></div>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/RmaUBlZOL?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">对账管理</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/_fhr8onu0?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">资金账单</a>
+    </div>
+    <div class="menu-group" data-group="系统设置">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M1.5 14h5M9.5 8h5M17.5 16h5"/></svg><span class="mt-txt">系统设置</span><span class="menu-chev">▾</span></div>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/aYnri3J6v?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">个人中心</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/40LRR3EX1?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">角色管理</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/lzjVJBrBi?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">账号管理</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/0CwE4FxMN?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">小程序分享配置</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/qNEDRohZa?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">节假日配置</a>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/vE3WdNzxs?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">学生类型字典</a>
+      <button class="menu-item" data-page="carrier">承运商管理</button>
+      <button class="menu-item" data-page="log">操作日志</button>
+      <a class="menu-item" href="https://rp.mockplus.cn/run/nEMLI0tDErH/yhEHhPtxVk/iHTsxV2hA?cps=hide&rps=hide&nav=0&ha=0&la=0&fc=0&out=0&rt=0&dt=none&as=true">组织关系管理</a>
+    </div>
+    <div class="menu-group" data-group="学校治理" style="display:none">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20c.6-3.4 3-5.2 5.5-5.2s4.9 1.8 5.5 5.2"/><path d="M16 5.2a3.5 3.5 0 010 5.6M17.5 14.9c1.6.7 2.7 2.2 3 5.1"/></svg><span class="mt-txt">学校治理</span><span class="menu-chev">▾</span></div>
+      <a class='menu-item' href='/ssb/admin#teacher'>教师注册<span class="badge-n">2</span></a>
+    </div>
+    <div class="menu-group" data-group="平台" style="display:none">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h16M4 12h16M4 16.5h16"/><circle cx="9" cy="7.5" r="2" fill="#fff"/><circle cx="15" cy="12" r="2" fill="#fff"/><circle cx="8" cy="16.5" r="2" fill="#fff"/></svg><span class="mt-txt">平台</span><span class="menu-chev">▾</span></div>
+      <a class='menu-item' href='/ssb/admin#config'>阈值配置</a>
+      <a class='menu-item' href='/ssb/admin#device'>设备与影子</a>
+    </div>
+  </nav>
+  <!-- 隐藏：侧栏底部说明文字（移除 display:none 即恢复） -->
+  <div class="side-foot" style="display:none">多租户隔离 · RBAC · 审计留痕<br>V1.1 第一阶段</div>
+  <div class="sider-toggle-wrap"><button class="sider-toggle" id="sider-toggle" aria-label="收起或展开导航" title="收起导航（快捷键 ⌘B / Ctrl+B）"><svg class="tg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,7 4,12 8,17"/><line x1="11" y1="7" x2="20" y2="7"/><line x1="11" y1="12" x2="20" y2="12"/><line x1="11" y1="17" x2="20" y2="17"/></svg><span class="tg-text">收起导航</span></button></div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <span class="crumb" id="crumb">智能校徽 / <b>办理明细</b></span>
+    <div class="spacer"></div>
+    <div class="demo-fab" id="demo-fab">
+      <button class="demo-chip" onclick="toggleDemo()">ⓘ 演示说明 <span class="x" onclick="event.stopPropagation();closeDemo(1);document.getElementById('demo-fab').style.display='none'">✕</span></button>
+      <div class="demo-pop" id="demo-pop"></div>
+    </div>
+    <!-- 隐藏：顶栏租户范围/平台状态/返回导航首页（移除 display:none 即恢复） -->
+    <span class="tenant-pill" style="display:none">租户范围：全部 12 所学校 ▾</span>
+    <span class="tag tag-on" style="display:none">平台正常</span>
+    <a class='back-link' href='/ssb/' style='display:none'>返回导航首页</a>
+    <!-- 隐藏：顶栏角色标识（移除 display:none 即恢复；高权限视角切换仍经演示说明 chip，切换结果以 toast 提示） -->
+    <span class="tenant-pill" id="role-pill" style="display:none" title="当前账号角色（RBAC）">运营专员</span>
+    <button class="bell" aria-label="通知" onclick="toast('演示原型：通知抽屉（略）')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><span class="bell-dot"></span></button>
+    <div class="avatar" style="background:#eef0f4 url('assets/avatar-walle.jpg') center/cover no-repeat"></div>
+  </div>
+
+  <div class="container">
+
+  <!-- ============ 办理记录 ============ -->
+  <section class="page show" id="page-order">
+    <div class="page-head">
+      <div><h1>办理明细</h1></div>
+    </div>
+    <div class="kpi-bar-hd"><span>全部办理记录 <b id="od-total" style="font-variant-numeric:tabular-nums">0</b> 单</span></div>
+    <div class="kpi-bar" id="od-kpis"></div>
+    <div class="card flush">
+      <div class="filter-bar">
+        <input class="search" id="od-q" maxlength="50" placeholder="办理记录编号 / 学生 / 家长" oninput="OD.q=this.value.trim().toLowerCase();renderOrders()">
+        <select id="od-st" onchange="OD.st=this.value;OD.kpi='';OD.live=false;renderOrders()">
+          <option value="">全部状态</option><option>待支付</option><option>待确认</option><option>待生产</option><option>生产中</option><option>已寄出</option><option>已到校</option><option>部分启用</option><option>已完成</option><option>已取消</option>
+        </select>
+        <!-- 学校筛选：输入联想 combobox（通用组件 cb*，候选 SCHOOL_OPTS；学校是开放增长维度，真实规模数十上百所、输入检索才可用） -->
+        <div class="fb-combo" id="od-sc-cb">
+          <input id="od-sc-in" placeholder="全部学校" autocomplete="off" onfocus="cbOpen('od-sc')" oninput="cbInput('od-sc')" onkeydown="if(event.key==='Escape')cbClose('od-sc')">
+          <i class="cb-x" onclick="cbSet('od-sc','')" title="清除学校筛选">×</i>
+          <div class="fb-combo-dd" id="od-sc-dd"></div>
+        </div>
+        <!-- 第一阶段隐藏：认领状态筛选（节点被 odReset 的 setVal('od-cl') 引用，勿删；恢复方式：去掉 display:none） -->
+        <select id="od-cl" style="display:none" onchange="OD.cl=this.value;renderOrders()">
+          <option value="">全部认领状态</option><option>已认领</option><option>审核中</option><option>核实失败</option>
+        </select>
+        <!-- 四列表与操作日志同口径：默认近 30 天有界查询、不设「全部时间」，更早记录走自定义区间（留空 = 不限时间）；超窗在途/异常由 win-warn 提醒条兜底 -->
+        <select id="od-dt" onchange="dtChange('od',this.value)" title="按创建时间筛选">
+          <option value="today">今天</option><option value="w">近 7 天</option><option value="m" selected>近 30 天</option><option value="custom">自定义区间</option>
+        </select>
+        <input type="date" id="od-d1" style="display:none" onchange="dtDate('od',1,this.value)">
+        <input type="date" id="od-d2" style="display:none" onchange="dtDate('od',2,this.value)">
+        <div class="fb-grow"></div>
+        <button class="btn sm" onclick="openExport('od')">导出当前结果</button>
+      </div>
+      <span class="fb-active-tip" id="od-tip" style="display:none"><span id="od-tip-txt"></span><i onclick="odReset()" title="清除全部筛选">×</i></span>
+      <div class="win-warn" id="od-warn" style="display:none" onclick="winAll('od')"></div>
+      <table>
+        <!-- 第一阶段隐藏：认领状态列（恢复方式：学生列后插回 <th>认领状态</th>，并在 renderOrders 行模板对应位置插回认领 td、空态 colspan 改回 9） -->
+        <thead><tr><th>办理记录编号</th><th>学校</th><th>学生</th><th>款式 / 数量</th><th>应付 / 实付</th><th>记录状态</th><th>创建时间</th><th>操作</th></tr></thead>
+        <tbody id="od-tb"></tbody>
+      </table>
+      <div class="pager" id="od-pager"><div id="od-pginfo">共 0 单</div><div class="pg-right"><div class="pgs" id="od-pglist"></div><select class="size-sel" id="od-pgsize" onchange="pgSize('od',this.value)" aria-label="每页条数"><option value="10">10 条/页</option><option value="20" selected>20 条/页</option><option value="50">50 条/页</option><option value="100">100 条/页</option></select><span class="pg-jump">跳至 <input type="number" id="od-pgjump" min="1" onkeydown="if(event.key==='Enter'){pgJump('od');this.blur()}" onblur="pgJump('od')"> 页</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 办理记录详情（独立视图，hash 深链 #order/单号） ============ -->
+  <section class="page" id="page-orderdetail">
+    <div class="page-head">
+      <div><h1 id="odt-title">办理记录详情</h1></div>
+      <div class="ph-actions" id="odt-actions"></div>
+    </div>
+    <div class="od-grid">
+      <div id="odt-main"></div>
+      <div id="odt-side"></div>
+    </div>
+  </section>
+
+  <!-- ============ 支付单 ============ -->
+  <section class="page" id="page-pay">
+    <div class="page-head">
+      <div><h1>支付单</h1></div>
+    </div>
+    <div class="kpi-bar-hd"><span>全部支付单 <b id="py-total" style="font-variant-numeric:tabular-nums">0</b> 笔</span></div>
+    <div class="kpi-bar" id="py-kpis"></div>
+    <div class="card flush">
+      <div class="filter-bar">
+        <input class="search" id="py-q" placeholder="支付单号 / 办理记录编号 / 渠道交易号 / 支付人" oninput="PY.q=this.value.trim().toLowerCase();renderPays()">
+        <!-- 学校筛选：输入联想 combobox（通用组件 cb*，与办理明细页同形态同候选） -->
+        <div class="fb-combo" id="py-sc-cb">
+          <input id="py-sc-in" placeholder="全部学校" autocomplete="off" onfocus="cbOpen('py-sc')" oninput="cbInput('py-sc')" onkeydown="if(event.key==='Escape')cbClose('py-sc')">
+          <i class="cb-x" onclick="cbSet('py-sc','')" title="清除学校筛选">×</i>
+          <div class="fb-combo-dd" id="py-sc-dd"></div>
+        </div>
+        <select id="py-dt" onchange="dtChange('py',this.value)" title="按支付成功时间筛选（未支付单按创建时间）"><!-- 默认近30天口径见办理明细注释 -->
+          <option value="today">今天</option><option value="w">近 7 天</option><option value="m" selected>近 30 天</option><option value="custom">自定义区间</option>
+        </select>
+        <input type="date" id="py-d1" style="display:none" onchange="dtDate('py',1,this.value)">
+        <input type="date" id="py-d2" style="display:none" onchange="dtDate('py',2,this.value)">
+        <div class="fb-grow"></div>
+        <button class="btn sm" onclick="openExport('py')">导出当前结果</button>
+      </div>
+      <span class="fb-active-tip" id="py-tip" style="display:none"><span id="py-tip-txt"></span><i onclick="pyReset()" title="清除全部筛选">×</i></span>
+      <div class="win-warn" id="py-warn" style="display:none" onclick="winAll('py')"></div>
+      <table>
+        <thead><tr><th>支付单号</th><th>办理记录</th><th>学校</th><th>支付人</th><th>金额</th><th>支付单状态</th><th>渠道交易状态</th><th>支付成功时间</th><th>操作</th></tr></thead>
+        <tbody id="py-tb"></tbody>
+      </table>
+      <div class="pager" id="py-pager"><div id="py-pginfo">共 0 笔</div><div class="pg-right"><div class="pgs" id="py-pglist"></div><select class="size-sel" id="py-pgsize" onchange="pgSize('py',this.value)" aria-label="每页条数"><option value="10">10 条/页</option><option value="20" selected>20 条/页</option><option value="50">50 条/页</option><option value="100">100 条/页</option></select><span class="pg-jump">跳至 <input type="number" id="py-pgjump" min="1" onkeydown="if(event.key==='Enter'){pgJump('py');this.blur()}" onblur="pgJump('py')"> 页</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 退款单 ============ -->
+  <section class="page" id="page-refund">
+    <div class="page-head">
+      <div><h1>退款单</h1></div>
+    </div>
+    <div class="kpi-bar-hd"><span>全部退款单 <b id="rf-total" style="font-variant-numeric:tabular-nums">0</b> 单</span></div>
+    <div class="kpi-bar" id="rf-kpis"></div>
+    <div class="card flush">
+      <div class="filter-bar">
+        <input class="search" id="rf-q" placeholder="退款单编号 / 办理记录编号 / 学生" oninput="RF.q=this.value.trim().toLowerCase();renderRefunds()">
+        <select id="rf-tp" onchange="RF.tp=this.value;renderRefunds()">
+          <option value="">全部类型</option><option>家长取消全额</option><option>运管部分</option><option>运管全额</option><!-- 第一阶段隐藏：系统自动退回（差错单自动退回）为后续阶段——恢复方式：还原 <option>系统自动退回</option> -->
+        </select>
+        <select id="rf-dt" onchange="dtChange('rf',this.value)" title="按发起时间筛选">
+          <option value="today">今天</option><option value="w">近 7 天</option><option value="m" selected>近 30 天</option><option value="custom">自定义区间</option>
+        </select>
+        <input type="date" id="rf-d1" style="display:none" onchange="dtDate('rf',1,this.value)">
+        <input type="date" id="rf-d2" style="display:none" onchange="dtDate('rf',2,this.value)">
+        <div class="fb-grow"></div>
+        <button class="btn sm" onclick="openExport('rf')">导出当前结果</button>
+      </div>
+      <span class="fb-active-tip" id="rf-tip" style="display:none"><span id="rf-tip-txt"></span><i onclick="rfReset()" title="清除全部筛选">×</i></span>
+      <div class="win-warn" id="rf-warn" style="display:none" onclick="winAll('rf')"></div>
+      <table>
+        <thead><tr><th>退款单编号</th><th>办理记录</th><th>学校</th><th>退款金额</th><th>退款类型</th><th>退款枚数</th><th>退款单状态</th><th>操作人</th><th>发起时间</th><th>操作</th></tr></thead>
+        <tbody id="rf-tb"></tbody>
+      </table>
+      <div class="pager" id="rf-pager"><div id="rf-pginfo">共 0 单</div><div class="pg-right"><div class="pgs" id="rf-pglist"></div><select class="size-sel" id="rf-pgsize" onchange="pgSize('rf',this.value)" aria-label="每页条数"><option value="10">10 条/页</option><option value="20" selected>20 条/页</option><option value="50">50 条/页</option><option value="100">100 条/页</option></select><span class="pg-jump">跳至 <input type="number" id="rf-pgjump" min="1" onkeydown="if(event.key==='Enter'){pgJump('rf');this.blur()}" onblur="pgJump('rf')"> 页</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 退款流水 ============ -->
+  <section class="page" id="page-rtxn">
+    <div class="page-head">
+      <div><h1>退款流水单</h1></div>
+    </div>
+    <div class="kpi-bar-hd"><span>全部退款流水 <b id="rt-total" style="font-variant-numeric:tabular-nums">0</b> 笔</span></div>
+    <div class="kpi-bar" id="rt-kpis"></div>
+    <div class="card flush">
+      <div class="filter-bar">
+        <input class="search" id="rt-q" placeholder="退款流水单编号 / 微信退款单号 / 退款单编号" oninput="RT.q=this.value.trim().toLowerCase();renderRtxns()">
+        <select id="rt-dt" onchange="dtChange('rt',this.value)" title="按流水创建时间筛选">
+          <option value="today">今天</option><option value="w">近 7 天</option><option value="m" selected>近 30 天</option><option value="custom">自定义区间</option>
+        </select>
+        <input type="date" id="rt-d1" style="display:none" onchange="dtDate('rt',1,this.value)">
+        <input type="date" id="rt-d2" style="display:none" onchange="dtDate('rt',2,this.value)">
+        <div class="fb-grow"></div>
+        <button class="btn sm" onclick="openExport('rt')">导出当前结果</button>
+      </div>
+      <span class="fb-active-tip" id="rt-tip" style="display:none"><span id="rt-tip-txt"></span><i onclick="rtReset()" title="清除全部筛选">×</i></span>
+      <div class="win-warn" id="rt-warn" style="display:none" onclick="winAll('rt')"></div>
+      <table>
+        <thead><tr><th>退款流水单编号</th><th>微信退款单号</th><th>退款单</th><th>原支付单</th><th>渠道</th><th>金额</th><th>状态</th><th>创建时间</th><th>成功时间</th><th>操作</th></tr></thead>
+        <tbody id="rt-tb"></tbody>
+      </table>
+      <div class="pager" id="rt-pager"><div id="rt-pginfo">共 0 笔</div><div class="pg-right"><div class="pgs" id="rt-pglist"></div><select class="size-sel" id="rt-pgsize" onchange="pgSize('rt',this.value)" aria-label="每页条数"><option value="10">10 条/页</option><option value="20" selected>20 条/页</option><option value="50">50 条/页</option><option value="100">100 条/页</option></select><span class="pg-jump">跳至 <input type="number" id="rt-pgjump" min="1" onkeydown="if(event.key==='Enter'){pgJump('rt');this.blur()}" onblur="pgJump('rt')"> 页</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 承运商管理 ============ -->
+  <section class="page" id="page-carrier">
+    <div class="page-head">
+      <div><h1>承运商管理</h1></div>
+      <!-- 隐藏：新增承运商入口（移除 display:none 即恢复；弹窗与脚本保留，演示说明 chip 内可预览） -->
+      <div class="ph-actions"><button class="btn btn-primary" style="display:none" onclick="openCarrierAdd()">＋ 新增承运商</button></div>
+    </div>
+    <div class="card flush">
+      <table>
+        <thead><tr><th>承运商</th><th>编码</th><th>状态</th><th>操作</th></tr></thead>
+        <tbody id="cr-tb"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 操作日志 ============ -->
+  <section class="page" id="page-log">
+    <div class="page-head">
+      <div><h1>操作日志</h1></div>
+    </div>
+    <div class="card flush">
+      <div class="filter-bar">
+        <!-- 关键词搜索不含操作人维度：按人查询走右侧操作人联想下拉（精确点选），本框只做内容检索 -->
+        <input class="search" id="lg-q" placeholder="操作对象单号 / 详情关键词" oninput="LG.q=this.value.trim().toLowerCase();renderLogs()">
+        <select id="lg-tp" onchange="LG.tp=this.value;renderLogs()">
+          <option value="">全部操作类型</option><option>发起退款</option><option>取消办理</option><option>承运商启停</option><option>导出数据</option>
+          <!-- 第一阶段隐藏：其余操作类型后续阶段实现（恢复方式：取消本注释，并移除 renderLogs 中 LOG_TYPES_LIVE 白名单过滤）
+          <option>退款重试</option><option>置退款关闭</option><option>渠道回调</option><option>自动退回</option><option>超时关单</option><option>新增承运商</option> -->
+        </select>
+        <!-- 操作人筛选：输入联想 combobox（通用组件 cb*，候选 LG_OPS；试验形态已定版并推广至学校筛选） -->
+        <div class="fb-combo" id="lg-ac-cb">
+          <input id="lg-ac-in" placeholder="全部操作人" autocomplete="off" onfocus="cbOpen('lg-ac')" oninput="cbInput('lg-ac')" onkeydown="if(event.key==='Escape')cbClose('lg-ac')">
+          <i class="cb-x" onclick="cbSet('lg-ac','')" title="清除操作人筛选">×</i>
+          <div class="fb-combo-dd" id="lg-ac-dd"></div>
+        </div>
+        <!-- 审计日志默认有界查询：不设「全部时间」，默认近 30 天，更早记录走自定义区间（恢复全部时间：加回 <option value="">全部时间</option> 并还原 LG 初始 dt 与 lgReset） -->
+        <select id="lg-dt" onchange="dtChange('lg',this.value)" title="按操作时间筛选">
+          <option value="today">今天</option><option value="w">近 7 天</option><option value="m" selected>近 30 天</option><option value="custom">自定义区间</option>
+        </select>
+        <input type="date" id="lg-d1" style="display:none" onchange="dtDate('lg',1,this.value)">
+        <input type="date" id="lg-d2" style="display:none" onchange="dtDate('lg',2,this.value)">
+        <div class="fb-grow"></div>
+        <button class="btn sm" onclick="openExport('lg')">导出当前结果</button>
+      </div>
+      <span class="fb-active-tip" id="lg-tip" style="display:none"><span id="lg-tip-txt"></span><i onclick="lgReset()" title="清除全部筛选">×</i></span>
+      <table>
+        <thead><tr><th>操作时间</th><th>操作人</th><th>操作类型</th><th>操作对象</th><th>操作详情</th><th>来源 IP</th></tr></thead>
+        <tbody id="lg-tb"></tbody>
+      </table>
+      <div class="pager" id="lg-pager"><div id="lg-pginfo">共 0 条</div><div class="pg-right"><div class="pgs" id="lg-pglist"></div><select class="size-sel" id="lg-pgsize" onchange="pgSize('lg',this.value)" aria-label="每页条数"><option value="10">10 条/页</option><option value="20" selected>20 条/页</option><option value="50">50 条/页</option><option value="100">100 条/页</option></select><span class="pg-jump">跳至 <input type="number" id="lg-pgjump" min="1" onkeydown="if(event.key==='Enter'){pgJump('lg');this.blur()}" onblur="pgJump('lg')"> 页</span></div></div>
+    </div>
+  </section>
+
+  </div>
+</div>
+</div>
+
+<!-- ===== 遮罩 & 详情抽屉 ===== -->
+<div class="overlay" id="ov" onclick="closeAll()"></div>
+<div class="drawer" id="d-detail" role="dialog" aria-label="单据详情">
+  <div class="drawer-hd"><h3 id="dd-title">详情</h3><span id="dd-tag"></span><button class="x" onclick="closeAll()" aria-label="关闭">✕</button></div>
+  <div class="drawer-bd" id="dd-body"></div>
+  <div class="drawer-foot" id="dd-foot"><button class="btn" onclick="closeAll()">关闭</button></div>
+</div>
+
+<!-- ===== 发起退款（运管） ===== -->
+<div class="modal" id="m-refund" role="dialog" aria-label="发起退款" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <div class="modal-hd">发起退款</div>
+    <div class="modal-bd" id="mrf-bd"></div>
+    <div class="modal-ft"><span class="ft-sum" id="mrf-sum"></span><button class="btn" onclick="closeModal()">取消</button><button class="btn danger" id="mrf-ok" onclick="rfmSubmit()">确认发起退款</button></div>
+  </div>
+</div>
+
+<!-- ===== 新增承运商 ===== -->
+<div class="modal" id="m-carrier" role="dialog" aria-label="新增承运商" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" style="width:440px">
+    <div class="modal-hd">新增承运商</div>
+    <div class="modal-bd">
+      <div class="form-row"><label>承运商名称</label><input type="text" id="cr-name" placeholder="例如：顺丰速运"></div>
+      <div class="form-row" style="margin-bottom:0"><label>承运商编码（对接承运商下单与轨迹订阅，大写字母）</label><input type="text" id="cr-code" placeholder="例如：SF" style="text-transform:uppercase"></div>
+    </div>
+    <div class="modal-ft"><button class="btn" onclick="closeModal()">取消</button><button class="btn btn-primary" onclick="carrierAddDo()">确认新增</button></div>
+  </div>
+</div>
+
+<!-- ===== 置退款关闭（转线下） ===== -->
+<div class="modal" id="m-rfclose" role="dialog" aria-label="置退款关闭" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" style="width:440px">
+    <div class="modal-hd" style="color:#f5222d">置退款关闭（转线下）</div>
+    <div class="modal-bd">
+      <p>确认该退款单已无法原路退回：将置为终态「退款关闭」，后续经线下渠道向家长退款。</p>
+      <div class="form-row" style="margin-top:12px"><label>判定说明（必填，写入审计并关联客服工单）</label><input type="text" id="rfc-reason" placeholder="例如：收款账户注销，与家长约定线下转账"></div>
+    </div>
+    <div class="modal-ft"><button class="btn" onclick="closeModal()">取消</button><button class="btn danger" onclick="rfCloseDo()">确认置关闭</button></div>
+  </div>
+</div>
+
+<!-- ===== 取消办理（运管代取消：仅无实付金额的单，无款可退、取消即关单） ===== -->
+<div class="modal" id="m-cancel" role="dialog" aria-label="取消办理" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" style="width:440px">
+    <div class="modal-hd" style="color:#f5222d">取消办理</div>
+    <div class="modal-bd" id="mcl-bd"></div>
+    <div class="modal-ft"><button class="btn" onclick="closeModal()">取消</button><button class="btn danger" onclick="cancelDo()">确认取消办理</button></div>
+  </div>
+</div>
+
+<!-- ===== 退款二次确认（仅含已启用枚的高危场景弹出，普通退款直接提交） ===== -->
+<div class="modal" id="m-rfck" role="dialog" aria-label="确认退款" style="z-index:120" onclick="if(event.target===this)rfckClose()">
+  <div class="modal-box" style="width:460px">
+    <div class="modal-hd" style="color:#f5222d">确认退款（含已启用枚）</div>
+    <div class="modal-bd" id="rfck-bd"></div>
+    <div class="modal-ft"><button class="btn" onclick="rfckClose()">再想想</button><button class="btn danger" onclick="rfckOk()">确认执行退款</button></div>
+  </div>
+</div>
+
+<!-- ===== 导出当前结果（五列表共用确认弹窗） ===== -->
+<div class="modal" id="m-export" role="dialog" aria-label="导出当前结果" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" style="width:440px">
+    <div class="modal-hd">导出当前结果</div>
+    <div class="modal-bd" id="mex-bd"></div>
+    <div class="modal-ft"><button class="btn" onclick="closeModal()">取消</button><button class="btn btn-primary" id="mex-ok" onclick="exportDo()">导出 CSV</button></div>
+  </div>
+</div>
+
+<!-- ===== 文件预览（证件照 / 校徽矢量文件） ===== -->
+<div class="modal" id="m-file" role="dialog" aria-label="文件预览" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" style="width:440px">
+    <div class="modal-hd" id="mfv-hd"></div>
+    <div class="modal-bd" id="mfv-bd"></div>
+    <div class="modal-ft" id="mfv-ft"></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* =================================================================
+   种子数据：办理主单 / 支付单 / 退款单 / 退款流水 四表关联
+   ================================================================= */
+const fmt=v=>'¥'+(v/100).toFixed(2);
+/* 相对日期种子：操作日志默认「近 30 天」窗口，两条静态退款链与承运商停用的时间戳改按距今天数生成，
+   跟随真实当前日期、不会随时间滑出窗口（同链各表时间戳用同一偏移天数保持自洽；单号中编码的日期段当不透明 ID、不改） */
+const _p2=n=>String(n).padStart(2,'0');
+const _ago=n=>{const d=new Date();d.setDate(d.getDate()-n);return d};
+const agoMD=(n,hm)=>{const d=_ago(n);return _p2(d.getMonth()+1)+'-'+_p2(d.getDate())+(hm?' '+hm:'')};
+const agoFull=(n,hms)=>{const d=_ago(n);return d.getFullYear()+'-'+_p2(d.getMonth()+1)+'-'+_p2(d.getDate())+' '+hms};
+/* 把「今日 HH:mm」/「MM-DD HH:mm」种子展示为 yyyy-MM-dd HH:mm:ss；种子只到分钟，秒位按单号确定性补齐 */
+const fullTs=(s,seed)=>{
+  if(!s)return'';
+  const d=new Date(),md=_p2(d.getMonth()+1)+'-'+_p2(d.getDate());
+  const ss=_p2(+String(seed||'').replace(/\D/g,'').slice(-4)%60);
+  if(s.indexOf('今日')===0)return d.getFullYear()+'-'+md+' '+s.slice(3)+':'+ss;
+  let y=d.getFullYear();if(s.slice(0,5)>md)y--; // 相对种子跨年时归入上一年
+  return y+'-'+s+':'+ss;
+};
+/* 时间线（办理进度 / 物流轨迹）时间：yyyy-MM-dd HH:mm，与家长端记录详情的流转行同格式；
+   不带秒——流转展示不需要秒级精度，需要秒的审计字段（支付 / 生产 / 到校 / 收货等）仍用 fullTs */
+const flowTs=s=>{
+  if(!s)return'';
+  const d=new Date(),md=_p2(d.getMonth()+1)+'-'+_p2(d.getDate());
+  if(s.indexOf('今日')===0)return d.getFullYear()+'-'+md+' '+s.slice(3);
+  let y=d.getFullYear();if(s.slice(0,5)>md)y--;
+  return y+'-'+s;
+};
+const ORDERS=[
+ {no:'SS2026070451170263',sc:'市实验一小',stu:'陈子昂',cls:'五(1)班',parent:'陈建国',claim:'已认领',src:'名册带出',style:'男生款',qty:1,needPhoto:true,photo:'PH-SY01-012770',vec:'VF-SY01-BOY-v3',unit:1500,total:1500,disc:0,due:1500,paid:0,payNo:'PM2026070430112087',payAt:'',deadline:'今日 14:32',status:'待支付',
+  items:[{bg:'',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[['今日 14:02','提交办理','','']]},
+ /* 窗内新增种子①：支付超时已取消（终态卡在默认近 30 天窗内非空） */
+ {no:'SS2026080340112765',sc:'市实验一小',stu:'许安琪',cls:'二(1)班',parent:'许卫东',claim:'已认领',src:'名册带出',style:'女生款',qty:1,needPhoto:true,photo:'PH-SY01-021133',vec:'VF-SY01-GIRL-v3',unit:1500,total:1500,disc:0,due:1500,paid:0,payNo:'PM2026080319201133',payAt:'',deadline:agoMD(1,'19:50'),status:'已取消',cancelAt:agoMD(1,'19:51'),cancelType:'支付超时自动取消',
+  items:[{bg:'',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[[agoMD(1,'19:51'),'已取消','超时未支付，已自动取消','gray'],[agoMD(1,'19:20'),'提交办理','','']]},
+ {no:'SS2026070377284951',sc:'市实验一小',stu:'何雨珊',cls:'二(3)班',parent:'何志强',claim:'审核中',src:'审核中家长自填',style:'女生款',qty:1,needPhoto:true,photo:'PH-SY01-018443',vec:'VF-SY01-GIRL-v3',unit:1500,total:1500,disc:1500,due:0,paid:0,payNo:'',payAt:'',deadline:'',status:'待确认',
+  items:[{bg:'1985450514678722301',free:true,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+ /* 第一阶段隐藏：verify_* 流转事件为后续阶段，监护绑定申请提交行不落——恢复方式：在 flow 末尾重新插入 [agoMD(1,'09:10'),'监护绑定申请提交 · 身份核实中（核实通过后进入教师审核队列）','amber'] */
+  flow:[[agoMD(1,'09:12'),'提交办理','首张免费，无需支付','']]},
+ {no:'SS2026070163309125',sc:'城南外国语',stu:'李梓萌',cls:'一(2)班',parent:'罗美玲',claim:'核实失败',src:'审核中家长自填',style:'女生款',qty:2,needPhoto:true,photo:'PH-CN02-020981',vec:'VF-CN02-GIRL-v2',unit:1500,total:3000,disc:1500,due:1500,paid:1500,payNo:'PM2026070122408516',payAt:agoMD(3,'12:40'),deadline:agoMD(3,'13:06'),status:'待生产',
+  items:[{bg:'2007358042765666101',free:true,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''},{bg:'2007358042765666102',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+ /* 第一阶段隐藏：verify_* 流转事件为后续阶段，身份核实未通过与监护绑定申请提交两行不落（核实失败仍经认领状态列与消息承接）——恢复方式：重新插入 [agoMD(2,'16:20'),'身份核实未通过 · 订单停留，待家长与班主任沟通或取消办理','red']（行首）与 [agoMD(3,'12:34'),'监护绑定申请提交 · 身份核实中（核实通过后进入教师审核队列）','amber']（行尾） */
+  flow:[[agoMD(3,'12:40'),'支付成功','实付 ¥15.00',''],[agoMD(3,'12:36'),'提交办理','','']]},
+ {no:'SS2026070290417382',sc:'城南外国语',stu:'吴一诺',cls:'一(4)班',parent:'吴国栋',claim:'已认领',src:'名册带出',style:'女生款',qty:1,needPhoto:true,photo:'PH-CN02-007310',vec:'VF-CN02-GIRL-v2',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026070218804529',payAt:agoMD(2,'11:26'),deadline:agoMD(2,'11:52'),status:'待生产',
+  items:[{bg:'2019909941813914501',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[[agoMD(2,'11:26'),'支付成功','实付 ¥15.00',''],[agoMD(2,'11:22'),'提交办理','','']]},
+ {no:'SS2026062812083456',sc:'城南外国语',stu:'郑凯文',cls:'四(1)班',parent:'郑丽华',claim:'已认领',src:'名册带出',style:'男生款',qty:2,needPhoto:true,photo:'PH-CN02-001204',vec:'VF-CN02-BOY-v2',unit:1500,total:3000,disc:0,due:3000,paid:3000,payNo:'PM2026062833107765',payAt:agoMD(7,'19:05'),deadline:agoMD(7,'19:31'),status:'生产中',batch:'B2607-CN02-002',prodAt:agoMD(4,'09:00'),
+  items:[{bg:'1985809663573516901',free:false,unit:1500,epc:'0B86D3F5A2C97E14',st:'随主单推进',vAt:'',rf:''},{bg:'1985809663573516902',free:false,unit:1500,epc:'0B86D3F5A2C97E15',st:'随主单推进',vAt:'',rf:'RO2026070490112358'}],refunds:['RO2026070490112358'],
+  flow:[['今日 10:12','发起退款','部分退款 1 枚（徽面局部脱漆），¥15.00 将于 1–3 个工作日原路退回，退款单编号 RO2026070490112358','amber'],[agoMD(4,'09:00'),'提交生产','批次 B2607-CN02-002',''],[agoMD(7,'19:05'),'支付成功','实付 ¥30.00',''],[agoMD(7,'19:01'),'提交办理','','']]},
+ {no:'SS2026062940017653',sc:'市实验一小',stu:'冯诗涵',cls:'六(1)班',parent:'冯军',claim:'已认领',src:'名册带出',style:'女生款',qty:1,needPhoto:true,photo:'PH-SY01-009882',vec:'VF-SY01-GIRL-v3',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026062940017653P',payAt:agoMD(6,'10:14'),deadline:agoMD(6,'10:40'),status:'生产中',reviewer:'王慧（教职工）',reviewedAt:agoMD(6,'15:02'),batch:'B2607-SY01-003',prodAt:agoMD(5,'09:30'),
+  items:[{bg:'1945036337349342701',free:false,unit:1500,epc:'6F1E88B24A05D9C7',st:'随主单推进',vAt:'',rf:'RO2026070218876209'}],refunds:['RO2026070218876209'],
+  flow:[[agoMD(2,'10:05'),'退款转人工','退款重试仍异常 · 退款单转人工处理，退款单编号 RO2026070218876209','red'],[agoMD(3,'15:30'),'发起退款','全额退款（矢量文件版式错误，无法制作），¥15.00 将于 1–3 个工作日原路退回，退款单编号 RO2026070218876209','amber'],[agoMD(5,'09:30'),'提交生产','批次 B2607-SY01-003',''],[agoMD(6,'15:02'),'审核通过','王慧（教职工）',''],[agoMD(6,'10:14'),'支付成功','实付 ¥15.00',''],[agoMD(6,'10:10'),'提交办理','','']]},
+ {no:'SS2026062144560913',sc:'滨江二小',stu:'孙可欣',cls:'二(1)班',parent:'孙志成',claim:'已认领',src:'名册带出',style:'女生款',qty:1,needPhoto:false,photo:'',vec:'VF-BJ03-GIRL-v1',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026062147720981',payAt:agoMD(14,'08:55'),deadline:agoMD(14,'09:21'),status:'已寄出',batch:'B2606-BJ03-004',prodAt:agoMD(11,'09:00'),shipNo:'LG2026070200087',shipAt:agoMD(2,'15:40'),
+  items:[{bg:'1954056484777584301',free:false,unit:1500,epc:'E3B10F76C92A4D58',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[[agoMD(2,'15:40'),'已寄出','物流单 LG2026070200087（批次寄校）',''],[agoMD(11,'09:00'),'提交生产','批次 B2606-BJ03-004',''],[agoMD(14,'08:55'),'支付成功','实付 ¥15.00',''],[agoMD(14,'08:51'),'提交办理','','']]},
+ {no:'SS2026061520871345',sc:'滨江二小',stu:'高梓睿',cls:'三(4)班',parent:'高秀兰',claim:'已认领',src:'名册带出',style:'男生款',qty:1,needPhoto:false,photo:'',vec:'VF-BJ03-BOY-v1',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026061509912734',payAt:agoMD(20,'17:23'),deadline:agoMD(20,'17:49'),status:'已到校',batch:'B2606-BJ03-004',prodAt:agoMD(17,'09:00'),shipNo:'LG2026062800031',shipAt:agoMD(7,'10:10'),arrAt:agoMD(5,'09:20'),
+  items:[{bg:'2009700957638425501',free:false,unit:1500,epc:'E3B10F76C92A4A0B',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[[agoMD(5,'09:20'),'已到校','物流妥投签收（签收即到校，级联整批主单）',''],[agoMD(7,'10:10'),'已寄出','物流单 LG2026062800031（批次寄校）',''],[agoMD(17,'09:00'),'提交生产','批次 B2606-BJ03-004',''],[agoMD(20,'17:23'),'支付成功','实付 ¥15.00',''],[agoMD(20,'17:20'),'提交办理','','']]},
+ /* 窗内新增种子②：全流程走完的已完成单（无照片版式校，创建到启用均在近 30 天内）。
+    本次迭代改为「家长人工确认收货即完结」示例：确认收货（人工）当刻整单转已完成——「已完成」行附注仅「本次办理完成」、
+    触发事实由同时刻的「家长确认收货」行承载；3 分钟后的扫码核验仅枚级启用（vAt 落校徽明细、不落主单流转行——已完结记录不再追加流转行） */
+ {no:'SS2026071946102387',sc:'滨江二小',stu:'杜俊熙',cls:'四(2)班',parent:'杜春梅',claim:'已认领',src:'名册带出',style:'男生款',qty:1,needPhoto:false,photo:'',vec:'VF-BJ03-BOY-v1',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026071930517842',payAt:agoMD(16,'09:44'),deadline:agoMD(16,'10:06'),status:'已完成',batch:'B2607-BJ03-006',prodAt:agoMD(13,'09:00'),shipNo:'LG2026072600102',shipAt:agoMD(9,'10:20'),arrAt:agoMD(7,'09:30'),rcptAt:agoMD(6,'17:11'),rcptType:'家长人工确认',
+  items:[{bg:'2022854579303172501',free:false,unit:1500,epc:'7D4A2E90F1B6C835',st:'已启用',vAt:agoMD(6,'17:15'),rf:''}],refunds:[],
+  flow:[[agoMD(6,'17:11'),'已完成','本次办理完成',''],[agoMD(6,'17:11'),'家长确认收货','家长人工确认',''],[agoMD(7,'09:30'),'已到校','物流妥投签收（签收即到校，级联整批主单）',''],[agoMD(9,'10:20'),'已寄出','物流单 LG2026072600102（批次寄校）',''],[agoMD(13,'09:00'),'提交生产','批次 B2607-BJ03-006',''],[agoMD(16,'09:44'),'支付成功','实付 ¥15.00',''],[agoMD(16,'09:40'),'提交办理','','']]},
+ /* 到校 7 天自动确认收货种子：已到校后家长既未确认收货、也未扫码核验，到校满 7 天（动态日期恰为今日）系统自动确认收货、整单转已完成——
+    确认方式落 rcptType 与「家长确认收货」行附注（「到校满 7 天自动确认」，与「家长人工确认」对称）；完结触发事实由紧邻的确认收货行承载，
+    「已完成」行附注仅「本次办理完成」（与退款到账触发完结同构；家长端无独立确认收货行，同场景附注为「到校满 7 天自动确认收货，本次办理完成」）；
+    徽未核验故枚状态为「待核验」（家长端仍可扫码核验启用，核验后转已启用、不回写已完结主单流转）；与杜俊熙单同批次寄校（B2607-BJ03-006 / LG2026072600102，EPC 同批连号） */
+ {no:'SS2026071952318064',sc:'滨江二小',stu:'蒋一帆',cls:'三(1)班',parent:'蒋涛',claim:'已认领',src:'名册带出',style:'男生款',qty:1,needPhoto:false,photo:'',vec:'VF-BJ03-BOY-v1',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026071938406125',payAt:agoMD(16,'20:12'),deadline:agoMD(16,'20:35'),status:'已完成',batch:'B2607-BJ03-006',prodAt:agoMD(13,'09:00'),shipNo:'LG2026072600102',shipAt:agoMD(9,'10:20'),arrAt:agoMD(7,'09:30'),rcptAt:'今日 09:30',rcptType:'到校满 7 天自动确认',
+  items:[{bg:'2022854579303172502',free:false,unit:1500,epc:'7D4A2E90F1B6C836',st:'待核验',vAt:'',rf:''}],refunds:[],
+  flow:[['今日 09:30','已完成','本次办理完成',''],['今日 09:30','家长确认收货','到校满 7 天自动确认',''],[agoMD(7,'09:30'),'已到校','物流妥投签收（签收即到校，级联整批主单）',''],[agoMD(9,'10:20'),'已寄出','物流单 LG2026072600102（批次寄校）',''],[agoMD(13,'09:00'),'提交生产','批次 B2607-BJ03-006',''],[agoMD(16,'20:12'),'支付成功','实付 ¥15.00',''],[agoMD(16,'20:08'),'提交办理','','']]},
+ /* 多枚逐枚启用种子：3 枚单家长逐枚扫码核验，部分启用 1/3 → 2/3，第 3 枚启用即整单转已完成（枚级终态，窗内动态日期）。
+    家长未人工确认收货，三枚核验均落在到校 7 天窗内、由末枚核验完结（先于定时器），不落确认收货行、确认收货字段显示「无需确认」；
+    原「首枚启用推定确认收货」口径已废止 */
+ {no:'SS2026071652201473',sc:'市实验一小',stu:'周雨萱',cls:'五(3)班',parent:'周立新',claim:'已认领',src:'名册带出',style:'女生款',qty:3,needPhoto:true,photo:'PH-SY01-017265',vec:'VF-SY01-GIRL-v3',unit:1500,total:4500,disc:0,due:4500,paid:4500,payNo:'PM2026071640119253',payAt:agoMD(22,'19:22'),deadline:agoMD(22,'19:44'),status:'已完成',reviewer:'王慧（教职工）',reviewedAt:agoMD(21,'14:03'),batch:'B2607-SY01-001',prodAt:agoMD(19,'09:00'),shipNo:'LG2026072300056',shipAt:agoMD(15,'16:40'),arrAt:agoMD(12,'09:25'),
+  items:[{bg:'1965274193288010101',free:false,unit:1500,epc:'A9D42C7B08E5F131',st:'已启用',vAt:agoMD(11,'17:20'),rf:''},{bg:'1965274193288010102',free:false,unit:1500,epc:'A9D42C7B08E5F132',st:'已启用',vAt:agoMD(8,'07:35'),rf:''},{bg:'1965274193288010103',free:false,unit:1500,epc:'A9D42C7B08E5F133',st:'已启用',vAt:agoMD(6,'18:12'),rf:''}],refunds:[],
+  flow:[[agoMD(6,'18:12'),'已完成','1965274193288010103 已核验启用，本次办理完成',''],[agoMD(8,'07:35'),'扫码核验启用','1965274193288010102 已核验启用 · 第 2 枚 · 部分启用 2/3',''],[agoMD(11,'17:20'),'扫码核验启用','1965274193288010101 已核验启用 · 第 1 枚 · 部分启用 1/3',''],[agoMD(12,'09:25'),'已到校','物流妥投签收（签收即到校，级联整批主单）',''],[agoMD(15,'16:40'),'已寄出','物流单 LG2026072300056（批次寄校）',''],[agoMD(19,'09:00'),'提交生产','批次 B2607-SY01-001',''],[agoMD(21,'14:03'),'审核通过','王慧（教职工）',''],[agoMD(22,'19:22'),'支付成功','实付 ¥45.00',''],[agoMD(22,'19:18'),'提交办理','','']]},
+ /* 零元退款演示种子：2 枚单（首枚免费 + 增办 1 枚付费，实付 ¥15.00），已到校待发放，免费那枚徽面有瑕疵。
+    与周雨萱单同批次生产（B2607-SY01-001）；原箱漏装、单独物流单补寄（LG2026080511230084），到校在 7 天自动确认窗口内——
+    确认收货字段「未确认（到校满 7 天自动确认）」预告与到校时间自洽（原与周雨萱共用物流单、到校已超 7 天，新口径下早该自动确认完结）。
+    演示路径：发起退款 → 仅勾第 1 枚（免费枚）→ 确认按钮变「确认回收作废（零元）」→ 提交即创建零元退款单并立即生效
+    （无退款流水、不改支付单渠道交易状态）→ 该枚作废停用、首枚免费额度释放、主单保持已到校（已到校在关单门槛外，
+    且仍有 1 枚付费枚未退）。改造前此路不通：仅勾免费枚无可退金额、按钮禁用，只能连付费枚一起退——把好的那枚也退掉 */
+ {no:'SS2026072265913047',sc:'市实验一小',stu:'沈亦航',cls:'二(1)班',parent:'沈建国',claim:'已认领',src:'名册带出',style:'男生款',qty:2,needPhoto:true,photo:'PH-SY01-018330',vec:'VF-SY01-BOY-v3',unit:1500,total:3000,disc:1500,due:1500,paid:1500,payNo:'PM2026072281046532',payAt:agoMD(22,'10:15'),deadline:agoMD(22,'10:41'),status:'已到校',reviewer:'王慧（教职工）',reviewedAt:agoMD(21,'14:03'),batch:'B2607-SY01-001',prodAt:agoMD(19,'09:00'),shipNo:'LG2026080511230084',shipAt:agoMD(4,'16:10'),arrAt:agoMD(2,'09:15'),
+  items:[{bg:'1965274193288010104',free:true,unit:1500,epc:'A9D42C7B08E5F134',st:'随主单推进',vAt:'',rf:''},{bg:'1965274193288010105',free:false,unit:1500,epc:'A9D42C7B08E5F135',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[[agoMD(2,'09:15'),'已到校','物流妥投签收（签收即到校）',''],[agoMD(4,'16:10'),'已寄出','物流单 LG2026080511230084（批次补寄）',''],[agoMD(19,'09:00'),'提交生产','批次 B2607-SY01-001',''],[agoMD(21,'14:03'),'审核通过','王慧（教职工）',''],[agoMD(22,'10:15'),'支付成功','实付 ¥15.00',''],[agoMD(22,'10:11'),'提交办理','','']]},
+ {no:'SS2026061008834712',sc:'市实验一小',stu:'罗一鸣',cls:'四(3)班',parent:'罗建军',claim:'已认领',src:'名册带出',style:'男生款',qty:3,needPhoto:true,photo:'PH-SY01-006219',vec:'VF-SY01-BOY-v3',unit:1500,total:4500,disc:0,due:4500,paid:4500,payNo:'PM2026061050328816',payAt:agoMD(25,'20:31'),deadline:agoMD(25,'20:55'),status:'部分启用',reviewer:'于洛（运管）',reviewedAt:agoMD(24,'08:30'),batch:'B2606-SY01-002',prodAt:agoMD(23,'09:00'),shipNo:'LG2026061800125',shipAt:agoMD(17,'16:20'),arrAt:agoMD(6,'09:12'),
+  items:[{bg:'2005752785765592901',free:false,unit:1500,epc:'52C8E19A4D07B6ED',st:'已启用',vAt:agoMD(5,'19:06'),rf:''},{bg:'2005752785765592902',free:false,unit:1500,epc:'52C8E19A4D07B6EE',st:'已退款',vAt:'',rf:'RO2026063041220986'},{bg:'2005752785765592903',free:false,unit:1500,epc:'52C8E19A4D07B6EF',st:'随主单推进',vAt:'',rf:''}],refunds:['RO2026063041220986'],
+  flow:[[agoMD(3,'09:14'),'退款到账','¥15.00 已原路退回，退款单编号 RO2026063041220986',''],[agoMD(4,'17:02'),'发起退款','部分退款 1 枚（徽面瑕疵），¥15.00 将于 1–3 个工作日原路退回，退款单编号 RO2026063041220986','amber'],[agoMD(5,'19:06'),'扫码核验启用','2005752785765592901 已核验启用 · 第 1 枚 · 部分启用 1/2',''],[agoMD(6,'09:12'),'已到校','物流妥投签收（签收即到校，级联整批主单）',''],[agoMD(17,'16:20'),'已寄出','物流单 LG2026061800125（批次寄校）',''],[agoMD(23,'09:00'),'提交生产','批次 B2606-SY01-002',''],[agoMD(24,'08:30'),'审核通过','于洛（运管）',''],[agoMD(25,'20:31'),'支付成功','实付 ¥45.00',''],[agoMD(25,'20:25'),'提交办理','','']]},
+ {no:'SS2026061230518246',sc:'市实验一小',stu:'林晓乐',cls:'三(2)班',parent:'苏婉晴',claim:'已认领',src:'名册带出',style:'男生款',qty:1,needPhoto:true,photo:'PH-SY01-004120',vec:'VF-SY01-BOY-v3',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026061260918826',payAt:'06-12 20:15',deadline:'06-12 20:38',status:'已完成',reviewer:'王慧（教职工）',reviewedAt:'06-13 08:40',batch:'B2606-SY01-002',prodAt:'06-15 10:00',shipNo:'LG2026061800124',shipAt:'06-18 16:20',arrAt:'06-21 09:35',
+  items:[{bg:'1948841152412259101',free:false,unit:1500,epc:'52C8E19A4D07B3E1',st:'已启用',vAt:'06-21 18:05',rf:''}],refunds:[],
+ /* 第一阶段隐藏：改单能力为后续阶段，「原支付单关闭」流转行随之隐藏——恢复方式：在下行 flow 的「支付成功」后重新插入 ['06-12 20:12','原支付单关闭','2 枚改 1 枚（改单换新）','gray'] */
+  flow:[['06-21 18:05','已完成','1948841152412259101 已核验启用，本次办理完成',''],['06-21 09:35','已到校','物流妥投签收（签收即到校，级联整批主单）',''],['06-18 16:20','已寄出','物流单 LG2026061800124（批次寄校）',''],['06-15 10:00','提交生产','批次 B2606-SY01-002',''],['06-13 08:40','审核通过','王慧（教职工）',''],['06-12 20:15','支付成功','实付 ¥15.00',''],['06-12 20:08','提交办理','','']]},
+ {no:'SS2026062655678201',sc:'城南外国语',stu:'张芷晴',cls:'五(2)班',parent:'张伟东',claim:'已认领',src:'名册带出',style:'女生款',qty:1,needPhoto:true,photo:'PH-CN02-015523',vec:'VF-CN02-GIRL-v2',unit:1500,total:1500,disc:0,due:1500,paid:0,payNo:'PM2026062671150442',payAt:'',deadline:'06-26 21:14',status:'已取消',cancelAt:'06-26 21:15',cancelType:'支付超时自动取消',
+  items:[{bg:'',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[['06-26 21:15','已取消','超时未支付，已自动取消','gray'],['06-26 20:44','提交办理','','']]},
+ /* 免费单家长自主取消：¥0 首枚免费单免支付直落待确认，家长提交生产前自助取消——无款可退，取消即刻生效关单
+    （无退款链路、不产生退款单，与运管代取消同一路径；附注按 PRD 16.8 已取消行家长自主取消场景落「家长自主取消（提交生产前）」，
+    无款可退口径由场景自明、不入附注），首枚免费额度同步释放（额度表事实、不落流转行）；
+    与陈梓睿单（已付款家长自主取消、退款到账才关单）构成免费 / 付费对照 */
+ {no:'SS2026062470315826',sc:'滨江二小',stu:'袁思齐',cls:'二(4)班',parent:'袁海涛',claim:'已认领',src:'名册带出',style:'男生款',qty:1,needPhoto:false,photo:'',vec:'VF-BJ03-BOY-v1',unit:1500,total:1500,disc:1500,due:0,paid:0,payNo:'',payAt:'',deadline:'',status:'已取消',cancelAt:'06-25 08:47',cancelType:'家长自主取消',
+  items:[{bg:'2002160242484596201',free:true,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:''}],refunds:[],
+  flow:[['06-25 08:47','已取消','家长自主取消（提交生产前）','gray'],['06-24 19:02','提交办理','首张免费，无需支付','']]},
+ {no:'SS2026062239106584',sc:'滨江二小',stu:'陈梓睿',cls:'一(2)班',parent:'陈丽',claim:'已认领',src:'名册带出',style:'男生款',qty:2,needPhoto:false,photo:'',vec:'VF-BJ03-BOY-v1',unit:1500,total:3000,disc:1500,due:1500,paid:1500,payNo:'PM2026062225873109',payAt:'06-22 12:10',deadline:'06-22 12:33',status:'已取消',cancelAt:'06-23 10:22',cancelType:'家长自主取消',
+  items:[{bg:'1952042545042910601',free:true,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:'RO2026062360915237'},{bg:'1952042545042910602',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:'RO2026062360915237'}],refunds:['RO2026062360915237'],
+  /* 已付款单取消：取消动作只落「发起退款」行、订单保持原状态，退款到账回调时才落「已取消」行并关单（与运管全额退款同一口径；倒序展示故已取消行在最上） */
+  flow:[['06-23 10:22','已取消','全部商品退款成功 · 办理记录转已取消（家长自主取消，提交生产前发起）','gray'],['06-23 10:22','退款到账','¥15.00 已原路退回，退款单编号 RO2026062360915237',''],['06-23 10:20','发起退款','家长自主取消（提交生产前）· 全额退款 ¥15.00，将于 1–3 个工作日原路退回，退款单编号 RO2026062360915237','amber'],['06-22 12:10','支付成功','实付 ¥15.00',''],['06-22 12:05','提交办理','','']]},
+ /* 第一阶段隐藏：差错单对账自愈链路为后续阶段（recon_error 不落流转记录、系统自动退回不启用），黄启铭差错单演示链整体隐藏——恢复方式：解除本单及关联支付单 PM2026061981234570、退款单 RO2026062002231847、退款流水 RT2026062009315580、两条操作日志的注释 */
+ /* {no:'SS2026061947003156',sc:'滨江二小',stu:'黄启铭',cls:'五(3)班',parent:'黄志远',claim:'已认领',src:'名册带出',style:'男生款',qty:1,needPhoto:false,photo:'',vec:'VF-BJ03-BOY-v1',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026061981234570',payAt:'06-19 21:02',deadline:'06-19 21:01',status:'已取消',cancelAt:'06-19 21:02',cancelType:'支付超时自动取消', */
+ /* items:[{bg:'',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:'RO2026062002231847'}],refunds:['RO2026062002231847'], */
+ /* flow:[['06-20 09:03','退款到账','¥15.00 已自动退回，退款单编号 RO2026062002231847',''],['06-20 09:00','差错单发现','日终对账发现差错单（渠道已支付、本地已取消）· 不复活订单，自动生成退款单原路退回','red'],['06-19 21:02','差错单发现','渠道支付成功回调到达（延迟）· 订单已取消','red'],['06-19 21:02','已取消','超时未支付，已自动取消','gray'],['06-19 20:31','提交办理','','']]}, */
+ {no:'SS2026061428810369',sc:'城南外国语',stu:'宋佳霖',cls:'二(2)班',parent:'宋海燕',claim:'已认领',src:'名册带出',style:'女生款',qty:1,needPhoto:true,photo:'PH-CN02-011870',vec:'VF-CN02-GIRL-v2',unit:1500,total:1500,disc:0,due:1500,paid:1500,payNo:'PM2026061462093318',payAt:'06-14 15:47',deadline:'06-14 16:12',status:'待生产',
+  items:[{bg:'2020448879466794401',free:false,unit:1500,epc:'',st:'随主单推进',vAt:'',rf:'RO2026061533018472'}],refunds:['RO2026061533018472'],
+  /* 退款转线下未到账即未关单：订单保持原状态（待生产、已被取消请求冻结不再推进生产），线下退款完成或重新发起的退款到账时才转已取消——
+     退款关闭不自动改办理记录状态（客服仍可对本单再次发起退款） */
+  flow:[['07-01 10:30','退款转线下','无法原路退回（收款账户注销）· 退款单置退款关闭，转线下退款，退款单编号 RO2026061533018472','red'],['06-15 09:40','发起退款','家长自主取消（提交生产前）· 全额退款 ¥15.00，将于 1–3 个工作日原路退回，退款单编号 RO2026061533018472','amber'],['06-14 15:47','支付成功','实付 ¥15.00',''],['06-14 15:42','提交办理','','']]}
+];
+const PAYS=[
+ /* 第一阶段隐藏：改单能力为后续阶段，改单旧支付单随之隐藏（「已关闭」状态由超时关单种子 PM2026080319201133 / PM2026062671150442 演示）——恢复方式：解除下行注释 */
+ /* {no:'PM2026061241108733',orderNo:'SS2026061230518246',sc:'市实验一小',payer:'苏婉晴',amt:3000,st:'已取消',trade:'已关闭',prepay:'wx1220081130229…',tx:'',created:'06-12 20:08',paidAt:'',cancelAt:'06-12 20:12',updated:'06-12 20:12',remark:'家长改数量（2 枚改 1 枚）：旧单关闭、新开支付单（微信同一商户订单号不允许变更金额）'}, */
+ {no:'PM2026061260918826',orderNo:'SS2026061230518246',sc:'市实验一小',payer:'苏婉晴',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx1220141530944…',tx:'4200002206202606125501330872',created:'06-12 20:14',paidAt:'06-12 20:15',cancelAt:'',updated:'06-12 20:15'},
+ {no:'PM2026070430112087',orderNo:'SS2026070451170263',sc:'市实验一小',payer:'陈建国',amt:1500,st:'待支付',trade:'未支付',prepay:'wx0414023390211…',tx:'',created:'今日 14:02',paidAt:'',cancelAt:'',updated:'今日 14:02'},
+ /* 窗内新增种子对应支付单：许安琪超时关闭 / 杜俊熙已完成 */
+ {no:'PM2026080319201133',orderNo:'SS2026080340112765',sc:'市实验一小',payer:'许卫东',amt:1500,st:'已取消',trade:'已关闭',prepay:'wx0319200448121…',tx:'',created:agoMD(1,'19:20'),paidAt:'',cancelAt:agoMD(1,'19:51'),updated:agoMD(1,'19:51'),remark:'支付超时：渠道关单成功后本地关闭'},
+ {no:'PM2026071930517842',orderNo:'SS2026071946102387',sc:'滨江二小',payer:'杜春梅',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx1909400273356…',tx:'4200002206202607193051784211',created:agoMD(16,'09:40'),paidAt:agoMD(16,'09:44'),cancelAt:'',updated:agoMD(16,'09:44')},
+ {no:'PM2026071938406125',orderNo:'SS2026071952318064',sc:'滨江二小',payer:'蒋涛',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx1920081574429…',tx:'4200002206202607193840612508',created:agoMD(16,'20:08'),paidAt:agoMD(16,'20:12'),cancelAt:'',updated:agoMD(16,'20:12')},
+ {no:'PM2026071640119253',orderNo:'SS2026071652201473',sc:'市实验一小',payer:'周立新',amt:4500,st:'已完成',trade:'支付成功',prepay:'wx1619180412775…',tx:'4200002206202607164011925377',created:agoMD(22,'19:18'),paidAt:agoMD(22,'19:22'),cancelAt:'',updated:agoMD(22,'19:22')},
+ /* 零元退款演示单的支付单：2 枚 ¥30.00 抵扣首枚免费 ¥15.00，实付 ¥15.00。免费枚被零元退款回收时本单不动
+    （无资金动作，渠道交易状态不转「转入退款」） */
+ {no:'PM2026072281046532',orderNo:'SS2026072265913047',sc:'市实验一小',payer:'沈建国',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx2210110856341…',tx:'4200002206202607228104653291',created:agoMD(22,'10:11'),paidAt:agoMD(22,'10:15'),cancelAt:'',updated:agoMD(22,'10:15')},
+ {no:'PM2026070122408516',orderNo:'SS2026070163309125',sc:'城南外国语',payer:'罗美玲',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx0112361208853…',tx:'4200002206202607012240851633',created:agoMD(3,'12:36'),paidAt:agoMD(3,'12:40'),cancelAt:'',updated:agoMD(3,'12:40')},
+ {no:'PM2026070218804529',orderNo:'SS2026070290417382',sc:'城南外国语',payer:'吴国栋',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx0211220476091…',tx:'4200002206202607021880452977',created:agoMD(2,'11:22'),paidAt:agoMD(2,'11:26'),cancelAt:'',updated:agoMD(2,'11:26')},
+ {no:'PM2026062833107765',orderNo:'SS2026062812083456',sc:'城南外国语',payer:'郑丽华',amt:3000,st:'已完成',trade:'转入退款',prepay:'wx2819010388120…',tx:'4200002206202606283310776529',created:agoMD(7,'19:01'),paidAt:agoMD(7,'19:05'),cancelAt:'',updated:'今日 10:12',remark:'部分退款 1 枚受理中，尚未到账，退款进度见退款单'},
+ {no:'PM2026062147720981',orderNo:'SS2026062144560913',sc:'滨江二小',payer:'孙志成',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx2108512203674…',tx:'4200002206202606214772098106',created:agoMD(14,'08:51'),paidAt:agoMD(14,'08:55'),cancelAt:'',updated:agoMD(14,'08:55')},
+ {no:'PM2026061509912734',orderNo:'SS2026061520871345',sc:'滨江二小',payer:'高秀兰',amt:1500,st:'已完成',trade:'支付成功',prepay:'wx1517203309112…',tx:'4200002206202606150991273468',created:agoMD(20,'17:20'),paidAt:agoMD(20,'17:23'),cancelAt:'',updated:agoMD(20,'17:23')},
+ {no:'PM2026061050328816',orderNo:'SS2026061008834712',sc:'市实验一小',payer:'罗建军',amt:4500,st:'已退款',trade:'转入退款',prepay:'wx1020251104473…',tx:'4200002206202606105032881609',created:agoMD(25,'20:25'),paidAt:agoMD(25,'20:31'),cancelAt:'',updated:agoMD(3,'09:14')},
+ {no:'PM2026062940017653P',orderNo:'SS2026062940017653',sc:'市实验一小',payer:'冯军',amt:1500,st:'已完成',trade:'转入退款',prepay:'wx2910100255831…',tx:'4200002206202606294001765320',created:agoMD(6,'10:10'),paidAt:agoMD(6,'10:14'),cancelAt:'',updated:agoMD(2,'10:05'),remark:'全额退款执行中：当前流水异常，退款单转人工处理'},
+ {no:'PM2026062671150442',orderNo:'SS2026062655678201',sc:'城南外国语',payer:'张伟东',amt:1500,st:'已取消',trade:'已关闭',prepay:'wx2620440917765…',tx:'',created:'06-26 20:44',paidAt:'',cancelAt:'06-26 21:15',updated:'06-26 21:15',remark:'支付超时：渠道关单成功后本地关闭'},
+ {no:'PM2026062225873109',orderNo:'SS2026062239106584',sc:'滨江二小',payer:'陈丽',amt:1500,st:'已退款',trade:'转入退款',prepay:'wx2212051166301…',tx:'4200002206202606222587310955',created:'06-22 12:05',paidAt:'06-22 12:10',cancelAt:'',updated:'06-23 10:22',remark:'家长取消订单，全额退款已到账'},
+ /* {no:'PM2026061981234570',orderNo:'SS2026061947003156',sc:'滨江二小',payer:'黄志远',amt:1500,st:'已退款',trade:'转入退款',prepay:'wx1920310856643…',tx:'4200002206202606198123457084',created:'06-19 20:31',paidAt:'06-19 21:02',cancelAt:'',updated:'06-20 09:03',remark:'超时关单后的异常入账（回调延迟）：不复活订单，已自动全额原路退回'}, */
+ {no:'PM2026061462093318',orderNo:'SS2026061428810369',sc:'城南外国语',payer:'宋海燕',amt:1500,st:'已完成',trade:'转入退款',prepay:'wx1415420285537…',tx:'4200002206202606146209331812',created:'06-14 15:42',paidAt:'06-14 15:47',cancelAt:'',updated:'07-01 10:30',remark:'原路退回多次失败（收款账户注销），退款单已转线下处理'}
+];
+const REFUNDS=[
+ {no:'RO2026070490112358',orderNo:'SS2026062812083456',sc:'城南外国语',stu:'郑凯文',amt:1500,type:'运管部分',op:'ops_chen',note:'家长反馈其中一枚徽面局部脱漆，客服核实属实，退该枚',st:'退款中',initAt:'今日 10:12',okAt:'',
+  items:[{bg:'1985809663573516902',free:false,unit:1500,epc:'0B86D3F5A2C97E15'}],txns:['RT2026070490601123']},
+ {no:'RO2026063041220986',orderNo:'SS2026061008834712',sc:'市实验一小',stu:'罗一鸣',amt:1500,type:'运管部分',op:'ops_chen',note:'家长反馈其中一枚徽面瑕疵，客服核实属实，退该枚',st:'退款成功',initAt:agoMD(4,'17:02'),okAt:agoMD(3,'09:14'),
+  items:[{bg:'2005752785765592902',free:false,unit:1500,epc:'52C8E19A4D07B6EE'}],txns:['RT2026063055873001']},
+ {no:'RO2026070218876209',orderNo:'SS2026062940017653',sc:'市实验一小',stu:'冯诗涵',amt:1500,type:'运管全额',op:'ops_liu',note:'矢量文件版式错误无法制作，与家长电话确认全额退款；全部退款成功后办理单转已取消',st:'退款异常',initAt:agoMD(3,'15:30'),okAt:'',
+  items:[{bg:'1945036337349342701',free:false,unit:1500,epc:'6F1E88B24A05D9C7'}],txns:['RT2026070271120903','RT2026070388109427']},
+ {no:'RO2026062360915237',orderNo:'SS2026062239106584',sc:'滨江二小',stu:'陈梓睿',amt:1500,type:'家长取消全额',op:'',note:'家长提交生产前自主取消，实付全额原路退回；退款成功后办理单转已取消，免费首枚额度同步释放',st:'退款成功',initAt:'06-23 10:20',okAt:'06-23 10:22',
+  items:[{bg:'1952042545042910601',free:true,unit:1500,epc:'—'},{bg:'1952042545042910602',free:false,unit:1500,epc:'—'}],txns:['RT2026062310022856']},
+ /* {no:'RO2026062002231847',orderNo:'SS2026061947003156',sc:'滨江二小',stu:'黄启铭',amt:1500,type:'系统自动退回',op:'',note:'日终对账差错单：渠道已支付、本地已取消（超时关单后回调延迟到达），自动全额原路退回',st:'退款成功',initAt:'06-20 09:00',okAt:'06-20 09:03', */
+ /* items:[{bg:'—（未提交生产）',free:false,unit:1500,epc:'—'}],txns:['RT2026062009315580']}, */
+ {no:'RO2026061533018472',orderNo:'SS2026061428810369',sc:'城南外国语',stu:'宋佳霖',amt:1500,type:'家长取消全额',op:'',note:'两次原路退回均失败（收款账户注销），2026-07-01 人工判定无法原路退回，转线下退款 · 客服工单 CS-0630-118',st:'退款关闭',initAt:'06-15 09:40',okAt:'',closedAt:'07-01 10:30',
+  items:[{bg:'2020448879466794401',free:false,unit:1500,epc:'—'}],txns:['RT2026061562208143','RT2026061830017429']}
+];
+const RTXNS=[
+ {no:'RT2026070490601123',wx:'50302206262026070490601123',refundNo:'RO2026070490112358',orderNo:'SS2026062812083456',payNo:'PM2026062833107765',payTx:'4200002206202606283310776529',ch:'wechat_jsapi',amt:1500,orderAmt:3000,reason:'徽面局部脱漆，运管部分退款',st:'退款中',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'支付用户零钱',created:'今日 10:12',okAt:'',closedAt:'',fail:''},
+ {no:'RT2026063055873001',wx:'50302206262026063055873001',refundNo:'RO2026063041220986',orderNo:'SS2026061008834712',payNo:'PM2026061050328816',payTx:'4200002206202606105032881609',ch:'wechat_jsapi',amt:1500,orderAmt:4500,reason:'徽面瑕疵，部分退款 1 枚',st:'退款成功',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'支付用户零钱',created:agoMD(4,'17:02'),okAt:agoMD(3,'09:14'),closedAt:'',fail:''},
+ {no:'RT2026070271120903',wx:'50302206262026070271120903',refundNo:'RO2026070218876209',orderNo:'SS2026062940017653',payNo:'PM2026062940017653P',payTx:'4200002206202606294001765320',ch:'wechat_jsapi',amt:1500,orderAmt:1500,reason:'矢量文件版式错误，无法制作',st:'退款关闭',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'—',created:agoMD(3,'15:30'),okAt:'',closedAt:agoMD(3,'15:44'),fail:'USER_ACCOUNT_ABNORMAL：退款请求受理失败，用户账户异常'},
+ {no:'RT2026070388109427',wx:'50302206262026070388109427',refundNo:'RO2026070218876209',orderNo:'SS2026062940017653',payNo:'PM2026062940017653P',payTx:'4200002206202606294001765320',ch:'wechat_jsapi',amt:1500,orderAmt:1500,reason:'矢量文件版式错误，无法制作（重试）',st:'退款异常',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'—',created:agoMD(2,'10:05'),okAt:'',closedAt:'',fail:'退款至用户银行卡失败（卡作废/冻结），需人工处理'},
+ {no:'RT2026062310022856',wx:'50302206262026062310022856',refundNo:'RO2026062360915237',orderNo:'SS2026062239106584',payNo:'PM2026062225873109',payTx:'4200002206202606222587310955',ch:'wechat_jsapi',amt:1500,orderAmt:1500,reason:'家长取消办理，全额原路退回',st:'退款成功',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'支付用户零钱',created:'06-23 10:20',okAt:'06-23 10:22',closedAt:'',fail:''},
+ /* {no:'RT2026062009315580',wx:'50302206262026062009315580',refundNo:'RO2026062002231847',orderNo:'SS2026061947003156',payNo:'PM2026061981234570',payTx:'4200002206202606198123457084',ch:'wechat_jsapi',amt:1500,orderAmt:1500,reason:'超时关单后渠道入账，系统自动原路退回',st:'退款成功',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'支付用户零钱',created:'06-20 09:00',okAt:'06-20 09:03',closedAt:'',fail:''}, */
+ {no:'RT2026061562208143',wx:'50302206262026061562208143',refundNo:'RO2026061533018472',orderNo:'SS2026061428810369',payNo:'PM2026061462093318',payTx:'4200002206202606146209331812',ch:'wechat_jsapi',amt:1500,orderAmt:1500,reason:'家长取消办理，全额原路退回',st:'退款异常',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'—',created:'06-15 09:40',okAt:'',closedAt:'',fail:'收款账户已注销'},
+ {no:'RT2026061830017429',wx:'50302206262026061830017429',refundNo:'RO2026061533018472',orderNo:'SS2026061428810369',payNo:'PM2026061462093318',payTx:'4200002206202606146209331812',ch:'wechat_jsapi',amt:1500,orderAmt:1500,reason:'家长取消办理，全额原路退回（重试）',st:'退款异常',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'—',created:'06-18 14:20',okAt:'',closedAt:'',fail:'收款账户已注销（重试仍失败）'}
+];
+
+/* 物流单与轨迹（shipment + shipment_track，append-only 事件流，倒序展示） */
+const SHIPMENTS={
+ 'LG2026061800124':{carrier:'顺丰速运',tn:'SF1390256748821',st:'已到校',tracks:[
+   ['06-21 09:35','签收','校方对接人签收（教务处 张主任）· 签收即到校，级联整批主单转已到校','市实验一小'],
+   ['06-21 08:05','派件','快递员派送中：李师傅 138****2233','市区网点'],
+   ['06-20 07:12','在途','到达【市转运中心】',''],
+   ['06-19 03:41','在途','离开【杭州转运中心】，发往市转运中心',''],
+   ['06-18 16:20','揽收','顺丰已揽收（批次装箱 · 按班分装 24 箱）','生产基地']]},
+ 'LG2026061800125':{carrier:'顺丰速运',tn:'SF1390256748834',st:'已到校',tracks:[
+   [agoMD(6,'09:12'),'签收','校方对接人签收（教务处 张主任）· 签收即到校','市实验一小'],
+   [agoMD(6,'08:30'),'派件','快递员派送中：李师傅 138****2233','市区网点'],
+   [agoMD(13,'14:05'),'异常','暴雨天气派送延迟，包裹滞留【市转运中心】','市转运中心'],
+   [agoMD(16,'05:20'),'在途','离开【杭州转运中心】，发往市转运中心',''],
+   [agoMD(17,'16:20'),'揽收','顺丰已揽收（批次装箱 · 按班分装 12 箱）','生产基地']]},
+ 'LG2026062800031':{carrier:'德邦快递',tn:'DPK203300102246',st:'已到校',tracks:[
+   [agoMD(5,'09:20'),'签收','校方对接人签收（王老师）· 签收即到校','滨江二小'],
+   [agoMD(5,'08:12'),'派件','快递员派送中：赵师傅 137****0032','滨江网点'],
+   [agoMD(6,'11:38'),'在途','到达【滨江分拨中心】',''],
+   [agoMD(7,'10:10'),'揽收','德邦已揽收（批次装箱 · 按班分装 8 箱）','生产基地']]},
+ 'LG2026070200087':{carrier:'德邦快递',tn:'DPK203300118821',st:'已发出',tracks:[
+   [agoMD(1,'21:47'),'在途','到达【滨江分拨中心】',''],
+   [agoMD(1,'02:10'),'在途','离开【杭州转运中心】，发往滨江分拨中心',''],
+   [agoMD(2,'15:40'),'揽收','德邦已揽收（批次装箱 · 按班分装 6 箱）','生产基地']]},
+ 'LG2026072300056':{carrier:'顺丰速运',tn:'SF1390256749017',st:'已到校',tracks:[
+   [agoMD(12,'09:25'),'签收','校方对接人签收（教务处 张主任）· 签收即到校，级联整批主单转已到校','市实验一小'],
+   [agoMD(12,'08:20'),'派件','快递员派送中：李师傅 138****2233','市区网点'],
+   [agoMD(13,'06:45'),'在途','到达【市转运中心】',''],
+   [agoMD(14,'04:30'),'在途','离开【杭州转运中心】，发往市转运中心',''],
+   [agoMD(15,'16:40'),'揽收','顺丰已揽收（批次装箱 · 按班分装 18 箱）','生产基地']]},
+ /* 沈亦航单补寄物流单（原箱漏装、单箱补寄）：单主单物流单，签收即到校、无级联 */
+ 'LG2026080511230084':{carrier:'顺丰速运',tn:'SF1390256749802',st:'已到校',tracks:[
+   [agoMD(2,'09:15'),'签收','校方对接人签收（教务处 张主任）· 签收即到校','市实验一小'],
+   [agoMD(2,'08:20'),'派件','快递员派送中：李师傅 138****2233','市区网点'],
+   [agoMD(3,'07:40'),'在途','到达【市转运中心】',''],
+   [agoMD(4,'16:10'),'揽收','顺丰已揽收（批次补寄 · 单箱）','生产基地']]},
+ 'LG2026072600102':{carrier:'德邦快递',tn:'DPK203300125467',st:'已到校',tracks:[
+   [agoMD(7,'09:30'),'签收','校方对接人签收（王老师）· 签收即到校','滨江二小'],
+   [agoMD(7,'08:40'),'派件','快递员派送中：赵师傅 137****0032','滨江网点'],
+   [agoMD(8,'03:15'),'在途','到达【滨江分拨中心】',''],
+   [agoMD(9,'10:20'),'揽收','德邦已揽收（批次装箱 · 按班分装 6 箱）','生产基地']]}
+};
+const T_TRACK={'揽收':'gray','在途':'gray','派件':'amber','签收':'','异常':'red'};
+const T_SHIP={'待发':'tag-off','已发出':'tag-cyan','已到校':'tag-on','已签收':'tag-on'};
+
+/* =================================================================
+   通用：标签映射 / 复制 / 抽屉
+   ================================================================= */
+const T_ORDER={'待支付':'tag-warn','待确认':'tag-blue','待生产':'tag-blue','生产中':'tag-purple','已寄出':'tag-cyan','已到校':'tag-cyan','部分启用':'tag-blue','已完成':'tag-on','已取消':'tag-off'};
+const T_CLAIM={'已认领':'tag-on','审核中':'tag-warn','核实失败':'tag-danger'};
+const T_PAY={'待发起':'tag-off','待支付':'tag-warn','已完成':'tag-on','已退款':'tag-purple','已取消':'tag-off'};
+const T_TRADE={'未支付':'tag-warn','支付成功':'tag-on','已关闭':'tag-off','转入退款':'tag-purple'};
+const T_RF={'退款中':'tag-blue','退款成功':'tag-on','退款异常':'tag-danger','退款关闭':'tag-off'};
+const tag=(txt,map)=>txt?'<span class="tag '+(map[txt]||'tag-off')+'">'+txt+'</span>':'—';
+function copyNo(no){
+  if(navigator.clipboard)navigator.clipboard.writeText(no);
+  toast('已复制：'+no);
+}
+const cp=no=>'<span class="copy" onclick="copyNo(\''+no+'\')" title="复制">⧉ 复制</span>';
+const kv=(k,v)=>'<div class="kv"><span class="k">'+k+'</span><span class="v">'+(v||'—')+'</span></div>';
+function ov(s){document.getElementById('ov').classList.toggle('show',s)}
+function closeAll(){
+  document.querySelectorAll('.modal').forEach(m=>m.classList.remove('show'));
+  document.getElementById('d-detail').classList.remove('show');ov(false);
+}
+function closeModal(){
+  document.querySelectorAll('.modal').forEach(m=>m.classList.remove('show'));
+  if(!document.querySelector('.drawer.show'))ov(false);
+}
+function openDrawer(title,tagHtml,body,foot){
+  ov(true);
+  document.getElementById('dd-title').textContent=title;
+  document.getElementById('dd-tag').innerHTML=tagHtml||'';
+  document.getElementById('dd-body').innerHTML=body;
+  document.getElementById('dd-foot').innerHTML='<button class="btn" onclick="closeAll()">关闭</button>'+(foot||'');
+  document.getElementById('d-detail').classList.add('show');
+  document.getElementById('dd-body').scrollTop=0;
+}
+function rerenderAll(){
+  renderOrders();renderPays();renderRefunds();renderRtxns();
+  if(curPage==='orderdetail'&&curOrderNo){
+    const o=ORDERS.find(x=>x.no===curOrderNo);
+    if(o)renderOrderDetail(o);
+  }
+}
+const nowT=()=>{const d=new Date();return '今日 '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
+/* 运管操作人展示：用户名 → 姓名（用户名）；ops_yun 即顶栏当前登录用户 */
+const OPS_NAMES={ops_chen:'陈立群',ops_liu:'刘慧敏',ops_yun:'秦晓峰',ops_lead:'高志远'};
+function opsName(a){
+  if(!a)return a;
+  const m=a.match(/^(ops_[a-z]+)(（高权限）)?$/);
+  if(!m||!OPS_NAMES[m[1]])return a;
+  return OPS_NAMES[m[1]]+'（'+m[1]+(m[2]?' · 高权限':'')+'）';
+}
+/* 操作日志用完整审计时间戳 yyyy-MM-dd HH:mm:ss */
+const nowFull=()=>{const d=new Date(),p=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())};
+const rnd8=()=>String(Math.floor(10000000+Math.random()*90000000));
+/* 各列表筛选胶囊（规范 fb-active-tip）：回显当前生效筛选，点 × 一键清除全部 */
+const setVal=(id,v)=>{const e=document.getElementById(id);if(e)e.value=v};
+function setTip(id,parts){
+  const tip=document.getElementById(id);
+  tip.style.display=parts.length?'':'none';
+  if(parts.length)document.getElementById(id+'-txt').textContent='已筛选：'+parts.join(' · ');
+}
+/* 时间筛选：快捷区间下拉 + 自定义区间（各列表口径——办理按创建、支付按支付成功、退款按发起、流水按创建、日志按操作时间） */
+const DT_LABEL={today:'今天',w:'近 7 天',m:'近 30 天'};
+const DT_STATE=()=>({od:OD,py:PY,rf:RF,rt:RT,lg:LG});
+const DT_RENDER=()=>({od:renderOrders,py:renderPays,rf:renderRefunds,rt:renderRtxns,lg:renderLogs});
+function parseT(s){
+  if(!s)return null;
+  const f=s.match(/^(\d{4})-(\d{2})-(\d{2})(?: (\d{2}):(\d{2})(?::(\d{2}))?)?/);
+  if(f)return new Date(+f[1],+f[2]-1,+f[3],f[4]?+f[4]:0,f[5]?+f[5]:0,f[6]?+f[6]:0);
+  if(s.indexOf('今日')===0){
+    const d=new Date();const m=s.match(/(\d{2}):(\d{2})/);
+    if(m)d.setHours(+m[1],+m[2],0,0);
+    return d;
+  }
+  const m=s.match(/(\d{2})-(\d{2})(?: (\d{2}):(\d{2}))?/);
+  if(!m)return null;
+  return new Date(2026,+m[1]-1,+m[2],m[3]?+m[3]:0,m[4]?+m[4]:0);
+}
+/* 日期控件为 antd 风自定义日历（assets/dtp.js 就地升级原生 date 输入，点击控件即弹层）；
+   升级后 input 被 .dtp-wrap 包裹，显隐须作用于 wrap（升级前回退 input 自身） */
+function dtpShow(id,show){const el=document.getElementById(id);if(!el)return;const w=el.closest('.dtp-wrap')||el;w.style.display=show?'':'none'}
+function dtChange(pfx,v){
+  const st=DT_STATE()[pfx];
+  const cust=v==='custom';
+  /* 切入自定义区间：预填切换前生效窗口的起止——切换瞬间列表不变，用户在锚点上调整端点；
+     清空两端 = 不限时间（查更早记录与超窗提醒条跳转的唯一出路，全部时间选项已移除）；
+     跨度第一阶段不设上限（默认有界已防无意全量），真实产品预留服务端护栏参数（单次最长 1 年、超长转异步导出） */
+  if(cust&&st.dt!=='custom'){
+    const r=dtRange(st),f=d=>d.getFullYear()+'-'+_p2(d.getMonth()+1)+'-'+_p2(d.getDate());
+    if(r&&r[0]){st.d1=f(r[0]);st.d2=f(r[1]||new Date())}
+    setVal(pfx+'-d1',st.d1||'');setVal(pfx+'-d2',st.d2||'');
+  }
+  st.dt=v;
+  dtpShow(pfx+'-d1',cust);dtpShow(pfx+'-d2',cust);
+  if(!cust){st.d1='';st.d2='';setVal(pfx+'-d1','');setVal(pfx+'-d2','')}
+  dtBound(pfx);
+  DT_RENDER()[pfx]();
+}
+function dtDate(pfx,i,v){const st=DT_STATE()[pfx];st['d'+i]=v;dtBound(pfx);DT_RENDER()[pfx]()}
+/* 起止自洽：选中一端后，另一端日历把越界日期置灰（dtp 控件动态读 dataset.dtpMin/dtpMax，「今天」按钮同守边界）——
+   开始 > 结束的区间无意义，此前会静默查出空集；置灰是预防式约束，优于事后报错或自动交换（不静默改写用户输入）。
+   清除该端即解除对应边界，「清除」按钮兼作双输入互锁的逃生口（区间整体后移时先清/改结束端再选开始） */
+function dtBound(pfx){
+  const st=DT_STATE()[pfx],d1=document.getElementById(pfx+'-d1'),d2=document.getElementById(pfx+'-d2');
+  if(!d1||!d2)return;
+  if(st.d1)d2.dataset.dtpMin=st.d1;else delete d2.dataset.dtpMin;
+  if(st.d2)d1.dataset.dtpMax=st.d2;else delete d1.dataset.dtpMax;
+}
+function dtRange(st){
+  if(!st.dt)return null;
+  if(st.dt==='custom'){
+    if(!st.d1&&!st.d2)return null;
+    return [st.d1?new Date(st.d1+'T00:00:00'):null,st.d2?new Date(st.d2+'T23:59:59'):null];
+  }
+  const a=new Date();a.setHours(0,0,0,0);
+  if(st.dt==='w')a.setDate(a.getDate()-6);
+  if(st.dt==='m')a.setDate(a.getDate()-29);
+  const b=new Date();b.setHours(23,59,59,999);
+  return [a,b];
+}
+function inRange(st,ts){
+  const r=dtRange(st);
+  if(!r)return true;
+  const t=parseT(ts);
+  if(!t)return false;
+  return (!r[0]||t>=r[0])&&(!r[1]||t<=r[1]);
+}
+function dtTipLabel(st){
+  if(!st.dt)return '';
+  if(st.dt!=='custom')return DT_LABEL[st.dt];
+  if(!st.d1&&!st.d2)return '';
+  return (st.d1||'…')+' ~ '+(st.d2||'…');
+}
+function dtReset(pfx){
+  setVal(pfx+'-dt','');setVal(pfx+'-d1','');setVal(pfx+'-d2','');
+  dtpShow(pfx+'-d1',false);dtpShow(pfx+'-d2',false);
+  dtBound(pfx);
+}
+/* 四列表重置：时间回落默认近 30 天（与操作日志同口径，不设全部时间） */
+function odReset(){OD={q:'',st:'',sc:'',cl:'',kpi:'',dt:'m'};setVal('od-q','');setVal('od-st','');cbClear('od-sc');setVal('od-cl','');dtReset('od');setVal('od-dt','m');renderOrders()}
+function pyReset(){PY={q:'',sc:'',kpi:'',dt:'m'};setVal('py-q','');cbClear('py-sc');dtReset('py');setVal('py-dt','m');renderPays()}
+function rfReset(){RF={q:'',tp:'',kpi:'',dt:'m'};setVal('rf-q','');setVal('rf-tp','');dtReset('rf');setVal('rf-dt','m');renderRefunds()}
+function rtReset(){RT={q:'',kpi:'',dt:'m'};setVal('rt-q','');dtReset('rt');setVal('rt-dt','m');renderRtxns()}
+/* 超窗在途/异常提醒：窗外仍有在途/异常态记录时显示提醒条（终态超窗不提醒），
+   点击切「不限时间」并叠加「在途 / 异常记录」筛选片——只交付提醒条数出的在途单，不切全量历史：
+   提醒条承诺 N 条在途、落到全量会把目标单淹进历史还得再筛一轮；且不限时间 + 全状态在真实规模下
+   就是全表查询，恰好绕开默认有界查询的保护。在途集合天然自限（持续流向终态、存量恒定在近期业务量级，
+   不随运营年限增长），按在途筛选无论时间跨度多大结果集都有界——意图与性能双正确；查全量历史仍走自定义区间清空两端 */
+const WIN_LIVE={od:['待支付','待确认','待生产','生产中','已寄出','已到校','部分启用'],py:['待发起','待支付'],rf:['退款中','退款异常'],rt:['待发起','退款中','退款异常']};
+/* 各页在途/异常判定：提醒条计数与「在途 / 异常记录」筛选片共用同一判定，两处永不漂移。
+   rt 的在途上卷到所属退款单：退款单已关闭/成功的，其异常流水是 append-only 历史终局、不再是待办 */
+const rtLiveHit=t=>{
+  if(!WIN_LIVE.rt.includes(t.st))return false;
+  const rf=REFUNDS.find(r=>r.no===t.refundNo);
+  return !rf||['退款中','退款异常','待发起'].includes(rf.st);
+};
+const LIVE_HIT={od:o=>WIN_LIVE.od.includes(o.status),py:p=>WIN_LIVE.py.includes(p.st),rf:r=>WIN_LIVE.rf.includes(r.st),rt:rtLiveHit};
+function winWarn(pfx,items,stOf,tOf,liveOf){
+  const st=DT_STATE()[pfx];
+  const isLive=liveOf||LIVE_HIT[pfx];
+  const n=items.filter(x=>isLive(x)&&!inRange(st,tOf(x))).length;
+  const el=document.getElementById(pfx+'-warn');
+  if(!el)return;
+  el.style.display=n?'':'none';
+  if(n)el.innerHTML='当前时间范围外另有 <b>'+n+'</b> 条在途 / 异常记录，点击查看全部在途 / 异常记录 ›';
+}
+function winAll(pfx){
+  const st=DT_STATE()[pfx];st.dt='custom';st.d1='';st.d2='';
+  /* 「在途 / 异常记录」筛选片属状态维度、只经提醒条进入：进入时清空状态卡与状态下拉、独占该维度
+     （与卡片↔下拉互斥同构），点状态卡或状态下拉即清除，筛选胶囊 × 一键回默认视图 */
+  st.live=true;st.kpi='';
+  if(pfx==='od'){st.st='';setVal('od-st','')}
+  setVal(pfx+'-dt','custom');setVal(pfx+'-d1','');setVal(pfx+'-d2','');
+  dtpShow(pfx+'-d1',true);dtpShow(pfx+'-d2',true);
+  dtBound(pfx);
+  DT_RENDER()[pfx]();
+}
+
+/* =================================================================
+   办理记录
+   ================================================================= */
+var OD={q:'',st:'',sc:'',cl:'',kpi:'',dt:'m'};   // dt 默认近 30 天
+const OD_KPI=[
+ {f:'待支付',label:'待支付',ic:'c3',color:'#fa8c16',sts:['待支付'],sub:'超时将自动取消'},
+ {f:'审核生产',label:'待确认 / 待生产',ic:'c1',color:'var(--color-primary)',sts:['待确认','待生产'],sub:'含身份核实中的停留单'},
+ {f:'生产中',label:'生产中',ic:'c5',color:'#722ed1',sts:['生产中'],sub:'家长自主取消已截止'},
+ {f:'物流',label:'寄出 / 到校 / 启用中',ic:'c6',color:'#13c2c2',sts:['已寄出','已到校','部分启用'],sub:'批次寄校 · 扫码核验启用'},
+ {f:'终态',label:'已完成 / 已取消',ic:'c2',color:'#52c41a',sts:['已完成','已取消'],sub:'含退款关单与超时取消'}
+];
+function odKpiHtml(){
+  /* KPI 计数随除状态外的当前筛选条件（关键词/学校/认领/时间窗/在途异常）联动：卡上数字=点选后列表行数，永远一致；
+     超窗在途/异常的可见性由 win-warn 提醒条承担，不靠 KPI 全量计数 */
+  const base=ORDERS.filter(o=>(!OD.q||(o.no+o.stu+o.parent).toLowerCase().includes(OD.q))&&(!OD.sc||o.sc===OD.sc)&&(!OD.cl||o.claim===OD.cl)&&(!OD.live||LIVE_HIT.od(o))&&inRange(OD,o.flow[o.flow.length-1][0]));
+  return OD_KPI.map(k=>{
+    const n=base.filter(o=>k.sts.includes(o.status)).length;
+    return '<div class="card kpi kpi-click'+(OD.kpi===k.f?' sel':'')+'" tabindex="0" onclick="odKpi(\''+k.f+'\')"><div class="kpi-label"><span class="kpi-ic '+k.ic+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg></span>'+k.label+'</div><div class="kpi-value" style="color:'+k.color+'">'+n+'<em>单</em></div><div class="kpi-sub">'+k.sub+'</div></div>';
+  }).join('');
+}
+function odKpi(f){OD.kpi=(OD.kpi===f)?'':f;OD.st='';OD.live=false;document.getElementById('od-st').value='';renderOrders()}
+/* =================================================================
+   通用分页器（对齐 OliveBird mall-members：页码窗口 + 每页条数 + 跳页）
+   ================================================================= */
+const PG={od:{page:1,size:20},py:{page:1,size:20},rf:{page:1,size:20},rt:{page:1,size:20},lg:{page:1,size:20}};
+const PG_RENDER={od:()=>renderOrders(),py:()=>renderPays(),rf:()=>renderRefunds(),rt:()=>renderRtxns(),lg:()=>renderLogs()};
+function pgGoto(k,p){PG[k].page=p;PG_RENDER[k]()}
+function pgSize(k,v){PG[k].size=+v;PG[k].page=1;PG_RENDER[k]()}
+function pgJump(k){
+  const el=document.getElementById(k+'-pgjump');
+  let v=parseInt(el.value,10);
+  if(!v||isNaN(v)){el.value=PG[k].page;return}
+  PG[k].page=Math.max(1,Math.min(v,PG[k].pages||1));PG_RENDER[k]();
+}
+/* 返回当前页数据并渲染分页条；筛选结果集变化时自动回第 1 页 */
+function pgSlice(k,rows,unit,extra){
+  const st=PG[k];
+  const sig=rows.map(r=>r.no||r.code||r.t||'').join(',');
+  if(st.sig!==undefined&&st.sig!==sig)st.page=1;
+  st.sig=sig;
+  const total=rows.length,pages=Math.max(1,Math.ceil(total/st.size));
+  if(st.page>pages)st.page=1;
+  st.pages=pages;
+  const pager=document.getElementById(k+'-pager');
+  if(!total){pager.style.display='none';return rows}
+  pager.style.display='flex';
+  document.getElementById(k+'-pginfo').innerHTML='共 '+total+' '+unit+(extra||'')+' · 第 '+st.page+' / '+pages+' 页';
+  const p=st.page,pgs=[];
+  pgs.push('<span class="pg '+(p===1?'disabled':'')+'" onclick="'+(p===1?'':'pgGoto(\''+k+'\','+(p-1)+')')+'">‹</span>');
+  const win=5;let from=Math.max(1,p-2),to=Math.min(pages,from+win-1);from=Math.max(1,to-win+1);
+  if(from>1)pgs.push('<span class="pg" onclick="pgGoto(\''+k+'\',1)">1</span>');
+  if(from>2)pgs.push('<span class="pg disabled">…</span>');
+  for(let i=from;i<=to;i++)pgs.push('<span class="pg '+(i===p?'on':'')+'" onclick="pgGoto(\''+k+'\','+i+')">'+i+'</span>');
+  if(to<pages-1)pgs.push('<span class="pg disabled">…</span>');
+  if(to<pages)pgs.push('<span class="pg" onclick="pgGoto(\''+k+'\','+pages+')">'+pages+'</span>');
+  pgs.push('<span class="pg '+(p===pages?'disabled':'')+'" onclick="'+(p===pages?'':'pgGoto(\''+k+'\','+(p+1)+')')+'">›</span>');
+  document.getElementById(k+'-pglist').innerHTML=pgs.join('');
+  const j=document.getElementById(k+'-pgjump');
+  if(j){j.value=st.page;j.max=pages}
+  return rows.slice((st.page-1)*st.size,(st.page-1)*st.size+st.size);
+}
+
+/* 当前筛选结果集与筛选条件描述：列表渲染与「导出当前结果」共用同一口径，避免两处漂移 */
+function odRows(){
+  const kpiSts=OD.kpi?OD_KPI.find(k=>k.f===OD.kpi).sts:null;
+  return ORDERS.filter(o=>
+    (!OD.q||(o.no+o.stu+o.parent).toLowerCase().includes(OD.q))&&
+    (!OD.st||o.status===OD.st)&&(!kpiSts||kpiSts.includes(o.status))&&(!OD.live||LIVE_HIT.od(o))&&
+    (!OD.sc||o.sc===OD.sc)&&(!OD.cl||o.claim===OD.cl)&&inRange(OD,o.flow[o.flow.length-1][0]));
+}
+function odFilterParts(){
+  const parts=[];
+  if(OD.live)parts.push('在途 / 异常记录');
+  if(OD.kpi)parts.push(OD_KPI.find(k=>k.f===OD.kpi).label);
+  if(OD.st)parts.push(OD.st);
+  if(OD.sc)parts.push(OD.sc);
+  if(OD.cl)parts.push('认领：'+OD.cl);
+  if(OD.q)parts.push('关键词「'+OD.q+'」');
+  const dt=dtTipLabel(OD);if(dt&&OD.dt!=='m')parts.push('时间：'+dt);
+  return parts;
+}
+function renderOrders(){
+  document.getElementById('od-kpis').innerHTML=odKpiHtml();
+  document.getElementById('od-total').textContent=ORDERS.length;
+  const rows=odRows();
+  setTip('od-tip',odFilterParts());
+  winWarn('od',ORDERS,o=>o.status,o=>o.flow[o.flow.length-1][0]);
+  const odPage=pgSlice('od',rows,'单');
+  document.getElementById('od-tb').innerHTML=rows.length?odPage.map(o=>
+    '<tr'+(o.status==='已取消'?' style="opacity:.65"':'')+'><td><button class="act" style="padding:0" onclick="openOrder(\''+o.no+'\')"><span class="mono">'+o.no+'</span></button></td><td>'+o.sc+'</td>'+
+    '<td>'+o.stu+'<div class="sub2">'+o.cls+' · '+o.src+'</div></td>'+
+    /* 第一阶段隐藏：认领状态列（恢复方式：款式 td 前插回 '<td>'+tag(o.claim,T_CLAIM)+'</td>'） */
+    '<td>'+o.style+' × '+o.qty+'</td>'+
+    '<td class="amt">'+fmt(o.due)+'<div class="sub2">实付 '+fmt(o.paid)+'</div></td>'+
+    '<td>'+tag(o.status,T_ORDER)+'</td><td style="white-space:nowrap;font-variant-numeric:tabular-nums">'+fullTs(o.flow[o.flow.length-1][0],o.no)+'</td>'+
+    '<td><button class="act" onclick="openOrder(\''+o.no+'\')">详情</button>'+(canRefund(o)?'<button class="act" onclick="openRefundModal(\''+o.no+'\')">退款</button>':'')+(canCancel(o)?'<button class="act" onclick="openCancelModal(\''+o.no+'\')">取消</button>':'')+'</td></tr>').join('')
+    :'<tr><td colspan="8" class="empty">暂无符合条件的办理记录</td></tr>';
+}
+/* 办理记录详情：独立视图（非抽屉），hash 深链 #order/单号 */
+var curOrderNo='';
+function openOrder(no){showOrderDetail(no)}
+function showOrderDetail(no,skipPush){
+  const o=ORDERS.find(x=>x.no===no);if(!o)return;
+  closeAll();
+  renderOrderDetail(o);
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
+  document.getElementById('page-orderdetail').classList.add('show');
+  document.querySelectorAll('.menu-item[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page==='order'));
+  document.getElementById('crumb').innerHTML='智能校徽 / <a onclick="switchPage(\'order\')">办理明细</a> / <b><span class="mono" style="color:inherit">'+o.no+'</span></b>';
+  window.scrollTo(0,0);
+  curPage='orderdetail';curOrderNo=no;closeDemo();
+  if(!skipPush&&location.hash!=='#order/'+no)history.pushState(null,'','#order/'+no);
+  if(window.hideMenuPopup)hideMenuPopup(true);
+}
+function renderOrderDetail(o){
+  /* 第一阶段隐藏：详情标题认领状态 tag（恢复方式：状态 tag 后拼回 +' '+tag(o.claim,T_CLAIM)） */
+  document.getElementById('odt-title').innerHTML='办理记录 · '+o.stu+'　'+tag(o.status,T_ORDER);
+  document.getElementById('odt-actions').innerHTML=
+    (canRefund(o)?'<button class="btn btn-primary" onclick="openRefundModal(\''+o.no+'\')">发起退款</button>':'')+
+    (canCancel(o)?'<button class="btn danger" onclick="openCancelModal(\''+o.no+'\')">取消办理</button>':'');
+  let m='<div class="card"><div class="sec-t">基本信息</div>'+
+    kv('办理记录编号','<span class="mono">'+o.no+'</span>'+cp(o.no))+
+    kv('学校',o.sc)+
+    kv('学生',o.stu+' · '+o.cls)+
+    kv('发起家长',o.parent)+
+    /* 第一阶段隐藏：基本信息认领状态行（恢复方式：插回 kv('认领状态',tag(o.claim,T_CLAIM))+） */
+    kv('款式 / 数量',o.style+' × '+o.qty)+
+    kv('是否需证件照',o.needPhoto?'需上传':'无需上传')+
+    (o.needPhoto?kv('学生证件照',o.photo?'<button class="act" onclick="openPhotoPreview(\''+o.no+'\')">查看</button>':'—'):'')+
+    kv('校徽矢量文件','<button class="act" onclick="openVecPreview(\''+o.no+'\')">下载</button>')+
+    kv('记录状态',tag(o.status,T_ORDER))+'</div>';
+  m+='<div class="card"><div class="sec-t">金额</div>'+
+    kv('单价（快照）',fmt(o.unit))+kv('商品总价',fmt(o.total))+
+    kv('免费抵扣金额',o.disc?fmt(o.disc)+'（首枚免费·按学生计）':fmt(0))+
+    kv('应付金额',fmt(o.due))+kv('实付金额',fmt(o.paid))+'</div>';
+  m+='<div class="card"><div class="sec-t">校徽明细 <span class="sub">共 '+o.items.length+' 枚</span></div>'+
+    '<table class="sub-table"><thead><tr><th>校徽编号</th><th>首枚免费</th><th>单价</th><th>EPC</th><th>状态</th><th>扫码核验时间</th><th>关联退款单</th></tr></thead><tbody>'+
+    o.items.map(it=>'<tr><td>'+(it.bg?'<span class="mono">'+it.bg+'</span>':'—')+'</td><td>'+(it.free?'<span class="tag tag-on">是</span>':'否')+'</td><td class="amt">'+fmt(it.unit)+'</td><td>'+(it.epc?'<span class="mono">'+it.epc+'</span>':'—')+'</td><td>'+tag(it.st,{'已启用':'tag-on','已退款':'tag-danger','随主单推进':'tag-off','待核验':'tag-warn'})+'</td><td style="white-space:nowrap">'+(it.vAt?fullTs(it.vAt,o.no+it.vAt):'—')+'</td><td>'+(it.rf?'<button class="act" onclick="openRefund(\''+it.rf+'\')">'+it.rf.slice(0,10)+'…</button>':'—')+'</td></tr>').join('')+
+    '</tbody></table></div>';
+  m+='<div class="card"><div class="sec-t">支付</div>'+
+    kv('支付单编号',o.payNo?'<button class="act" onclick="openPay(\''+o.payNo+'\')"><span class="mono">'+o.payNo+'</span></button>':'—（¥0 单免支付）')+
+    kv('支付成功时间',fullTs(o.payAt,o.no+o.payAt))+
+    kv('支付截止时间',o.deadline?fullTs(o.deadline,o.no):'—');
+  if(o.reviewer||o.reviewedAt)m+='<div class="sec-t">办理审核</div>'+kv('审核老师',o.reviewer)+kv('审核时间',fullTs(o.reviewedAt,o.no+o.reviewedAt));
+  if(o.batch||o.shipNo)m+='<div class="sec-t">生产与物流</div>'+
+    kv('生产批次号',o.batch?'<span class="mono">'+o.batch+'</span>':'—')+
+    kv('提交生产时间',fullTs(o.prodAt,o.no+o.prodAt))+
+    kv('物流单编号',o.shipNo?'<span class="mono">'+o.shipNo+'</span>':'—')+
+    kv('发货时间',fullTs(o.shipAt,o.no+o.shipAt))+kv('到校时间',fullTs(o.arrAt,o.no+o.arrAt))+
+    /* 自动确认预告仅在定时器仍会触发的状态显示：终态单（退款到账完结等）不再有自动确认，只落「未确认」事实；
+       整单退完且退款在途的单定时器挂起（完结由末笔退款到账驱动，见 rfAllPending 冻结口径），预告改为挂起事实 */
+    /* 确认收货两种形态（家长人工确认 / 到校满 7 天自动确认）落 rcptAt+rcptType；已到校 / 部分启用单未确认时预告自动确认（定时器不因部分枚已核验而终止）；
+       先于 7 天全部核验完结的单无需确认；到校后退完的已完成单与已取消单仅「未确认」 */
+    kv('确认收货',o.rcptAt?fullTs(o.rcptAt,o.no+o.rcptAt)+' · '+o.rcptType:(o.arrAt?(['已到校','部分启用'].includes(o.status)?(rfAllPending(o)?'未确认（整单退款完结中，自动确认挂起）':'未确认（到校满 7 天自动确认）'):(o.status==='已完成'&&o.items.every(i=>i.st==='已启用')?'无需确认（全部核验完结）':'未确认')):'—'));
+  if(o.cancelAt)m+='<div class="sec-t">取消</div>'+kv('取消时间',fullTs(o.cancelAt,o.no+o.cancelAt))+kv('取消类型',o.cancelType);
+  m+='</div>';
+  document.getElementById('odt-main').innerHTML=m;
+  let s='<div class="card"><div class="sec-t">办理进度</div><div class="tl">'+
+    /* 流转行四元组 [时间, 节点名, 附注, 色标]：节点名与附注分列两行，与 PRD 16.8 运管端两字段一一对应（附注可空） */
+    o.flow.map(f=>'<div class="tl-item '+(f[3]||'')+'"><div class="t1">'+f[1]+'<span class="ts">'+flowTs(f[0])+'</span></div>'+(f[2]?'<div class="t2">'+f[2]+'</div>':'')+'</div>').join('')+'</div></div>';
+  const sh=o.shipNo&&SHIPMENTS[o.shipNo];
+  if(sh)s+='<div class="card"><div class="sec-t">物流跟踪</div>'+
+    kv('物流单号','<span class="mono">'+o.shipNo+'</span>'+cp(o.shipNo))+
+    kv('承运商',sh.carrier+' · <span class="mono">'+sh.tn+'</span>')+
+    kv('物流状态',tag(sh.st,T_SHIP))+
+    '<div class="tl" style="margin-top:14px">'+
+    /* 轨迹行与办理进度同构：事件类型为节点名、时间弱化在后（时间格式同为 yyyy-MM-dd HH:mm） */
+    sh.tracks.map(tk=>'<div class="tl-item '+(T_TRACK[tk[1]]||'')+'"><div class="t1">'+tk[1]+'<span class="ts">'+flowTs(tk[0])+'</span></div><div class="t2">'+tk[2]+(tk[3]?' · '+tk[3]:'')+'</div></div>').join('')+
+    '</div></div>';
+  if(o.refunds.length)s+='<div class="card"><div class="sec-t">关联退款单</div>'+
+    o.refunds.map(r=>{
+      const rf=REFUNDS.find(x=>x.no===r);
+      return kv(rf.type,'<button class="act" onclick="openRefund(\''+r+'\')"><span class="mono">'+r+'</span></button><div class="sub2">'+tag(rf.st,T_RF)+' <span class="amt">'+fmt(rf.amt)+'</span> · 发起 '+flowTs(rf.initAt)+'</div>');
+    }).join('')+'</div>';
+  document.getElementById('odt-side').innerHTML=s;
+}
+
+/* =================================================================
+   支付单
+   ================================================================= */
+var PY={q:'',sc:'',kpi:'',dt:'m'};
+function pyKpiHtml(){
+  const cards=[
+   {f:'待发起',label:'待发起',ic:'c0',color:'var(--color-text-muted)',sub:'未取得预支付标识'},
+   {f:'待支付',label:'待支付',ic:'c3',color:'#fa8c16',sub:'收银台可续拉'},
+   {f:'已完成',label:'已完成',ic:'c2',color:'#52c41a',sub:'支付成功 · 含退款在途'},
+   {f:'已退款',label:'已退款',ic:'c1',color:'#722ed1',sub:'全额 / 部分退款到账'},
+   {f:'已取消',label:'已取消',ic:'c0',color:'var(--color-text-muted)',sub:'超时关单'}
+  ];
+  /* KPI 计数随除状态外的当前筛选条件联动（口径见 odKpiHtml） */
+  const base=PAYS.filter(p=>(!PY.q||(p.no+p.orderNo+p.tx+p.payer).toLowerCase().includes(PY.q))&&(!PY.sc||p.sc===PY.sc)&&(!PY.live||LIVE_HIT.py(p))&&inRange(PY,p.paidAt||p.created));
+  return cards.map(k=>{
+    const n=base.filter(p=>p.st===k.f).length;
+    return '<div class="card kpi kpi-click'+(PY.kpi===k.f?' sel':'')+'" tabindex="0" onclick="pyKpi(\''+k.f+'\')"><div class="kpi-label"><span class="kpi-ic '+k.ic+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg></span>'+k.label+'</div><div class="kpi-value" style="color:'+k.color+'">'+n+'<em>笔</em></div><div class="kpi-sub">'+k.sub+'</div></div>';
+  }).join('');
+}
+function pyKpi(f){PY.kpi=(PY.kpi===f)?'':f;PY.live=false;renderPays()}
+function pyRows(){
+  return PAYS.filter(p=>
+    (!PY.q||(p.no+p.orderNo+p.tx+p.payer).toLowerCase().includes(PY.q))&&
+    (!PY.kpi||p.st===PY.kpi)&&(!PY.live||LIVE_HIT.py(p))&&(!PY.sc||p.sc===PY.sc)&&inRange(PY,p.paidAt||p.created));
+}
+function pyFilterParts(){
+  const parts=[];
+  if(PY.live)parts.push('在途 / 异常记录');
+  if(PY.kpi)parts.push(PY.kpi);
+  if(PY.sc)parts.push(PY.sc);
+  if(PY.q)parts.push('关键词「'+PY.q+'」');
+  const dt=dtTipLabel(PY);if(dt&&PY.dt!=='m')parts.push('时间：'+dt);
+  return parts;
+}
+function renderPays(){
+  document.getElementById('py-kpis').innerHTML=pyKpiHtml();
+  document.getElementById('py-total').textContent=PAYS.length;
+  const rows=pyRows();
+  setTip('py-tip',pyFilterParts());
+  winWarn('py',PAYS,p=>p.st,p=>p.paidAt||p.created);
+  const pyPage=pgSlice('py',rows,'笔');
+  document.getElementById('py-tb').innerHTML=rows.length?pyPage.map(p=>
+    '<tr'+(p.st==='已取消'?' style="opacity:.65"':'')+'><td><span class="mono">'+p.no+'</span></td>'+
+    '<td><button class="act" onclick="openOrder(\''+p.orderNo+'\')"><span class="mono">'+p.orderNo.slice(0,10)+'…</span></button></td>'+
+    '<td>'+p.sc+'</td><td>'+p.payer+'</td><td class="amt">'+fmt(p.amt)+'</td>'+
+    '<td>'+tag(p.st,T_PAY)+'</td><td>'+tag(p.trade,T_TRADE)+'</td><td style="white-space:nowrap;font-variant-numeric:tabular-nums">'+(p.paidAt?fullTs(p.paidAt,p.no+p.paidAt):'—')+'</td>'+
+    '<td><button class="act" onclick="openPay(\''+p.no+'\')">详情</button></td></tr>').join('')
+    :'<tr><td colspan="9" class="empty">暂无符合条件的支付单</td></tr>';
+}
+function openPay(no){
+  const p=PAYS.find(x=>x.no===no);if(!p)return;
+  const o=ORDERS.find(x=>x.no===p.orderNo);
+  let h=kv('支付单号','<span class="mono">'+p.no+'</span>'+cp(p.no))+
+    kv('办理记录编号','<button class="act" onclick="openOrder(\''+p.orderNo+'\')"><span class="mono">'+p.orderNo+'</span></button>')+
+    kv('学校',p.sc)+kv('支付人',p.payer+(o?'（'+o.stu+' 家长）':''))+
+    kv('收单机构','微信支付')+kv('支付渠道','wechat_jsapi')+kv('渠道商户号','<span class="mono">1680012345</span>')+
+    kv('金额',fmt(p.amt))+kv('币种','CNY')+
+    kv('支付单状态',tag(p.st,T_PAY))+
+    kv('收单机构交易状态',tag(p.trade,T_TRADE))+
+    kv('微信预支付标识',p.prepay?'<span class="mono">'+p.prepay+'</span>':'—')+
+    kv('渠道交易号',p.tx?'<span class="mono">'+p.tx+'</span>'+cp(p.tx)+'（退款与对账凭证）':'—');
+  h+='<div class="sec-t">时间</div>'+
+    kv('创建时间',fullTs(p.created,p.no+p.created))+kv('支付成功时间',fullTs(p.paidAt,p.no+p.paidAt))+kv('取消时间',fullTs(p.cancelAt,p.no+p.cancelAt))+kv('更新时间',fullTs(p.updated,p.no+p.updated));
+  /* 备注条不展示：PAYS 种子的 remark 字段仅作数据留存（各单退款处置事实），详情页不渲染 */
+  const txns=RTXNS.filter(t=>t.payNo===p.no);
+  if(txns.length)h+='<div class="sec-t">原路退回流水</div>'+txns.map(t=>kv(t.st,'<button class="act" onclick="openRtxn(\''+t.no+'\')"><span class="mono">'+t.no+'</span></button> <span class="amt">'+fmt(t.amt)+'</span> · '+t.created)).join('');
+  if(p.tx)h+='<div class="sec-t">渠道回调原文</div>'+
+    '<div class="json">{\n  <span class="k2">"out_trade_no"</span>: <span class="s2">"'+p.no+'"</span>,\n  <span class="k2">"transaction_id"</span>: <span class="s2">"'+p.tx+'"</span>,\n  <span class="k2">"trade_state"</span>: <span class="s2">"SUCCESS"</span>,\n  <span class="k2">"amount"</span>: { <span class="k2">"total"</span>: <span class="n2">'+p.amt+'</span>, <span class="k2">"currency"</span>: <span class="s2">"CNY"</span> },\n  <span class="k2">"success_time"</span>: <span class="s2">"2026-'+(p.paidAt||'').replace(' ','T')+':00+08:00"</span>\n}</div>';
+  openDrawer('支付单',tag(p.st,T_PAY),h);
+}
+
+/* =================================================================
+   退款单
+   ================================================================= */
+var RF={q:'',tp:'',kpi:'',dt:'m'};
+function rfKpiHtml(){
+  const cards=[
+   {f:'退款中',label:'退款中',ic:'c1',color:'var(--color-primary)',sub:'渠道受理中'},
+   {f:'退款异常',label:'退款异常',ic:'c4',color:'#f5222d',sub:'内部状态 · 待人工处理'},
+   {f:'退款关闭',label:'退款关闭',ic:'c0',color:'var(--color-text-muted)',sub:'人工判定转线下'},
+   {f:'退款成功',label:'退款成功',ic:'c2',color:'#52c41a',sub:'成功流水回写到账时间'}
+  ];
+  /* KPI 计数随除状态外的当前筛选条件联动（口径见 odKpiHtml） */
+  const base=REFUNDS.filter(r=>(!RF.q||(r.no+r.orderNo+r.stu).toLowerCase().includes(RF.q))&&(!RF.tp||r.type===RF.tp)&&(!RF.live||LIVE_HIT.rf(r))&&inRange(RF,r.initAt));
+  return cards.map(k=>{
+    const n=base.filter(r=>r.st===k.f).length;
+    return '<div class="card kpi kpi-click'+(RF.kpi===k.f?' sel':'')+'" tabindex="0" onclick="rfKpi(\''+k.f+'\')"><div class="kpi-label"><span class="kpi-ic '+k.ic+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg></span>'+k.label+'</div><div class="kpi-value" style="color:'+k.color+'">'+n+'<em>单</em></div><div class="kpi-sub">'+k.sub+'</div></div>';
+  }).join('');
+}
+function rfKpi(f){RF.kpi=(RF.kpi===f)?'':f;RF.live=false;renderRefunds()}
+function rfRows(){
+  return REFUNDS.filter(r=>
+    (!RF.q||(r.no+r.orderNo+r.stu).toLowerCase().includes(RF.q))&&
+    (!RF.kpi||r.st===RF.kpi)&&(!RF.live||LIVE_HIT.rf(r))&&(!RF.tp||r.type===RF.tp)&&inRange(RF,r.initAt));
+}
+function rfFilterParts(){
+  const parts=[];
+  if(RF.live)parts.push('在途 / 异常记录');
+  if(RF.kpi)parts.push(RF.kpi);
+  if(RF.tp)parts.push(RF.tp);
+  if(RF.q)parts.push('关键词「'+RF.q+'」');
+  const dt=dtTipLabel(RF);if(dt&&RF.dt!=='m')parts.push('时间：'+dt);
+  return parts;
+}
+function renderRefunds(){
+  document.getElementById('rf-kpis').innerHTML=rfKpiHtml();
+  document.getElementById('rf-total').textContent=REFUNDS.length;
+  const rows=rfRows();
+  setTip('rf-tip',rfFilterParts());
+  winWarn('rf',REFUNDS,r=>r.st,r=>r.initAt);
+  const rfPage=pgSlice('rf',rows,'单');
+  document.getElementById('rf-tb').innerHTML=rows.length?rfPage.map(r=>
+    '<tr><td><span class="mono">'+r.no+'</span></td>'+
+    '<td><button class="act" onclick="openOrder(\''+r.orderNo+'\')"><span class="mono">'+r.orderNo.slice(0,10)+'…</span></button><div class="sub2">'+r.stu+'</div></td>'+
+    /* 零元退款单（免费枚回收作废）标记：金额列 ¥0.00 在财务视角是噪音，加 tag 说明其为无资金动作的逆向处置、不进资金流水 */
+    '<td>'+r.sc+'</td><td class="amt">'+fmt(r.amt)+(r.zero?' <span class="tag tag-off">零元回收</span>':'')+'</td><td>'+r.type+'</td><td>'+r.items.length+' 枚</td>'+
+    '<td>'+tag(r.st,T_RF)+'</td><td>'+(r.op?opsName(r.op):'—')+'</td><td style="white-space:nowrap;font-variant-numeric:tabular-nums">'+fullTs(r.initAt,r.no+r.initAt)+'</td>'+
+    '<td><button class="act" onclick="openRefund(\''+r.no+'\')">详情</button></td></tr>').join('')
+    :'<tr><td colspan="10" class="empty">暂无符合条件的退款单</td></tr>';
+}
+function openRefund(no){
+  const r=REFUNDS.find(x=>x.no===no);if(!r)return;
+  let h=kv('退款单编号','<span class="mono">'+r.no+'</span>'+cp(r.no))+
+    kv('办理记录编号','<button class="act" onclick="openOrder(\''+r.orderNo+'\')"><span class="mono">'+r.orderNo+'</span></button>（'+r.stu+'）')+
+    kv('学校',r.sc)+kv('退款金额',fmt(r.amt))+
+    kv('退款类型',r.type)+
+    kv('运管操作人',(r.op?opsName(r.op):'—（'+(r.type==='系统自动退回'?'系统自动发起':'家长自助发起')+'）'))+
+    kv('退款说明',r.note)+
+    kv('退款单状态',tag(r.st,T_RF))+
+    (r.deact&&r.deact.length?kv('高权限例外','含已启用枚 <span class="mono">'+r.deact.join('、')+'</span>；'+(r.st==='退款成功'?'已级联停用作废入黑名单':'退款成功后将级联停用作废入黑名单')):'')+
+    kv('发起时间',fullTs(r.initAt,r.no+r.initAt))+kv('退款成功时间',fullTs(r.okAt,r.no+r.okAt))+(r.closedAt?kv('退款关闭时间',fullTs(r.closedAt,r.no+r.closedAt)):'');
+  h+='<div class="sec-t">退款校徽明细 <span class="sub">共 '+r.items.length+' 枚</span></div>'+
+    '<table class="sub-table"><thead><tr><th>校徽编号</th><th>首枚免费</th><th>单价</th><th>EPC</th></tr></thead><tbody>'+
+    r.items.map(it=>'<tr><td>'+(it.bg&&it.bg!=='—'?'<span class="mono">'+it.bg+'</span>':'—')+'</td><td>'+(it.free?'<span class="tag tag-on">是</span>':'否')+'</td><td class="amt">'+fmt(it.unit)+'</td><td>'+(it.epc!=='—'?'<span class="mono">'+it.epc+'</span>':'—')+'</td></tr>').join('')+
+    '</tbody></table>';
+  h+='<div class="sec-t">退款流水</div>'+
+    r.txns.map(t=>{
+      const tx=RTXNS.find(x=>x.no===t);
+      return kv(tag(tx.st,T_RF),'<button class="act" onclick="openRtxn(\''+t+'\')"><span class="mono">'+t+'</span></button> '+flowTs(tx.created)+(tx.fail?'<div class="sub2">'+tx.fail+'</div>':''));
+    }).join('');
+  if(r.st==='退款关闭')h+='<div class="note warn mb0">已人工判定无法原路退回，转线下处理；线下退款进度见客服工单。</div>';
+  let foot='';
+  if(r.st==='退款异常')foot='<button class="btn" onclick="retryRefund(\''+r.no+'\')">插新流水重试</button><button class="btn danger" onclick="openRfClose(\''+r.no+'\')">置退款关闭（转线下）</button>';
+  openDrawer('退款单',tag(r.st,T_RF),h,foot);
+}
+
+/* =================================================================
+   退款流水
+   ================================================================= */
+var RT={q:'',kpi:'',dt:'m'};
+function rtKpiHtml(){
+  const cards=[
+   {f:'待发起',label:'待发起',ic:'c0',color:'var(--color-text-muted)',sub:'未向渠道提交'},
+   {f:'退款中',label:'退款中',ic:'c1',color:'var(--color-primary)',sub:'渠道已受理'},
+   {f:'退款成功',label:'退款成功',ic:'c2',color:'#52c41a',sub:'凭证已回写退款单'},
+   {f:'退款异常',label:'退款异常',ic:'c4',color:'#f5222d',sub:'对齐微信 ABNORMAL'},
+   {f:'退款关闭',label:'退款关闭',ic:'c0',color:'var(--color-text-muted)',sub:'对齐微信 CLOSED'}
+  ];
+  /* KPI 计数随除状态外的当前筛选条件联动（口径见 odKpiHtml） */
+  const base=RTXNS.filter(t=>(!RT.q||(t.no+t.wx+t.refundNo).toLowerCase().includes(RT.q))&&(!RT.live||LIVE_HIT.rt(t))&&inRange(RT,t.created));
+  return cards.map(k=>{
+    const n=base.filter(t=>t.st===k.f).length;
+    return '<div class="card kpi kpi-click'+(RT.kpi===k.f?' sel':'')+'" tabindex="0" onclick="rtKpi(\''+k.f+'\')"><div class="kpi-label"><span class="kpi-ic '+k.ic+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg></span>'+k.label+'</div><div class="kpi-value" style="color:'+k.color+'">'+n+'<em>笔</em></div><div class="kpi-sub">'+k.sub+'</div></div>';
+  }).join('');
+}
+function rtKpi(f){RT.kpi=(RT.kpi===f)?'':f;RT.live=false;renderRtxns()}
+function rtRows(){
+  return RTXNS.filter(t=>
+    (!RT.q||(t.no+t.wx+t.refundNo).toLowerCase().includes(RT.q))&&
+    (!RT.kpi||t.st===RT.kpi)&&(!RT.live||LIVE_HIT.rt(t))&&inRange(RT,t.created));
+}
+function rtFilterParts(){
+  const parts=[];
+  if(RT.live)parts.push('在途 / 异常记录');
+  if(RT.kpi)parts.push(RT.kpi);
+  if(RT.q)parts.push('关键词「'+RT.q+'」');
+  const dt=dtTipLabel(RT);if(dt&&RT.dt!=='m')parts.push('时间：'+dt);
+  return parts;
+}
+function renderRtxns(){
+  document.getElementById('rt-kpis').innerHTML=rtKpiHtml();
+  document.getElementById('rt-total').textContent=RTXNS.length;
+  const rows=rtRows();
+  setTip('rt-tip',rtFilterParts());
+  winWarn('rt',RTXNS,t=>t.st,t=>t.created);
+  const rtPage=pgSlice('rt',rows,'笔');
+  document.getElementById('rt-tb').innerHTML=rows.length?rtPage.map(t=>
+    '<tr><td><span class="mono">'+t.no+'</span></td><td><span class="mono">'+t.wx.slice(0,14)+'…</span></td>'+
+    '<td><button class="act" onclick="openRefund(\''+t.refundNo+'\')"><span class="mono">'+t.refundNo.slice(0,10)+'…</span></button></td>'+
+    '<td><button class="act" onclick="openPay(\''+t.payNo+'\')"><span class="mono">'+t.payNo.slice(0,10)+'…</span></button></td>'+
+    '<td>wechat_jsapi</td><td class="amt">'+fmt(t.amt)+'</td><td>'+tag(t.st,T_RF)+'</td>'+
+    '<td style="white-space:nowrap;font-variant-numeric:tabular-nums">'+fullTs(t.created,t.no+t.created)+'</td><td style="white-space:nowrap;font-variant-numeric:tabular-nums">'+(t.okAt?fullTs(t.okAt,t.no+t.okAt):'—')+'</td>'+
+    '<td><button class="act" onclick="openRtxn(\''+t.no+'\')">详情</button></td></tr>').join('')
+    :'<tr><td colspan="10" class="empty">暂无符合条件的退款流水</td></tr>';
+}
+function openRtxn(no){
+  const t=RTXNS.find(x=>x.no===no);if(!t)return;
+  let h=kv('退款流水单编号','<span class="mono">'+t.no+'</span>'+cp(t.no))+
+    kv('微信退款单号','<span class="mono">'+t.wx+'</span>（申请受理成功时微信侧生成）')+
+    kv('退款单编号','<button class="act" onclick="openRefund(\''+t.refundNo+'\')"><span class="mono">'+t.refundNo+'</span></button>')+
+    kv('原办理记录编号','<button class="act" onclick="openOrder(\''+t.orderNo+'\')"><span class="mono">'+t.orderNo+'</span></button>')+
+    kv('原支付单编号','<button class="act" onclick="openPay(\''+t.payNo+'\')"><span class="mono">'+t.payNo+'</span></button>（原路退回目标）')+
+    kv('原支付流水号','<span class="mono">'+t.payTx+'</span>')+
+    kv('支付渠道',t.ch)+
+    kv('退款金额',fmt(t.amt))+
+    kv('原订单金额',fmt(t.orderAmt))+
+    kv('退款原因',t.reason)+
+    kv('退款状态',tag(t.st,T_RF));
+  h+='<div class="sec-t">渠道信息</div>'+
+    kv('资金账户',t.acct)+
+    kv('退款渠道',t.rchan)+
+    kv('退款入账账户',t.dest)+
+    kv('退款币种','CNY')+
+    (t.fail?kv('失败原因','<span style="color:#f5222d">'+t.fail+'</span>'):'');
+  h+='<div class="sec-t">时间</div>'+
+    kv('创建时间',fullTs(t.created,t.no+t.created)+'（本平台生成退款流水）')+
+    kv('退款创建时间',t.st==='退款关闭'&&!t.okAt&&t.fail.includes('受理失败')?'—（渠道未受理）':fullTs(t.created,t.no+t.created)+'（微信受理退款申请）')+
+    kv('退款成功时间',fullTs(t.okAt,t.no+t.okAt))+
+    (t.closedAt?kv('退款关闭时间',fullTs(t.closedAt,t.no+t.closedAt)):'');
+  if(t.okAt)h+='<div class="sec-t">渠道退款回调原文 <span class="sub">凭证留存，不被覆盖</span></div>'+
+    '<div class="json">{\n  <span class="k2">"out_refund_no"</span>: <span class="s2">"'+t.no+'"</span>,\n  <span class="k2">"refund_id"</span>: <span class="s2">"'+t.wx+'"</span>,\n  <span class="k2">"refund_status"</span>: <span class="s2">"SUCCESS"</span>,\n  <span class="k2">"amount"</span>: { <span class="k2">"refund"</span>: <span class="n2">'+t.amt+'</span>, <span class="k2">"total"</span>: <span class="n2">'+t.orderAmt+'</span>, <span class="k2">"payer_refund"</span>: <span class="n2">'+t.amt+'</span> },\n  <span class="k2">"user_received_account"</span>: <span class="s2">"'+t.dest+'"</span>,\n  <span class="k2">"success_time"</span>: <span class="s2">"2026-'+t.okAt.replace(' ','T')+':00+08:00"</span>\n}</div>';
+  openDrawer('退款流水单',tag(t.st,T_RF),h);
+}
+
+/* =================================================================
+   承运商管理（字典 carrier：编码对接承运商下单与轨迹订阅）
+   ================================================================= */
+const CARRIERS=[
+ {name:'顺丰速运',code:'SF',on:true},
+ {name:'德邦快递',code:'DBKD',on:true},
+ {name:'京东物流',code:'JD',on:true},
+ {name:'邮政特快专递',code:'EMS',on:true},
+ {name:'中通快递',code:'ZTO',on:false},
+ {name:'圆通速递',code:'YTO',on:false},
+ {name:'韵达快递',code:'YUNDA',on:false},
+ {name:'极兔速递',code:'JT',on:false}
+];
+function renderCarriers(){
+  document.getElementById('cr-tb').innerHTML=CARRIERS.map((c,i)=>
+    '<tr'+(c.on?'':' style="opacity:.65"')+'><td>'+c.name+'</td><td><span class="mono">'+c.code+'</span></td>'+
+    '<td>'+(c.on?'<span class="tag tag-on">已启用</span>':'<span class="tag tag-off">已停用</span>')+'</td>'+
+    '<td><button class="act'+(c.on?' danger':'')+'" onclick="toggleCarrier('+i+')">'+(c.on?'停用':'启用')+'</button></td></tr>').join('');
+}
+function toggleCarrier(i){
+  const c=CARRIERS[i];c.on=!c.on;renderCarriers();
+  addLog('承运商启停',c.name+'（'+c.code+'）',(c.on?'启用':'停用 · 新建物流单不再可选，历史物流单与在途轨迹不受影响'));
+  toast(c.on?'已启用 '+c.name+'：新建物流单可选择该承运商':'已停用 '+c.name+'：新建物流单不可选择，历史物流单与在途轨迹不受影响');
+}
+function openCarrierAdd(){
+  document.getElementById('cr-name').value='';document.getElementById('cr-code').value='';
+  ov(true);document.getElementById('m-carrier').classList.add('show');
+}
+function carrierAddDo(){
+  const name=document.getElementById('cr-name').value.trim();
+  const code=document.getElementById('cr-code').value.trim().toUpperCase();
+  if(!name||!code){toast('请填写承运商名称与编码');return}
+  if(!/^[A-Z]{2,10}$/.test(code)){toast('编码须为 2–10 位大写字母');return}
+  if(CARRIERS.some(c=>c.code===code)){toast('编码 '+code+' 已存在');return}
+  CARRIERS.push({name:name,code:code,on:true});
+  renderCarriers();closeModal();
+  addLog('新增承运商',name+'（'+code+'）','新增后默认启用');
+  toast('已新增承运商 '+name+'（'+code+'）并启用');
+}
+
+/* =================================================================
+   操作日志：审计留痕（种子历史 + 页面操作实时写入）
+   ================================================================= */
+const T_LOG={'发起退款':'tag-warn','退款重试':'tag-blue','置退款关闭':'tag-danger','渠道回调':'tag-on','自动退回':'tag-purple','超时关单':'tag-off','承运商启停':'tag-cyan','新增承运商':'tag-cyan','导出数据':'tag-blue'};
+/* 第一阶段可见日志（发起退款/承运商启停）已改相对日期、始终落在默认近 30 天窗口内；
+   其余隐藏日志仍为静态日期（在窗口外），后续阶段放开时需同步改相对日期并按时间重排 */
+const LOGS=[
+ {t:nowFull().slice(0,10)+' 10:12:33',actor:'ops_chen',ip:'10.8.2.41',type:'发起退款',target:'RO2026070490112358',detail:'运管部分 ¥15.00 · 郑凯文：徽面局部脱漆，客服核实属实'},
+ {t:agoFull(2,'10:05:47'),actor:'ops_liu',ip:'10.8.2.56',type:'退款重试',target:'RO2026070218876209',detail:'插新流水 RT2026070388109427（前序流水异常留痕）'},
+ {t:agoFull(3,'15:30:12'),actor:'ops_liu',ip:'10.8.2.56',type:'发起退款',target:'RO2026070218876209',detail:'运管全额 ¥15.00 · 冯诗涵：矢量文件版式错误，无法制作'},
+ {t:agoFull(4,'16:40:22'),actor:'ops_yun',ip:'10.8.2.88',type:'承运商启停',target:'中通快递（ZTO）',detail:'停用 · 新建物流单不再可选，历史物流单与在途轨迹不受影响'},
+ {t:'2026-07-01 10:30:05',actor:'ops_chen',ip:'10.8.2.41',type:'置退款关闭',target:'RO2026061533018472',detail:'收款账户注销无法原路退回，转线下退款 · 客服工单 CS-0630-118'},
+ {t:agoFull(3,'09:14:51'),actor:'系统',ip:'—',type:'渠道回调',target:'RT2026063055873001',detail:'退款成功回调 · 退款单 RO2026063041220986 置退款成功'},
+ {t:agoFull(4,'17:02:38'),actor:'ops_chen',ip:'10.8.2.41',type:'发起退款',target:'RO2026063041220986',detail:'运管部分 ¥15.00 · 罗一鸣：徽面瑕疵'},
+ {t:'2026-06-26 21:15:09',actor:'系统',ip:'—',type:'超时关单',target:'SS2026062655678201',detail:'支付超时：渠道关单成功后本地取消 · 张芷晴'},
+ {t:'2026-06-23 10:22:44',actor:'系统',ip:'—',type:'渠道回调',target:'RT2026062310022856',detail:'退款成功回调 · 退款单 RO2026062360915237 置退款成功'},
+ /* {t:'2026-06-20 09:00:00',actor:'系统',ip:'—',type:'自动退回',target:'RO2026062002231847',detail:'日终对账差错单（渠道已支付、本地已取消）自动生成退款单并原路退回 · 黄启铭'}, */
+ /* {t:'2026-06-19 21:02:17',actor:'系统',ip:'—',type:'超时关单',target:'SS2026061947003156',detail:'支付超时：渠道关单成功后本地取消 · 黄启铭'} */
+];
+var LG={q:'',tp:'',ac:'',dt:'m'};   // dt 默认近 30 天（审计日志默认有界查询，不设全部时间）
+function logTarget(t,type){
+  if(!t)return '—';
+  if(type==='承运商启停'||type==='新增承运商')return '<button class="act" onclick="switchPage(\'carrier\')">'+t+'</button>';
+  if(type==='导出数据')return t;   // 操作对象为台账名，非单号，不套 mono
+  let fn='';
+  if(t.indexOf('SS')===0)fn='openOrder';
+  else if(t.indexOf('RO')===0)fn='openRefund';
+  else if(t.indexOf('RT')===0)fn='openRtxn';
+  else if(t.indexOf('PM')===0)fn='openPay';
+  return fn?'<button class="act" onclick="'+fn+'(\''+t+'\')"><span class="mono">'+t+'</span></button>':'<span class="mono">'+t+'</span>';
+}
+/* 第一阶段仅展示以下三类日志（页面可发生的操作），其余类型（数据与写入逻辑保留）后续阶段放开 */
+const LOG_TYPES_LIVE=['发起退款','取消办理','承运商启停','导出数据'];
+function lgRows(){
+  return LOGS.filter(l=>
+    LOG_TYPES_LIVE.includes(l.type)&&
+    (!LG.q||(l.target+l.detail).toLowerCase().includes(LG.q))&&
+    (!LG.tp||l.type===LG.tp)&&(!LG.ac||l.actor===LG.ac)&&inRange(LG,l.t));
+}
+function lgFilterParts(){
+  const parts=[];
+  if(LG.tp)parts.push(LG.tp);
+  if(LG.ac){const ao=LG_OPS.find(x=>x.v===LG.ac);parts.push('操作人：'+(ao?ao.n:LG.ac))}
+  if(LG.q)parts.push('关键词「'+LG.q+'」');
+  /* 近 30 天为默认窗口、不算激活筛选，胶囊仅在偏离默认时显示时间条件 */
+  const dt=dtTipLabel(LG);if(dt&&LG.dt!=='m')parts.push('时间：'+dt);
+  return parts;
+}
+function renderLogs(){
+  const rows=lgRows();
+  const lgPage=pgSlice('lg',rows,'条');
+  document.getElementById('lg-tb').innerHTML=rows.length?lgPage.map(l=>
+    '<tr><td style="white-space:nowrap;font-variant-numeric:tabular-nums">'+l.t+'</td><td>'+opsName(l.actor)+'</td><td>'+tag(l.type,T_LOG)+'</td>'+
+    '<td>'+logTarget(l.target,l.type)+'</td><td>'+l.detail+'</td><td><span class="mono" style="color:var(--color-text-muted)">'+l.ip+'</span></td></tr>').join('')
+    :'<tr><td colspan="6" class="empty">暂无符合条件的操作日志</td></tr>';
+  setTip('lg-tip',lgFilterParts());
+}
+function lgReset(){LG={q:'',tp:'',ac:'',dt:'m'};setVal('lg-q','');setVal('lg-tp','');cbClear('lg-ac');dtReset('lg');setVal('lg-dt','m');renderLogs()}
+/* =================================================================
+   通用输入联想 combobox（规范 §筛选条 可选形态，轻量版：输入过滤 + 点选精确筛选 + × 清除）
+   适用开放增长的实体维度（学校/操作人等），与关键词搜索框正交分工：搜索框做内容检索，本控件做实体精确筛选（点选通道避免模糊匹配误伤）。
+   注册：CB_CFG[key]={opts:候选[{v:筛选值,n:主文案,u:副文案(可选)}], empty:空态文案, label:选中后输入框展示(可选，默认 n), val:()=>当前筛选值, onSet:v=>{写状态并重渲染}}
+   DOM 约定三节点：#<key>-cb（.fb-combo 容器）/ #<key>-in（输入框）/ #<key>-dd（下拉）
+   ================================================================= */
+const CB_CFG={};
+function cbOpen(key){document.getElementById(key+'-cb').classList.add('open');cbList(key)}
+function cbClose(key){document.getElementById(key+'-cb').classList.remove('open')}
+function cbInput(key){
+  /* 已选中后继续编辑文本：视为重新检索，先解除当前精确筛选 */
+  const c=CB_CFG[key];
+  if(c.val()){c.onSet('');document.getElementById(key+'-cb').classList.remove('has-val')}
+  cbOpen(key);
+}
+function cbList(key){
+  const c=CB_CFG[key],q=document.getElementById(key+'-in').value.trim().toLowerCase();
+  const hits=c.opts.filter(o=>!q||(o.n+(o.u||'')).toLowerCase().includes(q));
+  document.getElementById(key+'-dd').innerHTML=hits.length
+    ?hits.map(o=>'<div class="cb-opt" onmousedown="cbSet(\''+key+'\',\''+o.v+'\')"><span>'+o.n+'</span>'+(o.u?'<span class="u mono">'+o.u+'</span>':'')+'</div>').join('')
+    :'<div class="cb-empty">'+c.empty+'</div>';
+}
+function cbSet(key,v){
+  const c=CB_CFG[key],o=c.opts.find(x=>x.v===v);
+  document.getElementById(key+'-in').value=o?(c.label?c.label(o):o.n):'';
+  document.getElementById(key+'-cb').classList.toggle('has-val',!!v);
+  cbClose(key);c.onSet(v);
+}
+/* 静默清空输入框展示（供各页 reset 使用：状态与重渲染由 reset 自己负责，不走 onSet 避免二次渲染） */
+function cbClear(key){setVal(key+'-in','');const e=document.getElementById(key+'-cb');if(e)e.classList.remove('has-val')}
+document.addEventListener('click',e=>{Object.keys(CB_CFG).forEach(k=>{if(!e.target.closest('#'+k+'-cb'))cbClose(k)})});
+
+/* 操作人候选：高志远的 v 保留「（高权限）」后缀与日志 actor 字段原文匹配，候选行展示仅用户名、不带权限后缀 */
+const LG_OPS=[{v:'ops_chen',n:'陈立群',u:'ops_chen'},{v:'ops_liu',n:'刘慧敏',u:'ops_liu'},{v:'ops_yun',n:'秦晓峰',u:'ops_yun'},{v:'ops_lead（高权限）',n:'高志远',u:'ops_lead'}];
+/* 第一阶段隐藏：「系统」操作人只出现在系统事件日志（后续阶段）中 {v:'系统',n:'系统',u:'—'} */
+/* 学校候选：仅展示名称——学校名称租户内唯一、无重名区分需求，编码副文案是噪音（操作人候选因姓名可能重名保留用户名副文案）；
+   不带 u 字段即无副文案展示、也不参与检索，能搜到的就是看得到的 */
+const SCHOOL_OPTS=[{v:'市实验一小',n:'市实验一小'},{v:'城南外国语',n:'城南外国语'},{v:'滨江二小',n:'滨江二小'}];
+CB_CFG['lg-ac']={opts:LG_OPS,empty:'无匹配操作人',label:o=>o.n+'（'+o.u+'）',val:()=>LG.ac,onSet:v=>{LG.ac=v;renderLogs()}};
+CB_CFG['od-sc']={opts:SCHOOL_OPTS,empty:'无匹配学校',val:()=>OD.sc,onSet:v=>{OD.sc=v;renderOrders()}};
+CB_CFG['py-sc']={opts:SCHOOL_OPTS,empty:'无匹配学校',val:()=>PY.sc,onSet:v=>{PY.sc=v;renderPays()}};
+function addLog(type,target,detail,actor,ip){
+  LOGS.unshift({t:nowFull(),actor:actor||(superOps?'ops_lead（高权限）':'ops_yun'),ip:ip||'10.8.2.88',type:type,target:target,detail:detail});
+  renderLogs();
+}
+
+/* =================================================================
+   文件预览：证件照（带查看水印、仅预览不下载，查看留痕）
+           矢量文件（.ai 无浏览器预览，展示文件信息 + 下载源文件，下载留痕）
+   ================================================================= */
+const curOps=()=>superOps?'ops_lead':'ops_yun';
+const fvWm=()=>{
+  const t=OPS_NAMES[curOps()]+' '+curOps()+' · '+nowFull().slice(0,16);
+  return '<div class="fv-wm">'+('<span>'+t+'</span>').repeat(12)+'</div>';
+};
+/* 预览图：证件照示例照片；矢量 .ai 源文件浏览器无法渲染，预览区展示文件图标占位 */
+const photoImg=()=>'<img src="assets/photo-upload.jpg" alt="学生证件照" width="150" style="display:block;border-radius:4px;box-shadow:0 1px 5px rgba(14,33,64,.22)">';
+const aiFileIcon=()=>'<svg width="72" height="88" viewBox="0 0 72 88">'+
+  '<path d="M6 2h42l18 18v66H6z" fill="#fff" stroke="#d9dce3" stroke-width="2" stroke-linejoin="round"/>'+
+  '<path d="M48 2l18 18H48z" fill="#eef0f4" stroke="#d9dce3" stroke-width="2" stroke-linejoin="round"/>'+
+  '<rect x="14" y="44" width="44" height="26" rx="5" fill="#330000"/>'+
+  '<text x="36" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#ff9a00">Ai</text></svg>';
+function openPhotoPreview(no){
+  const o=ORDERS.find(x=>x.no===no);if(!o||!o.photo)return;
+  document.getElementById('mfv-hd').innerHTML='学生证件照　<span class="mono" style="font-weight:400">'+o.photo+'</span>';
+  document.getElementById('mfv-bd').innerHTML='<div class="fv-stage">'+photoImg()+fvWm()+'</div>'+
+    kv('学生',o.stu+' · '+o.cls)+kv('学校',o.sc);
+  document.getElementById('mfv-ft').innerHTML='<button class="btn" onclick="closeModal()">关闭</button>';
+  ov(true);document.getElementById('m-file').classList.add('show');
+  addLog('查看证件照',o.photo,'办理记录 '+o.no+' · '+o.stu);
+}
+function openVecPreview(no){
+  const o=ORDERS.find(x=>x.no===no);if(!o||!o.vec)return;
+  document.getElementById('mfv-hd').innerHTML='校徽矢量文件　<span class="mono" style="font-weight:400">'+o.vec+'</span>';
+  document.getElementById('mfv-bd').innerHTML=
+    '<div class="fv-stage" style="flex-direction:column;gap:12px;padding:32px 20px">'+aiFileIcon()+
+    '<div style="text-align:center;line-height:1.6">该文件暂不支持在线预览<br><span style="font-size:12px;color:var(--color-text-muted)">请下载源文件后在本地查看</span></div></div>'+
+    kv('适用学校',o.sc)+kv('款式',o.style)+kv('文件格式','AI（Adobe Illustrator）');
+  document.getElementById('mfv-ft').innerHTML='<button class="btn" onclick="closeModal()">关闭</button>'+
+    '<button class="btn btn-primary" onclick="vecDownload(\''+o.no+'\')">下载源文件</button>';
+  ov(true);document.getElementById('m-file').classList.add('show');
+}
+function vecDownload(no){
+  const o=ORDERS.find(x=>x.no===no);if(!o)return;
+  addLog('下载矢量文件',o.vec,'办理记录 '+o.no+' · '+o.sc+' '+o.style);
+  toast('演示原型：下载矢量源文件 '+o.vec+'.ai（略）');
+}
+
+/* =================================================================
+   运管退款操作：发起（按枚指定，自动判定部分/全额）/ 异常处理 / 演示回调
+   ================================================================= */
+const getRefund=no=>REFUNDS.find(r=>r.no===no);
+/* 高权限视角（RBAC）：运营主管可将已启用枚作为退款例外发起，退款成功级联停用作废 */
+var superOps=false;
+function toggleSuper(){
+  superOps=!superOps;
+  const p=document.getElementById('role-pill');
+  p.textContent=superOps?'运营主管 · 高权限':'运营专员';
+  p.style.borderColor=superOps?'#ffa39e':'';
+  p.style.color=superOps?'#f5222d':'';
+  p.style.background=superOps?'#fff1f0':'';
+  rerenderAll();
+  toast(superOps?'已切换为高权限视角（运营主管）：已启用枚可作为例外发起退款，退款成功将级联停用作废入黑名单':'已切换回运营专员视角：已启用枚不可退款（质量问题走补办换新）');
+}
+function itemRefundable(it){
+  if(it.st==='已退款')return false;
+  if(it.st==='已启用'&&!superOps)return false;
+  if(it.rf){const r=getRefund(it.rf);if(r&&r.st!=='退款关闭')return false}
+  return true;
+}
+function canRefund(o){
+  return o.paid>0&&o.status!=='待支付'&&o.status!=='已取消'&&o.items.some(itemRefundable);
+}
+/* 状态机口径：校徽发出前（待确认 / 待生产 / 生产中 / 已寄出）全额退款成功即驱动「转已取消」——家长自主取消与运管全额退款同一口径，
+   取消动作只发起退款、退款成功才关单（PRD 6.7 状态机取消边守卫「取消成功」即含退款成功）；已到校及之后退款只改枚级状态，办理记录状态不变 */
+const RF_CANCEL_STS=['待确认','待生产','生产中','已寄出'];
+/* 整单退完且退款在途（全部枚已被退款单覆盖、至少一笔未到账）＝主单流转冻结：
+   关单/完结判定在到账时刻按当时状态评估（applyRefundSuccess），若在途期间主单还能向前流转，判定会被翻转——
+   唯一的真实竞态窗口是已寄出→已到校（包裹已在途无法召回、签收回调必然到达，原路退回要 1–3 个工作日、转线下会拉长到数周）：
+   已寄出单全额退款在途期间物流签收只落物流单台账、不推进主单状态（发出前其余各态发起退款时履约同步停止、天然到不了已寄出，无需冻结），
+   到账仍按发出前门槛转已取消——退款发起时被退枚已作废入黑名单，徽即便签收到校也不会发放，这次办理终究没交付，
+   不该因一个签收回调把弹窗预告的「已取消」翻成「已完成」；已到校/部分启用单整单退完在途期间，确认收货完结通道整体挂起：
+   满 7 天自动确认定时器挂起（见详情确认收货字段）、家长端人工确认入口同步收起（odCanRecv 同判定，仅已到校单有入口）
+   （核验路径无需另设约束：被退枚发起退款即作废，核验完结的守卫天然不可达），
+   完结统一由末笔退款到账驱动——单内所有徽已/将作废、班主任不会发放，家长无货可收，
+   人工/自动确认都会落下失实的确认收货审计行；且该类单的完结触发事实是末笔退款到账，确认路径先触发会让同一业务事实
+   因时序竞态产生两种流转记录形态（退款事件在已完结单上照落流转行，不构成冲突——「已完结记录不再追加流转行」仅限核验启用事件）。
+   部分退款在途不冻结：剩余枚仍要寄送/发放/核验，主流程照常推进 */
+function rfAllPending(o){
+  const covered=it=>it.st==='已退款'||!!it.rf;
+  return o.items.length>0&&o.items.every(covered)&&o.items.some(it=>it.st!=='已退款');
+}
+/* 取消办理（运管代取消）：仅待确认 / 待生产的 ¥0 单提供——退款以资金为载体、这类单无款可退，
+   若不应继续办理正确出口是取消而非退款：无退款链路、确认即转已取消（提交生产前，与家长自主取消同一截止锚点）。
+   待支付单不提供：待支付必然是付费单（¥0 免费单免支付直落待确认），30 分钟超时自动取消且家长端可自助取消，
+   代取消无收益，反而与支付成功回调存在竞态（渠道已支付、本地已取消的差错单）；
+   已付款单的取消 = 发起全额退款、退款到账才关单，走「退款」入口，不提供本动作 */
+function canCancel(o){return o.paid<=0&&['待确认','待生产'].includes(o.status)}
+var clOrder=null;
+function openCancelModal(no){
+  const o=ORDERS.find(x=>x.no===no);if(!o)return;
+  clOrder=o;
+  document.getElementById('mcl-bd').innerHTML=
+    kv('办理记录','<span class="mono">'+o.no+'</span>')+
+    kv('学生',o.stu+' · '+o.sc)+
+    kv('记录状态',tag(o.status,T_ORDER))+
+    kv('实付金额',fmt(o.paid))+
+    '<div class="form-row" style="margin-top:12px"><label>取消说明（必填，写入审计日志）</label><input type="text" id="mcl-note" placeholder="例如：家长联系客服要求取消办理"></div>';
+  ov(true);document.getElementById('m-cancel').classList.add('show');
+}
+function cancelDo(){
+  const note=document.getElementById('mcl-note').value.trim();
+  if(!note){toast('请填写取消说明');return}
+  const o=clOrder,t=nowT(),prevSt=o.status;
+  const free=o.items.some(it=>it.free);
+  o.status='已取消';o.cancelAt=t;o.cancelType='运管代取消';
+  /* 免费额度释放与家长自主取消免费单同口径：单内含免费枚即释放（该单未交付，额度不应继续占用）。
+     额度释放为额度表事实、不落流转行（PRD 16.8 节点枚举无此事件，db 设计「不入 note」同口径） */
+  if(free)o.freeQuota='released';
+  /* 已取消行附注只落取消场景事实（PRD 16.8 附注两层规则）：操作人由流转记录结构化字段承载、取消说明由操作日志承载，均不入附注 */
+  o.flow.unshift([t,'已取消','运管代取消（无实付金额，无需退款）','gray']);
+  addLog('取消办理',o.no,'运管代取消（原状态 '+prevSt+'，无实付金额）· '+o.stu+'：'+note);
+  rerenderAll();closeModal();
+  toast('已取消办理 · '+o.no);
+}
+var rfmOrder=null,rfmSel=[];
+function openRefundModal(no){
+  const o=ORDERS.find(x=>x.no===no);if(!o)return;
+  rfmOrder=o;rfmSel=[];
+  const rows=o.items.map((it,i)=>{
+    const ok=itemRefundable(it);
+    let why='';
+    if(it.st==='已启用'&&!ok)why='已核验启用，不可退（高权限例外）';
+    else if(it.st==='已退款')why='已退款';
+    else if(!ok)why='退款执行中（'+getRefund(it.rf).st+'）';
+    return '<label class="rf-item'+(ok?'':' dis')+'"><input type="checkbox"'+(ok?'':' disabled')+' onchange="rfmToggle('+i+',this.checked)">'+
+      '<span style="flex:1">第 '+(i+1)+' 枚'+' · <span class="mono">'+(it.bg||'—')+'</span>'+'</span>'+
+      (it.free?'<span class="tag tag-on">首枚免费</span>':'')+
+      (it.st==='已启用'&&ok?'<span class="tag tag-danger">已启用 · 高权限例外</span>':'')+
+      '<span class="amt">'+fmt(it.free?0:it.unit)+'</span>'+
+      (why?'<span class="tag tag-off">'+why+'</span>':'')+'</label>';
+  }).join('');
+  document.getElementById('mrf-bd').innerHTML=
+    '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:2px 0 12px;border-bottom:1px dashed var(--color-border);margin-bottom:2px">'+
+      '<span class="mono">'+o.no+'</span><span>'+o.stu+' · '+o.sc+'</span>'+tag(o.status,T_ORDER)+
+      '<span style="margin-left:auto;color:var(--color-text-primary)">实付 '+fmt(o.paid)+'</span></div>'+
+    '<div class="sec-t" style="margin-top:14px">选择退款校徽</div>'+rows+
+    '<div class="form-row" style="margin-top:14px"><label>退款说明 <span style="color:#f5222d">*</span></label>'+
+    '<input type="text" id="mrf-note" placeholder="例如：家长反馈徽面瑕疵，客服核实属实" oninput="mrfNoteErr(false)">'+
+    '<div id="mrf-note-err" style="display:none;color:#f5222d;font-size:12px;margin-top:5px">请填写退款说明</div></div>';
+  rfmCalc();
+  ov(true);document.getElementById('m-refund').classList.add('show');
+}
+function rfmToggle(i,on){
+  rfmSel=on?rfmSel.concat(i):rfmSel.filter(x=>x!==i);
+  rfmCalc();
+}
+/* 退款类型：「运管全额」仅指一张退款单一次覆盖整单全部有效枚（此前没有已退款 / 在途退款枚）；
+   已做过部分退款的单，后续退款一律「运管部分」，即使本次把剩余枚退完——全额对运营 / 财务的自然读法是整单全退、金额 = 实付，
+   ¥30 的退款单挂在 ¥45 的单上标全额会像数据错误。关单与关单预告按「退完」的枚事实判定（rfmExhausts），不看类型标签 */
+function rfmType(){
+  const prior=rfmOrder.items.some(it=>it.st==='已退款'||!!it.rf);
+  return !prior&&rfmOrder.items.every((it,i)=>rfmSel.includes(i))?'运管全额':'运管部分';
+}
+/* 退完：本次勾选后本单不再有未退枚（已退款 / 在途退款 / 本次勾选三者覆盖全部枚），多次部分退款的末笔与一次性全额同一终点 */
+function rfmExhausts(){
+  return rfmOrder.items.every((it,i)=>rfmSel.includes(i)||it.st==='已退款'||!!it.rf);
+}
+function rfmAmt(){
+  return rfmSel.reduce((s,i)=>{const it=rfmOrder.items[i];return s+(it.free?0:it.unit)},0);
+}
+function rfmCalc(){
+  const n=rfmSel.length,amt=rfmAmt();
+  const hasAct=rfmSel.some(i=>rfmOrder.items[i].st==='已启用');
+  /* 零元退款单（仅勾免费枚）：逆向处置一枚徽的本质是回收作废，退款只是它在有金额时的形态——
+     金额为 0 不改变处置本身。原禁止提交导致「2 枚单里免费那枚有瑕疵」只能连付费枚一起退（把好的那枚也退掉）。
+     零元单复用整条链路（枚作废 → 黑名单 → 免费额度释放 → 家长端流转行），仅不产生退款流水（渠道不受理 0 元退款），
+     创建即置退款成功 */
+  const zero=n&&amt<=0;
+  document.getElementById('mrf-sum').innerHTML=
+    !n?'请选择退款校徽':
+    '已选 '+n+' 枚'+(hasAct?' · 含已启用枚':'');
+  document.getElementById('mrf-ok').textContent=!n?'确认发起退款':zero?'确认回收作废（零元）':'确认退款 '+fmt(amt);
+  document.getElementById('mrf-ok').disabled=!n;
+}
+/* 退款说明必填的内联校验反馈：红边 + 输入框下红字，输入即清除 */
+function mrfNoteErr(show){
+  const ip=document.getElementById('mrf-note');
+  ip.style.borderColor=show?'#f5222d':'';
+  document.getElementById('mrf-note-err').style.display=show?'':'none';
+}
+function rfmSubmit(){
+  const note=document.getElementById('mrf-note').value.trim();
+  if(!note){mrfNoteErr(true);document.getElementById('mrf-note').focus();return}
+  /* 分级确认：仅含已启用枚（高权限例外）弹二次确认；普通退款直接提交，避免确认疲劳 */
+  const actBgs=rfmSel.filter(i=>rfmOrder.items[i].st==='已启用').map(i=>rfmOrder.items[i].bg);
+  if(actBgs.length){
+    document.getElementById('rfck-bd').innerHTML=
+      kv('本次退款',fmt(rfmAmt())+' · 共 '+rfmSel.length+' 枚')+
+      kv('已启用枚','<span class="mono">'+actBgs.join('、')+'</span>')+
+      '<div class="note danger" style="margin:12px 0 0">退款成功后，上述已启用枚将级联停用作废并入黑名单、立即失效（学生该枚校徽不可再用于过门核验），操作写入强审计。'+
+      (rfmExhausts()&&RF_CANCEL_STS.includes(rfmOrder.status)?'<br>本次退款后本单校徽将全部退完：全部退款成功后，办理记录将转已取消。':'')+'</div>';
+    document.getElementById('m-rfck').classList.add('show');
+    return;
+  }
+  rfmDo();
+}
+function rfckClose(){document.getElementById('m-rfck').classList.remove('show')}
+function rfckOk(){rfckClose();rfmDo()}
+function rfmDo(){
+  const note=document.getElementById('mrf-note').value.trim();
+  const o=rfmOrder,t=nowT(),type=rfmType(),exhausts=rfmExhausts(),amt=rfmAmt();
+  const rono='RO20260704'+rnd8(),rtno='RT20260704'+rnd8();
+  const deact=rfmSel.filter(i=>o.items[i].st==='已启用').map(i=>o.items[i].epc);
+  const items=rfmSel.map(i=>{const it=o.items[i];it.rf=rono;
+    return {bg:it.bg||'—',free:it.free,unit:it.unit,epc:it.epc||'—'}});
+  const pay=PAYS.find(p=>p.no===o.payNo);
+  /* 零元退款单：无资金动作，不创建退款流水（渠道不受理 0 元退款）、不改支付单渠道交易状态，创建即置退款成功并立即级联 */
+  const zero=amt<=0;
+  const r={no:rono,orderNo:o.no,sc:o.sc,stu:o.stu,amt:amt,type:type,zero:zero,op:superOps?'ops_lead（高权限）':'ops_yun',note:note,
+    st:zero?'退款成功':'退款中',initAt:t,okAt:zero?t:'',items:items,txns:zero?[]:[rtno],deact:deact};
+  REFUNDS.unshift(r);
+  if(!zero)RTXNS.unshift({no:rtno,wx:'5030220626'+rtno.slice(2),refundNo:rono,orderNo:o.no,payNo:pay.no,payTx:pay.tx,ch:'wechat_jsapi',amt:amt,orderAmt:pay.amt,reason:note.slice(0,40),st:'退款中',acct:'AVAILABLE 可用余额',rchan:'ORIGINAL 原路退款',dest:'支付用户零钱',created:t,okAt:'',closedAt:'',fail:''});
+  o.refunds.push(rono);
+  /* 发起退款行附注按 PRD 16.8 写入规范生成：退款类型、枚数与原因（退款说明即原因，PRD 明确入附注）；
+     操作人不入附注（由退款单操作人字段与操作日志承载，与已取消行同口径） */
+  o.flow.unshift([t,'发起退款',zero
+    ?'零元退款单（免费枚回收作废，无退款金额），退款单编号 '+rono
+    :(type==='运管全额'?'全额退款（'+note+'）':'部分退款 '+rfmSel.length+' 枚（'+note+'）')+'，'+fmt(amt)+' 将于 1–3 个工作日原路退回，退款单编号 '+rono+(deact.length?' · 高权限例外：含已启用枚 '+deact.join('、'):'')+(exhausts&&RF_CANCEL_STS.includes(o.status)?' · 全部退款成功后本单将转已取消':''),'amber']);
+  if(!zero){pay.trade='转入退款';pay.updated=t}
+  addLog('发起退款',rono,(zero?'零元回收（免费枚）':type+' '+fmt(amt))+' · '+o.stu+(deact.length?'（高权限例外：含已启用枚 '+deact.join('、')+'）':'')+'：'+note);
+  if(zero)applyRefundSuccess(r,t,true);
+  rerenderAll();closeModal();openRefund(rono);
+  toast(zero?'零元退款单已创建并即时生效：免费枚回收作废、额度已释放 · '+rono:'退款单已创建并向渠道发起原路退款 · '+rono);
+}
+function retryRefund(no){
+  const r=getRefund(no),t=nowT();
+  const last=RTXNS.find(x=>x.no===r.txns[r.txns.length-1]);
+  const rtno='RT20260704'+rnd8();
+  RTXNS.unshift({...last,no:rtno,wx:'5030220626'+rtno.slice(2),reason:last.reason.replace(/（重试）$/,'')+'（重试）',st:'退款中',created:t,okAt:'',closedAt:'',fail:''});
+  r.txns.push(rtno);r.st='退款中';
+  const o=ORDERS.find(x=>x.no===r.orderNo);
+  o.flow.unshift([t,'退款重试','插新流水 '+rtno+'（失败凭证留痕，不覆盖），退款单编号 '+no,'amber']);
+  addLog('退款重试',no,'插新流水 '+rtno+'（前序流水异常留痕）');
+  rerenderAll();openRefund(no);
+  toast('已插新流水重试 · '+rtno);
+}
+var rfcNo='';
+function openRfClose(no){
+  rfcNo=no;document.getElementById('rfc-reason').value='';
+  ov(true);document.getElementById('m-rfclose').classList.add('show');
+}
+function rfCloseDo(){
+  const rs=document.getElementById('rfc-reason').value.trim();
+  if(!rs){toast('请填写判定说明');return}
+  const r=getRefund(rfcNo),t=nowT();
+  r.st='退款关闭';r.closedAt=t;r.note+='；'+t+' 人工判定：'+rs;
+  const o=ORDERS.find(x=>x.no===r.orderNo);
+  o.flow.unshift([t,'退款转线下','无法原路退回 · 退款单置退款关闭，转线下退款，退款单编号 '+rfcNo,'red']);
+  addLog('置退款关闭',rfcNo,rs);
+  rerenderAll();closeModal();openRefund(rfcNo);
+  toast('退款单已置退款关闭，转线下处理并写入审计');
+}
+/* 退款成功后的状态级联（枚终态 / 免费额度 / 关单判定），由渠道回调与零元退款单两条路径共用：
+   零元退款单无渠道交互、创建即成功，直接调用本函数；有金额的单由退款成功回调调用 */
+function applyRefundSuccess(r,t,zero){
+  const o=ORDERS.find(x=>x.no===r.orderNo);
+  o.items.forEach(it=>{if(it.rf===r.no)it.st='已退款'});
+  /* 支付单侧联动（PRD 16.4 状态机：全额 / 部分退款到账均转已退款；退款在途保持已完成）；
+     零元退款无资金动作、不涉及支付单；改单换新场景下同一办理单可有多笔支付单，只动成功的那笔 */
+  if(!zero){
+    const pay=PAYS.find(x=>x.orderNo===r.orderNo&&['已完成','已退款'].includes(x.st));
+    if(pay){pay.st='已退款';pay.trade='转入退款';pay.updated=t}
+  }
+  /* 高权限例外的级联停用作废并入退款到账行附注（PRD 16.8 节点枚举无独立「级联停用作废」事件，
+     级联是本次退款到账的处置细节）；红色色标随附注保留高危强调 */
+  const deactNote=r.deact&&r.deact.length?' · 高权限例外级联：已启用枚 '+r.deact.join('、')+' 停用作废并入黑名单':'';
+  o.flow.unshift([t,'退款到账',(zero?'免费枚回收，无退款金额（零元退款单 '+r.no+'）':fmt(r.amt)+' 已原路退回，退款单编号 '+r.no)+deactNote,deactNote?'red':'']);
+  /* 免费额度释放锚定占用它的那一行、而非整单：被退枚含免费枚即释放（该枚已作废停用，学生手上没有它，
+     额度不应继续占用）；付费枚被退不影响额度。原口径「订单取消时释放」与占用锚点（badge_free_quota.order_item_id
+     指向商品行）粒度不一致——已到校后免费枚被退的单不关单，额度会一直挂着。
+     额度释放为额度表事实、不落流转行（PRD 16.8 节点枚举无此事件，db 设计「不入 note」同口径），
+     家长端权益告知由「免费枚回收」行附注「首张免费额度已恢复」承载 */
+  if(r.items.some(it=>it.free))o.freeQuota='released';
+  /* 关单判定按商品行事实（全部有效行已退，跨批次累计），不看退款单类型标签；且限校徽发出前四态。
+     按到账时刻状态评估之所以成立，依赖冻结口径（见 rfAllPending）：整单退完在途期间主单不再向前流转，
+     发起时弹窗预告的关单走向不会被在途期间的物流签收翻转 */
+  if(o.items.every(it=>it.st==='已退款')&&RF_CANCEL_STS.includes(o.status)){
+    /* 关单归因按退款单发起方分流：家长取消发起的全额退款到账即家长自主取消关单 */
+    const byParent=r.type==='家长取消全额';
+    o.status='已取消';o.cancelAt=t;o.cancelType=byParent?'家长自主取消':'运管全额退款关单';
+    o.flow.unshift([t,'已取消','全部商品退款成功 · 办理记录转已取消（'+(byParent?'家长自主取消，提交生产前发起':'运管全额退款关单')+'）','gray']);
+  }
+  /* 到校后退款到账完结（与到校前退完转已取消构成对称边界：到校前退完＝未交付成、关单；到校后退完＝已交付、完结，退款属售后）：
+     末笔到账时单内已无待启用的未退枚即转已完成——已到校态即所有校徽均已退款（避免全退单永久停留在已到校被在途统计与超窗提醒挂起），
+     部分启用态即未退校徽全部启用（partrf 场景，含高权限例外把已启用枚也退完的情形）；「退款到账」与「已完成」同刻分开两行落 */
+  if(['已到校','部分启用'].includes(o.status)&&o.items.every(it=>it.st==='已退款'||it.st==='已启用')){
+    o.status='已完成';
+    o.flow.unshift([t,'已完成','本次办理完成','']);
+  }
+}
+/* 演示用：模拟渠道退款回调（仅演示说明入口调用，真实产品由渠道回调驱动） */
+function demoRefundCallback(){
+  const list=REFUNDS.filter(r=>r.st==='退款中');
+  if(!list.length){toast('当前没有退款中的退款单');return}
+  const t=nowT();
+  list.forEach(r=>{
+    const tx=RTXNS.find(x=>x.no===r.txns[r.txns.length-1]);
+    if(tx&&tx.st==='退款中'){tx.st='退款成功';tx.okAt=t}
+    r.st='退款成功';r.okAt=t;
+    applyRefundSuccess(r,t,false);
+    const lastTx=r.txns[r.txns.length-1];
+    addLog('渠道回调',lastTx,'退款成功回调 · 退款单 '+r.no+' 置退款成功'+(r.deact&&r.deact.length?'，已启用枚 '+r.deact.join('、')+' 级联停用作废':''),'系统','—');
+  });
+  rerenderAll();closeAll();
+  toast('已模拟渠道回调：'+list.length+' 笔退款到账并完成状态级联');
+}
+
+/* =================================================================
+   导出当前结果：确认弹窗（范围 + 条数）→ 前端生成 CSV 下载 → 写入审计
+   结果集与筛选描述复用各列表的 xxRows / xxFilterParts，与页面口径一致（含全部分页，不止当前页）
+   ================================================================= */
+const csvCell=v=>{v=(v==null?'':String(v));return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+const csvAmt=v=>(v/100).toFixed(2);
+const EXPORT_CFG={
+ od:{name:'办理明细',unit:'单',rows:odRows,parts:odFilterParts,st:()=>OD,
+   cols:[['办理记录编号',o=>o.no],['学校',o=>o.sc],['学生',o=>o.stu],['班级',o=>o.cls],['学生来源',o=>o.src],/* 第一阶段隐藏：CSV 认领状态列（恢复方式：插回 ['认领状态',o=>o.claim],） */['款式',o=>o.style],['数量',o=>o.qty],['应付金额(元)',o=>csvAmt(o.due)],['实付金额(元)',o=>csvAmt(o.paid)],['记录状态',o=>o.status],['创建时间',o=>fullTs(o.flow[o.flow.length-1][0],o.no)]]},
+ py:{name:'支付单',unit:'笔',rows:pyRows,parts:pyFilterParts,st:()=>PY,
+   cols:[['支付单号',p=>p.no],['办理记录编号',p=>p.orderNo],['学校',p=>p.sc],['支付人',p=>p.payer],['金额(元)',p=>csvAmt(p.amt)],['支付单状态',p=>p.st],['渠道交易状态',p=>p.trade],['渠道交易号',p=>p.tx||'—'],['创建时间',p=>p.created],['支付成功时间',p=>p.paidAt||'—']]},
+ rf:{name:'退款单',unit:'单',rows:rfRows,parts:rfFilterParts,st:()=>RF,
+   cols:[['退款单编号',r=>r.no],['办理记录编号',r=>r.orderNo],['学生',r=>r.stu],['学校',r=>r.sc],['退款金额(元)',r=>csvAmt(r.amt)],['退款类型',r=>r.type],['退款枚数',r=>r.items.length],['退款单状态',r=>r.st],['操作人',r=>r.op?opsName(r.op):'—'],['发起时间',r=>r.initAt],['退款成功时间',r=>r.okAt||'—'],['退款说明',r=>r.note]]},
+ rt:{name:'退款流水单',unit:'笔',rows:rtRows,parts:rtFilterParts,st:()=>RT,
+   cols:[['退款流水单编号',t=>t.no],['微信退款单号',t=>t.wx],['退款单编号',t=>t.refundNo],['原支付单编号',t=>t.payNo],['渠道',t=>t.ch],['金额(元)',t=>csvAmt(t.amt)],['状态',t=>t.st],['创建时间',t=>t.created],['成功时间',t=>t.okAt||'—'],['失败原因',t=>t.fail||'—']]},
+ lg:{name:'操作日志',unit:'条',rows:lgRows,parts:lgFilterParts,st:()=>LG,
+   cols:[['操作时间',l=>l.t],['操作人',l=>opsName(l.actor)],['操作类型',l=>l.type],['操作对象',l=>l.target],['操作详情',l=>l.detail],['来源IP',l=>l.ip]]}
+};
+var exKey='';
+function openExport(k){
+  const c=EXPORT_CFG[k],rows=c.rows();
+  if(!rows.length){toast('当前筛选结果为空，无可导出记录');return}
+  exKey=k;
+  const st=c.st();
+  const conds=c.parts().filter(x=>x.indexOf('时间：')!==0);   // 时间单列一行，条件行不重复
+  document.getElementById('mex-bd').innerHTML=
+    kv('导出台账',c.name)+
+    kv('时间范围',dtTipLabel(st)||'不限时间')+
+    kv('筛选条件',conds.length?conds.join('、'):'无')+
+    kv('导出条数','<b>'+rows.length+'</b> '+c.unit)+
+    kv('文件格式','CSV');
+  const ok=document.getElementById('mex-ok');ok.disabled=false;ok.textContent='导出 CSV';
+  ov(true);document.getElementById('m-export').classList.add('show');
+}
+function exportDo(){
+  const c=EXPORT_CFG[exKey],rows=c.rows();
+  const ok=document.getElementById('mex-ok');
+  ok.disabled=true;ok.textContent='正在生成文件…';
+  setTimeout(()=>{
+    /* 前置 UTF-8 BOM：Excel 直接打开不乱码 */
+    const csv='\ufeff'+[c.cols.map(x=>x[0]).join(',')]
+      .concat(rows.map(r=>c.cols.map(x=>csvCell(x[1](r))).join(','))).join('\r\n');
+    const ts=nowFull(),fname=c.name+'_'+ts.slice(0,10)+'_'+ts.slice(11).replace(/:/g,'')+'.csv';
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+    a.download=fname;document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+    const conds=c.parts().filter(x=>x.indexOf('时间：')!==0);
+    addLog('导出数据',c.name+'列表','CSV '+rows.length+' '+c.unit+' · 时间范围：'+(dtTipLabel(c.st())||'不限时间')+(conds.length?' · 筛选：'+conds.join('、'):'')+' · '+fname);
+    closeModal();
+    toast('已导出 '+rows.length+' '+c.unit+' · '+fname);
+  },600);
+}
+
+/* =================================================================
+   导航 / 演示说明 / 通用交互
+   ================================================================= */
+const titles={order:['智能校徽','办理明细'],pay:['智能校徽','支付单'],refund:['智能校徽','退款单'],rtxn:['智能校徽','退款流水'],carrier:['系统设置','承运商管理'],log:['系统设置','操作日志']};
+var curPage='order';
+function switchPage(pg){
+  document.querySelectorAll('.menu-item[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===pg));
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
+  document.getElementById('page-'+pg).classList.add('show');
+  document.getElementById('crumb').innerHTML=titles[pg][0]+' / <b>'+titles[pg][1]+'</b>';
+  window.scrollTo(0,0);
+  curPage=pg;history.replaceState(null,'','#'+pg);closeDemo();
+  if(window.hideMenuPopup)hideMenuPopup(true);
+}
+document.querySelectorAll('.menu-item[data-page]').forEach(b=>b.addEventListener('click',()=>switchPage(b.dataset.page)));
+/* 三级菜单展开/收起（开户管理） */
+function toggleSubMenu(btn){
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open',btn.classList.contains('open'));
+}
+const demoInfo={
+ order:{t:'办理明细',d:'校徽办理主单台账：状态、金额、身份核实与关联单据（支付单 / 退款单 / 物流单）。详情内可跳转关联支付单 / 退款单。\n本页侧栏分组：客户管理 / 智能校徽 / 设备管理 / 客服管理 / 财务结算 / 系统设置；其余运管模块（总览 / 校徽资产 / 学校治理 / 平台）入口暂隐藏，需要时可直接打开 admin.html 查看。侧栏中非本页台账的菜单（客户管理分组各项、办理统计、发票管理、设备管理 / 客服管理 / 财务结算分组各项、系统设置分组的个人中心至学生类型字典、组织关系管理）均为 Mockplus 外链原型，点击在本标签打开。\n【字段口径】\n对齐 PRD「关键记录信息」：快照原则（姓名 / 班级 / 单价 / 矢量文件下单即快照）；¥0 首枚免费单免支付直落待确认。认领状态三态（核实通过即回写已认领；核实失败停留待家长处置）第一阶段整体隐藏：列表列与筛选、CSV 导出字段、详情页标题 tag 与基本信息行均不露出，数据字段仍在种子中保留。\n校徽编号为 19 位纯数字、全局唯一，支付成功（免费单为提交成功）时即为每枚生成并写入校徽明细，运管端各处以此编号检索与对账；家长端显示孩子维度唯一的四位简号 NO.XXXX，两套编号 1:1 对应、不混用。EPC 由业务系统在提交工厂生产前生成写入（16 位十六进制写码值，同批次连号，与校徽编号 1:1 绑定），此前显示「—」。\n多枚单逐枚核验启用：已启用的枚立即参与考勤、不等其余枚；主单在部分启用期间保持「部分启用」，全部启用才转已完成。家长端同场景可在家长小程序原型逐枚操作演示。\n学校筛选为输入联想下拉（通用 combobox，与操作日志操作人筛选同形态）：学校是开放增长维度，真实规模数十上百所，select 滚动查找不可用（演示种子只有 3 所，收益按真实规模理解）；候选只展示学校名称（名称租户内唯一），按名称检索。支付单页同此形态。\n【办理进度流转行】\n每行为「节点名 + 附注」两行结构（数据为 [时间, 节点名, 附注, 色标] 四元组，与家长端同构、与 PRD 16.8 的节点名 / 附注两字段一一对应），全部按 PRD 枚举落节点名并带附注：已到校附物流签收事实，已寄出附物流单号，提交生产附批次号，确认收货附确认方式，各退款行附金额、到账预期与退款单编号。\n核验启用行带启用枚编号前缀（对齐 6.7 运管端节点表与 16.8 映射表的示例格式，如「1965274193288010101 已核验启用 · 第 N 枚 · 部分启用 N/3」）；末枚核验与整单完结合并为一行「已完成」，不另落「部分启用 y/y」行。\n已付款单取消只落「发起退款」行、订单保持原状态，退款到账回调时才落「已取消」行并关单（取消边守卫「取消成功」即含退款成功，与运管全额退款同一口径）。例：宋佳霖单两次原路退回失败转线下、至今未到账，仍停在「待生产」，客服可对本单再次发起退款，到账时才关单。\n【确认收货】\n确认收货为家长逐单动作，两种确认方式（PRD 6.7）：家长人工确认；到校起满 7 天未确认由系统自动确认。定时器从到校起算，不因部分枚已核验而终止（部分启用单到校满 7 天同样自动完结，剩余枚仍可枚级补核验）；先于 7 天全部核验完结的单无需确认，详情确认收货字段显示「无需确认（全部核验完结）」。不再按「家长先扫码核验即推定确认收货」处理：推定既不完结也不改枚状态，只是把系统推断记成一条与扫码行同刻重复的审计行。\n人工确认与满 7 天自动确认即整单转已完成，与全部枚核验启用的核验完结互为补充。确认收货行附注承载确认方式（「家长人工确认」「到校满 7 天自动确认」，详情确认收货字段同源展示，未确认单的预告文案为「到校满 7 天自动确认」，与家长端同词）。由确认收货触发完结时「已完成」行附注只写「本次办理完成」，触发事实由同时刻的确认收货行承载（与退款到账触发完结同构；家长端没有独立确认收货行，同场景附注为「家长确认收货，本次办理完成」「到校满 7 天自动确认收货，本次办理完成」）。\n【取消办理（运管代取消）】\n无实付金额的单（¥0 首枚免费单）不提供退款入口（退款以资金为载体、无款可退），正确出口是取消：操作列与详情页对待确认 / 待生产且实付为 ¥0 的单提供「取消」（提交生产前，与家长自主取消同一截止锚点）。待支付单不提供：待支付必然是付费单，30 分钟超时自动取消、家长端可自助取消，代取消无收益，反而与支付成功回调存在竞态（渠道已支付、本地已取消的差错单）。\n弹窗展示单据摘要，取消说明必填（写入审计日志「取消办理」）；确认即转已取消，不产生退款单。「已取消」行附注只落取消场景事实「运管代取消（无实付金额，无需退款）」，操作人由流转记录结构化字段承载、取消说明由操作日志承载，都不入附注（PRD 16.8 附注两层规则，与 17.2 操作日志统一措辞）。免费单的首枚免费额度随之释放：额度释放为额度表事实、不落流转行（PRD 16.8 节点枚举无此事件），家长端权益告知由「免费枚回收」行附注「首张免费额度已恢复」承载；家长端同步显示已取消。已付款单的取消＝发起全额退款、退款到账才关单，走「退款」入口。\n家长自主取消的免费单同样无退款链路，取消即刻生效关单，取消类型记家长自主取消，「已取消」行附注为「家长自主取消（提交生产前）」，首枚免费额度同步释放。袁思齐单（免费单家长自主取消）与陈梓睿单（已付款自主取消，退款到账才关单）构成免费 / 付费对照。\n【发起退款】\n已支付且存在可退枚（未启用、未在途退款）的单，可从操作列或详情页「发起退款」：按枚勾选、原路退回、写入审计。每枚都带校徽编号（可发起退款的单必已过生成节点），EPC 在提交生产前为「—」。退款说明必填（作为客服核实说明写入审计日志并落退款单），确认按钮实时显示本次退款金额。\n系统自动判定运管部分 / 全额：只有一张退款单一次覆盖整单全部有效枚（此前没有任何已退款 / 在途退款枚）才按「运管全额」创建；已做过部分退款的单后续退款一律「运管部分」，即使本次把剩余枚退完（全额的自然读法是金额＝实付，退款单金额小于实付却标全额会像数据错误；例：罗一鸣单已部分退 1 枚，再退剩余 2 枚即为运管部分 ¥30.00）。判定结果不在弹窗内展示，创建后落在退款单类型字段。\n免费枚可勾选参与全额 / 退完判定；只勾选免费枚时没有退款金额，提交即创建零元退款单直接回收作废，该学生首枚免费额度随之释放，确认按钮实时变为「确认回收作废（零元）」，汇总区不另置提示文案。\n已启用枚默认不可退（质量问题走补办换新）；切到高权限视角（运营主管）后可作为例外发起：勾选含已启用枚时汇总区显示「含已启用枚」，提交时弹红色二次确认框列明后果（该枚级联停用作废入黑名单立即失效、写入强审计；生产中 / 已寄出状态下本次退完时并注办理记录转已取消）。退款成功后的级联事实并入「退款到账」行附注（该行红色强调），不落独立的「级联停用作废」行（PRD 16.8 节点枚举无此事件）。二次确认按风险分级：只有含已启用枚的高危场景弹出，普通部分 / 全额退款直接提交（弹窗本身已是逐枚勾选 + 必填说明 + 按钮带金额的高成本确认，一刀切二次确认会造成确认疲劳）。\n退款弹窗汇总区不放关单预告文案：本次勾选后校徽退完且尚未发出时，全部退款到账后办理记录将转已取消（家长端同步），这一口径由本说明承载；「发起退款」流转行附注末尾注明「全部退款成功后本单将转已取消」。\n「发起退款」行附注按 PRD 16.8 写入规范实时生成：「部分退款 N 枚（原因），¥XX 将于 1–3 个工作日原路退回，退款单编号 RO-xxx」「全额退款（原因），…」「零元退款单（免费枚回收作废，无退款金额），退款单编号 RO-xxx」；原因取弹窗必填的退款说明，操作人不入附注（由退款单操作人字段与操作日志承载）。\n【关单与完结】\n全额退款成功驱动「办理记录转已取消」只限校徽发出前的四态：待确认 / 待生产 / 生产中 / 已寄出（家长自主取消发起的全额退款同一路径关单，关单类型记家长自主取消）。已到校 / 部分启用 / 已完成的退款不关单：徽已生产、寄送、发放甚至被核验启用过，这次办理确实发生了，退款是售后。末笔退款到账时若单内已无待启用的未退校徽（已到校态即所有校徽都已退款，部分启用态即未退校徽全部启用，含高权限例外把已启用枚也退完的情形），办理记录转已完成并落「已完成」行（附注「本次办理完成」，与「退款到账」同刻分开两行）。到校前退完＝未交付、关单，到校后退完＝已交付、完结，也避免全退单永久停在已到校、被在途统计与超窗提醒挂起。可交互验证：沈亦航单发起退款勾选全部两枚，模拟渠道回调到账后整单转已完成；该形态下详情确认收货字段只落「未确认」，不再显示自动确认预告。\n关单判定跨批次累计（全部枚都已退款即触发，o.items.every）：同一主单可多次退款（存在可退枚即可再次发起，退款关闭后客服也可对本单重发），分两次退完与一次性全额退款同一终点。家长端同步该判定与同一状态门槛（RF_CANCEL_STS 两端同名同值，其待确认 / 待生产在家长端合并显示为待审核），并据此派生列表摘要与状态 chip。\n整单退完且退款在途（全部枚已被退款单覆盖、至少一笔未到账）＝主单流转冻结。关单 / 完结在到账时刻按当时状态评估，若在途期间主单还能向前流转，判定会被翻转；真实竞态窗口只有已寄出 → 已到校（包裹已在途无法召回、签收回调必然到达，原路退回需 1–3 个工作日、转线下会拉长到数周）。已寄出单全额退款在途期间，物流签收只落物流单台账、不推进主单状态，到账仍按发出前门槛转已取消（被退枚发起时已作废入黑名单，即便签收到校也不会发放）。\n已到校 / 部分启用单整单退完在途期间，确认收货完结通道整体挂起：到校满 7 天自动确认定时器挂起（详情确认收货字段显示「未确认（整单退款完结中，自动确认挂起）」），家长端人工确认入口同步收起（家长小程序 odCanRecv 判定）；核验路径无需另设约束（被退枚发起退款即作废，核验完结的守卫天然不可达）。完结统一由末笔退款到账驱动：单内所有徽已 / 将作废、班主任不会发放，人工 / 自动确认都会落下失实的「家长确认收货」审计行。退款事件在已完结单上照落「发起退款」「退款到账」行，canRefund 也允许已完成单发起售后退款（「已完结不再追加流转行」只针对核验启用事件）。部分退款在途不冻结：剩余枚仍要寄送 / 发放 / 核验，主流程照常推进。\n【时间筛选】\n按创建时间，默认「近 30 天」、不设「全部时间」（与操作日志同口径的有界查询保护；默认窗口不亮筛选胶囊，更早记录走自定义区间）。\n自定义区间（四列表与操作日志共用）：切入时预填切换前生效窗口的起止，切换瞬间列表不变，改端点后列表才变。日期控件为 antd 风自定义日历（assets/dtp.js）：点击控件即弹层，年月双级翻页，今日描边，选中日主色随 --color-primary；面板底部「清除 / 今天」，清除即清空该端日期（两端都清空＝不限时间，是查更早记录与超窗提醒条跳转的唯一出路）。起止自洽：选中开始后结束端置灰早于开始的日期，选中结束后开始端置灰晚于结束的日期（「今天」按钮同守边界），不自动交换；清除该端即解除边界。未来日期不禁选（结束端选到月末等于查至今）。原生 date 输入就地升级，input.value 仍为 ISO、onchange 兼容。\n单次查询跨度第一阶段不设上限：默认有界已防住无意全量，按学期 / 学年查证对账是审计正当场景；真实产品预留服务端护栏参数（如单次最长 1 年、超长跨度与大结果集导出转异步任务），届时前端选择即校验夹紧。\n【KPI 卡与在途提醒条】\n顶部状态卡片点击即按状态筛选、再点取消。卡上数字随除状态外的当前筛选条件（关键词 / 学校 / 认领 / 时间窗）联动，与点选后的列表行数永远一致。状态卡与状态下拉筛的是同一维度、互斥生效：点卡片清空下拉，改下拉取消卡片选中（卡片＝阶段聚合粗切片，下拉＝精确单态查询）。\n时间窗外仍有在途态记录（待支付 ~ 部分启用）时，筛选条下方出现琥珀提醒条；点击切「不限时间」并叠加「在途 / 异常记录」筛选片，只交付提醒条数出的在途单（终态记录超窗不提醒）。在途集合天然自限：在途单持续流向终态、存量恒定在近期业务量级，按在途筛选无论时间跨度多大结果集都有界。筛选片属状态维度、只经提醒条进入：点状态卡或状态下拉即清除，筛选胶囊 × 一键回默认视图；查全量历史仍走自定义区间清空两端。提醒条计数与筛选片共用同一在途判定（LIVE_HIT）。退款流水的在途判定上卷到所属退款单（退款单已终局的异常流水是历史留痕，不再是待办）。\n提醒条与筛选胶囊同为回显 / 通知，都独立于筛选条成行，筛选条收敛为固定宽度控件 + 行尾导出按钮，按钮位置稳定。四列表同口径。\n【导出当前结果】\n五列表共用：点击弹确认框，展示导出台账、时间范围（未选时显示默认「近 30 天」）、筛选条件、条数与文件格式；导出范围＝当前筛选全部结果（含未翻页部分），与列表行数同源。确认后前端生成 CSV（UTF-8 带 BOM，Excel 直接打开不乱码，金额以元为单位、时间与页面展示一致）触发浏览器下载，文件名＝台账名 + 导出时刻；空结果不弹窗、就地 toast 提示无可导出记录。每次导出写入操作日志「导出数据」（含条数、筛选条件与文件名）。导出文件含学生 / 家长个人信息与对账凭证，妥善保管等合规提示属线下管理规范、不放弹窗；大结果集与超长跨度导出转异步任务属服务端护栏，原型不模拟。\n【种子数据】\n在途单按距今天数动态生成（始终在默认窗内），终态历史单保持 2026-06 静态日期（超窗合理），另补窗内已完成与超时取消单各一，让终态卡非空。\n3 枚逐枚核验启用单 SS2026071652201473：校徽明细三枚各有独立的扫码核验时间，办理进度按枚落「部分启用 N/3」，最后一枚落「已完成」。\n蒋一帆单 SS2026071952318064（自动确认完结）：到校日期恰为 7 天前、自动确认落在今日，未核验也未确认的单被动完结转已完成；该单校徽未核验，枚状态为「待核验」（琥珀 tag，与已启用 / 已退款 / 随主单推进并列：主单已完结但该枚从未核验启用，标「随主单推进」会被读作已完成），核验后转已启用、不回写已完结主单流转，退款判定按未启用枚口径（可退、不需高权限）。\n杜俊熙单为人工确认完结示例：确认收货当刻整单转已完成，「已完成」行附注只写「本次办理完成」；3 分钟后的扫码核验只做枚级启用（核验时间落校徽明细、不落主单流转行）。\n周雨萱 / 罗一鸣 / 林晓乐三条种子不落确认收货行：周雨萱单三枚核验均在到校 7 天窗内、由末枚核验完结（确认收货字段「无需确认」）；罗一鸣单到校日期在 7 天窗内（物流暴雨滞留延长在途），维持部分启用并预告自动确认；林晓乐单单枚核验当日完结。沈亦航单为单独物流单补寄（LG2026080511230084）、到校在 7 天窗口内，确认收货字段预告与到校时间自洽。\n其他演示入口见上方按钮：发起退款（已到校未启用单）、取消办理（¥0 待确认单 · 何雨珊）、零元退款（仅勾第 1 枚提交）、部分退款案例（部分启用）、核实失败停留单、退款无法原路退回（转线下）。',a:[['3 枚逐枚核验启用单（1/3 → 2/3 → 已完成）',"openOrder('SS2026071652201473')"],['到校 7 天自动确认收货单（未核验 · 已完成）',"openOrder('SS2026071952318064')"],['切换高权限视角（已启用枚退款例外）','toggleSuper()'],['发起退款（已到校未启用单）',"openRefundModal('SS2026061520871345')"],['取消办理（¥0 待确认单 · 何雨珊）',"openCancelModal('SS2026070377284951')"],['免费单家长自主取消（已取消 · 袁思齐）',"openOrder('SS2026062470315826')"],['零元退款：仅退免费枚（勾第 1 枚提交）',"openRefundModal('SS2026072265913047')"],['部分退款案例（部分启用）',"openOrder('SS2026061008834712')"],['核实失败停留单',"openOrder('SS2026070163309125')"],['退款无法原路退回（转线下）',"openOrder('SS2026061428810369')"]]},
+ orderdetail:{t:'办理记录详情',d:'独立详情视图（非抽屉）：左侧主信息与校徽明细，右侧办理进度、物流跟踪与关联退款单（有退款时才展示，聚合类型/状态/金额/发起时间）。单号唯一出处口径：支付单号在支付卡（可点击开抽屉）、物流单号在物流跟踪卡（带复制，寄出前见生产与物流卡）、退款单概览在右栏卡且校徽明细行可精确到枚。支持 hash 深链，可直接收藏或把地址发给同事（admin-trade.html#order/单号）；面包屑「办理记录」返回列表且筛选状态保留；浏览器前进/后退可在列表与详情间切换。支付单/退款单/退款流水仍以抽屉展开，不丢当前上下文。基本信息字段口径：学生姓名/班级、是否需证件照（校级配置）、校徽矢量文件均为下单时快照（学生快照来源为名册带出或审核中家长自填）；校徽编号（19 位纯数字）在支付成功 / 免费单提交成功时生成并写入明细行，待支付与未支付即取消的单显示「—」；EPC 由业务系统在提交工厂生产前生成写入（16 位十六进制写码值），提交生产前显示「—」；支付截止时间 = 创建时间 + 30 分钟，超时自动取消。学生证件照行提供「查看」入口、校徽矢量文件行提供「下载」入口（编号在弹层内展示，不再占用详情行）：证件照涉未成年人敏感信息，弹层叠加「当前账号 + 时间」查看水印、仅预览不提供下载，查看即写入审计日志；矢量文件为 .ai 源文件（AI 格式浏览器无法渲染，真实产品如需在线预览应由服务端在上传时转出预览图），弹层展示文件信息、可下载源文件供生产核对（下载同样留痕）——「查看证件照 / 下载矢量文件」两类日志随第一阶段口径暂不在操作日志列表展示，写入逻辑已生效。已启用枚默认不可退（质量问题走补办换新），高权限视角下可例外发起并级联停用作废。待确认 / 待生产的 ¥0 免费单标题右操作区为「取消办理」而非「发起退款」——无款可退，确认后即转已取消（待支付单超时自动取消、不提供代取消），口径详见办理明细页说明。生产与物流口径：提交生产时间是家长自主取消与退款的截止锚点（提交生产前家长可自助取消全额退回，之后仅能走运管退款通道）；物流单为批次级运单（批次寄校），同批次各办理主单共享同一物流单号。已寄出后右侧展示「物流跟踪」卡：承运商轨迹 append-only 事件流倒序展示（揽收/在途/派件/签收/异常），签收轨迹驱动自动到校并级联整批主单，异常轨迹触发运管告警（罗一鸣单可见暴雨延误异常轨迹案例）。',a:[['切换高权限视角（已启用枚退款例外）','toggleSuper()']]},
+ pay:{t:'支付单',d:'支付流水台账：一单可多笔支付尝试（续付复用；改单换新为后续阶段），退款凭渠道交易号原路退回，对账以流水为粒度；顶部状态卡片点击即筛选、再点取消。学校筛选为输入联想下拉（通用 combobox，动机与口径见办理明细页说明）。支付单状态是业务生命周期（待发起/待支付/已完成/已退款/已取消，PRD 16.4 本次定版）：退款到账即转已退款、全额与部分退款同口径（部分退款到账的单业务状态即已退款，实付与退款分账见退款单与详情原路退回流水）；退款在途（退款中 / 退款异常 / 退款关闭转线下，渠道均未到账）保持已完成；零元退款（免费枚回收）无资金动作、不涉及支付单。「收单机构交易状态」独立承载微信 trade_state——发起退款渠道即转入退款、不等到账，与业务状态「到账才转已退款」节奏不同，两字段分层不双写。改单换新：同一办理单多笔支付单是正常形态（微信同一商户订单号不允许变更金额）。时间筛选按支付成功时间（未支付/已取消单按创建时间），默认「近 30 天」、不设「全部时间」，KPI 计数随筛选联动、窗外在途单以提醒条兜底（完整口径见办理明细页说明），配合导出即对账口径。「导出当前结果」交互口径同办理明细页：确认弹窗 → CSV 下载（含渠道交易号，即对账明细）→ 写入操作日志「导出数据」。',a:[['改单关闭的旧支付单',"openPay('PM2026061241108733')"],['部分退款到账 · 支付单已退款',"openPay('PM2026061050328816')"],['退款在途 · 支付单保持已完成',"openPay('PM2026062833107765')"]]},
+ refund:{t:'退款单',d:'退款业务单台账：记录谁发起、退哪些枚、退款中 → 退款成功，渠道执行明细见退款流水；顶部状态卡片点击即筛选、再点取消。退款单创建即代表退款已获准执行（无审核态，上游申请语义由发起路径承载）：家长取消自助、运管发起人即审核人；系统自动退回（差错单自动退回）为后续阶段、不等审核。「退款异常」为内部状态（家长端仍显示退款中），由最新一笔流水驱动，标记微信侧退款异常待人工处理；人工判定无法原路退回才置「退款关闭」转线下。运管发起入口在办理记录（按枚勾选，自动判定部分/全额；已启用枚仅高权限视角可例外发起，退款成功级联停用作废入黑名单）；异常单详情底部可「插新流水重试」或「置退款关闭」。真实产品状态由渠道回调驱动，演示用上方「模拟渠道退款回调」完成级联（流水成功 → 退款单成功 → 行已退款 → 全额且主单处于校徽发出前四态（待确认/待生产/生产中/已寄出）则转已取消，其余状态仅枚级变化）；「退款关闭」不改办理记录状态——转线下的单仍停在原状态、可再次发起退款，到账时才关单；整单退完且退款在途（含转线下长期在途）期间主单流转冻结：已寄出单的物流签收只落物流单台账、不推进主单状态，已到校/部分启用单的满 7 天自动确认定时器挂起，关单/完结统一由末笔退款到账驱动（完整口径见办理明细页说明）。时间筛选按发起时间，默认「近 30 天」、不设「全部时间」，KPI 计数随筛选联动；退款中 / 退款异常在窗外仍有存量时筛选条下出现提醒条、点击查看全部在途 / 异常退款单（切不限时间并叠加「在途 / 异常记录」筛选片，完整口径见办理明细页说明，可用上方按钮演示提醒条）。「导出当前结果」交互口径同办理明细页：确认弹窗 → CSV 下载（退款台账，含退款说明与操作人）→ 写入操作日志「导出数据」。',a:[['演示：退款异常单推到窗外（看提醒条）',"(function(){const r=REFUNDS.find(x=>x.st==='退款异常');if(r){r.initAt=agoMD(40,'15:30');renderRefunds()}})()"],['模拟渠道退款回调（退款中 → 成功级联）','demoRefundCallback()'],['退款异常单（待人工处理）',"openRefund('RO2026070218876209')"],['退款关闭转线下案例',"openRefund('RO2026061533018472')"]]},
+ carrier:{t:'承运商管理',d:'物流承运商字典（对应 carrier 字典表）：编码用于承运商下单接口与轨迹订阅对接。启用/停用即时生效——停用后新建物流单的承运商选项不再出现，历史物流单与在途轨迹订阅不受影响；批次寄校形态常用大件承运商（顺丰/德邦/京东）。页面上的新增承运商入口已隐藏，可从上方预览。',a:[['预览 · 新增承运商（入口已隐藏）','openCarrierAdd()']]},
+ log:{t:'操作日志',d:'审计留痕查询入口：每次操作一行，含操作人、来源 IP；操作对象可点击跳转（单号→对应单据，承运商→承运商管理）。第一阶段仅展示「发起退款」「取消办理」「承运商启停」「导出数据」四类日志（页面可实际发生的操作）；其余类型（退款重试/置退款关闭/渠道回调/自动退回/超时关单/新增承运商）属后续阶段，种子数据与实时写入逻辑保留、仅隐藏展示。本页为只读追加流水、不可篡改；在办理明细页发起退款或取消办理、在承运商页启停承运商、在各列表页导出当前结果都会实时写入（可先操作再回来看新日志）；「导出数据」日志记录导出台账、条数、筛选条件与文件名（数据外发留痕），操作对象为台账名、点击不跳转。本页「导出当前结果」交互口径同办理明细页（确认弹窗 → CSV 下载 → 再写一条导出日志）。时间筛选按操作时间，默认「近 30 天」且不设「全部时间」——审计日志表无限增长，默认查询必须有界（真实产品为全表查询保护），更早记录走「自定义区间」；默认窗口不算激活筛选、不亮筛选胶囊，切到今天 / 近 7 天 / 自定义才亮，胶囊 × 清除回落默认近 30 天。演示种子的操作时间按距今天数动态生成（跟随真实日期，含关联退款单 / 流水 / 办理单流转的同名时间戳），保证默认窗口内始终有完整演示数据。操作人筛选为输入联想下拉（规范 §筛选条 可选形态）：输入姓名 / 用户名过滤候选、点选精确筛选、× 一键清除。两控件正交分工（引入联想下拉后关键词搜索已去掉操作人维度，消除「输入找人」两处并存的重叠）：搜索框=内容检索（单号 / 详情关键词，查「发生了什么」），操作人框=人员精确筛选（查「谁干的」，点选通道避免模糊匹配误伤）。该形态最初在本页试验，现已定版抽成通用组件（cb*）并推广至办理明细 / 支付单的学校筛选，操作人筛选保持此形态不变。',a:[]},
+ rtxn:{t:'退款流水单',d:'每次向渠道发起退款的执行记录，一次发起一行：失败重试插新流水、渠道凭证与回调原文不被覆盖；顶部状态卡片点击即筛选、再点取消。流水号 RT+日期+8 位随机（对渠道即 out_refund_no），按流水号幂等。状态枚举对齐微信退款状态（PROCESSING/SUCCESS/ABNORMAL/CLOSED）+ 本地「待发起」。对账任务按本表粒度核对渠道账单；时间筛选按流水创建时间，默认「近 30 天」、不设「全部时间」，KPI 计数随筛选联动、窗外在途 / 异常流水以提醒条兜底（完整口径见办理明细页说明）。「导出当前结果」交互口径同办理明细页：确认弹窗 → CSV 下载（流水对账单，含微信退款单号与失败原因）→ 写入操作日志「导出数据」。',a:[['异常流水（卡作废冻结）',"openRtxn('RT2026070388109427')"],['受理失败即关闭的流水',"openRtxn('RT2026070271120903')"]]}
+};
+function renderDemo(){
+  const k=curPage,i=demoInfo[k];
+  /* 排版、折叠、搜索与悬浮面板见 assets/demo-panel.js（四端共用）；本页演示操作排在正文前，通用入口排在最后 */
+  demoPanelRender({key:k,t:i.t,d:i.d+'\n【说明面板】\n拖动标题可移动面板；「—」收起为小标签，再点「展开」恢复。搜索、小节展开与阅读位置在收起后保留。「独立打开」可将说明放到单独窗口，窗口内的演示操作仍作用于本页，页面切换后说明同步；关闭独立窗口或点「返回页面」恢复悬浮面板。',
+    acts:demoActsSink(i.a.map(x=>'<button onclick="closeDemo();'+x[1]+'">'+x[0]+' →</button>').join('')),
+    gen:'<button onclick="closeDemo();window.open(\'changelog.html\')">原型更新日志 →</button><button onclick="closeDemo();window.open(\'index.html\')">原型总览 →</button>'});
+}
+let tT;
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('show'),Math.max(1800,900+msg.length*70));
+}
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(document.querySelector('.modal.show')){closeModal();return}
+  if(document.querySelector('.drawer.show')){closeAll();return}
+  const dp=document.getElementById('demo-pop');
+  if(dp.classList.contains('show')){closeDemo(1);return}
+  if(window.hideMenuPopup)hideMenuPopup(true);
+});
+/* 初始渲染 + hash 路由（列表 #order / #pay …，详情深链 #order/单号，前进后退可用） */
+function route(){
+  const h=location.hash.slice(1);
+  if(h.indexOf('order/')===0){
+    const no=h.slice(6);
+    if(ORDERS.find(o=>o.no===no)){showOrderDetail(no,true);return}
+  }
+  switchPage(titles[h]?h:'order');
+}
+window.addEventListener('hashchange',route);
+renderOrders();renderPays();renderRefunds();renderRtxns();renderCarriers();renderLogs();
+if(location.hash)route();
+/* 自绘下拉面板（2026-10-30）：页面上的 <select> 仍是数据与状态的来源，只拦下原生菜单——按下时在框正下方弹出面板（宽度不小于框、空间不够时向上展开），
+   选中后写回 select.value 并派发 change，原有 onchange 逻辑不用改；支持分组（optgroup）与禁用项；点面板外、滚动、缩放窗口或按 Esc 关闭 */
+let SEL=null;
+function selClose(){if(!SEL)return;SEL.el.classList.remove('sel-open');SEL.pop.remove();SEL=null}
+function selOpen(el){
+  selClose();
+  const r=el.getBoundingClientRect(),pop=document.createElement('div');pop.className='sel-pop';
+  const opt=o=>{const d=document.createElement('div');d.className='sel-opt'+(o.value===el.value?' on':'')+(o.disabled?' dis':'');d.textContent=o.textContent;
+    if(!o.disabled)d.onmousedown=e=>{e.preventDefault();const ch=el.value!==o.value;el.value=o.value;selClose();if(ch)el.dispatchEvent(new Event('change',{bubbles:true}))};
+    pop.appendChild(d)};
+  [...el.children].forEach(c=>{if(c.tagName==='OPTGROUP'){const g=document.createElement('div');g.className='sel-grp';g.textContent=c.label;pop.appendChild(g);[...c.children].forEach(opt)}else opt(c)});
+  pop.style.minWidth=r.width+'px';pop.style.left=r.left+'px';document.body.appendChild(pop);
+  const h=pop.offsetHeight,below=innerHeight-r.bottom-8;
+  pop.style.top=(below<h&&r.top>below?Math.max(8,r.top-4-h):r.bottom+4)+'px';
+  if(r.left+pop.offsetWidth>innerWidth-8)pop.style.left=Math.max(8,innerWidth-8-pop.offsetWidth)+'px';
+  const on=pop.querySelector('.on');if(on)pop.scrollTop=on.offsetTop-pop.clientHeight/2+16;
+  el.classList.add('sel-open');SEL={el,pop};
+}
+document.addEventListener('mousedown',e=>{
+  const el=e.target.closest&&e.target.closest('select');
+  if(el&&!el.disabled&&!el.multiple){e.preventDefault();el.focus();if(SEL&&SEL.el===el)selClose();else selOpen(el);return}
+  if(SEL&&!SEL.pop.contains(e.target))selClose();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&SEL){e.stopPropagation();selClose()}},true);
+addEventListener('resize',selClose);
+document.addEventListener('scroll',e=>{if(SEL&&!SEL.pop.contains(e.target))selClose()},true);
+/* 关键词搜索框按占位文字加宽（2026-10-30）：占位文字列的是可搜索字段，截断后用户不知道还能搜什么；
+   按占位文字实测宽度 + 左右内边距与描边把 min-width 撑到刚好放下，只加宽不缩窄，上限 360px（超出时应精简占位文字，见后台原型设计规范「筛选条」） */
+function fitSearch(root){
+  const cv=fitSearch.cv||(fitSearch.cv=document.createElement('canvas').getContext('2d'));
+  (root||document).querySelectorAll('input.search[placeholder]').forEach(el=>{
+    const c=getComputedStyle(el);cv.font=c.fontWeight+' '+c.fontSize+' '+c.fontFamily;
+    const need=Math.ceil(cv.measureText(el.placeholder).width+parseFloat(c.paddingLeft)+parseFloat(c.paddingRight)+parseFloat(c.borderLeftWidth)+parseFloat(c.borderRightWidth)+2);
+    const cur=parseFloat(c.minWidth)||0;if(need>cur)el.style.minWidth=Math.min(need,360)+'px';
+  });
+}
+fitSearch();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>fitSearch());
+</script>
+<script>
+/* ---------- 侧栏：分组折叠 + hover 浮窗预览（规范 5.3；含跨页链接项） ---------- */
+var menuPopEl=null,menuPopTimer=null;
+function hideMenuPopup(now){
+  if(menuPopTimer){clearTimeout(menuPopTimer);menuPopTimer=null}
+  if(now){if(menuPopEl){menuPopEl.remove();menuPopEl=null}return}
+  menuPopTimer=setTimeout(()=>{if(menuPopEl){menuPopEl.remove();menuPopEl=null}},180);
+}
+function showMenuPopup(group){
+  hideMenuPopup(true);
+  const sider=document.getElementById('sider');
+  const r=group.querySelector('.menu-title').getBoundingClientRect();
+  const items=[...group.querySelectorAll('.menu-item')];
+  menuPopEl=document.createElement('div');
+  menuPopEl.className='menu-popup';menuPopEl.setAttribute('role','menu');menuPopEl.setAttribute('aria-label',group.dataset.group);
+  menuPopEl.innerHTML='<div class="mp-t">'+group.dataset.group+'</div>'+
+    items.map((mi,i)=>{
+      if(mi.classList.contains('menu-sub-toggle'))return '<div class="mp-sub">'+mi.childNodes[0].textContent.trim()+'</div>';
+      return '<button'+(mi.classList.contains('active')?' class="active"':'')+(mi.classList.contains('menu-sub-item')?' style="padding-left:26px"':'')+' data-i="'+i+'">'+(mi.dataset.page?titles[mi.dataset.page][1]:mi.childNodes[0].textContent.trim())+'</button>';
+    }).join('');
+  document.body.appendChild(menuPopEl);
+  menuPopEl.style.left=(sider.getBoundingClientRect().width+8)+'px';
+  let top=r.top;
+  if(top+menuPopEl.offsetHeight>window.innerHeight-8)top=window.innerHeight-8-menuPopEl.offsetHeight;
+  menuPopEl.style.top=Math.max(8,top)+'px';
+  menuPopEl.addEventListener('mouseenter',()=>{if(menuPopTimer)clearTimeout(menuPopTimer)});
+  menuPopEl.addEventListener('mouseleave',()=>hideMenuPopup());
+  menuPopEl.querySelectorAll('button[data-i]').forEach(b=>b.addEventListener('click',()=>{items[+b.dataset.i].click();hideMenuPopup(true)}));
+}
+(function(){
+  const KEY='zxh_admin_sider_collapsed';
+  const groups=[...document.querySelectorAll('.menu-group')];
+  let saved=null;try{saved=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+  if(Array.isArray(saved)){groups.forEach(g=>g.classList.toggle('collapsed',saved.includes(g.dataset.group)))}
+  else{groups.forEach(g=>{if(!g.querySelector('.menu-item.active'))g.classList.add('collapsed')})}
+  const persist=()=>localStorage.setItem(KEY,JSON.stringify(groups.filter(g=>g.classList.contains('collapsed')).map(g=>g.dataset.group)));
+  groups.forEach(g=>{
+    const t=g.querySelector('.menu-title');
+    t.addEventListener('click',()=>{
+      if(document.getElementById('sider').classList.contains('sider-compact'))return;
+      g.classList.toggle('collapsed');persist();hideMenuPopup(true);
+    });
+    t.addEventListener('mouseenter',()=>{
+      const compact=document.getElementById('sider').classList.contains('sider-compact');
+      if(compact||g.classList.contains('collapsed'))showMenuPopup(g);else hideMenuPopup();
+    });
+    t.addEventListener('mouseleave',()=>hideMenuPopup());
+  });
+})();
+</script>
+<script>
+/* ---------- 侧栏：整栏收起 compact 模式，⌘B / Ctrl+B 切换（规范 5.4） ---------- */
+(function(){
+  const KEY='zxh_admin_sider_compact',sider=document.getElementById('sider'),tg=document.getElementById('sider-toggle');
+  let on=localStorage.getItem(KEY)==='1';
+  function apply(){
+    sider.classList.toggle('sider-compact',on);
+    tg.querySelector('.tg-text').textContent=on?'展开导航':'收起导航';
+    /* 展开态：< 在左 + 三横线（提示往左收起）；收起态：三横线在左 + >（提示往右展开） */
+    tg.querySelector('.tg-ic').innerHTML=on
+      ?'<line x1="4" y1="7" x2="13" y2="7"/><line x1="4" y1="12" x2="13" y2="12"/><line x1="4" y1="17" x2="13" y2="17"/><polyline points="16,7 20,12 16,17"/>'
+      :'<polyline points="8,7 4,12 8,17"/><line x1="11" y1="7" x2="20" y2="7"/><line x1="11" y1="12" x2="20" y2="12"/><line x1="11" y1="17" x2="20" y2="17"/>';
+    tg.title=(on?'展开导航':'收起导航')+'（快捷键 ⌘B / Ctrl+B）';
+  }
+  apply();
+  function toggle(){on=!on;localStorage.setItem(KEY,on?'1':'0');apply();hideMenuPopup(true)}
+  tg.addEventListener('click',toggle);
+  document.addEventListener('keydown',e=>{
+    if((e.metaKey||e.ctrlKey)&&(e.key==='b'||e.key==='B')){e.preventDefault();toggle()}
+  });
+})();
+</script>
+<!-- antd 风自定义日历（移植自 OliveBird dtp.js）：自动升级页面全部原生 date 输入，值契约不变 -->
+<script src="assets/dtp.js"></script>
+<script src="assets/update-check.js"></script>
+</body>
+</html>

@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智小徽 · 运管端</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{
+  --color-primary:#2f6bff;         /* 主色（品牌蓝） */
+  --color-primary-hover:#2458d8;   /* 主色 hover 加深 */
+  --color-primary-soft:#5f8dff;    /* 主色浅化（渐变等） */
+  --color-primary-bg:#eef5ff;      /* 主色淡底（选中态背景/hover 背景） */
+  --color-primary-border:#cfe0ff;  /* 主色淡描边 */
+  --color-bg-page:#f5f7fb;         /* 页面底色（浅灰蓝） */
+  --color-surface:#fff;            /* 卡片/表面 */
+  --color-text-primary:#1f2937;    /* 主文本 */
+  --color-text-secondary:#667085;  /* 次文本 */
+  --color-text-muted:#8a93a2;      /* 弱文本/占位 */
+  --color-border:#e7ebf3;          /* 卡片描边 */
+  --color-divider:#eef1f5;         /* 分隔线 */
+  --color-row-border:#f1f3f7;      /* 表格行分隔 */
+  --color-input-border:#d9deea;    /* 输入控件描边 */
+  --color-neutral-bg:#f5f6f8;      /* 中性淡底 */
+  --color-neutral-border:#e3e7ee;  /* 中性描边 */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--color-bg-page);color:var(--color-text-primary);font-size:13px}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a{color:var(--color-primary);text-decoration:none}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+/* ============ 整体布局 ============ */
+.layout{display:flex;min-height:100vh}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+/* ============ 侧边导航栏 ============ */
+.sider{width:220px;background:var(--color-surface);flex-shrink:0;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--color-divider);transition:width .2s ease}
+.sider-logo{display:flex;align-items:center;gap:10px;padding:0 16px;height:56px;border-bottom:1px solid var(--color-divider);position:sticky;top:0;background:var(--color-surface);z-index:2;flex-shrink:0;white-space:nowrap}
+.sider-logo-ic{width:28px;height:28px;border-radius:8px;background:var(--color-primary-bg);color:var(--color-primary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sider-logo-ic svg{width:16px;height:16px}
+.sider-logo b{font-size:16px;font-weight:700;overflow:hidden}
+.sider-nav{flex:1;padding:6px 0 12px}
+.menu-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#2c3340;padding:10px 16px 6px;cursor:pointer;user-select:none;border-radius:8px}
+.menu-title-ic{width:16px;height:16px;flex-shrink:0}
+.menu-group:has(.menu-item.active) .menu-title{font-weight:600}
+.menu-chev{margin-left:auto;font-size:10px;color:var(--color-text-muted);transition:transform .15s}
+.menu-group.collapsed .menu-chev{transform:rotate(-90deg)}
+.menu-group.collapsed .menu-item{display:none}
+.menu-item{display:flex;align-items:center;width:calc(100% - 24px);margin:2px 12px;padding:9px 12px 9px 34px;border-radius:8px;color:#5f6b7a;font-size:13px;text-align:left;transition:all .12s}
+.menu-item:hover{background:#f4f7ff;color:var(--color-primary)}
+.menu-item.active{background:#eaf1ff;color:var(--color-primary);font-weight:600}
+.menu-item .badge-n{margin-left:auto;background:#f5222d;color:#fff;font-size:10.5px;border-radius:8px;padding:1px 6px;font-weight:400}
+.side-foot{padding:12px 16px;font-size:11px;color:var(--color-text-muted);line-height:1.7}
+.sider-toggle-wrap{margin-top:auto;position:sticky;bottom:0;background:#fff;border-top:1px solid var(--color-divider);padding:6px 12px;z-index:1;flex-shrink:0}
+.sider-toggle{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:0;width:100%;cursor:pointer;color:#5f6b7a;font-size:13px;border-radius:8px;transition:background .12s,color .12s;user-select:none}
+.sider-toggle:hover{background:#f5f6f8;color:var(--color-primary);transform:scale(1.05)}
+.sider-toggle .tg-ic{width:16px;height:16px;flex-shrink:0}
+.sider-toggle .tg-text{white-space:nowrap}
+/* 整栏收起（compact） */
+.sider-compact{width:56px}
+.sider-compact .sider-logo{padding:0;justify-content:center;gap:0}
+.sider-compact .sider-logo b{display:none}
+.sider-compact .menu-title{justify-content:center;padding:10px 0;margin:2px 8px}
+.sider-compact .menu-title-ic{width:18px;height:18px}
+.sider-compact .mt-txt,.sider-compact .menu-chev{display:none}
+.sider-compact .menu-item{display:none!important}
+.sider-compact .menu-group:has(.menu-item.active) .menu-title{background:var(--color-primary-bg);color:var(--color-primary)}
+.sider-compact .side-foot{display:none}
+.sider-compact .sider-toggle-wrap{padding:6px 8px}
+.sider-compact .sider-toggle{padding:9px 0;justify-content:center}
+.sider-compact .sider-toggle .tg-text{display:none}
+/* hover 浮窗预览 */
+.menu-popup{position:fixed;background:var(--color-surface);border:1px solid var(--color-divider);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px 0;z-index:120;min-width:170px;max-width:240px;animation:pop-in .15s ease}
+@keyframes pop-in{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:none}}
+.menu-popup .mp-t{font-size:14px;font-weight:600;color:#2c3340;letter-spacing:.3px;padding:6px 14px 4px 18px;border-bottom:1px solid var(--color-divider);margin-bottom:4px}
+.menu-popup button{display:flex;align-items:center;gap:10px;width:calc(100% - 8px);margin:0 4px;text-align:left;padding:7px 14px;border-radius:6px;font-size:12.5px;color:#5f6b7a;transition:all .12s}
+.menu-popup button:hover{background:#f4f7ff;color:var(--color-primary)}
+.menu-popup button.active{background:#eaf1ff;color:var(--color-primary);font-weight:600}
+/* ============ 顶栏 ============ */
+.topbar{background:var(--color-surface);border-bottom:1px solid var(--color-divider);height:56px;position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:0 24px}
+.crumb{font-size:13px;color:var(--color-text-secondary);white-space:nowrap}
+.crumb b{color:var(--color-text-primary);font-weight:600}
+.spacer{flex:1}
+.back-link{font-size:12px;color:var(--color-text-secondary);white-space:nowrap}
+.back-link:hover{color:var(--color-primary)}
+.bell{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);position:relative;transition:all .15s;flex-shrink:0}
+.bell:hover{background:var(--color-neutral-bg);color:var(--color-primary)}
+.bell svg{width:17px;height:17px}
+.bell .bell-dot{position:absolute;top:8px;right:9px;width:6px;height:6px;border-radius:50%;background:#f5222d}
+.tenant-pill{border:1px solid var(--color-primary-border);border-radius:12px;padding:4px 10px;font-size:12px;color:var(--color-primary);background:var(--color-primary-bg);white-space:nowrap}
+.avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-soft));color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+/* ============ 内容容器与页头 ============ */
+.container{padding:20px 24px 80px;max-width:1600px;width:100%}
+.page-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.page-head h1{font-size:20px;font-weight:700}
+.ph-desc{font-size:12px;color:var(--color-text-muted);margin-top:4px;line-height:1.6}
+.ph-actions{margin-left:auto;display:flex;gap:8px;flex-shrink:0;padding-top:2px}
+section.page{display:none}
+section.page.show{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* ============ 通用组件 ============ */
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:8px;padding:18px 20px}
+.card.flush{padding:0;overflow:hidden}
+.card h3{font-size:14px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.card h3 .sub{font-weight:400;font-size:12px;color:var(--color-text-muted)}
+.card-note{margin:12px 16px 14px}
+/* KPI 统计卡 */
+.kpi-bar-hd{display:flex;align-items:baseline;gap:10px;font-size:12px;color:var(--color-text-secondary);margin-bottom:8px}
+.kpi-bar-hd .hint{color:var(--color-text-muted);font-size:11.5px}
+.kpi-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}
+.kpi .kpi-label{font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:7px}
+.kpi-ic{width:18px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.kpi-ic svg{width:11px;height:11px}
+.kpi-ic.c1{background:var(--color-primary-bg);color:var(--color-primary)}
+.kpi-ic.c2{background:#f6ffed;color:#52c41a}
+.kpi-ic.c3{background:#fff7e6;color:#fa8c16}
+.kpi-ic.c4{background:#fff1f0;color:#f5222d}
+.kpi-ic.c5{background:#f9f0ff;color:#722ed1}
+.kpi-ic.c6{background:#e6fffb;color:#13c2c2}
+.kpi-ic.c0{background:var(--color-neutral-bg);color:var(--color-text-muted)}
+.kpi .kpi-value{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.3px;margin:6px 0 4px}
+.kpi .kpi-value em{font-style:normal;font-size:13px;font-weight:400;color:var(--color-text-muted);margin-left:3px}
+.kpi .kpi-sub{font-size:11px;color:var(--color-text-muted);line-height:1.6}
+.kpi .kpi-sub b{color:#52c41a;font-weight:600}
+.kpi .kpi-sub b.down{color:#f5222d}
+.kpi-click{cursor:pointer;position:relative;transition:border-color .15s,box-shadow .15s}
+.kpi-click:hover{box-shadow:0 4px 14px rgba(15,30,80,.08)}
+.kpi-click.sel{border-color:var(--color-primary);box-shadow:inset 0 0 0 2px var(--color-primary-bg)}
+.kpi-click.sel::after{content:"";position:absolute;top:8px;right:8px;width:6px;height:6px;border-radius:50%;background:var(--color-primary)}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+/* 标签 */
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;white-space:nowrap;border:1px solid transparent}
+.tag-on{background:#f6ffed;color:#52c41a;border-color:#b7eb8f}
+.tag-off{background:var(--color-neutral-bg);color:var(--color-text-secondary);border-color:var(--color-neutral-border)}
+.tag-warn{background:#fff7e6;color:#fa8c16;border-color:#ffd591}
+.tag-danger{background:#fff1f0;color:#f5222d;border-color:#ffa39e}
+.tag-blue{background:#e6f7ff;color:#1890ff;border-color:#91d5ff}
+.tag-cyan{background:#e6fffb;color:#13c2c2;border-color:#87e8de}
+.tag-purple{background:#f9f0ff;color:#722ed1;border-color:#d3adf7}
+/* 按钮 */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--color-input-border);background:#fff;border-radius:8px;font-size:12px;color:#374151;transition:all .15s}
+.btn:hover{border-color:#cfd8ea;color:var(--color-primary);background:#f7f9fc}
+.btn-primary{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+.btn-primary:hover{background:var(--color-primary-hover);border-color:var(--color-primary-hover);color:#fff}
+.btn.danger{color:#f5222d;border-color:#ffa39e;background:#fff}
+.btn.danger:hover{background:#f5222d;border-color:#f5222d;color:#fff}
+.btn.sm{padding:4px 10px;font-size:11px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+/* 行内操作：文字链接 */
+.act{font-size:12px;color:var(--color-primary);padding:2px 5px;white-space:nowrap}
+.act:hover{text-decoration:underline}
+.act.danger{color:#f5222d}
+/* 数据表格 */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;background:#fafbfe;padding:10px 12px;font-size:12px;color:var(--color-text-secondary);font-weight:500;border-bottom:1px solid var(--color-divider);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--color-row-border);vertical-align:middle}
+tbody tr:hover{background:#fafcff}
+tbody tr:last-child td{border-bottom:none}
+td.empty{padding:40px;text-align:center;color:var(--color-text-muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:#374151;font-variant-numeric:tabular-nums}
+.act .mono{color:inherit} /* 可点击编码随链接用主色，静态编码深灰，消除不可点的蓝色误导 */
+/* 筛选条 */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 16px;border-bottom:1px solid var(--color-divider)}
+.fb-grow{flex:1}
+.search{border:1px solid var(--color-input-border);border-radius:8px;height:30px;padding:0 12px;font-size:12.5px;min-width:220px;font-family:inherit;color:var(--color-text-primary);background:#fff}
+.search:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(47,107,255,.12)}
+.fb-active-tip{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--color-primary);background:var(--color-primary-bg);border:1px solid var(--color-primary-border);border-radius:12px;padding:3px 9px}
+.fb-active-tip i{font-style:normal;cursor:pointer;opacity:.7}
+.fb-active-tip i:hover{opacity:1}
+/* 分页 */
+.pager{display:flex;align-items:center;gap:10px;padding:10px 16px;border-top:1px solid var(--color-divider);font-size:12px;color:var(--color-text-secondary)}
+.pg-group{margin-left:auto;display:flex;align-items:center;gap:4px}
+.pg{width:28px;height:28px;border:1px solid var(--color-input-border);border-radius:6px;font-size:12px;color:#374151;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;transition:all .12s}
+.pg:hover{border-color:var(--color-primary);color:var(--color-primary)}
+.pg.on{background:var(--color-primary);border-color:var(--color-primary);color:#fff}
+.pg-ellip{color:var(--color-text-muted);padding:0 2px}
+.pager select{height:28px;border:1px solid var(--color-input-border);border-radius:6px;font-size:12px;color:#374151;padding:0 6px;background:#fff;font-family:inherit}
+.pg-jump input{width:40px;height:28px;border:1px solid var(--color-input-border);border-radius:6px;text-align:center;font-size:12px;font-family:inherit;margin:0 4px}
+.pg-jump input:focus{outline:none;border-color:var(--color-primary)}
+/* 图表 */
+.bars{display:flex;align-items:flex-end;gap:10px;height:180px;padding-top:8px}
+.bars .b{flex:1;background:linear-gradient(180deg,var(--color-primary-soft),var(--color-primary));border-radius:3px 3px 0 0;position:relative;min-width:10px}
+.bars .b.peak{background:linear-gradient(180deg,var(--color-primary),var(--color-primary-hover))}
+.bars .b span{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--color-text-muted);font-variant-numeric:tabular-nums}
+.bar-x{display:flex;gap:7px;margin-top:6px}
+.bar-x i{flex:1;text-align:center;font-size:10.5px;color:var(--color-text-muted);font-style:normal}
+.hbar{margin-bottom:12px}
+.hbar .t{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
+.hbar .t b{font-weight:600;font-variant-numeric:tabular-nums}
+.hbar .track{height:8px;background:#EDF0F5;border-radius:4px;overflow:hidden}
+.hbar .fill{height:100%;border-radius:4px;background:var(--color-primary)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--color-text-secondary);margin-top:10px}
+.legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+/* 抽屉 & 弹窗 */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;display:none}
+.overlay.show{display:block;animation:mask-in .18s}
+@keyframes mask-in{from{opacity:0}to{opacity:1}}
+.drawer{position:fixed;top:0;right:0;width:480px;max-width:92vw;height:100vh;background:#fff;z-index:100;box-shadow:-12px 0 30px rgba(0,0,0,.12);transform:translateX(100%);visibility:hidden;transition:transform .22s ease-out,visibility 0s linear .22s;display:flex;flex-direction:column}
+.drawer.show{transform:none;visibility:visible;transition:transform .22s ease-out}
+.drawer-hd{padding:16px 24px;border-bottom:1px solid var(--color-border);display:flex;align-items:center;flex-shrink:0}
+.drawer-hd h3{font-size:15px;font-weight:600}
+.drawer-hd .x{margin-left:auto;font-size:16px;color:var(--color-text-muted);padding:2px 8px;border-radius:6px;transition:all .12s}
+.drawer-hd .x:hover{background:var(--color-neutral-bg);color:var(--color-text-primary)}
+.drawer-bd{flex:1;overflow-y:auto;padding:20px 24px}
+.drawer-foot{padding:12px 24px;border-top:1px solid var(--color-border);display:flex;justify-content:flex-end;gap:10px;flex-shrink:0}
+.modal{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:10px;width:480px;max-width:92vw;max-height:84vh;overflow-y:auto;box-shadow:0 20px 60px rgba(14,33,64,.3);animation:pop .22s ease}
+.modal-box.narrow{width:400px}
+.modal-box.wide{width:760px;display:flex;flex-direction:column;overflow:hidden}
+.modal-box.wide .modal-bd{flex:1;overflow-y:auto}
+.modal-box.wide .modal-ft{border-top:1px solid var(--color-divider);padding:12px 24px;align-items:center}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}to{opacity:1;transform:none}}
+.modal-hd{padding:18px 24px 0;font-size:15px;font-weight:600}
+.modal-bd{padding:14px 24px 20px;font-size:12.5px;color:var(--color-text-secondary);line-height:1.7}
+.modal-ft{padding:0 24px 20px;display:flex;justify-content:flex-end;gap:10px}
+.ft-sum{margin-right:auto;font-size:12px;color:var(--color-text-muted)}
+.kv{display:flex;font-size:13px;padding:7px 0;border-bottom:1px dashed var(--color-row-border)}
+.kv .k{width:110px;color:var(--color-text-muted);flex-shrink:0}
+.kv .v{color:var(--color-text-primary)}
+/* 时间轴 */
+.tl{position:relative;padding-left:20px;margin-top:6px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:#E6EAF1}
+.tl-item{position:relative;padding-bottom:16px}
+.tl-item::before{content:"";position:absolute;left:-19px;top:4px;width:8px;height:9px;clip-path:polygon(50% 0,100% 15%,100% 60%,50% 100%,0 60%,0 15%);background:var(--color-primary)}
+.tl-item.red::before{background:#f5222d}
+.tl-item.amber::before{background:#fa8c16}
+.tl-item.gray::before{background:#C3CAD5}
+.tl-item .t1{font-size:13px;font-weight:600}
+.tl-item .t2{font-size:12px;color:var(--color-text-muted);margin-top:2px;line-height:1.6}
+/* 步骤条 */
+.steps{display:flex;margin:4px 0 18px}
+.step{flex:1;text-align:center;position:relative;font-size:12px;color:var(--color-text-muted)}
+.step::before{content:"";position:absolute;top:11px;left:-50%;width:100%;height:2px;background:#E6EAF1}
+.step:first-child::before{display:none}
+.step .n{width:24px;height:24px;border-radius:50%;background:#E6EAF1;color:var(--color-text-muted);display:inline-flex;align-items:center;justify-content:center;font-size:12px;position:relative;z-index:1;margin-bottom:5px}
+.step.on .n{background:var(--color-primary);color:#fff}
+.step.done .n{background:#52c41a;color:#fff}
+.step.on{color:var(--color-primary);font-weight:600}
+/* 表单 */
+.form-row{margin-bottom:16px}
+.form-row label{display:block;font-size:12.5px;color:var(--color-text-secondary);margin-bottom:6px}
+.form-row input[type=text],.form-row select{width:100%;border:1px solid var(--color-input-border);border-radius:8px;height:32px;padding:0 12px;font-size:13px;font-family:inherit;background:#fff;color:var(--color-text-primary)}
+.form-row input[type=text]:focus,.form-row select:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(47,107,255,.12)}
+.upload-zone{border:1.5px dashed #C6CEDB;border-radius:10px;padding:26px;text-align:center;color:var(--color-text-muted);font-size:13px;cursor:pointer;transition:.15s}
+.upload-zone:hover{border-color:var(--color-primary);color:var(--color-primary);background:#F8FAFD}
+.note{background:var(--color-bg-page);border-left:3px solid var(--color-primary);border-radius:0 8px 8px 0;padding:10px 14px;font-size:12px;color:var(--color-text-secondary);line-height:1.7;margin:12px 0}
+.note.warn{border-left-color:#fa8c16;background:#fff7e6}
+.note.danger{border-left-color:#f5222d;background:#fff1f0}
+/* 配置项 */
+.cfg-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--color-row-border)}
+.cfg-item:last-child{border-bottom:none}
+.cfg-item .info{flex:1}
+.cfg-item .info b{font-size:13.5px;display:block;margin-bottom:3px}
+.cfg-item .info p{font-size:12px;color:var(--color-text-muted);line-height:1.6}
+.cfg-ctl{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.stepper{display:flex;align-items:center;border:1px solid var(--color-input-border);border-radius:8px;overflow:hidden}
+.stepper button{width:30px;height:30px;font-size:15px;color:var(--color-text-secondary);background:#F7F8FA;transition:all .12s}
+.stepper button:hover{color:var(--color-primary)}
+.stepper span{width:44px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
+.switch{width:40px;height:22px;border-radius:11px;background:#D4D9E2;position:relative;transition:.2s;flex-shrink:0;cursor:pointer}
+.switch::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.switch.on{background:#52c41a}
+.switch.on::after{left:20px}
+input[type=range]{accent-color:var(--color-primary);width:150px}
+.seg{display:inline-flex;border:1px solid var(--color-input-border);border-radius:8px;overflow:hidden}
+.seg button{padding:6px 14px;font-size:12px;color:var(--color-text-secondary);background:#fff;transition:all .12s}
+.seg button.on{background:var(--color-primary);color:#fff;font-weight:500}
+/* JSON */
+.json{background:#1f2937;color:#c9d4e5;border-radius:8px;padding:14px 16px;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:11.5px;line-height:1.7;overflow-x:auto;white-space:pre}
+.json .k2{color:#fbbf24}.json .s2{color:#86efac}.json .n2{color:#93c5fd}
+/* toast */
+#toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-16px);background:#333;color:#fff;padding:9px 18px;border-radius:6px;font-size:12.5px;z-index:200;opacity:0;pointer-events:none;transition:.25s;max-width:80vw}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.mt16{margin-top:16px}.mb0{margin-bottom:0}
+/* 演示说明（顶栏 chip + 按当前模块动态说明） */
+.demo-fab{position:relative;z-index:80}
+.demo-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:#fff7e6;border:1px solid #ffe58f;color:#ad6800;font-size:12px;border-radius:12px;cursor:pointer;user-select:none;transition:background .12s,border-color .12s;white-space:nowrap}
+.demo-chip:hover{background:#fff1c4;border-color:#ffd666}
+.demo-chip .x{display:inline-flex;width:14px;height:14px;border-radius:50%;align-items:center;justify-content:center;font-size:9px;color:#ad6800;opacity:.55;transition:opacity .12s,background .12s}
+.demo-chip .x:hover{opacity:1;background:rgba(173,104,0,.15)}
+/* 说明内容内部滚动：浮层限高视口可用高度，长文案不再顶出屏幕；滚动放内层避免裁掉外壳小箭头 */
+@media(max-width:1300px){.kpi-bar{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
+@media(max-width:760px){.sider{display:none}}
+@media(max-width:700px){.kpi-bar{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* 下拉框统一外观（2026-10-30）：去掉浏览器原生箭头，改用右侧留 10px 的自绘箭头；点击不弹原生菜单（macOS 原生菜单会把选中项对齐到框上、盖住框），改由 selOpen 在框下方弹出面板 */
+.filter-bar select,.fsel,.size-sel,.pager select{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:30px;background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%2386909c' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:12px}
+.filter-bar select.sel-open,.fsel.sel-open,.size-sel.sel-open,.pager select.sel-open{border-color:var(--color-primary);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 7.5 6 4l3.5 3.5' fill='none' stroke='%232f6bff' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sel-pop{position:fixed;z-index:1000;background:#fff;border:1px solid var(--color-divider);border-radius:10px;box-shadow:0 12px 32px rgba(15,30,80,.12);padding:4px;overflow-y:auto;max-height:280px;font-size:13px;color:var(--color-text-primary)}
+.sel-pop .sel-opt{display:flex;align-items:center;gap:8px;height:32px;padding:0 10px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.sel-pop .sel-opt:hover{background:#f5f7fa}
+.sel-pop .sel-opt.on{color:var(--color-primary);background:#eef3ff;font-weight:600}
+.sel-pop .sel-opt.dis{color:#c0c4cc;cursor:not-allowed;background:none}
+.sel-pop .sel-grp{height:28px;line-height:28px;padding:0 10px;font-size:12px;color:var(--color-text-secondary,#86909c)}
+</style>
+<script defer src="assets/admin-userbar.js"></script>
+<link rel="stylesheet" href="assets/demo-panel.css">
+<script src="assets/demo-panel.js"></script>
+</head>
+<body>
+
+<div class="layout">
+<aside class="sider" id="sider">
+  <div class="sider-logo">
+    <div class="sider-logo-ic" style="background:none"><img src="assets/logo.png" alt="智小徽" style="width:100%;height:100%;object-fit:contain"></div>
+    <b>智小徽 · 运管端</b>
+  </div>
+  <nav class="sider-nav" id="sider-nav">
+    <div class="menu-group" data-group="总览">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="mt-txt">总览</span><span class="menu-chev">▾</span></div>
+      <button class="menu-item active" data-page="dash">数据看板</button>
+    </div>
+    <div class="menu-group" data-group="校徽资产">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span class="mt-txt">校徽资产</span><span class="menu-chev">▾</span></div>
+      <button class="menu-item" data-page="batch">批量关联<span class="badge-n">1</span></button>
+      <button class="menu-item" data-page="asset">资产台账</button>
+      <button class="menu-item" data-page="recover">恢复工单<span class="badge-n">3</span></button>
+    </div>
+    <div class="menu-group" data-group="智能校徽">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-2.4-1.6L14.2 21l-2.2-1.6L9.8 21l-2.4-1.6L5 21V3z"/><path d="M9 8h6M9 12h6"/></svg><span class="mt-txt">智能校徽</span><span class="menu-chev">▾</span></div>
+      <a class='menu-item' href='/ssb/admin-trade#order'>办理记录</a>
+      <a class='menu-item' href='/ssb/admin-trade#pay'>支付单</a>
+      <a class='menu-item' href='/ssb/admin-trade#refund'>退款单<span class="badge-n">1</span></a>
+      <a class='menu-item' href='/ssb/admin-trade#rtxn'>退款流水</a>
+    </div>
+    <div class="menu-group" data-group="学校治理">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20c.6-3.4 3-5.2 5.5-5.2s4.9 1.8 5.5 5.2"/><path d="M16 5.2a3.5 3.5 0 010 5.6M17.5 14.9c1.6.7 2.7 2.2 3 5.1"/></svg><span class="mt-txt">学校治理</span><span class="menu-chev">▾</span></div>
+      <button class="menu-item" data-page="teacher">教师注册<span class="badge-n">2</span></button>
+    </div>
+    <div class="menu-group" data-group="系统设置">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M1.5 14h5M9.5 8h5M17.5 16h5"/></svg><span class="mt-txt">系统设置</span><span class="menu-chev">▾</span></div>
+      <a class='menu-item' href='/ssb/admin-trade#carrier'>承运商管理</a>
+      <a class='menu-item' href='/ssb/admin-trade#log'>操作日志</a>
+    </div>
+    <div class="menu-group" data-group="平台">
+      <div class="menu-title"><svg class="menu-title-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h16M4 12h16M4 16.5h16"/><circle cx="9" cy="7.5" r="2" fill="#fff"/><circle cx="15" cy="12" r="2" fill="#fff"/><circle cx="8" cy="16.5" r="2" fill="#fff"/></svg><span class="mt-txt">平台</span><span class="menu-chev">▾</span></div>
+      <button class="menu-item" data-page="config">阈值配置</button>
+      <button class="menu-item" data-page="device">设备与影子</button>
+    </div>
+  </nav>
+  <div class="side-foot">多租户隔离 · RBAC · 审计留痕<br>V1.1 第一阶段</div>
+  <div class="sider-toggle-wrap"><button class="sider-toggle" id="sider-toggle" aria-label="收起或展开导航" title="收起导航（快捷键 ⌘B / Ctrl+B）"><svg class="tg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,7 4,12 8,17"/><line x1="11" y1="7" x2="20" y2="7"/><line x1="11" y1="12" x2="20" y2="12"/><line x1="11" y1="17" x2="20" y2="17"/></svg><span class="tg-text">收起导航</span></button></div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <span class="crumb" id="crumb">总览 / <b>数据看板</b></span>
+    <div class="spacer"></div>
+    <div class="demo-fab" id="demo-fab">
+      <button class="demo-chip" onclick="toggleDemo()">ⓘ 演示说明 <span class="x" onclick="event.stopPropagation();closeDemo(1);document.getElementById('demo-fab').style.display='none'">✕</span></button>
+      <div class="demo-pop" id="demo-pop"></div>
+    </div>
+    <span class="tenant-pill">租户范围：全部 12 所学校 ▾</span>
+    <span class="tag tag-on">平台正常</span>
+    <a class='back-link' href='/ssb/'>返回导航首页</a>
+    <button class="bell" aria-label="通知" onclick="toast('演示原型：通知抽屉（略）')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><span class="bell-dot"></span></button>
+    <div class="avatar" style="background:#eef0f4 url('assets/avatar-walle.jpg') center/cover no-repeat"></div>
+  </div>
+
+  <div class="container">
+
+  <!-- ============ 数据看板 ============ -->
+  <section class="page show" id="page-dash">
+    <div class="page-head">
+      <div><h1>数据看板</h1><div class="ph-desc">全部租户运营总览：接入规模、通行事件、融合判定分布与待处理告警</div></div>
+    </div>
+    <div class="grid g4">
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 4l9 6.5"/><path d="M5.5 9.5V20h13V9.5"/></svg></span>接入学校</div><div class="kpi-value" style="color:var(--color-primary)">12<em>所</em></div><div class="kpi-sub">覆盖学生 21,368 人 · 本月新增 <b>+2</b></div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 10h16"/></svg></span>在用校徽（EPC）</div><div class="kpi-value" style="color:#52c41a">24,318<em>枚</em></div><div class="kpi-sub">1:N 持有 · 人均 1.14 枚 · 备用枚占比 12.1%</div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 8-6-16-3 8H2"/></svg></span>今日通行事件</div><div class="kpi-value" style="color:#13c2c2">41,206<em>条</em></div><div class="kpi-sub">较昨日 <b>+3.2%</b> · 微批对账延迟 P95 <b>78s</b></div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.5"/></svg></span>待处理告警</div><div class="kpi-value" style="color:#f5222d">6<em>条</em></div><div class="kpi-sub">强冲突 1 · 设备离线 5</div></div>
+    </div>
+
+    <div class="grid g2 mt16">
+      <div class="card">
+        <h3>今日通行事件分布 <span class="sub">按小时 · 全部校门</span></h3>
+        <div class="bars">
+          <div class="b" style="height:8%"><span>0.3k</span></div>
+          <div class="b peak" style="height:96%"><span>14.9k</span></div>
+          <div class="b" style="height:34%"><span>5.2k</span></div>
+          <div class="b" style="height:6%"><span>0.2k</span></div>
+          <div class="b" style="height:10%"><span>0.6k</span></div>
+          <div class="b" style="height:22%"><span>3.4k</span></div>
+          <div class="b peak" style="height:82%"><span>12.7k</span></div>
+          <div class="b" style="height:26%"><span>3.9k</span></div>
+        </div>
+        <div class="bar-x"><i>6时</i><i>7-8时</i><i>9时</i><i>11时</i><i>13时</i><i>15时</i><i>16-17时</i><i>18时</i></div>
+        <div class="legend"><i><span class="dot" style="background:var(--color-primary-hover)"></span>早/晚高峰</i><i><span class="dot" style="background:#5f8dff"></span>平峰</i></div>
+      </div>
+      <div class="card">
+        <h3>融合判定分布 <span class="sub">今日 · 决策表 v3.2</span></h3>
+        <div class="hbar"><div class="t"><span>正常考勤（签+脸一致）</span><b>92.4%</b></div><div class="track"><div class="fill" style="width:92.4%;background:#52c41a"></div></div></div>
+        <div class="hbar"><div class="t"><span>记考勤 + “未见脸”软标记</span><b>4.8%</b></div><div class="track"><div class="fill" style="width:4.8%;background:#fa8c16"></div></div></div>
+        <div class="hbar"><div class="t"><span>人脸补录 + 标签运维标记</span><b>1.9%</b></div><div class="track"><div class="fill" style="width:1.9%;background:#5f8dff"></div></div></div>
+        <div class="hbar"><div class="t"><span>退出学生 · RFID 单因子</span><b>0.87%</b></div><div class="track"><div class="fill" style="width:.9%;background:#8B93A3"></div></div></div>
+        <div class="hbar mb0"><div class="t"><span>强冲突告警</span><b style="color:#f5222d">0.005%（2 条）</b></div><div class="track"><div class="fill" style="width:.4%;background:#f5222d"></div></div></div>
+        <div class="note mb0" style="margin-bottom:0">缺席不定罪：软标记仅进统计层；正向矛盾（他人脸绑上此签）才实时告警。</div>
+      </div>
+    </div>
+
+    <div class="grid g3 mt16">
+      <div class="card">
+        <h3>设备在线率 <span class="sub">按学校</span></h3>
+        <div class="hbar"><div class="t"><span>市实验一小（3 门）</span><b>100%</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+        <div class="hbar"><div class="t"><span>城南外国语（4 门）</span><b>100%</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+        <div class="hbar"><div class="t"><span>滨江二小（2 门）</span><b style="color:#fa8c16">83%</b></div><div class="track"><div class="fill" style="width:83%;background:#fa8c16"></div></div></div>
+        <div class="hbar mb0"><div class="t"><span>其余 9 校</span><b>99.2%</b></div><div class="track"><div class="fill" style="width:99.2%"></div></div></div>
+      </div>
+      <div class="card">
+        <h3>降级模式（weather_degraded）</h3>
+        <div class="kv"><span class="k">今日生效学校</span><span class="v">滨江二小、江北实验（暴雨橙色预警）</span></div>
+        <div class="kv"><span class="k">融合窗</span><span class="v">±2s → <b style="color:#fa8c16">±5s</b>（影子已收敛）</span></div>
+        <div class="kv"><span class="k">低质量帧</span><span class="v">不进比对（宁判无脸，不低质误配）</span></div>
+        <div class="kv" style="border:none"><span class="k">缺勤推送</span><span class="v">必经老师端人工核对闸门</span></div>
+        <div class="note warn mb0" style="margin-bottom:0">软标记当日不计入行为模式统计；老师端已启用批量核对。</div>
+      </div>
+      <div class="card">
+        <h3>教育局聚合口径 <span class="sub">预留</span></h3>
+        <p style="font-size:12.5px;color:var(--color-text-secondary);line-height:1.8">面向教育局看板仅输出<b>脱敏聚合指标</b>：到校率、告警闭环率、设备健康度，按区/校维度，不含任何个体级数据。</p>
+        <div class="mt16" style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="tag tag-blue">到校率 98.6%</span>
+          <span class="tag tag-blue">告警闭环率 96%</span>
+          <span class="tag tag-blue">设备健康 99.1%</span>
+        </div>
+        <button class="btn sm mt16" onclick="toast('聚合看板将在教育局侧租户开通后生效')">预览聚合看板</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 批量关联 ============ -->
+  <section class="page" id="page-batch">
+    <div class="page-head">
+      <div><h1>批量关联与批次回滚</h1><div class="ph-desc">厂商回传映射（TID + 写入EPC + 学生信息）导入后批量建立关联；高权限操作，全程留痕，支持按批次整体回滚</div></div>
+      <div class="ph-actions"><button class="btn btn-primary" onclick="openImport()">＋ 导入映射文件</button></div>
+    </div>
+    <div class="card flush">
+      <div class="filter-bar">
+        <input class="search" id="batch-q" placeholder="搜索批次号 / 学校" oninput="filterBatch(this.value)">
+        <div class="fb-grow"></div>
+        <button class="btn sm" onclick="toast('演示原型：导出批次列表 CSV（略）')">导出当前结果</button>
+      </div>
+      <table id="batch-table">
+        <thead><tr><th>批次号</th><th>学校</th><th>类型</th><th>枚数</th><th>校验</th><th>状态</th><th>启用触发器</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">B2607-SY01-003</td><td>市实验一小</td><td>补办/增办</td><td>126</td>
+            <td><span class="tag tag-warn">6 条挂起</span></td><td><span class="tag tag-warn">待处理异常</span></td><td>物流签收回调</td>
+            <td><button class="act" onclick="openReport()">校验报告</button></td>
+          </tr>
+          <tr>
+            <td class="mono">B2606-CN02-001</td><td>城南外国语</td><td>首发批量到校</td><td>2,180</td>
+            <td><span class="tag tag-on">全部通过</span></td><td><span class="tag tag-on" id="b2-status">已关联·已启用</span></td><td>发货前启用（受控链路）</td>
+            <td><button class="act" onclick="openReport()">校验报告</button><button class="act danger" onclick="openRollback('B2606-CN02-001')">回滚</button></td>
+          </tr>
+          <tr>
+            <td class="mono">B2606-SY01-002</td><td>市实验一小</td><td>补办/增办</td><td>89</td>
+            <td><span class="tag tag-on">全部通过</span></td><td><span class="tag tag-blue">已关联·未启用</span></td><td>到校发放后扫码核验 / 扫码兜底</td>
+            <td><button class="act" onclick="openReport()">校验报告</button><button class="act danger" onclick="openRollback('B2606-SY01-002')">回滚</button></td>
+          </tr>
+          <tr>
+            <td class="mono">B2605-BJ03-001</td><td>滨江二小</td><td>首发批量到校</td><td>1,542</td>
+            <td><span class="tag tag-on">全部通过</span></td><td><span class="tag tag-on">已关联·已启用</span></td><td>发货前启用（受控链路）</td>
+            <td><button class="act" onclick="openReport()">校验报告</button></td>
+          </tr>
+          <tr>
+            <td class="mono">B2605-SY01-001</td><td>市实验一小</td><td>首发批量到校</td><td>2,046</td>
+            <td><span class="tag tag-on">全部通过</span></td><td><span class="tag tag-on">已关联·已启用</span></td><td>发货前启用（受控链路）</td>
+            <td><button class="act" onclick="openReport()">校验报告</button></td>
+          </tr>
+          <tr style="opacity:.55">
+            <td class="mono">B2604-CN02-000</td><td>城南外国语</td><td>试产验证</td><td>50</td>
+            <td><span class="tag tag-off">—</span></td><td><span class="tag tag-off">已整体回滚</span></td><td>—</td>
+            <td><button class="act" onclick="toast('回滚审计记录：2026-04-18 由 ops_chen 执行，原因：芯片批次不合格')">审计记录</button></td>
+          </tr>
+          <tr id="batch-empty" style="display:none"><td colspan="8" class="empty">暂无符合条件的批次</td></tr>
+        </tbody>
+      </table>
+      <div class="pager"><span>共 <b id="batch-count">6</b> 个批次</span><div class="pg-group"><button class="pg on">1</button></div></div>
+      <div class="note card-note mb0"><b>规范约束：</b>导入前必出映射校验报告，异常条目挂起、绝不静默跳过；EPC 写后 lock，access/kill 密码由服务商生成下发；关联完成后自动向家长推送开通通知（即扫码核对任务入口）。</div>
+    </div>
+  </section>
+
+  <!-- ============ 资产台账 ============ -->
+  <section class="page" id="page-asset">
+    <div class="page-head">
+      <div><h1>校徽资产台账</h1><div class="ph-desc">TID 为资产主键 · 仅存云端，不下发现场设备</div></div>
+    </div>
+    <div class="kpi-bar-hd"><span>全部校徽 <b style="font-variant-numeric:tabular-nums">24,318</b> 枚</span><span class="hint">点击卡片按状态筛选，再点取消</span></div>
+    <div class="kpi-bar">
+      <div class="card kpi kpi-click" data-f="active" tabindex="0" onclick="assetKpi('active')"><div class="kpi-label"><span class="kpi-ic c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.3 2.3 4.7-4.8"/></svg></span>在用</div><div class="kpi-value" style="color:#52c41a">23,904</div><div class="kpi-sub">含主徽与备用枚</div></div>
+      <div class="card kpi kpi-click" data-f="lost" tabindex="0" onclick="assetKpi('lost')"><div class="kpi-label"><span class="kpi-ic c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.5"/></svg></span>挂失</div><div class="kpi-value" style="color:#fa8c16">182</div><div class="kpi-sub">窗口期内可找回</div></div>
+      <div class="card kpi kpi-click" data-f="stopped" tabindex="0" onclick="assetKpi('stopped')"><div class="kpi-label"><span class="kpi-ic c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg></span>停用</div><div class="kpi-value" style="color:var(--color-primary)">96</div><div class="kpi-sub">窗口期内可申请恢复</div></div>
+      <div class="card kpi kpi-click" data-f="dead" tabindex="0" onclick="assetKpi('dead')"><div class="kpi-label"><span class="kpi-ic c0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg></span>已作废</div><div class="kpi-value" style="color:var(--color-text-muted)">136</div><div class="kpi-sub">超期物理终结 / 毕业批处理</div></div>
+      <div class="card kpi kpi-click" data-f="black" tabindex="0" onclick="assetKpi('black')"><div class="kpi-label"><span class="kpi-ic c4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-2.9 8-7 9.5-4.1-1.5-7-5.2-7-9.5V6l7-3z"/><path d="M9.5 9.5l5 5M14.5 9.5l-5 5"/></svg></span>黑名单命中</div><div class="kpi-value" style="color:#f5222d">9</div><div class="kpi-sub">近 7 日有读取命中</div></div>
+    </div>
+    <div class="card flush">
+      <div class="filter-bar">
+        <input class="search" id="asset-q" placeholder="TID / EPC / 学生姓名" oninput="assetQ=this.value.trim().toLowerCase();applyAssetFilter()">
+        <span class="fb-active-tip" id="fb-tip" style="display:none"><span id="fb-tip-txt"></span><i onclick="assetKpi(assetF)">×</i></span>
+        <div class="fb-grow"></div>
+        <button class="btn sm" onclick="toast('演示原型：导出当前筛选结果 CSV（略）')">导出当前结果</button>
+      </div>
+      <table id="asset-table">
+        <thead><tr><th>TID（芯片固化）</th><th>EPC（运行时）</th><th>学生</th><th>学校 / 班级</th><th>状态</th><th>最近读取</th><th></th></tr></thead>
+        <tbody>
+          <tr data-s="active"><td class="mono">E280 1160 6000 0209 7A31</td><td class="mono">4E7A91D0C3B25F86</td><td>林晓乐</td><td>市实验一小 · 三(2)班</td><td><span class="tag tag-on">在用·主徽</span></td><td>今日 07:42 东门入</td><td><button class="act" onclick="openAsset(0)">详情</button></td></tr>
+          <tr data-s="active"><td class="mono">E280 1160 6000 0209 88F2</td><td class="mono">52C8E19A4D07B3E1</td><td>林晓乐</td><td>市实验一小 · 三(2)班</td><td><span class="tag tag-on">在用·备用</span></td><td>6月28日 07:39 东门入</td><td><button class="act" onclick="openAsset(1)">详情</button></td></tr>
+          <tr data-s="lost black"><td class="mono">E280 1160 6000 0198 3C08</td><td class="mono">4E7A91D0C3B262E7</td><td>陈子昂</td><td>市实验一小 · 五(1)班</td><td><span class="tag tag-danger">挂失·窗口剩 58 天</span></td><td style="color:#f5222d">⚠ 挂失后黑名单命中 2 次</td><td><button class="act" onclick="openAsset(2)">详情</button></td></tr>
+          <tr data-s="active"><td class="mono">E280 1160 6000 0210 11B9</td><td class="mono">9A31C5E872D64B09</td><td>吴一诺</td><td>城南外国语 · 一(4)班</td><td><span class="tag tag-on">在用·主徽</span></td><td>今日 07:51 南门入</td><td><button class="act" onclick="openAsset(0)">详情</button></td></tr>
+          <tr data-s="active"><td class="mono">E280 1160 6000 0207 5E44</td><td class="mono">4E7A91D0C3B26188</td><td>赵梓涵</td><td>市实验一小 · 三(2)班</td><td><span class="tag tag-warn">在用·连续 4 日未读</span></td><td>6月30日 16:32 东门出</td><td><button class="act" onclick="openAsset(3)">详情</button></td></tr>
+          <tr data-s="stopped"><td class="mono">E280 1160 6000 0201 90AA</td><td class="mono">1D5B0F3A86E7C492</td><td>孙浩宇</td><td>滨江二小 · 六(3)班</td><td><span class="tag tag-off">停用·窗口剩 12 天</span></td><td>5月20日 16:40 北门出</td><td><button class="act" onclick="openAsset(4)">详情</button></td></tr>
+          <tr data-s="dead" style="opacity:.6"><td class="mono">E280 1160 6000 0187 2D17</td><td class="mono">4E7A91D0C3B25E1D</td><td>（毕业批处理）</td><td>市实验一小 · 原六(2)班</td><td><span class="tag tag-off">已作废</span></td><td>—</td><td><button class="act" onclick="openAsset(5)">详情</button></td></tr>
+          <tr id="asset-empty" style="display:none"><td colspan="7" class="empty">暂无符合条件的资产</td></tr>
+        </tbody>
+      </table>
+      <div class="pager">
+        <span>共 <b id="asset-count" style="font-variant-numeric:tabular-nums">24,318</b> 条</span>
+        <div class="pg-group">
+          <button class="pg on">1</button>
+          <button class="pg" onclick="toast('演示原型：分页加载（略）')">2</button>
+          <button class="pg" onclick="toast('演示原型：分页加载（略）')">3</button>
+          <span class="pg-ellip">…</span>
+          <button class="pg" onclick="toast('演示原型：分页加载（略）')">487</button>
+        </div>
+        <select onchange="toast('演示原型：每页条数（略）')"><option>50 条/页</option><option>100 条/页</option></select>
+        <span class="pg-jump">跳至<input onkeydown="if(event.key==='Enter')toast('演示原型：跳页（略）')" onblur="if(this.value)toast('演示原型：跳页（略）')">页</span>
+      </div>
+      <div class="note card-note mb0"><b>黑名单机制：</b>挂失/停用/作废 EPC 全部入黑名单；黑名单标签过门只记设备日志不记考勤——该日志同时用于恢复审查（实物是否仍在该家庭）与风控（同一 EPC 被多家庭尝试绑定）。</div>
+    </div>
+  </section>
+
+  <!-- ============ 恢复工单 ============ -->
+  <section class="page" id="page-recover">
+    <div class="page-head">
+      <div><h1>停用恢复工单</h1><div class="ph-desc">仅窗口期内 · 客服核实家长意图后操作 · 重审计留痕</div></div>
+    </div>
+    <div class="grid g3" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px">
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>待客服核实</div><div class="kpi-value" style="color:#fa8c16">3</div><div class="kpi-sub">超 48h 未处理将升级</div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.3 2.3 4.7-4.8"/></svg></span>本月已恢复</div><div class="kpi-value" style="color:#52c41a">11</div><div class="kpi-sub">均通过前置校验</div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10h14V9M10 13h4"/></svg></span>超期物理终结</div><div class="kpi-value" style="color:var(--color-text-muted)">27</div><div class="kpi-sub">窗口期届满自动作废</div></div>
+    </div>
+    <div class="card flush">
+      <table>
+        <thead><tr><th>工单号</th><th>学生 / EPC</th><th>停用时间</th><th>窗口期</th><th>前置校验</th><th>状态</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">RC-20260703-012</td>
+            <td>孙浩宇<br><span class="mono">1D5B0F3A86E7C492</span></td>
+            <td>2026-05-21</td>
+            <td><span class="tag tag-warn">剩 12 天</span></td>
+            <td><span class="tag tag-on">2/2 通过</span></td>
+            <td><span class="tag tag-warn" id="rc1-st">待客服核实</span></td>
+            <td><button class="btn btn-primary sm" onclick="openRecover()">处理</button></td>
+          </tr>
+          <tr>
+            <td class="mono">RC-20260702-009</td>
+            <td>周雨桐<br><span class="mono">4E7A91D0C3B26157</span></td>
+            <td>2026-06-02</td>
+            <td><span class="tag tag-blue">剩 29 天</span></td>
+            <td><span class="tag tag-danger">1/2 未过</span></td>
+            <td><span class="tag tag-danger">校验拦截</span></td>
+            <td><button class="btn sm" onclick="toast('拦截原因：停用期间该 EPC 有 3 次黑名单读取记录（异常持有），需线下核实实物')">查看拦截</button></td>
+          </tr>
+          <tr>
+            <td class="mono">RC-20260701-005</td>
+            <td>郑凯文<br><span class="mono">9A31C5E872D648A6</span></td>
+            <td>2026-06-28</td>
+            <td><span class="tag tag-blue">剩 55 天</span></td>
+            <td><span class="tag tag-on">2/2 通过</span></td>
+            <td><span class="tag tag-warn">待客服核实</span></td>
+            <td><button class="btn btn-primary sm" onclick="openRecover()">处理</button></td>
+          </tr>
+          <tr style="opacity:.6">
+            <td class="mono">RC-20260628-002</td>
+            <td>王思远<br><span class="mono">4E7A91D0C3B25EB5</span></td>
+            <td>2026-03-11</td>
+            <td><span class="tag tag-off">已超期</span></td>
+            <td>—</td>
+            <td><span class="tag tag-off">物理终结</span></td>
+            <td><button class="act" onclick="toast('超期自动作废：2026-06-11 系统执行，EPC 永久入黑名单')">审计</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note card-note mb0">软删除 + 宽限期：对家长呈现终态（停用不可逆），对系统保留 30–90 天恢复窗口；恢复必须满足<b>枚数上限校验</b>与<b>停用期间无异常读取</b>两项前置条件。</div>
+    </div>
+  </section>
+
+  <!-- ============ 教师注册（注册码 + 白名单 + 待确认） ============ -->
+  <section class="page" id="page-teacher">
+    <div class="page-head">
+      <div><h1>教师注册</h1><div class="ph-desc">动态注册码 + 手机号白名单（命中免审核）+ 未命中人工待确认</div></div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>教师注册二维码 <span class="sub">市实验一小 · 24 小时有效</span></h3>
+        <div style="display:flex;gap:18px;align-items:center;margin:8px 0 4px">
+          <div style="width:120px;height:120px;border:1px solid var(--color-border);border-radius:10px;padding:8px;flex-shrink:0"><svg viewBox="0 0 33 33" style="width:100%;height:100%"><rect width="33" height="33" fill="#fff"/><g fill="#1B2431"><rect x="2" y="2" width="7" height="7"/><rect x="24" y="2" width="7" height="7"/><rect x="2" y="24" width="7" height="7"/><path d="M11 2h2v2h-2zM15 2h2v2h-2zM19 3h2v2h-2zM12 5h2v2h-2zM16 5h3v2h-3zM20 6h2v2h-2zM2 11h2v2h-2zM5 12h2v2h-2zM8 10h2v3h-2zM11 11h3v2h-3zM16 10h2v2h-2zM19 11h2v3h-2zM23 10h2v2h-2zM27 11h2v2h-2zM3 15h2v2h-2zM7 16h2v2h-2zM11 15h2v3h-2zM15 15h3v2h-3zM20 16h2v2h-2zM24 15h2v2h-2zM28 16h2v2h-2zM2 19h2v2h-2zM6 20h3v2h-3zM12 19h2v2h-2zM16 20h2v2h-2zM21 19h2v2h-2zM26 20h2v2h-2zM29 19h2v2h-2zM11 23h2v2h-2zM14 24h2v2h-2zM18 23h3v2h-3zM24 24h2v2h-2zM28 23h2v2h-2zM12 27h2v2h-2zM16 28h2v2h-2zM20 27h2v2h-2zM24 28h3v2h-3zM29 27h2v2h-2z"/></g><g fill="#fff"><rect x="3.5" y="3.5" width="4" height="4"/><rect x="25.5" y="3.5" width="4" height="4"/><rect x="3.5" y="25.5" width="4" height="4"/></g><g fill="#1B2431"><rect x="4.5" y="4.5" width="2" height="2"/><rect x="26.5" y="4.5" width="2" height="2"/><rect x="4.5" y="26.5" width="2" height="2"/></g></svg></div>
+          <div style="flex:1">
+            <div class="kv"><span class="k">状态</span><span class="v"><span class="tag tag-on" id="qr-st">生效中</span></span></div>
+            <div class="kv"><span class="k">剩余有效期</span><span class="v" id="qr-ttl">16 小时 42 分（生成于今日 09:23）</span></div>
+            <div class="kv" style="border:none"><span class="k">生成人</span><span class="v">市实验一小 · 教务处 张主任</span></div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button class="btn btn-primary" onclick="toast('已重新生成注册码：旧码即刻作废，新码 24 小时有效（请重新发到教师群）')">重新生成</button>
+              <button class="btn" onclick="document.getElementById('qr-st').textContent='已作废';document.getElementById('qr-st').className='tag tag-off';toast('注册码已作废，扫码将提示失效')">作废</button>
+            </div>
+          </div>
+        </div>
+        <div class="note mt16 mb0" style="margin-bottom:0">教师扫码自填姓名 / 性别 / 任教班级（多选）；手机号<b>命中白名单免审核自动生效</b>，未命中进入待确认列表；同一班级多位老师任教属常态、不构成冲突，仅对认领班级数异常等情况附软提示。</div>
+      </div>
+      <div class="card">
+        <h3>手机号白名单 <span class="sub">仅一列手机号，Excel 一键导入</span></h3>
+        <div class="grid g3" style="margin:8px 0 4px">
+          <div class="kv" style="border:none;display:block"><span class="k" style="display:block">已导入</span><span class="v" style="font-size:22px;font-weight:700">45</span></div>
+          <div class="kv" style="border:none;display:block"><span class="k" style="display:block">已注册匹配</span><span class="v" style="font-size:22px;font-weight:700;color:#52c41a">38</span></div>
+          <div class="kv" style="border:none;display:block"><span class="k" style="display:block">未注册</span><span class="v" style="font-size:22px;font-weight:700;color:#fa8c16">7</span></div>
+        </div>
+        <div style="display:flex;gap:8px;margin:6px 0 12px">
+          <button class="btn btn-primary" onclick="toast('演示：上传 Excel（单列手机号），去重与格式校验后并入白名单')">＋ 导入白名单</button>
+          <button class="btn" onclick="toast('演示：下载白名单模板（一列手机号，可附姓名备注）')">下载模板</button>
+        </div>
+        <table>
+          <thead><tr><th>手机号</th><th>备注</th><th>状态</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">138****2233</td><td>王老师（三年级组）</td><td><span class="tag tag-on">已注册</span></td></tr>
+            <tr><td class="mono">136****8874</td><td>刘老师（语文组）</td><td><span class="tag tag-on">已注册</span></td></tr>
+            <tr><td class="mono">135****4409</td><td>新入职待注册</td><td><span class="tag tag-warn">未注册</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card mt16">
+      <h3>待确认列表 <span class="sub">未命中白名单的注册申请 · 人工处理</span></h3>
+      <table>
+        <thead><tr><th>申请时间</th><th>姓名</th><th>手机号</th><th>性别</th><th>自填任教班级</th><th>校验提示</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>今日 10:12</td><td>陈静怡</td><td class="mono">139****5521</td><td>女</td><td>三(1)、三(3)</td>
+            <td><span class="tag tag-warn">未命中白名单</span></td>
+            <td id="ta-1"><button class="act" onclick="regPass('ta-1','陈静怡')">通过</button><button class="act danger" onclick="regDeny('ta-1','陈静怡')">拒绝</button></td>
+          </tr>
+          <tr>
+            <td>今日 09:47</td><td>李强</td><td class="mono">137****0032</td><td>男</td><td>三(1)～五(2) 共 6 班</td>
+            <td><span class="tag tag-warn">未命中白名单</span> <span class="tag tag-danger">认领 6 班 · 建议核实</span></td>
+            <td id="ta-2"><button class="act" onclick="regPass('ta-2','李强')">通过</button><button class="act danger" onclick="regDeny('ta-2','李强')">拒绝</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note mt16 mb0" style="margin-bottom:0"><b>守门规则：</b>白名单命中者免审核即时生效；本列表仅处理未命中白名单的申请（同班级多师任教属常态，不构成冲突；认领班级数异常等仅作软提示辅助判断）。如误通过，可随时停用该教师账号；全部操作留审计。</div>
+    </div>
+  </section>
+
+  <!-- ============ 阈值配置 ============ -->
+  <section class="page" id="page-config">
+    <div class="page-head">
+      <div><h1>阈值配置</h1><div class="ph-desc">枚数上限、恢复窗口期、融合窗、请假与播报策略等校级默认值 · 变更经设备影子下发并留审计</div></div>
+      <div class="ph-actions"><button class="btn btn-primary" onclick="toast('配置已保存并生成变更审计记录 · 影子 desired 已更新')">保存全部配置</button></div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>持有与生命周期</h3>
+        <div class="cfg-item">
+          <div class="info"><b>自助办理枚数上限</b><p>1:N 持有模型；超出后转客服审核。上限价值：硬化异常信号、控制实体隐私面、保证台账有界。</p></div>
+          <div class="cfg-ctl"><div class="stepper"><button onclick="stepVal('cap1',-1,2,5)">−</button><span id="cap1">3</span><button onclick="stepVal('cap1',1,2,5)">＋</button></div><span style="font-size:12px;color:var(--color-text-muted)">枚</span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>审核后枚数硬上限</b><p>客服审核通过后允许的最大在用枚数。</p></div>
+          <div class="cfg-ctl"><div class="stepper"><button onclick="stepVal('cap2',-1,4,8)">−</button><span id="cap2">6</span><button onclick="stepVal('cap2',1,4,8)">＋</button></div><span style="font-size:12px;color:var(--color-text-muted)">枚</span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>挂失/停用恢复窗口期</b><p>窗口内可找回/可由运管恢复，超期自动转永久作废（物理终结）。</p></div>
+          <div class="cfg-ctl"><input type="range" min="30" max="90" value="60" oninput="document.getElementById('win-v').textContent=this.value"><b id="win-v" style="font-variant-numeric:tabular-nums">60</b><span style="font-size:12px;color:var(--color-text-muted)">天（30–90）</span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>补办定价 / 首枚免费</b><p>首枚免费按学生计而非家长账号计（双家长防重领）；定制商品不支持无理由退货。</p></div>
+          <div class="cfg-ctl"><span class="tag tag-blue">补办 ¥15</span><span class="tag tag-on">首枚免费·按学生</span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>办理需上传学生证件照</b><p>关闭后家长端办理表单不再采集证件照，校徽采用无照片版式。</p></div>
+          <div class="cfg-ctl"><div class="switch on" id="cfg-photo" onclick="togglePhotoCfg(this)"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>融合判定与降级</h3>
+        <div class="cfg-item">
+          <div class="info"><b>常规融合时间窗</b><p>RFID 与人脸两路事件按事件时间在窗内配对。</p></div>
+          <div class="cfg-ctl"><span class="seg"><button class="on">±2s</button><button onclick="toast('时间窗调整将下发决策表版本 v3.3（经设备影子 desired）')">±3s</button></span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>降级模式融合窗（weather_degraded）</b><p>天气 API 触发，经设备影子下发；低质量帧不进比对。</p></div>
+          <div class="cfg-ctl"><span class="seg"><button onclick="toast('已选择 ±4s')">±4s</button><button class="on">±5s</button></span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>降级模式自动触发</b><p>对接气象预警（暴雨/暴雪橙色及以上）自动开启，恢复后自动关闭。</p></div>
+          <div class="cfg-ctl"><div class="switch on" onclick="this.classList.toggle('on');toast(this.classList.contains('on')?'已开启自动降级':'已关闭：降级需人工逐校开启')"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>请假域（校级默认值）</h3>
+        <div class="cfg-item">
+          <div class="info"><b>审批超时提醒 / 截止升级</b><p>超时先提醒审批人；截止后策略校级可配。</p></div>
+          <div class="cfg-ctl"><span class="seg"><button class="on">升级班主任/年级组长</button><button onclick="toast('已切换为自动通过（试点校B方案）')">自动通过</button></span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>超时提醒时长</b></div>
+          <div class="cfg-ctl"><div class="stepper"><button onclick="stepVal('lv-to',-1,1,6)">−</button><span id="lv-to">2</span><button onclick="stepVal('lv-to',1,1,6)">＋</button></div><span style="font-size:12px;color:var(--color-text-muted)">小时</span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>时段粒度</b><p>请假单最小时段单位。</p></div>
+          <div class="cfg-ctl"><span class="seg"><button class="on">半日</button><button onclick="toast('节次粒度需学校课表接入后开启')">节次</button></span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>智慧放学播报</h3>
+        <div class="cfg-item">
+          <div class="info"><b>自动播报阈值口径</b><p>班级计数达阈值自动触发；仅统计配置放学时段内读取，同一学生同时段只计一次。</p></div>
+          <div class="cfg-ctl"><span class="seg"><button onclick="toast('已切换为固定人数口径')">固定人数</button><button class="on">当日应到百分比</button></span></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>阈值百分比</b></div>
+          <div class="cfg-ctl"><input type="range" min="50" max="100" value="80" oninput="document.getElementById('bc-v').textContent=this.value+'%'"><b id="bc-v">80%</b></div>
+        </div>
+        <div class="cfg-item">
+          <div class="info"><b>播报指令 TTL</b><p>过期作废不补播（断网降级可接受，锦上添花功能）。</p></div>
+          <div class="cfg-ctl"><div class="stepper"><button onclick="stepVal('ttl',-5,5,30)">−</button><span id="ttl">10</span><button onclick="stepVal('ttl',5,5,30)">＋</button></div><span style="font-size:12px;color:var(--color-text-muted)">分钟</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 设备与影子 ============ -->
+  <section class="page" id="page-device">
+    <div class="page-head">
+      <div><h1>设备与影子</h1><div class="ph-desc">终端感知层运行状态 · 全设备强制 NTP 对时，漂移超阈值告警</div></div>
+    </div>
+    <div class="grid g4">
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9a10 10 0 0114 0M8 12.5a6 6 0 018 0"/><circle cx="12" cy="17" r="1.6"/></svg></span>校门读写器</div><div class="kpi-value" style="color:var(--color-primary)">31<em>台</em></div><div class="kpi-sub"><b>30 在线</b> · 1 离线</div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5l5-3v9l-5-3"/></svg></span>人脸相机</div><div class="kpi-value" style="color:#722ed1">31<em>台</em></div><div class="kpi-sub"><b>31 在线</b> · 特征不出校</div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6.5 9H3v6h3.5L11 19V5z"/><path d="M15 9a4.5 4.5 0 010 6M18 6.5a8 8 0 010 11"/></svg></span>接送音屏</div><div class="kpi-value" style="color:#13c2c2">27<em>台</em></div><div class="kpi-sub"><b>24 在线</b> · 3 离线（纯哑设备）</div></div>
+      <div class="card kpi"><div class="kpi-label"><span class="kpi-ic c0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M6.5 7.5h.01M6.5 16.5h.01"/></svg></span>汇聚网关</div><div class="kpi-value">12<em>台</em></div><div class="kpi-sub">缓存转发 · 不持有映射数据</div></div>
+    </div>
+    <div class="card flush mt16">
+      <table>
+        <thead><tr><th>设备 ID</th><th>类型</th><th>学校 / 点位</th><th>状态</th><th>NTP 漂移</th><th>固件</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">RD-SY01-E01</td><td>UHF 读写器</td><td>市实验一小 · 东门·入向</td><td><span class="tag tag-on">在线</span></td><td class="mono">+12ms</td><td class="mono">v2.4.1</td><td><button class="act" onclick="openShadow('RD-SY01-E01')">设备影子</button></td></tr>
+          <tr><td class="mono">CAM-SY01-E01</td><td>人脸相机</td><td>市实验一小 · 东门·入向</td><td><span class="tag tag-on">在线</span></td><td class="mono">+8ms</td><td class="mono">v3.1.0</td><td><button class="act" onclick="openShadow('CAM-SY01-E01')">设备影子</button></td></tr>
+          <tr><td class="mono">RD-BJ03-N02</td><td>UHF 读写器</td><td>滨江二小 · 北门·出向</td><td><span class="tag tag-danger">离线 2h14m</span></td><td class="mono">—</td><td class="mono">v2.4.1</td><td><button class="act" onclick="openShadow('RD-BJ03-N02')">设备影子</button></td></tr>
+          <tr><td class="mono">SPK-SY01-G01</td><td>接送音屏</td><td>市实验一小 · 校门广场</td><td><span class="tag tag-on">在线</span></td><td class="mono">+31ms</td><td class="mono">v1.2.3</td><td><button class="act" onclick="openShadow('SPK-SY01-G01')">设备影子</button></td></tr>
+          <tr><td class="mono">GW-SY01-01</td><td>汇聚网关</td><td>市实验一小 · 弱电间</td><td><span class="tag tag-on">在线</span></td><td class="mono">+5ms</td><td class="mono">v1.8.0</td><td><button class="act" onclick="openShadow('GW-SY01-01')">设备影子</button></td></tr>
+        </tbody>
+      </table>
+      <div class="note card-note mb0"><b>契约要点：</b>pass_event 高频瘦消息（MQTT QoS1，先落盘再异步上行，秒级微批，event_id 幂等去重）；alert_event 低频胖消息独立 topic 即发不进批；原始事件日志留存现场 7–30 天；云端融合形态下映射表仅存云端。</div>
+    </div>
+  </section>
+
+  </div>
+</div>
+</div>
+
+<!-- ===== 遮罩 ===== -->
+<div class="overlay" id="ov" onclick="closeAll()"></div>
+
+<!-- ===== 导入映射向导 ===== -->
+<div class="modal" id="m-import" role="dialog" aria-label="导入厂商回传映射" onclick="if(event.target===this)closeAll()">
+  <div class="modal-box wide">
+    <div class="modal-hd">导入厂商回传映射 <span style="font-weight:400;font-size:12px;color:var(--color-text-muted)">高权限操作 · 全程留痕</span></div>
+    <div class="modal-bd">
+      <div class="steps">
+        <div class="step done" id="st1"><div class="n">1</div>上传映射文件</div>
+        <div class="step on" id="st2"><div class="n">2</div>校验报告</div>
+        <div class="step" id="st3"><div class="n">3</div>执行批量关联</div>
+        <div class="step" id="st4"><div class="n">4</div>推送开通通知</div>
+      </div>
+      <div id="imp-step2">
+        <div class="kv"><span class="k">批次文件</span><span class="v mono">SY01_repl_20260703.csv（126 条 · TID+EPC+学籍号三元组）</span></div>
+        <div class="kv"><span class="k">目标学校</span><span class="v">市实验一小 · 类型：补办/增办 · 启用触发器：到校发放后扫码核验</span></div>
+        <div class="grid g3 mt16" style="gap:10px">
+          <div class="card" style="padding:12px;text-align:center"><div style="font-size:22px;font-weight:700;color:#52c41a">120</div><div style="font-size:12px;color:var(--color-text-muted)">校验通过</div></div>
+          <div class="card" style="padding:12px;text-align:center;border-color:#fa8c16"><div style="font-size:22px;font-weight:700;color:#fa8c16">6</div><div style="font-size:12px;color:var(--color-text-muted)">异常挂起</div></div>
+          <div class="card" style="padding:12px;text-align:center"><div style="font-size:22px;font-weight:700;color:var(--color-text-muted)">0</div><div style="font-size:12px;color:var(--color-text-muted)">静默跳过（禁止）</div></div>
+        </div>
+        <table class="mt16">
+          <thead><tr><th>行号</th><th>异常类型</th><th>明细</th><th>处置</th></tr></thead>
+          <tbody>
+            <tr><td>14, 15</td><td><span class="tag tag-danger">TID 重复</span></td><td class="mono">E280…90AA 出现 2 次</td><td>挂起 · 反查生产批次</td></tr>
+            <tr><td>37</td><td><span class="tag tag-danger">EPC 已被占用</span></td><td class="mono">52C8E19A4D07B3E1 已关联林晓乐</td><td>挂起 · 风控记录</td></tr>
+            <tr><td>52</td><td><span class="tag tag-warn">EPC 编码格式错误</span></td><td class="mono">校代码段缺失</td><td>挂起 · 退回厂商修正</td></tr>
+            <tr><td>88, 91</td><td><span class="tag tag-warn">学籍不匹配</span></td><td>学籍号在名册中不存在（2 条）</td><td>挂起 · 学校侧确认</td></tr>
+          </tbody>
+        </table>
+        <div class="note warn">异常条目全部挂起，不阻塞其余 120 条执行；挂起条目须逐条闭环后单独补入。TID 抽检只读性已通过（防“魔术标签”）。</div>
+      </div>
+    </div>
+    <div class="modal-ft">
+      <span class="ft-sum">校验 126 条 · 通过 120 · 挂起 6 · 静默跳过 0</span>
+      <button class="btn" onclick="closeAll()">取消</button>
+      <button class="btn btn-primary" onclick="execImport()">执行关联（120 条）并推送开通通知</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 校验报告（只读） ===== -->
+<div class="modal" id="m-report" role="dialog" aria-label="映射校验报告" onclick="if(event.target===this)closeAll()">
+  <div class="modal-box">
+    <div class="modal-hd">映射校验报告 · B2607-SY01-003</div>
+    <div class="modal-bd">
+      <div class="kv"><span class="k">导入人</span><span class="v">ops_chen · 2026-07-03 10:22 · IP 10.8.2.41</span></div>
+      <div class="kv"><span class="k">结果</span><span class="v">126 条 → 通过 120 / 挂起 6 / 静默跳过 0</span></div>
+      <div class="kv"><span class="k">写码规范</span><span class="v">EPC 已 lock ✓ · access/kill 密码平台下发 ✓ · TID 只读抽检 ✓</span></div>
+      <div class="kv" style="border:none"><span class="k">审计链</span><span class="v">导入 → 校验 → 执行 → 通知，4 事件已上审计日志</span></div>
+    </div>
+    <div class="modal-ft"><button class="btn btn-primary" onclick="closeAll()">关闭</button></div>
+  </div>
+</div>
+
+<!-- ===== 回滚确认 ===== -->
+<div class="modal" id="m-rollback" role="dialog" aria-label="按批次整体回滚" onclick="if(event.target===this)closeAll()">
+  <div class="modal-box narrow">
+    <div class="modal-hd" style="color:#f5222d">按批次整体回滚</div>
+    <div class="modal-bd">
+      <p>即将回滚批次 <b class="mono" id="rb-id">—</b> 的全部关联关系：</p>
+      <div class="note danger">
+        · 该批次全部 EPC 解除学生关联并作废入黑名单；<br>
+        · 已启用的校徽立即退出考勤生效集合；<br>
+        · 若该校处于边缘形态，将推送映射增量并触发凌晨全量对账；<br>
+        · 本操作生成不可篡改审计记录，需二次输入操作原因。
+      </div>
+      <div class="form-row"><label>回滚原因（必填，写入审计）</label><input type="text" placeholder="例如：厂商写码批次错误 / 芯片不合格"></div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn" onclick="closeAll()">取消</button>
+      <button class="btn danger" onclick="toast('批次已整体回滚 · 审计记录 AU-20260704-091 已生成');closeAll()">确认回滚</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 恢复工单处理 ===== -->
+<div class="modal" id="m-recover" role="dialog" aria-label="停用恢复工单处理" onclick="if(event.target===this)closeAll()">
+  <div class="modal-box">
+    <div class="modal-hd">停用恢复 · RC-20260703-012</div>
+    <div class="modal-bd">
+      <div class="kv"><span class="k">学生 / 校徽</span><span class="v">孙浩宇 · 滨江二小 六(3)班 · <span class="mono">1D5B0F3A86E7C492</span></span></div>
+      <div class="kv"><span class="k">停用操作</span><span class="v">2026-05-21 19:03 · 家长端（妈妈账号）· 已弹二次确认</span></div>
+      <div class="kv"><span class="k">恢复申请</span><span class="v">2026-07-03 家长致电客服：误点停用，实物在家中</span></div>
+      <div class="kv"><span class="k">前置校验 ①</span><span class="v"><span class="tag tag-on">通过</span> 恢复后在用 2 枚 ≤ 上限 3 枚</span></div>
+      <div class="kv" style="border:none"><span class="k">前置校验 ②</span><span class="v"><span class="tag tag-on">通过</span> 停用期间该 EPC 无黑名单读取记录</span></div>
+      <div class="form-row mt16"><label>客服核实记录（写入审计）</label><input type="text" value="已电话核实监护人身份（尾号6688），确认实物在其家中，恢复意愿明确。"></div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn" onclick="toast('已驳回并通知家长走补办流程');closeAll()">驳回</button>
+      <button class="btn btn-primary" onclick="doRecover()">通过恢复（移出黑名单 · 重新启用）</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 资产详情抽屉 ===== -->
+<div class="drawer" id="d-asset" role="dialog" aria-label="校徽资产详情">
+  <div class="drawer-hd"><h3 id="da-title">校徽资产详情</h3><button class="x" onclick="closeAll()" aria-label="关闭">✕</button></div>
+  <div class="drawer-bd" id="da-body"></div>
+  <div class="drawer-foot"><button class="btn" onclick="closeAll()">关闭</button></div>
+</div>
+
+<!-- ===== 设备影子抽屉 ===== -->
+<div class="drawer" id="d-shadow" role="dialog" aria-label="设备影子">
+  <div class="drawer-hd"><h3 id="ds-title">设备影子</h3><button class="x" onclick="closeAll()" aria-label="关闭">✕</button></div>
+  <div class="drawer-bd" id="ds-body"></div>
+  <div class="drawer-foot"><button class="btn" onclick="closeAll()">关闭</button><button class="btn btn-primary" onclick="toast('已写入 desired，等待设备上线收敛')">下发配置（写 desired）</button></div>
+</div>
+
+<!-- ===== 拒绝注册申请（原因必填） ===== -->
+<div class="modal" id="m-regdeny" role="dialog" aria-label="拒绝注册申请" onclick="if(event.target===this)closeAll()">
+  <div class="modal-box narrow">
+    <div class="modal-hd">拒绝注册申请 · <span id="rd-nm"></span></div>
+    <div class="modal-bd">
+      <p style="font-size:12.5px;color:var(--color-text-secondary);margin-bottom:10px">拒绝原因为<b>必填</b>：将随消息通知本人（便于修正后重新提交），并写入审计记录。</p>
+      <div class="form-row"><label>拒绝原因</label><input type="text" id="rd-reason" placeholder="如：核实非本校教师 / 信息与名册不符 / 班级认领有误"></div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn" onclick="closeAll()">取消</button>
+      <button class="btn danger" onclick="regDenyDo()">确认拒绝</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ---------- 导航（面包屑格式：分组 / 当前页） ---------- */
+const titles={dash:['总览','数据看板'],batch:['校徽资产','批量关联'],asset:['校徽资产','资产台账'],recover:['校徽资产','恢复工单'],teacher:['学校治理','教师注册'],config:['平台','阈值配置'],device:['平台','设备与影子']};
+function switchPage(pg){
+  document.querySelectorAll('.menu-item').forEach(x=>x.classList.toggle('active',x.dataset.page===pg));
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
+  document.getElementById('page-'+pg).classList.add('show');
+  document.getElementById('crumb').innerHTML=titles[pg][0]+' / <b>'+titles[pg][1]+'</b>';
+  window.scrollTo(0,0);
+  curPage=pg;history.replaceState(null,'','#'+pg);closeDemo();
+  if(window.hideMenuPopup)hideMenuPopup(true); /* hash 直达时侧栏脚本块尚未加载 */
+}
+document.querySelectorAll('.menu-item[data-page]').forEach(b=>b.addEventListener('click',()=>switchPage(b.dataset.page)));
+/* ---------- 演示说明：说明与快捷操作随当前模块切换（hash 直达：admin.html#batch） ---------- */
+var curPage='dash';
+const demoInfo={
+ dash:{t:'数据看板',d:'全租户运营总览：通行事件、融合判定分布（缺席不定罪）、降级模式与教育局脱敏聚合口径。侧栏遵循后台原型设计规范：点分组名可折叠该组（折叠后 hover 弹浮窗预览），底部按钮或 ⌘B/Ctrl+B 整栏收起，偏好存 localStorage。',a:[]},
+ batch:{t:'批量关联与批次回滚',d:'厂商回传三元组导入 → 校验报告（异常挂起不静默跳过）→ 执行关联 → 推送开通通知；支持整批回滚。',a:[['打开导入向导','openImport()'],['查看校验报告','openReport()'],['演示批次回滚',"openRollback('B2606-CN02-001')"]]},
+ asset:{t:'资产台账',d:'TID 为资产主键仅存云端；EPC 运行时身份（16 位十六进制写码值，业务系统提交工厂生产前生成）；黑名单读取日志兼作恢复审查与风控依据。列表页遵循规范信息流：KPI 统计卡可点按状态筛选（再点取消），关键词搜索即时过滤，分页与导出为演示占位。',a:[['挂失+黑名单命中案例','openAsset(2)'],['连续未读运维标记案例','openAsset(3)']]},
+ recover:{t:'停用恢复工单',d:'窗口期内客服核实 + 双前置校验（枚数上限 / 无异常读取）+ 审计留痕；超期物理终结。',a:[['处理恢复工单','openRecover()']]},
+ teacher:{t:'教师注册',d:'学校动态注册码（24 小时有效，可随时作废重生成）+ 手机号白名单（命中免审核）+ 待确认列表（未命中白名单走人工，附认领班级数等软提示；误通过可随时停用账号）。',a:[['作废当前注册码',"document.getElementById('qr-st').textContent='已作废';document.getElementById('qr-st').className='tag tag-off';toast('注册码已作废')"]]},
+ config:{t:'阈值配置',d:'枚数上限、找回窗口期、融合窗、请假超时策略、播报阈值等校级默认值，变更走影子下发。「办理需上传学生证件照」开关经 localStorage 与家长端原型联动：关闭后家长端校徽办理表单隐藏证件照区块、提交不校验照片（家长端刷新生效），家长端亦可在其办理页演示说明内直接切换。',a:[]},
+ device:{t:'设备与影子',d:'reported / desired / delta 三段状态；指令写 desired 上线收敛；离线设备本地缓存补传。',a:[['离线设备影子（未收敛）',"openShadow('RD-BJ03-N02')"],['音屏影子（指令带 TTL）',"openShadow('SPK-SY01-G01')"]]}
+};
+function renderDemo(){
+  const k=curPage,i=demoInfo[k];
+  /* 排版、折叠、搜索与右侧侧栏见 assets/demo-panel.js（四端共用）；本页演示操作排在正文前，通用入口排在最后 */
+  demoPanelRender({key:k,t:i.t,d:i.d,
+    acts:i.a.map(x=>'<button onclick="closeDemo();'+x[1]+'">'+x[0]+' →</button>').join(''),
+    gen:'<button onclick="closeDemo();window.open(\'changelog.html\')">原型更新日志 →</button><button onclick="closeDemo();window.open(\'index.html\')">原型总览 →</button>'});
+}
+if(location.hash){const t=document.querySelector('.menu-item[data-page="'+location.hash.slice(1)+'"]');if(t)t.click();}
+/* ---------- 资产筛选：KPI 卡单选互斥（再点取消）+ 关键词过滤，变化即回第 1 页 ---------- */
+var assetF='',assetQ='';
+const assetFName={active:'在用',lost:'挂失',stopped:'停用',dead:'已作废',black:'黑名单命中'};
+function applyAssetFilter(){
+  let n=0;
+  document.querySelectorAll('#asset-table tbody tr').forEach(tr=>{
+    if(tr.id==='asset-empty')return;
+    const ok=(!assetF||tr.dataset.s.split(' ').includes(assetF))&&(!assetQ||tr.textContent.toLowerCase().includes(assetQ));
+    tr.style.display=ok?'':'none';if(ok)n++;
+  });
+  document.getElementById('asset-empty').style.display=n?'none':'';
+  document.querySelectorAll('.kpi-bar .kpi-click').forEach(k=>k.classList.toggle('sel',!!assetF&&k.dataset.f===assetF));
+  const tip=document.getElementById('fb-tip');
+  tip.style.display=assetF?'':'none';
+  if(assetF)document.getElementById('fb-tip-txt').textContent='状态：'+assetFName[assetF];
+  document.querySelectorAll('#page-asset .pg').forEach((p,i)=>p.classList.toggle('on',i===0));
+}
+function assetKpi(f){assetF=(assetF===f)?'':f;applyAssetFilter()}
+/* 批次列表关键词过滤 */
+function filterBatch(q){
+  q=q.trim().toLowerCase();let n=0;
+  document.querySelectorAll('#batch-table tbody tr').forEach(tr=>{
+    if(tr.id==='batch-empty')return;
+    const ok=!q||tr.textContent.toLowerCase().includes(q);
+    tr.style.display=ok?'':'none';if(ok)n++;
+  });
+  document.getElementById('batch-empty').style.display=n?'none':'';
+  document.getElementById('batch-count').textContent=n;
+}
+/* ---------- 弹窗/抽屉 ---------- */
+function ov(s){document.getElementById('ov').classList.toggle('show',s)}
+function closeAll(){
+  document.querySelectorAll('.modal,.drawer').forEach(e=>e.classList.remove('show'));
+  ov(false);
+}
+function openImport(){ov(true);document.getElementById('m-import').classList.add('show')}
+function openReport(){ov(true);document.getElementById('m-report').classList.add('show')}
+function openRollback(id){ov(true);document.getElementById('rb-id').textContent=id;document.getElementById('m-rollback').classList.add('show')}
+function openRecover(){ov(true);document.getElementById('m-recover').classList.add('show')}
+function execImport(){closeAll();toast('已执行关联 120 条 · 家长开通通知已推送（含扫码核对入口）')}
+/* ---------- 教师注册待确认 ---------- */
+function regPass(id,nm){
+  document.getElementById(id).innerHTML='<span class="tag tag-on">已通过</span>';
+  toast('已通过 '+nm+' 的注册申请：即时生效并写入审计（如误通过可随时停用该账号）');
+}
+/* 拒绝必须填写原因：通知本人 + 写入审计（与教师端移动审核一致） */
+var rdId='',rdNm='';
+function regDeny(id,nm){
+  rdId=id;rdNm=nm;
+  document.getElementById('rd-nm').textContent=nm;
+  document.getElementById('rd-reason').value='';
+  ov(true);document.getElementById('m-regdeny').classList.add('show');
+}
+function regDenyDo(){
+  const rs=document.getElementById('rd-reason').value.trim();
+  if(!rs){toast('请填写拒绝原因');return}
+  closeAll();
+  document.getElementById(rdId).innerHTML='<span class="tag tag-off">已拒绝</span><div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">'+rs+'</div>';
+  toast('已拒绝 '+rdNm+' 的注册申请：原因已通知本人并写入审计，可修正后重新提交');
+}
+function doRecover(){
+  closeAll();
+  const st=document.getElementById('rc1-st');
+  st.textContent='已恢复';st.className='tag tag-on';
+  toast('已通过恢复：EPC 移出黑名单，重新进入考勤生效集合 · 审计 AU-20260704-102');
+}
+/* ---------- 资产详情 ---------- */
+const assets=[
+ {t:'林晓乐 · 在用（主徽）',h:`
+  <div class="kv"><span class="k">TID</span><span class="v mono">E280 1160 6000 0209 7A31</span></div>
+  <div class="kv"><span class="k">EPC</span><span class="v mono">4E7A91D0C3B25F86（16 位十六进制 · 校代码段+批次段+序号段）</span></div>
+  <div class="kv"><span class="k">持有</span><span class="v">林晓乐名下第 1 枚 / 在用 2 枚（1:N，集合整体等价于学生）</span></div>
+  <div class="kv"><span class="k">写码</span><span class="v">EPC 已 lock · Impinj M750 · 湿态读距抽检通过</span></div>
+  <h3 style="margin:18px 0 8px;font-size:13.5px">生命周期</h3>
+  <div class="tl">
+   <div class="tl-item"><div class="t1">今日 07:42 · 正常考勤</div><div class="t2">东门入 · RFID+人脸一致 · 决策表 v3.2</div></div>
+   <div class="tl-item"><div class="t1">2026-05-12 · 启用（发货前）</div><div class="t2">首发批量到校 · 受控链路 · 云端生效</div></div>
+   <div class="tl-item"><div class="t1">2026-05-08 · 批量关联</div><div class="t2">批次 B2605-SY01-001 · 映射校验通过</div></div>
+   <div class="tl-item gray"><div class="t1">2026-05-02 · 厂商写码回传</div><div class="t2">TID+EPC+学籍 三元组 · 同一射频会话完成</div></div>
+  </div>`},
+ {t:'林晓乐 · 在用（备用枚）',h:`
+  <div class="kv"><span class="k">TID</span><span class="v mono">E280 1160 6000 0209 88F2</span></div>
+  <div class="kv"><span class="k">EPC</span><span class="v mono">52C8E19A4D07B3E1</span></div>
+  <div class="kv"><span class="k">来源</span><span class="v">家长主动增办（备用枚 · 正向收入 ¥15.00）</span></div>
+  <h3 style="margin:18px 0 8px;font-size:13.5px">生命周期</h3>
+  <div class="tl">
+   <div class="tl-item"><div class="t1">2026-06-28 07:39 · 最近读取</div><div class="t2">东门入 · 与主徽幂等去重合并为一条通行</div></div>
+   <div class="tl-item"><div class="t1">2026-06-21 · 扫码核验启用</div><div class="t2">统一寄送至学校 · 班主任发放 · 家长扫码核验通过</div></div>
+   <div class="tl-item"><div class="t1">2026-06-15 · 批量关联（已关联·未启用）</div><div class="t2">在途期间不生效，途中遗失即废牌</div></div>
+  </div>`},
+ {t:'陈子昂 · 挂失中',h:`
+  <div class="kv"><span class="k">EPC</span><span class="v mono">4E7A91D0C3B262E7 <span class="tag tag-danger">黑名单</span></span></div>
+  <div class="kv"><span class="k">找回窗口</span><span class="v">剩 58 天（2026-08-30 届满后永久作废）</span></div>
+  <h3 style="margin:18px 0 8px;font-size:13.5px">黑名单读取日志（风控依据）</h3>
+  <div class="tl">
+   <div class="tl-item red"><div class="t1">2026-07-02 07:55 · 黑名单命中</div><div class="t2">东门·入向 · 只记设备日志不记考勤 · 提示实物可能仍在流通</div></div>
+   <div class="tl-item red"><div class="t1">2026-07-01 07:58 · 黑名单命中</div><div class="t2">东门·入向 · 同上</div></div>
+   <div class="tl-item"><div class="t1">2026-06-30 21:12 · 家长挂失</div><div class="t2">立即解除生效 + EPC 入黑名单 · 学生另有 1 枚在用，考勤不受影响</div></div>
+  </div>
+  <div class="note warn">连续黑名单命中：疑似实物找回未报“找回”，或被他人持有。建议客服外呼核实。</div>`},
+ {t:'赵梓涵 · 连续未读（运维标记）',h:`
+  <div class="kv"><span class="k">EPC</span><span class="v mono">4E7A91D0C3B26188</span></div>
+  <div class="kv"><span class="k">运维标记</span><span class="v"><span class="tag tag-warn">连续 4 日仅人脸命中</span></span></div>
+  <div class="note warn">该生每日经“人脸补录”入校，标签疑似损坏/忘带/失谐。已进入学校端“待补发清单”，建议引导家长检查或补办。</div>
+  <h3 style="margin:18px 0 8px;font-size:13.5px">近期通行判定</h3>
+  <div class="tl">
+   <div class="tl-item amber"><div class="t1">07-04 ~ 07-01 · 人脸补录 ×4</div><div class="t2">未读到签 · 命中本人 · 记考勤 + 标签运维标记</div></div>
+   <div class="tl-item"><div class="t1">06-30 16:32 · 正常考勤</div><div class="t2">最后一次成功读取</div></div>
+  </div>`},
+ {t:'孙浩宇 · 停用（窗口期内）',h:`
+  <div class="kv"><span class="k">EPC</span><span class="v mono">1D5B0F3A86E7C492 <span class="tag tag-off">黑名单</span></span></div>
+  <div class="kv"><span class="k">停用</span><span class="v">2026-05-21 家长主动退役 · 对家长不可逆</span></div>
+  <div class="kv"><span class="k">系统窗口</span><span class="v">剩 12 天 · 关联恢复工单 RC-20260703-012</span></div>
+  <div class="note">软删除+宽限期：家长端已呈现终态；运管在窗口期内经客服核实+前置校验后可恢复。</div>`},
+ {t:'已作废（毕业批处理）',h:`
+  <div class="kv"><span class="k">EPC</span><span class="v mono">4E7A91D0C3B25E1D <span class="tag tag-off">黑名单·永久</span></span></div>
+  <div class="kv"><span class="k">作废来源</span><span class="v">2026-06-30 学校端“毕业批处理”级联作废（原六年级 342 名学生）</span></div>
+  <div class="kv"><span class="k">学生信息</span><span class="v">已按留存策略脱敏归档</span></div>`}
+];
+function openAsset(i){
+  ov(true);
+  document.getElementById('da-title').textContent=assets[i].t;
+  document.getElementById('da-body').innerHTML=assets[i].h;
+  document.getElementById('d-asset').classList.add('show');
+}
+/* ---------- 设备影子 ---------- */
+const shadows={
+ 'RD-SY01-E01':{on:1,body:`{
+  <span class="k2">"reported"</span>: { <span class="k2">"fw"</span>: <span class="s2">"v2.4.1"</span>, <span class="k2">"antennas"</span>: <span class="n2">4</span>, <span class="k2">"epc_prefix_mask"</span>: <span class="s2">"SY01·*"</span>,
+    <span class="k2">"fusion_window_s"</span>: <span class="n2">2</span>, <span class="k2">"weather_degraded"</span>: <span class="n2">false</span>,
+    <span class="k2">"queue_depth"</span>: <span class="n2">0</span>, <span class="k2">"ntp_drift_ms"</span>: <span class="n2">12</span> },
+  <span class="k2">"desired"</span>:  { <span class="k2">"fusion_window_s"</span>: <span class="n2">2</span>, <span class="k2">"decision_table"</span>: <span class="s2">"v3.2"</span> },
+  <span class="k2">"delta"</span>:    {}
+}`,note:'指令写 desired，设备上线收敛；查询读 reported，毫秒返回。Gen2 select 掩码在射频层滤除零售/物流无关标签。'},
+ 'CAM-SY01-E01':{on:1,body:`{
+  <span class="k2">"reported"</span>: { <span class="k2">"fw"</span>: <span class="s2">"v3.1.0"</span>, <span class="k2">"mode"</span>: <span class="s2">"still_frame_only"</span>,
+    <span class="k2">"templates_local"</span>: <span class="n2">1187</span>, <span class="k2">"optout_excluded"</span>: <span class="n2">31</span>,
+    <span class="k2">"low_quality_drop"</span>: <span class="n2">true</span>, <span class="k2">"raw_ttl_h"</span>: <span class="n2">24</span> },
+  <span class="k2">"desired"</span>:  { <span class="k2">"low_quality_drop"</span>: <span class="n2">true</span> },
+  <span class="k2">"delta"</span>:    {}
+}`,note:'相机端上比对，仅输出 {track_id, matched, quality, ts}；特征与原图不出校，未命中即毁；退出学生不注册、无模板。'},
+ 'RD-BJ03-N02':{on:0,body:`{
+  <span class="k2">"reported"</span>: { <span class="k2">"last_seen"</span>: <span class="s2">"2026-07-04 06:31:08"</span>,
+    <span class="k2">"queue_depth"</span>: <span class="n2">438</span>  <span style="color:#E89A8C">// 本地持久化队列堆积中</span> },
+  <span class="k2">"desired"</span>:  { <span class="k2">"fusion_window_s"</span>: <span class="n2">5</span>, <span class="k2">"weather_degraded"</span>: <span class="n2">true</span> },
+  <span class="k2">"delta"</span>:    { <span class="k2">"fusion_window_s"</span>: <span class="n2">5</span>, <span class="k2">"weather_degraded"</span>: <span class="n2">true</span> }
+}`,note:'设备离线：原始事件本地缓存（先落盘），恢复后补传，云端按 event_id 幂等去重补判。delta 非空 = 影子未收敛。'},
+ 'SPK-SY01-G01':{on:1,body:`{
+  <span class="k2">"reported"</span>: { <span class="k2">"volume"</span>: <span class="n2">70</span>, <span class="k2">"playing"</span>: <span class="n2">false</span>, <span class="k2">"student_data"</span>: <span class="s2">"none"</span> },
+  <span class="k2">"desired"</span>:  { <span class="k2">"cmd"</span>: { <span class="k2">"text"</span>: <span class="s2">"三年级2班正在放学"</span>, <span class="k2">"ttl_s"</span>: <span class="n2">600</span> } },
+  <span class="k2">"delta"</span>:    {}
+}`,note:'纯哑设备：收指令播内容，本地零学生数据；播报仅到班级聚合维度；指令带 TTL，过期作废不补播。'},
+ 'GW-SY01-01':{on:1,body:`{
+  <span class="k2">"reported"</span>: { <span class="k2">"role"</span>: <span class="s2">"cache_forward"</span>, <span class="k2">"mapping_data"</span>: <span class="s2">"none"</span>,
+    <span class="k2">"uplink"</span>: <span class="s2">"MQTT QoS1 · 微批 2s"</span>, <span class="k2">"buffer_days"</span>: <span class="n2">14</span> },
+  <span class="k2">"desired"</span>:  {},
+  <span class="k2">"delta"</span>:    {}
+}`,note:'云端融合形态：门端仅轻量汇聚网关（缓存转发，不持有映射数据）。学校切换边缘形态时才启用映射下发通道。'}
+};
+function openShadow(id){
+  ov(true);
+  const s=shadows[id];
+  document.getElementById('ds-title').textContent='设备影子 · '+id;
+  document.getElementById('ds-body').innerHTML=
+    `<div class="kv"><span class="k">在线状态</span><span class="v">${s.on?'<span class="tag tag-on">在线</span>':'<span class="tag tag-danger">离线</span>'}</span></div>
+     <h3 style="margin:16px 0 8px;font-size:13.5px">reported / desired / delta</h3>
+     <div class="json">${s.body}</div>
+     <div class="note mt16 mb0">${s.note}</div>`;
+  document.getElementById('d-shadow').classList.add('show');
+}
+/* ---------- 工具 ---------- */
+function stepVal(id,d,min,max){
+  const el=document.getElementById(id);
+  const v=Math.min(max,Math.max(min,parseInt(el.textContent)+d));
+  el.textContent=v;
+}
+/* 办理证件照配置：经 localStorage（proto-nophoto）与家长端原型联动，开=需上传（默认） */
+if(localStorage.getItem('proto-nophoto')==='on')document.getElementById('cfg-photo').classList.remove('on');
+function togglePhotoCfg(el){
+  el.classList.toggle('on');
+  const need=el.classList.contains('on');
+  localStorage.setItem('proto-nophoto',need?'off':'on');
+  toast(need?'已开启：办理需上传学生证件照':'已关闭：家长端办理不再采集证件照（家长端刷新生效）');
+}
+let tT;
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  /* 规范 1800ms 起步；长文案按字数顺延，保证读完 */
+  clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('show'),Math.max(1800,900+msg.length*70));
+}
+/* ---------- ESC 关闭：最上层优先（弹窗/抽屉 → 演示说明 → 侧栏浮窗） ---------- */
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(document.querySelector('.modal.show,.drawer.show')){closeAll();return}
+  const dp=document.getElementById('demo-pop');
+  if(dp.classList.contains('show')){closeDemo(1);return}
+  if(window.hideMenuPopup)hideMenuPopup(true);
+});
+/* 自绘下拉面板（2026-10-30）：页面上的 <select> 仍是数据与状态的来源，只拦下原生菜单——按下时在框正下方弹出面板（宽度不小于框、空间不够时向上展开），
+   选中后写回 select.value 并派发 change，原有 onchange 逻辑不用改；支持分组（optgroup）与禁用项；点面板外、滚动、缩放窗口或按 Esc 关闭 */
+let SEL=null;
+function selClose(){if(!SEL)return;SEL.el.classList.remove('sel-open');SEL.pop.remove();SEL=null}
+function selOpen(el){
+  selClose();
+  const r=el.getBoundingClientRect(),pop=document.createElement('div');pop.className='sel-pop';
+  const opt=o=>{const d=document.createElement('div');d.className='sel-opt'+(o.value===el.value?' on':'')+(o.disabled?' dis':'');d.textContent=o.textContent;
+    if(!o.disabled)d.onmousedown=e=>{e.preventDefault();const ch=el.value!==o.value;el.value=o.value;selClose();if(ch)el.dispatchEvent(new Event('change',{bubbles:true}))};
+    pop.appendChild(d)};
+  [...el.children].forEach(c=>{if(c.tagName==='OPTGROUP'){const g=document.createElement('div');g.className='sel-grp';g.textContent=c.label;pop.appendChild(g);[...c.children].forEach(opt)}else opt(c)});
+  pop.style.minWidth=r.width+'px';pop.style.left=r.left+'px';document.body.appendChild(pop);
+  const h=pop.offsetHeight,below=innerHeight-r.bottom-8;
+  pop.style.top=(below<h&&r.top>below?Math.max(8,r.top-4-h):r.bottom+4)+'px';
+  if(r.left+pop.offsetWidth>innerWidth-8)pop.style.left=Math.max(8,innerWidth-8-pop.offsetWidth)+'px';
+  const on=pop.querySelector('.on');if(on)pop.scrollTop=on.offsetTop-pop.clientHeight/2+16;
+  el.classList.add('sel-open');SEL={el,pop};
+}
+document.addEventListener('mousedown',e=>{
+  const el=e.target.closest&&e.target.closest('select');
+  if(el&&!el.disabled&&!el.multiple){e.preventDefault();el.focus();if(SEL&&SEL.el===el)selClose();else selOpen(el);return}
+  if(SEL&&!SEL.pop.contains(e.target))selClose();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&SEL){e.stopPropagation();selClose()}},true);
+addEventListener('resize',selClose);
+document.addEventListener('scroll',e=>{if(SEL&&!SEL.pop.contains(e.target))selClose()},true);
+/* 关键词搜索框按占位文字加宽（2026-10-30）：占位文字列的是可搜索字段，截断后用户不知道还能搜什么；
+   按占位文字实测宽度 + 左右内边距与描边把 min-width 撑到刚好放下，只加宽不缩窄，上限 360px（超出时应精简占位文字，见后台原型设计规范「筛选条」） */
+function fitSearch(root){
+  const cv=fitSearch.cv||(fitSearch.cv=document.createElement('canvas').getContext('2d'));
+  (root||document).querySelectorAll('input.search[placeholder]').forEach(el=>{
+    const c=getComputedStyle(el);cv.font=c.fontWeight+' '+c.fontSize+' '+c.fontFamily;
+    const need=Math.ceil(cv.measureText(el.placeholder).width+parseFloat(c.paddingLeft)+parseFloat(c.paddingRight)+parseFloat(c.borderLeftWidth)+parseFloat(c.borderRightWidth)+2);
+    const cur=parseFloat(c.minWidth)||0;if(need>cur)el.style.minWidth=Math.min(need,360)+'px';
+  });
+}
+fitSearch();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>fitSearch());
+</script>
+<script>
+/* ---------- 侧栏：分组折叠 + hover 浮窗预览（规范 5.3） ---------- */
+var menuPopEl=null,menuPopTimer=null;
+function hideMenuPopup(now){
+  if(menuPopTimer){clearTimeout(menuPopTimer);menuPopTimer=null}
+  if(now){if(menuPopEl){menuPopEl.remove();menuPopEl=null}return}
+  menuPopTimer=setTimeout(()=>{if(menuPopEl){menuPopEl.remove();menuPopEl=null}},180);
+}
+function showMenuPopup(group){
+  hideMenuPopup(true);
+  const sider=document.getElementById('sider');
+  const r=group.querySelector('.menu-title').getBoundingClientRect();
+  menuPopEl=document.createElement('div');
+  menuPopEl.className='menu-popup';menuPopEl.setAttribute('role','menu');menuPopEl.setAttribute('aria-label',group.dataset.group);
+  const items=[...group.querySelectorAll('.menu-item')];
+  menuPopEl.innerHTML='<div class="mp-t">'+group.dataset.group+'</div>'+
+    items.map((mi,i)=>'<button'+(mi.classList.contains('active')?' class="active"':'')+' data-i="'+i+'">'+(mi.dataset.page?titles[mi.dataset.page][1]:mi.childNodes[0].textContent.trim())+'</button>').join('');
+  document.body.appendChild(menuPopEl);
+  menuPopEl.style.left=(sider.getBoundingClientRect().width+8)+'px';
+  let top=r.top;
+  if(top+menuPopEl.offsetHeight>window.innerHeight-8)top=window.innerHeight-8-menuPopEl.offsetHeight; /* 超出视口下边界时上移 */
+  menuPopEl.style.top=Math.max(8,top)+'px';
+  menuPopEl.addEventListener('mouseenter',()=>{if(menuPopTimer)clearTimeout(menuPopTimer)});
+  menuPopEl.addEventListener('mouseleave',()=>hideMenuPopup());
+  menuPopEl.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{items[+b.dataset.i].click();hideMenuPopup(true)}));
+}
+(function(){
+  const KEY='zxh_admin_sider_collapsed';
+  const groups=[...document.querySelectorAll('.menu-group')];
+  let saved=null;try{saved=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+  if(Array.isArray(saved)){groups.forEach(g=>g.classList.toggle('collapsed',saved.includes(g.dataset.group)))}
+  else{groups.forEach(g=>{if(!g.querySelector('.menu-item.active'))g.classList.add('collapsed')})} /* 首次访问：收起不含 active 项的分组 */
+  const persist=()=>localStorage.setItem(KEY,JSON.stringify(groups.filter(g=>g.classList.contains('collapsed')).map(g=>g.dataset.group)));
+  groups.forEach(g=>{
+    const t=g.querySelector('.menu-title');
+    t.addEventListener('click',()=>{
+      if(document.getElementById('sider').classList.contains('sider-compact'))return;
+      g.classList.toggle('collapsed');persist();hideMenuPopup(true);
+    });
+    t.addEventListener('mouseenter',()=>{
+      const compact=document.getElementById('sider').classList.contains('sider-compact');
+      if(compact||g.classList.contains('collapsed'))showMenuPopup(g);else hideMenuPopup();
+    });
+    t.addEventListener('mouseleave',()=>hideMenuPopup());
+  });
+})();
+</script>
+<script>
+/* ---------- 侧栏：整栏收起 compact 模式，⌘B / Ctrl+B 切换（规范 5.4） ---------- */
+(function(){
+  const KEY='zxh_admin_sider_compact',sider=document.getElementById('sider'),tg=document.getElementById('sider-toggle');
+  let on=localStorage.getItem(KEY)==='1';
+  function apply(){
+    sider.classList.toggle('sider-compact',on);
+    tg.querySelector('.tg-text').textContent=on?'展开导航':'收起导航';
+    /* 展开态：< 在左 + 三横线（提示往左收起）；收起态：三横线在左 + >（提示往右展开） */
+    tg.querySelector('.tg-ic').innerHTML=on
+      ?'<line x1="4" y1="7" x2="13" y2="7"/><line x1="4" y1="12" x2="13" y2="12"/><line x1="4" y1="17" x2="13" y2="17"/><polyline points="16,7 20,12 16,17"/>'
+      :'<polyline points="8,7 4,12 8,17"/><line x1="11" y1="7" x2="20" y2="7"/><line x1="11" y1="12" x2="20" y2="12"/><line x1="11" y1="17" x2="20" y2="17"/>';
+    tg.title=(on?'展开导航':'收起导航')+'（快捷键 ⌘B / Ctrl+B）';
+  }
+  apply();
+  function toggle(){on=!on;localStorage.setItem(KEY,on?'1':'0');apply();hideMenuPopup(true)}
+  tg.addEventListener('click',toggle);
+  document.addEventListener('keydown',e=>{
+    if((e.metaKey||e.ctrlKey)&&(e.key==='b'||e.key==='B')){e.preventDefault();toggle()}
+  });
+})();
+</script>
+<script src="assets/update-check.js"></script>
+</body>
+</html>

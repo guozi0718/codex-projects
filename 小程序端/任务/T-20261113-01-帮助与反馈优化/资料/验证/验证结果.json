@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-13",
+  "status": "passed",
+  "results": [
+    {
+      "role": "teacher",
+      "unchangedScreens": 62,
+      "originalAssetsUnchanged": true,
+      "myTabContentPixelIdentical": true,
+      "checks": "FAQ折叠/在线客服强制隐藏/单客服拨号/多客服入口与分组/无空分组/弹窗关闭/反馈筛选与空态/必填校验/图片上传与预览/提交详情/文本转义/角色隔离",
+      "runtimeErrors": []
+    },
+    {
+      "role": "parent",
+      "unchangedScreens": 53,
+      "originalAssetsUnchanged": true,
+      "myTabContentPixelIdentical": true,
+      "checks": "FAQ折叠/在线客服强制隐藏/单客服拨号/多客服入口与分组/无空分组/弹窗关闭/反馈筛选与空态/必填校验/图片上传与预览/提交详情/文本转义/角色隔离",
+      "runtimeErrors": []
+    }
+  ],
+  "mobile375": "passed",
+  "commonConfigIdentical": true,
+  "limitations": [
+    "纯静态原型；未接入真实 Web 配置、拨号和反馈工单服务。",
+    "反馈数据为各页面独立内存演示，刷新重置。"
+  ]
+}

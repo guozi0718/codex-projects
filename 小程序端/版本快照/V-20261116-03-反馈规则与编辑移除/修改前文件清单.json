@@ -1,0 +1,87 @@
+[
+  {
+    "relativePath": "项目管理\\任务登记.md",
+    "sha256": "ED374D85B9D83F38147C79FADEE5981E5EACC8C8BD11DE94B5EA6AD6BFF6E2C2",
+    "size": 6559
+  },
+  {
+    "relativePath": "项目管理\\待办清单.md",
+    "sha256": "93596AF472F188890C29F06FE39B868A517AC3CD44D7332BFBB07EC88F1A7CFC",
+    "size": 4003
+  },
+  {
+    "relativePath": "项目管理\\里程碑.md",
+    "sha256": "ED862384CC5CD69CD2A8A7C04433EC831654626DA1EE85E677B89C79C7EABC2C",
+    "size": 3371
+  },
+  {
+    "relativePath": "项目管理\\风险登记.md",
+    "sha256": "5A9E885F7E7FA1FD518C0A7053431BC106F537893C7FB3602AF96BB09EA952C6",
+    "size": 4153
+  },
+  {
+    "relativePath": "记忆库\\项目记忆\\用户偏好.md",
+    "sha256": "3F1D098BBD789B659D8F429A4220DE9B6B8B5C7C8EA0B6DAE0AFE6E82C3E31DF",
+    "size": 1260
+  },
+  {
+    "relativePath": "记忆库\\项目记忆\\技术约束.md",
+    "sha256": "DB1469A09A06CB30B32154916B2C8F3D1C8E422227A032AAB49E644F6B8E9428",
+    "size": 4225
+  },
+  {
+    "relativePath": "记忆库\\项目记忆\\非正式共识.md",
+    "sha256": "A6B3963BE57BCD1CF7C30CCC757C291A5718D32F2331CFD4EB2DE7C58BD3CE4A",
+    "size": 2935
+  },
+  {
+    "relativePath": "版本快照\\快照索引.md",
+    "sha256": "8AFB1152513853B537A38FB4133BB70498C7700CCE4C39A5D88E101E55482980",
+    "size": 125686
+  },
+  {
+    "relativePath": "日志管理.md",
+    "sha256": "DE21965D13136B19C0C636F561F0CA643F0CACB20D435C129790A0F26F14F7AD",
+    "size": 10654
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-家长\\版本-v0.6\\定版信息.md",
+    "sha256": "24A3DCF82CEAB2B5D4D335B05A57D8EE30AF8EC86039C693D2820C80C5218C15",
+    "size": 168
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-家长\\版本-v0.6\\index.html",
+    "sha256": "95CE06539D664D44014B5505B911C2945AF3E89CDF2D4608BAA8D29DA5E51C19",
+    "size": 385232
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-家长\\版本-v0.6\\assets\\help-v1.js",
+    "sha256": "491FE8DDDD831D7232C4748FDC411BE9EB56DA2D5BCBED7729EBB6B5BC051318",
+    "size": 28596
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-家长\\版本-v0.6\\assets\\help-v1.css",
+    "sha256": "764D2BC1E28150CB336184EB246C9A6E5342B3241A110AB13D9D50C89DD4C223",
+    "size": 10370
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-教师\\版本-v0.6\\定版信息.md",
+    "sha256": "D2175A4DB1FA2A6D157EAB255F9CE739087368FCD4820B9BB5F8F40C0D8A1ED4",
+    "size": 168
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-教师\\版本-v0.6\\index.html",
+    "sha256": "2E6C7D1E784BFD6E57C2397BFD60224AD22E98A6D93ACCD647FB496E66B1A063",
+    "size": 280244
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-教师\\版本-v0.6\\assets\\help-v1.js",
+    "sha256": "491FE8DDDD831D7232C4748FDC411BE9EB56DA2D5BCBED7729EBB6B5BC051318",
+    "size": 28596
+  },
+  {
+    "relativePath": "任务\\T-20261116-03-反馈一期规则落地\\端-教师\\版本-v0.6\\assets\\help-v1.css",
+    "sha256": "764D2BC1E28150CB336184EB246C9A6E5342B3241A110AB13D9D50C89DD4C223",
+    "size": 10370
+  }
+]

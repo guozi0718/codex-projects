@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-13",
+  "document": {
+    "file": "跨项目原型演示说明统一要求-v1.0.md",
+    "characters": 13754,
+    "lines": 474,
+    "chapters": 14,
+    "acceptanceChecks": 20,
+    "codeFenceBalanced": true,
+    "jsonExampleValid": true,
+    "tableColumnsValid": true,
+    "noLocalPathDependency": true
+  },
+  "runtimeChecks": [
+    {
+      "case": "教师端宽窄屏及切页跟随",
+      "role": "智小徽 · 老师端小程序",
+      "configs": 65,
+      "status": "passed"
+    },
+    {
+      "case": "家长同页三个Tab独立说明",
+      "titles": [
+        "📋 智能校徽 · 我的校徽 Tab",
+        "📋 智能校徽 · 校徽办理 Tab",
+        "📋 智能校徽 · 办理记录 Tab"
+      ],
+      "status": "passed"
+    },
+    {
+      "case": "家长端宽窄屏及切页跟随",
+      "role": "智小徽 · 家长端小程序",
+      "configs": 57,
+      "status": "passed"
+    },
+    {
+      "case": "共享组件后台形态隔离夹具：浮窗、拖动、更多、搜索、收起恢复、独立窗口动作委派及返回",
+      "status": "passed",
+      "scope": "由当前组件在内存DOM夹具验证，不是学校端或运管端全业务验收"
+    }
+  ],
+  "limitations": [
+    "未实施任何其他项目；未修改当前原型。",
+    "未对真实微信小程序原生页面栈执行验证；规范已明确验收要求和限制。",
+    "浏览器夹具验证仅用于核对引用能力，未据此宣称全部学校端/运营端业务通过。"
+  ],
+  "status": "passed"
+}

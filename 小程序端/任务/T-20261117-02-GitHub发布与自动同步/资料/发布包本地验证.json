@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-17",
+  "status": "passed",
+  "results": [
+    {
+      "role": "teacher",
+      "status": "passed",
+      "home": true,
+      "mainModules": true,
+      "demoNotes": true,
+      "notice": true,
+      "crossIdentity": true,
+      "errors": [],
+      "missing": []
+    },
+    {
+      "role": "parent",
+      "status": "passed",
+      "home": true,
+      "mainModules": true,
+      "demoNotes": true,
+      "notice": true,
+      "crossIdentity": true,
+      "errors": [],
+      "missing": []
+    }
+  ],
+  "limits": [
+    "未接真实后台或微信原生栈；源原型第三方业务外链保留。"
+  ]
+}

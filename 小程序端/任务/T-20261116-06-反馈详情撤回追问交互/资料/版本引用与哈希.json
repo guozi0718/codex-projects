@@ -1,0 +1,29 @@
+{
+  "source": {
+    "task": "T-20261116-04-反馈建议表单与演示说明补齐",
+    "version": "v0.7",
+    "teacherFileCount": 54,
+    "parentFileCount": 54
+  },
+  "candidate": {
+    "task": "T-20261116-06-反馈详情撤回追问交互",
+    "version": "v0.8",
+    "teacherEntry": "端-教师/版本-v0.8/index.html",
+    "parentEntry": "端-家长/版本-v0.8/index.html",
+    "teacherIndexSha256": "D81D902856209BF2C5ECDCD99F3D21047C3B9AD1BD87CED46FED5A52663E0972",
+    "parentIndexSha256": "68B3EDF8DB91A3095EDA8F06AC31F75AF2B3CACD8A199ED34F0C40D6B70B30CA",
+    "helpJsSha256": "B504CA09CA5BD892C0E4ED5A14E18CC77ED69EF4BAD645C8E37FE45E08A58A1D",
+    "helpCssSha256": "200A241A67B06691D5CA6EE5C2468B8003256A63EFBC0DE88B0F23FE8691F98B",
+    "demoBridgeSha256": "9A47D4022B991F88385C0D4F71294EBB4838A6AFABBAB41BC6255C64E08B90DF",
+    "cacheJs": "B504CA09CA5B",
+    "cacheCss": "200A241A67B0",
+    "teacherFileCount": 54,
+    "parentFileCount": 54
+  },
+  "baselinePointer": {
+    "path": "当前原型基线.json",
+    "sha256": "0C1F48687F4DFE95AB625612B609DBD4263CE79F5177EC57348BAFA0EF3C1C7E",
+    "unchanged": true
+  },
+  "limitation": "候选未定版；未进行浏览器/原生栈/生产服务验证。"
+}

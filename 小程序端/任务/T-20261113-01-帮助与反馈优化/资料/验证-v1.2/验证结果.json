@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "role": "教师",
+      "scene": "single",
+      "initialAllClosed": true,
+      "allSevenToggle": true,
+      "refreshAllClosed": true,
+      "errors": []
+    },
+    {
+      "role": "教师",
+      "scene": "multi",
+      "initialAllClosed": true,
+      "allSevenToggle": true,
+      "refreshAllClosed": true,
+      "errors": []
+    },
+    {
+      "role": "家长",
+      "scene": "single",
+      "initialAllClosed": true,
+      "allSevenToggle": true,
+      "refreshAllClosed": true,
+      "errors": []
+    },
+    {
+      "role": "家长",
+      "scene": "multi",
+      "initialAllClosed": true,
+      "allSevenToggle": true,
+      "refreshAllClosed": true,
+      "errors": []
+    }
+  ],
+  "onlyBehaviorChange": "FAQ全部默认收起",
+  "otherFiles": "除版本说明及跨身份版本路径外与v1.1哈希一致"
+}

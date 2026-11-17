@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-13",
+  "baseline": {
+    "task": "T-20261113-通知基线接入修复",
+    "version": "v0.2",
+    "status": "通知菜单接入修复候选",
+    "date": "2026-11-13",
+    "taskDirectory": "任务/T-20261113-通知基线接入修复",
+    "entries": [
+      {
+        "name": "教师",
+        "entry": "任务/T-20261113-通知基线接入修复/端-教师/版本-v0.2/index.html"
+      },
+      {
+        "name": "家长",
+        "entry": "任务/T-20261113-通知基线接入修复/端-家长/版本-v0.2/index.html"
+      }
+    ],
+    "inheritance": "T-20261113-01 双端 v1.2（含帮助反馈修订）",
+    "coordination": "后续会话开始前核对本文件及任务变更记录；各功能在新任务和新版本实施；提交整合前核对来源哈希，发生并发冲突时保留双方版本，禁止覆盖。"
+  },
+  "sources": [
+    {
+      "role": "教师",
+      "path": "任务/T-20261113-通知基线接入修复/端-教师/版本-v0.2/assets/demo-panel.js",
+      "sha256": "937b525310472dc3be0bc7f25b2b00516364fc157448e3441514c6337ef37bba"
+    },
+    {
+      "role": "教师",
+      "path": "任务/T-20261113-通知基线接入修复/端-教师/版本-v0.2/assets/demo-panel.css",
+      "sha256": "e348d49e0c982a2f66b8abdbcbbc59872d33fe232627b1f500cc8847d1df2f73"
+    },
+    {
+      "role": "教师",
+      "path": "任务/T-20261113-通知基线接入修复/端-教师/版本-v0.2/assets/teacher.js",
+      "sha256": "53f195395a768e7f3a7f43f258718b7887d396955379d506ada14e2502efc037"
+    },
+    {
+      "role": "教师",
+      "path": "任务/T-20261113-通知基线接入修复/端-教师/版本-v0.2/assets/help-v1.js",
+      "sha256": "93e99d9245ac6051ac03a19cee9daba29e24b103ab250b18c60dc0c7b4ebbb20"
+    },
+    {
+      "role": "教师",
+      "path": "任务/T-20261113-通知基线接入修复/端-教师/版本-v0.2/assets/notice-entry.js",
+      "sha256": "a35178daf3b234a95f6953291803ddbd7f7e4456476624acf4bac628956b25ae"
+    },
+    {
+      "role": "教师",
+      "path": "任务/T-20261113-通知基线接入修复/端-教师/版本-v0.2/assets/notice-host-bridge.js",
+      "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+    },
+    {
+      "role": "家长",
+      "path": "任务/T-20261113-通知基线接入修复/端-家长/版本-v0.2/assets/demo-panel.js",
+      "sha256": "937b525310472dc3be0bc7f25b2b00516364fc157448e3441514c6337ef37bba"
+    },
+    {
+      "role": "家长",
+      "path": "任务/T-20261113-通知基线接入修复/端-家长/版本-v0.2/assets/demo-panel.css",
+      "sha256": "e348d49e0c982a2f66b8abdbcbbc59872d33fe232627b1f500cc8847d1df2f73"
+    },
+    {
+      "role": "家长",
+      "path": "任务/T-20261113-通知基线接入修复/端-家长/版本-v0.2/assets/parent.js",
+      "sha256": "543f5433a73413f43cfed65d26336ee6f87b9d0451c048e2af7a112682042106"
+    },
+    {
+      "role": "家长",
+      "path": "任务/T-20261113-通知基线接入修复/端-家长/版本-v0.2/assets/help-v1.js",
+      "sha256": "93e99d9245ac6051ac03a19cee9daba29e24b103ab250b18c60dc0c7b4ebbb20"
+    },
+    {
+      "role": "家长",
+      "path": "任务/T-20261113-通知基线接入修复/端-家长/版本-v0.2/assets/notice-entry.js",
+      "sha256": "1b3a40e94933070429a42471ed5ccf37f3683339a1cf55030b6585765dea27e6"
+    },
+    {
+      "role": "家长",
+      "path": "任务/T-20261113-通知基线接入修复/端-家长/版本-v0.2/assets/notice-host-bridge.js",
+      "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+    }
+  ],
+  "statement": "基于本项目已读取代码及上一轮实测；后台浮窗相关能力按共享组件源码核验，本轮将补做独立验证，不据此宣称学校/运管全端业务已验收。新增工程接入与验收要求不冒充原型已有实现。"
+}

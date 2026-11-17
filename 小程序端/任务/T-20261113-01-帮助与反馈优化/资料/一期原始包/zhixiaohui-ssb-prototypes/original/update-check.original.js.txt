@@ -1,0 +1,119 @@
+/* -------- 部署更新探测（演示工具，非产品功能）--------
+   每 45 秒对「当前页面 + 页面引用的 JS/CSS」逐个发 HEAD 请求，把各文件的 ETag 拼成组合指纹
+   （Netlify 的 ETag 按文件内容计算，只改 JS 不改 HTML 时页面自身的 ETag 不会变，故需组合探测），
+   指纹变化即视为有新部署。发现新部署后分两种情况：
+   - 页面在后台（切去了别的标签页/应用）：直接静默刷新，切回来就是新版，不弹任何提示；
+   - 页面在前台：弹蓝色提示条（下滑入场 + 呼吸光晕），点击才刷新，不打断进行中的演示；
+     弹条期间若切到后台（浏览器换标签页/最小化），或在原型内切换屏幕（hash 变化，
+     此刻视图本来就在切换，刷新无感且落点由 hash 深链恢复），同样静默刷新兜底。
+   仅在 http(s) 下生效（本地 file:// 双击打开时静默跳过）。 */
+(function(){
+  /* 本地演示开关：URL 加 #update-bar 可直接预览提示条样式（file:// 下也生效），不走真实探测。
+     同时模拟「弹条未点、切到后台静默刷新」：弹条出现后切走标签页会真的刷新；
+     刷新后 hash 仍在，600ms 后提示条会再次出现，以此确认刷新已发生 */
+  if(location.hash==='#update-bar'){
+    /* 预览模式同样挂上全部静默刷新时机（切走标签页 / 原型内切屏）：
+       切标签页后刷新，hash 仍是 #update-bar，提示条会再次弹出；
+       原型内切屏后刷新，hash 已变，提示条消失且不复现——两者都能确认刷新已发生 */
+    setTimeout(function(){showBar();armSilentRefresh()},600);
+    return;
+  }
+  if(!/^https?:$/.test(location.protocol))return;
+  var INTERVAL=45000,baseFp=null,timer=null,notified=false;
+
+  function watchUrls(){
+    var urls=[location.href];
+    document.querySelectorAll('script[src],link[rel="stylesheet"][href]').forEach(function(el){
+      var u=el.src||el.href;
+      if(u&&u.indexOf(location.origin)===0)urls.push(u);
+    });
+    return urls;
+  }
+  function fingerprint(){
+    return Promise.all(watchUrls().map(function(u){
+      return fetch(u,{method:'HEAD',cache:'no-store'})
+        .then(function(r){return r.ok?(r.headers.get('ETag')||''):''})
+        .catch(function(){return null});  /* 网络失败记 null，本轮指纹作废 */
+    })).then(function(tags){
+      return tags.indexOf(null)>=0?null:tags.join('|');
+    });
+  }
+  function check(){
+    fingerprint().then(function(fp){
+      if(!fp||notified)return;
+      if(baseFp===null){baseFp=fp;return}
+      if(fp!==baseFp){notified=true;clearInterval(timer);onUpdate()}
+    });
+  }
+  function onUpdate(){
+    /* 页面在后台时没人在看，直接静默刷新，切回即最新版；前台才弹提示条 */
+    if(document.hidden){location.reload();return}
+    showBar();
+    armSilentRefresh();
+  }
+  /* 弹条后，各种「无感时机」一到就静默换新：
+     - 切走浏览器标签页/最小化（visibilitychange → hidden）；
+     - 原型内切换屏幕：go() 用 history.replaceState 改 hash，不会触发 hashchange，
+       所以对 replaceState/pushState 包一层；hashchange 一并监听，覆盖手改地址栏/前进后退 */
+  function armSilentRefresh(){
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden)location.reload();
+    });
+    window.addEventListener('hashchange',function(){location.reload()});
+    ['replaceState','pushState'].forEach(function(m){
+      var orig=history[m];
+      history[m]=function(){
+        var r=orig.apply(this,arguments);
+        /* 先让本次切屏收尾（hash 已写入地址栏），下一拍再刷新，落点由 hash 深链恢复 */
+        setTimeout(function(){location.reload()},0);
+        return r;
+      };
+    });
+  }
+  function showBar(){
+    var style=document.createElement('style');
+    style.textContent=
+      '@keyframes ucDrop{0%{opacity:0;transform:translateX(-50%) translateY(-28px)}'
+        +'70%{opacity:1;transform:translateX(-50%) translateY(5px)}'
+        +'100%{opacity:1;transform:translateX(-50%) translateY(0)}}'
+      /* 顶栏内垂直居中版入场动画：Y 轴基准是 -50%，下滑位移叠加在其上 */
+      +'@keyframes ucDropC{0%{opacity:0;transform:translate(-50%,calc(-50% - 28px))}'
+        +'70%{opacity:1;transform:translate(-50%,calc(-50% + 5px))}'
+        +'100%{opacity:1;transform:translate(-50%,-50%)}}'
+      +'@keyframes ucGlow{0%,100%{box-shadow:0 3px 12px rgba(17,49,133,.35)}'
+        +'50%{box-shadow:0 5px 24px rgba(17,49,133,.7)}}';
+    document.head.appendChild(style);
+    var bar=document.createElement('div');
+    bar.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+      +'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none">'
+      +'<path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg>'
+      +'原型已更新，点击查看最新版本';
+    /* 优先挂进演示说明 chip 所在容器：
+       - 移动端（parent/teacher）chip 挂在手机容器 top:10px 居中，提示条沿用同定位正好盖住 chip；
+       - 运管端 chip 在 .topbar（56px 高）右侧，提示条以 top:50% + Y 轴 -50% 在顶栏内上下居中，
+         与 chip 同一水平线，水平居中基准为顶栏（即内容区）；
+       页面没有 chip 时退回视口顶部固定定位。白底蓝字：在晴空蓝页头、深色边框、
+       白色内容区上都能保持对比，不与背景融为一体 */
+    var fab=document.querySelector('.demo-fab');
+    var inTopbar=!!(fab&&fab.closest&&fab.closest('.topbar'));
+    bar.style.cssText=(inTopbar?'position:absolute;top:50%;'
+        :fab?'position:absolute;top:10px;':'position:fixed;top:14px;')
+      +'left:50%;transform:'+(inTopbar?'translate(-50%,-50%)':'translateX(-50%)')+';z-index:99999;'
+      +'display:flex;align-items:center;gap:7px;'
+      +'background:#fff;color:#1D4ED8;font-size:13px;font-weight:600;padding:10px 18px;border-radius:22px;'
+      +'border:1px solid rgba(37,99,235,.3);cursor:pointer;white-space:nowrap;'
+      +'animation:'+(inTopbar?'ucDropC':'ucDrop')+' .5s cubic-bezier(.2,.9,.3,1.2) both,'
+      +'ucGlow 2.4s ease-in-out .6s infinite;'
+      +'font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif';
+    bar.onclick=function(){location.reload()};
+    (fab?fab.parentNode:document.body).appendChild(bar);
+  }
+
+  check();
+  timer=setInterval(check,INTERVAL);
+  /* 切回标签页时立即补一次探测，长时间挂后台也能第一时间发现更新
+     （弹条后的后台刷新由 armSilentRefresh 里的监听负责） */
+  document.addEventListener('visibilitychange',function(){
+    if(!document.hidden&&!notified)check();
+  });
+})();

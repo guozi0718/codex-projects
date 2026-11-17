@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智小徽电子校徽</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{
+  /* 「晴空校园」天蓝配色：与家长端同源 */
+  --navy:#2E7CF0; --navy-deep:#1D63D8;
+  --gold2:#E8A93D;
+  --ink:#233047; --ink-2:#5C6A80; --ink-3:#9AA7BB;
+  --bg:#F0F5FB; --line:#E2EAF4;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:linear-gradient(150deg,#DCEBFB 0%,#FDF3E4 100%);display:flex;justify-content:center;align-items:center;height:100vh;padding:0;overflow:hidden;color:var(--ink)}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ===== 手机壳（与家长端同款；演示说明内开关可隐藏） ===== */
+.phone{width:390px;height:844px;background:var(--bg);border-radius:44px;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 10px #0D1420,0 0 0 12px #2A3548;overflow:hidden;position:relative;display:flex;flex-direction:column}
+body.no-shell .phone{border-radius:0;box-shadow:none}
+.scroll{flex:1;overflow-y:auto;overscroll-behavior:contain}
+
+/* 状态栏：时间 + 信号/Wi-Fi/电池，悬浮于蓝天头部之上（图标与家长端 parent.js 注入的同套 SVG） */
+.statusbar{position:absolute;top:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:14px;font-weight:600;color:#fff;z-index:5}
+.statusbar .right{display:flex;align-items:center;gap:6px}
+
+/* ===== 页面头部：品牌识别区（蓝天背景，渐变兜底防图片缺失） ===== */
+.hero{background:linear-gradient(168deg,#6ABAFF 0%,#3D8BFC 60%,#1D63E8 100%);background:url(assets/sky-clouds.jpg) center top/cover no-repeat,linear-gradient(168deg,#6ABAFF 0%,#3D8BFC 60%,#1D63E8 100%);padding:70px 26px 58px;text-align:center;color:#fff}
+.hero .logo{width:78px;height:78px;border-radius:20px;background:#fff;box-shadow:0 8px 22px rgba(29,99,216,.32);display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
+.hero .logo img{width:50px;height:auto;display:block}
+.hero h1{font-size:23px;letter-spacing:2px;text-shadow:0 1px 6px rgba(29,99,216,.3)}
+.hero .sub{font-size:14px;color:rgba(255,255,255,.95);margin-top:9px;letter-spacing:.5px;text-shadow:0 1px 6px rgba(29,99,216,.3)}
+
+/* ===== 内容卡片 ===== */
+.bd{padding:0 18px 26px;margin-top:-30px;position:relative}
+.card{background:#fff;border-radius:16px;padding:22px 20px;box-shadow:0 4px 18px rgba(46,124,240,.1);border:1px solid var(--line)}
+.card + .card{margin-top:14px}
+.card h2{font-size:16.5px;display:flex;align-items:center;gap:8px}
+.card h2 svg{flex-shrink:0}
+.card .desc{font-size:13px;color:var(--ink-2);line-height:1.75;margin-top:8px}
+
+/* 微信外：扫一扫三步引导 */
+.steps{margin-top:16px}
+.step{display:flex;gap:12px;align-items:flex-start;padding:10px 0}
+.step + .step{border-top:1px dashed #EFF4FA}
+.step .no{width:22px;height:22px;border-radius:50%;background:linear-gradient(150deg,#6ABAFF,#1D63D8);color:#fff;font-size:12.5px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step .tx{font-size:13.5px;line-height:1.65;color:var(--ink)}
+
+/* 微信内：一键打开按钮（真实环境为 wx-open-launch-weapp 开放标签，UA 命中微信时才渲染；按钮用微信品牌绿） */
+.wx-open-btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:16px;padding:14px 0;border:none;border-radius:12px;background:#07C160;color:#fff;font-size:16px;font-weight:600;letter-spacing:1px;cursor:pointer;box-shadow:0 6px 16px rgba(7,193,96,.3);transition:.15s}
+.wx-open-btn:active{transform:scale(.98)}
+
+/* 拾到校徽 */
+.found .call{display:flex;align-items:center;gap:8px;margin-top:12px;padding:11px 14px;background:#F5F9FE;border:1px solid var(--line);border-radius:11px;font-size:13.5px;color:var(--ink);cursor:pointer}
+.found .call b{color:var(--navy-deep);letter-spacing:.5px}
+.found .call .arr{margin-left:auto;color:var(--ink-3)}
+
+/* 页脚 */
+.foot{text-align:center;font-size:11px;color:var(--ink-3);line-height:1.9;padding:20px 0 8px}
+
+/* ===== 演示说明（灵动岛位置浮动 chip，原型工具，非页面内容；样式与家长端同款） ===== */
+.demo-fab{position:absolute;top:10px;left:50%;transform:translateX(-50%);z-index:300}
+.demo-chip{display:flex;align-items:center;gap:7px;background:rgba(15,23,35,.72);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:18px;padding:7px 13px;font-size:12.5px;font-weight:600;backdrop-filter:blur(6px);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.demo-chip .x{display:inline-flex;width:16px;height:16px;border-radius:50%;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(255,255,255,.45)}
+.demo-pop{display:none;position:absolute;top:42px;left:50%;margin-left:-134px;width:268px;background:#fff;border:1px solid #E2EAF4;border-radius:14px;padding:14px 15px;box-shadow:0 14px 40px rgba(29,99,216,.18);max-height:calc(844px - 42px - 10px - 24px);overflow-y:auto;overscroll-behavior:contain}
+.demo-pop.show{display:block;animation:fadein .18s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(-5px)}to{opacity:1}}
+.demo-pop .dt{font-size:12.5px;color:var(--navy);font-weight:600;margin-bottom:4px}
+.demo-pop .dd{font-size:11.5px;color:#5C6A80;line-height:1.65;margin-bottom:10px}
+.demo-pop button{display:block;width:100%;text-align:left;font-size:12px;color:#33415E;padding:8px 10px;border:1px solid #E2EAF4;border-radius:9px;margin-bottom:7px;background:#F5F9FE}
+.demo-pop button:hover{border-color:var(--navy);color:var(--navy)}
+.demo-pop .sw-row{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#33415E;padding:8px 10px;border:1px solid #E2EAF4;border-radius:9px;margin-bottom:7px;background:#F5F9FE;cursor:pointer;user-select:none;gap:8px}
+.demo-pop .sw{position:relative;width:34px;height:19px;border-radius:10px;background:#C6CCD6;transition:background .18s;flex-shrink:0}
+.demo-pop .sw::after{content:"";position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:#fff;transition:left .18s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.demo-pop .sw.on{background:var(--navy)}
+.demo-pop .sw.on::after{left:17px}
+
+/* toast */
+.toast{position:absolute;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:rgba(35,48,71,.92);color:#fff;font-size:13px;padding:10px 18px;border-radius:22px;opacity:0;visibility:hidden;transition:.25s;z-index:99;max-width:320px;text-align:center;white-space:nowrap}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="scroll">
+
+    <!-- 品牌识别区 -->
+    <div class="hero">
+      <div class="logo"><img src="assets/logo.png" alt="智小徽"></div>
+      <h1>智小徽</h1>
+      <div class="sub">这是一枚智小徽电子校徽</div>
+    </div>
+
+    <div class="bd">
+
+      <!-- 微信外（默认）：引导用微信扫一扫 -->
+      <div class="card" id="card-out">
+        <h2><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2E7CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>请使用微信「扫一扫」打开</h2>
+        <div class="desc">用微信扫描校徽上的二维码，即可打开「智小徽」小程序查看相关信息。</div>
+        <div class="steps">
+          <div class="step"><div class="no">1</div><div class="tx">打开微信，点击右上角「+」</div></div>
+          <div class="step"><div class="no">2</div><div class="tx">选择「扫一扫」</div></div>
+          <div class="step"><div class="no">3</div><div class="tx">对准校徽上的二维码扫描</div></div>
+        </div>
+      </div>
+
+      <!-- 微信内：一键打开小程序（真实环境按 UA 检测命中微信 WebView 时渲染 wx-open-launch-weapp 开放标签；原型经演示说明开关切换预览） -->
+      <div class="card" id="card-in" style="display:none">
+        <h2><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2E7CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 12l3 3 5-6"/></svg>在微信中打开</h2>
+        <div class="desc">点击下方按钮，直接打开「智小徽」小程序查看相关信息。</div>
+        <button class="wx-open-btn" onclick="toast('正在打开「智小徽」小程序…')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M9.5 4C5.36 4 2 6.91 2 10.5c0 2.02 1.07 3.82 2.74 5.01L4 18l2.7-1.5c.88.28 1.83.44 2.8.44.24 0 .47-.01.7-.03A5.9 5.9 0 0110 14.5C10 11.02 13.13 8.2 17 8.2c.17 0 .34.01.5.02C16.74 5.6 13.44 4 9.5 4zm-2.25 3.5a1 1 0 110 2 1 1 0 010-2zm4.5 0a1 1 0 110 2 1 1 0 010-2zM17 9.5c-3.31 0-6 2.24-6 5s2.69 5 6 5c.8 0 1.57-.13 2.27-.36L21.5 20l-.62-2.07C22.19 16.93 23 15.53 23 14.5c0-2.76-2.69-5-6-5zm-2 2.75a.87.87 0 110 1.75.87.87 0 010-1.75zm4 0a.87.87 0 110 1.75.87.87 0 010-1.75z"/></svg>
+          打开「智小徽」小程序
+        </button>
+      </div>
+
+      <!-- 拾到校徽引导 -->
+      <div class="card found">
+        <h2><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#E8A93D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.1-7 10-4-1.9-7-5.5-7-10V6l7-3z"/></svg>拾到了这枚校徽？</h2>
+        <div class="desc">感谢您！请将校徽交还至就近学校的门卫或老师，学校会将它归还给学生。您也可以联系客服，由我们协助转交。</div>
+        <div class="call" onclick="toast('演示：真实产品将调起拨号 400-880-6688')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#2E7CF0" aria-hidden="true"><path d="M6.6 10.8c1.5 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          客服电话&nbsp;<b>400-880-6688</b><span class="arr">›</span>
+        </div>
+      </div>
+
+      <div class="foot">阳光智园科技有限公司 · 京ICP备20260123号-2</div>
+
+    </div>
+  </div>
+
+  <!-- 状态栏（悬浮于蓝天头部之上） -->
+  <div class="statusbar"><span>17:05</span><span class="right"><svg width="20" height="13" viewBox="0 0 20 13" fill="none"><path d="M1.65039 7.58008C1.95012 7.58014 2.21992 7.64999 2.46973 7.7998C2.71973 7.9498 2.92031 8.15039 3.07031 8.40039C3.22009 8.6502 3.29 8.92001 3.29004 9.21973V10.6904C3.28997 10.9901 3.22011 11.26 3.07031 11.5098C2.92031 11.7598 2.71973 11.9604 2.46973 12.1104C2.21993 12.2601 1.95009 12.33 1.65039 12.3301C1.35054 12.3301 1.07022 12.2602 0.820312 12.1104C0.570312 11.9604 0.369727 11.7598 0.219727 11.5098C0.0699196 11.26 6.65565e-05 10.9901 0 10.6904V9.21973C4.28388e-05 8.92 0.0699405 8.6502 0.219727 8.40039C0.369727 8.15039 0.570312 7.9498 0.820312 7.7998C1.07023 7.64994 1.35052 7.58008 1.65039 7.58008ZM7 5.36035C7.3 5.36035 7.57031 5.43008 7.82031 5.58008C8.0701 5.73001 8.26999 5.9299 8.41992 6.17969C8.56992 6.42969 8.63965 6.7 8.63965 7V10.6904C8.63958 10.9902 8.56979 11.2599 8.41992 11.5098C8.26994 11.7597 8.07028 11.9604 7.82031 12.1104C7.57031 12.2604 7.3 12.3301 7 12.3301C6.70004 12.3301 6.4199 12.2603 6.16992 12.1104C5.91992 11.9604 5.72031 11.7598 5.57031 11.5098C5.4204 11.2599 5.34968 10.9803 5.34961 10.6904V7C5.34961 6.7 5.42031 6.42969 5.57031 6.17969C5.72027 5.92989 5.92009 5.73 6.16992 5.58008C6.41992 5.43008 6.7 5.36035 7 5.36035ZM17.6904 0C17.9901 6.55189e-05 18.26 0.0699202 18.5098 0.219727C18.7598 0.369727 18.9604 0.570312 19.1104 0.820312C19.2601 1.07011 19.33 1.33994 19.3301 1.63965V10.6904C19.33 10.9901 19.2601 11.26 19.1104 11.5098C18.9604 11.7598 18.7598 11.9604 18.5098 12.1104C18.26 12.2601 17.9901 12.33 17.6904 12.3301C17.3906 12.3301 17.1102 12.2602 16.8604 12.1104C16.6104 11.9604 16.4098 11.7598 16.2598 11.5098C16.11 11.26 16.0401 10.9901 16.04 10.6904V1.63965C16.0401 1.33992 16.11 1.07012 16.2598 0.820312C16.4098 0.570312 16.6104 0.369727 16.8604 0.219727C17.1103 0.0698807 17.3906 0 17.6904 0ZM12.3496 2.79004C12.6495 2.79004 12.92 2.85984 13.1699 3.00977C13.4199 3.15977 13.6195 3.36035 13.7695 3.61035C13.9195 3.86025 13.9902 4.12983 13.9902 4.42969V10.6797C13.9902 10.9797 13.9195 11.25 13.7695 11.5C13.6196 11.7499 13.4198 11.9497 13.1699 12.0996C12.9199 12.2496 12.6496 12.3203 12.3496 12.3203C12.0498 12.3203 11.7694 12.2603 11.5195 12.1104C11.2696 11.9704 11.0699 11.7697 10.9199 11.5098C10.77 11.2598 10.7002 10.9796 10.7002 10.6797V4.42969C10.7002 4.12993 10.7701 3.86018 10.9199 3.61035C11.0699 3.36044 11.2696 3.15975 11.5195 3.00977C11.7694 2.85983 12.0498 2.7901 12.3496 2.79004Z" fill="currentColor"/></svg><svg width="17" height="13" viewBox="0 0 17 13" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.358555 4.76929C0.777728 5.20063 1.43114 5.12668 1.96127 4.65838C3.71194 3.08094 5.8941 2.26757 8.33517 2.26757C10.7762 2.26757 12.9707 3.10559 14.7091 4.65838C15.2269 5.13901 15.8803 5.1883 16.3118 4.76929C16.7433 4.32564 16.8049 3.66016 16.3611 3.19185C14.5118 1.30632 11.4913 0 8.33517 0C5.17904 0 2.1462 1.31864 0.309241 3.20418C-0.134589 3.66016 -0.085275 4.32564 0.358555 4.78162V4.76929ZM3.40372 7.86256C3.88454 8.33086 4.50097 8.28156 5.04343 7.83791C5.93109 7.13546 7.11463 6.65483 8.33517 6.66715C9.54337 6.66715 10.7269 7.13546 11.6269 7.85023C12.1694 8.29389 12.8105 8.31854 13.2789 7.85023C13.7351 7.38193 13.8091 6.66715 13.3283 6.2235C12.1324 5.15133 10.3324 4.39958 8.3475 4.39958C6.36259 4.39958 4.55028 5.15133 3.36674 6.2235C2.94756 6.61786 2.86126 7.29566 3.41605 7.86256H3.40372ZM7.52148 11.954C8.05161 12.4593 8.6064 12.4593 9.13653 11.954L10.1351 10.9928C10.6653 10.4752 10.7762 9.82203 10.1721 9.37838C9.66666 9.02099 9.02557 8.78684 8.33517 8.78684C7.64477 8.78684 6.99135 9.02099 6.4982 9.3907C5.8941 9.82203 6.01739 10.4875 6.54752 10.9928L7.53381 11.954H7.52148Z" fill="currentColor"/></svg><svg width="26" height="13" viewBox="0 0 34 17"><rect x="1" y="1.2" width="27.5" height="14.6" rx="4.8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".45"/><rect x="3.6" y="3.8" width="17" height="9.4" rx="2.4" fill="currentColor"/><path d="M30.6 5.7 a3.3 3.3 0 0 1 0 5.6 z" fill="currentColor" opacity=".45"/></svg></span></div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== 演示入口（灵动岛位置） ===== -->
+  <div class="demo-fab" id="demo-fab">
+    <button class="demo-chip" onclick="toggleDemo()">ⓘ 演示说明 <span class="x" onclick="event.stopPropagation();document.getElementById('demo-fab').style.display='none'">✕</span></button>
+    <div class="demo-pop" id="demo-pop"></div>
+  </div>
+</div>
+
+<script>
+/* ---------- 演示说明 ---------- */
+var wxEnv=false; // false=微信外（默认），true=微信内 WebView
+const demoInfo={
+ t:'校徽二维码 H5 兜底页',
+ d:'校徽壳印二维码为普通链接二维码：微信内扫码/长按识别直接打开智小徽小程序（家长→校徽核对视图、教师→学生信息视图，由小程序按登录身份分流）；微信外扫码（系统相机/其他 App）落到本页。本页为完全公开、不鉴权、零学生信息的纯静态导流页，不以任何参数查询后端（防批量枚举、恒可用），三类访客：家长/教师微信外扫码→引导回微信；微信 WebView 内点开链接→展示 wx-open-launch-weapp 一键打开按钮（真实环境按 UA 检测渲染，依赖已认证服务号 + JS-SDK，原型用下方开关模拟）；陌生人拾到校徽→归还引导，不泄露失主信息。线上拾获上报通道为后续阶段。对应设计文档 7.5 节。'
+};
+function renderDemo(){
+  document.getElementById('demo-pop').innerHTML='<div class="dt">📋 '+demoInfo.t+'</div><div class="dd">'+demoInfo.d+'</div>'+
+    /* 与各端演示说明统一的原型总览入口（新开标签页，不打断当前演示状态） */
+    '<button onclick="closeDemo();window.open(\'index.html\')">原型总览 →</button>'+
+    '<div class="sw-row" onclick="toggleEnv()">模拟「微信内打开」状态<span class="sw'+(wxEnv?' on':'')+'"></span></div>'+
+    '<div class="sw-row" onclick="toggleShell()">显示手机壳<span class="sw'+(shellOn()?' on':'')+'"></span></div>';
+}
+function toggleDemo(){renderDemo();const p=document.getElementById('demo-pop');p.scrollTop=0;p.classList.toggle('show')}
+function closeDemo(){document.getElementById('demo-pop').classList.remove('show')}
+/* 演示说明展开时，点击弹层（含 chip）以外区域收起；捕获阶段监听，不受页面元素 stopPropagation 影响 */
+document.addEventListener('click',e=>{
+  const p=document.getElementById('demo-pop');
+  if(p.classList.contains('show')&&!e.target.closest('#demo-fab'))p.classList.remove('show');
+},true);
+
+/* 微信内 / 微信外 状态切换（真实环境由 UA 检测决定，原型手动模拟） */
+function toggleEnv(){
+  wxEnv=!wxEnv;
+  document.getElementById('card-out').style.display=wxEnv?'none':'';
+  document.getElementById('card-in').style.display=wxEnv?'':'none';
+  renderDemo();
+  toast(wxEnv?'已切换：微信内打开状态':'已切换：微信外扫码状态');
+}
+
+/* -------- 手机壳视口自适应：居中并按需等比缩放（与家长端同逻辑） -------- */
+function fitPhone(){
+  /* 外壳描边（box-shadow 外扩 12px）计入尺寸，受限方向至少留 16px 空白便于截图；隐藏手机壳时无外扩 */
+  const pad=document.body.classList.contains('no-shell')?0:24;
+  const s=Math.min(1,(innerHeight-32)/(844+pad),(innerWidth-32)/(390+pad));
+  /* 用 zoom 而非 transform:scale——原生 select 弹层按布局坐标定位，transform 会导致错位 */
+  document.querySelector('.phone').style.zoom=s;
+}
+/* -------- 手机壳显隐：演示说明内开关，localStorage 记忆并与家长端/教师端共享 -------- */
+function shellOn(){return localStorage.getItem('proto-shell')!=='off'}
+function toggleShell(){
+  localStorage.setItem('proto-shell',shellOn()?'off':'on');
+  applyShell();renderDemo();
+}
+function applyShell(){
+  document.body.classList.toggle('no-shell',!shellOn());
+  fitPhone();
+}
+addEventListener('resize',fitPhone);applyShell();
+
+/* toast */
+var toastTimer=null;
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
+}
+</script>
+<script src="assets/update-check.js"></script>
+</body>
+</html>

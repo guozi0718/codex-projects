@@ -1,0 +1,10 @@
+[
+  {
+    "file": "index.html",
+    "change": "pretty URL -> local .html"
+  },
+  {
+    "file": "assets/update-check.js",
+    "change": "disabled HEAD polling; original archived in original/"
+  }
+]

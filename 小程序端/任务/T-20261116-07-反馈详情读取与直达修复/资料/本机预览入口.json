@@ -1,0 +1,9 @@
+{
+  "root": "T-20261116-07-反馈详情读取与直达修复",
+  "port": 56383,
+  "bind": "loopback only",
+  "host": "127.0.0.1",
+  "parent": "http://127.0.0.1:56383/%E7%AB%AF-%E5%AE%B6%E9%95%BF/%E7%89%88%E6%9C%AC-v0.9/index.html#sc-fblist",
+  "processId": 54736,
+  "teacher": "http://127.0.0.1:56383/%E7%AB%AF-%E6%95%99%E5%B8%88/%E7%89%88%E6%9C%AC-v0.9/index.html#sc-fblist"
+}
