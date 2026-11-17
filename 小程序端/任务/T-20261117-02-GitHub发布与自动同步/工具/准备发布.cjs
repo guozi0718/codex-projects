@@ -26,4 +26,8 @@ planned.set('发布说明.md',Buffer.from('# '+config.release.id+'\n\n状态：'
 let refresh=false;
 if(process.argv.includes('--refresh-unpublished')){const repo=path.join(root,config.cloneDirectory),r=cp.spawnSync('git',['ls-files','--',config.repositoryDirectory+'/'+config.release.directory],{cwd:repo,encoding:'utf8',windowsHide:true});if(r.status!==0||r.stdout.trim())throw Error('已纳入Git的版本不得原位重建');refresh=true;}
 for(const [r,b]of planned){const dest=path.join(output,r);if(fs.existsSync(dest)){if(sha(fs.readFileSync(dest))!==sha(b)){if(!refresh)throw Error('不可变发布已有差异，必须新建发布编号：'+r);fs.writeFileSync(dest,b);}}else{fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,b);}}
+const links={release:config.release.id,status:config.release.status,sourceVersion:config.release.sourceVersion,entries:config.release.ends.map(e=>({name:e.name,entry:config.pagesBase+config.release.directory+'/'+e.destination+'/index.html',home:config.pagesBase+config.release.directory+'/'+e.destination+'/index.html#sc-home',feedback:config.pagesBase+config.release.directory+'/'+e.destination+'/index.html#sc-fblist'}))};
+const update=(f,content)=>{fs.mkdirSync(path.dirname(f),{recursive:true});if(!fs.existsSync(f)||fs.readFileSync(f,'utf8')!==content)fs.writeFileSync(f,content);};
+for(const e of config.release.ends)update(path.join(root,e.name,'index.html'),'<!doctype html><meta charset="utf-8"><title>智小徽'+e.name+'端</title><script>location.replace('+JSON.stringify('../'+config.release.directory+'/'+e.destination+'/index.html')+'+location.search+location.hash)</script>');
+update(path.join(root,'线上原型链接.json'),JSON.stringify(links,null,2));
 console.log(JSON.stringify({release:config.release.id,files:planned.size,output,adaptations}));

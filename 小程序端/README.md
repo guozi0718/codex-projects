@@ -2,14 +2,14 @@
 
 本目录包含完整项目、原始包、任务历史、文件快照及版本化静态发布。教师与家长为同一账号体系下的两种身份。
 
-## 当前线上原型
+## 线上原型入口
 
-发布编号：r2026.11.17.1；来源：最新完整教师/家长v0.12评审候选。发布预览不代表用户页面已定版；本地活动基线v0.5仍按原指针保留。
+最新发布编号、来源状态及不可变版本链接以`线上原型链接.json`为准。固定入口直接转到最新已发布原型。发布预览不代表用户页面已定版；本地活动基线仍按原指针保留。
 
-- [教师小程序首页](https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-教师/版本-v0.12/index.html#sc-home)
-- [家长小程序首页](https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-家长/版本-v0.12/index.html#sc-home)
-- [教师反馈列表](https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-教师/版本-v0.12/index.html#sc-fblist)
-- [家长反馈列表](https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-家长/版本-v0.12/index.html#sc-fblist)
+- [教师小程序首页](https://guozi0718.github.io/codex-projects/小程序端/教师/index.html#sc-home)
+- [家长小程序首页](https://guozi0718.github.io/codex-projects/小程序端/家长/index.html#sc-home)
+- [教师反馈列表](https://guozi0718.github.io/codex-projects/小程序端/教师/index.html#sc-fblist)
+- [家长反馈列表](https://guozi0718.github.io/codex-projects/小程序端/家长/index.html#sc-fblist)
 
 ## 版本与同步
 
