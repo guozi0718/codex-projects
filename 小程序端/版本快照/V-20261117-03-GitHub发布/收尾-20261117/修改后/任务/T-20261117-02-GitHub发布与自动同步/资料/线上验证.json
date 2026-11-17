@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-11-17 15:24:18 -08:00",
+  "repository": "https://github.com/guozi0718/codex-projects",
+  "directory": "小程序端",
+  "branch": "main",
+  "mainCommit": "b04c91a3ce66e007055816000e43723358625305",
+  "mainCommitUrl": "https://github.com/guozi0718/codex-projects/commit/b04c91a3ce66e007055816000e43723358625305",
+  "release": "r2026.11.17.1",
+  "tag": "miniapp-r2026.11.17.1",
+  "tagCommit": "d0b72dcb766b1e288a7c255b507a04ba76851fc0",
+  "releaseStatus": "教师/家长 v0.12 评审候选；已发布供预览，未定版。活动基线 v0.5 未更改。",
+  "pagesBase": "https://guozi0718.github.io/codex-projects/小程序端/",
+  "links": [
+    {
+      "name": "小程序端发布索引",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/",
+      "httpStatus": 200,
+      "title": "智小徽小程序原型"
+    },
+    {
+      "name": "教师固定入口",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/教师/index.html#sc-home",
+      "httpStatus": 200,
+      "publishedTarget": "发布/r2026.11.17.1/端-教师/版本-v0.12/index.html#sc-home"
+    },
+    {
+      "name": "家长固定入口",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/家长/index.html#sc-home",
+      "httpStatus": 200,
+      "publishedTarget": "发布/r2026.11.17.1/端-家长/版本-v0.12/index.html#sc-home"
+    },
+    {
+      "name": "教师 v0.12 反馈列表",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-教师/版本-v0.12/index.html#sc-fblist",
+      "httpStatus": 200
+    },
+    {
+      "name": "家长 v0.12 反馈列表",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-家长/版本-v0.12/index.html#sc-fblist",
+      "httpStatus": 200
+    }
+  ],
+  "browserChecks": {
+    "status": "passed",
+    "checkedAreas": [
+      "双端主要模块",
+      "双端演示说明",
+      "通知 iframe 相对路径加载",
+      "教师与家长身份切换",
+      "反馈列表直达"
+    ],
+    "runtimeErrors": 0,
+    "failedResources": 0
+  },
+  "limits": [
+    "静态HTML原型，不接真实后台与生产数据。",
+    "微信原生小程序页面栈未在真实客户端验证。",
+    "原型业务候选仍待用户评审，发布不构成业务定版。"
+  ]
+}
