@@ -1,9 +1,9 @@
 {
-  "release": "v0.53.1",
+  "release": "v0.54.0",
   "status": "原型评审版",
   "date": "2026-11-17",
   "sourceVersions": {
-    "agent": "v0.53",
+    "agent": "v0.54",
     "notice": "V13"
   },
   "repository": "guozi0718/codex-projects",
@@ -157,8 +157,8 @@
     },
     {
       "path": "assets/legacy-operation-log.js",
-      "size": 152719,
-      "sha256": "a5a408b01189acab8875f4cf574c90a79d341c071de05c6bbf8cc32d96f4d3ac"
+      "size": 152827,
+      "sha256": "5e7cb41fda9f0554985a09f6a622d684693c816c5b4274f95c96ebd4724b58d1"
     },
     {
       "path": "assets/legacy-query-bridge.js",
@@ -167,8 +167,8 @@
     },
     {
       "path": "assets/module-demo.js",
-      "size": 20742,
-      "sha256": "70db6d9157ebd5e2ee779dd3699fb59d5fd416bd8f8ac3b33ab4b44792b7b691"
+      "size": 20979,
+      "sha256": "4f3720c9b8d6d0258b3bde33dd9f987a84387fb9c1e8b7677dc42724a3b0778b"
     },
     {
       "path": "assets/notice-host-bridge.js",
@@ -238,7 +238,7 @@
     {
       "path": "index.html",
       "size": 6188,
-      "sha256": "79baeb406426968d875bac4619a387f88ffce5f10ff4deed28d1cb4905f3eab5"
+      "sha256": "fdf48afacde988aab9c2b0f2a217561e0a881ad3bd6b55fc5ffd5c6d2e3e87bd"
     },
     {
       "path": "notice/app.js",
