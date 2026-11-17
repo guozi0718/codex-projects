@@ -1,0 +1,19 @@
+/* 学校反馈协作记录。示例为本地原型数据，不连接真实通知。 */
+(()=>{'use strict';const E=FeedbackV5,esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function schools(t){if(E.role!=='agent')return null;const s=t.kind==='school'?t:E.ticket(t.sourceId);return s&&E.managed(s)?s:null}
+function linked(s){return s.reportedIds.map(id=>E.ticket(id)).filter(t=>t&&E.canView(t)&&t.sourceId===s.id)}
+function read(t){const s=schools(t);if(s)linked(s).forEach(t=>E.read(t.id))}
+function render(t){const s=schools(t);if(!s)return '';const ups=linked(s);if(!ups.length)return '';const events=[{name:s.owner.name,label:'学校提交反馈至代理商',time:s.created,body:s.content}];
+for(const up of ups){events.push({name:up.owner.name,label:'代理商抄送运营',time:up.created,body:up.content+(up.reportNote?'\n处理说明：'+up.reportNote:''),id:up.id});if(up.deleted)events.push({name:up.owner.name,label:'抄送记录已撤回',time:up.withdrawnAt||up.updated,body:'学校原反馈保留。'});for(const m of up.messages.filter(m=>['reply','correction','followup'].includes(m.kind)))events.push({name:m.actorName,label:m.kind==='followup'?'代理商向运营追问':'运营回复代理商',time:m.created,body:m.deleted?'该回复已删除':m.body,id:up.id});for(const m of s.messages.filter(m=>m.upId===up.id))events.push({name:m.actorName,label:'代理商转达学校',time:m.created,body:m.deleted?'该回复已删除':m.body,id:up.id})}
+events.sort((a,b)=>String(b.time).localeCompare(String(a.time)));return '<section class="sec v8-collaboration"><h4>协作记录</h4><div class="v7-context-history">'+events.map(x=>'<article class="v7-context-message"><header><b>'+esc(x.name)+'</b><span>'+esc(x.label)+'</span><time>'+esc(x.time)+'</time></header>'+(x.id?'<small>关联反馈：'+esc(x.id)+'</small>':'')+'<p>'+esc(x.body)+'</p></article>').join('')+'</div></section>'}
+function example(){if(E.role!=='agent'||E.data.tickets.some(t=>t.id==='SK-COLLAB-001'))return;const base=E.data.tickets.find(t=>E.managed(t));if(!base)return;const s=E.copy(base),up=E.copy(base),school=E.owners.school,agent=E.owners.agent,ops=E.owners.enterprise;
+const msg=(id,a,kind,body,receiverId,created,more={})=>({id,actorId:a.id,actorName:a.name,role:a.role,kind,body,receiverId,created,version:1,received:true,...more});
+Object.assign(s,{id:'SK-COLLAB-001',title:'二层电子班牌持续黑屏',content:'二层电子班牌反复黑屏，重启和更换电源后仍无法恢复，请协助处理。',created:'2026-11-10 09:00:00',updated:'2026-11-10 11:15:00',version:1,deleted:false,received:true,reportedIds:['AF-COLLAB-001'],audit:[],messages:[]});
+s.messages=[msg('MC-SUBMIT',school,'submit',s.content,agent.id,s.created)];
+Object.assign(up,{id:'AF-COLLAB-001',kind:'agent',owner:E.copy(agent),title:s.title,content:s.content,type:s.type,school:'',schoolId:'',region:agent.region||'',mode:'direct',receiver:'enterprise',created:'2026-11-10 09:20:00',updated:'2026-11-10 10:40:00',version:1,received:true,deleted:false,reportedIds:[],sourceId:s.id,sourceSnapshot:E.copy({id:s.id,title:s.title,content:s.content,owner:s.owner,school:s.school,schoolId:s.schoolId,region:s.region,type:s.type,attachments:s.attachments,messages:s.messages,at:'2026-11-10 09:20:00'}),reportNote:'已指导学校重启、更换电源，仍无法恢复；请运营协助技术排查。',audit:[],messages:[]});
+const reply='已定位到班牌固件异常，修复版本已下发。请断电30秒后重启，若仍黑屏请补充设备编号和现场照片。';
+up.messages=[msg('MC-COPY',agent,'submit',up.content,ops.id,up.created),msg('MC-OPS',ops,'reply',reply,agent.id,'2026-11-10 10:40:00')];
+s.messages.push(msg('MC-RELAY',agent,'reply','运营已完成固件修复，请将二层班牌断电30秒后重启；如仍黑屏，请把设备编号和现场照片发给我们。',school.id,'2026-11-10 11:15:00',{relayOf:'MC-OPS',upId:up.id,upReplySnapshot:E.copy(up.messages[1])}));
+s.audit=[{time:s.created,by:school.name,text:'提交反馈'},{time:up.created,by:agent.name,text:'抄送运营，关联'+up.id},{time:'2026-11-10 11:15:00',by:agent.name,text:'转达运营回复给学校，关联'+up.id}];up.audit=[{time:up.created,by:agent.name,text:'抄送学校反馈，来源'+s.id},{time:'2026-11-10 10:40:00',by:ops.name,text:'回复代理商'}];E.data.tickets.unshift(s,up);E.save()}
+window.FeedbackCollaboration={render,read};example();
+})();
