@@ -1,23 +1,23 @@
 {
-  "release": "v0.55.0",
+  "release": "v0.55.1",
   "status": "原型评审版",
   "date": "2026-11-17",
   "sourceVersions": {
-    "agent": "v0.55",
+    "agent": "v0.55.1",
     "notice": "V13"
   },
   "repository": "guozi0718/codex-projects",
   "entry": "index.html?page=family-notice",
   "stableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
   "changes": [
-    "更新代理商端统一框架的初始化呈现状态",
-    "菜单结构、路由、业务页面与通知依赖继承既有版本"
+    "修正通知页面在GitHub项目子目录中的链接解析",
+    "继承统一框架及业务页面版本"
   ],
   "files": [
     {
       "path": "index.html",
       "size": 6188,
-      "sha256": "4e70f097b672ad30ddb64e6ae8535c4ea01f41663a4b82024dd491a13d530ea6"
+      "sha256": "81c248c459e10eeac828b2b73a5a706b1b5d105a1125c0c39f427f5892d463fa"
     },
     {
       "path": "assets/action-buttons.css",
@@ -181,8 +181,8 @@
     },
     {
       "path": "assets/page-links-unified.js",
-      "size": 3318,
-      "sha256": "f8322ec937f2d5b89bba9fdd64febed471a115ff760b8a340d0856da547199e5"
+      "size": 3317,
+      "sha256": "eb099066f795e59f8d689b1884918fcdf67e0f47ff83c07db5db95891e4d4b88"
     },
     {
       "path": "assets/page-registry.js",
