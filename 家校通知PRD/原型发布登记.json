@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-18",
+  "task": "T-20261118-03-各端PRD与原型对齐",
+  "scopeStatus": "第一期新增，V0.1 修改中、未定版",
+  "repository": "guozi0718/codex-projects",
+  "noticeFeatureSource": {
+    "version": "V20",
+    "indexSha256": "69A1AB36443613B060C7B243FA22FFB7DBBD65DE97908A42A347E3C92AAC4847",
+    "previewServerSha256": "b8174ab76dd5c3235e08ab76d15133f7dae7229eacff578971002d55aea6d7d9",
+    "appSha256": "004F79FFD83B3C99B0225385B1F54AF45F7C9409E4C470BD684CAF641D5ABDF8",
+    "coreSha256": "04537F75978B82DD399C2F65C087F40F8E9239471C105CB381944AFB5488EC8D",
+    "styleSha256": "C8EF01911B88C9F62829D84BA1A94F43F0B3D5FD35A09446847F39C73D2FFAAB",
+    "githubBlobSha1": {
+      "index.html": "a5e58ad4004f1097d15b703605a20f0c4acda815",
+      "app.js": "1fca7b1d1fec78ca147bbf0ee3f0ffee75c851fb",
+      "core.js": "03ea0138a426aa9e0a0d58b493aa83a8f6c1808b",
+      "styles.css": "96a68278eeb3af368d13110f618fd170180c95f1"
+    }
+  },
+  "webReleases": [
+    {
+      "endpoint": "school",
+      "baseline": "v0.53",
+      "release": "v0.54",
+      "noticeFeature": "V20",
+      "menu": "校务管理 → 家校通知",
+      "route": "family-notice",
+      "stableUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice",
+      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.54/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.54/notice/index.html?role=school&school=s1&embedded=1",
+      "noticeModulePathInRelease": "releases/v0.54/notice/index.html",
+      "commit": "04f17002547c3dd0783822412cc26a4041b9dc96",
+      "baselineIndexSha256": "dc416a84039f3385a32daeca865afb2ad1175c73dc555caa2bc4d8172867d78a",
+      "prd": "家校通知一期产品需求文档-学校Web.md",
+      "screenshot": "截图/学校Web-v0.54.png",
+      "httpStatusAtReview": 200
+    },
+    {
+      "endpoint": "agent",
+      "baseline": "v0.57",
+      "release": "v0.58",
+      "noticeFeature": "V20",
+      "menu": "校务管理 → 家校通知",
+      "route": "family-notice",
+      "stableUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
+      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.58/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.58/notice/index.html?role=agent&school=s2&embedded=1",
+      "noticeModulePathInRelease": "versions/v0.58/notice/index.html",
+      "commit": "adeb315f7cec7fa34b383b675d734ee06cd7adc3",
+      "baselineIndexSha256": "7a36a51da87d0a007fc21206ccf17695cc04d3fec4f91a288073dc57a3dfa283",
+      "prd": "家校通知一期产品需求文档-代理商Web.md",
+      "screenshot": "截图/代理商Web-v0.58.png",
+      "httpStatusAtReview": 200
+    },
+    {
+      "endpoint": "operations",
+      "baseline": "v0.61",
+      "release": "v0.62-2ee13b0246",
+      "noticeFeature": "V20",
+      "menu": "校务管理 → 家校通知",
+      "route": "family-notice",
+      "stableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice",
+      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.62-2ee13b0246/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.62-2ee13b0246/dependencies/notice/index.html?role=ops&school=s2&embedded=1",
+      "noticeModulePathInRelease": "versions/v0.62-2ee13b0246/dependencies/notice/index.html",
+      "commit": "5b4bf62457ae04da3b04eb7a1b1de8867b7bbe6d",
+      "baselineIndexSha256": "f239cce5f2950fe5884dafe0f1e20f9fff9028797839240012f1cba20b685c0a",
+      "prd": "家校通知一期产品需求文档-运营后台.md",
+      "screenshot": "截图/运营后台-v0.62.png",
+      "httpStatusAtReview": 200
+    }
+  ],
+  "miniPrograms": {
+    "teacher": {
+      "status": "本地保留；本任务未修改、未上传原型和模板",
+      "prd": "家校通知一期产品需求文档-教师小程序.md",
+      "visualReferences": [
+        "截图/教师小程序-模板入口-用户参考.png",
+        "截图/教师小程序-普通通知-用户参考.png",
+        "截图/教师小程序-美文通知-用户参考.png"
+      ]
+    },
+    "parent": {
+      "status": "本地保留；本任务未修改、未上传原型",
+      "prd": "家校通知一期产品需求文档-家长小程序.md",
+      "visualReferences": [
+        "截图/家长小程序-通知列表-用户参考.png",
+        "截图/家长小程序-通知卡片-用户参考.png"
+      ]
+    }
+  },
+  "unresolvedQuestions": ["Q66", "Q67", "Q68", "Q69", "Q70"],
+  "validationLimits": [
+    "已核对 Web 稳定入口和固定版本入口的 HTTP 200 状态，并采集列表页静态截图。",
+    "未运行自动化测试，未接入真实权限、名单、消息服务或服务端日志。",
+    "未验收真实 PDF 生成与打印分页。"
+  ]
+}
