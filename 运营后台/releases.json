@@ -186,5 +186,14 @@
         "bytes": 64636
       }
     ]
+  },
+  {
+    "version": "v0.62",
+    "releaseId": "v0.62-170248443d",
+    "bundleHash": "170248443d329c6d862b6e74a6233091858845b4131783ba39e876a73034860f",
+    "publishedAt": "2026-11-18T12:22:49.073Z",
+    "documentation": "versions/v0.62-170248443d/版本说明.md",
+    "documentationSHA256": "8ae10781f5b60adcbf566113f2950bb4d631d723aed0610ed58c93a3bd5a6555",
+    "documents": []
   }
 ]

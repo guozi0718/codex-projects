@@ -1,17 +1,10 @@
 {
-  "version": "v0.61",
-  "releaseId": "v0.61-8bee8fe907",
-  "bundleHash": "8bee8fe907aad222e8529551b5d35537c61d603de5db55eed04caa2bd2d1ea6b",
-  "publishedAt": "2026-11-18T06:59:00.181Z",
-  "url": "versions/v0.61-8bee8fe907/index.html",
-  "documentation": "versions/v0.61-8bee8fe907/版本说明.md",
-  "documentationSHA256": "924fd3b5647015a9cf1de5736e1541f4c87caf919f610ca4da46dded40591dbf",
-  "documents": [
-    {
-      "title": "系统字段管理产品需求文档 V0.18",
-      "path": "versions/v0.61-8bee8fe907/docs/产品需求文档.md",
-      "sha256": "413ee0e50eff252cf23b51e0ef63da21be47f96f02345378dc3e289bd6efdcb9",
-      "bytes": 64636
-    }
-  ]
+  "version": "v0.62",
+  "releaseId": "v0.62-170248443d",
+  "bundleHash": "170248443d329c6d862b6e74a6233091858845b4131783ba39e876a73034860f",
+  "publishedAt": "2026-11-18T12:22:49.073Z",
+  "url": "versions/v0.62-170248443d/index.html",
+  "documentation": "versions/v0.62-170248443d/版本说明.md",
+  "documentationSHA256": "8ae10781f5b60adcbf566113f2950bb4d631d723aed0610ed58c93a3bd5a6555",
+  "documents": []
 }

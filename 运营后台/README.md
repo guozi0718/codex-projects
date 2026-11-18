@@ -2,12 +2,12 @@
 
 [打开最新原型](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=system-field-management)
 
-当前业务版本：v0.61；分发版本：v0.61-8bee8fe907。修改中、未定版，不是生产系统。
+当前业务版本：v0.62；分发版本：v0.62-170248443d。修改中、未定版，不是生产系统。
 
 - index.html：固定最新入口，保留page/view/dialog/id等查询参数。
 - versions/：不可变运行版本，含完整资源、已登记通知依赖、版本说明和明确登记的产品文档及文件哈希。
 - latest.json / releases.json：活动分发索引及追加历史。
-- 后续已登记活动版本由本地自动同步任务推送；GitHub Pages跟随main分支部署。电脑关闭、退出登录、网络/认证失败时不会声称同步成功。
+- 只有用户在当前会话明确要求推送后，发布器才上传登记的活动版本；GitHub Pages跟随这次获授权的main提交部署。未得到明确推送指令时不会上传。
 - 本地未采用候选、全量历史快照、凭据及会话资料不上传。
 
 回滚：创建新commit，将最新入口和latest.json指回既有不可变版本；不重写Git历史、不强推。
