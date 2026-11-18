@@ -195,5 +195,14 @@
     "documentation": "versions/v0.62-170248443d/版本说明.md",
     "documentationSHA256": "8ae10781f5b60adcbf566113f2950bb4d631d723aed0610ed58c93a3bd5a6555",
     "documents": []
+  },
+  {
+    "version": "v0.61",
+    "releaseId": "v0.61-bf7edb6744",
+    "bundleHash": "bf7edb67444a2bf32c090deb1641f1cf9264e9f8ddf4242e3d9d3066ec01daf9",
+    "publishedAt": "2026-11-18T12:29:16.400Z",
+    "documentation": "versions/v0.61-bf7edb6744/版本说明.md",
+    "documentationSHA256": "739e5323b73225f5e949bc3781c992e26100dfba8007e2668822a0188dd2fd7f",
+    "documents": []
   }
 ]
