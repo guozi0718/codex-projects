@@ -1,7 +1,9 @@
 {
   "version": "v0.61",
-  "releaseId": "v0.61-fddeba7d8a",
-  "bundleHash": "fddeba7d8ab6b988a4793b4fa4fdd632a3fb7e1e98ea5a1c4b512b3a05643bcd",
-  "publishedAt": "2026-11-18T06:22:06.392Z",
-  "url": "versions/v0.61-fddeba7d8a/index.html"
+  "releaseId": "v0.61-abf307a686",
+  "bundleHash": "abf307a6867a7ea00c4a827b033172fdf98c2d4287789dafb20fdb1c7b2d9cf8",
+  "publishedAt": "2026-11-18T06:26:28.410Z",
+  "url": "versions/v0.61-abf307a686/index.html",
+  "documentation": "versions/v0.61-abf307a686/版本说明.md",
+  "documentationSHA256": "12a77f7be629b3df8c82bcd50238f83e1df5d3bcb1c873991820475b091bb0eb"
 }
