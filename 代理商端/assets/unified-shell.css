@@ -2,5 +2,5 @@
 /* Content links retain feature structure while removing duplicate baseline chrome. */
 body.unified-content{min-width:0!important;margin:0!important;overflow:auto!important}body.unified-content>.hd,body.unified-content #navigation,body.unified-content>.sd,body.unified-content #app>.sd,body.unified-content #app>.hd,body.unified-content .main>.tabs,body.unified-content #tabs,body.unified-content .page-sticky-header{display:none!important}body.unified-content::after{display:none!important}body.unified-content .main{margin-left:0!important;padding-top:0!important}body.unified-content .content{padding:0!important;margin:0!important}body.unified-content .card{margin:0!important;border-radius:0!important;padding:24px}body.unified-content #workspace{margin:0!important;padding:24px!important;min-width:0;box-sizing:border-box}body.unified-content .family-notice-open{min-width:0}body.unified-content .mask{z-index:3000}body.unified-content .cs-mask{z-index:3001}
 
-.unified-unread{float:right;color:#bb7d21;background:#fff5db;border-radius:10px;font-size:11px;padding:0 5px}
+
 

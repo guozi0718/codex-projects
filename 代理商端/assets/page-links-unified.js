@@ -72,7 +72,7 @@ window.UnifiedPages={
     "family-notice": {
       "title": "家校通知",
       "owner": "学校通知家长",
-      "url": "notice/index.html",
+      "url": "/notice/index.html",
       "self": false,
       "parameters": {
         "role": "agent",
