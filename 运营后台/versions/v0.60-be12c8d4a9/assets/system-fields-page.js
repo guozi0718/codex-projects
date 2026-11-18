@@ -1,0 +1,291 @@
+/* System-field page synchronized to Phase 1 current rules; the Operations main prototype owns navigation and menu registration. */
+(()=>{'use strict';
+const FIELD_PAGE='system-field-management';let activeHost=null;
+const markup="<div class=\"systemFieldsRoot\"><main>\n<section id=\"vList\" class=\"panel\">\n<h1 class=\"srOnly\">系统字段管理</h1>\n<div class=\"filter\"><label><span>字段类型</span><select id=\"fType\"><option value=\"\">全部</option><option value=\"badge\">校徽类</option></select></label><label><span>适用机构</span><input id=\"fOrg\" maxlength=\"50\" placeholder=\"请输入机构名称\"></label><div class=\"actions\"><button id=\"btnQuery\" class=\"primary\">查询</button><button id=\"btnReset\">重置</button></div></div><p id=\"listError\" class=\"error\" role=\"alert\"></p>\n<div class=\"listToolbar actions\"><button id=\"btnNew\" class=\"primary\">新增</button></div>\n<div id=\"listWrap\" class=\"tableWrap\"><table class=\"listTable\"><thead><tr><th>序号</th><th>字段类型</th><th>系统字段</th><th>替换字段</th><th>适用范围</th><th>最后修改时间</th><th class=\"fixed\" style=\"width:190px\">操作</th></tr></thead><tbody id=\"listBody\"></tbody></table></div><div id=\"pager\" class=\"pager\"></div>\n</section>\n<section id=\"vForm\" class=\"panel\" hidden>\n<div class=\"formHeader\"><div class=\"formHeaderTitle\"><button id=\"btnBack2\" class=\"backButton\">← 返回</button><span class=\"formHeaderDivider\" aria-hidden=\"true\"></span><h1 id=\"formTitle\">新增替换字段</h1></div><div class=\"actions\"><button id=\"btnBack\">取消</button><button id=\"btnSave\" class=\"primary\">保存</button></div></div>\n\n<div class=\"row\"><label for=\"selType\"><em>*</em>字段类型</label><div><select id=\"selType\"><option value=\"badge\">校徽类</option></select></div></div>\n<div class=\"row\"><label><em>*</em>替换字段</label><div><div class=\"quick\">一键选择：<button data-fill=\"A\">替换为“学生终端”</button><button data-fill=\"B\">替换为“学生卡”</button><button data-fill=\"\">恢复默认</button></div><div class=\"tableWrap\"><table class=\"wordTable\"><thead><tr><th>系统字段</th><th>替换字段</th><th>替换效果</th></tr></thead><tbody id=\"wordBody\"></tbody></table></div><p id=\"mapError\" class=\"error\"></p></div></div>\n<div class=\"row\"><label><em>*</em>适用范围</label><div><div class=\"actions\"><button id=\"btnScope\">选择适用机构</button></div><div id=\"scopeChips\" class=\"scopeGroups\"></div><p id=\"scopeError\" class=\"error\"></p></div></div>\n<div id=\"formError\" class=\"error banner\" role=\"alert\"></div><div id=\"pendingBar\" class=\"notice\" hidden>提交结果待核实，暂不可再次保存或离开。<button id=\"checkResult\" class=\"link\">查询提交结果</button></div>\n\n</section>\n</main>\n<dialog id=\"scopeDialog\" class=\"scopeDialog\"><header><h2>选择适用机构</h2><button class=\"x\" data-close=\"scopeDialog\" aria-label=\"关闭选择适用机构\">×</button></header><div class=\"dialogBody\">\n\n<div class=\"scopeFilters unifiedFilters\"><label>客户<input id=\"sCustomer\" maxlength=\"50\" placeholder=\"请输入客户名称\"></label><label>合同<select id=\"sContract\"><option value=\"\">全部</option></select></label><label><span id=\"scopeNameLabel\">监管名称</span><input id=\"sName\" maxlength=\"50\" placeholder=\"请输入监管名称\"></label><div class=\"actions\"><button id=\"sQuery\" class=\"primary\">查询</button><button id=\"sReset\">重置</button></div></div>\n<div class=\"tabs\" role=\"tablist\" aria-label=\"适用机构类型\"><button id=\"tabReg\" role=\"tab\" aria-selected=\"true\">监管</button><button id=\"tabSchool\" role=\"tab\" aria-selected=\"false\">学校</button></div>\n<div class=\"batch\"><span id=\"resultCount\" class=\"muted\"></span><button id=\"selectFiltered\">全选</button></div><p id=\"scopeLoadError\" class=\"error\" role=\"alert\"></p>\n<div class=\"scopeTable tableWrap\"><table><thead><tr><th style=\"width:40px\">选择</th><th>关联合同</th><th id=\"scopeNameCol\">监管名称</th><th id=\"contextCol\">监管类型</th></tr></thead><tbody id=\"scopeRows\"></tbody></table></div>\n<div class=\"selected\"><h3 id=\"selectedCount\">已选 0 个</h3><div id=\"selectedGroups\"></div></div><p id=\"scopePickError\" class=\"error\" role=\"alert\"></p>\n</div><footer><div class=\"actions\"><button data-close=\"scopeDialog\">取消</button><button id=\"scopeOk\" class=\"primary\">确定</button></div></footer></dialog>\n<dialog id=\"infoDialog\"><header><h2 id=\"infoTitle\"></h2><button class=\"x\" data-close=\"infoDialog\" aria-label=\"关闭详情\">×</button></header><div id=\"infoBody\" class=\"dialogBody\"></div><footer><button data-close=\"infoDialog\">关闭</button></footer></dialog>\n<dialog id=\"confirmDialog\" class=\"small\"><header><h2 id=\"confirmTitle\"></h2><button class=\"x\" data-close=\"confirmDialog\" aria-label=\"关闭确认\">×</button></header><div class=\"dialogBody\"><p id=\"confirmText\"></p><p id=\"confirmError\" class=\"error\" role=\"alert\"></p></div><footer><button data-close=\"confirmDialog\" id=\"confirmCancel\">取消</button><button id=\"confirmOk\" class=\"primary\">确定</button></footer></dialog>\n<dialog id=\"contractDialog\"><header><h2>合同关联机构入口</h2><button class=\"x\" data-close=\"contractDialog\" aria-label=\"关闭合同入口\">×</button></header><div class=\"dialogBody\"><table class=\"contractTable\"><thead><tr><th>合同名称</th><th>关联监管/学校数量</th><th>操作</th></tr></thead><tbody id=\"contractBody\"></tbody></table></div><footer><button data-close=\"contractDialog\">关闭</button></footer></dialog><div id=\"toast\" role=\"status\" hidden></div></div>";
+const css=":host{--primary:#009A3D;--link:#087D35;--line:#DCE2EB;--muted:#8995A8;--danger:#E5484D;color-scheme:light;font:14px/1.6 \"Microsoft YaHei\",Arial,sans-serif;color:#1F2937;background:#F3F6FB}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit;color:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button,input,select{height:32px;border:1px solid #D8DEE9;border-radius:4px;background:white;padding:0 10px}input{min-width:0}input:focus,select:focus{outline:1px solid var(--primary);border-color:var(--primary)}button:hover:enabled{border-color:var(--primary);color:var(--link)}button.primary{background:var(--primary);border-color:var(--primary);color:white}button.danger{background:var(--danger);border-color:var(--danger);color:white}button.link{border:0;background:none;padding:0;color:var(--link);height:auto}button.del{color:var(--danger)}a{color:var(--link)}[hidden]{display:none!important}main{padding:16px 18px 32px}.panel{border:1px solid #EEF1F5;background:white;border-radius:12px;min-height:600px;padding:20px 32px}.heading{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E8ECF2;padding-bottom:16px;margin-bottom:20px;gap:15px}h1{font-size:15px;font-weight:600;color:#17304F;margin:0}h2{font-size:16px;margin:0;font-weight:600}h3{font-size:13px;margin:0 0 10px}.muted,.desc{color:var(--muted)}.heading p{font-size:12px;margin:3px 0 0}.actions,.quick{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.quick{margin-bottom:10px}.quick button[aria-pressed=\"true\"]{background:#E8F5EC;border-color:#009A3D;color:#087D35;font-weight:600;box-shadow:0 0 0 2px rgba(0,154,61,.16)}.quick button[aria-pressed=\"true\"]:hover:enabled{background:#DDF2E4;border-color:#008A35;color:#087D35}.quick button:focus-visible{outline:2px solid #1769AA;outline-offset:2px}.filter{display:flex;gap:12px 24px;flex-wrap:wrap;margin-bottom:18px;align-items:center}.filter label{display:flex;gap:12px;align-items:center}.filter .actions{margin-left:auto}.tableWrap{overflow:auto;scrollbar-width:none}.tableWrap::-webkit-scrollbar{display:none}table{width:100%;border-collapse:collapse;min-width:900px;table-layout:fixed}th,td{border:1px solid var(--line);padding:11px 10px;text-align:center;vertical-align:middle;overflow-wrap:anywhere}th{background:#F2F5FA;color:#77849A;font-weight:500}td{background:white}tr:hover td{background:#FBFDFC}.fixed{position:sticky;right:0;box-shadow:-5px 0 8px rgba(54,76,110,.08)}th.fixed{background:#F2F5FA}td.fixed{background:white}.fixed .actions{justify-content:center;gap:12px}.sub{display:block;color:var(--muted);font-size:12px}.pager{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}.pager .total{margin-right:auto;color:var(--muted)}.pager .active{background:var(--primary);color:white;border-color:var(--primary)}.pager button{padding:0 10px}.pager input{width:55px;text-align:center;padding:0 3px}.empty{height:100px;color:var(--muted);background:#F7F9FC}.row{display:grid;grid-template-columns:100px minmax(0,1fr);gap:16px;max-width:1080px;margin-bottom:24px}.row>label{line-height:32px;text-align:right}em{font-style:normal;color:var(--danger);margin-right:4px}.wordTable{min-width:620px}.wordTable th:first-child{width:160px}.wordTable th:nth-child(2){width:180px}.wordTable td:last-child{text-align:left}.wordTable select{min-width:135px}mark{background:#FFF1C2;color:#5A4300;padding:1px 3px}.desc{font-size:12px;margin:8px 0 0;line-height:1.8}.formFoot{border-top:1px solid #EDF0F5;padding:16px 0 0 116px;display:flex;gap:10px}.error{color:var(--danger);font-size:12px;margin:6px 0;white-space:pre-line}.error:empty{display:none}.banner{margin:10px 0 15px 116px}.notice{background:#F2F5FA;color:#354052;border-radius:6px;padding:10px 12px;margin:0 0 16px;font-size:12px;line-height:1.8}.warning{background:#FFF6E8;color:#9A5200;padding:8px 12px;border-radius:4px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.chip{background:#F1F8F3;border:1px solid #DCEBDC;border-radius:4px;display:inline-flex;gap:8px;align-items:center;padding:3px 8px;font-size:12px}.chip button{border:0;background:none;padding:0 2px;height:22px;color:#8995A8}.invalid{background:#FFF1F0;border-color:#FFD2D2;color:#C63338}.dots{position:fixed;right:10px;top:8px;display:flex;gap:4px;z-index:120}.dot{border:0;padding:0;width:18px;height:18px;background:transparent;display:grid;place-items:center}.dot:after{content:'';width:10px;height:10px;border-radius:50%;border:2px solid white;box-shadow:0 1px 4px #999}.red:after{background:#F5222D}.green:after{background:#079B45}.pop{position:fixed;right:12px;top:32px;z-index:121;background:white;border:1px solid #EEF1F5;border-radius:8px;box-shadow:0 10px 30px #16304f26;padding:16px;width:300px;display:flex;flex-direction:column;gap:10px}.pop strong{font-size:13px}.pop small{color:var(--muted)}.pop label{display:flex;flex-direction:column;gap:4px}.pop button{text-align:left}.pop select{width:100%}dialog{border:0;border-radius:10px;padding:0;width:720px;max-width:calc(100vw - 24px);max-height:85vh;box-shadow:0 18px 50px #162d4e33;color:inherit;background:white}dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:rgba(16,30,50,.35)}dialog header{padding:17px 20px;border-bottom:1px solid #EDF0F5;display:flex;align-items:center;justify-content:space-between;flex:none}dialog footer{padding:13px 20px;border-top:1px solid #EDF0F5;display:flex;align-items:center;justify-content:flex-end;gap:12px;flex:none}dialog footer>span{margin-right:auto;font-size:12px}dialog footer button{height:34px;border-radius:6px}.dialogBody{padding:18px 20px;overflow:auto;scrollbar-width:thin}.dialogBody table{min-width:600px}.x{border:0;background:none;padding:0;width:24px;height:24px;font-size:22px;color:#8A94A6}.small{width:400px}.tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:16px;gap:24px}.tabs button{border:0;border-radius:0;background:none;padding:0 4px 8px;height:36px}.tabs button[aria-selected=true]{border-bottom:2px solid var(--primary);color:var(--primary);font-weight:600}.scopeFilters{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}.scopeFilters label{display:flex;gap:8px;align-items:center}.scopeFilters input,.scopeFilters select{width:100%;flex:1}.scopeFilters .actions{grid-column:1/-1;justify-content:flex-end}.batch{display:flex;justify-content:space-between;align-items:center;margin:14px 0 8px}.scopeTable{max-height:230px}.scopeTable th{position:sticky;top:0;z-index:1}.scopeTable table{min-width:620px;font-size:12px}.scopeTable th,.scopeTable td{padding:9px 7px}.scopeTable td:nth-child(2){text-align:left}.scopeTable input{height:15px;width:15px;accent-color:var(--primary);padding:0}.scopeTable .sub{font-size:11px}.selected{margin-top:16px;background:#FAFAFA;border-radius:7px;padding:12px 14px;max-height:180px;overflow:auto}.group{margin-bottom:9px}.group:last-child{margin:0}.groupLabel{font-size:12px;color:#8A94A6;margin-bottom:6px}.group .chips{margin-top:0}.badge{font-size:11px;white-space:nowrap;padding:2px 5px;border-radius:3px;border:1px solid #CEE7D4;color:#087D35;background:#F1F8F3}.badge.gray{border-color:#E1E4EA;background:#F6F7F9;color:#8995A8}.kv{display:grid;grid-template-columns:110px 1fr;gap:10px;margin:10px 0}.kv>span:first-child{color:#8A94A6}#toast{position:fixed;left:50%;top:22%;transform:translateX(-50%);background:rgba(23,38,61,.94);color:white;border-radius:7px;padding:10px 18px;z-index:200;max-width:80vw}#contractDialog table{min-width:580px}@media(max-width:850px){main{padding:34px 10px 25px}.panel{padding:18px}.heading{align-items:flex-start}.heading>.actions{justify-content:flex-end}.row{grid-template-columns:1fr;gap:5px}.row>label{text-align:left}.formFoot{padding-left:0}.banner{margin-left:0}.scopeFilters{grid-template-columns:1fr}.filter .actions{margin-left:0}dialog footer>span{max-width:200px}.scopeDialog .dialogBody{padding:14px}.heading{flex-wrap:wrap}}\n\n@media(min-width:851px){.scopeFilters{grid-template-columns:repeat(3,minmax(0,1fr))}.scopeFilters .actions{grid-column:2/-1}.scopeFilters label{min-width:0}.scopeFilters input,.scopeFilters select{min-width:0;width:0}}\n\n/* V0.3：统一三项筛选，类型切换位于筛选下方。 */\n.unifiedFilters{margin-bottom:16px}.unifiedFilters+.tabs{margin-bottom:8px}.scopeFilters label>span{white-space:nowrap}.unifiedFilters .actions{grid-column:1/-1;justify-content:flex-end}\n@media(min-width:851px){.unifiedFilters{grid-template-columns:repeat(2,minmax(0,1fr))}.unifiedFilters label:nth-child(3){grid-column:1}.unifiedFilters .actions{grid-column:2;grid-row:2}}\n\n/* V0.4：四列表格；主键/状态不作为列表列。保留失效字段必要反馈。 */\n.scopeTable table{min-width:590px}.scopeTable th:nth-child(2){width:31%}.scopeTable th:nth-child(3){width:23%}.scopeTable th:nth-child(4){width:auto}.scopeTable td:nth-child(4){text-align:left}.scopeTable input:disabled{cursor:not-allowed;opacity:.4}.batch button{height:30px;padding:0 14px}.selected .groupLabel{margin-bottom:5px}\n@media(max-width:850px){.row{grid-template-columns:minmax(0,1fr)}.row>div{min-width:0}.scopeTable table{min-width:0}}\n\n/* V0.5：动态名称列居中；三处范围共用带数量的分组标签。 */\n.scopeTable th:nth-child(2),.scopeTable td:nth-child(2){text-align:center}\n.scopeGroups{background:#FAFAFA;border-radius:7px;padding:12px 14px;margin:10px 0 14px}.scopeGroups .group{margin-bottom:12px}.scopeGroups .group:last-child{margin-bottom:0}.scopeGroups .groupLabel{color:#8995A8;font-size:12px;margin-bottom:6px}.scopeGroups .chips{margin-top:0}\n\n/* V0.6：筛选下操作区、行级日志及合同关联明细。 */\n.listToolbar{justify-content:flex-start;margin:0 0 16px}.fixed .actions{flex-wrap:nowrap}.contractTable th:first-child{width:49%}.contractTable th:nth-child(2){width:34%}.contractTable th:nth-child(3){width:17%}.relationContract{margin:0 0 16px;color:#354052}.relationGroup{background:#FAFAFA;border-radius:7px;padding:12px 14px;margin-bottom:12px}.relationGroup:last-child{margin-bottom:0}.relationGroup h3{font-size:13px;color:#354052;margin:0 0 8px}.relationGroup .chips{margin:0}.relationEmpty{display:grid;place-items:center;border-radius:6px}\n\n\n/* V0.8：系统字段管理纳入运管后台统一侧栏，位于承运商管理之前。 */\n.appShell{min-height:100vh;display:grid;grid-template-columns:184px minmax(0,1fr)}\n.sidebar{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;min-width:0;padding:18px 10px;border-right:1px solid #E3E8EF;background:#F3F6FB}\n.sidebarBrand{height:38px;display:flex;align-items:center;gap:9px;padding:0 8px;margin:0 0 20px;color:#17304F;white-space:nowrap}\n.sidebarBrand i{width:25px;height:25px;border-radius:6px;background:var(--primary);color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:600}\n.sidebarBrand strong{font-size:14px;font-weight:600}\n.mainNav{min-width:0}\n.navGroup{min-width:0}\n.navGroupToggle{height:38px;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 10px;border:0;border-radius:4px;background:transparent;text-align:left;color:#43536A;font-weight:600}\n.navGroupToggle:hover{background:#EAF0F7;color:#17304F}\n.navChevron{font-size:15px;color:#8995A8;transition:transform .15s ease}\n.navGroupToggle[aria-expanded=\"false\"] .navChevron{transform:rotate(-90deg)}\n.navItems{display:grid;gap:2px;margin-top:3px}\n.navItem{width:100%;height:36px;display:flex;align-items:center;border:0;border-radius:4px;padding:0 10px 0 24px;background:transparent;color:#4B5563;text-align:left;text-decoration:none;white-space:nowrap}\n.navItem.active{background:#E8F5EC;color:#087D35;font-weight:600}\n.navItem.navContext{color:#8995A8;cursor:default}\n.navItem.navContext:hover{background:transparent;color:#8995A8}\n.workspace{min-width:0}\n\n\n\n\n\n.dot{border:0;padding:0;width:20px;height:20px;background:transparent;display:grid;place-items:center}\n.dot:after{content:'';width:10px;height:10px;border-radius:50%;border:2px solid white;box-shadow:0 1px 4px #999;background:#079B45}\nmain{padding:16px 18px 32px}\n#listWrap>table{min-width:850px}\n\n.srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}\n@media(max-width:850px){\n .appShell{grid-template-columns:184px minmax(0,1fr)}\n .sidebar{display:block;height:100vh;padding:18px 10px;border-right:1px solid #E3E8EF;border-bottom:0}\n .sidebarBrand{height:38px;display:flex;align-items:center;margin:0 0 20px}\n .mainNav{min-width:0;flex:none}\n .navGroupToggle{display:flex}\n .navItems{display:grid;gap:2px;margin-top:3px}\n .navItem{width:100%;height:36px;padding:0 10px 0 24px}\n main{padding:16px 10px 25px}\n #listWrap>table{min-width:820px}\n}\n@media(max-width:560px){\n main{padding:12px 8px 20px}\n .panel{padding:14px 12px}\n #listWrap>table{min-width:820px}\n}\n\n\n/* V0.10: compact one-line list and form header matching Operations UI. */\n.listToolbar{justify-content:flex-start;margin-bottom:16px}\n#vList .listTable{width:100%;min-width:1120px;table-layout:auto}\n#vList .listTable th,#vList .listTable td{white-space:nowrap;overflow-wrap:normal;padding:10px 12px}\n#vList .listTable th:first-child,#vList .listTable td:first-child{width:56px;min-width:56px}\n#vList .listTable th:nth-child(2){width:92px}\n#vList .listTable th:nth-child(3),#vList .listTable th:nth-child(4){min-width:190px}\n#vList .listTable th:nth-child(5){min-width:190px}\n#vList .listTable th:nth-child(6){min-width:145px}\n#vList .listTable th:last-child{min-width:160px;width:160px}\n.listInlineCount{margin-left:6px;color:var(--muted);font-size:11px}\n.formHeader{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #E8ECF2;padding-bottom:16px;margin-bottom:20px}\n.formHeaderTitle{display:flex;align-items:center;gap:14px;min-width:0}\n.formHeaderTitle h1{font-size:15px}\n.backButton{height:auto;border:0;background:transparent;padding:0;color:#17304F;white-space:nowrap}\n.backButton:hover:enabled{border-color:transparent;color:var(--link)}\n.formHeaderDivider{color:#D8DEE9}\n.formHeader>.actions{justify-content:flex-end;flex-wrap:nowrap}\n.formHeader>.actions button{min-width:72px}\n#infoBody.detailBody .kv{grid-template-columns:128px minmax(0,1fr);gap:10px 14px;align-items:start;margin:8px 0}\n#infoBody.detailBody .kv>span:first-child{text-align:right;color:#58677d;white-space:nowrap}\n#infoBody.detailBody .kv>span:last-child,#infoBody.detailBody .kv>div:last-child{text-align:left}\n#infoBody.detailBody .scopeGroups{min-width:0}\n.detailExampleTitle{text-align:center;margin:18px 0 10px}\n#infoBody.detailBody .detailExampleTable{width:auto;min-width:360px;max-width:460px;margin:0 auto;table-layout:auto}\n#infoBody.detailBody .detailExampleTable th,#infoBody.detailBody .detailExampleTable td{padding:7px 14px;text-align:center;white-space:nowrap;overflow-wrap:normal}\n.scopeTable td:nth-child(2){text-align:left;white-space:normal}\n.scopeTable td:nth-child(3){text-align:center}\n@media(max-width:850px){.formHeader{align-items:flex-start;flex-wrap:wrap}.formHeader>.actions{margin-left:auto}.formHeaderTitle{gap:9px}}\n\n/* V0.11：字段管理工作区与运营后台合同管理样式对齐。 */\nmain{padding:0!important}\n.panel{border:0;background:transparent;border-radius:0;min-height:0;padding:0}\n.systemFieldsRoot{font:14px/1.6 \"Microsoft YaHei\",Arial,sans-serif;color:#1F2937}\n.filter{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:16px}\n.filter>label{display:grid;grid-template-columns:96px 270px;gap:10px;align-items:center;min-width:0;margin:0}\n.filter>label>span{width:96px;text-align:right;white-space:nowrap;color:#354052}\n.filter>label>input,.filter>label>select{width:270px;min-width:0;height:32px;border-radius:4px;padding:0 10px;font-size:14px}\n.filter .actions{margin-left:auto;gap:10px;justify-content:flex-end;flex-wrap:nowrap}\n.filter .actions>button,.listToolbar>button{height:32px;border-radius:4px;padding:0 16px;font-size:14px;white-space:nowrap}\n.listToolbar{gap:10px;margin:0 0 16px}\n.formHeader{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #E8ECF2;padding:0 0 16px;margin:0 0 20px}\n.formHeaderTitle{display:flex;align-items:center;gap:14px;min-width:0}\n.formHeaderTitle h1{font-size:16px;font-weight:600}\n.backButton{height:auto;border:0;background:transparent;padding:0;color:#58677D;white-space:nowrap;font-size:14px}\n.backButton:hover:enabled{border-color:transparent;color:#009A3D}\n.formHeaderDivider{display:block;width:1px;height:14px;background:#DCE2EB;color:transparent}\n.formHeader>.actions{justify-content:flex-end;flex-wrap:nowrap;gap:10px}\n.formHeader>.actions button{height:32px;min-width:72px;border-radius:4px;padding:0 16px;font-size:14px}\n.row{grid-template-columns:140px minmax(0,1fr);gap:12px;max-width:1080px}\n@media(max-width:1100px){\n .filter{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}\n .filter>label{grid-template-columns:84px minmax(0,1fr);gap:10px}\n .filter>label>span{width:84px}\n .filter>label>input,.filter>label>select{width:100%}\n .filter .actions{grid-column:1/-1;margin-left:0;justify-content:flex-end}\n}\n@media(max-width:560px){\n .filter{grid-template-columns:minmax(0,1fr)}\n .filter>label{grid-template-columns:96px minmax(0,1fr)}\n .filter>label>span{width:96px}\n .filter .actions{grid-column:1;justify-content:flex-start}\n .formHeader{align-items:flex-start;flex-wrap:wrap}\n .formHeader>.actions{margin-left:auto}\n .formHeaderTitle{gap:10px}\n .row{grid-template-columns:minmax(0,1fr);gap:5px}\n .row>label{text-align:left}\n}\r\n\n:host{display:block;min-width:0;font-family:'Microsoft YaHei',Arial,sans-serif;color:#1F2937;background:transparent}\n.systemFieldsRoot{position:relative;min-height:0}\n.dots{position:absolute;right:10px;top:2px}\n.pop{position:absolute;right:12px;top:28px}\n";
+function mount(host){if(!host||!host.isConnected)throw Error('系统字段页面容器缺失');if(activeHost===host&&host.__systemFieldsApp&&host.isConnected)return;if(activeHost&&activeHost!==host)unmount(activeHost);activeHost=host;const root=host.shadowRoot||host.attachShadow({mode:'open'});root.innerHTML='<style>'+css+'</style>'+markup;const app=(()=>{
+'use strict';
+const $=s=>root.querySelector(s), $$=s=>[...root.querySelectorAll(s)];
+const FIELD_PAGE='system-field-management';
+let routeRestoring=false,routeStack=[],suppressCloseEvents=0;
+const activeDialogRoute=new WeakMap(),closeHandlers=[];
+function formRouteFields(){const state={view:'form'};if(editing)state.id=String(editing.id);if(formContract)state.contract=String(formContract);return state}
+function formRoute(dialog){return {page:FIELD_PAGE,...formRouteFields(),dialog}}
+function writePageRoute(params={},replace=false){if(routeRestoring||!window.QueryRouter)return;routeStack=[];window.QueryRouter.write({page:FIELD_PAGE,...params},replace)}
+function hasRecord(id){return /^\d+$/.test(String(id||''))&&items.some(i=>String(i.id)===String(id))}
+function closeOpenDialogs(){for(const d of $$('dialog'))if(d.open){suppressCloseEvents++;d.close()}}
+
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clone=o=>JSON.parse(JSON.stringify(o));
+const now=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
+const WORDS=[
+{id:'w1',src:'智能校徽',a:'智能学生终端',b:'智能学生卡',ex:'当前接送设置适用于{x}。'},
+{id:'w2',src:'佩戴校徽',a:'携带学生终端',b:'携带学生卡',ex:'请提醒孩子每天{x}到校。'},
+{id:'w3',src:'校徽绑定',a:'学生终端绑定',b:'学生卡绑定',ex:'{x}成功。'},
+{id:'w4',src:'校徽管理',a:'学生终端管理',b:'学生卡管理',ex:'菜单：{x}'},
+{id:'w5',src:'校徽办理二维码',a:'学生终端办理二维码',b:'学生卡办理二维码',ex:'扫描{x}，进入办理页面。'},
+{id:'w6',src:'分享校徽办理',a:'分享学生终端办理',b:'分享学生卡办理',ex:'家长分享活动时显示标题“{x}”。'},
+{id:'w7',src:'校徽卡面',a:'学生终端卡面',b:'学生卡面',ex:'家长可查看孩子的{x}。'}];
+const aMap=Object.fromEntries(WORDS.map(w=>[w.id,w.a]));
+const CONTRACTS={
+ 'HT-2026-001':{name:'校园安全服务项目',number:'HT-2026-001'},
+ 'HT-2026-002':{name:'校园终端服务项目',number:'HT-2026-002'},
+ 'HT-2026-003':{name:'新学校筹备项目',number:'HT-2026-003'}
+};
+Object.entries(CONTRACTS).forEach(([id,contract])=>{const option=document.createElement('option');option.value=id;option.textContent=contract.name||'--';$('#sContract').append(option)});
+const contractDisplay=id=>CONTRACTS[id]?`${CONTRACTS[id].name||'--'}（${CONTRACTS[id].number||'--'}）`:'--';
+const REGULATOR_TYPES=['部委监管','省厅监管','地市监管','区县监管'];
+const regulatorType=n=>({'部级':'部委监管','省级':'省厅监管','市级':'地市监管','区县级':'区县监管'}[n.level]||'--');
+const schoolRegulator=n=>{const regulator=node(n.regulatorId);return regulator?.kind==='reg'?regulator.name||'--':'--'};
+const ORGS=[
+{id:'r0',name:'部级监管示例单位',kind:'reg',level:'部级',customer:'临海教育服务中心',contracts:['HT-2026-001']},
+{id:'r1',name:'江南省教育厅',kind:'reg',level:'省级',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'江南省'},
+{id:'r2',name:'临海市教育局',kind:'reg',level:'市级',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'临海市'},
+{id:'r3',name:'凤翔区教育局',kind:'reg',level:'区县级',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'临海市 / 凤翔区'},
+{id:'r4',name:'云溪区教育局',kind:'reg',level:'区县级',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'临海市 / 云溪区'},
+{id:'r5',name:'安平市教育局',kind:'reg',level:'市级',customer:'安平校园服务中心',contracts:['HT-2026-002'],region:'安平市'},
+{id:'s1',name:'凤翔区第一实验小学',kind:'school',regulatorId:'r3',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'临海市 / 凤翔区'},
+{id:'s2',name:'凤翔区实验中学',kind:'school',regulatorId:'r3',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'临海市 / 凤翔区'},
+{id:'s3',name:'云溪区明德小学',kind:'school',regulatorId:'r4',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'临海市 / 云溪区'},
+{id:'s4',name:'东城区东城小学',kind:'school',regulatorId:'r5',customer:'安平校园服务中心',contracts:['HT-2026-002'],region:'安平市 / 东城区'},
+{id:'s5',name:'东城区第一中学',kind:'school',regulatorId:'r5',customer:'安平校园服务中心',contracts:['HT-2026-002'],region:'安平市 / 东城区'},
+{id:'s6',name:'云溪区筹备学校',kind:'school',regulatorId:'r4',customer:'临海教育服务中心',contracts:['HT-2026-001'],region:'临海市 / 云溪区',stopped:true}
+];
+const node=id=>ORGS.find(n=>n.id===id);
+let items=[{id:1,type:'badge',map:clone(aMap),scope:['r2','r3','s1'],updated:'2026-10-26 16:20',lastOperatorId:'ops-demo-001',lastOperatorNameSnapshot:'运营管理员',revision:1,occupiesScope:true}];
+let logs=[{recordId:1,time:'2026-10-26 16:20',user:'运营管理员',text:'新增校徽类替换；修改前范围：无；修改后范围：临海市教育局、凤翔区教育局、凤翔区第一实验小学；修改前映射：无；修改后映射：智能校徽→智能学生终端、佩戴校徽→携带学生终端、校徽绑定→学生终端绑定、校徽管理→学生终端管理、校徽办理二维码→学生终端办理二维码、分享校徽办理→分享学生终端办理、校徽卡面→学生终端卡面。'}];
+let editing=null,map={},selectedFill=null,scope=[],temp=[],base='',formContract='',pickKind='reg',sf={},filter={org:'',type:''},page=1,pageSize=10,readMode='normal',can='write',busy=false,pending=null,confirmFn=null,focusBefore=null,loadId=0,needsReload='',pickNames={reg:'',school:''};
+const hasReplacement=i=>WORDS.some(w=>!!i.map?.[w.id]);
+const mappingMode=(value=map)=>{if(WORDS.every(w=>value[w.id]===w.a))return 'A';if(WORDS.every(w=>value[w.id]===w.b))return 'B';if(WORDS.every(w=>!value[w.id]))return '';return null};
+const owner=(id,type=(editing?.type||'badge'))=>items.find(i=>i.occupiesScope!==false&&hasReplacement(i)&&i.id!==editing?.id&&i.type===type&&i.scope.includes(id));
+const conflictIds=(ids=scope,type=(editing?.type||'badge'))=>mappingMode()!==''&&ids.filter(id=>!!owner(id,type));
+const invalid=id=>!node(id)||node(id).stopped||(mappingMode()!==''&&!!owner(id));
+const sortIds=ids=>[...new Set(ids)].sort((a,b)=>ORGS.findIndex(n=>n.id===a)-ORGS.findIndex(n=>n.id===b));
+const countText=ids=>`监管机构 ${ids.filter(id=>node(id)?.kind==='reg').length} 个，学校 ${ids.filter(id=>node(id)?.kind==='school').length} 所`+(ids.some(id=>!node(id))?`，失效待核实 ${ids.filter(id=>!node(id)).length} 个`:'');
+const snapshot=()=>JSON.stringify({map:Object.fromEntries(WORDS.map(w=>[w.id,map[w.id]||''])),scope:sortIds(scope)});
+const dirty=()=>snapshot()!==base;
+const names=ids=>ids.map(id=>node(id)?.name||'机构已失效').join('、');
+let toastTimer;function toast(s){$('#toast').textContent=s;$('#toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').hidden=true,3500)}
+const dialogFocus=new Map();
+function open(d,route={}){const el=$(d);if(!el)return;if(!routeRestoring&&window.QueryRouter){routeStack.push(window.QueryRouter.parameters());window.QueryRouter.write({page:FIELD_PAGE,...route})}activeDialogRoute.set(el,route.dialog||'');dialogFocus.set(d,root.activeElement||document.activeElement);el.showModal()}
+function close(d){if(busy||pending){toast('操作处理中，请稍候或先查询结果');return}$(d).close();dialogFocus.get(d)?.focus()}
+function confirmAction(title,text,fn,destructive=false,route={dialog:'leave-confirm',view:'form'}){$('#confirmTitle').textContent=title;$('#confirmText').textContent=text;$('#confirmError').textContent='';$('#confirmOk').textContent='确定';$('#confirmOk').className=destructive?'danger':'primary';$('#confirmCancel').disabled=false;$('#confirmOk').disabled=false;confirmFn=fn;open('#confirmDialog',route)}
+function info(title,html,route){$('#infoTitle').textContent=title;$('#infoBody').classList.toggle('detailBody',title==='替换字段详情');$('#infoBody').innerHTML=html;open('#infoDialog',route)}
+function log(text,recordId){logs.unshift({recordId,time:now(),user:'运营管理员',text})}
+function allowWrite(){if(can!=='write'){toast('账号权限变更，请联系管理员');return false}return true}
+function listView(){if(busy||pending)return;writePageRoute({},true);$('#vForm').hidden=true;$('#vList').hidden=false;editing=null;formContract='';map={};scope=[];renderList()}
+function leave(fn=listView){if(busy||pending)return toast('操作处理中，请稍候或先查询结果');if(dirty())confirmAction('放弃填写','当前内容尚未保存，确认离开？',()=>{$('#confirmDialog').close();fn()},false,formRoute('leave-confirm'));else fn()}
+function showForm(it=null,contract=''){
+ if(!allowWrite())return;
+ editing=it?clone(it):null;map=it?clone(it.map):{};selectedFill=it?mappingMode(map):null;scope=it?[...it.scope]:[];formContract=contract;needsReload='';
+ $('#vList').hidden=true;$('#vForm').hidden=false;$('#formTitle').textContent=it?'编辑替换字段':'新增替换字段';$('#selType').disabled=!!it;
+ ['#mapError','#scopeError','#formError'].forEach(s=>$(s).textContent='');$('#pendingBar').hidden=true;$('#btnSave').disabled=false;$('#btnSave').textContent='保存';base=snapshot();renderWords();renderScope();writePageRoute(formRouteFields());
+}
+function renderWords(){
+  $('#wordBody').innerHTML=WORDS.map(w=>{const current=map[w.id]||'';return `<tr><td>${esc(w.src)}</td><td>${esc(current||'恢复默认')}</td><td>${esc(w.ex).replace('{x}',current?`<mark>${esc(current)}</mark>`:w.src)}</td></tr>`}).join('');
+  const mode=mappingMode();$('[data-fill]').forEach(button=>button.setAttribute('aria-pressed',String(selectedFill!==null&&button.dataset.fill===selectedFill)));
+  $('#mapError').textContent=mode===null?'当前记录不符合全字段统一规则，请选择一种替换方式后再保存。':'';
+ }
+function chips(ids,attr=''){return sortIds(ids).map(id=>{const problem=!node(id)||node(id).stopped||(!!attr&&invalid(id));return `<span class="chip ${problem?'invalid':''}" title="${esc(node(id)?.name||'机构已失效')}">${esc(node(id)?.name||'机构已失效')}${problem?'（需重新选择）':''}${attr?`<button ${attr}="${esc(id)}" aria-label="移除${esc(node(id)?.name||'机构已失效')}">×</button>`:''}</span>`}).join('')}
+function groupedScope(ids,attr=''){
+ ids=sortIds(ids);
+ const groups=['reg','school'].map(kind=>{const selected=ids.filter(id=>node(id)?.kind===kind);return `<div class="group"><div class="groupLabel">${kind==='reg'?'监管':'学校'}（${selected.length}个）</div><div class="chips">${selected.length?chips(selected,attr):'<span class="muted">未选择</span>'}</div></div>`});
+ const missing=ids.filter(id=>!node(id));if(missing.length)groups.push(`<div class="group"><div class="groupLabel">失效机构（${missing.length}个）</div><div class="chips">${chips(missing,attr)}</div></div>`);
+ return groups.join('');
+}
+function renderScope(){ $('#scopeChips').innerHTML=groupedScope(scope,'data-remove-main') }
+function rowsFiltered(){return items.filter(i=>(!filter.type||i.type===filter.type)&&(!filter.org||i.scope.some(id=>(node(id)?.name||'').includes(filter.org)))).sort((a,b)=>(b.updated||'').localeCompare(a.updated||'')||b.id-a.id)}
+function renderList(){
+  $('#btnNew').hidden=can!=='write';
+  if(can==='none'){$('#listBody').innerHTML='<tr><td colspan="7" class="empty">暂无权限，请联系管理员</td></tr>';$('#pager').innerHTML='';$('#listError').textContent='暂无权限';return}
+  const rows=rowsFiltered(),max=Math.max(1,Math.ceil(rows.length/pageSize));page=Math.max(1,Math.min(page,max));
+  $('#listBody').innerHTML=rows.length?rows.slice((page-1)*pageSize,page*pageSize).map((i,idx)=>{const changed=WORDS.filter(w=>i.map[w.id]),allRestored=!changed.length,sources=allRestored?'系统字段':changed.slice(0,2).map(w=>w.src).join('、'),targets=allRestored?'恢复默认':changed.slice(0,2).map(w=>esc(i.map[w.id])).join('、'),summary=changed.length>2?`（共${changed.length}项）`:'';return `<tr><td>${(page-1)*pageSize+idx+1}</td><td>校徽类</td><td title="${esc(changed.map(w=>w.src).join('、'))}">${sources||'--'}<span class="listInlineCount">${summary}</span></td><td title="${esc(changed.map(w=>i.map[w.id]).join('、'))}">${targets||'--'}<span class="listInlineCount">${summary}</span></td><td><button class="link" data-detail="${i.id}">${countText(i.scope)}</button></td><td>${esc(i.updated||'--')}</td><td class="fixed"><div class="actions"><button class="link" data-detail="${i.id}">详情</button>${can==='write'?`<button class="link" data-edit="${i.id}">编辑</button>`:''}<button class="link" data-log="${i.id}">日志</button></div></td></tr>`}).join(''):'<tr><td colspan="7" class="empty">暂无符合筛选条件的记录</td></tr>';
+  $('#pager').innerHTML=rows.length?`<span class="total">共 ${rows.length} 条数据</span><select id="size" aria-label="每页条数">${[10,20,50,100].map(n=>`<option ${n===pageSize?'selected':''} value="${n}">${n} 条/页</option>`).join('')}</select><button data-page="${page-1}" ${page===1?'disabled':''} aria-label="上一页">‹</button><button class="active">${page}</button><button data-page="${page+1}" ${page===max?'disabled':''} aria-label="下一页">›</button><span>跳至 <input id="jump" aria-label="跳转页码" value="${page}" inputmode="numeric"> / ${max} 页</span>`:'<span class="total">共 0 条数据</span>';
+ }
+function loadList(){
+ const token=++loadId;$('#listError').textContent='';if(can==='none')return renderList();
+ if(readMode==='loading'){$('#listBody').innerHTML='<tr><td colspan="7" class="empty">加载中，请稍候</td></tr>';$('#pager').innerHTML='';return}
+ if(readMode==='fail'){$('#listError').textContent='网络异常，请稍后重试。保留上次成功结果，请重新查询。';return}
+ if(readMode==='empty'){$('#listBody').innerHTML='<tr><td colspan="7" class="empty">暂无符合筛选条件的记录</td></tr>';$('#pager').innerHTML='<span class="total">共 0 条数据</span>';return}
+ if(token===loadId)renderList();
+}
+function details(id){if(can==='none')return toast('暂无权限');if(readMode!=='normal')return toast(readMode==='loading'?'加载中，请稍候':'网络异常，请稍后重试');const i=items.find(i=>i.id===id);if(!i)return toast('记录已变化，请刷新后重试');const operator=i.lastOperatorId&&i.lastOperatorNameSnapshot?i.lastOperatorNameSnapshot:'--';info('替换字段详情',`<div class="kv"><span>字段类型：</span><span>校徽类</span></div><div class="kv"><span>适用机构：</span><div class="scopeGroups">${groupedScope(i.scope)}</div></div><div class="kv"><span>最后修改人：</span><span>${esc(operator)}</span></div><div class="kv"><span>最后修改时间：</span><span>${esc(i.updated||'--')}</span></div><h3 class="detailExampleTitle">修改示例</h3><table class="detailExampleTable"><thead><tr><th>系统字段</th><th>替换字段</th></tr></thead><tbody>${WORDS.map(w=>{const value=i.map[w.id]||'恢复默认';return `<tr><td>${esc(w.src)}</td><td>${esc(value)}</td></tr>`}).join('')}</tbody></table>`,{dialog:'detail',id:String(id)})}
+function startScope(){if(!allowWrite())return;temp=[...scope];pickKind='reg';sf={customer:'',contract:formContract,name:''};pickNames={reg:'',school:''};setScopeInputs();$('#scopePickError').textContent='';open('#scopeDialog',formRoute('scope'));renderPick();$('#scopeDialog .dialogBody').scrollTop=0;$('#scopeDialog .scopeTable').scrollTop=0;$('#scopeDialog .selected').scrollTop=0}
+function setScopeInputs(){for(const key of ['customer','contract','name'])$('#s'+key[0].toUpperCase()+key.slice(1)).value=sf[key]||''}
+function readScopeInputs(){for(const key of ['customer','contract','name'])sf[key]=$('#s'+key[0].toUpperCase()+key.slice(1)).value.trim()}
+function pickRows(){return ORGS.filter(n=>n.kind===pickKind&&(!sf.customer||n.customer.includes(sf.customer))&&(!sf.contract||n.contracts.includes(sf.contract))&&(!sf.name||n.name.includes(sf.name)))}
+function pickEmptyMessage(){return sf.contract&&!ORGS.some(n=>n.kind===pickKind&&n.contracts.includes(sf.contract))?'该合同暂无机构':'暂无符合条件的已开通机构'}
+function selectableRows(){return readMode==='normal'&&can==='write'?pickRows().filter(n=>!invalid(n.id)):[]}
+function selectionGroups(){
+ $('#selectedCount').textContent=`已选 ${temp.length} 个`;
+ $('#selectedGroups').innerHTML=groupedScope(temp,'data-remove-temp');
+ $('#scopeOk').textContent='确定';$('#scopeOk').disabled=temp.length===0||temp.some(invalid)||can!=='write';
+}
+function renderPick(){
+ $('#tabReg').setAttribute('aria-selected',pickKind==='reg');$('#tabSchool').setAttribute('aria-selected',pickKind==='school');$('#scopeNameLabel').textContent=pickKind==='reg'?'监管名称':'学校名称';$('#sName').placeholder=pickKind==='reg'?'请输入监管名称':'请输入学校名称';$('#scopeNameCol').textContent=pickKind==='reg'?'监管名称':'学校名称';$('#contextCol').textContent=pickKind==='reg'?'监管类型':'所属监管';$('#scopeLoadError').textContent='';selectionGroups();
+ const rows=pickRows();$('#resultCount').textContent=`共 ${rows.length} 个机构`;
+ const available=selectableRows();const allSelected=available.length>0&&available.every(n=>temp.includes(n.id));$('#selectFiltered').textContent=allSelected?'全不选':'全选';$('#selectFiltered').disabled=available.length===0;
+ if(readMode!=='normal'){$('#resultCount').textContent=readMode==='empty'?'共 0 个机构':'数量待加载';$('#scopeRows').innerHTML=`<tr><td colspan="4" class="empty">${readMode==='loading'?'加载中，请稍候':readMode==='empty'?pickEmptyMessage():'机构加载失败，请重新查询'}</td></tr>`;if(readMode==='fail')$('#scopeLoadError').textContent='网络异常，请稍后重试';return}
+ $('#scopeRows').innerHTML=rows.map(n=>{const own=owner(n.id),reason=n.stopped?'机构已停用':own?'已被其他配置占用':can!=='write'?'暂无配置权限':'',disabled=!!reason;return `<tr><td title="${esc(reason)}"><input type="checkbox" aria-label="选择${esc(n.name)}" aria-description="${esc(reason)}" data-pick="${n.id}" ${temp.includes(n.id)?'checked':''} ${disabled?'disabled':''}></td><td>${n.contracts.length?[...new Set(n.contracts)].map(id=>esc(contractDisplay(id))).join('<br>'):'--'}</td><td title="${esc(reason||n.name)}">${esc(n.name||'--')}</td><td>${esc(pickKind==='reg'?regulatorType(n):schoolRegulator(n))}</td></tr>`}).join('')||`<tr><td colspan="4" class="empty">${pickEmptyMessage()}</td></tr>`;
+}
+function toggleKind(kind){if(kind===pickKind)return;readScopeInputs();pickNames[pickKind]=sf.name;pickKind=kind;sf.name=pickNames[kind]||'';setScopeInputs();$('#scopePickError').textContent='';renderPick()}
+function showErrors(){
+  $('#formError').textContent='';
+  const mode=mappingMode();
+  $('#mapError').textContent=mode===null?'当前记录不符合全字段统一规则，请选择一种替换方式后再保存':mode===''&&!editing?'至少选择一种替换方式；如需恢复默认，请编辑现有配置':'';
+  const conflicts=conflictIds(scope);
+  $('#scopeError').textContent=!scope.length?'至少保留一个适用机构':conflicts.length?'（'+names(conflicts)+'）机构已被其他规则配置占用，请解绑后重试。':scope.some(id=>!node(id)||node(id).stopped)?'部分机构已停用，请重新选择适用机构':'';
+  if($('#mapError').textContent){$('[data-fill]')?.focus();return false}if($('#scopeError').textContent){$('#btnScope').focus();return false}return true;
+ }
+function takeSubmitScene(){return 'normal'}
+function simulate(s,operation){
+  if(s==='permission'){can='read';return '账号权限变更，请联系管理员'}
+  if(s==='stale'){needsReload='记录已更新，请重新打开编辑。当前填写保留，可查看后重新打开';return needsReload}
+  if(s==='gone'){needsReload='记录已不可用，请返回列表刷新后重试。当前填写保留供核对';return needsReload}
+  if(s==='dictionary'){needsReload='字段选项已更新，请返回列表后重新打开。当前填写保留供核对';return needsReload}
+  if(s==='invalid'){const n=node(scope[0]);if(n)n.stopped=true;renderScope();return '部分机构已停用，请重新选择适用机构'}
+  if(s==='conflict'){const id=scope[0];if(id){simulatedConflictIds=[id];renderScope();return '（'+names([id])+'）机构已被其他规则配置占用，请解绑后重试。'}return '适用机构已被其他规则配置占用，请解绑后重试。'}
+  if(s==='fail')return operation==='restore'?'网络异常，恢复默认未提交，请稍后重试':'网络异常，保存未提交，请稍后重试';
+  return '';
+ }
+function setBusy(v){busy=v;$('#btnSave').disabled=v||!!pending||can!=='write';$('#btnSave').textContent=v?'保存中…':'保存';$('#btnBack').disabled=v;$('#btnBack2').disabled=v;$('#selType').disabled=v||!!editing;$$('#vForm select,#vForm button[data-fill],#btnScope,#scopeChips button').forEach(b=>{if(b.id!=='selType')b.disabled=v||!!pending});}
+ function commitRestoreDefault(id,nextScope=scope){
+  const existing=items.find(i=>i.id===id);
+  if(!existing){pending=null;busy=false;$('#pendingBar').hidden=true;$('#formError').textContent='记录已不可用，请返回列表刷新后重试';return}
+  const before=clone(existing);existing.map=Object.fromEntries(WORDS.map(w=>[w.id,'']));existing.scope=sortIds(nextScope);existing.occupiesScope=false;existing.revision++;existing.updated=now();existing.lastOperatorId='ops-demo-001';existing.lastOperatorNameSnapshot='运营管理员';
+  log('恢复默认；原适用范围：'+names(before.scope)+'；新适用范围：'+names(existing.scope)+'；修改前映射：'+WORDS.map(w=>w.src+'→'+(before.map[w.id]||'恢复默认')).join('、')+'；修改后映射：'+WORDS.map(w=>w.src+'→恢复默认').join('、')+'。',id);
+  pending=null;busy=false;$('#pendingBar').hidden=true;listView();toast('已恢复默认');
+ }
+ function commitSave(payload){
+  const existing=editing&&items.find(i=>i.id===editing.id);const old=existing?clone(existing):null;const recordId=existing?existing.id:Date.now();
+  const removed=old?old.scope.filter(id=>!payload.scope.includes(id)):[];
+  if(existing){Object.assign(existing,payload,{occupiesScope:true,revision:existing.revision+1,updated:now(),lastOperatorId:'ops-demo-001',lastOperatorNameSnapshot:'运营管理员'})}else items.unshift({id:recordId,...payload,occupiesScope:true,revision:1,updated:now(),lastOperatorId:'ops-demo-001',lastOperatorNameSnapshot:'运营管理员'});
+  const beforeMap=old?WORDS.map(w=>w.src+'→'+(old.map[w.id]||'恢复默认')).join('、'):'无';const afterMap=WORDS.map(w=>w.src+'→'+(payload.map[w.id]||'恢复默认')).join('、');
+  log((old?'修改':'新增')+'校徽类替换；'+countText(payload.scope)+'；修改前范围：'+(old?names(old.scope):'无')+'；修改后范围：'+names(payload.scope)+'；修改前映射：'+beforeMap+'；修改后映射：'+afterMap+'。',recordId);
+  pending=null;busy=false;simulatedConflictIds=[];base=snapshot();$('#pendingBar').hidden=true;listView();toast(removed.length?'保存成功，移出机构已恢复系统字段':'保存成功');
+ }
+function save(approved=false){
+  if(busy||pending)return;if(!allowWrite())return;if(needsReload){$('#formError').textContent=needsReload;return}if(!showErrors())return;
+  if(editing&&snapshot()===base)return toast('未修改任何内容');
+  const mode=mappingMode(),restoring=!!editing&&mode==='';
+  if(mode===null){$('#mapError').textContent='当前记录不符合全字段统一规则，请选择一种替换方式后再保存';return}
+  const bad=WORDS.some(w=>map[w.id]&&![w.a,w.b].includes(map[w.id]));if(bad){$('#mapError').textContent='替换字段已失效，请重新选择';return}
+  if(editing&&!items.find(i=>i.id===editing.id)){$('#formError').textContent='记录已不可用，请返回列表刷新后重试';return}
+  if(editing&&items.find(i=>i.id===editing.id)?.revision!==editing.revision){$('#formError').textContent='记录已更新，请重新打开编辑。当前填写保留，可查看后重新打开';return}
+  const conflicts=conflictIds(scope);if(conflicts.length){$('#scopeError').textContent='（'+names(conflicts)+'）机构已被其他规则配置占用，请解绑后重试。';return}
+  const removed=editing?editing.scope.filter(id=>!scope.includes(id)):[];
+  if(restoring&&!approved){confirmAction('确认恢复默认','确定恢复默认吗？所选机构将展示系统字段，配置记录保留。',()=>{$('#confirmDialog').close();save(true)},false,formRoute('restore-confirm'));return}
+  if(removed.length&&!restoring&&!approved){confirmAction('确认移除适用机构','保存后，'+names(removed)+'将恢复系统字段。确认保存吗？',()=>{$('#confirmDialog').close();save(true)},false,formRoute('remove-confirm'));return}
+  const payload={type:'badge',map:clone(map),scope:sortIds(scope)},s=takeSubmitScene();setBusy(true);
+  setTimeout(()=>{const err=simulate(s,restoring?'restore':'save');setBusy(false);if(err){$('#formError').textContent=err;return}if(s==='unknown'){pending=restoring?{kind:'restore',id:editing.id,scope:sortIds(scope)}:{kind:'save',payload};$('#pendingBar').hidden=false;$('#formError').textContent='提交结果待核实，请查询提交结果，勿重复提交';setBusy(false);return}if(restoring)commitRestoreDefault(editing.id,sortIds(scope));else commitSave(payload)},450);
+ }
+function contractRelations(contractId){
+ const memberIds=sortIds(ORGS.filter(n=>n.id&&n.contracts.includes(contractId)).map(n=>n.id));
+ const members=memberIds.map(node).filter(Boolean),regulators=members.filter(n=>n.kind==='reg'),schools=members.filter(n=>n.kind==='school');
+ const regulatorIds=new Set(regulators.map(n=>n.id));
+ const groups=regulators.map(regulator=>({regulator,contextOnly:false,schools:schools.filter(n=>n.regulatorId===regulator.id)}));
+ const unmatched=schools.filter(n=>!regulatorIds.has(n.regulatorId)),parents=[...new Set(unmatched.map(n=>n.regulatorId||''))];
+ parents.forEach(id=>{const parent=node(id);groups.push({regulator:parent?.kind==='reg'?parent:null,contextOnly:true,schools:unmatched.filter(n=>(n.regulatorId||'')===id)})});
+ return {regulators,schools,groups,total:regulators.length+schools.length};
+}
+function renderContracts(){
+ const body=$('#contractBody');
+ if(can!=='write'){body.innerHTML='<tr><td colspan="3" class="empty">暂无权限</td></tr>';return}
+ if(readMode!=='normal'){body.innerHTML=`<tr><td colspan="3" class="empty">${readMode==='loading'?'加载中，请稍候':readMode==='empty'?'暂无合同':'合同加载失败，请重新打开'}</td></tr>`;return}
+ body.innerHTML=Object.keys(CONTRACTS).map(id=>`<tr><td>${esc(contractDisplay(id))}</td><td><button class="link" data-contract-relations="${esc(id)}" aria-label="查看${esc(CONTRACTS[id].name||'该合同')}关联机构">${contractRelations(id).total}个</button></td><td><button class="link" data-contract="${esc(id)}">替换字段</button></td></tr>`).join('')||'<tr><td colspan="3" class="empty">暂无合同</td></tr>';
+}
+function showContractRelations(id){
+ if(can!=='write')return toast('账号权限变更，请联系管理员');
+ if(!CONTRACTS[id]){toast('合同信息已变化，请刷新后重试');renderContracts();return}
+ if(readMode!=='normal')return toast(readMode==='loading'?'加载中，请稍候':'网络异常，请稍后重试');
+ const relation=contractRelations(id);
+ const content=relation.groups.map(g=>`<section class="relationGroup"><h3>${g.regulator?`${g.contextOnly?'所属监管：':''}${esc(g.regulator.name||'--')}`:'未关联监管'}</h3><div class="chips">${g.schools.length?g.schools.map(n=>`<span class="chip">${esc(n.name||'--')}</span>`).join(''):'<span class="muted">暂无关联学校</span>'}</div></section>`).join('');
+ info('关联监管/学校',`<h3 class="relationContract">${esc(contractDisplay(id))}</h3>${relation.total?content:'<div class="empty relationEmpty">暂无关联监管或学校</div>'}`,{dialog:'contract-relations',id:String(id)});$('#infoBody').scrollTop=0;
+}
+function showRecordLogs(id){
+ if(can==='none')return toast('暂无权限');
+ if(readMode!=='normal')return toast(readMode==='loading'?'加载中，请稍候':'网络异常，请稍后重试');
+ if(!items.some(i=>i.id===id)){toast('记录已变化，请刷新后重试');renderList();return}
+ const recordLogs=logs.filter(l=>l.recordId===id);
+ info('日志',`<table><thead><tr><th style="width:145px">时间</th><th style="width:110px">操作人</th><th>操作内容</th></tr></thead><tbody>${recordLogs.map(l=>`<tr><td>${esc(l.time)}</td><td>${esc(l.user)}</td><td style="text-align:left">${esc(l.text)}</td></tr>`).join('')||'<tr><td colspan="3" class="empty">暂无日志</td></tr>'}</tbody></table>`,{dialog:'logs',id:String(id)});$('#infoBody').scrollTop=0;
+}
+function goContract(){if(!allowWrite())return;const fn=()=>{renderContracts();open('#contractDialog',{dialog:'contract'})};if(!$('#vForm').hidden)leave(()=>{listView();fn()});else fn()}
+$('#btnNew').onclick=()=>showForm();$('#btnBack').onclick=()=>leave();$('#btnBack2').onclick=()=>leave();$('#btnSave').onclick=()=>save();
+$$('[data-fill]').forEach(b=>b.onclick=()=>{selectedFill=b.dataset.fill;WORDS.forEach(w=>map[w.id]=b.dataset.fill==='A'?w.a:b.dataset.fill==='B'?w.b:'');$('#mapError').textContent='';renderWords()});
+$('#btnScope').onclick=startScope;
+$('#scopeChips').onclick=e=>{const b=e.target.closest('[data-remove-main]');if(b&&!busy&&!pending){scope=scope.filter(id=>id!==b.dataset.removeMain);renderScope()}};
+$('#tabReg').onclick=()=>toggleKind('reg');$('#tabSchool').onclick=()=>toggleKind('school');
+$('#sQuery').onclick=()=>{readScopeInputs();pickNames[pickKind]=sf.name;renderPick()};$('#sReset').onclick=()=>{sf={};pickNames={reg:'',school:''};setScopeInputs();$('#scopePickError').textContent='';renderPick()};
+['#sCustomer','#sName'].forEach(id=>$(id).onkeydown=e=>{if(e.key==='Enter')$('#sQuery').click()});
+$('#scopeRows').onchange=e=>{const id=e.target.dataset.pick;if(!id||invalid(id)||can!=='write')return;temp=e.target.checked?sortIds([...temp,id]):temp.filter(x=>x!==id);$('#scopePickError').textContent='';renderPick()};
+$('#selectedGroups').onclick=e=>{const b=e.target.closest('[data-remove-temp]');if(b){temp=temp.filter(id=>id!==b.dataset.removeTemp);$('#scopePickError').textContent='';renderPick()}};
+$('#selectFiltered').onclick=()=>{
+ const rows=selectableRows();if(!rows.length)return;
+ const ids=new Set(rows.map(n=>n.id));
+ if(rows.every(n=>temp.includes(n.id))){temp=temp.filter(id=>!ids.has(id));$('#scopePickError').textContent='';renderPick();return}
+ const next=sortIds([...temp,...ids]);
+ temp=next;$('#scopePickError').textContent='';renderPick();
+};
+$('#scopeOk').onclick=()=>{if(!allowWrite())return;if(!temp.length){$('#scopePickError').textContent='至少选择一个适用机构';return}if(temp.some(invalid)){$('#scopePickError').textContent='部分机构已失效，请移除后重新选择';return}const conflicts=conflictIds(temp);if(conflicts.length){$('#scopePickError').textContent='（'+names(conflicts)+'）机构已被其他规则配置占用，请解绑后重试。';return}scope=sortIds(temp);$('#scopeError').textContent='';$('#scopeDialog').close();renderScope()};
+$('#btnQuery').onclick=()=>{filter={type:$('#fType').value,org:$('#fOrg').value.trim()};page=1;loadList()};
+$('#btnReset').onclick=()=>{$('#fType').value='';$('#fOrg').value='';filter={org:'',type:''};page=1;loadList()};$('#fOrg').onkeydown=e=>{if(e.key==='Enter')$('#btnQuery').click()};
+$('#pager').onclick=e=>{const b=e.target.closest('[data-page]');if(b){if(readMode!=='normal')return toast('网络异常，请稍后重试');page=Number(b.dataset.page);renderList()}};
+$('#pager').onchange=e=>{if(e.target.id==='size'){pageSize=Number(e.target.value);page=1;loadList()}};
+function jump(e){if(e.target.id!=='jump')return;if(readMode!=='normal'){e.target.value=page;return toast('网络异常，请稍后重试')}const max=Math.max(1,Math.ceil(rowsFiltered().length/pageSize));if(!/^\d+$/.test(e.target.value)){e.target.value=page;return toast('请输入正整数页码')}page=Math.max(1,Math.min(max,Number(e.target.value)));loadList()}
+$('#pager').addEventListener('focusout',jump);$('#pager').addEventListener('keydown',e=>{if(e.key==='Enter')jump(e)});
+$('#listBody').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.detail)details(Number(b.dataset.detail));if(b.dataset.edit){if(readMode!=='normal')return toast('网络异常，请稍后重试');const i=items.find(i=>i.id===Number(b.dataset.edit));if(i)showForm(i);else toast('记录已变化，请刷新后重试')}if(b.dataset.log)showRecordLogs(Number(b.dataset.log))};
+
+$('#checkResult').onclick=()=>{if(pending?.kind==='restore'){commitRestoreDefault(pending.id,pending.scope)}else if(pending?.kind==='save'){const payload=pending.payload;commitSave(payload)}};
+$('#confirmOk').onclick=()=>{if(!busy)confirmFn?.()};
+$$('dialog').forEach(d=>{d.addEventListener('cancel',e=>{e.preventDefault();close('#'+d.id)});d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close('#'+d.id)}});const onClose=()=>{if(suppressCloseEvents>0){suppressCloseEvents--;return}if(routeRestoring)return;const q=window.QueryRouter?.parameters();if(q?.page!==FIELD_PAGE||q.dialog!==activeDialogRoute.get(d))return;const previous=routeStack.pop()||{page:FIELD_PAGE};window.QueryRouter.write(previous,true)};d.addEventListener('close',onClose);closeHandlers.push([d,onClose])});
+$$('[data-close]').forEach(b=>b.onclick=()=>close('#'+b.dataset.close));
+
+$('#contractDialog').onclick=e=>{const count=e.target.closest('[data-contract-relations]');if(count){showContractRelations(count.dataset.contractRelations);return}const b=e.target.closest('[data-contract]');if(b){if(!allowWrite())return;if(!CONTRACTS[b.dataset.contract]){toast('合同信息已变化，请刷新后重试');renderContracts();return}$('#contractDialog').close();showForm(null,b.dataset.contract)}};
+const beforeUnloadGuard=e=>{if(!$('#vForm').hidden&&(dirty()||busy||pending)){e.preventDefault();e.returnValue=''}};window.addEventListener('beforeunload',beforeUnloadGuard);
+renderList();
+function restore(q){
+ if(q.page!==FIELD_PAGE)throw Error('页面路由无效');
+const allowed=new Set(['scope','detail','logs','contract-relations','contract','restore-confirm','leave-confirm','remove-confirm']);
+ if(q.dialog&&!allowed.has(q.dialog))throw Error('弹窗不存在');
+ if(q.view&&q.view!=='form')throw Error('页面状态无效');
+ const formState={page:FIELD_PAGE,view:'form'};if(q.id&&q.view==='form')formState.id=q.id;if(q.contract&&q.view==='form')formState.contract=q.contract;
+ if(q.dialog==='scope'&&q.view!=='form')throw Error('缺少表单参数');
+if(['detail','logs','restore-confirm'].includes(q.dialog)&&!hasRecord(q.id))throw Error('配置记录不存在或已失效');
+ if(q.dialog==='contract-relations'&&!CONTRACTS[q.id])throw Error('合同信息已变化，请返回合同列表');
+ if(q.view==='form'&&q.id&&!hasRecord(q.id))throw Error('配置记录不存在或已失效');
+ if(q.view==='form'&&q.contract&&!CONTRACTS[q.contract])throw Error('合同信息已变化，请返回合同列表');
+ routeRestoring=true;closeOpenDialogs();routeStack=[];
+ if(q.dialog==='contract-relations')routeStack.push({page:FIELD_PAGE},{page:FIELD_PAGE,dialog:'contract'});
+else if(q.dialog==='scope'||q.dialog==='leave-confirm'||q.dialog==='remove-confirm'||q.dialog==='restore-confirm')routeStack.push(formState);
+ else if(q.dialog)routeStack.push({page:FIELD_PAGE});
+ try{
+  if(q.view==='form'){
+   const target=q.id?items.find(i=>String(i.id)===String(q.id)):null;
+   const already=!$('#vForm').hidden&&String(editing?.id||'')===String(q.id||'')&&String(formContract||'')===String(q.contract||'');
+   if(!already)showForm(target,q.contract||'');
+  }else if(!q.dialog&&!$('#vForm').hidden)listView();
+  if(!q.dialog)return;
+  if(q.dialog==='scope'){startScope();return}
+  if(q.dialog==='detail'){details(Number(q.id));return}
+  if(q.dialog==='logs'){showRecordLogs(Number(q.id));return}
+  if(q.dialog==='contract'){renderContracts();open('#contractDialog',{page:FIELD_PAGE,dialog:'contract'});return}
+  if(q.dialog==='contract-relations'){renderContracts();open('#contractDialog',{page:FIELD_PAGE,dialog:'contract'});showContractRelations(q.id);return}
+if(q.dialog==='restore-confirm'){confirmAction('确认恢复默认','确定恢复默认吗？所选机构将展示系统字段，配置记录保留。',()=>{$('#confirmDialog').close();save(true)},false,{page:FIELD_PAGE,view:'form',dialog:'restore-confirm',id:String(q.id)});return}
+  if(q.dialog==='leave-confirm'){confirmAction('未保存内容无法恢复','页面重新加载后，未保存的演示内容已清除。确认返回列表吗？',()=>{ $('#confirmDialog').close();listView() },false,{page:FIELD_PAGE,view:'form',dialog:'leave-confirm',...(q.id?{id:q.id}:{}),...(q.contract?{contract:q.contract}:{})});return}
+  if(q.dialog==='remove-confirm'){confirmAction('范围变更未恢复','页面重新加载后，未保存的机构范围变更无法恢复。请重新选择适用机构。',()=>$('#confirmDialog').close(),false,{page:FIELD_PAGE,view:'form',dialog:'remove-confirm',...(q.id?{id:q.id}:{}),...(q.contract?{contract:q.contract}:{})});return}
+ }finally{routeRestoring=false}
+}
+function shouldGuard(target){const from=window.QueryRouter?.parameters()||{};return isDirty()&&from.page===FIELD_PAGE&&(target?.page!==FIELD_PAGE||(from.view==='form'&&target?.view!=='form'))}
+function isDirty(){return !$('#vForm').hidden&&(dirty()||busy||!!pending)}
+function requestLeave(fn){if(busy||pending){toast('操作处理中，请稍候或先查询结果');return false}if(!$('#vForm').hidden&&dirty()){leave(fn);return false}return true}
+function dispose(){routeRestoring=true;closeOpenDialogs();for(const[d,fn]of closeHandlers)d.removeEventListener('close',fn);window.removeEventListener('beforeunload',beforeUnloadGuard);routeStack=[]}
+return {restore,shouldGuard,isDirty,requestLeave,dispose};
+
+})();host.__systemFieldsApp=app;}
+function unmount(host=activeHost){if(!host)return;host.__systemFieldsApp?.dispose();host.__systemFieldsApp=null;if(activeHost===host)activeHost=null;}
+window.SystemFieldsPage={mount,unmount,isMounted(host){return !!activeHost?.isConnected&&!!activeHost.__systemFieldsApp&&(host===undefined||host===activeHost)},restore(q){if(!activeHost?.__systemFieldsApp)throw Error('系统字段页面尚未加载');activeHost.__systemFieldsApp.restore(q)},shouldGuard(target){return !!activeHost?.__systemFieldsApp?.shouldGuard(target)},isDirty(){return !!activeHost?.__systemFieldsApp?.isDirty()},requestLeave(fn){return activeHost?.__systemFieldsApp?.requestLeave(fn)??true}};
+})();
+
+
+
+
