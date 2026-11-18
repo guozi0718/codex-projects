@@ -120,5 +120,14 @@
     "publishedAt": "2026-11-18T06:26:28.410Z",
     "documentation": "versions/v0.61-abf307a686/版本说明.md",
     "documentationSHA256": "12a77f7be629b3df8c82bcd50238f83e1df5d3bcb1c873991820475b091bb0eb"
+  },
+  {
+    "version": "v0.61",
+    "releaseId": "v0.61-ea30991345",
+    "bundleHash": "ea30991345e17e02b0c3784cd43cc15947286e20227b3f0cb869719a4b7c2b21",
+    "publishedAt": "2026-11-18T06:36:36.709Z",
+    "documentation": "versions/v0.61-ea30991345/版本说明.md",
+    "documentationSHA256": "5af8c419aa1ea1434d4c0038dee2d257a23a5b5067c2bc39b80487881755ae81",
+    "documents": []
   }
 ]
