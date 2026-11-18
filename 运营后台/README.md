@@ -1,8 +1,8 @@
 # 运营后台
 
-[打开最新原型](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=system-field-management)
+[打开最新原型](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=feedback.replies)
 
-当前业务版本：v0.61；分发版本：v0.61-bf7edb6744。修改中、未定版，不是生产系统。
+当前业务版本：v0.62；分发版本：v0.62-170248443d。修改中、未定版，不是生产系统。
 
 - index.html：固定最新入口，保留page/view/dialog/id等查询参数。
 - versions/：不可变运行版本，含完整资源、已登记通知依赖、版本说明和明确登记的产品文档及文件哈希。
