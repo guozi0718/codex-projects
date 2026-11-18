@@ -106,5 +106,11 @@
     "releaseId": "v0.60-be12c8d4a9",
     "bundleHash": "be12c8d4a9dab886f2c515becec69ad8ca20a9f7401be388b1317484e757bda4",
     "publishedAt": "2026-11-18T06:16:58.430Z"
+  },
+  {
+    "version": "v0.61",
+    "releaseId": "v0.61-fddeba7d8a",
+    "bundleHash": "fddeba7d8ab6b988a4793b4fa4fdd632a3fb7e1e98ea5a1c4b512b3a05643bcd",
+    "publishedAt": "2026-11-18T06:22:06.392Z"
   }
 ]
