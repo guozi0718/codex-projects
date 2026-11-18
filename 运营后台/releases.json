@@ -28,5 +28,11 @@
     "releaseId": "v0.57-c04730dc27",
     "bundleHash": "c04730dc275a50b144f3a709a87cdab4a47cfa6a441061fe8e16144322cd4d6c",
     "publishedAt": "2026-11-18T02:17:03.680Z"
+  },
+  {
+    "version": "v0.57",
+    "releaseId": "v0.57-b27343693f",
+    "bundleHash": "b27343693fa1786ec090fb576398e67e9b759d33b07e368590ed99386a5cf229",
+    "publishedAt": "2026-11-18T02:19:02.244Z"
   }
 ]
