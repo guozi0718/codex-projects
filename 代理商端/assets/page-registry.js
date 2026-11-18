@@ -2,7 +2,7 @@
 window.AgentPageRegistry={
   "schemaVersion": 1,
   "endpoint": "agent",
-  "release": "v0.38",
+  "release": "v0.58",
   "menu": [
     {
       "t": "校务管理",
@@ -78,15 +78,15 @@ window.AgentPageRegistry={
     "family-notice": {
       "title": "家校通知",
       "kind": "embedded",
-      "url": "http://127.0.0.1:57192/notice/index.html",
+      "url": "notice/index.html",
       "parameters": {
         "role": "agent",
         "school": "s1",
         "embedded": "1",
-        "v": "20261111-7"
+        "v": "20261118-20"
       },
       "owner": "家校通知功能项目",
-      "dependency": "继承已登记4396/V7依赖；本任务不修改功能源"
+      "dependency": "家校通知 V20；相对路径接入代理商端 V0.58"
     },
     "school-feedback": {
       "title": "学校反馈",
