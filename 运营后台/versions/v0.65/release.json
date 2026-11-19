@@ -1,0 +1,10 @@
+{
+  "sourceIndexSHA256": "378c6788e76623f2bc1201dbb9ffa63f4e3372d30a8affc5ce2c7232654a08d6",
+  "baseline": "运营后台 GitHub v0.62-2ee13b0246",
+  "createdAt": "2026-11-19T03:00:00Z",
+  "scope": "补齐运营后台用户数据查询四个资料页签及角色资料框架；同时保持反馈关联学生字段规则。",
+  "dependency": "家校通知 V20",
+  "status": "修改中、未定版",
+  "task": "T-20261118-08-客户反馈最终原型与GitHub发布",
+  "version": "v0.65"
+}
