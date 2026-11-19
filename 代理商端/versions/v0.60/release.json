@@ -1,0 +1,10 @@
+{
+  "baseline": "代理商端 GitHub v0.58",
+  "dependency": "家校通知 V20",
+  "task": "T-20261118-07-客户反馈最终原型与GitHub发布",
+  "version": "v0.60",
+  "sourceIndexSHA256": "c93bdcd725ec0cf3a4f0f9ed5d5bc5886a1006062d4bf186a9a219947384d0ab",
+  "createdAt": "2026-11-18T18:40:00-08:00",
+  "scope": "修复反馈入口加载；抄送表单展示同一来源的全部历史R2编号及双方消息；转达草稿提示来源变化并要求确认。 GitHub发布包全量同步，保持已确认客户反馈业务规则不变。",
+  "status": "修改中、未定版"
+}
