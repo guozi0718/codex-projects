@@ -1,0 +1,112 @@
+{
+  "checkedAt": "2026-11-19 00:08:48 -08:00",
+  "repository": "https://github.com/guozi0718/codex-projects",
+  "branch": "main",
+  "previousRemoteMain": "d1fe45dbe0bbd354683b5ec6d70679739831e24c",
+  "commit": "c3c3e05126e07ce6bf9bf40be49f75ff24380b7a",
+  "commitUrl": "https://github.com/guozi0718/codex-projects/commit/c3c3e05126e07ce6bf9bf40be49f75ff24380b7a",
+  "tag": "miniapp-r2026.11.19.1",
+  "tagCommit": "c3c3e05126e07ce6bf9bf40be49f75ff24380b7a",
+  "release": "r2026.11.19.1",
+  "sourceVersion": "T-20261118-02 教师/家长 v0.13",
+  "releaseStatus": "预览发布；业务候选仍待用户验收；活动原型基线 v0.5 未改",
+  "changedFiles": 362,
+  "stagedScope": "小程序端/ only",
+  "scannedProjectFiles": 5092,
+  "releasePackageFiles": 133,
+  "manifestHashChecks": 131,
+  "manifestHashResult": "passed",
+  "liveChecks": [
+    {
+      "key": "发布总入口",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/index.html",
+      "status": 200
+    },
+    {
+      "key": "教师固定入口",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/教师/index.html",
+      "status": 200
+    },
+    {
+      "key": "家长固定入口",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/家长/index.html",
+      "status": 200
+    },
+    {
+      "key": "教师首页",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html#sc-home",
+      "status": 200
+    },
+    {
+      "key": "家长首页",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html#sc-home",
+      "status": 200
+    },
+    {
+      "key": "教师反馈列表",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html#sc-fblist",
+      "status": 200
+    },
+    {
+      "key": "家长反馈列表",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html#sc-fblist",
+      "status": 200
+    },
+    {
+      "key": "教师通知页",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html#sc-notification",
+      "status": 200
+    },
+    {
+      "key": "家长通知页",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html#sc-notification",
+      "status": 200
+    },
+    {
+      "key": "教师定版说明",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/定版信息.md",
+      "status": 200
+    },
+    {
+      "key": "家长定版说明",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/定版信息.md",
+      "status": 200
+    },
+    {
+      "key": "发布说明",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/发布说明.md",
+      "status": 200
+    },
+    {
+      "key": "发布清单",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/发布清单.json",
+      "status": 200
+    },
+    {
+      "key": "教师通知脚本",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/assets/notification-page.js",
+      "status": 200
+    },
+    {
+      "key": "家长通知脚本",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/assets/notification-page.js",
+      "status": 200
+    },
+    {
+      "key": "教师通知图标",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/assets/icon-notification.svg",
+      "status": 200
+    },
+    {
+      "key": "家长通知图标",
+      "url": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/assets/icon-notification.svg",
+      "status": 200
+    }
+  ],
+  "liveResult": "passed",
+  "browserNote": "本地候选v0.13的浏览器交互验证见T-20261118-02；本次对Pages新发布地址、固定入口、文档、通知资源执行HTTP GET，全部返回200。",
+  "limits": [
+    "静态原型，不连接生产接口或真实数据。",
+    "未在微信原生小程序客户端验证页面栈。"
+  ]
+}

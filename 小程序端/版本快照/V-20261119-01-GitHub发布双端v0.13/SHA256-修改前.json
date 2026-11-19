@@ -53,5 +53,27 @@
       "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/版本快照_快照索引.md_修改前",
       "sha256": "4d3cc11fc12708aa5161a9cd6d2dde032454338aebf565fd6fcc439f431759ec"
     }
+  ],
+  "taskFilesBefore": [
+    {
+      "path": "任务/T-20261119-01-GitHub发布双端v0.13/任务信息.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/本任务_任务信息.md_修改前",
+      "sha256": "a1a893d3b26d4b1e0829f90434f35a6aad35f968dfad87661071b86610a5f4e7"
+    },
+    {
+      "path": "任务/T-20261119-01-GitHub发布双端v0.13/变更记录.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/本任务_变更记录.md_修改前",
+      "sha256": "d071caba8aa6445adc2b1554b1c539174d679c2baa37e1cb6958c452d406c157"
+    },
+    {
+      "path": "任务/T-20261119-01-GitHub发布双端v0.13/定版信息.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/本任务_定版信息.md_修改前",
+      "sha256": "329bf2f3fb095bae2165a0fff638678d345ab7a6bfc3c358f63af8e095c35e0a"
+    },
+    {
+      "path": "任务/T-20261119-01-GitHub发布双端v0.13/资料\\构建验证.json",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/本任务_资料_构建验证.json_修改前",
+      "sha256": "0df51258b9106118d7ce5f9ede65ffd016c01388f75b5632883f90345b7561dd"
+    }
   ]
 }
