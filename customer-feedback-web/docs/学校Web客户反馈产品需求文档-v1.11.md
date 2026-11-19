@@ -159,7 +159,7 @@
 #### 6. 功能详细说明
 ##### 6.2 学校问题反馈列表（SC-FB-01）
 
-原型入口：[学校Web问题反馈列表候选](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
+原型入口：[学校Web问题反馈列表候选](https://raw.githack.com/guozi0718/codex-projects/main/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
 ![学校Web问题反馈列表真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/school-feedback-list.png)
 
 ###### 6.2.1 查询条件
@@ -192,7 +192,7 @@
 
 ##### 6.3 新增学校反馈（SC-FB-02）
 
-原型入口：[学校Web新增反馈入口](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
+原型入口：[学校Web新增反馈入口](https://raw.githack.com/guozi0718/codex-projects/main/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
 ![学校Web新增反馈表单真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/school-new-feedback.png)
 
 该图为当前候选新增反馈弹窗的真实页面截图，展示反馈类型、标题、正文和附件入口。表单字段和行为要求见下方。
@@ -233,7 +233,7 @@
 
 ##### 6.4 R1反馈详情与学校时间线（SC-FB-03）
 
-原型入口：[学校Web反馈详情候选](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
+原型入口：[学校Web反馈详情候选](https://raw.githack.com/guozi0718/codex-projects/main/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
 ![学校Web反馈详情时间线真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/school-r1-detail.png)
 
 ###### 6.4.1 页面信息
@@ -257,7 +257,7 @@
 
 ##### 6.5 继续追问（SC-FB-04）
 
-原型入口：[学校Web继续追问候选](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
+原型入口：[学校Web继续追问候选](https://raw.githack.com/guozi0718/codex-projects/main/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
 ![学校Web追问表单与原有时间线真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/school-followup.png)
 
 ###### 6.5.1 表单字段
@@ -294,7 +294,7 @@
 
 ##### 6.6 消息撤回、整条撤回与日志（SC-FB-05 / SC-FB-06）
 
-原型入口：[学校Web撤回与日志候选](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
+原型入口：[学校Web撤回与日志候选](https://raw.githack.com/guozi0718/codex-projects/main/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.58/index.html?page=school-feedback&content=1)
 ![学校Web撤回反馈二次确认真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/school-withdraw.png)
 ![学校Web操作日志真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/school-logs.png)
 
