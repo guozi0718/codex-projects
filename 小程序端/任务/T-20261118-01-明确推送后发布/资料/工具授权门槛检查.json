@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-18T01:28:15-08:00",
+  "project": "智小徽小程序",
+  "task": "T-20261118-01-明确推送后发布",
+  "policy": "只有用户当前会话明确要求推送时上传",
+  "scheduledAutomationState": "未发现计划任务",
+  "staticChecks": [
+    "主项目发布规则要求当前会话明确推送后手工发布",
+    "全局计划任务查询未匹配到自动发布任务"
+  ],
+  "uploadAttempted": false,
+  "githubWritePerformed": false,
+  "testsRun": false,
+  "verificationScope": "静态源码读取和Windows计划任务查询；按要求未运行发布、上传或自动化测试命令。",
+  "limitations": "未发现专用发布脚本硬门槛；执行人员仍受当前会话授权规则约束。"
+}

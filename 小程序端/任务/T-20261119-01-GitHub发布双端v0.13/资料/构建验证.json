@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-11-19 00:01:54 -08:00",
+  "release": "r2026.11.19.1",
+  "manifestFileCount": 131,
+  "packageFiles": 133,
+  "sourceComparisons": [
+    {
+      "role": "教师",
+      "sourceFiles": 57,
+      "expectedAdaptations": [
+        "assets\\notice-entry.js"
+      ]
+    },
+    {
+      "role": "家长",
+      "sourceFiles": 57,
+      "expectedAdaptations": [
+        "assets\\notice-entry.js"
+      ]
+    }
+  ],
+  "fixedLinks": [
+    {
+      "role": "教师",
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html#sc-fblist"
+    },
+    {
+      "role": "家长",
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html#sc-fblist"
+    }
+  ],
+  "errors": [],
+  "result": "passed"
+}

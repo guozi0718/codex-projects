@@ -1,0 +1,9 @@
+{
+  "capturedAt": "2026-11-18T01:28:15-08:00",
+  "project": "智小徽小程序",
+  "task": "T-20261118-01-明确推送后发布",
+  "publishingTasks": [],
+  "finding": "全局计划任务静态查询未找到小程序GitHub发布任务；项目AGENTS、README、配置和发布说明已改为本轮明确推送后人工同步。",
+  "automaticUploadEnabled": false,
+  "explicitUserRequestRequired": true
+}

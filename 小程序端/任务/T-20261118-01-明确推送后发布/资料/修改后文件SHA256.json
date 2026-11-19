@@ -1,0 +1,79 @@
+{
+  "project": "智小徽小程序",
+  "task": "T-20261118-01-明确推送后发布",
+  "capturedAt": "2026-11-18T01:28:15-08:00",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "beforeSHA256": "0213fcaf51782cfbdd3311462abd6bdd1b2bf5e1ada3d4115fd1e06a19c0e6ec",
+      "afterSHA256": "782b94271e50c5baea6949ea04395fdf423736278fe0d096e55cf075bdc04682",
+      "bytes": 3303
+    },
+    {
+      "path": "GitHub发布配置.json",
+      "beforeSHA256": "31d64af80925adfadb0c3dc15c311baa11c36f06cca3019295159a959778983e",
+      "afterSHA256": "90d55af1eab72add532f085d611ef57aadc048d46cf988a7e2afcc22039845f6",
+      "bytes": 1610
+    },
+    {
+      "path": "README.md",
+      "beforeSHA256": "be60ac166e215dc99a17aa9221f3c0d16e846a9b1e4748772a6603e6944071d9",
+      "afterSHA256": "e3f5d604295eae216bfaa83d16ea7ec1082ecc1b9da2843ce2201d2df38b1acb",
+      "bytes": 3128
+    },
+    {
+      "path": "原型协作说明.md",
+      "beforeSHA256": "6435082ae09d489264d0923bc42d31ede95036ebf6285cccb73aebec8ed4ac4c",
+      "afterSHA256": "c8b7ad7b3403156a1e99f63ace62a748f0d435276ea93a24352283f3660f5e08",
+      "bytes": 4874
+    },
+    {
+      "path": "记忆库/项目记忆/技术约束.md",
+      "beforeSHA256": "6bc67cc1c8cb7d2888c520123f2b582e1719ffffb189a82638c6be7880e7451a",
+      "afterSHA256": "8512cf22a3eba1a5f74640cd515a896c57dd73e6a7fe916cdbc04a124d4e17f4",
+      "bytes": 7089
+    },
+    {
+      "path": "记忆库/项目记忆/用户偏好.md",
+      "beforeSHA256": "2c83182a891f9d3d46cb9579e74ca74b999bdd25882d8cad143728198264afc1",
+      "afterSHA256": "423dd2b6e9f71b52d07c070d41777177ef777f8ca61b6b6a5e778e2f629896b7",
+      "bytes": 4696
+    },
+    {
+      "path": "记忆库/项目记忆/非正式共识.md",
+      "beforeSHA256": "c368f1d170c0f4ee2e5318fe083ba0a91b7417858173b09ff77dabae621c120f",
+      "afterSHA256": "44da0781b4759012fe1bcf0652547a15c986702ab63822eb9b3c98fbd9d389b3",
+      "bytes": 7254
+    },
+    {
+      "path": "项目管理/任务登记.md",
+      "beforeSHA256": "2da9777ed259bfb0dd11a84e186adededfd00f187e770d750b1c874dfa75914a",
+      "afterSHA256": "7b244222da4400eedfc68506586f93ae5a3f73995c0b687584247ff5d7bb997c",
+      "bytes": 13735
+    },
+    {
+      "path": "项目管理/待办清单.md",
+      "beforeSHA256": "1bf72d2bd2acbeca5890435c4ae53e847c1a744b24cf66e0cb4e65e877415bf0",
+      "afterSHA256": "8617a12f3d8e7c03c4666caf2391f42389096078457f9369869d4abbfbf255f1",
+      "bytes": 9773
+    },
+    {
+      "path": "项目管理/里程碑.md",
+      "beforeSHA256": "1fc789f384df195cee65f47e58566a07066aa8f100c27e6d330cba3fa5616a85",
+      "afterSHA256": "48ad7a720f984878ee0c052dee8547f64c901197eb287bf357f58dccc1fb39ad",
+      "bytes": 7477
+    },
+    {
+      "path": "项目管理/风险登记.md",
+      "beforeSHA256": "1b82909a9212ff1e7b81622c20f79d87cd0052b707467d6500fd7fc8da78e53f",
+      "afterSHA256": "81667ca1f521611fdbbd27bf4a6d7a16cd7603f9b88c6593f1188529355407b8",
+      "bytes": 10041
+    },
+    {
+      "path": "项目管理/项目章程.md",
+      "beforeSHA256": "993420d783e16508d3ae623a3e0a74fbe2d1698ea832c4a142df1c33a5ea81ef",
+      "afterSHA256": "7550ca13abec7a81904fe14e9cba94ab0be7e2100ce890cbd9d764af83aa1c11",
+      "bytes": 2567
+    }
+  ]
+}

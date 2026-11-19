@@ -1,0 +1,1 @@
+(()=>{demoInfo['sc-notification']={t:'通知',d:'【页面与返回】首页通知入口进入，标题为通知；左侧返回首页。沿用当前端的时间、状态栏、标题行与共用视觉规范。\n【本期范围】正文暂为空；本次仅增加入口和页面框架，不含通知列表、详情、发送或未读数量规则。保留已有家校通知功能。',a:[]};if(curScreen==='sc-notification'&&document.getElementById('demo-pop')?.classList.contains('show'))renderDemo()})();

@@ -1,0 +1,57 @@
+{
+  "task": "T-20261119-01-GitHub发布双端v0.13",
+  "snapshot": "V-20261119-01-GitHub发布双端v0.13",
+  "stage": "before",
+  "files": [
+    {
+      "path": "GitHub发布配置.json",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/GitHub发布配置.json_修改前",
+      "sha256": "90d55af1eab72add532f085d611ef57aadc048d46cf988a7e2afcc22039845f6"
+    },
+    {
+      "path": "index.html",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/index.html_修改前",
+      "sha256": "ee3365f4e492d34117fc6d76cdf6bf8cf94775d6a30cf4253c781b750eed499c"
+    },
+    {
+      "path": "线上原型链接.json",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/线上原型链接.json_修改前",
+      "sha256": "38f721c1ea862496752960eee899ecf0f9475ea9bdd7459ad7c551123e06bb84"
+    },
+    {
+      "path": "教师\\index.html",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/教师_index.html_修改前",
+      "sha256": "df7b0a274a7b1e585becfa4b4584c3ee25acbedfb5f153717a6b1d3d5efe3a99"
+    },
+    {
+      "path": "家长\\index.html",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/家长_index.html_修改前",
+      "sha256": "1bdbc4b90bef51b5ed1f027f66a191ca32ff56274d03efacd19438f8d4030450"
+    },
+    {
+      "path": "项目管理\\任务登记.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/项目管理_任务登记.md_修改前",
+      "sha256": "82cb40d3ce68b3fc23148aa1714e3256b73b129f014d7d788f89e70a7e006860"
+    },
+    {
+      "path": "项目管理\\待办清单.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/项目管理_待办清单.md_修改前",
+      "sha256": "6e29857b0da00870ccf4d5ed70dcdfa383ba999afba4ab837d9e3fa9421ec0f0"
+    },
+    {
+      "path": "项目管理\\里程碑.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/项目管理_里程碑.md_修改前",
+      "sha256": "e80b6de12367b37fb0cb738306dc5cd79ade9fc41ec4f1cb286e3c4221e43dca"
+    },
+    {
+      "path": "项目管理\\风险登记.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/项目管理_风险登记.md_修改前",
+      "sha256": "13f2a71950fb48a3753abaf29157d519533580ba4dac9d32d80eda5f83df0b09"
+    },
+    {
+      "path": "版本快照\\快照索引.md",
+      "snapshot": "版本快照/V-20261119-01-GitHub发布双端v0.13/版本快照_快照索引.md_修改前",
+      "sha256": "4d3cc11fc12708aa5161a9cd6d2dde032454338aebf565fd6fcc439f431759ec"
+    }
+  ]
+}

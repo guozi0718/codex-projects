@@ -7,26 +7,29 @@
   "excludeDirectories": [
     "任务/T-20261117-02-GitHub发布与自动同步/工作区"
   ],
-  "syncPolicy": "后续每次授权修改完成验证、更新管理记录并最后追加日志后，自动执行同步；GitHub Pages随main推送自动部署。不是文件保存监听或定时任务。",
+  "syncPolicy": "仅在用户当前会话明确要求推送时，完成验证和管理记录后手工执行同步；没有明确推送指令不得上传。GitHub Pages随该次已授权的main推送自动部署。",
   "release": {
-    "id": "r2026.11.17.1",
-    "directory": "发布/r2026.11.17.1",
-    "status": "v0.12评审候选，已获本轮上传预览授权，页面尚未定版",
-    "sourceVersion": "任务/T-20261117-01-客户反馈详情与操作精简 教师/家长 v0.12",
+    "id": "r2026.11.19.1",
+    "directory": "发布/r2026.11.19.1",
+    "status": "教师/家长 v0.13 评审候选；按用户明确授权发布预览，仍待业务定版",
+    "sourceVersion": "T-20261118-02-双端通知入口与空白页 教师/家长 v0.13",
     "ends": [
       {
         "role": "teacher",
         "name": "教师",
-        "source": "任务/T-20261117-01-客户反馈详情与操作精简/端-教师/版本-v0.12",
-        "destination": "端-教师/版本-v0.12"
+        "source": "任务/T-20261118-02-双端通知入口与空白页/端-教师/版本-v0.13",
+        "destination": "端-教师/版本-v0.13"
       },
       {
         "role": "parent",
         "name": "家长",
-        "source": "任务/T-20261117-01-客户反馈详情与操作精简/端-家长/版本-v0.12",
-        "destination": "端-家长/版本-v0.12"
+        "source": "任务/T-20261118-02-双端通知入口与空白页/端-家长/版本-v0.13",
+        "destination": "端-家长/版本-v0.13"
       }
     ],
     "noticeSource": "E:/claude code/通知（学校或代理商通知家长）/任务/T-20261113-07-三功能统一接入与演示说明/端-通知功能/版本-V11"
-  }
+  },
+  "pushRequiresExplicitUserRequest": true,
+  "automaticPush": false,
+  "policyUpdatedAt": "2026-11-18"
 }

@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "role": "teacher",
+      "order": [
+        "✉家校通知",
+        "2智能校徽",
+        "素质评价",
+        "班级评价",
+        "校园签到",
+        "智慧放学",
+        "6学生管理",
+        "2教师管理",
+        "4请假",
+        "教师考勤",
+        "控辍保学",
+        "通知"
+      ],
+      "blankBody": true,
+      "statusbarIdentical": true,
+      "sourceAssetsIdentical": true,
+      "refresh": true,
+      "returnLoop20Stable": true,
+      "errors": []
+    },
+    {
+      "role": "parent",
+      "order": [
+        "✉家校通知",
+        "智能校徽",
+        "素质评价",
+        "校园签到",
+        "智慧放学",
+        "请假",
+        "通知",
+        "家校通讯",
+        "消息留言"
+      ],
+      "blankBody": true,
+      "statusbarIdentical": true,
+      "sourceAssetsIdentical": true,
+      "refresh": true,
+      "returnLoop20Stable": true,
+      "errors": []
+    }
+  ],
+  "limits": [
+    "HTML页面路由验证，不代表微信原生栈已测试。",
+    "未测试已有家校通知外部服务，本轮保留其实现。"
+  ]
+}

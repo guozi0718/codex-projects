@@ -1,19 +1,19 @@
 {
-  "release": "r2026.11.17.1",
-  "status": "v0.12评审候选，已获本轮上传预览授权，页面尚未定版",
-  "sourceVersion": "任务/T-20261117-01-客户反馈详情与操作精简 教师/家长 v0.12",
+  "release": "r2026.11.19.1",
+  "status": "教师/家长 v0.13 评审候选；按用户明确授权发布预览，仍待业务定版",
+  "sourceVersion": "T-20261118-02-双端通知入口与空白页 教师/家长 v0.13",
   "entries": [
     {
       "name": "教师",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-教师/版本-v0.12/index.html",
-      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-教师/版本-v0.12/index.html#sc-home",
-      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-教师/版本-v0.12/index.html#sc-fblist"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-教师/版本-v0.13/index.html#sc-fblist"
     },
     {
       "name": "家长",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-家长/版本-v0.12/index.html",
-      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-家长/版本-v0.12/index.html#sc-home",
-      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.17.1/端-家长/版本-v0.12/index.html#sc-fblist"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.1/端-家长/版本-v0.13/index.html#sc-fblist"
     }
   ]
 }

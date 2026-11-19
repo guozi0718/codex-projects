@@ -1,0 +1,55 @@
+{
+  "project": "mini",
+  "task": "T-20261118-01-明确推送后发布",
+  "baselineCapturedAt": "2026-11-18T08:39:41.450Z",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0213fcaf51782cfbdd3311462abd6bdd1b2bf5e1ada3d4115fd1e06a19c0e6ec"
+    },
+    {
+      "path": "GitHub发布配置.json",
+      "sha256": "31d64af80925adfadb0c3dc15c311baa11c36f06cca3019295159a959778983e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "be60ac166e215dc99a17aa9221f3c0d16e846a9b1e4748772a6603e6944071d9"
+    },
+    {
+      "path": "原型协作说明.md",
+      "sha256": "6435082ae09d489264d0923bc42d31ede95036ebf6285cccb73aebec8ed4ac4c"
+    },
+    {
+      "path": "记忆库/项目记忆/技术约束.md",
+      "sha256": "6bc67cc1c8cb7d2888c520123f2b582e1719ffffb189a82638c6be7880e7451a"
+    },
+    {
+      "path": "记忆库/项目记忆/用户偏好.md",
+      "sha256": "2c83182a891f9d3d46cb9579e74ca74b999bdd25882d8cad143728198264afc1"
+    },
+    {
+      "path": "记忆库/项目记忆/非正式共识.md",
+      "sha256": "c368f1d170c0f4ee2e5318fe083ba0a91b7417858173b09ff77dabae621c120f"
+    },
+    {
+      "path": "项目管理/任务登记.md",
+      "sha256": "2da9777ed259bfb0dd11a84e186adededfd00f187e770d750b1c874dfa75914a"
+    },
+    {
+      "path": "项目管理/待办清单.md",
+      "sha256": "1bf72d2bd2acbeca5890435c4ae53e847c1a744b24cf66e0cb4e65e877415bf0"
+    },
+    {
+      "path": "项目管理/里程碑.md",
+      "sha256": "1fc789f384df195cee65f47e58566a07066aa8f100c27e6d330cba3fa5616a85"
+    },
+    {
+      "path": "项目管理/风险登记.md",
+      "sha256": "1b82909a9212ff1e7b81622c20f79d87cd0052b707467d6500fd7fc8da78e53f"
+    },
+    {
+      "path": "项目管理/项目章程.md",
+      "sha256": "993420d783e16508d3ae623a3e0a74fbe2d1698ea832c4a142df1c33a5ea81ef"
+    }
+  ]
+}
