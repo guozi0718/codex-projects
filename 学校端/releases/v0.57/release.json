@@ -1,0 +1,190 @@
+{
+  "version": "v0.57",
+  "publishedAt": "2026-11-18T12:00:00-08:00",
+  "sourceIndexHash": "dc416a84039f3385a32daeca865afb2ad1175c73dc555caa2bc4d8172867d78a",
+  "entry": "index.html",
+  "notice": {
+    "version": "V22",
+    "indexHash": "0b735c1e801099b02c2b34fbeca24ff12660e95d728b6b7d6c7072ea476ceb46"
+  },
+  "files": [
+    {
+      "path": "assets/action-buttons.css",
+      "sha256": "608e2e7496d7ea4d646339fe8e75fbf81dbf4bc0d12089a8563983a7d76d5f67"
+    },
+    {
+      "path": "assets/action-buttons.js",
+      "sha256": "471cef5539f32ba15cdec812a5009d082ec85dcc39039d34ff9cfe936e91d000"
+    },
+    {
+      "path": "assets/demo-panel.css",
+      "sha256": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e"
+    },
+    {
+      "path": "assets/demo-panel.js",
+      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+    },
+    {
+      "path": "assets/feedback-collaboration.js",
+      "sha256": "dd18a5d0cd5c8f565444a18aadbef878fbe3fb557cd29db3be1f7b9e20b24b2b"
+    },
+    {
+      "path": "assets/feedback-compose-v7.css",
+      "sha256": "adada63637ef7a0c3881b459864c6141bcec32ebdf0dd262fd537ea39b5fa294"
+    },
+    {
+      "path": "assets/feedback-compose-v7.js",
+      "sha256": "7c662b6fc20e0c21d18800d583021f0645323e682ef12afa4f47bf814a8c4b06"
+    },
+    {
+      "path": "assets/feedback-engine-v5.js",
+      "sha256": "f8bed43da9125591f20843162dcd5a03ec4f719e582b2cc740ff4c3d6e499131"
+    },
+    {
+      "path": "assets/feedback-family-data.js",
+      "sha256": "2d78c5d5c8b6a2b9bba1c5ca057a6fdc7bd7a30ece7b94b0595b98b15a141e0b"
+    },
+    {
+      "path": "assets/feedback-list-contract.css",
+      "sha256": "a3e8f61f4435e4cf1ce5ccb911d73f39af14ee7bfee24e593d9df7d135358f18"
+    },
+    {
+      "path": "assets/feedback-navigation.js",
+      "sha256": "b6bc5b681ed958214921349d1bda2b1c6acd1c7796db8552e0d04bddf277ee5f"
+    },
+    {
+      "path": "assets/feedback-quick-replies.js",
+      "sha256": "ea7d685351d499d9f34138d2cc6a85a50f597274d1590f47469ac9e576dda28c"
+    },
+    {
+      "path": "assets/feedback-region.js",
+      "sha256": "2ecfe9102246c207c36995bfd9622c7f8043bad9ca6790562d0a5366f0d2a5c7"
+    },
+    {
+      "path": "assets/feedback-v5.css",
+      "sha256": "17b6fac29fec18fc4ddf2c044e173c80da2435f2d49e6665ceef8bb64bfdde76"
+    },
+    {
+      "path": "assets/feedback-web-v5.js",
+      "sha256": "0d6cb489ac9850cd85c2a1db9b03480ada9a33a6b0c2e0d27266c82af7b9694c"
+    },
+    {
+      "path": "assets/filter-layout.css",
+      "sha256": "027ade0caf6d2f4cbe3653afbacd14b1ff45ad7c927d5e73bbbeccf66357f7f5"
+    },
+    {
+      "path": "assets/fixed-ui.css",
+      "sha256": "c8bb887923b5b8abe04e32893900a9be4ce2706f875e36df6b685e95bc7bddf2"
+    },
+    {
+      "path": "assets/global-design.css",
+      "sha256": "ffa3c37c6346fd89db542a1580740c2843aae3ceb53afe632e502344b2b0bfb0"
+    },
+    {
+      "path": "assets/module-demo.js",
+      "sha256": "129706c32792194f2640a234f48e6e8583956deef35833f769766eabed90c50b"
+    },
+    {
+      "path": "assets/notice-host-bridge.js",
+      "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+    },
+    {
+      "path": "assets/page-links-unified.js",
+      "sha256": "301a8ae7de76123fbe3ade013a469d984945a21c0fdc9ca4522025763a8012a1"
+    },
+    {
+      "path": "assets/page-links.js",
+      "sha256": "e97ac2e5ab267475ba563f096d328fa98397a28a6bda02c926da48299376a968"
+    },
+    {
+      "path": "assets/presentation-cleanup.js",
+      "sha256": "8d6ff64bc867cb70a91c1aa483184709e346b02540986a51e7a65f1c1841a45a"
+    },
+    {
+      "path": "assets/query-router.js",
+      "sha256": "57947c159a6e3a51d3898366185fba33d991e58d172f613517e5330f64168381"
+    },
+    {
+      "path": "assets/regions-data.js",
+      "sha256": "071af994fc356827275bb90f1114304691dddad5c0f172803a0bb3f7e7119265"
+    },
+    {
+      "path": "assets/shell.css",
+      "sha256": "c4c8360c8314727c09aa14749f1ca80b7b31d43c6e7871944551698f383d052b"
+    },
+    {
+      "path": "assets/shell.js",
+      "sha256": "887b4fc0a6d4c60f7cda14ffb23bb73dffd42bfaa10c18afdfafb72c7b65b4d0"
+    },
+    {
+      "path": "assets/unified-shell.css",
+      "sha256": "33dda6bb02ace0d0781a110cf4b03de834de201891f1c376f7742e2343213d69"
+    },
+    {
+      "path": "assets/unified-shell.js",
+      "sha256": "04842507a87973d95f68ca7ef8496595f02fc961fcd05f4c9d8f866f0a2aca00"
+    },
+    {
+      "path": "index.html",
+      "sha256": "dc416a84039f3385a32daeca865afb2ad1175c73dc555caa2bc4d8172867d78a"
+    },
+    {
+      "path": "notice/app.js",
+      "sha256": "1953fb30a55bfb989326fcf85446247608e7061e402fc1318b3efc8b498c3ef5"
+    },
+    {
+      "path": "notice/assets/campus.png",
+      "sha256": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70"
+    },
+    {
+      "path": "notice/assets/campus.svg",
+      "sha256": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665"
+    },
+    {
+      "path": "notice/assets/demo-panel.css",
+      "sha256": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e"
+    },
+    {
+      "path": "notice/assets/demo-panel.js",
+      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+    },
+    {
+      "path": "notice/assets/logo.svg",
+      "sha256": "bf62695555b7cbdcde4991e63e12e3bfc10b7ba4abf72410f759b7126b764505"
+    },
+    {
+      "path": "notice/assets/module-demo.js",
+      "sha256": "b3fe782ea2314c61d05832f5575b1af9328e276da308fa7d98a54c4cbd7ab86a"
+    },
+    {
+      "path": "notice/assets/signature.svg",
+      "sha256": "9f8324a3a2588b9d12e6ee7b96161f1e45942778a52a7c89b24051973bcb6271"
+    },
+    {
+      "path": "notice/assets/安全课堂.mp4",
+      "sha256": "cd73c4ad98250fe2c232b859a057a590e2277fc0e4acccb003a24141da63ee4d"
+    },
+    {
+      "path": "notice/assets/活动安排.pdf",
+      "sha256": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f"
+    },
+    {
+      "path": "notice/assets/轻柔提示音.wav",
+      "sha256": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0"
+    },
+    {
+      "path": "notice/core.js",
+      "sha256": "f0cba8952abf44baff593b4e433d0e2daa2782a3df20421740369950ab094c0d"
+    },
+    {
+      "path": "notice/index.html",
+      "sha256": "0b735c1e801099b02c2b34fbeca24ff12660e95d728b6b7d6c7072ea476ceb46"
+    },
+    {
+      "path": "notice/styles.css",
+      "sha256": "d23787c31a9623029a801015ab566fa0a135d7f25cd0ef28f4a86c1bb3750935"
+    }
+  ],
+  "scope": "School prototype runtime; local demonstration data only",
+  "previousRelease": "v0.55"
+}

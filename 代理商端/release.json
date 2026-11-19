@@ -1,21 +1,22 @@
 {
-  "release": "v0.59",
+  "release": "v0.61",
   "status": "静态评审候选（第一期新增，未定版，修改中）",
   "date": "2026-11-18",
   "sourceVersions": {
-    "agent": "v0.58",
-    "notice": "V21"
+    "agent": "v0.59",
+    "notice": "V22"
   },
   "repository": "guozi0718/codex-projects",
   "entry": "index.html?page=family-notice",
   "stableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
-  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.59/index.html?page=family-notice",
+  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.61/index.html?page=family-notice",
   "changes": [
-    "以代理商端 V0.58 已发布主框架为基线，集成家校通知 V21",
-    "通知字段“正文样式”更名为“全文背景”，并记录背景色值 #FFFFFF、#F5FBF6、#FFFCF3",
-    "三端统计页按查收方式展示指标，学生统计增加年级/班级/姓名筛选及字段",
-    "通知菜单仍由代理商主项目管理，页面通过相对路径打开",
-    "不发布教师或家长小程序独立端"
+    "沿用代理商端 v0.59 主菜单、页签与页面框架，家校通知功能更新为 V22。",
+    "删除后通知从普通用户页面消失；隐藏留存记录保留内容、发布设置、接收对象、个人回执、操作人和时间。",
+    "截止时间新建时默认空；未设置时仍按发送后30个自然日规则处理。",
+    "Web 一键提醒只提醒汇总未读学生的所有关联家长和未读教师；已读未确认或未签字不提醒，失败不自动重试。",
+    "发布状态顺序保持全部、待发送、已发送、已截止。",
+    "教师和家长小程序原型、模板资料保持原样。"
   ],
   "files": [
     {
@@ -250,8 +251,8 @@
     },
     {
       "path": "notice/app.js",
-      "size": 171124,
-      "sha256": "5b2a72930b5e39ae0814ccd793eebb7a1c73aafa1623694f994459216d276c52"
+      "size": 172654,
+      "sha256": "1953fb30a55bfb989326fcf85446247608e7061e402fc1318b3efc8b498c3ef5"
     },
     {
       "path": "notice/assets/campus.png",
@@ -305,18 +306,18 @@
     },
     {
       "path": "notice/core.js",
-      "size": 20991,
-      "sha256": "04537f75978b82dd399c2f65c087f40f8e9239471c105cb381944afb5488ec8d"
+      "size": 22743,
+      "sha256": "f0cba8952abf44baff593b4e433d0e2daa2782a3df20421740369950ab094c0d"
     },
     {
       "path": "notice/index.html",
       "size": 762,
-      "sha256": "d0e3677f52655725c8a1e643aa60baffc3b877b4de67d7803435563a905dda66"
+      "sha256": "0b735c1e801099b02c2b34fbeca24ff12660e95d728b6b7d6c7072ea476ceb46"
     },
     {
       "path": "notice/styles.css",
-      "size": 69224,
-      "sha256": "d6fd96d54d0b42f7e878af63f911347f07bbfb45232aab5d016657263a737f17"
+      "size": 69303,
+      "sha256": "d23787c31a9623029a801015ab566fa0a135d7f25cd0ef28f4a86c1bb3750935"
     },
     {
       "path": "README.md",

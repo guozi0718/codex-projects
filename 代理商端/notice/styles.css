@@ -165,6 +165,7 @@ body.notice-embedded-school-list .school-notice-filter{border:0;border-bottom:1p
 .stats-table th,.stats-table td{text-align:center}
 .stats-table td small{display:block;color:#8493a7}
 .stats-pager{margin-top:auto;padding-top:12px;border-top:1px solid #e8edf3}
+.stats-reminder-actions{display:flex;justify-content:flex-end;margin-top:-4px}
 .audience-grade-list{max-height:58vh;overflow:auto;padding:2px 4px}
 .audience-grade{border:1px solid #e3e9f0;border-radius:6px;margin:8px 0;background:#fff}
 .audience-grade-head,.audience-class-head{display:flex;align-items:center;gap:8px;padding:9px 12px;cursor:pointer}

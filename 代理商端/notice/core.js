@@ -36,10 +36,11 @@
   function canManage(a,n){return a.role!=='parent'&&canView(a,n)&&allowedAudience(a,n)&&n.status!=='deleted';}
   function canEdit(a,n,at=Date.now()){return canManage(a,n)&&(n.status!=='published'||at<=deliveryUntil(n));}
   function counts(n){const r=recipients(n);const rs=Object.values(n.receipts||{});const complete=x=>n.config.ack==='read'?!!x.readAt:n.config.ack==='confirm'?!!x.confirmAt:!!x.signatures?.length;const metric=(ids,kind)=>({total:ids.length,read:ids.filter(id=>rs.some(x=>x.kind===kind&&x.recipientId===id&&x.readAt)).length,done:ids.filter(id=>rs.some(x=>x.kind===kind&&x.recipientId===id&&complete(x))).length});return {students:metric(r.students,'student'),teachers:metric(r.teachers,'teacher')};}
+  function unreadRecipientIds(n,kind){const ids=kind==='student'?recipients(n).students:kind==='teacher'?recipients(n).teachers:[];const rs=Object.values(n.receipts||{});return ids.filter(id=>!rs.some(x=>x.kind===kind&&x.recipientId===id&&x.readAt));}
   function locked(n){return Object.values(n.receipts||{}).some(r=>r.readAt||r.confirmAt||r.signatures?.length);}
   function writeLog(n,a,action,at,detail){n.history??=[];n.history.unshift({id:uid('log'),at,actor:a.name,role:a.role,action,version:n.version,detail:detail||'',snapshot:clone({title:n.title,blocks:n.blocks,attachments:n.attachments,config:n.config,supplements:n.supplements,cover:n.cover,theme:n.theme,music:n.music})});}
   function textBlock(text){return {id:uid('b'),type:'text',text};}
-  function empty(a){return {id:uid('n'),schoolId:a.schoolId,title:'',cover:'',theme:'plain',music:'',blocks:[textBlock('')],attachments:[],config:{classes:[],studentIds:[],teachers:[],ack:'read',schoolName:['school','agent','ops'].includes(a.role),scheduleEnabled:false,scheduledAt:'',deadlineAt:['school','agent','ops'].includes(a.role)?'':new Date(Date.now()+30*DAY_MS).toISOString()},rosterSnapshot:{studentIds:[],capturedAt:null},deliveryWindow:null,status:'draft',version:0,creator:a.id,creatorName:a.name,origin:a.role,receipts:{},supplements:[],history:[],createdAt:Date.now(),updatedAt:Date.now(),updated:false};}
+  function empty(a){return {id:uid('n'),schoolId:a.schoolId,title:'',cover:'',theme:'plain',music:'',blocks:[textBlock('')],attachments:[],config:{classes:[],studentIds:[],teachers:[],ack:'read',schoolName:['school','agent','ops'].includes(a.role),scheduleEnabled:false,scheduledAt:'',deadlineAt:''},rosterSnapshot:{studentIds:[],capturedAt:null},deliveryWindow:null,status:'draft',version:0,creator:a.id,creatorName:a.name,origin:a.role,receipts:{},supplements:[],history:[],createdAt:Date.now(),updatedAt:Date.now(),updated:false};}
   function validate(n,a,publish,at){const plainText=v=>String(v||'').replace(/<br\s*\/?\s*>/gi,'\n').replace(/<\/(?:div|p|li)>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&nbsp;|&#160;/gi,' ').replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&quot;/gi,'\"').replace(/&#39;/gi,"'");
     if(!n.title.trim())return fail('TITLE','请填写通知标题');
     const maxTitleLength=['school','agent','ops'].includes(a.role)?50:40;
@@ -70,7 +71,7 @@
     if(old&&old.status==='published'){
       n.status='published';n.receipts=clone(old.receipts);n.supplements=clone(old.supplements);n.publishedAt=old.publishedAt;
       n.rosterSnapshot=clone(old.rosterSnapshot||rosterSnapshot(old,old.publishedAt||old.createdAt));
-      n.config.deadlineAt=new Date(at+30*DAY_MS).toISOString();n.deliveryWindow={startedAt:at,untilAt:at+30*DAY_MS};
+      n.config.deadlineAt=old.config.deadlineAt||'';n.deliveryWindow={startedAt:at,untilAt:Number.isFinite(Date.parse(n.config.deadlineAt))?Date.parse(n.config.deadlineAt):at+30*DAY_MS};
     }else if(old&&old.status==='scheduled'){
       n.status='scheduled';n.rosterSnapshot=clone(old.rosterSnapshot||{studentIds:[],capturedAt:null});n.deliveryWindow=clone(old.deliveryWindow||null);
     }else if(intent==='draft'){n.status='draft';n.config={classes:[],studentIds:[],teachers:[],ack:'read',schoolName:['school','agent','ops'].includes(a.role),scheduleEnabled:false,scheduledAt:'',deadlineAt:''};n.rosterSnapshot={studentIds:[],capturedAt:null};n.deliveryWindow=null;}else if(intent==='publish'||old?.status==='scheduled'){
@@ -87,11 +88,32 @@
   function manage(db,id,a,version,action,payload={},at=Date.now()){
     const n=db.notices.find(x=>x.id===id);if(!n||!canManage(a,n))return fail('PERMISSION','无权执行此操作');if(n.version!==version)return fail('CONFLICT','通知已变化，请刷新后重试',{current:clone(n)});
     if(action==='supplement') {if(n.status!=='published')return fail('STATE','仅已发布通知可补充说明');if(!payload.text?.trim())return fail('CONTENT','请填写补充说明');n.supplements.push({id:uid('sup'),text:payload.text.trim(),at,by:a.name,role:a.role});}
-    else if(action==='delete'){n.status='deleted';n.deletedAt=at;}
+    else if(action==='delete'){
+      const index=db.notices.indexOf(n),snapshot=clone(n);
+      snapshot.version++;snapshot.updatedAt=at;snapshot.deletedAt=at;snapshot.deletedBy={id:a.id,name:a.name,role:a.role};
+      snapshot.lastEditor=a.name;snapshot.lastEditorRole=a.role;
+      writeLog(snapshot,a,'删除通知',at,'保留删除时通知内容、发布设置、对象范围和阅读回执记录');
+      db.deletedArchive??=[];
+      db.deletedArchive.push({id:n.id,schoolId:n.schoolId,sourceStatus:n.status,deletedAt:at,deletedBy:{id:a.id,name:a.name,role:a.role},snapshot});
+      if(index>=0)db.notices.splice(index,1);
+      db.revision++;return {ok:true,notice:clone(snapshot)};
+    }
     else if(action==='cancel'){if(n.status!=='scheduled')return fail('STATE','仅待发送通知可取消定时');n.status='draft';n.config.scheduledAt='';}
-    else if(action==='remind'){if(n.status!=='published')return fail('STATE','仅已发布通知可以提醒');if(at>deliveryUntil(n))return fail('DEADLINE','通知已截止，不能再提醒');n.reminders??=[];n.reminders.push({at,by:a.name,target:payload.target||'unread'});}
+    else if(action==='remind'){
+      if(n.status!=='published')return fail('STATE','仅已发布通知可以提醒');
+      if(at>deliveryUntil(n))return fail('DEADLINE','通知已截止，不能再提醒');
+      // 本次只调整三个 Web 端的提醒入口；老师小程序保留此前原型交互。
+      if(a.role==='teacher'){
+        n.reminders??=[];n.reminders.push({at,by:a.name,target:payload.target||'unread'});
+      }else{
+      if(!['student','teacher'].includes(payload.kind))return fail('TARGET','请选择未读学生或未读教师');
+      const recipientIds=unreadRecipientIds(n,payload.kind);
+      if(!recipientIds.length)return fail('NO_UNREAD','当前没有未读对象');
+      n.reminders??=[];n.reminders.push({at,by:a.name,target:payload.kind==='student'?'students-unread':'teachers-unread',recipientIds,guardianScope:payload.kind==='student'?'全部关联家长':undefined});
+      }
+    }
     else return fail('ACTION','未知操作');
-    n.version++;n.updatedAt=at;n.lastEditor=a.name;n.lastEditorRole=a.role;writeLog(n,a,{supplement:'补充说明',delete:'删除通知',cancel:'取消定时',remind:'提醒未完成'}[action],at,payload.text||payload.target||'保留阅读与回执记录');db.revision++;return {ok:true,notice:clone(n)};
+    n.version++;n.updatedAt=at;n.lastEditor=a.name;n.lastEditorRole=a.role;writeLog(n,a,{supplement:'补充说明',cancel:'取消定时',remind:'提醒未读对象'}[action],at,payload.text||payload.kind||'保留阅读与回执记录');db.revision++;return {ok:true,notice:clone(n)};
   }
   function receipt(db,id,a,action,signature,at=Date.now()){
     const n=db.notices.find(x=>x.id===id);const child=a.childId||'c52-1';
@@ -105,7 +127,7 @@
   }
   function due(db,at=Date.now(),schoolId=null) {let changed=false;db.notices.forEach(n=>{if((!schoolId||n.schoolId===schoolId)&&n.status==='scheduled'&&Date.parse(n.config.scheduledAt)<=at){n.status='published';n.version++;n.publishedAt=at;n.rosterSnapshot=rosterSnapshot(n,at);n.deliveryWindow={startedAt:at,untilAt:Number.isFinite(Date.parse(n.config.deadlineAt||''))?Date.parse(n.config.deadlineAt):at+30*DAY_MS};writeLog(n,{name:'定时任务',role:'system'},'定时发布',at);changed=true;}});if(changed)db.revision++;return changed;}
   function seed(){
-    const at=Date.now(),db={schema:7,revision:1,notices:[],templates:[]};
+    const at=Date.now(),db={schema:8,revision:1,notices:[],deletedArchive:[],templates:[]};
     for(const s of schools.filter(s=>s.authorized)){
       const proxyRole= s.mode==='agency'?'agent':'ops';
       const examples=[
@@ -130,11 +152,12 @@
         if(['published','deleted'].includes(status)){n.rosterSnapshot=rosterSnapshot(n,n.publishedAt);n.deliveryWindow={startedAt:n.publishedAt,untilAt:n.publishedAt+30*DAY_MS};}
         if(i<5&&i!==3){recipients(n).students.slice(0,4).forEach((id,j)=>{n.receipts[id+':seed']={kind:'student',recipientId:id,guardianId:'other',guardian:j?'家长':'爸爸',readAt:at-1200000,signatures:withReceipt?[{at:at-900000,version:1,image:'assets/signature.svg'}]:[]};});}
         if(i===7)n.receipts['t2:seed']={kind:'teacher',recipientId:'t2',guardianId:'t2',guardian:'李建国',readAt:at-600000,signatures:[{at:at-600000,version:1,image:'assets/signature.svg'}]};
-        writeLog(n,a,status==='draft'?'保存草稿':'发布通知',n.createdAt,'原型示例数据');db.notices.push(n);
+        writeLog(n,a,status==='draft'?'保存草稿':'发布通知',n.createdAt,'原型示例数据');
+        if(status==='deleted')db.deletedArchive.push({id:n.id,schoolId:n.schoolId,sourceStatus:'已删除示例记录',deletedAt:n.updatedAt,deletedBy:{id:'seed',name:'演示数据',role:'system'},snapshot:clone(n)});else db.notices.push(n);
       });
     }
     return db;
   }
-  const api={clone,uid,schools,school,classes,teachers,students,children,accounts,ackNames,stateNames,roleNames,actor,recipients,allowedSchool,allowedAudience,canView,canManage,canEdit,counts,locked,deliveryUntil,empty,save,manage,receipt,due,seed,textBlock};
+  const api={clone,uid,schools,school,classes,teachers,students,children,accounts,ackNames,stateNames,roleNames,actor,recipients,allowedSchool,allowedAudience,canView,canManage,canEdit,counts,unreadRecipientIds,locked,deliveryUntil,empty,save,manage,receipt,due,seed,textBlock};
   root.NoticeCore=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
