@@ -155,7 +155,7 @@ R2与转达页面须先从R1抄送流程生成关联R2后查看；直接打开�
 #### 6. 功能详细说明
 ##### 6.2 学校反馈列表与R1操作（AG-FB-01）
 
-原型入口：[代理商Web学校反馈列表候选](https://rawcdn.githack.com/guozi0718/codex-projects/main/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=school-feedback&content=1)
+原型入口：[代理商Web学校反馈列表候选](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=school-feedback&content=1)
 ![代理商学校反馈列表真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-r1-list.png)
 ![代理商直接回复来源反馈真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-r1-reply.png)
 
@@ -178,7 +178,7 @@ R2与转达页面须先从R1抄送流程生成关联R2后查看；直接打开�
 
 ##### 6.3 抄送运营并创建R2（AG-FB-02）
 
-原型入口：[代理商Web抄送运营候选](https://rawcdn.githack.com/guozi0718/codex-projects/main/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=school-feedback&content=1)
+原型入口：[代理商Web抄送运营候选](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=school-feedback&content=1)
 ![代理商抄送运营弹窗真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-copy-form.png)
 ![代理商抄送内容与附件真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-copy-content-attachments.png)
 ![代理商抄送历史R2与双方消息真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-copy-history.png)
@@ -226,7 +226,7 @@ R2与转达页面须先从R1抄送流程生成关联R2后查看；直接打开�
 
 ##### 6.4 问题反馈菜单与R2分类（AG-FB-03）
 
-原型入口：[代理商Web问题反馈列表候选](https://rawcdn.githack.com/guozi0718/codex-projects/main/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
+原型入口：[代理商Web问题反馈列表候选](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
 ![代理商问题反馈列表真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-own-feedback-list.png)
 ![代理商问题反馈中R2真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-r2-list.png)
 
@@ -241,7 +241,7 @@ R2与转达页面须先从R1抄送流程生成关联R2后查看；直接打开�
 
 ###### 6.4.2 新增代理商自有反馈
 
-原型入口：[代理商Web问题反馈列表与新增入口](https://rawcdn.githack.com/guozi0718/codex-projects/main/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
+原型入口：[代理商Web问题反馈列表与新增入口](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
 ![代理商问题反馈新增入口真实截图（截图展示列表和新增按钮，不是新增弹窗）](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-own-feedback-list.png)
 
 | 字段 | 必填 | 规则 | 保存结果 |
@@ -271,7 +271,7 @@ R2详情显示R2编号、来源R1编号、来源角色、来源内容保存时�
 
 ##### 6.5 R2详情、运营回复与代理商跟进（AG-FB-04）
 
-原型入口：[代理商Web R2问题反馈候选](https://rawcdn.githack.com/guozi0718/codex-projects/main/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
+原型入口：[代理商Web R2问题反馈候选](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
 ![代理商问题反馈列表中R2记录真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-r2-list.png)
 ![代理商R2详情真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-r2-detail.png)
 
@@ -292,7 +292,7 @@ R2详情显示R2编号、来源R1编号、来源角色、来源内容保存时�
 
 ##### 6.6 转达运营回复至原反馈人（AG-FB-05）
 
-原型入口：[代理商Web转达学校候选](https://rawcdn.githack.com/guozi0718/codex-projects/main/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
+原型入口：[代理商Web转达学校候选](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
 ![代理商转达来源与多选真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-relay-source-selection.png)
 ![代理商多条转达独立草稿真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-relay-multiple-drafts.png)
 
@@ -348,7 +348,7 @@ R2详情显示R2编号、来源R1编号、来源角色、来源内容保存时�
 
 ##### 6.7 撤回、通知与日志（AG-FB-06）
 
-原型入口：[代理商Web反馈列表候选](https://rawcdn.githack.com/guozi0718/codex-projects/main/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
+原型入口：[代理商Web反馈列表候选](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=agent-feedback&content=1)
 ![代理商问题反馈列表及撤回操作真实截图](https://raw.githubusercontent.com/guozi0718/codex-projects/main/customer-feedback-web/screenshots/agent-r2-list.png)
 
 ###### 6.7.1 撤回规则
