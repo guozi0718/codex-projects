@@ -1,18 +1,20 @@
 {
-  "release": "v0.58",
+  "release": "v0.59",
   "status": "静态评审候选（第一期新增，未定版，修改中）",
   "date": "2026-11-18",
   "sourceVersions": {
-    "agent": "v0.57",
-    "notice": "V20"
+    "agent": "v0.58",
+    "notice": "V21"
   },
   "repository": "guozi0718/codex-projects",
   "entry": "index.html?page=family-notice",
   "stableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
-  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.58/index.html?page=family-notice",
+  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.59/index.html?page=family-notice",
   "changes": [
-    "以代理商端 V0.57 已发布框架为基线集成家校通知 V20",
-    "通知菜单由代理商主项目管理，通知页面使用相对路径",
+    "以代理商端 V0.58 已发布主框架为基线，集成家校通知 V21",
+    "通知字段“正文样式”更名为“全文背景”，并记录背景色值 #FFFFFF、#F5FBF6、#FFFCF3",
+    "三端统计页按查收方式展示指标，学生统计增加年级/班级/姓名筛选及字段",
+    "通知菜单仍由代理商主项目管理，页面通过相对路径打开",
     "不发布教师或家长小程序独立端"
   ],
   "files": [
@@ -184,7 +186,7 @@
     {
       "path": "assets/page-registry.js",
       "size": 3076,
-      "sha256": "337dff0b95b5189d3630f660811ca84848a7caf6a4702010763c7f534e21e64e"
+      "sha256": "fe12db662a0ceac1339d8c99449a754f3bbc8009acf04cba257f3fa7c4bd81ce"
     },
     {
       "path": "assets/presentation-cleanup.js",
@@ -238,8 +240,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size": 274,
-      "sha256": "b6ca961b80bfc01587b4361cdbd093dbf2b4e2ce6364c9ce29f188b14abef166"
+      "size": 529,
+      "sha256": "69051c98763ac17d508456cb449d9a07e0a748d07f3c2cd5259f440fa0225ce7"
     },
     {
       "path": "index.html",
@@ -248,8 +250,8 @@
     },
     {
       "path": "notice/app.js",
-      "size": 167842,
-      "sha256": "004f79ffd83b3c99b0225385b1f54af45f7c9409e4c470bd684caf641d5abdf8"
+      "size": 171124,
+      "sha256": "5b2a72930b5e39ae0814ccd793eebb7a1c73aafa1623694f994459216d276c52"
     },
     {
       "path": "notice/assets/campus.png",
@@ -309,17 +311,17 @@
     {
       "path": "notice/index.html",
       "size": 762,
-      "sha256": "69a1ab36443613b060c7b243fa22ffb7dbbd65de97908a42a347e3c92aac4847"
+      "sha256": "d0e3677f52655725c8a1e643aa60baffc3b877b4de67d7803435563a905dda66"
     },
     {
       "path": "notice/styles.css",
-      "size": 69187,
-      "sha256": "c8ef01911b88c9f62829d84ba1a94f43f0b3d5fd35a09446847f39c73d2ffaab"
+      "size": 69224,
+      "sha256": "d6fd96d54d0b42f7e878af63f911347f07bbfb45232aab5d016657263a737f17"
     },
     {
       "path": "README.md",
-      "size": 758,
-      "sha256": "02a24fff6944039ef03124d5667c1ca59da4a26c7314e99401b4cc569b817647"
+      "size": 925,
+      "sha256": "71350359356abef9dec73e61dd29a92feb4d6f2b9b79c3b8a258f3e7862b0854"
     }
   ]
 }

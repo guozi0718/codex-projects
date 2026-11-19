@@ -2,7 +2,7 @@
 window.AgentPageRegistry={
   "schemaVersion": 1,
   "endpoint": "agent",
-  "release": "v0.58",
+  "release": "v0.59",
   "menu": [
     {
       "t": "校务管理",
@@ -83,10 +83,10 @@ window.AgentPageRegistry={
         "role": "agent",
         "school": "s1",
         "embedded": "1",
-        "v": "20261118-20"
+        "v": "20261118-21"
       },
       "owner": "家校通知功能项目",
-      "dependency": "家校通知 V20；相对路径接入代理商端 V0.58"
+      "dependency": "家校通知 V21；相对路径接入代理商端 V0.58"
     },
     "school-feedback": {
       "title": "学校反馈",
