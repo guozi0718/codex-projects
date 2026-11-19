@@ -2,7 +2,7 @@
 
 产品版本：V1.0.0（第一期新增，待定）
 文档编号：PRD-FN-20261118-SCH
-文档版本：V0.3（修改中）
+文档版本：V0.4（修改中）
 文档状态：第一期修改中，待评审，未定版
 适用端：学校 Web｜学校管理员及具备通知权限的校内人员
 共通规则：[家校通知一期产品需求文档-全端共通规则](家校通知一期产品需求文档-全端共通规则.md)
@@ -51,10 +51,10 @@
 
 | 资料 | 当前值 | 用途 |
 |---|---|---|
-| 学校 Web 菜单入口 | [校务管理→家校通知（固定版本 v0.55）](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.55/index.html?page=family-notice) | 学校主菜单下的通知入口、页签与框架 |
-| 通知页面源 | [学校 Web 通知页面 v0.55](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.55/notice/index.html?role=school&school=s1&embedded=1) | 当前学校通知页面、发布、统计和预览 |
+| 学校 Web 菜单入口 | [校务管理→家校通知（固定版本 v0.57）](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice) | 学校主菜单下的通知入口、页签与框架 |
+| 通知页面源 | [学校 Web 通知页面 v0.57](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/notice/index.html?role=school&school=s1&embedded=1) | 当前学校通知页面、发布、统计和预览 |
 | 基线项目 | 学校 Web 项目 | 菜单、外层页面框架、页签归学校 Web 基线管理 |
-| 当前评审截图 | 截图/学校Web-v0.55-列表.png | 列表样式参考；截图以固定版本页面为准 |
+| 历史参考截图 | 截图/学校Web-v0.55-列表.png | 旧版页面对照图，不作为 V22 四项批注验收依据 |
 
 视觉要求：标题列左对齐，其他表格列居中；通知正文富文本框保持现有大小；附件、单行输入框、统计子页和PDF样式遵循全端共通规则。
 
@@ -356,3 +356,4 @@
 本文为修改中、未定版的产品需求文档。固定评审原型链接用于核对现阶段的页面和交互，不表示真实名册、学校账号权限、消息发送、回执保存和PDF导出已经正式验收。
 
 本文描述用户能看到什么、可以进行什么操作、何时允许或阻止操作，以及操作结果。原型或业务规则变化时，需同步更新本端 PRD、全端共通规则和原型发布登记。
+

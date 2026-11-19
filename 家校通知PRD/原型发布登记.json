@@ -1,104 +1,88 @@
 {
   "date": "2026-11-18",
-  "task": "T-20261118-03-各端PRD与原型对齐",
-  "prdBatch": "V0.3",
-  "scopeStatus": "第一期新增，修改中、未定版",
+  "task": "T-20261118-09-四项批注原型与PRD对齐",
+  "prdTask": "T-20261118-03-各端PRD与原型对齐",
+  "prdBatch": "V0.4",
+  "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "fffa5e4d7df2a3a8c06452897a7b095abcfe1390",
+  "prototypeCommit": "a141ba919888109be2592f84832c7d70b7b85fe3",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/a141ba919888109be2592f84832c7d70b7b85fe3",
   "noticeFeatureSource": {
-    "version": "V21",
-    "localPath": "任务/T-20261118-04-全文背景及阅读统计优化/端-通知功能/版本-V21",
-    "indexSha256": "d0e3677f52655725c8a1e643aa60baffc3b877b4de67d7803435563a905dda66",
-    "appSha256": "5b2a72930b5e39ae0814ccd793eebb7a1c73aafa1623694f994459216d276c52",
-    "coreSha256": "04537f75978b82dd399c2f65c087f40f8e9239471c105cb381944afb5488ec8d",
-    "styleSha256": "d6fd96d54d0b42f7e878af63f911347f07bbfb45232aab5d016657263a737f17"
+    "version": "V22",
+    "localPath": "任务/T-20261118-09-四项批注原型与PRD对齐/端-通知功能/版本-V22",
+    "indexSha256": "0b735c1e801099b02c2b34fbeca24ff12660e95d728b6b7d6c7072ea476ceb46",
+    "appSha256": "1953fb30a55bfb989326fcf85446247608e7061e402fc1318b3efc8b498c3ef5",
+    "coreSha256": "f0cba8952abf44baff593b4e433d0e2daa2782a3df20421740369950ab094c0d",
+    "styleSha256": "d23787c31a9623029a801015ab566fa0a135d7f25cd0ef28f4a86c1bb3750935",
+    "releaseNote": "端-通知功能/版本-V22/定版信息.md"
   },
   "webReleases": [
     {
       "endpoint": "school",
-      "baseline": "v0.53",
-      "release": "v0.55",
-      "noticeFeature": "V21",
+      "baseline": "v0.55",
+      "release": "v0.57",
+      "noticeFeature": "V22",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice",
-      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.55/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.55/notice/index.html?role=school&school=s1&embedded=1",
-      "commit": "fffa5e4d7df2a3a8c06452897a7b095abcfe1390",
+      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/notice/index.html?role=school&school=s1&embedded=1",
+      "commit": "a141ba919888109be2592f84832c7d70b7b85fe3",
       "prd": "家校通知一期产品需求文档-学校Web.md",
-      "currentScreenshot": "截图/学校Web-v0.55-列表.png"
+      "screenshot": "历史参考：截图/学校Web-v0.55-列表.png"
     },
     {
       "endpoint": "agent",
-      "baseline": "v0.57",
-      "release": "v0.59",
-      "noticeFeature": "V21",
+      "baseline": "v0.59",
+      "release": "v0.61",
+      "noticeFeature": "V22",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
-      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.59/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.59/notice/index.html?role=agent&school=s1&embedded=1",
-      "commit": "fffa5e4d7df2a3a8c06452897a7b095abcfe1390",
+      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.61/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.61/notice/index.html?role=agent&school=s1&embedded=1",
+      "commit": "a141ba919888109be2592f84832c7d70b7b85fe3",
       "prd": "家校通知一期产品需求文档-代理商Web.md",
-      "historicalScreenshot": "截图/代理商Web-v0.58.png"
+      "screenshot": "历史参考：截图/代理商Web-v0.58.png"
     },
     {
       "endpoint": "operations",
-      "baseline": "v0.61",
-      "release": "v0.63-b60e784e6a",
-      "noticeFeature": "V21",
+      "baseline": "v0.63-b60e784e6a",
+      "release": "v0.66",
+      "noticeFeature": "V22",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice",
-      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.63-b60e784e6a/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.63-b60e784e6a/notice/index.html?role=ops&school=s1&embedded=1",
-      "commit": "fffa5e4d7df2a3a8c06452897a7b095abcfe1390",
+      "immutableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.66/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.66/dependencies/notice/index.html?role=ops&school=s1&embedded=1",
+      "commit": "a141ba919888109be2592f84832c7d70b7b85fe3",
       "prd": "家校通知一期产品需求文档-运营后台.md",
-      "historicalScreenshot": "截图/运营后台-v0.62.png"
+      "screenshot": "历史参考：截图/运营后台-v0.62.png"
     }
   ],
   "miniPrograms": {
     "teacher": {
-      "status": "小程序原型和模板本地保留，本轮未修改、未上传",
+      "status": "原型与模板资料本地保留，本轮页面未修改、未发布",
       "prd": "家校通知一期产品需求文档-教师小程序.md",
-      "visualReferences": [
-        "截图/教师小程序-模板入口-用户参考.png",
-        "截图/教师小程序-普通通知-用户参考.png",
-        "截图/教师小程序-美文通知-用户参考.png"
-      ]
+      "visualReferences": ["截图/教师小程序-模板入口-用户参考.png", "截图/教师小程序-普通通知-用户参考.png", "截图/教师小程序-美文通知-用户参考.png"]
     },
     "parent": {
-      "status": "小程序原型本地保留，本轮未修改、未上传",
+      "status": "原型资料本地保留，本轮页面未修改、未发布",
       "prd": "家校通知一期产品需求文档-家长小程序.md",
-      "visualReferences": [
-        "截图/家长小程序-通知列表-用户参考.png",
-        "截图/家长小程序-通知卡片-用户参考.png"
-      ]
+      "visualReferences": ["截图/家长小程序-通知列表-用户参考.png", "截图/家长小程序-通知卡片-用户参考.png"]
     }
   },
-  "unresolvedQuestions": [
-    "Q66",
-    "Q67",
-    "Q68",
-    "Q70",
-    "Q71"
-  ],
-  "knownPrototypeDifferences": [
-    "用户最新口径要求截止时间默认空；本地 V21 当前初始值为当前时间加30天。",
-    "用户最新口径要求一键提醒只针对学生汇总未读对象；本地 V21 当前还允许按未完成状态提醒。"
-  ],
+  "unresolvedQuestions": ["Q66", "Q67", "Q68", "Q70", "Q71"],
+  "knownPrototypeDifferences": [],
   "resolvedRules": {
-    "reminder": "仅向学生汇总未读学生的所有关联家长发送提醒；已读未确认/未签字暂不提醒；失败不自动重试",
-    "gradeScope": "选择年级时覆盖当时已有班级；已选整班内新增学生按整班规则纳入；未来新建班级是否自动纳入待确认",
-    "statusFilterOrder": [
-      "全部",
-      "待发送",
-      "已发送",
-      "已截止"
-    ]
+    "deletionArchive": "删除后普通页面立即不显示；隐藏快照保留通知内容、发布设置、对象范围、个人回执、操作人和删除时间；无删除状态和恢复入口",
+    "deadlineDefault": "新建时为空；不设置时仍按发送后30个自然日有效",
+    "reminder": "Web只提醒汇总未读学生的全部关联家长、未读教师；已读未确认/未签字不提醒；无未读时不展示提醒；失败不重试",
+    "statusFilterOrder": ["全部", "待发送", "已发送", "已截止"]
   },
   "validationLimits": [
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
-    "本轮未运行自动化测试；未接入真实名单、账号权限、消息提醒或实际PDF导出。"
+    "未运行自动化测试；未接入真实名单、消息提醒、后台删除快照或实际PDF导出。"
   ]
 }
+

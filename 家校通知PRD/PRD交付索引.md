@@ -1,7 +1,7 @@
 ### 家校通知一期 PRD 交付索引
 
 需求范围：第一期新增，修改中，未定版（产品版本待定）  
-文档批次：V0.3  
+文档批次：V0.4  
 任务：T-20261118-03｜各端 PRD 与原型对齐  
 核对日期：2026-11-18
 
@@ -23,21 +23,21 @@
 | [家长小程序](家校通知一期产品需求文档-家长小程序.md) | 当前登录学生通知、全部/待办、卡片和回执；原型留存未改 |
 | [原型映射与同步规则](原型映射与同步规则.md) | 固定原型链接、页面归属、基线和后续同步要求 |
 | [文档核对记录](文档核对记录.md) | 结构、业务口径、相对链接和版本核对记录 |
-| [原型发布登记](原型发布登记.json) | Web固定版本、提交号及V21源文件校验值 |
+| [原型发布登记](原型发布登记.json) | Web固定版本、提交号及V22源文件校验值 |
 
 #### 3. Web 原型与 PRD 对应
 
 | 端 | 当前菜单入口 | 固定评审版本 | 功能基线 | 当前发布提交 |
 |---|---|---|---|---|
-| 学校 Web | [家校通知](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice) | [v0.55](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.55/index.html?page=family-notice) | v0.53 + 通知 V21 | [fffa5e4](https://github.com/guozi0718/codex-projects/commit/fffa5e4d7df2a3a8c06452897a7b095abcfe1390) |
-| 代理商 Web | [家校通知](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice) | [v0.59](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.59/index.html?page=family-notice) | v0.57 + 通知 V21 | [fffa5e4](https://github.com/guozi0718/codex-projects/commit/fffa5e4d7df2a3a8c06452897a7b095abcfe1390) |
-| 运营后台 | [家校通知](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice) | [v0.63-b60e784e6a](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.63-b60e784e6a/index.html?page=family-notice) | v0.61 + 通知 V21 | [fffa5e4](https://github.com/guozi0718/codex-projects/commit/fffa5e4d7df2a3a8c06452897a7b095abcfe1390) |
+| 学校 Web | [家校通知](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice) | [v0.57](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice) | v0.55 + 通知 V22 | [a141ba9](https://github.com/guozi0718/codex-projects/commit/a141ba919888109be2592f84832c7d70b7b85fe3) |
+| 代理商 Web | [家校通知](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice) | [v0.61](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.61/index.html?page=family-notice) | v0.59 + 通知 V22 | [a141ba9](https://github.com/guozi0718/codex-projects/commit/a141ba919888109be2592f84832c7d70b7b85fe3) |
+| 运营后台 | [家校通知](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice) | [v0.66](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.66/index.html?page=family-notice) | v0.63-b60e784e6a + 通知 V22 | [a141ba9](https://github.com/guozi0718/codex-projects/commit/a141ba919888109be2592f84832c7d70b7b85fe3) |
 
 表中稳定菜单链接用于日常进入，可能随以后发布更新；评审 PRD 时以固定版本链接为准。GitHub Pages 当前只用于原型评审，不代表生产环境上线。
 
 #### 4. 截图与来源
 
-当前学校 Web 列表截图为固定版本 v0.55 截图。代理商 Web v0.58、运营后台 v0.62 的旧截图作为历史参考保留，不标记为 V21 当前截图。小程序图片均为用户提供的视觉参考，不是当前原型截图。
+目录内学校 Web、代理商 Web、运营后台截图均为此前版本的历史参考，不作为 V22 页面现状或四项批注验收依据。教师和家长小程序图片为用户提供的视觉参考，不是本轮修改后的原型截图。
 
 指定客服管理 PRD仅作为本次文档章节结构和页面细节写法参考；本文件不复制客服管理业务规则，也未修改参考项目。
 
@@ -46,9 +46,10 @@
 - 六份分端/共通 PRD 使用相同的1至10章结构。
 - 近期确认的统计指标、筛选范围、列表字段和发布状态顺序已写入共通规则及三份 Web PRD。
 - 编辑后30天期限从何时起算、已设截止时间如何与重新计算同时适用、编辑后是否重新接纳旧对象及新增对象，列为Q66–Q68。全年级选择覆盖当时已存在班级；以后新建的班级是否加入通知列为Q70。代发人员返回选校后改选学校，通知内容保留与对象清空规则列为Q71。提醒对象已明确为学生汇总未读时提醒该学生所有关联家长，教师按本人未读状态提醒。
-- PRD 记录的是用户最新确认的截止时间默认空、提醒仅针对未读对象；本地 V21 在这两处页面行为仍有差异，详见《文档核对记录》。
-- Markdown相对链接和固定原型版本已在本地及 GitHub 回读核对；原型发布提交号为 fffa5e4d7df2a3a8c06452897a7b095abcfe1390。实际消息发送与PDF文件不在本轮原型验证范围。
+- 四项批注对应的删除留存、截止时间默认值、一键提醒对象和发布状态顺序，已写入本地 V22、共通规则及三份 Web PRD；发布状态顺序经复核原已正确，本次保留。
+- 三端固定评审版本与稳定菜单入口已随原型提交 [a141ba9](https://github.com/guozi0718/codex-projects/commit/a141ba919888109be2592f84832c7d70b7b85fe3) 发布；PRD 文档包将在本轮同步提交并回读核对。实际消息发送、真实后台归档和 PDF 文件生成不由静态原型完成。
 
 #### 6. 后续同步
 
 Web原型发生变化时，更新对应 PRD 的字段、流程、异常和验收场景，并同步更新共通规则（若业务口径受影响）、截图、固定版本登记和本索引。小程序未来修改时，仍须说明原型版本及资料来源；本轮不把小程序原型改动写成已完成。
+

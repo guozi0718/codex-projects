@@ -2,7 +2,7 @@
 
 产品版本：V1.0.0（第一期新增，待定）
 文档编号：PRD-FN-20261118-AGT
-文档版本：V0.3（修改中）
+文档版本：V0.4（修改中）
 文档状态：第一期修改中，待评审，未定版
 适用端：代理商 Web｜获授权代学校发布通知的代理商账号
 共通规则：[家校通知一期产品需求文档-全端共通规则](家校通知一期产品需求文档-全端共通规则.md)
@@ -49,8 +49,8 @@
 
 | 资料 | 当前值 | 用途 |
 |---|---|---|
-| 代理商 Web 菜单入口 | [校务管理→家校通知（固定版本 v0.59）](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.59/index.html?page=family-notice) | 代理商主菜单下的家校通知入口 |
-| 通知页面 | [代理商 Web 通知页面 v0.59](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.59/notice/index.html?role=agent&school=s1&embedded=1) | 三步发布、列表、预览、统计 |
+| 代理商 Web 菜单入口 | [校务管理→家校通知（固定版本 v0.61）](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.61/index.html?page=family-notice) | 代理商主菜单下的家校通知入口 |
+| 通知页面 | [代理商 Web 通知页面 v0.61](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.61/notice/index.html?role=agent&school=s1&embedded=1) | 三步发布、列表、预览、统计 |
 | 基线项目 | 代理商 Web 项目 | 代理商主菜单、页签和外层框架由该项目管理 |
 | 页面样式 | 对照全端共通规则第4节 | 表格、筛选、表单、统计和PDF |
 
@@ -289,3 +289,4 @@
 本文为第一期修改中、待评审的产品需求文档。固定版本链接用于页面和交互评审，不表示学校目录、代理商可代发范围、真实名册、微信提醒或PDF下载已作为正式产品上线。
 
 本文描述代理商可见的页面、字段、操作、业务规则和结果。原型调整后需同步核对本端 PRD、全端共通规则、运营后台 PRD 和学校 Web PRD。
+
