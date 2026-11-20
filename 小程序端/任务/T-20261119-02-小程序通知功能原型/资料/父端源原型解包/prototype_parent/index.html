@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>亲小禾 · 家长端 通知模块 v0.13（390×844）</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --W:390px;--H:844px;
+  --BG:#F0F3F7;                 /* 家长端普通通知页背景 */
+  --TITLE:#233047;--GREEN:#0acf63;--GREEN-D:#07b957;
+  --SUB:#9aa3b0;--LINE:#eaeef4;
+  --FONT:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+html,body{min-height:100%}
+body{background:#dfe6ee;font-family:var(--FONT);color:var(--TITLE);
+  display:flex;align-items:flex-start;justify-content:center;gap:22px;padding:26px 18px 40px;flex-wrap:wrap}
+#phone{width:390px;height:844px;border-radius:44px;overflow:hidden;position:relative;background:#fff;
+  box-shadow:0 20px 64px rgba(23,39,71,.28);flex:none}
+#phone.no-shell{border-radius:0;box-shadow:none}
+.blue-head{position:absolute;top:0;left:0;width:390px;height:88px;z-index:0;display:none;
+  background:linear-gradient(135deg,#3d7cf4 0%,#2f66e0 100%)}
+#phone.blue .blue-head{display:block}
+/* 状态栏 390×44 */
+.statusbar{position:absolute;top:0;left:0;width:390px;height:44px;z-index:40;display:flex;align-items:center;
+  justify-content:space-between;padding:0 24px;color:#0B0B0B;pointer-events:none}
+.statusbar .time{font-size:14px;font-weight:600;line-height:1;letter-spacing:.2px}
+.statusbar .icons{width:67px;height:13px;display:block;color:inherit}
+#phone.blue .statusbar{color:#fff}
+.demo-note{position:absolute;top:10px;left:50%;transform:translateX(-50%);z-index:41;font-size:10px;color:#7d8899;
+  background:rgba(255,255,255,.88);border:1px solid rgba(35,48,71,.08);padding:3px 10px;border-radius:10px;
+  white-space:nowrap;pointer-events:none}
+#phone.blue .demo-note{color:#3d5a8a}
+/* 标题行 390×44 */
+.titlebar{position:absolute;top:44px;left:0;width:390px;height:44px;z-index:39;display:flex;align-items:center;
+  justify-content:space-between;padding:0 16px}
+.titlebar .left{display:flex;align-items:center;min-width:0}
+.titlebar .back{width:22px;height:22px;padding:4px 10px 4px 0;box-sizing:content-box;flex:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center}
+.titlebar .back svg{width:22px;height:22px;stroke:#233047;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.titlebar .ttl{font-size:16.5px;font-weight:700;color:#233047;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.capsule{width:88px;height:32px;border-radius:16px;flex:none;background:rgba(255,255,255,.70);
+  border:1px solid rgba(0,0,0,.10);display:flex;align-items:center;justify-content:space-evenly;color:#0B0B0B}
+.capsule .dots{font-size:12px;letter-spacing:1px;line-height:1}
+.capsule .sep{width:1px;height:16px;background:rgba(0,0,0,.12)}
+.capsule .minus{font-size:15px;line-height:1}
+.capsule .circle i{display:block;width:14px;height:14px;border:2.2px solid #0B0B0B;border-radius:50%;position:relative}
+.capsule .circle i:after{content:"";position:absolute;width:5px;height:5px;background:#0B0B0B;border-radius:50%;left:2.2px;top:2.2px}
+/* 正文 起始 88 / 高 756 */
+.screen{position:absolute;top:88px;left:0;width:390px;height:756px;z-index:2;background:var(--BG);
+  display:none;flex-direction:column;overflow:hidden}
+.screen.on{display:flex}
+.searchrow{height:52px;flex:none;display:flex;align-items:center;gap:9px;padding:0 16px;background:#fff}
+.searchbox{flex:1;height:34px;background:#f5f7fa;border-radius:17px;display:flex;align-items:center;padding:0 12px;gap:6px;min-width:0}
+.searchbox svg{width:14px;height:14px;flex:none}
+.searchbox input{border:0;background:transparent;outline:0;flex:1;font-size:12.5px;color:#233047;min-width:0;font-family:var(--FONT)}
+.searchbox input::placeholder{color:#aeb6c2}
+.searchbox .clear{display:none;width:15px;height:15px;border-radius:50%;background:#c8cdd6;color:#fff;font-size:10px;line-height:15px;text-align:center;cursor:pointer;flex:none}
+.searchbox.has .clear{display:block}
+.searchbtn{font-size:13px;color:#233047;white-space:nowrap;cursor:pointer;flex:none;padding:6px 2px}
+.list{flex:1;overflow-y:auto;padding:10px 0 6px;scrollbar-width:none;min-height:0}
+.list::-webkit-scrollbar{display:none}
+.card{margin:0 16px 10px;background:#fff;border-radius:10px;height:92px;display:flex;align-items:center;padding:9px;position:relative;cursor:pointer}
+.card .thumb{width:88px;height:72px;border-radius:5px;object-fit:cover;flex:none;background:#eef1f6}
+.card .info{flex:1;padding-left:12px;min-width:0;position:relative;height:72px}
+.card .ttl{font-size:14px;font-weight:600;color:#233047;line-height:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:78px}
+.card .date{position:absolute;right:0;top:2px;font-size:10.5px;color:var(--SUB)}
+.card .from{font-size:11.5px;color:var(--SUB);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .state{font-size:11.5px;color:var(--SUB);margin-top:9px}
+.card .state.act{color:#ff8f1f}
+.nomore{text-align:center;color:#b3bcc9;font-size:11.5px;padding:12px 0 4px}
+.empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:60px}
+.empty img{width:120px;height:92px;object-fit:contain}
+.empty p{color:#aab4c2;font-size:12.5px;margin-top:6px}
+/* 详情：真实截图 1:1 不缩放 */
+.det-body{flex:1;position:relative;overflow:hidden;min-height:0;background:#fff}
+.det-body img{position:absolute;top:-64px;left:-20px;width:430px;height:789px;max-width:none;display:block}
+.det-foot{height:68px;flex:none;background:#fff;display:flex;align-items:center;justify-content:center;gap:10px;border-top:1px solid var(--LINE);position:relative;z-index:10}
+/* 盖住真实截图自带的底栏，避免出现两排按钮 */
+.det-foot:before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;background:#fff;pointer-events:none}
+.ghost{width:158px;height:44px;border:1px solid #dfe4ec;border-radius:22px;background:#fff;color:#5a6678;font-size:14px;cursor:pointer;font-family:var(--FONT)}
+.solid{width:158px;height:44px;border:0;border-radius:22px;background:var(--GREEN);color:#fff;font-size:14px;cursor:pointer;font-family:var(--FONT)}
+.solid.wide{width:350px}
+.confirmbar{display:flex;align-items:center;gap:9px}
+.confirmbar .av{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none}
+.confirmbar .txt{font-size:12.5px;color:#7d8899;min-width:76px}
+.det-hint{position:absolute;right:10px;top:8px;z-index:9;background:rgba(35,48,71,.55);color:#fff;font-size:10px;padding:4px 8px;border-radius:9px;pointer-events:none}
+.badge-det{position:absolute;right:12px;top:10px;z-index:9;font-size:10.5px;color:#fff;background:rgba(10,207,99,.9);padding:3px 8px;border-radius:9px;pointer-events:none}
+/* 遮罩 / 弹层 */
+.mask{position:absolute;top:88px;left:0;width:390px;height:756px;background:rgba(20,32,54,.42);z-index:50;display:none}
+.mask.on{display:block}
+.sheet{position:absolute;left:0;bottom:0;width:390px;background:#fff;border-radius:16px 16px 0 0;z-index:51;max-height:58%;display:none;flex-direction:column}
+.sheet.on{display:flex}
+.sh-head{height:52px;flex:none;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #f0f3f8}
+.sh-head span{font-size:15px;font-weight:600}
+.sh-head .x{position:absolute;right:15px;top:13px;width:25px;height:25px;border:1px solid #dde3ec;border-radius:50%;color:#aab3c0;font-size:15px;line-height:23px;text-align:center;cursor:pointer}
+.sh-body{overflow-y:auto;padding:0 18px 18px;scrollbar-width:none}
+.sh-body::-webkit-scrollbar{display:none}
+.shareitem{height:52px;display:flex;align-items:center;gap:12px;font-size:14px;color:#233047;border-bottom:1px solid #f3f6fa;cursor:pointer}
+.shareitem .si{width:30px;height:30px;border-radius:8px;background:#eaf6ee;display:flex;align-items:center;justify-content:center;color:var(--GREEN);font-size:15px}
+.frow,.fchild{height:46px;display:flex;align-items:center;font-size:13px;color:#233047;cursor:pointer;border-bottom:1px solid #f3f6fa}
+.fgroup{height:44px;display:flex;align-items:center;font-size:13px;font-weight:600;color:#233047;cursor:pointer;border-bottom:1px solid #f3f6fa}
+.fgroup .arw{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid #5b6678;margin-right:9px}
+.fgroup.collapsed .arw{transform:rotate(-90deg)}
+.fgroup .cnt{margin-left:auto;color:#aab3c0;font-weight:400;font-size:11px}
+.fchildren.collapsed{display:none}
+.fchild{padding-left:22px;color:#66717f}
+.radio{width:16px;height:16px;border:1.5px solid #cfd6e0;border-radius:50%;margin-right:11px;flex:none;position:relative}
+.frow.checked,.fchild.checked{color:var(--GREEN)}
+.frow.checked .radio{background:var(--GREEN);border-color:var(--GREEN)}
+.frow.checked .radio:after{content:"";position:absolute;left:4px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.toast{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(20,32,54,.82);color:#fff;font-size:13px;padding:11px 18px;border-radius:8px;z-index:70;display:none;white-space:nowrap}
+/* 画布外侧栏 */
+#tools{width:250px;background:#fff;border-radius:14px;padding:16px 16px 18px;box-shadow:0 10px 30px rgba(23,39,71,.14);font-size:12px;color:#5b6678;flex:none}
+#tools h3{font-size:14px;color:#233047;margin-bottom:4px}
+#tools .sub{font-size:11px;color:#98a3b2;margin-bottom:12px;line-height:1.6}
+#tools .grp{border-top:1px solid #eef1f6;padding-top:11px;margin-top:11px}
+#tools label{display:flex;align-items:center;gap:7px;margin:7px 0;cursor:pointer;font-size:12px}
+#tools .kv{display:flex;justify-content:space-between;font-size:11px;color:#8692a2;margin:4px 0}
+#tools .kv b{color:#233047;font-weight:600}
+#tools button{border:1px solid #dfe5ee;background:#f8fafc;color:#4c5a6d;border-radius:7px;padding:5px 8px;font-size:11px;cursor:pointer;font-family:var(--FONT)}
+#tools .lib{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:8px}
+#tools .lib img{width:100%;height:46px;object-fit:cover;border-radius:5px;cursor:pointer}
+@media(max-width:760px){body{flex-direction:column;align-items:center}#tools{width:390px}}
+</style>
+</head>
+<body>
+<div id="phone">
+  <div class="blue-head"></div>
+  <div class="statusbar">
+    <span class="time">17:05</span>
+    <svg class="icons" viewBox="0 0 67 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="信号 Wi-Fi 电量">
+      <rect x="0" y="8" width="3" height="5" rx="1" fill="currentColor"/>
+      <rect x="5" y="6" width="3" height="7" rx="1" fill="currentColor"/>
+      <rect x="10" y="3.5" width="3" height="9.5" rx="1" fill="currentColor"/>
+      <rect x="15" y="1" width="3" height="12" rx="1" fill="currentColor"/>
+      <path d="M23.5 4.2C27 1.6 31.6 1.6 35.1 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M25.8 6.8C28 5.1 30.6 5.1 32.8 6.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="29.3" cy="10" r="1.5" fill="currentColor"/>
+      <rect x="43" y="1.5" width="20" height="10" rx="2.6" stroke="currentColor" stroke-width="1.3"/>
+      <rect x="44.8" y="3.3" width="15" height="6.4" rx="1.2" fill="currentColor"/>
+      <path d="M64.5 5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="demo-note">演示说明 · 家长端 v0.13</div>
+  <div class="titlebar">
+    <div class="left"><div class="back" onclick="goBack()"><svg viewBox="0 0 22 22"><path d="M14 4L7 11l7 7"/></svg></div><div class="ttl" id="barTitle">通知</div></div>
+    <div class="capsule"><div class="dots">•••</div><div class="sep"></div><div class="minus">—</div><div class="sep"></div><div class="circle"><i></i></div></div>
+  </div>
+
+  <!-- 通知列表（家长端原生无页签、无发布按钮） -->
+  <section class="screen on" id="home">
+    <div class="searchrow">
+      <div class="searchbox" id="sbox">
+        <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5.2" fill="none" stroke="#aeb6c2" stroke-width="1.5"/><path d="M11 11l4 4" stroke="#aeb6c2" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input id="searchInput" placeholder="输入通知标题搜索" oninput="onInput(this.value)" onkeydown="if(event.key==='Enter')doSearch()">
+        <div class="clear" onclick="clearSearch()">×</div>
+      </div>
+      <div class="searchbtn" onclick="doSearch()">搜索</div>
+    </div>
+    <div class="list" id="list"></div>
+    <div class="empty" id="emptyBox" style="display:none"><img src="assets/pempty_box.png" alt=""><p>暂无通知记录哦~</p></div>
+  </section>
+
+  <!-- 通知详情 -->
+  <section class="screen" id="detail">
+    <div class="det-body" id="detBody">
+      <img id="detImg" src="" alt="">
+      <div class="det-hint" id="detHint"></div>
+      <div class="badge-det" id="detBadge" style="display:none"></div>
+    </div>
+    <div class="det-foot" id="detFoot"></div>
+  </section>
+
+  <div class="mask" id="mask" onclick="closeSheets()"></div>
+  <div class="sheet" id="shareSheet"><div class="sh-head"><span>分享通知</span><div class="x" onclick="closeSheets()">×</div></div><div class="sh-body">
+    <div class="shareitem" onclick="toast('已分享给微信好友')"><div class="si">✦</div>微信好友</div>
+    <div class="shareitem" onclick="toast('已分享到朋友圈')"><div class="si">◎</div>朋友圈</div>
+    <div class="shareitem" onclick="closeSheets()"><div class="si">×</div>取消</div>
+  </div></div>
+  <div class="sheet" id="filterSheet"><div class="sh-head"><span>筛选（演示补充）</span><div class="x" onclick="closeSheets()">×</div></div><div class="sh-body" id="filterBody"></div></div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<div id="tools">
+  <h3>亲小禾 · 家长端</h3>
+  <div class="sub">通知模块 1:1 静态原型 v0.13<br>画布 390 × 844 CSS px（不含手机壳与侧栏）</div>
+  <div class="kv"><span>画布</span><b>390 × 844</b></div>
+  <div class="kv"><span>状态栏 / 标题行</span><b>44 / 44</b></div>
+  <div class="kv"><span>正文起始 / 可用高</span><b>88 / 756</b></div>
+  <div class="kv"><span>演示时间</span><b>17:05</b></div>
+  <div class="kv"><span>页面背景</span><b>#F0F3F7</b></div>
+  <div class="grp"><b style="color:#233047">显示选项</b>
+    <label><input type="checkbox" id="ckShell" checked onchange="toggleShell(this.checked)"> 手机壳（圆角 44 / 阴影）</label>
+    <label><input type="checkbox" id="ckBlue" onchange="toggleBlue(this.checked)"> 蓝色头部（状态图标白色）</label>
+    <label><input type="checkbox" id="ckNote" checked onchange="toggleNote(this.checked)"> 顶部演示说明</label>
+  </div>
+  <div class="grp"><b style="color:#233047">演示补充（画布外，不改 1:1 界面）</b>
+    <div style="display:flex;gap:6px;flex-wrap:wrap"><button onclick="openFilter()">筛选面板</button><button onclick="go('home')">返回首页</button></div>
+  </div>
+  <div class="grp"><b style="color:#233047">模板及封面素材库</b>
+    <div class="sub">家长端原生无发布/模板流程，全部 18 模板与封面原样随包，可在此浏览。</div>
+    <div class="lib" id="lib"></div>
+  </div>
+  <div class="grp"><b style="color:#233047">说明</b>
+    <div class="sub">详情页正文为真实截图 1:1 原尺寸显示（左右各裁 20px，无缩放）；背景音乐按钮已去除；无链接通知模块、无后端。</div>
+  </div>
+</div>
+
+<script>
+const AS='assets/';
+/* 7 条通知，逐字抄录自家长端真实小程序 */
+const ITEMS=[
+ {t:'亲子任务',        from:'演示小学',  d:'2026-11-18',st:'请及时阅读',c:'pcover_0.png',g:'PD_c0',k:'read',act:1},
+ {t:'今日食谱',        from:'演示小学',  d:'2026-11-18',st:'已读',      c:'pcover_1.png',g:'PD_c1',k:'read'},
+ {t:'智能校徽补卡通知',from:'王贵贵老师',d:'2026-11-18',st:'请点击确认',c:'pcover_2.png',g:'PD_c2',k:'confirm',act:1},
+ {t:'123',             from:'演示小学',  d:'2026-10-28',st:'请点击确认',c:'pcover_3.png',g:'PD_c3',k:'confirm',act:1},
+ {t:'亲子任务',        from:'演示小学',  d:'2026-10-28',st:'已确认',    c:'pcover_4.png',g:'PD_c4',k:'confirmed'},
+ {t:'亲子任务',        from:'演示小学',  d:'2026-10-27',st:'已读',      c:'pcover_5.png',g:'PD_c5',k:'read'},
+ {t:'123',             from:'演示小学',  d:'2026-10-26',st:'已签字',    c:'pcover_6.png',g:'PD_c6',k:'signed'}
+];
+const GROUPS={
+ PD_c0:['PD_c0_f0.png','PD_c0_f1.png','PD_c0_f2.png','PD_c0_f3.png','PD_c0_f4.png'],
+ PD_c1:['PD_c1_f0_nm.png','PD_c1_f1_nm.png','PD_c1_f2_nm.png','PD_c1_f3_nm.png','PD_c1_f4_nm.png','PD_c1_f5_nm.png','PD_c1_f6_nm.png','PD_c1_f7_nm.png','PD_c1_f8_nm.png','PD_c1_f9_nm.png'],
+ PD_c2:['PD_c2_f0.png','PD_c2_f1.png','PD_c2_f2.png','PD_c2_f3.png','PD_c2_f4.png'],
+ PD_c3:['PD_c3_f0.png'],
+ PD_c4:['PD_c4_f0.png','PD_c4_f1.png','PD_c4_f2.png','PD_c4_f3.png','PD_c4_f4.png'],
+ PD_c5:['PD_c5_f0_nm.png','PD_c5_f1_nm.png','PD_c5_f2_nm.png','PD_c5_f3_nm.png','PD_c5_f4_nm.png','PD_c5_f5_nm.png','PD_c5_f6_nm.png','PD_c5_f7_nm.png','PD_c5_f8_nm.png','PD_c5_f9_nm.png'],
+ PD_c6:['PD_c6_f0.png','PD_c6_f1.png']
+};
+const CLASS_GROUPS=[
+ {name:'教职工',opts:['未分组']},{name:'2020九年级测试',opts:['2020九年级测试-99班测试']},
+ {name:'5年',opts:['5年-10','5年-12','5年-9']},{name:'试试',opts:['试试-1','试试-10']},
+ {name:'五年级',opts:(()=>{let a=[];for(let i=1;i<=99;i++)a.push('五年级-'+i+'班');return a;})()},
+ {name:'1122',opts:['1122-98班']},{name:'4',opts:['4-2']}
+];
+const FILTERS=[{name:'通知状态',opts:['全部','请及时阅读','已读','请点击确认','已确认','已签字']}].concat(CLASS_GROUPS);
+const TPLS=['智能校徽补卡通知','亲子任务','今日食谱','今日食谱','课前准备','防溺水温馨提示',
+ '秋季预防疾病小知识——家长须知','周一返园温馨提示','预防溺水 — 给家长的一封信','清明节放假通知及温馨提示',
+ '保护眼睛，预防近视','端午节放假通知及温馨提示','森林防火｜安全温馨提示','小朋友应该怎么办？',
+ '「十一国庆节」放假通知','预防肺炎支原体感染温馨提示','流行性感冒','课前准备'];
+const TPL_COVERS=['tplcover_00.png','tplcover_01.png','tplcover_02.png','tplcover_03.png','tplcover_04.png',
+ 'tplcover_10.png','tplcover_11.png','tplcover_15.png','tplcover_12.png','tplcover_16.png','tplcover_17.png',
+ 'tplcover_13.png','tplcover_14.png','tplcover_15.png','tplcover_16.png','tplcover_09.png','tplcover_14.png','tplcover_04.png'];
+
+let kwInput='',kw='',searched=false,filterVal='全部',curIdx=0,curFrames=[],frameIdx=0,curScreen='home',toastTimer=null;
+const TITLES={home:'通知',detail:'通知详情'};
+
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');curScreen=id;
+  document.getElementById('barTitle').textContent=TITLES[id]||'通知';closeSheets();}
+function goBack(){if(curScreen==='detail')return go('home');toast('返回工作台');}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.style.display='block';
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.style.display='none',1400);}
+function closeSheets(){['mask','shareSheet','filterSheet'].forEach(i=>document.getElementById(i).classList.remove('on'));}
+
+/* 搜索：家长端需点「搜索」按钮，空态与结果文案不同 */
+function onInput(v){kwInput=v.trim();document.getElementById('sbox').classList.toggle('has',v.length>0);}
+function clearSearch(){document.getElementById('searchInput').value='';kwInput='';kw='';searched=false;onInput('');renderList();}
+function doSearch(){kw=kwInput;searched=true;renderList();}
+function renderList(){
+  const box=document.getElementById('list'),empty=document.getElementById('emptyBox');
+  let arr=ITEMS.map((x,i)=>({x,i}));
+  if(kw)arr=arr.filter(o=>o.x.t.indexOf(kw)>=0||o.x.from.indexOf(kw)>=0);
+  if(filterVal!=='全部'&&filterVal!=='通知状态'&&FILTERS[0].opts.indexOf(filterVal)<0){
+    const g=CLASS_GROUPS.find(f=>f.opts.indexOf(filterVal)>=0);
+    if(g)arr=arr.filter(o=>o.i%7===CLASS_GROUPS.indexOf(g));   // 演示用分组映射
+  }else if(FILTERS[0].opts.indexOf(filterVal)>0){arr=arr.filter(o=>o.x.st===filterVal);}
+  if(!arr.length){box.style.display='none';empty.style.display='flex';return;}
+  box.style.display='block';empty.style.display='none';
+  let h='';arr.forEach(o=>{
+    const x=o.x,i=o.i;
+    h+='<div class="card" onclick="openDetail('+i+')"><img class="thumb" src="'+AS+x.c+'" alt="">'
+      +'<div class="info"><div class="ttl">'+x.t+'</div><div class="date">'+x.d+'</div>'
+      +'<div class="from">来自：'+x.from+'</div><div class="state '+(x.act?'act':'')+'">'+x.st+'</div></div></div>';
+  });
+  h+='<div class="nomore">'+(searched&&kw?'没有更多数据了哦':'没有更多数据了啦')+'</div>';box.innerHTML=h;
+}
+
+/* 详情：按状态分 4 类底栏 + 状态流转 */
+function openDetail(i){
+  curIdx=i;const x=ITEMS[i];
+  curFrames=(GROUPS[x.g]||GROUPS.PD_c0).slice();frameIdx=0;setFrame();
+  if(x.st==='请及时阅读'){x.st='已读';x.act=0;renderList();}    // 阅读自动标已读
+  renderFoot();go('detail');
+}
+function setFrame(){
+  document.getElementById('detImg').src=AS+curFrames[frameIdx];
+  const h=document.getElementById('detHint');h.textContent=curFrames.length>1?'滚动查看完整内容 '+(frameIdx+1)+'/'+curFrames.length:'通知详情';
+  h.style.display=curFrames.length>1?'block':'none';
+  const b=document.getElementById('detBadge');
+  const st=ITEMS[curIdx].st;
+  b.style.display=(st==='已读'||st==='已确认'||st==='已签字')?'block':'none';b.textContent=st==='已读'?'已阅':st;
+}
+function scrollFrame(d){if(!curFrames.length)return;const n=Math.max(0,Math.min(curFrames.length-1,frameIdx+d));if(n!==frameIdx){frameIdx=n;setFrame();}}
+function renderFoot(){
+  const x=ITEMS[curIdx],f=document.getElementById('detFoot');
+  if(x.k==='confirm'){
+    f.innerHTML='<div class="confirmbar"><img class="av" src="assets/pavatar.png" alt=""><span class="txt">12 / 未确认收到</span></div>'
+      +'<button class="solid" onclick="doConfirm()">确认收到</button>';
+  }else if(x.k==='confirmed'){
+    f.innerHTML='<button class="ghost" disabled>已确认收到</button><button class="solid" onclick="openShare()">分享通知</button>';
+  }else if(x.k==='signed'){
+    f.innerHTML='<button class="ghost" disabled>已签字确认</button><button class="solid" onclick="openShare()">分享通知</button>';
+  }else{
+    f.innerHTML='<button class="solid wide" onclick="openShare()">分享通知</button>';
+  }
+}
+function doConfirm(){
+  ITEMS[curIdx].k='confirmed';ITEMS[curIdx].st='已确认';ITEMS[curIdx].act=0;
+  toast('已确认收到通知');renderList();setFrame();renderFoot();
+}
+function openShare(){document.getElementById('mask').classList.add('on');document.getElementById('shareSheet').classList.add('on');}
+
+/* 筛选（画布外补充，不改 1:1 界面） */
+function openFilter(){renderFilter();document.getElementById('mask').classList.add('on');document.getElementById('filterSheet').classList.add('on');}
+function renderFilter(){
+  let h='';FILTERS.forEach((g,gi)=>{
+    h+='<div class="fgroup" onclick="toggleGroup('+gi+')"><div class="arw"></div>'+g.name+'<span class="cnt">'+g.opts.length+'</span></div><div class="fchildren" id="fc'+gi+'">';
+    g.opts.forEach(o=>h+='<div class="fchild '+(filterVal===o?'checked':'')+'" onclick="pickFilter(\''+o.replace(/'/g,"\\'")+'\')"><div class="radio"></div>'+o+'</div>');
+    h+='</div>';
+  });
+  document.getElementById('filterBody').innerHTML=h;
+}
+function toggleGroup(i){const c=document.getElementById('fc'+i);c.classList.toggle('collapsed');c.previousElementSibling.classList.toggle('collapsed');}
+function pickFilter(v){filterVal=(filterVal===v&&v!=='全部')?'全部':v;renderFilter();renderList();}
+
+function toggleShell(v){document.getElementById('phone').classList.toggle('no-shell',!v);}
+function toggleBlue(v){document.getElementById('phone').classList.toggle('blue',v);}
+function toggleNote(v){document.querySelector('.demo-note').style.display=v?'block':'none';}
+
+const el=document.getElementById('detBody');
+el.addEventListener('wheel',e=>{e.preventDefault();scrollFrame(e.deltaY>0?1:-1);},{passive:false});
+let ty=0;el.addEventListener('touchstart',e=>ty=e.touches[0].clientY,{passive:true});
+el.addEventListener('touchend',e=>{const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)>40)scrollFrame(d>0?1:-1);},{passive:true});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')return closeSheets();
+  if(curScreen==='detail'){if(e.key==='ArrowDown'||e.key==='PageDown')scrollFrame(1);if(e.key==='ArrowUp'||e.key==='PageUp')scrollFrame(-1);}
+});
+document.getElementById('lib').innerHTML=TPL_COVERS.map((c,i)=>'<img src="'+AS+c+'" title="'+TPLS[i]+'" alt="'+TPLS[i]+'" onclick="toast(\''+TPLS[i].replace(/'/g,"")+'\')">').join('');
+renderList();renderFilter();
+</script>
+</body>
+</html>

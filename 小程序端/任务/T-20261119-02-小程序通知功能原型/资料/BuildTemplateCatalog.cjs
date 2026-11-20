@@ -1,0 +1,15 @@
+const fs=require('fs');
+const path=require('path');
+const src=String.raw`C:\Users\YGZY\WorkBuddy\2026-11-18-00-09-48\prototype\index.html`;
+const out=String.raw`E:\codex\小程序\任务\T-20261119-02-小程序通知功能原型\端-教师\版本-v0.14\assets\notification-mini\catalog.json`;
+const cats=['热门推荐','我的模板','班级日常','校务管理','健康安全','节日活动','放假通知'];
+const html=fs.readFileSync(src,'utf8');
+const raw=html.match(/const V17=(\{[\s\S]*?\});/);
+if(!raw)throw new Error('V17 catalogue not found');
+const meta=JSON.parse(raw[1]).cards;
+const names=fs.readFileSync(String.raw`E:\codex\小程序\任务\T-20261119-02-小程序通知功能原型\资料\教师模板标题.txt`,'utf8').replace(/^\uFEFF/,'').trim().split(/\r?\n/);
+const byId=new Map(); for(const x of meta)if(!byId.has(x.q))byId.set(x.q,x);
+if(names.length!==138||byId.size!==138)throw new Error('expected 138 cards; titles='+names.length+' metadata='+byId.size);
+const rows=names.map((title,i)=>{const id=String(i+1).padStart(3,'0'),m=byId.get(id);if(!m)throw new Error('missing '+id);return {id,title,category:cats[m.c],categoryIndex:m.c,cover:'assets/notification-mini/covers/tpl-'+id+'.png',bodyTextAvailable:false,sourceCard:'V17_card_'+id+'.png'};});
+fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify({source:'teacher prototype V17 card title transcription',count:rows.length,categories:cats,templates:rows},null,2),'utf8');
+console.log(JSON.stringify({count:rows.length,byCategory:cats.map((x,i)=>[x,rows.filter(r=>r.categoryIndex===i).length])}));
