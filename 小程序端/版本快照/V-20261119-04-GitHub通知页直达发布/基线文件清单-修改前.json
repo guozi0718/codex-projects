@@ -41,6 +41,11 @@
       "path": "版本快照/快照索引.md",
       "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/版本快照_快照索引.md",
       "sha256": "FFADFBE4C9CDC250D4F7F7DAEDE301C7780E1729F878ECE6DC41FEA874A98458"
+    },
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/任务信息.md",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/任务_T-20261119-04-GitHub通知页直达发布_任务信息.md",
+      "sha256": "E9D0E2ADC62E95C2AC2550F844B4533B382374892FFEE761FE154128E11EB9F3"
     }
   ]
 }

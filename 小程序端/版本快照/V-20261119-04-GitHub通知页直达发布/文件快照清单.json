@@ -1,0 +1,166 @@
+{
+  "task": "T-20261119-04-GitHub通知页直达发布",
+  "snapshot": "V-20261119-04-GitHub通知页直达发布",
+  "status": "完成；线上候选未业务定版",
+  "modifiedExistingFiles": [
+    {
+      "path": "GitHub发布配置.json",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/GitHub发布配置.json",
+      "beforeSha256": "9F656F15BE45CA2468BAA696BF8207B56924CDCA0CBBCDF8B7FE5466FDCAC4E1",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/GitHub发布配置.json",
+      "afterSha256": "369DC0D9F83C5734D1FFC1280963DFCFB710D1E91E55519E4B77BFFB07841458"
+    },
+    {
+      "path": "index.html",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/index.html",
+      "beforeSha256": "AED4BDFEBB5E20465BC83F177340D4C42FF759EAC44D7668915237094D5C78C9",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/index.html",
+      "afterSha256": "6A2C17A8752EAC020B15938A6AB1094AA597AEBFCA1881562E2CD5FDCCC671EF"
+    },
+    {
+      "path": "线上原型链接.json",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/线上原型链接.json",
+      "beforeSha256": "1F22CFABD1BEE7F08ADF47E32AF5DC63A1A890CE51DF51B203BD7A545F118FC8",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/线上原型链接.json",
+      "afterSha256": "4F79646DE653E50294F3323202EA00E02546E7CF51A665ABEB06C771E84297FC"
+    },
+    {
+      "path": "项目管理/任务登记.md",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_任务登记.md",
+      "beforeSha256": "3EACDE9A9FF2D6D1EAAA62F4F3B03C06B386A6EB80E21B047EE08A5A787FD0FB",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/项目管理_任务登记.md",
+      "afterSha256": "5E3234FF5076284D8876E47D1FFC187C97741EE770C7A7C398C003E4D9280F1A"
+    },
+    {
+      "path": "项目管理/待办清单.md",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_待办清单.md",
+      "beforeSha256": "FDFCB6672623B9DFE1655D60455E075E3697AE9A6D63DE422D9B45455DF951CD",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/项目管理_待办清单.md",
+      "afterSha256": "8EBBCFF7FC341C25042D8E23DFBB1CC51E20052AFD7A0D0AFA9EE23E288B3BCB"
+    },
+    {
+      "path": "项目管理/里程碑.md",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_里程碑.md",
+      "beforeSha256": "ACE01F9E2FF3388ED770EECBDF5D5C60E002721C7A933516FD18B8F7ECA7CB35",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/项目管理_里程碑.md",
+      "afterSha256": "2B811C812427A529D06223E54B2C164448BA0B6BA8676914FAFBF65808A92AFA"
+    },
+    {
+      "path": "项目管理/风险登记.md",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_风险登记.md",
+      "beforeSha256": "BEC40FC5DE6C9248038EE66605E4A4DFFC364E5F8B3B32A9F1D24AE6376E2494",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/项目管理_风险登记.md",
+      "afterSha256": "C00AEAA1B43A249C5BB93CB01BB7E3B767C2F7227CBA530807B9A3897D77DD59"
+    },
+    {
+      "path": "版本快照/快照索引.md",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/版本快照_快照索引.md",
+      "beforeSha256": "FFADFBE4C9CDC250D4F7F7DAEDE301C7780E1729F878ECE6DC41FEA874A98458",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/版本快照_快照索引.md",
+      "afterSha256": "49CFEA1C9311D023837425D57E1E1C5A3773E9151C56AE12F42B78152941A9D3"
+    },
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/任务信息.md",
+      "beforeSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/任务_T-20261119-04-GitHub通知页直达发布_任务信息.md",
+      "beforeSha256": "E9D0E2ADC62E95C2AC2550F844B4533B382374892FFEE761FE154128E11EB9F3",
+      "afterSnapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改后/任务_T-20261119-04-GitHub通知页直达发布_任务信息.md",
+      "afterSha256": "D0833F706DD0246C96790C6981F39E0DC9473BC2DCC8E0509854C13AF9AF1084"
+    }
+  ],
+  "newTaskFiles": [
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/任务信息.md",
+      "bytes": 1234,
+      "sha256": "D0833F706DD0246C96790C6981F39E0DC9473BC2DCC8E0509854C13AF9AF1084"
+    },
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/变更记录.md",
+      "bytes": 458,
+      "sha256": "620C9CBD14F84FBED333A7845558CA66F00A6F5B7F72958D753B8048CCD7FA17"
+    },
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/定版信息.md",
+      "bytes": 430,
+      "sha256": "8B8DA00A2CECADFA4560205F18BAF63F52E13F540EC0A604C8E194A2A5600AC2"
+    },
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/资料/发布前检查.md",
+      "bytes": 1251,
+      "sha256": "6A87DC57CD7AD3FDD2F89AFF3AD151DDEA59284188B42F9B4A9764618C2B075A"
+    },
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/资料/线上验证.md",
+      "bytes": 1883,
+      "sha256": "D1FE1993B908BAF7E5992BFB4E64BA315C21B093F3B98A956B4853C51E3E2268"
+    }
+  ],
+  "newStableRoleEntries": [
+    {
+      "path": "教师/index.html",
+      "bytes": 195,
+      "sha256": "9968A4C33C18B92001441D5E0135F50C078ADF89AAC4BA46E8395331BBBB9B0B"
+    },
+    {
+      "path": "家长/index.html",
+      "bytes": 195,
+      "sha256": "F8D429A703ADDEC1B555EA5365CCBFBADCDAA4495FAE88574B2E8BBD789D33BA"
+    }
+  ],
+  "sourceVersion": "T-20261119-03 教师/家长 v0.15",
+  "release": {
+    "id": "r2026.11.19.2",
+    "files": 608,
+    "manifestListedFiles": 606,
+    "manifestSha256": "812D4641EBFAB370B84692A01569EAF14B55B279189DEE4F56388B8561FBB59E",
+    "readmeSha256": "362C5A83DE24FE13464C778485091556BE1F86DF014770605B99B0BABF81A77B"
+  },
+  "onlineVerification": "94/94 HTTP 200；双端Chrome直达通知列表；14项关键发布文件SHA-256与清单一致。",
+  "snapshotIndexAfterSha256": "49CFEA1C9311D023837425D57E1E1C5A3773E9151C56AE12F42B78152941A9D3",
+  "baseline": [
+    {
+      "path": "GitHub发布配置.json",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/GitHub发布配置.json",
+      "sha256": "9F656F15BE45CA2468BAA696BF8207B56924CDCA0CBBCDF8B7FE5466FDCAC4E1"
+    },
+    {
+      "path": "index.html",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/index.html",
+      "sha256": "AED4BDFEBB5E20465BC83F177340D4C42FF759EAC44D7668915237094D5C78C9"
+    },
+    {
+      "path": "线上原型链接.json",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/线上原型链接.json",
+      "sha256": "1F22CFABD1BEE7F08ADF47E32AF5DC63A1A890CE51DF51B203BD7A545F118FC8"
+    },
+    {
+      "path": "项目管理/任务登记.md",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_任务登记.md",
+      "sha256": "3EACDE9A9FF2D6D1EAAA62F4F3B03C06B386A6EB80E21B047EE08A5A787FD0FB"
+    },
+    {
+      "path": "项目管理/待办清单.md",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_待办清单.md",
+      "sha256": "FDFCB6672623B9DFE1655D60455E075E3697AE9A6D63DE422D9B45455DF951CD"
+    },
+    {
+      "path": "项目管理/里程碑.md",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_里程碑.md",
+      "sha256": "ACE01F9E2FF3388ED770EECBDF5D5C60E002721C7A933516FD18B8F7ECA7CB35"
+    },
+    {
+      "path": "项目管理/风险登记.md",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/项目管理_风险登记.md",
+      "sha256": "BEC40FC5DE6C9248038EE66605E4A4DFFC364E5F8B3B32A9F1D24AE6376E2494"
+    },
+    {
+      "path": "版本快照/快照索引.md",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/版本快照_快照索引.md",
+      "sha256": "FFADFBE4C9CDC250D4F7F7DAEDE301C7780E1729F878ECE6DC41FEA874A98458"
+    },
+    {
+      "path": "任务/T-20261119-04-GitHub通知页直达发布/任务信息.md",
+      "snapshot": "版本快照/V-20261119-04-GitHub通知页直达发布/修改前/任务_T-20261119-04-GitHub通知页直达发布_任务信息.md",
+      "sha256": "E9D0E2ADC62E95C2AC2550F844B4533B382374892FFEE761FE154128E11EB9F3"
+    }
+  ]
+}
