@@ -1,53 +1,53 @@
 {
-  "version": "v0.67",
-  "releaseId": "v0.67-eaaef521a1",
-  "bundleHash": "eaaef521a14359adb60382a4c278acdca0fa25a1d2520d6d5e57adb246f43ec6",
-  "publishedAt": "2026-11-23T10:01:34.931Z",
-  "url": "versions/v0.67-eaaef521a1/index.html",
-  "documentation": "versions/v0.67-eaaef521a1/版本说明.md",
-  "documentationSHA256": "91ccdc7eb2ab2a9198c53b36f267c0c90bfd486909c8415bacc2a7da86960d17",
+  "version": "v0.68",
+  "releaseId": "v0.68-6b45240dfc",
+  "bundleHash": "6b45240dfcb666ce32585a97234b4357a1a0568da47caf2a959fe4e136160ba4",
+  "publishedAt": "2026-11-23T15:02:11.265Z",
+  "url": "versions/v0.68-6b45240dfc/index.html",
+  "documentation": "versions/v0.68-6b45240dfc/版本说明.md",
+  "documentationSHA256": "611a23d489f864a282842625f123cc45a28757e5e80b7eb385a1b275bd30a168",
   "documents": [
     {
       "title": "校徽文案管理产品需求文档",
-      "path": "versions/v0.67-eaaef521a1/docs/产品需求文档.md",
-      "sha256": "28e086ad2804c3bde748e317399bce4accf6d3a426aed05887a169908fdf58b5",
-      "bytes": 26868
+      "path": "versions/v0.68-6b45240dfc/docs/产品需求文档.md",
+      "sha256": "f57491116b030e2ff4ed96265fa458921f9a286a8ecd97fe83212047d57703fc",
+      "bytes": 27440
     },
     {
       "title": "校徽文案管理-列表页.png",
-      "path": "versions/v0.67-eaaef521a1/docs/原型截图/校徽文案管理-列表页.png",
+      "path": "versions/v0.68-6b45240dfc/docs/原型截图/校徽文案管理-列表页.png",
       "sha256": "411a58b252754b106478f067b9129f4c17319c18a7fa891c3186863500ccb3ae",
       "bytes": 23665
     },
     {
       "title": "校徽文案管理-日志.png",
-      "path": "versions/v0.67-eaaef521a1/docs/原型截图/校徽文案管理-日志.png",
+      "path": "versions/v0.68-6b45240dfc/docs/原型截图/校徽文案管理-日志.png",
       "sha256": "bcab38625d8607103088a3a8fb2025c2e23707b01a38b4e594f6e49bad2741c1",
       "bytes": 15210
     },
     {
       "title": "校徽文案管理-编辑页.png",
-      "path": "versions/v0.67-eaaef521a1/docs/原型截图/校徽文案管理-编辑页.png",
-      "sha256": "e29300ae20ba0e36bd266861fd36a019716c761cbcb71e7d472261cd773031cb",
-      "bytes": 52537
+      "path": "versions/v0.68-6b45240dfc/docs/原型截图/校徽文案管理-编辑页.png",
+      "sha256": "9dae9e084f3d5e062043febbaa87b2c5f5493af8f26815ff263e9fd9f5ac2bf2",
+      "bytes": 48838
     },
     {
       "title": "校徽文案管理-详情.png",
-      "path": "versions/v0.67-eaaef521a1/docs/原型截图/校徽文案管理-详情.png",
-      "sha256": "fef6374b21eaa0517a8341eefd7b2419c722543f83097a66344b3470b0444a9d",
-      "bytes": 52740
+      "path": "versions/v0.68-6b45240dfc/docs/原型截图/校徽文案管理-详情.png",
+      "sha256": "ea122ec3ae37e4e557cd102d827f20455fb3a6e4dcd18c9d60f1732f1bf86d3d",
+      "bytes": 51796
     },
     {
       "title": "校徽文案管理-适用机构-学校.png",
-      "path": "versions/v0.67-eaaef521a1/docs/原型截图/校徽文案管理-适用机构-学校.png",
-      "sha256": "dd00bd3b32c3d6474c673fdba890143a4b0cae6e51ceb490dd19cb07c75d19c3",
-      "bytes": 44801
+      "path": "versions/v0.68-6b45240dfc/docs/原型截图/校徽文案管理-适用机构-学校.png",
+      "sha256": "fc1744b310568caca1823e2d05f88e20562baffe9afe28b79e4d83069228a94c",
+      "bytes": 44703
     },
     {
       "title": "校徽文案管理-适用机构-监管.png",
-      "path": "versions/v0.67-eaaef521a1/docs/原型截图/校徽文案管理-适用机构-监管.png",
-      "sha256": "1413413ca3105039c28097bbe136b93c6defa495694c59a71edc229b694962d0",
-      "bytes": 42870
+      "path": "versions/v0.68-6b45240dfc/docs/原型截图/校徽文案管理-适用机构-监管.png",
+      "sha256": "193f0fdf4d8f7dace35250d81edefa86d18f57c2360c4f7f7331c4311ef4823d",
+      "bytes": 40830
     }
   ]
 }
