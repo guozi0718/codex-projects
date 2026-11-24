@@ -5,14 +5,14 @@
   "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "30e1b11d187761d5b228adf5a5e024db8c2c6d2a",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/30e1b11d187761d5b228adf5a5e024db8c2c6d2a",
+  "prototypeCommit": "70a519ece682c0d9eb9ee7bb9e8b10755afc6e39",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/70a519ece682c0d9eb9ee7bb9e8b10755afc6e39",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "0c900b563bc316f4b571ea9e7b558a0185fd856096c8ad402258f9399e835823",
+      "app.js": "b9418f281e77c44ae1e159d6396fab2a812130fce3518c95cb08df00f5cef0bd",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -24,12 +24,12 @@
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
       "core.js": "6fefa8f3f82764718ee374847ce08bd89641b2892b9e6e17bc1e7e3b56fcd0e5",
-      "index.html": "4819b89d8d00ce8d8e80802b35ce7fac86dbc8274f6e6c0ddac64b240fdd3277",
+      "index.html": "af9f0c811c1f1f1dfcf8465ef8d3de0a249b9ee1f76aed7aa4bab3b76ed87967",
       "styles.css": "0ec6092338b5021036ddcc41bcf7f7bbd97acde5964e733f6ecb2b85005aec1e",
-      "定版信息.md": "a966a4b7e20ff4c5348529c629f39cc7c87c17bdb425b38a382e030a58252a02",
-      "版本说明.md": "059b33f61307897b24ca65b0259b897f945185cdb808c275646f714c0105eff0"
+      "定版信息.md": "7141dea454ecfafa7db05921f444ee2ab99a76fd10c7d1fad29175494e3a94b2",
+      "版本说明.md": "f1a3b03db6f3894e78681c77a3e60a268e8938e6e9e09bdcd4ae4120d023e84d"
     },
-    "releaseNote": "版本说明.md；代发通知按钮文案与列表时间格式已对齐；运营后台 v0.70 菜单路由接入 V25。"
+    "releaseNote": "版本说明.md；三个 Web 端预览标题统一为“通知预览”；编辑与删除无权限状态的按钮及悬停提示已对齐；代理商和运营后台主按钮显示“代发通知”。"
   },
   "webReleases": [
     {
@@ -114,14 +114,14 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25原型与 PRD V0.8 已发布；代理商、运营后台按钮文案及 Web 列表时间格式已更新；运营后台当前 v0.70 菜单已接入 V25。需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25 原型与 PRD V0.8 已发布；三个 Web 端预览标题、操作列权限状态和代发按钮文案已按最新批注更新。需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
     "来源列单行完整显示；标题最多10字，超出省略，悬停显示全文；创建时间YYYY-MM-DD HH:mm",
     "Web编辑器不提供录音入口；放弃编辑弹窗使用指定标题、文案和按钮",
-    "列表操作显示预览；预览打印不显示查收统计，标题固定、通知信息区单独滚动",
-    "有权限删除打开确认弹窗，无权限记录显示无权限并禁用",
+    "列表操作显示预览；三个 Web 端预览标题统一为通知预览，不显示查收统计，通知信息区单独滚动",
+    "有权限删除显示确认弹窗；无权限删除仍显示删除并置灰，悬停提示无权限；已查收编辑与无操作权限编辑显示对应悬停提示",
     "学生统计拆为班级汇总A页、班级明细B页；A页按年级/班级联动，B页按状态/学生姓名模糊筛选，指标同步变化。",
     "学生统计和教师统计Tab均不显示提醒按钮；统计进度按查收方式计算，不新增完成率。",
     "A页班级筛选显示年级与班级，返回A页保留汇总筛选；B页未关联家长标记清晰可见。",
@@ -129,6 +129,6 @@
     "学校、代理商、运营后台列表的发布时间和创建时间均显示“YYYY-MM-DD HH:mm”。",
     "运营后台当前 v0.70 基线菜单“家校通知”入口指向 V25 通知功能。"
   ],
-  "repositoryHead": "70cfea26c07b639265fbc4853c04e24015e4b3d3",
-  "metadataCommit": "f1c7d20432d2d12eb134c666ce938dc8747e8dbe"
+  "repositoryHead": "70a519ece682c0d9eb9ee7bb9e8b10755afc6e39",
+  "metadataCommit": "70a519ece682c0d9eb9ee7bb9e8b10755afc6e39"
 }
