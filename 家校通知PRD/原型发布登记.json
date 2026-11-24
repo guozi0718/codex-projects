@@ -5,8 +5,8 @@
   "prdBatch": "V0.11",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "",
-  "prototypeCommitUrl": "",
+  "prototypeCommit": "a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
@@ -120,8 +120,8 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "待推送：共享 V25 普通通知编辑限制、学校端与运营后台基线副本、Web PRD V0.11 已更新；待提交至 GitHub 并完成 Pages 发布核对。",
-  "publicationNote": "V25 为三个 Web 端共用的最新评审原型；学校 v0.62 与运营后台 v0.76 的菜单依赖副本已与 V25 同步，代理商 v0.75 直接进入 V25。小程序源项目和模板资料本轮保留，未单独修改、发布。",
+  "publicationStatus": "已推送 GitHub，Pages 部署成功；三端 Web 原型与 PRD V0.11 已对齐。",
+  "publicationNote": "V25 普通通知单文本块编辑规则及学校、代理商、运营后台 Web PRD V0.11 已提交至 GitHub；Pages workflow #138 已成功部署。小程序源项目和模板资料本轮保留，未单独修改、发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
     "来源列单行完整显示；标题最多10字，超出省略，悬停显示全文；创建时间YYYY-MM-DD HH:mm",
@@ -150,8 +150,8 @@
     "学校 v0.62 和运营后台 v0.76 基线菜单内的通知页面副本与共享 V25 文件同步。",
     "三个 Web 端编辑普通通知时仅显示唯一文本块，不显示新增内容块入口及文本块上移、下移、删除按钮；美文通知方式不变。"
   ],
-  "repositoryHead": "",
-  "metadataCommit": "",
+  "repositoryHead": "a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
+  "metadataCommit": "a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
   "operationsVisibility": "运营后台可查看所有学校及所有来源通知；筛选首位为目标学校，不提供发布人筛选；创建时间后显示操作人姓名和发布时角色快照，发布、编辑、删除权限仍按原账号管理范围。",
   "operationPersonDisplay": {
     "schoolWeb": "创建时间后显示发布时的操作人姓名快照；悬停显示老师端、学校端、平台端或平台（代理商名称快照）；平台端指运营后台。",
@@ -159,10 +159,9 @@
     "agentWeb": "保留现有操作人字段，仅显示发布时的姓名快照。"
   },
   "githubPagesDeployment": {
-    "commit": "",
-    "runId": "",
-    "status": "待发布",
-    "url": ""
+    "commit": "a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
+    "runId": "45402768384",
+    "status": "success",
+    "url": "https://github.com/guozi0718/codex-projects/actions/runs/45402768384"
   }
 }
-
