@@ -2,22 +2,17 @@
   "date": "2026-11-23",
   "task": "T-20261123-02-通知类型来源与跨端编辑规则",
   "prdTask": "T-20261118-03-各端PRD与原型对齐",
-  "prdBatch": "V0.7",
+  "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "94a3ed2e3f5891f8d2779057576d25dc53142cbf",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/94a3ed2e3f5891f8d2779057576d25dc53142cbf",
+  "prototypeCommit": "待GitHub发布",
+  "prototypeCommitUrl": "待GitHub发布",
   "noticeFeatureSource": {
-    "version": "V24",
-    "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V24",
-    "githubPath": "家校通知/版本-V24/",
+    "version": "V25",
+    "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
+    "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "cbe6b4186293289b8e86b47b8e7e232194ecbeca865a550c20c242be06c385e3",
-      "core.js": "7ef28a71bdf4799ddd87009081bb98d9a79ac6f8791560369822ea1a480e725e",
-      "index.html": "7fc144f9999e362eb0d548a8b4166622a503e9fc263d58b343dbd9d6ee7b32c6",
-      "styles.css": "087307ae254ef42dad63c18e520cc2a425d4d27d282906161da5ffe284fced64",
-      "定版信息.md": "05c0f3309778b551a3fe1f8693fe9f60c634e5ab2f8575273281205a0fef3eca",
-      "版本说明.md": "acf7469c8702e331b8551034cec0b1315d267a384d76748221861d7b8e55843f",
+      "app.js": "097ee88fc9113e580d878f312752daee031b164b831e0c36ad2561f7c2abcfea",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -27,21 +22,26 @@
       "assets/signature.svg": "9f8324a3a2588b9d12e6ee7b96161f1e45942778a52a7c89b24051973bcb6271",
       "assets/安全课堂.mp4": "cd73c4ad98250fe2c232b859a057a590e2277fc0e4acccb003a24141da63ee4d",
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
-      "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0"
+      "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
+      "core.js": "7ef28a71bdf4799ddd87009081bb98d9a79ac6f8791560369822ea1a480e725e",
+      "index.html": "ff80dd4179f18785c1e9dd7a21390c2ab22b169e8fccfd08baca208b30842d6f",
+      "styles.css": "0ec6092338b5021036ddcc41bcf7f7bbd97acde5964e733f6ecb2b85005aec1e",
+      "定版信息.md": "a966a4b7e20ff4c5348529c629f39cc7c87c17bdb425b38a382e030a58252a02",
+      "版本说明.md": "54a4c4f7c558b582764ada589e09735a8111ca0104b1dc783c2a2220f4729d1a"
     },
-    "releaseNote": "定版信息.md"
+    "releaseNote": "版本说明.md；含Web学生统计班级汇总A页和班级学生明细B页的最新规则。"
   },
   "webReleases": [
     {
       "endpoint": "school",
       "baselineOwner": "学校 Web 基线项目",
       "shellRelease": "releases/v0.57",
-      "noticeFeature": "V24",
+      "noticeFeature": "V25",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice",
       "shellUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V24/index.html?role=school&school=s1&embedded=1",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=school&school=s1&embedded=1",
       "menuPageLinkPath": "学校端/releases/v0.57/assets/page-links-unified.js",
       "prd": "家校通知一期产品需求文档-学校Web.md"
     },
@@ -49,12 +49,12 @@
       "endpoint": "agent",
       "baselineOwner": "代理商 Web 基线项目",
       "shellRelease": "root + versions/v0.66",
-      "noticeFeature": "V24",
+      "noticeFeature": "V25",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
       "shellUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V24/index.html?role=agent&school=s1&embedded=1",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=agent&school=s1&embedded=1",
       "menuPageLinkPaths": [
         "代理商端/assets/page-links-unified.js",
         "代理商端/versions/v0.66/assets/page-links-unified.js"
@@ -65,12 +65,12 @@
       "endpoint": "operations",
       "baselineOwner": "运营后台基线项目",
       "shellRelease": "versions/v0.68-6b45240dfc",
-      "noticeFeature": "V24",
+      "noticeFeature": "V25",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice",
       "shellUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.68-6b45240dfc/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V24/index.html?role=ops&school=s2&embedded=1",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=ops&school=s2&embedded=1",
       "menuPageLinkPath": "运营后台/versions/v0.68-6b45240dfc/assets/page-links-unified.js",
       "prd": "家校通知一期产品需求文档-运营后台.md"
     }
@@ -114,6 +114,15 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V24 原型、三个 Web 菜单路由及 PRD V0.7 已发布供评审；未定版。",
-  "publicationNote": "教师与家长小程序原型和模板资料未修改、未发布；Q70、Q71仍待确认。"
+  "publicationStatus": "V25原型及PRD V0.8本轮同步发布；需求仍为修改中、待评审、未定版。",
+  "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
+  "uiCorrections": [
+    "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
+    "来源列单行完整显示；标题最多10字，超出省略，悬停显示全文；创建时间YYYY-MM-DD HH:mm",
+    "Web编辑器不提供录音入口；放弃编辑弹窗使用指定标题、文案和按钮",
+    "列表操作显示预览；预览打印不显示查收统计，标题固定、通知信息区单独滚动",
+    "有权限删除打开确认弹窗，无权限记录显示无权限并禁用",
+    "学生统计拆为班级汇总A页、班级明细B页；A页按年级/班级联动，B页按状态/学生姓名模糊筛选，指标同步变化。",
+    "学生统计和教师统计Tab均不显示提醒按钮；统计进度按查收方式计算，不新增完成率。"
+  ]
 }

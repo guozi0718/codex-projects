@@ -1,7 +1,7 @@
 ### 家校通知一期 PRD 交付索引
 
 需求范围：第一期新增，修改中、待评审、未定版
-文档批次：V0.7
+文档批次：V0.8
 任务：T-20261118-03｜各端 PRD 与原型对齐
 核对日期：2026-11-23
 
@@ -17,7 +17,7 @@
 - [运营后台](家校通知一期产品需求文档-运营后台.md)：平台代学校发布和管理通知。
 - [教师小程序](家校通知一期产品需求文档-教师小程序.md)：学校通知、我发布、我接收、草稿箱、普通/美文通知和模板。
 - [家长小程序](家校通知一期产品需求文档-家长小程序.md)：当前登录学生的通知列表、全部/待办、阅读和回执。
-- [原型映射与同步规则](原型映射与同步规则.md)：基线菜单、V24 直达页、后续同步方法。
+- [原型映射与同步规则](原型映射与同步规则.md)：基线菜单、V25 直达页、后续同步方法。
 - [文档核对记录](文档核对记录.md)：需求与页面核对结果。
 - [原型发布登记](原型发布登记.json)：GitHub 提交号、页面链接、版本和文件校验值。
 
@@ -25,9 +25,9 @@
 
 | 端 | 当前菜单入口 | 固定菜单壳 | 通知页面 |
 |---|---|---|---|
-| 学校 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice) | [学校 Web v0.57](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice) | [V24 学校端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V24/index.html?role=school&school=s1&embedded=1) |
-| 代理商 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice) | [代理商 Web v0.66](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=family-notice) | [V24 代理商端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V24/index.html?role=agent&school=s1&embedded=1) |
-| 运营后台 | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice) | [运营后台 v0.68-6b45240dfc](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.68-6b45240dfc/index.html?page=family-notice) | [V24 运营后台](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V24/index.html?role=ops&school=s2&embedded=1) |
+| 学校 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice) | [学校 Web v0.57](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice) | [V25 学校端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=school&school=s1&embedded=1) |
+| 代理商 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice) | [代理商 Web v0.66](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=family-notice) | [V25 代理商端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=agent&school=s1&embedded=1) |
+| 运营后台 | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice) | [运营后台 v0.68-6b45240dfc](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.68-6b45240dfc/index.html?page=family-notice) | [V25 运营后台](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=ops&school=s2&embedded=1) |
 
 教师和家长小程序原型链接本轮不提供；原型与模板资料留在本地，没有修改或发布。
 
@@ -44,3 +44,12 @@
 #### 4. 尚待确认
 
 Q70、Q71 仍待确认，详见[全端共通规则第9节](家校通知一期产品需求文档-全端共通规则.md)。第72–76项已按用户答复同步为已确认规则。
+#### 5. V0.8 批注修订记录
+
+- 来源筛选顺序固定为学校端、教师端、平台端、代理商（依系统既有配置顺序）。
+- 通知来源列单行完整显示；标题单行显示最多10个字，超出以省略号呈现，悬停可看全文；创建时间为“YYYY-MM-DD HH:mm”。
+- Web 编辑内容不提供录音入口；离开未保存内容时弹窗统一使用“放弃编辑”、确认文案及“取消/确定”按钮。
+- 三端列表操作显示“预览”；预览打印页不含查收统计，标题固定、通知内容区独立滚动，PDF只导出通知信息。
+- 阅读统计的学生、教师 Tab 均不显示未读提醒按钮；无删除权限的记录显示“无权限”。
+
+- 学生统计调整：学生统计展示班级汇总 A 页；点击“明细”查看班级学生 B 页。A 页年级/班级筛选级联，B 页只保留状态/学生姓名模糊查询。三端 Web 的指标、空结果、分页、状态联动规则已补入对应 PRD 与共通规则。
