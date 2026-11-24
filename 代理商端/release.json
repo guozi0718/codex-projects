@@ -1,15 +1,15 @@
 {
-  "release": "v0.74",
-  "releaseId": "v0.74-ddee0f09cb",
+  "release": "v0.75",
+  "releaseId": "v0.75-179fde266d",
   "endpoint": "agent",
   "repository": "guozi0718/codex-projects",
   "branch": "main",
-  "folder": "代理商端/versions/v0.74-ddee0f09cb",
+  "folder": "代理商端/versions/v0.75-179fde266d",
   "status": "GitHub Pages 静态评审候选；第一期修改中、未定版",
-  "publishedAt": "2026-11-24T10:07:22Z",
+  "publishedAt": "2026-11-24T10:14:29Z",
   "task": "T-20261124-04-代理商入口操作日志修复",
   "sourceVersions": {
-    "agent": "v0.73",
+    "agent": "v0.74",
     "customerService": "v0.70 (T-20261124-02)",
     "customerFeedback": "v0.71 (T-20261123-05) + v0.70 (T-20261124-01)",
     "notice": "V25"
@@ -42,7 +42,7 @@
     }
   ],
   "stableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html",
-  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.74-ddee0f09cb/index.html",
+  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.75-179fde266d/index.html",
   "entry": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html",
   "changes": [
     "整合客服管理 v0.70 当前候选",
@@ -53,19 +53,21 @@
     "移除操作日志旧圆点菜单及异常场景入口运行代码和样式",
     "其他菜单页面继承 v0.72 当前候选",
     "修复操作日志脚本注入时结束引号未转义导致的 SyntaxError",
-    "保持 GitHub 根目录固定入口不变，更新其指向的完整最新代理商版本"
+    "保持 GitHub 根目录固定入口不变，更新其指向的完整最新代理商版本",
+    "移除操作日志已退役圆点功能残留的 closeDP() 调用，保证渲染继续执行",
+    "更新操作日志脚本 SHA-256 缓存引用"
   ],
-  "indexSHA256": "9c9e18da4ae30fc27f9aabdf90b3ca5b8136869927480f6efc523cadb5e287dd",
+  "indexSHA256": "3bb1269bef32e79bb97fa7cb91de51dd0578b09c9b0bb10196ee0f8a86c59194",
   "files": [
     {
       "path": "CHANGELOG.md",
-      "size": 2422,
-      "sha256": "cda0f214fc5d648aa55651976c4ca5e2993be25fb5fbd20fb3f69828598bc863"
+      "size": 2643,
+      "sha256": "a2f3308137e77a9fb49e941d7422f6b62483d21fb0e80af07588f9ecf6f13bb2"
     },
     {
       "path": "README.md",
-      "size": 1594,
-      "sha256": "efd7bc010d090cec885d5efe25aa0f7aafe143b61f9a1bf6092cdd01291537e6"
+      "size": 1645,
+      "sha256": "a0a3210addfb49e462d0420ae2a9438d7647bec65a32b8409e2c8879353a4a44"
     },
     {
       "path": "assets/action-buttons.css",
@@ -209,8 +211,8 @@
     },
     {
       "path": "assets/legacy-operation-log.js",
-      "size": 151407,
-      "sha256": "d6ca8fa682ed16e98c1d48599b7a1f20b8951988c2adc0d2c4e5c52fdfdfdb8a"
+      "size": 151396,
+      "sha256": "12630ef062c308db8fb0f9250fe631220f9789bc5d43162a4be193bd30067d5c"
     },
     {
       "path": "assets/legacy-query-bridge.js",
@@ -290,7 +292,7 @@
     {
       "path": "index.html",
       "size": 5738,
-      "sha256": "9c9e18da4ae30fc27f9aabdf90b3ca5b8136869927480f6efc523cadb5e287dd"
+      "sha256": "3bb1269bef32e79bb97fa7cb91de51dd0578b09c9b0bb10196ee0f8a86c59194"
     },
     {
       "path": "notice/app.js",
@@ -374,13 +376,13 @@
     },
     {
       "path": "定版信息.md",
-      "size": 1004,
-      "sha256": "d8169fc153688903fbac8d67eb93eb19bfe9b41b6cd0bd53249dc626820d9e44"
+      "size": 929,
+      "sha256": "e17170896f0dcf10adc1eaa6f6b5b5a7951192629b97d855f3a76777d3a8b5b1"
     },
     {
       "path": "定版字段清单.md",
-      "size": 1928,
-      "sha256": "1943323ca1ea5cce79096ded6ffaee51229c3bea699ad8748e3afe5647c72138"
+      "size": 1910,
+      "sha256": "37528d3c1a2727f75cdb6596b4a667f1fb4f82d1711d5e63f6550250bb5d9b48"
     }
   ],
   "limitations": [
@@ -396,14 +398,14 @@
     "customerService": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=cs&content=1",
     "operationLog": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=op-log"
   },
-  "baselineMainHead": "91f739171bd01251676bb1b3e77997d2bff7e649",
+  "baselineMainHead": "08c454e986a6cc82c173e4ee11c4828d1cdc98d6",
   "latestURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html",
-  "sourceIndexSHA256": "9c9e18da4ae30fc27f9aabdf90b3ca5b8136869927480f6efc523cadb5e287dd",
-  "bundleSHA256": "ddee0f09cb47487924dd17bd819032f8ef49af2fdb6fc6e46fa98336c291aad3",
+  "sourceIndexSHA256": "3bb1269bef32e79bb97fa7cb91de51dd0578b09c9b0bb10196ee0f8a86c59194",
+  "bundleSHA256": "179fde266d4f64ee093cf1cb8bde53eddb5da5fd6d98c396023f4ad39cdeacf7",
   "bundleAlgorithm": "SHA-256(JSON.stringify({version,dependency,files:[{path,sha256,bytes}]})); files sorted by code-point path; release.json excluded; dependency={baselineMainHead,sourceReleaseId,sourceBundleSHA256}",
   "dependency": {
-    "baselineMainHead": "91f739171bd01251676bb1b3e77997d2bff7e649",
-    "sourceReleaseId": "v0.73-10c40e7090",
-    "sourceBundleSHA256": "10c40e70907732d4b6a92bcc5bdf593f1d310132feebe98c34f2a3e44ca2b5f7"
+    "baselineMainHead": "08c454e986a6cc82c173e4ee11c4828d1cdc98d6",
+    "sourceReleaseId": "v0.74-ddee0f09cb",
+    "sourceBundleSHA256": "ddee0f09cb47487924dd17bd819032f8ef49af2fdb6fc6e46fa98336c291aad3"
   }
 }
