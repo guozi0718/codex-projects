@@ -5,7 +5,7 @@
   "entry": "index.html",
   "notice": {
     "version": "pinned-in-school-release",
-    "indexHash": "6296047a23a56faa7b1b727380a4e7b20e5266fbe9c1b6178d75901d9c5abd2c"
+    "indexHash": "627e65f0a045b7bd2280b93f36f78a45268d436da0aeb8353451a877b362ca20"
   },
   "files": [
     {
@@ -134,7 +134,7 @@
     },
     {
       "path": "notice/app.js",
-      "sha256": "334d3e017f63b166efe4932c4a76d78695c69aa55a9282a2621650e683688b27"
+      "sha256": "a81262cff01ca1bf67aaeab0be661e1a67f8f630499fbdbbe40c15d7d097164a"
     },
     {
       "path": "notice/assets/assets/campus.png",
@@ -222,7 +222,7 @@
     },
     {
       "path": "notice/index.html",
-      "sha256": "6296047a23a56faa7b1b727380a4e7b20e5266fbe9c1b6178d75901d9c5abd2c"
+      "sha256": "627e65f0a045b7bd2280b93f36f78a45268d436da0aeb8353451a877b362ca20"
     },
     {
       "path": "notice/styles.css",
@@ -231,3 +231,4 @@
   ],
   "scope": "School prototype runtime; local demonstration data only"
 }
+

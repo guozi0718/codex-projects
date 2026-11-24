@@ -513,8 +513,8 @@
     },
     {
       "path": "dependencies/notice/app.js",
-      "sha256": "9b35ac40450ea2d30ce29757e6d620d80bc5af8c6002c25c0e310fa02650434a",
-      "bytes": 188952
+      "sha256": "a81262cff01ca1bf67aaeab0be661e1a67f8f630499fbdbbe40c15d7d097164a",
+      "bytes": 191050
     },
     {
       "path": "dependencies/notice/assets/campus.png",
@@ -573,7 +573,7 @@
     },
     {
       "path": "dependencies/notice/index.html",
-      "sha256": "6296047a23a56faa7b1b727380a4e7b20e5266fbe9c1b6178d75901d9c5abd2c",
+      "sha256": "627e65f0a045b7bd2280b93f36f78a45268d436da0aeb8353451a877b362ca20",
       "bytes": 757
     },
     {
@@ -593,3 +593,4 @@
     }
   ]
 }
+

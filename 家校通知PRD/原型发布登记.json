@@ -2,17 +2,17 @@
   "date": "2026-11-24",
   "task": "T-20261123-02-通知类型来源与跨端编辑规则",
   "prdTask": "T-20261118-03-各端PRD与原型对齐",
-  "prdBatch": "V0.10",
+  "prdBatch": "V0.11",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "cdb5c2ec9619310e942c4a42c9540eac24d30731",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/cdb5c2ec9619310e942c4a42c9540eac24d30731",
+  "prototypeCommit": "",
+  "prototypeCommitUrl": "",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "80a1c28e7af28c4a1393ea463cea84f2ba52f59ca71f47c79239f341c91d8a4a",
+      "app.js": "a81262cff01ca1bf67aaeab0be661e1a67f8f630499fbdbbe40c15d7d097164a",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -24,12 +24,12 @@
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
       "core.js": "cf4365b985fc80f20a3eac2ec497ebdce648dac350a5289022162c5a6e03921b",
-      "index.html": "15d4964bb9a7dc11b122f7743c1c553ade8a1d9bdef44c4e295d8cc8f17fe280",
+      "index.html": "627e65f0a045b7bd2280b93f36f78a45268d436da0aeb8353451a877b362ca20",
       "styles.css": "c3d7261b81775c871d98e3d8014aa1ce8fb9089760f2ae0167e91d39ea79e859",
-      "定版信息.md": "5398429c883aabe28a7ef4e2e55b67ecd78d5535306619f517b18a705455a393",
-      "版本说明.md": "d2c9a7b6b90e31e489892e48233e2152ed65dc7759b7183709b2cdd1bbf93b3d"
+      "定版信息.md": "2df4b0779b1e5c113dca44e3248f18e0e605b69faf00b355f66921243deb3b70",
+      "版本说明.md": "3cd4b7311df7ccf58a8bfd53bce3ec4a612d653f0179ada3fd71ed2329d7bf24"
     },
-    "releaseNote": "V25：三个 Web 端移除“发布人”筛选；运营后台和代理商端增加首位目标学校模糊筛选；代理商列表仅保留预览、编辑；学校名义和定时发送为非必填，并按端显示身份提示；预览标题居中换行。当前学校 v0.62、运营后台 v0.76 菜单依赖与共享 V25 同步，代理商 v0.75 菜单直达共享 V25。"
+    "releaseNote": "V25：普通通知编辑时固定显示一个文本块，不显示新增内容块入口或文本块上移、下移、删除按钮；美文通知编辑方式不变。学校、代理商、运营后台共享页面同步本规则，教师和家长小程序资料保留。PRD 文档批次 V0.11。"
   },
   "webReleases": [
     {
@@ -106,7 +106,7 @@
     "parentRole": "只接收，不发布，不作为通知来源",
     "webNewNoticeType": "美文通知",
     "crossEndpointEditing": "三个 Web 端在原有权限范围内可编辑各端通知；有任何阅读、确认或签字记录或已到截止时间时禁止编辑",
-    "ordinaryNoticeWebEditing": "按一个文本内容块编辑，保存后仍为普通通知",
+    "ordinaryNoticeWebEditing": "三个 Web 端编辑符合权限条件的普通通知时只显示唯一文本块，可编辑正文及文字格式；新增内容块、上移、下移、删除入口均不显示，保存后仍保留普通通知类型。",
     "schoolVisibility": "学校可见本校各来源通知，不区分个人/学校名义；原编辑权限范围不变",
     "delegatedIdentity": "代理商与运营后台代发固定以学校名义通知",
     "webDrafts": "代理商 Web、运营后台不提供草稿",
@@ -120,7 +120,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "共享 V25、PRD V0.10、最新三端菜单基线同步已推送；GitHub Pages 工作流 45395745660 对提交 cdb5c2e 执行成功，线上链接与资源核验通过。",
+  "publicationStatus": "待推送：共享 V25 普通通知编辑限制、学校端与运营后台基线副本、Web PRD V0.11 已更新；待提交至 GitHub 并完成 Pages 发布核对。",
   "publicationNote": "V25 为三个 Web 端共用的最新评审原型；学校 v0.62 与运营后台 v0.76 的菜单依赖副本已与 V25 同步，代理商 v0.75 直接进入 V25。小程序源项目和模板资料本轮保留，未单独修改、发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -147,10 +147,11 @@
     "代理商列表只保留“预览”“编辑”，隐藏“阅读统计”“删除”。",
     "三端 Web 的学校名义和定时发送为非必填；学校端默认学校名义，代理商和运营后台固定学校名义。",
     "通知预览标题居中并自动换行，标题长时完整显示。",
-    "学校 v0.62 和运营后台 v0.76 基线菜单内的通知页面副本与共享 V25 文件同步。"
+    "学校 v0.62 和运营后台 v0.76 基线菜单内的通知页面副本与共享 V25 文件同步。",
+    "三个 Web 端编辑普通通知时仅显示唯一文本块，不显示新增内容块入口及文本块上移、下移、删除按钮；美文通知方式不变。"
   ],
-  "repositoryHead": "cdb5c2ec9619310e942c4a42c9540eac24d30731",
-  "metadataCommit": "cdb5c2ec9619310e942c4a42c9540eac24d30731",
+  "repositoryHead": "",
+  "metadataCommit": "",
   "operationsVisibility": "运营后台可查看所有学校及所有来源通知；筛选首位为目标学校，不提供发布人筛选；创建时间后显示操作人姓名和发布时角色快照，发布、编辑、删除权限仍按原账号管理范围。",
   "operationPersonDisplay": {
     "schoolWeb": "创建时间后显示发布时的操作人姓名快照；悬停显示老师端、学校端、平台端或平台（代理商名称快照）；平台端指运营后台。",
@@ -158,9 +159,10 @@
     "agentWeb": "保留现有操作人字段，仅显示发布时的姓名快照。"
   },
   "githubPagesDeployment": {
-    "commit": "cdb5c2ec9619310e942c4a42c9540eac24d30731",
-    "runId": 45395745660,
-    "status": "success",
-    "url": "https://github.com/guozi0718/codex-projects/actions/runs/45395745660"
+    "commit": "",
+    "runId": "",
+    "status": "待发布",
+    "url": ""
   }
 }
+
