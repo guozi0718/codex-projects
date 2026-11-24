@@ -1,20 +1,20 @@
 {
-  "release": "v0.69",
-  "status": "第一期修改中、未定版（GitHub静态评审候选）",
-  "date": "2026-11-23",
+  "release": "v0.70",
+  "status": "本地候选-第一期修改中、未定版",
+  "date": "2026-11-24",
   "sourceVersions": {
     "agent": "v0.65",
     "notice": "V20"
   },
   "repository": "guozi0718/codex-projects",
-  "entry": "index.html?page=cs&content=1",
+  "entry": "http://127.0.0.1:57230/代理商web/任务/T-20261124-02-客服详情返回与交互收敛/端-代理商Web/版本-v0.70/index.html?page=cs&content=1",
   "stableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=cs&content=1",
-  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.69/index.html?page=cs&content=1",
+  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.70/index.html?page=cs&content=1",
   "changes": [
-    "客服列表在姓名前增加客服类型，显示“平台客服”或“代理商客服”。",
-    "平台客服关联代理商后，同时出现在运营后台和该代理商端客服列表；代理商端只读，运营端可以编辑。",
-    "客服表格内容居中，列宽按内容自适应。",
-    "新增客服姓名占位文字为“请输入客服姓名”。"
+    "表格占满内容区且列宽按内容自适应",
+    "弹窗关闭后保留当前列表页",
+    "客服页面移除独立日志入口并统一使用操作日志",
+    "姓名与联系电话占位文案更新，电话纯数字且不限制位数"
   ],
   "files": [
     {
@@ -54,18 +54,18 @@
     },
     {
       "path": "assets/customer-model.js",
-      "size": 17725,
-      "sha256": "623a30d0794855218b9817d427f5358bba140626a721ffa5e7b90a086365e216"
+      "size": 17706,
+      "sha256": "7e62f9761a5d69b4a369a4139dcf69abc306ae0bcaf6a66ed61e7117ad20359e"
     },
     {
       "path": "assets/customer-ui.css",
-      "size": 19489,
-      "sha256": "e595136b273a25609dc6016e72421a01708c14696bfe44b3c61687499f70f698"
+      "size": 19946,
+      "sha256": "41385030e6527448335cdcc0ce0c42ab92e6bde15a63e8b72248905c77ad6362"
     },
     {
       "path": "assets/customer-ui.js",
-      "size": 23473,
-      "sha256": "f64d15d7d267140b1b41fddfc0f6afe8e86d2a423e4d95ee12fb7c6dc5e05ecc"
+      "size": 23123,
+      "sha256": "599cc3885f3602615a2360c6b59bbe9e2838fb2bd24d9cf82b25f52a93c098ee"
     },
     {
       "path": "assets/demo-panel.css",
@@ -169,8 +169,8 @@
     },
     {
       "path": "assets/module-demo.js",
-      "size": 24542,
-      "sha256": "c3878bcdda0c31f9d405fdda0481f74f3a895ac6d8145f8d65b477a6112b9c5e"
+      "size": 24354,
+      "sha256": "becb038c3c42381301ba95194800b2e583ebe45bb82be6313381b483eef28af1"
     },
     {
       "path": "assets/notice-host-bridge.js",
@@ -194,8 +194,8 @@
     },
     {
       "path": "assets/query-router.js",
-      "size": 3030,
-      "sha256": "356b489d27fd2d4f895ffad0b1e18cebb2799d5aa0053cf6fee7c4ce5fb3bd61"
+      "size": 2943,
+      "sha256": "6a497f2231e3db46a29521153ce9e4f6b71536d1e1d74169068c45e73078404a"
     },
     {
       "path": "assets/regions-data.js",
@@ -239,13 +239,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size": 593,
-      "sha256": "9e74c6e0a6518b17a75b1695ae9776a7b54a93a4c5bb66da756a75a14c660bad"
+      "size": 1853,
+      "sha256": "6854d41ae6c38f0c8a890b413256ee2bb6d7a0470c3d7659883e90f5acd786ad"
     },
     {
       "path": "index.html",
-      "size": 6198,
-      "sha256": "eeffa2c56610ba0cde5356d85d70f0affb84124792489fa9125df13f0d8c74db"
+      "size": 5738,
+      "sha256": "d5b5a372fd6d016905a9fbcc97afc6c9e5b5868c8c0f994f30828022d92d4de0"
     },
     {
       "path": "notice/app.js",
@@ -319,24 +319,19 @@
     },
     {
       "path": "README.md",
-      "size": 664,
-      "sha256": "b4b48fc3959279dc2897ba8f932a1f40fb6aa272b8026924e13d5f1ef69145b1"
+      "size": 687,
+      "sha256": "4c58809fcd5b8c4bdf52bbd90f8c8f976ee5ea1dee3b725394c11347a3b2ad2c"
     },
     {
       "path": "定版信息.md",
-      "size": 629,
-      "sha256": "2b6ed9f748c61d902ff72da217a79fa42822b92f49cd366c378f87c493cbcd2e"
-    },
-    {
-      "path": "版本说明.md",
-      "size": 629,
-      "sha256": "2b6ed9f748c61d902ff72da217a79fa42822b92f49cd366c378f87c493cbcd2e"
+      "size": 749,
+      "sha256": "582f338bb4f48c86c10b6ee6e48219a7a8cd457eb1bd59c2176886814d2a058a"
     }
   ],
-  "sourceIndexSHA256": "eeffa2c56610ba0cde5356d85d70f0affb84124792489fa9125df13f0d8c74db",
-  "baseline": "客服管理本地评审候选 v0.68",
-  "publishedAt": "2026-11-24T04:43:48.568Z",
-  "scope": "客服列表增加客服类型字段；列表居中并按内容自适应；平台代理商关联客服在代理商端回显且只读，运营端可编辑；新增客服姓名占位文字统一。",
-  "version": "v0.69",
-  "task": "T-20261123-03-客服列表字段与平台客服回显"
+  "sourceIndexSHA256": "d5b5a372fd6d016905a9fbcc97afc6c9e5b5868c8c0f994f30828022d92d4de0",
+  "baseline": "代理商 Web v0.69",
+  "publishedAt": null,
+  "scope": "客服表格铺满内容区且列宽按内容自适应；客服弹窗关闭保留当前客服列表；客服页移除独立日志入口，统一查看操作日志；姓名和联系电话提示文案统一，联系电话只允许数字且不限制位数。",
+  "version": "v0.70",
+  "task": "T-20261124-02-客服详情返回与交互收敛"
 }
