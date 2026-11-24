@@ -1,21 +1,21 @@
 {
-  "release": "r2026.11.19.2",
-  "status": "教师/家长 v0.15 通知直达页候选；线上预览，待用户验收，未业务定版",
-  "sourceVersion": "T-20261119-03-小程序通知加载故障修复 教师/家长 v0.15",
+  "release": "r2026.11.23.2",
+  "status": "家长/教师 v0.19 客服管理返回修复候选；线上预览，第一期修改中，未业务定版",
+  "sourceVersion": "T-20261123-03-客服电话返回按钮修复 家长/教师 v0.19",
   "entries": [
     {
       "name": "教师",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-教师/版本-v0.15/index.html",
-      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-教师/版本-v0.15/index.html#sc-home",
-      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-教师/版本-v0.15/index.html#sc-fblist",
-      "notification": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-教师/版本-v0.15/notification.html"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-教师/版本-v0.19/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-教师/版本-v0.19/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-教师/版本-v0.19/index.html#sc-fblist",
+      "help": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-教师/版本-v0.19/index.html?view=help&service=multi#sc-help"
     },
     {
       "name": "家长",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-家长/版本-v0.15/index.html",
-      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-家长/版本-v0.15/index.html#sc-home",
-      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-家长/版本-v0.15/index.html#sc-fblist",
-      "notification": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.19.2/端-家长/版本-v0.15/notification.html"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-家长/版本-v0.19/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-家长/版本-v0.19/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-家长/版本-v0.19/index.html#sc-fblist",
+      "help": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.23.2/端-家长/版本-v0.19/index.html?view=help&service=multi#sc-help"
     }
   ]
 }

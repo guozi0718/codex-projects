@@ -1,0 +1,201 @@
+/* 小程序反馈建议表单与演示说明补齐v0.7：独立离线演示模型，不连接生产服务。 */
+(function(){
+ 'use strict';
+ const role=window.ZXH_HELP_ROLE,config=window.ZXH_HELP_CONFIG,$=id=>document.getElementById(id);
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const overlay=$('hf-overlay'),dialog=$('hf-dialog'),notice=$('hf-notice');
+ document.querySelector('.phone').append(overlay,notice);
+ const requestedScene=new URLSearchParams(location.search).get('service');
+ let scene=['none','single','multi'].includes(requestedScene)?requestedScene:'single';
+ let serviceOverride=null,filter='all',emptyPreview=false,upload=[],uploadSession=0,type='问题反馈',timer,previousFocus=null,detailKey='',formDirty=false,detailImages=[],followUpDraft=[],followUpSession=0,followUpBusy=false;
+ const actor={
+  role,
+  accountId:role==='teacher'?'DEMO-ACCOUNT-TEACHER-001':'DEMO-ACCOUNT-PARENT-001',
+  nameSnapshot:role==='teacher'?'王老师':'林晓乐家长',
+  phoneSnapshot:role==='teacher'?'138****0002':'138****0001'
+ };
+ const schoolByName=name=>({
+  '市实验一小':{schoolId:'DEMO-SCHOOL-001',schoolNameSnapshot:'市实验一小',regionId:'DEMO-REGION-XM-SM',regionNameSnapshot:'厦门市思明区'},
+  '市实验二小':{schoolId:'DEMO-SCHOOL-002',schoolNameSnapshot:'市实验二小',regionId:'DEMO-REGION-XM-HL',regionNameSnapshot:'厦门市湖里区'}
+ }[name]||{schoolId:'DEMO-SCHOOL-001',schoolNameSnapshot:name||'市实验一小',regionId:'DEMO-REGION-XM-SM',regionNameSnapshot:'厦门市思明区'});
+ function studentSnapshot(name){
+  const parentContext=role==='parent'&&typeof curKid!=='undefined'&&typeof kidInfo!=='undefined'&&kidInfo[curKid];
+  const studentName=name||(parentContext?curKid:'林晓乐');
+  const profile=typeof kidInfo!=='undefined'&&kidInfo[studentName];
+  const schoolName=profile?.[4]||'市实验一小';
+  return {studentId:'DEMO-STUDENT-'+(studentName||'UNKNOWN').replace(/[^\u4e00-\u9fa5A-Za-z0-9]/g,''),studentNameSnapshot:studentName,studentGradeClassSnapshot:profile?.[1]||'3年级-2班',...schoolByName(schoolName),studentStatusSnapshot:studentName==='林晓帆'?'离校生':studentName==='林晓晴'?'毕业生':'在读生'};
+ }
+ function timeLabel(date){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(date).replace('/','-');}
+ const serviceFor=schoolName=>schoolName==='市实验二小'?{receiverRole:'operations',receiverOrganizationId:'DEMO-OPS-ORG-001',receiverOrganizationName:'运营平台'}:{receiverRole:'agent',receiverOrganizationId:'DEMO-AGENT-ORG-001',receiverOrganizationName:'代理商'};
+ function attachmentRef({feedbackNo,messageId,index=0,fileName='反馈截图.jpg',mimeType='image/jpeg',byteSize=184320,previewSrc='assets/photo-cap.jpg',localPreview=false},now){
+  const attachmentId=feedbackNo+'-ATT-'+String(index+1).padStart(2,'0');
+  return {attachmentId,feedbackNo,messageId,fileName,mimeType,byteSize,checksum:localPreview?null:'demo-sha256-'+attachmentId.toLowerCase(),storageKey:localPreview?null:'demo://feedback/'+feedbackNo+'/'+attachmentId,uploadedAt:now,retentionExpiresAt:null,uploadState:localPreview?'local_preview':'available',accessPolicy:'submitter_or_current_receiver',previewSrc};
+ }
+ function makeRecord({feedbackNo,feedbackType,content,status,createdAt,displayTime,schoolName='市实验一小',studentName=null,reply=null,replyAt=null,withImage=false,withdrawnAt=null,transferredFrom=null}){
+  const school=schoolByName(schoolName),student=role==='parent'?studentSnapshot(studentName):null,receiver=serviceFor(schoolName),requestId='DEMO-REQ-'+feedbackNo+'-CREATE';
+  const initialMessageId=feedbackNo+'-MSG-001',attachments=withImage?[attachmentRef({feedbackNo,messageId:initialMessageId},createdAt)]:[];
+  const initialMessage={messageId:initialMessageId,feedbackNo,messageType:'首条反馈',authorAccountId:actor.accountId,authorRole:role,authorNameSnapshot:actor.nameSnapshot,receiverAccountId:null,receiverOrganizationId:transferredFrom?.organizationId||receiver.receiverOrganizationId,content,attachments,serverSequence:1,createdAt,displayTime,version:1,readFact:'已读',withdrawn:false,deleted:false,requestId};
+  const messages=[initialMessage];
+  if(reply){
+   const messageId=feedbackNo+'-MSG-002',replyRequestId='DEMO-REQ-'+feedbackNo+'-REPLY';
+   messages.push({messageId,feedbackNo,messageType:'回复',authorAccountId:'DEMO-SERVICE-ACCOUNT-001',authorRole:receiver.receiverRole,authorNameSnapshot:receiver.receiverOrganizationName+'客服',receiverAccountId:actor.accountId,receiverOrganizationId:null,content:reply,attachments:[],serverSequence:2,createdAt:replyAt,displayTime:timeLabel(new Date(replyAt)),version:2,readFact:'未查看',withdrawn:false,deleted:false,requestId:replyRequestId});
+  }
+  const receiverHistory=[{assignmentId:feedbackNo+'-ASG-001',fromOrganizationId:null,toOrganizationId:transferredFrom?.organizationId||receiver.receiverOrganizationId,toRole:transferredFrom?.role||receiver.receiverRole,schoolConfigVersion:'DEMO-SCHOOL-CONFIG-V1',reason:'首次提交受理分配',assignedAt:createdAt,eventId:feedbackNo+'-EVT-ASSIGN-001'}];
+  if(transferredFrom)receiverHistory.push({assignmentId:feedbackNo+'-ASG-002',fromOrganizationId:transferredFrom.organizationId,toOrganizationId:receiver.receiverOrganizationId,toRole:receiver.receiverRole,schoolConfigVersion:'DEMO-SCHOOL-CONFIG-V2',reason:'学校负责方配置变更；待回复记录转派',assignedAt:new Date(new Date(createdAt).getTime()+3600000).toISOString(),eventId:feedbackNo+'-EVT-ASSIGN-002'});
+  const withdrawal=withdrawnAt?{withdrawalId:feedbackNo+'-WDR-001',withdrawnAt,actorAccountId:actor.accountId,reasonSnapshot:null,requestId:'DEMO-REQ-'+feedbackNo+'-WITHDRAW'}:null;
+  const auditEvents=[{eventId:feedbackNo+'-EVT-CREATE',feedbackNo,messageId:initialMessageId,actorAccountId:actor.accountId,actorNameSnapshot:actor.nameSnapshot,actorRole:role,sourceChannel:'mini-program',action:'feedback_created',occurredAt:createdAt,result:'success',previousVersion:null,newVersion:1,requestId}];
+  if(reply)auditEvents.push({eventId:feedbackNo+'-EVT-REPLY',feedbackNo,messageId:feedbackNo+'-MSG-002',actorAccountId:'DEMO-SERVICE-ACCOUNT-001',actorNameSnapshot:receiver.receiverOrganizationName+'客服',actorRole:receiver.receiverRole,sourceChannel:'web',action:'message_replied',occurredAt:replyAt,result:'success',previousVersion:1,newVersion:2,requestId:'DEMO-REQ-'+feedbackNo+'-REPLY'});
+  if(transferredFrom)auditEvents.push({eventId:feedbackNo+'-EVT-ASSIGN-002',feedbackNo,actorAccountId:'DEMO-SYSTEM',actorNameSnapshot:'系统',actorRole:'system',sourceChannel:'system',action:'receiver_reassigned',occurredAt:receiverHistory[1].assignedAt,result:'success',previousVersion:1,newVersion:2,requestId:'DEMO-REQ-'+feedbackNo+'-REASSIGN',fromOrganizationId:transferredFrom.organizationId,toOrganizationId:receiver.receiverOrganizationId});
+  if(withdrawal)auditEvents.push({eventId:feedbackNo+'-EVT-WITHDRAW',feedbackNo,actorAccountId:actor.accountId,actorNameSnapshot:actor.nameSnapshot,actorRole:role,sourceChannel:'mini-program',action:'feedback_withdrawn',occurredAt:withdrawnAt,result:'success',previousVersion:reply?2:1,newVersion:reply?3:2,requestId:withdrawal.requestId});
+  const notifications=reply?[{notificationId:feedbackNo+'-NOTICE-001',requestId:'DEMO-REQ-'+feedbackNo+'-NOTICE',feedbackNo,messageId:feedbackNo+'-MSG-002',recipientAccountId:actor.accountId,channel:'mini_program',templateVersion:'DEMO-TPL-V1',providerRequestId:'DEMO-PROVIDER-001',status:'sent',createdAt:replyAt,operatorAccountId:'DEMO-SERVICE-ACCOUNT-001',failureCode:null}]:[];
+  return {feedbackNo,sourceRole:role,sourceChannel:'mini-program',submitterAccountId:actor.accountId,submitterNameSnapshot:actor.nameSnapshot,submitterPhoneSnapshot:actor.phoneSnapshot,regionId:school.regionId,regionNameSnapshot:school.regionNameSnapshot,schoolId:school.schoolId,schoolNameSnapshot:school.schoolNameSnapshot,studentId:student?.studentId||null,studentNameSnapshot:student?.studentNameSnapshot||null,studentSnapshot:student,feedbackType,title:null,firstContent:content,attachments,createdAt,updatedAt:[createdAt,replyAt,withdrawnAt,transferredFrom?receiverHistory[1].assignedAt:null].filter(Boolean).sort().at(-1),status,version:1+(reply?1:0)+(withdrawal?1:0)+(transferredFrom?1:0),receiverRole:receiver.receiverRole,receiverOrganizationId:receiver.receiverOrganizationId,receiverOrganizationName:receiver.receiverOrganizationName,receiverAccountId:null,receiverHistory,withdrawal,deletion:null,messages,notifications,auditEvents,requestId};
+ }
+ const seed=role==='teacher'?[
+  ['open',{feedbackNo:'DEMO-T-FB-2026-001',feedbackType:'功能建议',content:'希望能按班级导出考勤汇总，便于核对学生出勤情况。',status:'待回复',createdAt:'2026-07-02T09:21:00+08:00',displayTime:'今天 09:21',transferredFrom:{organizationId:'DEMO-AGENT-ORG-OLD',role:'agent'}}],
+  ['replied',{feedbackNo:'DEMO-T-FB-2026-002',feedbackType:'问题反馈',content:'有学生已到校，但考勤记录延迟显示，请协助核查。',status:'已回复',createdAt:'2026-07-02T19:45:00+08:00',displayTime:'07-02 19:45',reply:'您好，已核查该时段记录上传情况。如再次遇到，请提供班级及发生时间，方便进一步排查。',replyAt:'2026-07-03T15:26:00+08:00',withImage:true}],
+  ['withdrawn',{feedbackNo:'DEMO-T-FB-2026-003',feedbackType:'功能建议',content:'希望能更方便地查看本班待处理的请假申请。',status:'已撤回',createdAt:'2026-06-24T21:10:00+08:00',displayTime:'06-24 21:10',withdrawnAt:'2026-06-25T10:15:00+08:00',schoolName:'市实验二小'}]
+ ].map(([key,value])=>[key,makeRecord(value)]):[
+  ['open',{feedbackNo:'DEMO-P-FB-2026-001',feedbackType:'功能建议',content:'放学播报希望能提前 5 分钟提醒我出发接孩子。',status:'待回复',createdAt:'2026-07-02T09:21:00+08:00',displayTime:'今天 09:21',studentName:'林晓乐',transferredFrom:{organizationId:'DEMO-AGENT-ORG-OLD',role:'agent'}}],
+  ['replied',{feedbackNo:'DEMO-P-FB-2026-002',feedbackType:'问题反馈',content:'孩子明明 7:40 就进校了，到校提醒 8 点才收到，最近一周有两三次这样，麻烦看看。',status:'已回复',createdAt:'2026-07-02T19:45:00+08:00',displayTime:'07-02 19:45',studentName:'林晓宁',schoolName:'市实验二小',reply:'您好，经排查为雨天网络波动导致个别到校记录延迟上传，已于 7月3日优化重传策略；如再遇到延迟欢迎随时反馈。',replyAt:'2026-07-03T15:26:00+08:00',withImage:true}],
+  ['withdrawn',{feedbackNo:'DEMO-P-FB-2026-003',feedbackType:'功能建议',content:'希望能按学期导出孩子的出勤记录，开家长会前想自己看一遍。',status:'已撤回',createdAt:'2026-06-24T21:10:00+08:00',displayTime:'06-24 21:10',studentName:'林晓帆',withdrawnAt:'2026-06-25T10:15:00+08:00'}]
+ ].map(([key,value])=>[key,makeRecord(value)]);
+ const records=Object.fromEntries(seed.map(([,record])=>[record.feedbackNo,record])),order=seed.map(([,record])=>record.feedbackNo);
+ function notify(message){clearTimeout(timer);notice.textContent=message;notice.hidden=false;timer=setTimeout(()=>notice.hidden=true,2400);}
+ function clearDialogMode(){overlay.classList.remove('hf-feedback-overlay');dialog.classList.remove('hf-feedback-page');}
+ function show(title,body){clearDialogMode();previousFocus=document.activeElement;dialog.innerHTML='<div class="hf-dialog-head"><span id="hf-dialog-title">'+esc(title)+'</span><button class="hf-close" aria-label="关闭弹窗" onclick="hfClose()">×</button></div>'+'<div class="hf-dialog-body">'+body+'</div>';const footer=dialog.querySelector('.hf-form-actions');if(footer)dialog.append(footer);dialog.setAttribute('aria-labelledby','hf-dialog-title');overlay.hidden=false;dialog.focus();}
+ function showFeedbackPage(){
+  previousFocus=document.activeElement;overlay.classList.add('hf-feedback-overlay');dialog.classList.add('hf-feedback-page');
+  dialog.innerHTML=`<div class="hf-submit-page"><div class="hf-submit-top"><div class="hf-submit-status"><span>17:05</span><span aria-hidden="true">▮ ▮ ◉ ▰</span></div><header class="hf-submit-head"><button aria-label="返回" onclick="hfClose()">‹</button><b id="hf-dialog-title">提交反馈</b><span class="hf-submit-capsule" aria-hidden="true"><i>•••</i><i>◎</i></span></header></div><div class="hf-submit-scroll"><section class="hf-submit-card"><div class="hf-submit-label"><i></i><span>反馈类型</span></div><div class="hf-submit-types"><button class="selected" aria-pressed="true" onclick="hfType(this,'问题反馈')"><span class="hf-type-icon">?</span>问题反馈</button><button aria-pressed="false" onclick="hfType(this,'功能建议')"><span class="hf-type-icon">✎</span>功能建议</button></div></section><section class="hf-submit-card"><div class="hf-submit-label"><i></i><span>反馈内容</span><small>必填</small></div><div class="hf-submit-text-wrap"><textarea id="fb-txt" rows="6" maxlength="500" aria-label="反馈内容，必填，最多500字" placeholder="请详细描述您遇到的问题或建议，我们会尽快处理" oninput="hfCountContent(this)"></textarea><span id="fb-count" aria-live="polite">0/500</span></div></section><section class="hf-submit-card hf-submit-attachments"><div class="hf-submit-label"><i></i><span>附件图片</span><small>最多 9 张，每张不超过 10MB</small></div><div id="hf-uploads" class="hf-submit-upload-grid"></div><input id="hf-file" type="file" accept="image/jpeg,image/png" multiple hidden></section></div><footer class="hf-submit-footer"><button class="hf-secondary" onclick="hfClose()">取消</button><button class="hf-primary" id="hf-submit" onclick="feedbackSubmit()">提交</button></footer></div>`;
+  formDirty=false;
+  dialog.setAttribute('aria-labelledby','hf-dialog-title');overlay.hidden=false;dialog.focus();
+ }
+ window.hfClose=function(force=false){const wasForm=dialog.classList.contains('hf-feedback-page');if(wasForm&&formDirty&&!force&&!window.confirm('放弃本次未保存的内容并返回？'))return false;overlay.hidden=true;clearDialogMode();if(wasForm){uploadSession++;formDirty=false;upload=[];}followUpSession++;followUpBusy=false;followUpDraft=[];if(previousFocus?.isConnected)previousFocus.focus();return true;};
+ overlay.addEventListener('click',e=>{if(e.target===overlay)hfClose();});
+ document.addEventListener('keydown',e=>{
+  if(overlay.hidden)return;
+  if(e.key==='Escape'){e.preventDefault();hfClose();}
+  if(e.key==='Tab'){
+   const focusable=[...dialog.querySelectorAll('button,input,textarea,a[href]')].filter(el=>!el.hidden&&el.getClientRects().length);
+   if(!focusable.length){e.preventDefault();dialog.focus();return;}
+   const first=focusable[0],last=focusable.at(-1);
+   if(e.shiftKey&&(document.activeElement===first||document.activeElement===dialog)){e.preventDefault();last.focus();}
+   else if(!e.shiftKey&&(document.activeElement===last||document.activeElement===dialog)){e.preventDefault();first.focus();}
+  }
+ }); function renderHelp(){
+  $('hf-faqs').innerHTML=config.faqs.map((f,i)=>'<div class="hf-faq"><button class="hf-question" aria-expanded="false" aria-controls="hf-answer-'+i+'" onclick="hfFaq(this)"><span>'+esc(f.question)+'</span><i aria-hidden="true">+</i></button><div id="hf-answer-'+i+'" class="hf-answer" hidden>'+esc(f.answer)+'</div></div>').join('');
+  renderService();
+ }
+ window.hfFaq=function(button){const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));button.querySelector('i').textContent=open?'−':'+';button.nextElementSibling.hidden=!open;};
+ function services(){return serviceOverride||config.services[scene]||[];}
+ function orderedServices(){const collator=new Intl.Collator('zh-CN',{numeric:true,sensitivity:'base'});return services().map((agent,index)=>({...agent,_sourceOrder:index})).sort((a,b)=>{const ar=a.group==='代理商客服'?0:1,br=b.group==='代理商客服'?0:1;return ar-br||collator.compare(a.name||'',b.name||'')||String(a.phone||'').replace(/\D/g,'').localeCompare(String(b.phone||'').replace(/\D/g,''),'en',{numeric:true})||String(a.hours||'').localeCompare(String(b.hours||''))||a._sourceOrder-b._sourceOrder;});}
+ function displayServicePhone(value){const number=String(value??'');const digits=number.replace(/\D/g,'');return digits.length===10?digits.slice(0,3)+'-'+digits.slice(3,6)+'-'+digits.slice(6):number;}
+ function renderService(){$('hf-service').innerHTML='<img src="assets/help-phone.svg" alt=""><span>客服电话</span>';}
+ window.hfSetService=function(value){scene=['none','single','multi'].includes(value)?value:'single';serviceOverride=null;const url=new URL(location.href);url.searchParams.set('service',scene);url.searchParams.set('view','help');history.replaceState(null,'',url);hfClose();renderService();notify(scene==='none'?'已切换为无客服演示':scene==='single'?'已切换为单客服演示':'已切换为多客服演示');};
+ window.hfContact=function(){
+  const agents=orderedServices();if(!agents.length){notify('暂无客服信息');return;}
+  show('联系客服','<div class="hf-service-card hf-service-list">'+agents.map((a,i)=>'<div class="hf-agent"><div class="hf-agent-info"><div class="hf-agent-name"><b>'+esc(a.name)+'</b><span>'+esc(displayServicePhone(a.phone))+'</span></div><small>'+esc(a.hours)+'</small></div><button class="hf-dial" onclick="hfDial('+i+')" aria-label="拨打'+esc(a.name)+'的电话">拨打</button></div>').join('')+'</div>');
+ };
+ window.hfDial=function(i){const agent=orderedServices()[i];if(!agent)return;/* 离线原型模拟拨号，不拨打参考图中的演示号码。 */notify('演示拨号：'+agent.phone);window.dispatchEvent(new CustomEvent('zxh:help-dial',{detail:{phone:agent.phone,role}}));};
+ function canReadAsSubmitter(record){return !!record&&record.sourceRole===role&&record.submitterAccountId===actor.accountId;}
+ function visibleRecords(){return order.map(key=>records[key]).filter(canReadAsSubmitter);}
+ function badge(record){const css=record.status==='已回复'?' replied':record.status==='已撤回'?' withdrawn':'';return '<span class="hf-badge'+css+'">'+esc(record.status)+'</span>';}
+ function renderList(){
+  const all=emptyPreview?[]:visibleRecords(),visible=all.filter(record=>filter==='all'||record.status===filter);
+  $('fb-fbar').hidden=!all.length;$('fb-empty').hidden=all.length>0;$('fb-nores').hidden=!all.length||visible.length>0;
+  $('fb-list').innerHTML=visible.map(record=>'<button class="hf-card hf-record" data-record="'+esc(record.feedbackNo)+'" onclick="openFbDetail(\''+esc(record.feedbackNo)+'\')"><div class="hf-record-head"><b>'+esc(record.feedbackType)+'</b>'+badge(record)+'</div><div class="hf-record-summary">'+esc(record.firstContent)+'</div><div class="hf-record-time"><span>'+esc(record.messages.at(-1)?.displayTime||timeLabel(new Date(record.createdAt)))+'</span></div></button>').join('');
+  document.querySelectorAll('#fb-fbar button').forEach(button=>button.classList.toggle('on',(button.dataset.status||'all')===filter));
+ }
+ window.fbFilterPick=function(value){filter=['all','待回复','已回复','已撤回'].includes(value)?value:'all';renderList();};
+ window.fbApplyFilter=renderList;window.fbFilterReset=function(){filter='all';renderList();};
+ window.fbEmptyToggle=function(){emptyPreview=!emptyPreview;filter='all';renderList();};
+ function renderAttachments(items){if(!items?.length)return '';return '<div class="hf-images">'+items.map(item=>{const image=item.previewSrc||'assets/photo-cap.jpg',index=detailImages.push(image)-1;return '<button type="button" onclick="hfPreview('+index+')" aria-label="查看反馈图片"><img src="'+esc(image)+'" alt="反馈图片"></button>';}).join('')+'</div>';}function hasHandlerReply(record){return (record?.messages||[]).some(message=>message.messageType==='回复'||(message.authorRole!==role&&message.messageType!=='首条反馈'&&message.messageType!=='追问'));}
+function canWithdraw(record){return canReadAsSubmitter(record)&&record.status==='待回复'&&!hasHandlerReply(record)&&!record.withdrawal&&!record.deletion;}
+function canFollowUp(record){return canReadAsSubmitter(record)&&['待回复','已回复'].includes(record.status)&&!record.withdrawal&&!record.deletion;}
+function renderFeedbackSummary(record){
+ const firstMessage=(record.messages||[]).find(message=>message.messageType==='首条反馈');
+ const content=record.firstContent||firstMessage?.content||'';
+ const attachments=firstMessage?.attachments||record.attachments||[];
+ return '<section class="hf-card hf-detail-summary"><div class="hf-feedback-number"><span>反馈编号</span><b>'+esc(record.feedbackNo)+'</b></div><div class="hf-feedback-type"><span>'+esc(record.feedbackType)+'</span>'+badge(record)+'</div><div class="hf-detail-text">'+esc(content)+'</div>'+renderAttachments(attachments)+'</section>';
+}
+function renderMessageTimeline(record){
+ const isVisible=message=>!message.internal&&!message.isInternal&&message.kind!=='internal'&&message.visibility!=='internal'&&message.messageType!=='内部处理';
+ const sourceMessages=(record.messages||[]).filter(isVisible);
+ if(!sourceMessages.some(message=>message.messageType==='首条反馈')&&record.firstContent){
+  sourceMessages.push({messageType:'首条反馈',authorNameSnapshot:record.submitterNameSnapshot||'提交人',content:record.firstContent,attachments:record.attachments||[],createdAt:record.createdAt,displayTime:record.createdAt?timeLabel(new Date(record.createdAt)):'—',serverSequence:0});
+ }
+ const items=sourceMessages.map((message,index)=>{
+  const initial=message.messageType==='首条反馈';
+  return {...message,__index:index,__initial:initial,messageType:initial?(record.status==='已撤回'?'首次反馈（已撤回）':'提交'):message.messageType};
+ });
+ items.sort((a,b)=>(Date.parse(b.createdAt||'')||0)-(Date.parse(a.createdAt||'')||0)||(b.serverSequence||0)-(a.serverSequence||0)||(b.__index||0)-(a.__index||0));
+ if(!items.length)return '';
+ return '<section class="hf-card hf-conversation-card"><h3>沟通记录</h3><div class="hf-timeline">'+items.map(message=>{
+  const removed=!message.__initial&&(!!message.deleted||!!message.withdrawn);
+  const body=removed?(message.messageType==='回复'?'该回复已删除':'该消息已撤回'):message.content;
+  const attachments=removed?[]:(message.attachments||[]);
+  const time=message.displayTime||(message.createdAt?timeLabel(new Date(message.createdAt)):'—');
+  return '<article class="hf-message'+(message.__initial&&record.status==='已撤回'?' hf-message-withdrawn':'')+'"><header class="hf-message-header"><div class="hf-message-meta"><b>'+esc(message.authorNameSnapshot||'提交人')+'</b><span>'+esc(message.messageType||'沟通消息')+'</span></div><time>'+esc(time)+'</time></header><p>'+esc(body||'')+'</p>'+renderAttachments(attachments)+'</article>';
+ }).join('')+'</div></section>';
+}
+function renderFeedbackDetail(record){detailImages=[];detailKey=record.feedbackNo;const follow=canFollowUp(record),withdraw=canWithdraw(record);$('fbd-body').innerHTML=renderFeedbackSummary(record)+renderMessageTimeline(record)+'<div class="hf-detail-actions"><button type="button" class="hf-primary hf-detail-action"'+(follow?'':' disabled aria-disabled="true"')+' onclick="hfOpenFollowUp(\''+esc(record.feedbackNo)+'\')">追问</button><button type="button" class="hf-secondary hf-detail-action"'+(withdraw?'':' disabled aria-disabled="true"')+' onclick="hfRequestWithdraw(\''+esc(record.feedbackNo)+'\')">撤回</button></div>';}
+window.openFbDetail=function(feedbackNo){const record=records[feedbackNo];if(!canReadAsSubmitter(record)){notify('该反馈记录不可查看');return;}renderFeedbackDetail(record);go('sc-fbdetail');};
+window.hfPreview=function(i){const image=detailImages[i]||(records[detailKey]?.attachments||[])[i]?.previewSrc;if(image)show('反馈图片','<img class="hf-image-large" src="'+esc(image)+'" alt="反馈图片大图">');};
+window.fbShot=function(){hfPreview(0);};
+window.hfRequestWithdraw=function(feedbackNo){const record=records[feedbackNo||detailKey];if(!canWithdraw(record)){notify('仅待回复且尚无处理方回复的反馈可以撤回');return;}detailKey=record.feedbackNo;show('撤回这条消息？','<p class="hf-withdraw-copy">撤回后将不再等待该消息的回复，日志保留操作痕迹。</p><div class="hf-form-actions"><button type="button" class="hf-secondary" onclick="hfClose()">取消</button><button type="button" class="hf-primary" onclick="hfConfirmWithdraw()">确定</button></div>');};
+window.hfConfirmWithdraw=function(){const record=records[detailKey];if(!canWithdraw(record)){hfClose();notify('反馈状态已变化，暂不能撤回');return;}const now=new Date(),occurredAt=now.toISOString(),previousVersion=record.version||1;record.withdrawal={withdrawnAt:occurredAt,actorAccountId:actor.accountId,actorNameSnapshot:actor.nameSnapshot,reason:null};record.status='已撤回';record.updatedAt=occurredAt;record.version=previousVersion+1;record.auditEvents??=[];record.auditEvents.push({eventId:record.feedbackNo+'-EVT-WITHDRAW-'+record.version,feedbackNo:record.feedbackNo,actorAccountId:actor.accountId,actorNameSnapshot:actor.nameSnapshot,actorRole:role,sourceChannel:'mini-program',action:'feedback_withdrawn',occurredAt,result:'success',previousVersion,newVersion:record.version,requestId:'DEMO-REQ-'+record.feedbackNo+'-WITHDRAW-'+record.version});hfClose();renderFeedbackDetail(record);renderList();notify('反馈已撤回');};
+window.hfOpenFollowUp=function(feedbackNo){const record=records[feedbackNo||detailKey];if(!canFollowUp(record)){notify('当前反馈状态不支持追问');return;}detailKey=record.feedbackNo;detailImages=[];followUpDraft=[];followUpBusy=false;const context=renderFeedbackSummary(record)+renderMessageTimeline(record);show('追问','<div class="hf-followup-context">'+context+'</div><section class="hf-card hf-followup-form"><div class="hf-submit-label"><i></i><span>追问内容</span><small>必填</small></div><div class="hf-submit-text-wrap"><textarea id="hf-followup-content" rows="5" maxlength="1000" placeholder="请输入追问内容或补充说明" oninput="hfFollowUpCount(this)"></textarea><span id="hf-followup-count">0/1000</span></div></section><section class="hf-card hf-followup-attachments"><div class="hf-submit-label"><i></i><span>附件图片</span><small>最多 9 张，每张不超过 10MB</small></div><div id="hf-followup-uploads" class="hf-submit-upload-grid"></div><input id="hf-followup-file" type="file" accept="image/jpeg,image/png" multiple hidden onchange="hfReadFollowUpFiles(this)"></section><div class="hf-form-actions"><button type="button" class="hf-secondary" onclick="hfClose()">取消</button><button type="button" class="hf-primary" id="hf-followup-submit" onclick="hfSubmitFollowUp()">提交</button></div>');renderFollowUpUploads();};
+window.hfFollowUpCount=function(input){const counter=$('hf-followup-count');if(counter)counter.textContent=Array.from(input.value).length+'/1000';};
+window.hfReadFollowUpFiles=async function(input){const session=++followUpSession,feedbackNo=detailKey,submit=$('hf-followup-submit');followUpBusy=true;if(submit)submit.disabled=true;try{for(const file of input.files){if(session!==followUpSession||feedbackNo!==detailKey)return;if(followUpDraft.length>=9){notify('最多上传9张图片');break;}if(!/^image\/(jpeg|png)$/.test(file.type)){notify('请选择 JPG、JPEG 或 PNG 图片');continue;}if(file.size>10*1024*1024){notify('单张图片不能超过10MB');continue;}const previewSrc=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file);});if(session!==followUpSession||feedbackNo!==detailKey)return;followUpDraft.push({previewSrc,fileName:file.name,mimeType:file.type,byteSize:file.size});}}catch{if(session===followUpSession)notify('图片读取失败，请重试');}finally{input.value='';if(session===followUpSession){followUpBusy=false;const button=$('hf-followup-submit');if(button)button.disabled=false;renderFollowUpUploads();}}};
+window.renderFollowUpUploads=function(){const wrap=$('hf-followup-uploads');if(!wrap)return;wrap.innerHTML=followUpDraft.map((item,index)=>'<div class="hf-upload-item"><img src="'+esc(item.previewSrc)+'" alt="待发送图片"><button type="button" aria-label="移除第'+(index+1)+'张图片" onclick="hfRemoveFollowUpImage('+index+')">×</button></div>').join('')+(followUpDraft.length<9?'<button type="button" class="hf-upload-add" aria-label="添加图片" onclick="document.getElementById(\'hf-followup-file\').click()">＋</button>':'');};
+window.hfRemoveFollowUpImage=function(index){followUpDraft.splice(index,1);renderFollowUpUploads();};
+window.hfSubmitFollowUp=function(){const record=records[detailKey],input=$('hf-followup-content'),text=input?.value.trim()||'';if(!canFollowUp(record)){notify('反馈状态已变化，暂不能提交追问');return;}if(!text){notify('请填写追问内容');input?.focus();return;}if(Array.from(input.value).length>1000){notify('追问内容最多1000字');input.focus();return;}if(followUpBusy){notify('图片仍在读取，请稍候');return;}if(followUpDraft.length>9||followUpDraft.some(item=>item.byteSize>10*1024*1024||!/^image\/(jpeg|png)$/.test(String(item.mimeType||'')))){notify('附件格式、数量或大小不符合要求');return;}const now=new Date(),occurredAt=now.toISOString(),previousVersion=record.version||1,messageId=record.feedbackNo+'-MSG-'+String(record.messages.length+1).padStart(3,'0'),requestId='DEMO-REQ-'+record.feedbackNo+'-FOLLOWUP-'+(previousVersion+1),attachments=followUpDraft.map((item,index)=>attachmentRef({feedbackNo:record.feedbackNo,messageId,index,fileName:item.fileName,mimeType:item.mimeType,byteSize:item.byteSize,previewSrc:item.previewSrc,localPreview:true},occurredAt));record.messages.push({messageId,feedbackNo:record.feedbackNo,messageType:'追问',authorAccountId:actor.accountId,authorRole:role,authorNameSnapshot:actor.nameSnapshot,receiverAccountId:null,receiverOrganizationId:record.receiverOrganizationId,content:text,attachments,serverSequence:record.messages.length+1,createdAt:occurredAt,displayTime:timeLabel(now),version:1,readFact:'未知',withdrawn:false,deleted:false,requestId});record.updatedAt=occurredAt;record.status='待回复';record.version=previousVersion+1;record.auditEvents??=[];record.auditEvents.push({eventId:record.feedbackNo+'-EVT-FOLLOWUP-'+record.version,feedbackNo:record.feedbackNo,messageId,actorAccountId:actor.accountId,actorNameSnapshot:actor.nameSnapshot,actorRole:role,sourceChannel:'mini-program',action:'feedback_followup_added',occurredAt,result:'success',previousVersion,newVersion:record.version,requestId});hfClose();renderFeedbackDetail(record);renderList();notify('追问已提交');};;function bindUploadInput(session){$('hf-file').addEventListener('change',async e=>{const submit=$('hf-submit');if(submit)submit.disabled=true;try{for(const file of e.target.files){if(session!==uploadSession)return;if(upload.length>=9){notify('最多上传 9 张图片');break;}if(!/^image\/(jpeg|png)$/.test(file.type)){notify('请选择图片文件');continue;}if(file.size>10*1024*1024){notify('单张图片不能超过 10 MB');continue;}const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file);});if(session!==uploadSession)return;upload.push({previewSrc:data,fileName:file.name,mimeType:file.type,byteSize:file.size});formDirty=true;}}catch{if(session===uploadSession)notify('图片读取失败，请重试');}finally{e.target.value='';if(session===uploadSession){const currentSubmit=$('hf-submit');if(currentSubmit)currentSubmit.disabled=false;if(!overlay.hidden)renderUploads();}}});}
+ window.feedbackSheet=function(){
+  formDirty=false;type='问题反馈';upload=[];const session=++uploadSession;
+  showFeedbackPage();bindUploadInput(session);renderUploads();hfCountContent($('fb-txt'),false);
+ }; window.hfType=function(button,value){type=value;formDirty=true;dialog.querySelectorAll('.hf-submit-types button').forEach(b=>{const selected=b===button;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected));});};
+ window.hfCountContent=function(input,markDirty=true){const count=Array.from(input.value).length;const counter=$('fb-count');if(counter)counter.textContent=count+'/500';if(markDirty)formDirty=true;};
+ function renderUploads(){$('hf-uploads').innerHTML=upload.map((item,i)=>'<div class="hf-upload-item"><img src="'+esc(item.previewSrc)+'" alt="待提交截图"><button aria-label="移除第'+(i+1)+'张图片" onclick="hfRemoveUpload('+i+')">×</button></div>').join('')+(upload.length<9?'<button class="hf-upload-add" aria-label="添加图片" onclick="document.getElementById(\'hf-file\').click()">＋</button>':'');} window.hfRemoveUpload=function(i){upload.splice(i,1);formDirty=true;renderUploads();};
+ window.feedbackSubmit=function(){
+  const input=$('fb-txt'),text=input.value.trim();if(!text){notify('请填写反馈内容');input.focus();return;}if(Array.from(input.value).length>500){notify('反馈内容最多500字');input.focus();return;}
+  const now=new Date(),createdAt=now.toISOString(),feedbackNo='DEMO-'+(role==='teacher'?'T':'P')+'-FB-'+now.getTime(),messageId=feedbackNo+'-MSG-001',requestId='DEMO-REQ-'+feedbackNo+'-CREATE',schoolName=role==='parent'&&typeof curKid!=='undefined'&&typeof kidInfo!=='undefined'?((kidInfo[curKid]||[])[4]||'市实验一小'):'市实验一小',school=schoolByName(schoolName),student=role==='parent'?studentSnapshot():null,receiver=serviceFor(school.schoolNameSnapshot);
+  const attachments=upload.map((item,index)=>attachmentRef({feedbackNo,messageId,index,fileName:item.fileName,mimeType:item.mimeType,byteSize:item.byteSize,previewSrc:item.previewSrc,localPreview:true},createdAt));
+  const firstMessage={messageId,feedbackNo,messageType:'首条反馈',authorAccountId:actor.accountId,authorRole:role,authorNameSnapshot:actor.nameSnapshot,receiverAccountId:null,receiverOrganizationId:receiver.receiverOrganizationId,content:text,attachments,serverSequence:1,createdAt,displayTime:timeLabel(now),version:1,readFact:'已读',withdrawn:false,deleted:false,requestId};
+  records[feedbackNo]={feedbackNo,sourceRole:role,sourceChannel:'mini-program',submitterAccountId:actor.accountId,submitterNameSnapshot:actor.nameSnapshot,submitterPhoneSnapshot:actor.phoneSnapshot,regionId:school.regionId,regionNameSnapshot:school.regionNameSnapshot,schoolId:school.schoolId,schoolNameSnapshot:school.schoolNameSnapshot,studentId:student?.studentId||null,studentNameSnapshot:student?.studentNameSnapshot||null,studentSnapshot:student,feedbackType:type,title:null,firstContent:text,attachments,createdAt,updatedAt:createdAt,status:'待回复',version:1,receiverRole:receiver.receiverRole,receiverOrganizationId:receiver.receiverOrganizationId,receiverOrganizationName:receiver.receiverOrganizationName,receiverAccountId:null,receiverHistory:[{assignmentId:feedbackNo+'-ASG-001',fromOrganizationId:null,toOrganizationId:receiver.receiverOrganizationId,toRole:receiver.receiverRole,schoolConfigVersion:'DEMO-SCHOOL-CONFIG-V1',reason:'首次提交受理分配',assignedAt:createdAt,eventId:feedbackNo+'-EVT-ASSIGN-001'}],withdrawal:null,deletion:null,messages:[firstMessage],notifications:[],auditEvents:[{eventId:feedbackNo+'-EVT-CREATE',feedbackNo,messageId,actorAccountId:actor.accountId,actorNameSnapshot:actor.nameSnapshot,actorRole:role,sourceChannel:'mini-program',action:'feedback_created',occurredAt:createdAt,result:'success',previousVersion:null,newVersion:1,requestId}],requestId};
+  order.unshift(feedbackNo);emptyPreview=false;filter='all';formDirty=false;hfClose(true);go('sc-fblist');renderList();notify('反馈已提交（离线演示，编号仅供原型展示）');
+ }; const originalGo=window.go;window.go=function(id){if(!overlay.hidden&&!hfClose())return;originalGo(id);if(id==='sc-fblist')renderList();};
+ window.hfBackToMe=()=>{
+  if(typeof window.go!=='function')return;
+  window.go('sc-me');
+  if(location.hash==='#sc-me'){
+   const url=new URL(location.href);
+   url.searchParams.delete('view');
+   url.searchParams.delete('service');
+   history.replaceState(null,'',url.pathname+url.search+url.hash);
+  }
+ };
+ window.csEntryOn=()=>false;window.applyCsEntry=()=>{$('help-cs-btn').style.display='none';};window.toggleCsEntry=()=>{};
+ const description=`「我的」Tab 保持第一期原样。本页FAQ与帮助内容沿用同一套Web配置回显；教师和家长使用当前身份对应的客服数据。
+【客服电话】客服集合为空时点击客服电话不打开弹窗并提示“暂无客服信息”；有1名或多名客服时点击均打开“联系客服”弹窗，展示全部客服姓名、联系电话、工作时间和拨打按钮，不展示平台客服或代理商客服标签。客服姓名与联系电话同行，工作时间显示在下一行，拨打按钮与姓名和联系电话行垂直对齐。稳定排序为代理商客服优先于平台客服；同类按客服姓名拼音升序，再按联系电话升序；字段仍完全相同的记录保留来源顺序。拨打在离线原型中只模拟事件。
+【反馈建议】反馈演示按教师、家长角色分别说明。反馈编号是唯一记录ID；状态仅为待回复、已回复、已撤回，新记录初态为待回复。提交后反馈正文、附件和已发消息均不可修改；详情只有“追问”和符合条件时的“撤回”操作。沟通时间线展示首条提交动作、公开处理回复与追问，按发生时间倒序排列，较新的消息在上；同一时间按服务端消息顺序倒序。已撤回记录在原始提交条目标记状态并保留正文。详情不展示学校或学生快照。在线客服不属于本反馈优化范围。刷新后本地模拟数据重置；真实登录鉴权、服务端编号/权限、附件存储、通知和并发控制未接入。`;
+ const roleScope=role==='teacher'
+  ?'教师本人列表按当前教师角色+提交账号查询；不按学校过滤本人记录，同校其他教师账号不可见。教师记录不关联学生。'
+  :'家长本人列表按当前家长角色+提交账号查询；不按当前孩子过滤本人记录，同家庭其他家长账号不可见。孩子解绑、转校、移出当前列表或超过既有一年入口期后，家长仍可查本人历史记录。';
+ const submitDemo=role==='teacher'
+  ?'提交时由服务端复验当前登录账号、教师身份、有效学校任职关系及反馈提交权限；此离线演示不接真实权限点，也不推断独立权限码。'
+  :'提交时依据当前选中孩子核验监护人关联和当时学籍状态，并保存学生/学校/班级/状态快照；详情不回显快照。离线样例只演示快照字段，毕业/离校状态是否允许新提交及具体枚举需对齐学校Web数据字典，不能以旧快照替代服务端复验。';
+ const detailDescription=`反馈详情先展示反馈编号；反馈类型与当前状态处于同一行，状态靠右对齐。完整首条内容和图片在反馈信息卡中展示。沟通记录展示首个“提交”动作和所有公开回复/追问，按发生时间倒序；消息时间在该消息行右侧对齐。已撤回记录显示原始提交内容，并将该动作标记为“首次反馈（已撤回）”。详情不单独展示提交时间字段，不回显学校/学生快照或内部处理信息。已提交的正文、附件和消息不可修改。待回复且无处理方回复时可撤回，撤回只需确认；待回复和已回复时可追问，在原反馈编号下追加，已回复追问后回到待回复。首条正文最多500字，追问最多1000字；每条消息最多9张图片、每张不超过10MB。不可执行的追问/撤回按钮仍显示并置灰。`;
+ if(typeof demoInfo!=='undefined'){
+  demoInfo['sc-help']={t:'帮助与反馈',d:description,a:[['异常场景 · 无客服',"hfSetService('none')"],['场景 · 单客服',"hfSetService('single')"],['场景 · 多客服',"hfSetService('multi')"]]};
+  demoInfo['sc-fblist']={t:'我的反馈',d:`${roleScope}${submitDemo}筛选和标签为待回复、已回复、已撤回。点击本人记录进入详情。三条本地样例分别演示待回复、已回复、已撤回；刷新后数据重置。`,a:[['切换空态预览','fbEmptyToggle()']]};
+  const demoPrefix='DEMO-'+(role==='teacher'?'T':'P')+'-FB-2026-';
+  demoInfo['sc-fbdetail']={t:'反馈详情',d:detailDescription,a:[['打开待回复样例',"openFbDetail('"+demoPrefix+"001')"],['打开已回复样例',"openFbDetail('"+demoPrefix+"002')"],['打开已撤回样例',"openFbDetail('"+demoPrefix+"003')"]]};
+ }
+function listResponse(){const items=visibleRecords().map(record=>({feedbackNo:record.feedbackNo,sourceRole:record.sourceRole,status:record.status,feedbackType:record.feedbackType,title:record.title,contentSummary:record.firstContent.slice(0,80),createdAt:record.createdAt,updatedAt:record.updatedAt,studentSnapshot:record.studentSnapshot,version:record.version}));return {items,total:items.length,pageNo:1,pageSize:20,hasMore:false,requestId:'DEMO-REQ-LIST-'+role+'-'+Date.now(),scope:{sourceRole:role,submitterAccountId:actor.accountId}};}
+ window.ZXH_HELP_PREVIEW={role,getRecords:()=>visibleRecords().map(record=>JSON.parse(JSON.stringify(record))),getListResponse:listResponse,getScene:()=>scene,setServices:agents=>{serviceOverride=agents;renderService();}};
+ renderHelp();renderList();if(location.hash==='#sc-fbdetail')openFbDetail(order[0]);
+})();
+
+
+
+
+ const previewParams=new URLSearchParams(location.search);if(previewParams.get('view')==='help')requestAnimationFrame(()=>window.go?.('sc-help'));
