@@ -51,8 +51,8 @@
 
 | 资料 | 当前值 | 用途 |
 |---|---|---|
-| 学校 Web 菜单入口 | [校务管理→家校通知（固定版本 v0.57）](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice) | 学校主菜单下的通知入口、页签与框架 |
-| 通知页面源 | [学校 Web 通知页面 v0.57](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=school&school=s1&embedded=1) | 当前学校通知页面、发布、统计和预览 |
+| 学校 Web 菜单入口 | [校务管理→家校通知（当前基线 v0.62）](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.62/index.html?page=family-notice) | 学校主菜单下的通知入口、页签与框架 |
+| 通知页面源 | [学校 Web 通知页面 V25](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=school&school=s1&embedded=1) | 当前学校通知页面、发布、统计和预览 |
 | 基线项目 | 学校 Web 项目 | 菜单、外层页面框架、页签归学校 Web 基线管理 |
 | 历史参考截图 | 截图/学校Web-v0.55-列表.png | 旧版页面对照图，不作为 V25 当前评审依据 |
 
