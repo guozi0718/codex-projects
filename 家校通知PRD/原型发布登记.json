@@ -5,14 +5,14 @@
   "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "70a519ece682c0d9eb9ee7bb9e8b10755afc6e39",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/70a519ece682c0d9eb9ee7bb9e8b10755afc6e39",
+  "prototypeCommit": "8478945d4816f752518a0758f9fc5d691a4dcf5a",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/8478945d4816f752518a0758f9fc5d691a4dcf5a",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "b9418f281e77c44ae1e159d6396fab2a812130fce3518c95cb08df00f5cef0bd",
+      "app.js": "e9f152462a35b45699d59135e92a48bde9d3d5d1883832a4ea36952ec666cbea",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -23,13 +23,13 @@
       "assets/安全课堂.mp4": "cd73c4ad98250fe2c232b859a057a590e2277fc0e4acccb003a24141da63ee4d",
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
-      "core.js": "6fefa8f3f82764718ee374847ce08bd89641b2892b9e6e17bc1e7e3b56fcd0e5",
-      "index.html": "af9f0c811c1f1f1dfcf8465ef8d3de0a249b9ee1f76aed7aa4bab3b76ed87967",
+      "core.js": "5243b0d67c8cf6d3cc24b9db7ab10f801dec97587e14819b3e2a4ee5e4c55d05",
+      "index.html": "276a6a7edabedf3752c91c9930fbc7ffc438e4584b78a23418974703bedfcb08",
       "styles.css": "0ec6092338b5021036ddcc41bcf7f7bbd97acde5964e733f6ecb2b85005aec1e",
-      "定版信息.md": "7141dea454ecfafa7db05921f444ee2ab99a76fd10c7d1fad29175494e3a94b2",
-      "版本说明.md": "f1a3b03db6f3894e78681c77a3e60a268e8938e6e9e09bdcd4ae4120d023e84d"
+      "定版信息.md": "cac84ee534b7bb55876d88d16ac4e2939042b76781260022cd34a820e044ab0e",
+      "版本说明.md": "a53127e063b085de2c3843a454c1ed58e7de754ef409aa93c9f88fc922f9875f"
     },
-    "releaseNote": "版本说明.md；三个 Web 端预览标题统一为“通知预览”；编辑与删除无权限状态的按钮及悬停提示已对齐；代理商和运营后台主按钮显示“代发通知”。"
+    "releaseNote": "版本说明.md；代理商列表仅显示同机构成员代发通知，移除来源筛选和列表列，新增目标学校与发布时操作人姓名快照；运营后台可查看所有学校和来源的通知但保留原管理范围；三个Web端的未读/已读及确认/签字人数按查收方式显示数字或“--”。"
   },
   "webReleases": [
     {
@@ -106,7 +106,10 @@
     "ordinaryNoticeWebEditing": "按一个文本内容块编辑，保存后仍为普通通知",
     "schoolVisibility": "学校可见本校各来源通知，不区分个人/学校名义；原编辑权限范围不变",
     "delegatedIdentity": "代理商与运营后台代发固定以学校名义通知",
-    "webDrafts": "代理商 Web、运营后台不提供草稿"
+    "webDrafts": "代理商 Web、运营后台不提供草稿",
+    "agentVisibility": "同一代理商机构成员共享全部代发通知；代理商端不显示通知来源筛选或列表列，显示目标学校和发布时操作人姓名快照。",
+    "operationsVisibility": "运营后台可查看所有学校、所有发布人和来源的通知；发布、编辑、删除权限仍按原账号管理范围。",
+    "webListReceiptCounts": "三个 Web 端未读、已读人数始终显示数字；已确认和已签字人数仅在对应查收方式下显示数字，其他方式显示“--”。"
   },
   "knownPrototypeDifferences": [],
   "miniProgramPrototypeModified": false,
@@ -114,7 +117,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25 原型与 PRD V0.8 已发布；三个 Web 端预览标题、操作列权限状态和代发按钮文案已按最新批注更新。需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25 已发布；代理商、运营后台和学校 Web 的通知列表范围与人数列显示已按本轮确认更新。PRD V0.8 已同步；需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -127,8 +130,11 @@
     "A页班级筛选显示年级与班级，返回A页保留汇总筛选；B页未关联家长标记清晰可见。",
     "代理商、运营后台列表主按钮统一显示“代发通知”。",
     "学校、代理商、运营后台列表的发布时间和创建时间均显示“YYYY-MM-DD HH:mm”。",
-    "运营后台当前 v0.70 基线菜单“家校通知”入口指向 V25 通知功能。"
+    "运营后台当前 v0.70 基线菜单“家校通知”入口指向 V25 通知功能。",
+    "代理商列表仅显示同机构代理商成员代发的通知，来源筛选和列表列移除；新增目标学校与发布时操作人姓名快照。",
+    "运营后台列表可查看所有学校和发布来源的通知，但不扩大当前账号原有编辑、删除范围。",
+    "三端 Web 列表的未读、已读、已确认、已签字人数按查收方式统一显示数字或“--”。"
   ],
-  "repositoryHead": "70a519ece682c0d9eb9ee7bb9e8b10755afc6e39",
-  "metadataCommit": "5a67b425d5565f84a588b98a727ab9296fb42842"
+  "repositoryHead": "8478945d4816f752518a0758f9fc5d691a4dcf5a",
+  "metadataCommit": "8478945d4816f752518a0758f9fc5d691a4dcf5a"
 }
