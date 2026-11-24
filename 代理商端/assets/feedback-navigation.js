@@ -1,7 +1,99 @@
-/* Query dialog adapter. No draft body or contact data is placed in the URL. */
-(()=>{'use strict';let queued=false,restoring=false;const E=FeedbackV5,W=FeedbackWebV5;
-const isPage=p=>['feedback.replies','feedback.detail','school-feedback','agent-feedback'].includes(p);
-function changed(){if(queued||restoring||window.QueryRouter?.isApplying())return;queued=true;queueMicrotask(()=>{queued=false;if(restoring||!window.QueryRouter||QueryRouter.isApplying())return;const q=QueryRouter.parameters();if(!isPage(q.page))return;delete q.dialog;delete q.view;delete q.id;delete q.message;const c=W.U.context||{};if(W.U.dialog){q.dialog=W.U.pending?'confirm':c.kind||(c.id?'detail':'notice-result');if(c.id)q.id=c.id;if(c.messageId||c.replyId)q.message=c.messageId||c.replyId;if(q.dialog==='confirm'){const prev=W.U.pending?.context||{};q.view=['withdraw','withdraw-follow'].includes(c.kind)?c.kind:prev.kind||'detail';if(prev.id)q.id=prev.id}}if(new URLSearchParams(q).toString()!==location.search.slice(1))QueryRouter.write(q)})}
-function rememberList(){if(restoring||!window.QueryRouter||QueryRouter.isApplying()||!W.U.host?.isConnected)return;const p=QueryRouter.parameters().page;if(isPage(p))sessionStorage.setItem('feedback-list-'+E.role+'-'+p,JSON.stringify({q:W.U.q,page:W.U.page,size:W.U.size}))}
-function restore(q,options={}){restoring=true;try{let saved;try{saved=JSON.parse(sessionStorage.getItem('feedback-list-'+E.role+'-'+q.page))}catch{}if(saved&&!options.resetList){if(saved.q?.reporter==='不存在的反馈人')saved.q={...saved.q,reporter:''};W.U.q=FeedbackRegion.clean(saved.q||{});W.U.selection={...W.U.q};W.U.page=saved.page||1;W.U.size=[10,20,50,100,500,1000].includes(saved.size)?saved.size:10;W.draw()}W.close(true);if(!q.dialog&&!q.view){if(q.id||q.message)throw Error('记录参数缺少对应视图');return}const kind=q.dialog||q.view;const incoming=E.role==='enterprise'&&q.page==='feedback.replies'||E.role==='agent'&&q.page==='school-feedback';const own=E.role==='school'&&q.page==='school-feedback'||E.role==='agent'&&q.page==='agent-feedback';const allowedCreate=own;if(kind==='create'){if(!allowedCreate)throw Error('当前页面不可新增反馈');W.form('create');return}if(kind==='notice-result')return;if(kind==='withdraw-messages'){if(!own||!q.id)throw Error('无权撤回此反馈');W.details(q.id,true);return}if(kind==='delete-messages'){if(!incoming||!q.id)throw Error('无权删除此反馈回复');W.details(q.id,'delete');return}if(kind==='confirm'){if(q.view==='delete-messages'){if(!incoming||!q.id)throw Error('无权删除此反馈回复');W.details(q.id,'delete');if(q.message)W.handle('delete-message',q.message);return}if(q.view==='withdraw-messages'){if(!own||!q.id)throw Error('无权撤回此反馈');W.details(q.id,true);if(q.message)W.handle('withdraw-message',q.message);return}if(q.view==='withdraw'){if(!own||!q.id)throw Error('当前页面不可撤回反馈');W.handle('remove',q.id);return}if(q.view==='report'&&E.role==='agent'&&q.page==='school-feedback'){if(!q.id)throw Error('缺少反馈记录参数');const r=E.ticket(q.id);if(!r||!['school','teacher','parent'].includes(r.kind)||!E.managed(r)||r.deleted||r.status==='已撤回')throw Error('当前页面不可抄送此反馈');W.form('report',q.id);return}if(q.view==='relay'&&E.role==='agent'&&q.page==='agent-feedback'){if(!q.id)throw Error('缺少反馈记录参数');const r=E.ticket(q.id),source=r?.sourceId?E.ticket(r.sourceId):null;if(!r||r.kind!=='agent'||!source||!['school','teacher','parent'].includes(source.kind)||!E.managed(source)||source.deleted||source.status==='已撤回'||r.deleted||r.status==='已撤回'||r.sourceWithdrawn)throw Error('当前页面不可转达此记录');if(!E.relayChoices(r).length)throw Error('运营尚未回复，暂时不能转达');W.form('relay',q.id);return}if(q.view==='reply'&&incoming){if(!q.id)throw Error('缺少反馈记录参数');W.form('reply',q.id);return}if(q.view==='follow'&&own){if(!q.id)throw Error('缺少反馈记录参数');W.form('follow',q.id);return}if(q.view==='create'&&allowedCreate){W.form('create');return}if(q.id){W.details(q.id);return}throw Error('确认操作参数无效')}if(!q.id&&kind!=='create')throw Error('缺少反馈记录参数');if(kind==='notify-ops'||kind==='notice-ops-result')throw Error('当前页面未开放通知运营端');if(kind==='create'){if(!allowedCreate)throw Error('当前页面不可新增反馈');W.form('create');return}const t=E.ticket(q.id);if(!t||!E.canView(t))throw Error('反馈记录不存在或无权访问');const m=q.message?t.messages.find(x=>x.id===q.message):null;if(kind==='detail'){W.details(q.id);return}if(kind==='report'){if(E.role!=='agent'||q.page!=='school-feedback'||!['school','teacher','parent'].includes(t.kind)||!E.managed(t)||t.deleted||t.status==='已撤回')throw Error('当前页面不可抄送此反馈');W.form('report',q.id);return}if(kind==='relay'){const source=t.sourceId?E.ticket(t.sourceId):null;if(E.role!=='agent'||q.page!=='agent-feedback'||t.kind!=='agent'||!source||!['school','teacher','parent'].includes(source.kind)||!E.managed(source)||source.deleted||source.status==='已撤回'||t.deleted||t.status==='已撤回'||t.sourceWithdrawn)throw Error('当前页面不可转达此记录');if(!E.relayChoices(t).length)throw Error('运营尚未回复，暂时不能转达');W.form('relay',q.id);return}if(kind==='reply'){if(!incoming||!E.incoming(t))throw Error('当前页面不可回复此反馈');W.form('reply',q.id);return}if(kind==='follow'){if(!own||!E.submitterScope(t)||t.deleted)throw Error('当前页面不可追问此反馈');W.form('follow',q.id);return}if(kind==='remove'){if(!own)throw Error('当前页面不可撤回反馈');W.handle('remove',q.id);return}if(kind==='logs'){if(!own)throw Error('当前页面不可查看操作日志');W.operationLogs(q.id);return}if(kind==='notify-ops'||kind==='notice-ops-result')throw Error('当前页面未开放通知运营端');if(kind==='notify'){if(!incoming||!E.incoming(t))throw Error('当前页面不可通知此反馈');W.notice(q.id,q.message||'');return}if(kind==='delete-reply'){if(!incoming||!m)throw Error('删除回复参数无效');W.handle('delete-reply',q.message);return}if(kind==='notice-preview'){if(E.role!=='agent'||q.page!=='school-feedback')throw Error('当前页面不可查看通知效果');const n=E.data.notices.find(x=>x.id===q.message&&x.ticketId===q.id);if(!n)throw Error('通知记录不存在');previewHTML(n);return}throw Error('反馈弹窗不存在')}finally{restoring=false}}
-window.FeedbackNavigation={changed,restore,isPage,rememberList};})();
+/* Query dialog adapter. No message body or contact data is stored in the URL. */
+(()=>{'use strict';
+const E=FeedbackV5,W=FeedbackWebV5;
+let queued=false,restoring=false;
+const pages=['feedback.replies','feedback.detail','school-feedback','agent-feedback'];
+const isPage=page=>pages.includes(page);
+function changed(){
+  if(queued||restoring||window.QueryRouter?.isApplying())return;
+  queued=true;
+  queueMicrotask(()=>{
+    queued=false;
+    if(restoring||!window.QueryRouter||QueryRouter.isApplying())return;
+    const q=QueryRouter.parameters();
+    if(!isPage(q.page))return;
+    for(const key of ['dialog','view','id','message'])delete q[key];
+    const context=W.U.context||{};
+    if(W.U.dialog){
+      if(W.U.pending){
+        const previous=W.U.pending.context||{};
+        q.dialog='confirm';
+        q.view=previous.kind||'detail';
+        if(previous.id)q.id=previous.id;
+      }else{
+        q.dialog=context.kind||(context.id?'detail':'');
+        if(context.id)q.id=context.id;
+        if(context.messageId||context.replyId)q.message=context.messageId||context.replyId;
+      }
+    }
+    if(new URLSearchParams(q).toString()!==location.search.slice(1))QueryRouter.write(q);
+  });
+}
+function rememberList(){
+  if(restoring||!window.QueryRouter||QueryRouter.isApplying()||!W.U.host?.isConnected)return;
+  const page=QueryRouter.parameters().page;
+  if(isPage(page))sessionStorage.setItem('feedback-list-'+E.role+'-'+page,JSON.stringify({q:W.U.q,page:W.U.page,size:W.U.size}));
+}
+function restore(q,options={}){
+  restoring=true;
+  try{
+    let saved;
+    try{saved=JSON.parse(sessionStorage.getItem('feedback-list-'+E.role+'-'+q.page))}catch{}
+    if(saved&&!options.resetList){
+      W.U.q=FeedbackRegion.clean(saved.q||{});
+      W.U.selection={...W.U.q};
+      W.U.page=saved.page||1;
+      W.U.size=[10,20,50,100,500,1000].includes(saved.size)?saved.size:10;
+      W.draw();
+    }
+    W.close(true);
+    if(!q.dialog&&!q.view){
+      if(q.id||q.message)throw Error('记录参数缺少对应视图');
+      return;
+    }
+    const kind=q.dialog||q.view;
+    const incoming=(E.role==='enterprise'&&q.page==='feedback.replies')||(E.role==='agent'&&q.page==='school-feedback');
+    const own=(E.role==='school'&&q.page==='school-feedback')||(E.role==='agent'&&q.page==='agent-feedback');
+    if(kind==='notice-result'||kind==='notify')throw Error('通知已改为回复成功后自动触发');
+    if(kind==='create'){
+      if(!own)throw Error('当前页面不可新增反馈');
+      W.form('create');
+      return;
+    }
+    if(kind==='confirm'){
+      if(q.view==='create'&&own){W.form('create');return;}
+      if(!q.id)throw Error('确认操作缺少反馈记录');
+      if(q.view==='reply'&&incoming){
+        const t=E.ticket(q.id);
+        if(!t||!E.incoming(t)||!E.pending(t))throw Error('该记录当前不在待回复状态');
+        W.form('reply',q.id);
+        return;
+      }
+      if(q.view==='follow'&&own){
+        const t=E.ticket(q.id);
+        if(!t||!E.canAskNext(t))throw Error('运营尚未回复，当前不能继续提问');
+        W.form('follow',q.id);
+        return;
+      }
+      W.details(q.id);
+      return;
+    }
+    if(!q.id)throw Error('缺少反馈记录参数');
+    const t=E.ticket(q.id);
+    if(!t||!E.canView(t))throw Error('反馈记录不存在或无权访问');
+    if(kind==='detail'){W.details(q.id);return;}
+    if(kind==='reply'){
+      if(!incoming||!E.incoming(t)||!E.pending(t))throw Error('该记录当前不在待回复状态');
+      W.form('reply',q.id);
+      return;
+    }
+    if(kind==='follow'){
+      if(E.role!=='agent'||q.page!=='agent-feedback'||!E.submitterScope(t)||!E.canAskNext(t))throw Error('只有代理商自有反馈收到运营答复后才能继续提问');
+      W.form('follow',q.id);
+      return;
+    }
+    throw Error('反馈弹窗不存在');
+  }finally{restoring=false;}
+}
+window.FeedbackNavigation={changed,restore,isPage,rememberList};
+})();

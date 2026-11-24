@@ -72,7 +72,7 @@ window.UnifiedPages={
     "family-notice": {
       "title": "家校通知",
       "owner": "学校通知家长",
-      "url": "notice/index.html",
+      "url": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html",
       "self": false,
       "parameters": {
         "role": "agent",
