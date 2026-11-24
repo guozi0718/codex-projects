@@ -5,14 +5,14 @@
   "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "6256b1205dc371ffdfb7dd046e64ac8f0581d1ae",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/6256b1205dc371ffdfb7dd046e64ac8f0581d1ae",
+  "prototypeCommit": "30e1b11d187761d5b228adf5a5e024db8c2c6d2a",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/30e1b11d187761d5b228adf5a5e024db8c2c6d2a",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "d8d140f6eac1010da2bff81f09613842dceb6f754375c29b3a7f43eb6e986a72",
+      "app.js": "0c900b563bc316f4b571ea9e7b558a0185fd856096c8ad402258f9399e835823",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -24,12 +24,12 @@
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
       "core.js": "6fefa8f3f82764718ee374847ce08bd89641b2892b9e6e17bc1e7e3b56fcd0e5",
-      "index.html": "1a51b15293dfd66dd983b469854ae5f66d28792bec306496f0fdfcac452a12d7",
+      "index.html": "4819b89d8d00ce8d8e80802b35ce7fac86dbc8274f6e6c0ddac64b240fdd3277",
       "styles.css": "0ec6092338b5021036ddcc41bcf7f7bbd97acde5964e733f6ecb2b85005aec1e",
       "定版信息.md": "a966a4b7e20ff4c5348529c629f39cc7c87c17bdb425b38a382e030a58252a02",
-      "版本说明.md": "43aa7b8434647a90238242cfebd8afb067c03ecfc41ad0107d8a63cf45888221"
+      "版本说明.md": "87b79f0d404701755d65eae13895793939b218aaab36dee739507a0ab4b1fd71"
     },
-    "releaseNote": "版本说明.md；Web 学生统计 A/B 和教师统计均不显示提醒按钮，三端基线菜单缓存已更新并加载 V25。"
+    "releaseNote": "版本说明.md；代理商和运营后台按钮显示“代发通知”；三端 Web 发布时间和创建时间统一为 YYYY-MM-DD HH:mm。"
   },
   "webReleases": [
     {
@@ -114,7 +114,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25原型与PRD V0.8已提交 GitHub；V25 与基线菜单缓存更新已部署；需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25原型、PRD V0.8及最新 Web 批注已提交 GitHub；Pages 正在部署；需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -124,7 +124,9 @@
     "有权限删除打开确认弹窗，无权限记录显示无权限并禁用",
     "学生统计拆为班级汇总A页、班级明细B页；A页按年级/班级联动，B页按状态/学生姓名模糊筛选，指标同步变化。",
     "学生统计和教师统计Tab均不显示提醒按钮；统计进度按查收方式计算，不新增完成率。",
-    "A页班级筛选显示年级与班级，返回A页保留汇总筛选；B页未关联家长标记清晰可见。"
+    "A页班级筛选显示年级与班级，返回A页保留汇总筛选；B页未关联家长标记清晰可见。",
+    "代理商、运营后台列表主按钮统一显示“代发通知”。",
+    "学校、代理商、运营后台列表的发布时间和创建时间均显示“YYYY-MM-DD HH:mm”。"
   ],
-  "repositoryHead": "cc3f414cbf086b5ee2af2de7dd81a37ebdc869db"
+  "repositoryHead": "30e1b11d187761d5b228adf5a5e024db8c2c6d2a"
 }
