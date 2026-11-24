@@ -1,22 +1,20 @@
 {
-  "release": "v0.61",
-  "status": "静态评审候选（第一期新增，未定版，修改中）",
-  "date": "2026-11-18",
+  "release": "v0.69",
+  "status": "第一期修改中、未定版（GitHub静态评审候选）",
+  "date": "2026-11-23",
   "sourceVersions": {
-    "agent": "v0.59",
-    "notice": "V22"
+    "agent": "v0.65",
+    "notice": "V20"
   },
   "repository": "guozi0718/codex-projects",
-  "entry": "index.html?page=family-notice",
-  "stableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
-  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.61/index.html?page=family-notice",
+  "entry": "index.html?page=cs&content=1",
+  "stableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=cs&content=1",
+  "immutableURL": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.69/index.html?page=cs&content=1",
   "changes": [
-    "沿用代理商端 v0.59 主菜单、页签与页面框架，家校通知功能更新为 V22。",
-    "删除后通知从普通用户页面消失；隐藏留存记录保留内容、发布设置、接收对象、个人回执、操作人和时间。",
-    "截止时间新建时默认空；未设置时仍按发送后30个自然日规则处理。",
-    "Web 一键提醒只提醒汇总未读学生的所有关联家长和未读教师；已读未确认或未签字不提醒，失败不自动重试。",
-    "发布状态顺序保持全部、待发送、已发送、已截止。",
-    "教师和家长小程序原型、模板资料保持原样。"
+    "客服列表在姓名前增加客服类型，显示“平台客服”或“代理商客服”。",
+    "平台客服关联代理商后，同时出现在运营后台和该代理商端客服列表；代理商端只读，运营端可以编辑。",
+    "客服表格内容居中，列宽按内容自适应。",
+    "新增客服姓名占位文字为“请输入客服姓名”。"
   ],
   "files": [
     {
@@ -51,23 +49,23 @@
     },
     {
       "path": "assets/customer-logs.js",
-      "size": 6196,
-      "sha256": "b5ea2dc981c6a19379c6eb7c9c8895b17422a9b725b7a2a18975232b179284aa"
+      "size": 6024,
+      "sha256": "0a0e4d54abfc810769b0128e6fa1a799c515fd964f3b6c9f051d3a60a10df589"
     },
     {
       "path": "assets/customer-model.js",
-      "size": 17332,
-      "sha256": "04ba84868ea9267c6c19725b282541f2db1616ec296cc6fccb7585857fbc1444"
+      "size": 17725,
+      "sha256": "623a30d0794855218b9817d427f5358bba140626a721ffa5e7b90a086365e216"
     },
     {
       "path": "assets/customer-ui.css",
-      "size": 16151,
-      "sha256": "3fed0d216bea55660b33a2e47a8cae37134f9097fb27dbcbdb3567776020101f"
+      "size": 19489,
+      "sha256": "e595136b273a25609dc6016e72421a01708c14696bfe44b3c61687499f70f698"
     },
     {
       "path": "assets/customer-ui.js",
-      "size": 23951,
-      "sha256": "d9975b7c3835249422e5a76328e771a3a773ed0e02a479fa25ce3d078734bf5d"
+      "size": 23473,
+      "sha256": "f64d15d7d267140b1b41fddfc0f6afe8e86d2a423e4d95ee12fb7c6dc5e05ecc"
     },
     {
       "path": "assets/demo-panel.css",
@@ -106,8 +104,8 @@
     },
     {
       "path": "assets/feedback-engine-v5.js",
-      "size": 22416,
-      "sha256": "f8bed43da9125591f20843162dcd5a03ec4f719e582b2cc740ff4c3d6e499131"
+      "size": 22327,
+      "sha256": "39bbf960a009f022f16100685415e6b9f80b7a6cd094db13082b225c0b718768"
     },
     {
       "path": "assets/feedback-family-data.js",
@@ -121,8 +119,8 @@
     },
     {
       "path": "assets/feedback-navigation.js",
-      "size": 5360,
-      "sha256": "5142800dd9bb6be56bda174a77290d953dd998a99f0c802c569fe3fd1326dffd"
+      "size": 6607,
+      "sha256": "7db69e8d9c3bdd399efe8a6642574ecb726cea09f6ce3c8be887b42f85ce779a"
     },
     {
       "path": "assets/feedback-quick-replies.js",
@@ -131,8 +129,8 @@
     },
     {
       "path": "assets/feedback-region.js",
-      "size": 2328,
-      "sha256": "2ecfe9102246c207c36995bfd9622c7f8043bad9ca6790562d0a5366f0d2a5c7"
+      "size": 3865,
+      "sha256": "2701dcae2fd31dcfe6c1f47841dc59e082ce1b87ca8a8f5e30e9c19e347ac13b"
     },
     {
       "path": "assets/feedback-v5.css",
@@ -141,8 +139,8 @@
     },
     {
       "path": "assets/feedback-web-v5.js",
-      "size": 42305,
-      "sha256": "c83e0ff3e2c4d76a834a14743079c2ba7bf7309c5efd9913378aa40cf312ee44"
+      "size": 44851,
+      "sha256": "b861baf25ee7ec9bf458112a8a189080f0357c4c58f056a709dc795fd5cc2430"
     },
     {
       "path": "assets/filter-layout.css",
@@ -187,7 +185,7 @@
     {
       "path": "assets/page-registry.js",
       "size": 3076,
-      "sha256": "fe12db662a0ceac1339d8c99449a754f3bbc8009acf04cba257f3fa7c4bd81ce"
+      "sha256": "337dff0b95b5189d3630f660811ca84848a7caf6a4702010763c7f534e21e64e"
     },
     {
       "path": "assets/presentation-cleanup.js",
@@ -196,8 +194,8 @@
     },
     {
       "path": "assets/query-router.js",
-      "size": 3040,
-      "sha256": "63d9ab02b292eeab7b1bdeff82e5733a695dab625d966d08c094b4f49624c9fd"
+      "size": 3030,
+      "sha256": "356b489d27fd2d4f895ffad0b1e18cebb2799d5aa0053cf6fee7c4ce5fb3bd61"
     },
     {
       "path": "assets/regions-data.js",
@@ -241,13 +239,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size": 529,
-      "sha256": "69051c98763ac17d508456cb449d9a07e0a748d07f3c2cd5259f440fa0225ce7"
+      "size": 593,
+      "sha256": "9e74c6e0a6518b17a75b1695ae9776a7b54a93a4c5bb66da756a75a14c660bad"
     },
     {
       "path": "index.html",
-      "size": 6187,
-      "sha256": "7a36a51da87d0a007fc21206ccf17695cc04d3fec4f91a288073dc57a3dfa283"
+      "size": 6198,
+      "sha256": "eeffa2c56610ba0cde5356d85d70f0affb84124792489fa9125df13f0d8c74db"
     },
     {
       "path": "notice/app.js",
@@ -261,33 +259,33 @@
     },
     {
       "path": "notice/assets/campus.svg",
-      "size": 2077,
-      "sha256": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665"
+      "size": 2090,
+      "sha256": "53a8a430a0b866b1fc87f16a0484cd35f16ab78b97d909ec7ce372ee34717900"
     },
     {
       "path": "notice/assets/demo-panel.css",
-      "size": 8159,
-      "sha256": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e"
+      "size": 8237,
+      "sha256": "18ca66ddb7e97b46466010cebc6a00f970564885024f7054a799f191ffbb956d"
     },
     {
       "path": "notice/assets/demo-panel.js",
-      "size": 17419,
-      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+      "size": 17679,
+      "sha256": "7d86b954c85dab468bd4527998fa434b4260e31d5186fdd32193e784d76930f6"
     },
     {
       "path": "notice/assets/logo.svg",
-      "size": 298,
-      "sha256": "bf62695555b7cbdcde4991e63e12e3bfc10b7ba4abf72410f759b7126b764505"
+      "size": 299,
+      "sha256": "24f214c3433c57fc9ebc3d6c159cdc1fb6a9db1bd8b1c99258f85a0543879998"
     },
     {
       "path": "notice/assets/module-demo.js",
-      "size": 20742,
-      "sha256": "b3fe782ea2314c61d05832f5575b1af9328e276da308fa7d98a54c4cbd7ab86a"
+      "size": 20830,
+      "sha256": "c714cc9d8cfda47139a259c9c915fe7d3627c25f963467a4e656da4fe2d38237"
     },
     {
       "path": "notice/assets/signature.svg",
-      "size": 314,
-      "sha256": "9f8324a3a2588b9d12e6ee7b96161f1e45942778a52a7c89b24051973bcb6271"
+      "size": 315,
+      "sha256": "2438e9d983a187dc9b7904657055b444a58d86691f11d232f0621ac3f552fcf8"
     },
     {
       "path": "notice/assets/安全课堂.mp4",
@@ -296,8 +294,8 @@
     },
     {
       "path": "notice/assets/活动安排.pdf",
-      "size": 746,
-      "sha256": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f"
+      "size": 777,
+      "sha256": "8bdf1a1b3ee2bf8ed537b495c894e99c19dd1d6393f916e0965c651f659fd4d6"
     },
     {
       "path": "notice/assets/轻柔提示音.wav",
@@ -306,8 +304,8 @@
     },
     {
       "path": "notice/core.js",
-      "size": 22743,
-      "sha256": "f0cba8952abf44baff593b4e433d0e2daa2782a3df20421740369950ab094c0d"
+      "size": 22906,
+      "sha256": "e429f88e027067085125e1eafb070bb08e645c92e7a5ec3486b63227d34eeca0"
     },
     {
       "path": "notice/index.html",
@@ -321,8 +319,24 @@
     },
     {
       "path": "README.md",
-      "size": 925,
-      "sha256": "71350359356abef9dec73e61dd29a92feb4d6f2b9b79c3b8a258f3e7862b0854"
+      "size": 664,
+      "sha256": "b4b48fc3959279dc2897ba8f932a1f40fb6aa272b8026924e13d5f1ef69145b1"
+    },
+    {
+      "path": "定版信息.md",
+      "size": 629,
+      "sha256": "2b6ed9f748c61d902ff72da217a79fa42822b92f49cd366c378f87c493cbcd2e"
+    },
+    {
+      "path": "版本说明.md",
+      "size": 629,
+      "sha256": "2b6ed9f748c61d902ff72da217a79fa42822b92f49cd366c378f87c493cbcd2e"
     }
-  ]
+  ],
+  "sourceIndexSHA256": "eeffa2c56610ba0cde5356d85d70f0affb84124792489fa9125df13f0d8c74db",
+  "baseline": "客服管理本地评审候选 v0.68",
+  "publishedAt": "2026-11-24T04:43:48.568Z",
+  "scope": "客服列表增加客服类型字段；列表居中并按内容自适应；平台代理商关联客服在代理商端回显且只读，运营端可编辑；新增客服姓名占位文字统一。",
+  "version": "v0.69",
+  "task": "T-20261123-03-客服列表字段与平台客服回显"
 }

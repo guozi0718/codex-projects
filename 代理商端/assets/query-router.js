@@ -1,5 +1,5 @@
 /* One index.html and explicit validated query parameters. Never executes writes on restore. */
-(()=>{'use strict';let previous=location.href,applying=false;const customerPage=document.body.dataset.end==='agent'?'cs':'customer-service.list',kinds=['create','edit','delete','schools','agents','logs','default','detail'];
+(()=>{'use strict';let previous=location.href,applying=false;const customerPage=document.body.dataset.end==='agent'?'cs':'customer-service.list',kinds=['create','edit','delete','schools','agents','logs','detail'];
 /* Preview query state is isolated from native history in opaque sandbox frames. */
 function parameters(){if(window.__CS_SCENE__?.isolated)return {...window.__CS_SCENE__.query};return Object.fromEntries(new URLSearchParams(location.search))}
 function write(params,replace=false){params={...params,content:'1'};replace=true;if(window.__CS_SCENE__?.isolated){window.__CS_SCENE__.query={...params};return}const u=new URL(location.href);u.search=new URLSearchParams(params).toString();history[replace?'replaceState':'pushState'](null,'',u.href);previous=u.href}
