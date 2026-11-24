@@ -27,7 +27,7 @@
 |---|---|---|---|
 | 学校 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice) | [学校 Web v0.57](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.57/index.html?page=family-notice) | [V25 学校端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=school&school=s1&embedded=1) |
 | 代理商 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice) | [代理商 Web v0.66](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.66/index.html?page=family-notice) | [V25 代理商端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=agent&school=s1&embedded=1) |
-| 运营后台 | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice) | [运营后台 v0.68-6b45240dfc](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.68-6b45240dfc/index.html?page=family-notice) | [V25 运营后台](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=ops&school=s2&embedded=1) |
+| 运营后台 | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice) | [运营后台 v0.70-a58c2af5ff](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.70-a58c2af5ff/index.html?page=family-notice) | [V25 运营后台](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=ops&school=s2&embedded=1) |
 
 教师和家长小程序原型链接本轮不提供；原型与模板资料留在本地，没有修改或发布。
 
@@ -53,3 +53,4 @@ Q70、Q71 仍待确认，详见[全端共通规则第9节](家校通知一期产
 - 阅读统计的学生、教师 Tab 均不显示未读提醒按钮；无删除权限的记录显示“无权限”。
 
 - 学生统计调整：学生统计展示班级汇总 A 页；点击“明细”查看班级学生 B 页。A 页年级/班级筛选级联，B 页只保留状态/学生姓名模糊查询。三端 Web 的指标、空结果、分页、状态联动规则已补入对应 PRD 与共通规则。
+
