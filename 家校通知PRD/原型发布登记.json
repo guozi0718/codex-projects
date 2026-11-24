@@ -27,9 +27,9 @@
       "index.html": "4819b89d8d00ce8d8e80802b35ce7fac86dbc8274f6e6c0ddac64b240fdd3277",
       "styles.css": "0ec6092338b5021036ddcc41bcf7f7bbd97acde5964e733f6ecb2b85005aec1e",
       "定版信息.md": "a966a4b7e20ff4c5348529c629f39cc7c87c17bdb425b38a382e030a58252a02",
-      "版本说明.md": "87b79f0d404701755d65eae13895793939b218aaab36dee739507a0ab4b1fd71"
+      "版本说明.md": "059b33f61307897b24ca65b0259b897f945185cdb808c275646f714c0105eff0"
     },
-    "releaseNote": "版本说明.md；代理商和运营后台按钮显示“代发通知”；三端 Web 发布时间和创建时间统一为 YYYY-MM-DD HH:mm。"
+    "releaseNote": "版本说明.md；代发通知按钮文案与列表时间格式已对齐；运营后台 v0.70 菜单路由接入 V25。"
   },
   "webReleases": [
     {
@@ -64,14 +64,14 @@
     {
       "endpoint": "operations",
       "baselineOwner": "运营后台基线项目",
-      "shellRelease": "versions/v0.68-6b45240dfc",
+      "shellRelease": "versions/v0.70-a58c2af5ff",
       "noticeFeature": "V25",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice",
-      "shellUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.68-6b45240dfc/index.html?page=family-notice",
+      "shellUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.70-a58c2af5ff/index.html?page=family-notice",
       "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=ops&school=s2&embedded=1",
-      "menuPageLinkPath": "运营后台/versions/v0.68-6b45240dfc/assets/page-links-unified.js",
+      "menuPageLinkPath": "运营后台/versions/v0.70-a58c2af5ff/assets/page-links-unified.js",
       "prd": "家校通知一期产品需求文档-运营后台.md"
     }
   ],
@@ -114,7 +114,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25原型、PRD V0.8及最新 Web 批注已提交 GitHub；Pages 正在部署；需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25原型、PRD V0.8及 Web 批注修订已提交 GitHub；运营后台 v0.70 菜单已接入 V25，当前部署中；需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -126,7 +126,8 @@
     "学生统计和教师统计Tab均不显示提醒按钮；统计进度按查收方式计算，不新增完成率。",
     "A页班级筛选显示年级与班级，返回A页保留汇总筛选；B页未关联家长标记清晰可见。",
     "代理商、运营后台列表主按钮统一显示“代发通知”。",
-    "学校、代理商、运营后台列表的发布时间和创建时间均显示“YYYY-MM-DD HH:mm”。"
+    "学校、代理商、运营后台列表的发布时间和创建时间均显示“YYYY-MM-DD HH:mm”。",
+    "运营后台当前 v0.70 基线菜单“家校通知”入口指向 V25 通知功能。"
   ],
-  "repositoryHead": "30e1b11d187761d5b228adf5a5e024db8c2c6d2a"
+  "repositoryHead": "70cfea26c07b639265fbc4853c04e24015e4b3d3"
 }
