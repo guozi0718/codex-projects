@@ -1,0 +1,15 @@
+{
+  "baseline": "学校 Web 候选 v0.60",
+  "createdAt": "2026-11-19T01:34:15.2913064Z",
+  "task": "T-20261124-01-反馈操作日志集中",
+  "dependency": "家校通知 V20",
+  "version": "v0.61",
+  "sourceIndexSHA256": "f69aedff9747b24e569f3fbcff0e05217a5f21dcfe55c57a9a676285f594d372",
+  "status": "GitHub 静态评审候选；第一期修改中、未定版；活动指针不变",
+  "scope": "学校反馈列表移除行级日志入口；操作日志统一放在系统设置下；增加多类反馈操作及异常日志样例；操作详情悬停显示全文。",
+  "updatedAt": "2026-11-24T00:00:00Z",
+  "previousVersion": "v0.60",
+  "release": "v0.61",
+  "releaseId": "v0.61-candidate",
+  "publishedAt": "2026-11-24"
+}
