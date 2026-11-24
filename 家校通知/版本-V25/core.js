@@ -40,7 +40,7 @@ function allowedSchool(a,id){const s=school(id),home=school(a.schoolId);if(!s)re
   function locked(n){return Object.values(n.receipts||{}).some(r=>r.readAt||r.confirmAt||r.signatures?.length);}
   function writeLog(n,a,action,at,detail){n.history??=[];n.history.unshift({id:uid('log'),at,actor:a.name,role:a.role,action,version:n.version,detail:detail||'',snapshot:clone({title:n.title,blocks:n.blocks,attachments:n.attachments,config:n.config,supplements:n.supplements,cover:n.cover,theme:n.theme,music:n.music})});}
   function textBlock(text){return {id:uid('b'),type:'text',text};}
-  function empty(a){return {id:uid('n'),schoolId:a.schoolId,title:'',noticeKind:a.role==='teacher'?'ordinary':'beautiful',cover:'',theme:'plain',music:'',blocks:[textBlock('')],attachments:[],config:{classes:[],studentIds:[],teachers:[],ack:'read',schoolName:['school','agent','ops'].includes(a.role),scheduleEnabled:false,scheduledAt:'',deadlineAt:''},rosterSnapshot:{studentIds:[],capturedAt:null},deliveryWindow:null,status:'draft',version:0,creator:a.id,creatorName:a.name,origin:a.role,receipts:{},supplements:[],history:[],createdAt:Date.now(),updatedAt:Date.now(),updated:false};}
+  function empty(a){return {id:uid('n'),schoolId:a.schoolId,title:'',noticeKind:a.role==='teacher'?'ordinary':'beautiful',cover:'',theme:'plain',music:'',blocks:[textBlock('')],attachments:[],config:{classes:[],studentIds:[],teachers:[],ack:'read',schoolName:['school','agent','ops'].includes(a.role),scheduleEnabled:false,scheduledAt:'',deadlineAt:''},rosterSnapshot:{studentIds:[],capturedAt:null},deliveryWindow:null,status:'draft',version:0,creator:a.id,creatorName:a.name,creatorRole:a.role,creatorPartnerName:a.role==='agent'?(school(a.schoolId)?.partner||'代理商'):'',origin:a.role,receipts:{},supplements:[],history:[],createdAt:Date.now(),updatedAt:Date.now(),updated:false};}
   function validate(n,a,publish,at){const plainText=v=>String(v||'').replace(/<br\s*\/?\s*>/gi,'\n').replace(/<\/(?:div|p|li)>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&nbsp;|&#160;/gi,' ').replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&quot;/gi,'\"').replace(/&#39;/gi,"'");
     if(!n.title.trim())return fail('TITLE','请填写通知标题');
     const maxTitleLength=['school','agent','ops'].includes(a.role)?50:40;
@@ -81,7 +81,7 @@ function allowedSchool(a,id){const s=school(id),home=school(a.schoolId);if(!s)re
       if(n.status==='published'){n.publishedAt=at;n.rosterSnapshot=rosterSnapshot(n,at);n.deliveryWindow={startedAt:at,untilAt:Number.isFinite(Date.parse(n.config.deadlineAt||''))?Date.parse(n.config.deadlineAt):at+30*DAY_MS};}
     }
     const check=validate(n,a,n.status!=='draft',at);if(!check.ok)return check;
-    n.version=(old?.version||0)+1;n.createdAt=old?.createdAt||at;n.updatedAt=at;n.creator=old?.creator||a.id;n.creatorName=old?.creatorName||a.name;n.origin=old?.origin||a.role;n.lastEditor=a.name;n.lastEditorRole=a.role;
+    n.version=(old?.version||0)+1;n.createdAt=old?.createdAt||at;n.updatedAt=at;n.creator=old?.creator||a.id;n.creatorName=old?.creatorName||a.name;n.creatorRole=old?.creatorRole||n.creatorRole||a.role;n.creatorPartnerName=old?.creatorPartnerName||n.creatorPartnerName||(n.creatorRole==='agent'?school(n.schoolId)?.partner||'代理商':'');n.origin=old?.origin||a.role;n.lastEditor=a.name;n.lastEditorRole=a.role;
     n.updated=old?.updated||!!(old?.status==='published'&&(counts(old).students.read+counts(old).teachers.read)>0);
     n.history=clone(old?.history||[]);
     writeLog(n,a,old?(old.status==='draft'&&n.status!=='draft'?'发布通知':'修改通知'):(n.status==='draft'?'保存草稿':'发布通知'),at,old?'跨端共用同一通知；保留创建来源与回执':'通知归属 '+school(n.schoolId).name);
@@ -129,7 +129,7 @@ function allowedSchool(a,id){const s=school(id),home=school(a.schoolId);if(!s)re
   }
   function due(db,at=Date.now(),schoolId=null) {let changed=false;db.notices.forEach(n=>{if((!schoolId||n.schoolId===schoolId)&&n.status==='scheduled'&&Date.parse(n.config.scheduledAt)<=at){n.status='published';n.version++;n.publishedAt=at;n.rosterSnapshot=rosterSnapshot(n,at);n.deliveryWindow={startedAt:at,untilAt:Number.isFinite(Date.parse(n.config.deadlineAt||''))?Date.parse(n.config.deadlineAt):at+30*DAY_MS};writeLog(n,{name:'定时任务',role:'system'},'定时发布',at);changed=true;}});if(changed)db.revision++;return changed;}
   function seed(){
-    const at=Date.now(),db={schema:9,revision:1,notices:[],deletedArchive:[],templates:[]};
+    const at=Date.now(),db={schema:10,revision:1,notices:[],deletedArchive:[],templates:[]};
     for(const s of schools.filter(s=>s.authorized)){
       const proxyRole= s.mode==='agency'?'agent':'ops';
       const examples=[
