@@ -5,8 +5,8 @@
   "prdBatch": "V0.7",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "待本轮 GitHub 发布后回填",
-  "prototypeCommitUrl": "",
+  "prototypeCommit": "94a3ed2e3f5891f8d2779057576d25dc53142cbf",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/94a3ed2e3f5891f8d2779057576d25dc53142cbf",
   "noticeFeatureSource": {
     "version": "V24",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V24",
@@ -113,5 +113,7 @@
   "validationLimits": [
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
-  ]
+  ],
+  "publicationStatus": "V24 原型、三个 Web 菜单路由及 PRD V0.7 已发布供评审；未定版。",
+  "publicationNote": "教师与家长小程序原型和模板资料未修改、未发布；Q70、Q71仍待确认。"
 }
