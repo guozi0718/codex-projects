@@ -5,14 +5,14 @@
   "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "8478945d4816f752518a0758f9fc5d691a4dcf5a",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/8478945d4816f752518a0758f9fc5d691a4dcf5a",
+  "prototypeCommit": "3ed2f8e648cbfb4dcf8008bb9c5ce9f52e4e4dc1",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/3ed2f8e648cbfb4dcf8008bb9c5ce9f52e4e4dc1",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "e9f152462a35b45699d59135e92a48bde9d3d5d1883832a4ea36952ec666cbea",
+      "app.js": "4dd83530ed4b81626a9223e3555bc49107c6fc4a87b5ff392153568c7838a4c9",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -24,12 +24,12 @@
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
       "core.js": "5243b0d67c8cf6d3cc24b9db7ab10f801dec97587e14819b3e2a4ee5e4c55d05",
-      "index.html": "276a6a7edabedf3752c91c9930fbc7ffc438e4584b78a23418974703bedfcb08",
-      "styles.css": "0ec6092338b5021036ddcc41bcf7f7bbd97acde5964e733f6ecb2b85005aec1e",
-      "定版信息.md": "cac84ee534b7bb55876d88d16ac4e2939042b76781260022cd34a820e044ab0e",
-      "版本说明.md": "a53127e063b085de2c3843a454c1ed58e7de754ef409aa93c9f88fc922f9875f"
+      "index.html": "3fc5bcaf4870a95a235692982fac48daff79fe255be4fac6c40e245c048d0f36",
+      "styles.css": "d90a2937138da8254a53f49731946572e1146ee534031b1b34a0af6052b511c3",
+      "定版信息.md": "85535556392c06ce4f9f2cd38964f85bf91af4b158ca45cad7023704c9fce6be",
+      "版本说明.md": "f6a6613af28f467ed0ffec2736b84b51e9e2dec50fe67844854fed1b3ffa24d5"
     },
-    "releaseNote": "版本说明.md；代理商列表仅显示同机构成员代发通知，移除来源筛选和列表列，新增目标学校与发布时操作人姓名快照；运营后台可查看所有学校和来源的通知但保留原管理范围；三个Web端的未读/已读及确认/签字人数按查收方式显示数字或“--”。"
+    "releaseNote": "版本说明.md；代理商列表仅显示同机构成员代发通知，移除来源筛选和列表列，新增目标学校与发布时操作人姓名快照；运营后台可查看所有学校和来源的通知但保留原管理范围；三个Web端的未读/已读及确认/签字人数按查收方式显示数字或“--”；通知标题表头居中、内容左对齐，发布人列表标题改为发布名义且回显内容不变。"
   },
   "webReleases": [
     {
@@ -117,7 +117,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25 已发布；代理商、运营后台和学校 Web 的通知列表范围与人数列显示已按本轮确认更新。PRD V0.8 已同步；需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25 已发布；代理商、运营后台和学校 Web 的通知列表范围、人数列显示、标题列对齐和发布名义字段已按本轮确认更新。PRD V0.8 已同步；需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -133,8 +133,10 @@
     "运营后台当前 v0.70 基线菜单“家校通知”入口指向 V25 通知功能。",
     "代理商列表仅显示同机构代理商成员代发的通知，来源筛选和列表列移除；新增目标学校与发布时操作人姓名快照。",
     "运营后台列表可查看所有学校和发布来源的通知，但不扩大当前账号原有编辑、删除范围。",
-    "三端 Web 列表的未读、已读、已确认、已签字人数按查收方式统一显示数字或“--”。"
+    "三端 Web 列表的未读、已读、已确认、已签字人数按查收方式统一显示数字或“--”。",
+    "通知标题列表头居中，标题内容靠左；三端 Web 共享 V25 样式。",
+    "三端 Web 列表发布人表头改为发布名义，学校名义显示学校名称，个人名义显示教师姓名。"
   ],
-  "repositoryHead": "2f92f66299b732e0e7fc8693360fac2c524e4e49",
-  "metadataCommit": "2f92f66299b732e0e7fc8693360fac2c524e4e49"
+  "repositoryHead": "3ed2f8e648cbfb4dcf8008bb9c5ce9f52e4e4dc1",
+  "metadataCommit": "3ed2f8e648cbfb4dcf8008bb9c5ce9f52e4e4dc1"
 }
