@@ -5,14 +5,14 @@
   "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "98678409ed9ad4a2aa369c21ff16678725cba6dc",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/98678409ed9ad4a2aa369c21ff16678725cba6dc",
+  "prototypeCommit": "875897d365923f553a280ef7610e48a86bb7d2da",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/875897d365923f553a280ef7610e48a86bb7d2da",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "57e896d305557abd13383531d0083f2c6e39be1676b2cd8e93f06a5a4e3490a2",
+      "app.js": "9feffba18bc169a287fdfb7345530c2da74a097c5a9138319bead1454c81f136",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -23,13 +23,13 @@
       "assets/安全课堂.mp4": "cd73c4ad98250fe2c232b859a057a590e2277fc0e4acccb003a24141da63ee4d",
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
-      "core.js": "5243b0d67c8cf6d3cc24b9db7ab10f801dec97587e14819b3e2a4ee5e4c55d05",
-      "index.html": "d5b1f7964b19949c7aa94272a0e293bfeefd3ffdf4da66bc565e9d8d9ab02696",
+      "core.js": "4d9ec933e1b9c18aec421bae72d30a5498c35684fe920ab3f9328ad359c16d17",
+      "index.html": "9bea33ae6b47978972ac9e4a31775b8869979598397d54b684d8ccb1658e5a39",
       "styles.css": "d90a2937138da8254a53f49731946572e1146ee534031b1b34a0af6052b511c3",
-      "定版信息.md": "9268e30e318c0d34ad78cb260f2c1046ec8ddf1efff8a7e068957bf73a14c288",
-      "版本说明.md": "9563c041caa399bcacf52cf688971e4c9f81289d05b4fe1223408dadcf46393d"
+      "定版信息.md": "8ea76e35833bc6659f901072d4ef37551cf33d8a28d91b379bce7ced5ca75f3b",
+      "版本说明.md": "8aad9f82f65acdfc0c73b7d004850795f78239449026331cedea9df3a2029a5a"
     },
-    "releaseNote": "版本说明.md；代理商列表仅显示同机构成员代发通知，移除来源筛选和列表列，新增目标学校与发布时操作人姓名快照；运营后台可查看所有学校和来源的通知但保留原管理范围；三个Web端的未读/已读及确认/签字人数按查收方式显示数字或“--”；通知标题表头居中、内容左对齐，发布人列表标题改为发布名义且回显内容不变；三个Web端筛选栏移除内容形式筛选。"
+    "releaseNote": "版本说明.md；代理商列表仅显示同机构成员代发通知，移除来源筛选和列表列，新增目标学校与发布时操作人姓名快照；运营后台可查看所有学校和来源的通知但保留原管理范围；三个Web端的未读/已读及确认/签字人数按查收方式显示数字或“--”；通知标题表头居中、内容左对齐，发布人列表标题改为发布名义且回显内容不变；三个Web端筛选栏移除内容形式筛选；学校端和运营后台创建时间后增加操作人列，展示发布时姓名快照；学校端悬停显示来源角色，运营后台显示姓名及角色，角色和代理商名称保持发布时快照。"
   },
   "webReleases": [
     {
@@ -117,7 +117,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25 已发布；代理商、运营后台和学校 Web 的通知列表范围、人数列显示、标题列对齐、发布名义字段和筛选栏已按本轮确认更新。PRD V0.8 已同步；需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25 操作人字段更新已部署：学校端在创建时间后显示姓名快照并悬停查看来源角色；运营后台显示姓名和角色快照；代理商端既有姓名列保持不变。PRD V0.8 已同步，仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -137,8 +137,15 @@
     "通知标题列表头居中，标题内容靠左；三端 Web 共享 V25 样式。",
     "三端 Web 列表发布人表头改为发布名义，学校名义显示学校名称，个人名义显示教师姓名。",
     "代理商根目录菜单与 v0.66 基线菜单均指向 V25，发布时间和创建时间显示 YYYY-MM-DD HH:mm。",
-    "学校、代理商、运营后台三个 Web 端筛选栏均移除内容形式筛选，不再用正文素材形式过滤列表。"
+    "学校、代理商、运营后台三个 Web 端筛选栏均移除内容形式筛选，不再用正文素材形式过滤列表。",
+    "学校端在创建时间后增加操作人姓名快照，悬停显示老师端、学校端、平台端或平台（代理商名称快照）；运营后台在创建时间后增加操作人姓名及角色快照；代理商端原操作人列保持不变。"
   ],
-  "repositoryHead": "98678409ed9ad4a2aa369c21ff16678725cba6dc",
-  "metadataCommit": "98678409ed9ad4a2aa369c21ff16678725cba6dc"
+  "repositoryHead": "875897d365923f553a280ef7610e48a86bb7d2da",
+  "metadataCommit": "875897d365923f553a280ef7610e48a86bb7d2da",
+  "operationsVisibility": "运营后台可查看所有学校、所有发布人和来源的通知；创建时间后显示操作人姓名和发布时角色（老师、学校管理员、平台（代理商名称快照）或平台）；发布、编辑、删除权限仍按原账号管理范围。",
+  "operationPersonDisplay": {
+    "schoolWeb": "创建时间后显示发布时的操作人姓名快照；悬停显示老师端、学校端、平台端或平台（代理商名称快照）；平台端指运营后台。",
+    "operationsWeb": "创建时间后显示姓名（角色）：老师、学校管理员、平台（代理商名称快照）或平台。姓名、角色和代理商名称采用发布时快照。",
+    "agentWeb": "保留现有操作人字段，仅显示发布时的姓名快照。"
+  }
 }
