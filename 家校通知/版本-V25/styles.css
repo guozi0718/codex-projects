@@ -151,8 +151,10 @@ body.notice-embedded-school-list .school-notice-filter{border:0;border-bottom:1p
 
 /* V14: web 表格对齐、统计子页、纵向编辑与小程序通知卡片 */
 .notice-table th,.notice-table td{text-align:center}
-.notice-table th.title-cell,.notice-table td.title-cell{text-align:left}
-.school-notice-table th.title-cell,.school-notice-table td.title-cell{text-align:left}
+.notice-table th.title-cell{text-align:center}
+.notice-table td.title-cell{text-align:left}
+.school-notice-table th.title-cell{text-align:center}
+.school-notice-table td.title-cell{text-align:left}
 .school-notice-table th.ops,.school-notice-table td.ops,.notice-table th.ops,.notice-table td.ops{text-align:center}
 .school-notice-actions{justify-content:center;flex-wrap:nowrap;gap:12px;white-space:nowrap}
 .editor-grid{grid-template-columns:minmax(0,1fr);gap:18px}
