@@ -434,7 +434,7 @@ window.UnifiedPages={
     "family-notice": {
       "title": "家校通知",
       "owner": "学校通知家长",
-      "url": "notice/index.html",
+      "url": "../../../家校通知/版本-V24/index.html",
       "self": false,
       "parameters": {
         "role": "school",
