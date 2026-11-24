@@ -5,8 +5,8 @@
   "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "22f6d59a024b248bcd59a0946c48b4ebb4ffba75",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/22f6d59a024b248bcd59a0946c48b4ebb4ffba75",
+  "prototypeCommit": "6256b1205dc371ffdfb7dd046e64ac8f0581d1ae",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/6256b1205dc371ffdfb7dd046e64ac8f0581d1ae",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
@@ -29,7 +29,7 @@
       "定版信息.md": "a966a4b7e20ff4c5348529c629f39cc7c87c17bdb425b38a382e030a58252a02",
       "版本说明.md": "43aa7b8434647a90238242cfebd8afb067c03ecfc41ad0107d8a63cf45888221"
     },
-    "releaseNote": "版本说明.md；Web 学生统计 A/B 和教师统计不显示提醒按钮。"
+    "releaseNote": "版本说明.md；Web 学生统计 A/B 和教师统计均不显示提醒按钮，三端基线菜单缓存已更新并加载 V25。"
   },
   "webReleases": [
     {
@@ -114,7 +114,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25原型已发布；PRD V0.8已与当前原型同步，正在发布交付文档；需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25原型与PRD V0.8已提交 GitHub；V25 与基线菜单缓存更新已部署；需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -126,5 +126,5 @@
     "学生统计和教师统计Tab均不显示提醒按钮；统计进度按查收方式计算，不新增完成率。",
     "A页班级筛选显示年级与班级，返回A页保留汇总筛选；B页未关联家长标记清晰可见。"
   ],
-  "repositoryHead": "0c9ddd75d95d9248a0f29eddf25b3ad51a52a5c2"
+  "repositoryHead": "cc3f414cbf086b5ee2af2de7dd81a37ebdc869db"
 }
