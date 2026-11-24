@@ -5,14 +5,14 @@
   "prdBatch": "V0.8",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "待GitHub发布",
-  "prototypeCommitUrl": "待GitHub发布",
+  "prototypeCommit": "22f6d59a024b248bcd59a0946c48b4ebb4ffba75",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/22f6d59a024b248bcd59a0946c48b4ebb4ffba75",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "097ee88fc9113e580d878f312752daee031b164b831e0c36ad2561f7c2abcfea",
+      "app.js": "d8d140f6eac1010da2bff81f09613842dceb6f754375c29b3a7f43eb6e986a72",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -23,13 +23,13 @@
       "assets/安全课堂.mp4": "cd73c4ad98250fe2c232b859a057a590e2277fc0e4acccb003a24141da63ee4d",
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
-      "core.js": "7ef28a71bdf4799ddd87009081bb98d9a79ac6f8791560369822ea1a480e725e",
-      "index.html": "ff80dd4179f18785c1e9dd7a21390c2ab22b169e8fccfd08baca208b30842d6f",
+      "core.js": "6fefa8f3f82764718ee374847ce08bd89641b2892b9e6e17bc1e7e3b56fcd0e5",
+      "index.html": "1a51b15293dfd66dd983b469854ae5f66d28792bec306496f0fdfcac452a12d7",
       "styles.css": "0ec6092338b5021036ddcc41bcf7f7bbd97acde5964e733f6ecb2b85005aec1e",
       "定版信息.md": "a966a4b7e20ff4c5348529c629f39cc7c87c17bdb425b38a382e030a58252a02",
-      "版本说明.md": "54a4c4f7c558b582764ada589e09735a8111ca0104b1dc783c2a2220f4729d1a"
+      "版本说明.md": "43aa7b8434647a90238242cfebd8afb067c03ecfc41ad0107d8a63cf45888221"
     },
-    "releaseNote": "版本说明.md；含Web学生统计班级汇总A页和班级学生明细B页的最新规则。"
+    "releaseNote": "版本说明.md；Web 学生统计 A/B 和教师统计不显示提醒按钮。"
   },
   "webReleases": [
     {
@@ -114,7 +114,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25原型及PRD V0.8本轮同步发布；需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25原型已发布；PRD V0.8已与当前原型同步，正在发布交付文档；需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -123,6 +123,8 @@
     "列表操作显示预览；预览打印不显示查收统计，标题固定、通知信息区单独滚动",
     "有权限删除打开确认弹窗，无权限记录显示无权限并禁用",
     "学生统计拆为班级汇总A页、班级明细B页；A页按年级/班级联动，B页按状态/学生姓名模糊筛选，指标同步变化。",
-    "学生统计和教师统计Tab均不显示提醒按钮；统计进度按查收方式计算，不新增完成率。"
-  ]
+    "学生统计和教师统计Tab均不显示提醒按钮；统计进度按查收方式计算，不新增完成率。",
+    "A页班级筛选显示年级与班级，返回A页保留汇总筛选；B页未关联家长标记清晰可见。"
+  ],
+  "repositoryHead": "0c9ddd75d95d9248a0f29eddf25b3ad51a52a5c2"
 }
