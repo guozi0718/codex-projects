@@ -114,7 +114,7 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "V25原型、PRD V0.8及 Web 批注修订已提交 GitHub；运营后台 v0.70 菜单已接入 V25，当前部署中；需求仍为修改中、待评审、未定版。",
+  "publicationStatus": "V25原型与 PRD V0.8 已发布；代理商、运营后台按钮文案及 Web 列表时间格式已更新；运营后台当前 v0.70 菜单已接入 V25。需求仍为修改中、待评审、未定版。",
   "publicationNote": "V25为学校Web、代理商Web和运营后台共用的最新评审原型。小程序原型与模板资料本轮未修改、未发布。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
@@ -129,5 +129,6 @@
     "学校、代理商、运营后台列表的发布时间和创建时间均显示“YYYY-MM-DD HH:mm”。",
     "运营后台当前 v0.70 基线菜单“家校通知”入口指向 V25 通知功能。"
   ],
-  "repositoryHead": "70cfea26c07b639265fbc4853c04e24015e4b3d3"
+  "repositoryHead": "70cfea26c07b639265fbc4853c04e24015e4b3d3",
+  "metadataCommit": "f1c7d20432d2d12eb134c666ce938dc8747e8dbe"
 }
