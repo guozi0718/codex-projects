@@ -54,6 +54,7 @@ function allowedSchool(a,id){const s=school(id),home=school(a.schoolId);if(!s)re
     if(n.attachments.length>9||n.attachments.some(f=>f.size>20*1024*1024))return fail('FILES','附件最多9份，每份不超过20MB');if(n.attachments.some(f=>!/\.(pdf|docx?|xlsx?|jpe?g|png)$/i.test(f.name||'')))return fail('FILES','附件仅支持PDF、Word、Excel及JPEG、JPG、PNG格式');
     if((n.config.classes||[]).some(id=>!classes.some(c=>c.id===id))||(n.config.studentIds||[]).some(id=>!students.some(s=>s.id===id))||(n.config.teachers||[]).some(id=>!teachers.some(t=>t.id===id)))return fail('AUDIENCE','发布对象包含无效的班级或人员');
     if(!allowedAudience(a,n))return fail('PERMISSION','接收对象超出当前账号可管理范围，不能覆盖其他班级的内容');
+    if(publish&&a.role==='agent'&&n.version===0){const allClassIds=classes.map(c=>c.id),chosenClasses=[...new Set(n.config.classes||[])],chosenStudents=n.config.studentIds||[],chosenTeachers=[...new Set(n.config.teachers||[])],wholeStudents=!chosenStudents.length&&(chosenClasses.length===0||(chosenClasses.length===allClassIds.length&&allClassIds.every(id=>chosenClasses.includes(id)))),wholeTeachers=chosenTeachers.length===0||(chosenTeachers.length===teachers.length&&teachers.every(t=>chosenTeachers.includes(t.id)));if(!wholeStudents||!wholeTeachers)return fail('AUDIENCE','代理商只能选择全体学生或全体教师');}
     if(!['read','confirm','sign'].includes(n.config.ack))return fail('CONFIG','请选择有效的查收方式');
     if(n.config.schoolName&&!a.schoolNameAllowed)return fail('PERMISSION','当前老师未获学校名义发布权限，请使用老师名义');
     if(['agent','ops'].includes(a.role)&&!n.config.schoolName)return fail('PERMISSION','代发必须使用学校名义');
