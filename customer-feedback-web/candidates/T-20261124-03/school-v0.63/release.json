@@ -1,0 +1,18 @@
+{
+  "baseline": "学校端候选 v0.61；学校菜单壳沿用已发布 v0.57",
+  "createdAt": "2026-11-25 02:13:16Z",
+  "task": "T-20261124-03-学校反馈查看入口与平台客服署名",
+  "dependency": "家校通知 V25",
+  "version": "v0.63",
+  "sourceIndexSHA256": "6a2661308e5c22c0c2beeabadfb422b11ab8e39990db14d66f28827dc510d31e",
+  "status": "GitHub 静态评审候选；第一期修改中、未定版；不覆盖正式入口",
+  "scope": "学校 Web 真实反馈始终显示查看；教师/家长来源为禁用样例；代理商与运营回复署名统一为平台客服",
+  "updatedAt": "2026-11-24",
+  "previousVersion": "v0.62",
+  "release": "v0.63",
+  "releaseId": "v0.63-github-candidate-T-20261124-03",
+  "publishedAt": "2026-11-24",
+  "localCandidateURL": "http://localhost:57230/学校web/任务/T-20261124-03-学校反馈查看入口与平台客服署名/端-学校Web/版本-v0.63/index.html?page=school-feedback&content=1",
+  "latestURL": "https://guozi0718.github.io/codex-projects/customer-feedback-web/candidates/T-20261124-03/school-v0.63/index.html?page=school-feedback&content=1",
+  "publishedUrl": "https://guozi0718.github.io/codex-projects/customer-feedback-web/candidates/T-20261124-03/school-v0.63/index.html?page=school-feedback&content=1"
+}
