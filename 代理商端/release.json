@@ -1,13 +1,13 @@
 {
-  "release": "v0.77",
-  "releaseId": "v0.77-84b49f713f",
+  "release": "v0.78",
+  "releaseId": "v0.78-dd3d8ae41c",
   "endpoint": "agent",
   "repository": "guozi0718/codex-projects",
   "branch": "main",
   "folder": "代理商端",
   "status": "GitHub Pages 静态评审候选；第一期修改中、未定版",
-  "publishedAt": "2026-11-25T03:27:24.135Z",
-  "task": "T-20261124-06-通知图片尺寸与正文段首格式",
+  "publishedAt": "2026-11-25T07:22:48.338Z",
+  "task": "T-20261124-08-通知图片固定360x240",
   "sourceVersions": {
     "agent": "v0.75",
     "customerService": "v0.70 (T-20261124-02)",
@@ -42,7 +42,7 @@
     }
   ],
   "stableURL": "https://guozi0718.github.io/codex-projects/代理商端/index.html",
-  "immutableURL": "https://guozi0718.github.io/codex-projects/代理商端/versions/v0.77-84b49f713f/index.html",
+  "immutableURL": "https://guozi0718.github.io/codex-projects/代理商端/versions/v0.78-dd3d8ae41c/index.html",
   "entry": "http://localhost:57230/代理商web/任务/T-20261124-05-平台客服回复署名/端-代理商Web/版本-v0.76/index.html?page=school-feedback&content=1",
   "changes": [
     "整合客服管理 v0.70 当前候选",
@@ -60,7 +60,8 @@
     "时间线中代理商和运营发出的所有平台回复统一显示“平台客服”，隐藏客服姓名；原按钮、字体及消息样式保持",
     "通知图片最大宽度360px、按原比例缩放、居中圆角；封面建议提示仅显示在编辑页。",
     "正文每个换行段默认双全角空格，用户可编辑删除，预览保留编辑结果。",
-    "修改的是代理商主端随包通知副本，未改暂停的 V25/V26 独立功能原型。"
+    "修改的是代理商主端随包通知副本，未改暂停的 V25/V26 独立功能原型。",
+    "通知封面与内容图片统一固定为360x240px画框，按原比例完整缩放并居中，不裁切；保留高分辨率原图。"
   ],
   "indexSHA256": "3bb1269bef32e79bb97fa7cb91de51dd0578b09c9b0bb10196ee0f8a86c59194",
   "files": [
@@ -71,8 +72,8 @@
     },
     {
       "path": "README.md",
-      "size": 832,
-      "sha256": "90b9c341d5a03bb9d86553f7aa7f2ce7c1ac18ef9f12e6cc04830b645a21cb50"
+      "size": 1208,
+      "sha256": "8c915a5de29db43ff7d9db24cd955c1bfbb830e87e0c60ef8a6727c8d97785b0"
     },
     {
       "path": "assets/action-buttons.css",
@@ -366,8 +367,8 @@
     },
     {
       "path": "notice/styles.css",
-      "size": 75844,
-      "sha256": "2be0bcfe7630f4fd92df1961667c780ce90dcae199a4e5e077b55db24f9942cb"
+      "size": 76827,
+      "sha256": "0694f72728ac2a27e63e04d08aa38b268b8c0c7e39d71bfaabcb67ee09f10ce7"
     },
     {
       "path": "notice/定版信息.md",
@@ -400,18 +401,19 @@
     "agentFeedback": "https://guozi0718.github.io/codex-projects/customer-feedback-web/candidates/T-20261124-03/agent-v0.76/index.html?page=agent-feedback&content=1",
     "operationLog": "https://guozi0718.github.io/codex-projects/customer-feedback-web/candidates/T-20261124-03/agent-v0.76/index.html?page=op-log"
   },
-  "baselineMainHead": "7a528c47868f175997d76bfc8add98e029cfd42e",
+  "baselineMainHead": "164c460907c407f8031d794535017ca43ba89e64",
   "latestURL": "https://guozi0718.github.io/codex-projects/代理商端/index.html",
   "sourceIndexSHA256": "3bb1269bef32e79bb97fa7cb91de51dd0578b09c9b0bb10196ee0f8a86c59194",
-  "bundleSHA256": "84b49f713ffaf5fb54b4e1405be59c44d0389a29ff1606323b374cc0db243b19",
+  "bundleSHA256": "dd3d8ae41c277b0aff6474dbcae5dd199cda2d84f993b452e816cc2183f24ff9",
   "bundleAlgorithm": "SHA-256(JSON.stringify({version,dependency,files:[{path,sha256,bytes}]})); files sorted by Unicode code-point path; release.json excluded; dependency={baselineMainHead,sourceReleaseId,sourceBundleSHA256}",
   "dependency": {
-    "baselineMainHead": "7a528c47868f175997d76bfc8add98e029cfd42e",
-    "sourceReleaseId": "v0.75-179fde266d",
-    "sourceBundleSHA256": "179fde266d4f64ee093cf1cb8bde53eddb5da5fd6d98c396023f4ad39cdeacf7"
+    "baselineMainHead": "164c460907c407f8031d794535017ca43ba89e64",
+    "sourceReleaseId": "v0.77-84b49f713f",
+    "sourceBundleSHA256": "84b49f713ffaf5fb54b4e1405be59c44d0389a29ff1606323b374cc0db243b19"
   },
   "updatedAt": "2026-11-24",
   "publishedUrl": "https://guozi0718.github.io/codex-projects/代理商端/index.html",
-  "version": "v0.77",
-  "pendingBundleMetadata": false
+  "version": "v0.78",
+  "pendingBundleMetadata": false,
+  "scope": "图片：通知封面、正文图及美文模板正文图统一进入固定 360×240px（3:2）画框，圆角、居中。任意尺寸原图均可上传；按原比例缩放至框内完整显示，不拉伸、不裁切，保留高清原图。编辑区、预览和已发布详情使用同一画框；窄屏按3:2等比缩小。封面提示仅在编辑页封面上传区域显示，不进入预览和已发布内容。 仅修改代理商主端随包通知副本；暂停的 V25/V26 独立原型未修改。"
 }

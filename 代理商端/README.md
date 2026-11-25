@@ -1,8 +1,14 @@
-# 代理商 Web 主端 v0.77
+# 代理商 Web 统一主菜单原型 v0.78
 
-状态：GitHub Pages 静态评审版本，业务未定版。
-继承代理商端 v0.76 候选中的主端功能，更新通知图片和正文段首排版。
+状态：最新 GitHub Pages 静态评审候选；第一期修改中、未定版。
 
-图片：原图可任意尺寸，显示宽度最多360px、高度按原比例自动缩放并居中，四周圆角；编辑页仅封面区域显示建议文案“通知的封面图、内容中的图片建议采用360*240px，图片自动以宽度对齐、居中显示”，预览和已发布详情不显示。正文：普通通知、模板和通知文本块中，每个换行段落默认以两个可编辑的全角空格（　　）开头；自动视觉换行不再额外缩进，使用者可删除空格，预览保留其编辑结果。
+- 主菜单：[打开最新原型](https://guozi0718.github.io/codex-projects/代理商端/index.html)
+- 家校通知：[直接打开](https://guozi0718.github.io/codex-projects/代理商端/index.html?page=family-notice)
+- 学校反馈：[直接打开](https://guozi0718.github.io/codex-projects/代理商端/index.html?page=school-feedback)
+- 问题反馈：[直接打开](https://guozi0718.github.io/codex-projects/代理商端/index.html?page=agent-feedback)
+- 客服管理：[直接打开](https://guozi0718.github.io/codex-projects/代理商端/index.html?page=cs)
+- 操作日志：[直接打开](https://guozi0718.github.io/codex-projects/代理商端/index.html?page=op-log)
 
-通知文件是随代理商主端版本交付的副本；暂停的独立 V25/V26 功能原型未修改。
+通知页面随本代理商主端版本独立交付。暂停的独立通知功能原型不作为入口，也未修改。
+
+统一入口为本版本 index.html；所有菜单通过已登记路由和同一页签加载器切换。版本来源与逐文件 SHA-256 见 release.json；不可变快照存放于 versions/。本原型仅供静态评审，不连接生产权限、接口或消息服务。

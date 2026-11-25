@@ -378,7 +378,17 @@ body.notice-embedded-web-print .school-notice-print-actions{flex:0 0 auto;positi
 /* Web publish settings use one aligned label/control row across school, agent, and operations. */
 .publish-settings{max-width:900px}.publish-settings .field{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:16px;max-width:none;min-height:58px;padding:8px 0;margin:0}.publish-settings .field>label{margin:0;white-space:nowrap;line-height:20px}.publish-settings .field>.object-pick,.publish-settings .field>select,.publish-settings .field>.datetime-picker-trigger,.publish-settings .agent-audience-control{width:100%;min-width:0}.publish-settings .field>.object-pick{min-height:40px}.publish-settings .field>select{height:40px;min-height:40px}.publish-settings .publish-control{display:flex;align-items:center;gap:14px;min-width:0;min-height:40px}.publish-settings .schedule-control .datetime-picker-trigger{flex:1;margin-top:0;min-height:40px}.publish-settings .switch{flex:none}.agent-audience-control{position:relative}.agent-audience-dropdown-menu{position:absolute;z-index:30;top:calc(100% + 6px);left:0;right:0;padding:6px;border:1px solid #dce4ec;border-radius:6px;background:#fff;box-shadow:0 8px 24px #20365220}.agent-audience-option{display:flex;align-items:center;gap:10px;width:100%;min-height:40px;padding:8px 10px;border:0;border-radius:4px;background:#fff;color:var(--text);text-align:left}.agent-audience-option:hover,.agent-audience-option.selected{background:#f1f8f3;color:var(--primary-dark)}.agent-audience-option small{margin-left:auto}.agent-audience-check{display:grid;place-items:center;width:17px;height:17px;flex:none;border:1px solid #bdc9d5;border-radius:3px;color:#fff;font-size:12px}.agent-audience-option.selected .agent-audience-check{border-color:var(--primary);background:var(--primary)}
 @media(max-width:760px){.publish-settings .field{grid-template-columns:minmax(0,1fr);gap:7px;align-items:start;padding:10px 0}.publish-settings .field>label{white-space:normal}.publish-settings .publish-control{min-height:36px}}
-/* 通知图片统一按最大宽度360px展示，保持原比例并居中。 */
-.article .cover,.content-block img,.rich-output img,.rich-content img,.block img{display:block;width:100%;max-width:360px;height:auto;max-height:none;object-fit:contain;border-radius:8px;margin-left:auto;margin-right:auto}
-.notice-cover-field .cover-row img,.teacher-mobile-settings .cover-row img{width:100%;max-width:360px;height:auto;max-height:none;object-fit:contain;border-radius:8px;display:block;margin:0 auto}
-.cover-image-hint{display:block;margin-top:7px;color:var(--muted,#77859b);font-size:12px;line-height:1.6}
+/* 通知图片统一为360×240px画框；任意原图按原比例完整缩放、居中，不裁切。 */
+.article .cover,.content-block img,.rich-output img,.rich-content img,.block img,.cover-row img,.notice-cover-field .cover-row img,.teacher-mobile-settings .cover-row img{
+ display:block!important;box-sizing:border-box!important;width:360px!important;height:240px!important;max-width:calc(100vw - 30px)!important;max-height:none!important;aspect-ratio:3/2!important;object-fit:contain!important;border-radius:8px!important;margin-left:auto!important;margin-right:auto!important;background:#f5f8f9!important;flex:none!important;position:static!important;left:auto!important;transform:none!important
+}
+.notice-cover-field .cover-row,.teacher-mobile-settings .cover-row{
+ display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:wrap!important;gap:8px!important;white-space:normal!important
+}
+@media(max-width:760px){
+ body.notice-embedded-web-editor .notice-cover-field{grid-template-columns:minmax(0,1fr)!important;align-items:start!important}
+ body.notice-embedded-web-editor .notice-cover-field>label,body.notice-embedded-web-editor .notice-cover-field>.cover-row,body.notice-embedded-web-editor .notice-cover-field>.cover-image-hint{grid-column:1!important}
+}
+@media(max-width:389px){
+ .article .cover,.content-block img,.rich-output img,.rich-content img,.block img,.cover-row img,.notice-cover-field .cover-row img,.teacher-mobile-settings .cover-row img{height:auto!important;aspect-ratio:3/2!important}
+}
