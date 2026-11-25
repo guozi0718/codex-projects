@@ -1,7 +1,7 @@
 ### 家校通知一期 PRD 交付索引
 
 需求范围：第一期新增，修改中、待评审、未定版
-文档批次：V0.11（Web PRD及共通规则；小程序 PRD 暂保留 V0.10）
+文档批次：V0.12（教师/家长小程序 PRD 与全端图片/段首共通规则更新；Web 分端业务 PRD 沿用既有批次）
 任务：T-20261118-03｜各端 PRD 与原型对齐
 核对日期：2026-11-24
 
@@ -17,19 +17,21 @@
 - [运营后台](家校通知一期产品需求文档-运营后台.md)：平台代学校发布和管理通知。
 - [教师小程序](家校通知一期产品需求文档-教师小程序.md)：学校通知、我发布、我接收、草稿箱、普通/美文通知和模板。
 - [家长小程序](家校通知一期产品需求文档-家长小程序.md)：当前登录学生的通知列表、全部/待办、阅读和回执。
-- [原型映射与同步规则](原型映射与同步规则.md)：基线菜单、V25 直达页、后续同步方法。
+- [原型映射与同步规则](原型映射与同步规则.md)：五端当前主端入口、独立 V25/V26 历史源边界、后续同步方法。
 - [文档核对记录](文档核对记录.md)：需求与页面核对结果。
 - [原型发布登记](原型发布登记.json)：GitHub 提交号、页面链接、版本和文件校验值。
 
-#### 2. 最新 Web 原型链接
+#### 2. 当前五端主原型入口
 
-| 端 | 当前菜单入口 | 固定菜单壳 | 通知页面 |
-|---|---|---|---|
-| 学校 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice) | [学校 Web v0.62](https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/releases/v0.62/index.html?page=family-notice) | [V25 学校端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=school&school=s1&embedded=1) |
-| 代理商 Web | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice) | [代理商 Web v0.75](https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/versions/v0.75-179fde266d/index.html?page=family-notice) | [V25 代理商端](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=agent&school=s1&embedded=1) |
-| 运营后台 | [校务管理 → 家校通知](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice) | [运营后台 v0.76](https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/versions/v0.76-22c6eb9a5a/index.html?page=family-notice) | [V25 运营后台](https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=ops&school=s2&embedded=1) |
+以下均为本次已推送主端版本；不指向已暂停的独立 V25/V26 通知功能原型。
 
-教师和家长小程序原型链接本轮不提供；原型与模板资料留在本地，没有修改或发布。
+| 端 | 稳定入口 | 本次不可变/直达版本 |
+|---|---|---|
+| 学校 Web v0.64 | [学校通知列表](https://guozi0718.github.io/codex-projects/学校端/index.html?page=family-notice&noticeView=list) | [v0.64](https://guozi0718.github.io/codex-projects/学校端/releases/v0.64/index.html?page=family-notice&noticeView=list) |
+| 代理商 Web v0.77 | [代理商通知列表](https://guozi0718.github.io/codex-projects/代理商端/index.html?page=family-notice) | [v0.77](https://guozi0718.github.io/codex-projects/代理商端/versions/v0.77-84b49f713f/index.html?page=family-notice) |
+| 运营后台 v0.80 | [运营通知列表](https://guozi0718.github.io/codex-projects/运营后台/index.html?page=family-notice) | [v0.80](https://guozi0718.github.io/codex-projects/运营后台/versions/v0.80-63e4b256e3/index.html?page=family-notice) |
+| 教师小程序 v0.31 | [教师通知入口](https://guozi0718.github.io/codex-projects/小程序端/教师/index.html#sc-notification) | [直接打开教师通知](https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.5/端-教师/版本-v0.31/notification.html#sc-notification) |
+| 家长小程序 v0.30 | [家长通知入口](https://guozi0718.github.io/codex-projects/小程序端/家长/index.html#sc-notification) | [直接打开家长通知](https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.5/端-家长/版本-v0.30/notification.html#sc-notification) |
 
 #### 3. 本轮已落实
 
@@ -37,9 +39,9 @@
 - 类型统一为普通通知、美文通知；正文链接不是第三种类型。
 - Web 新发布为美文通知；Web 可按原权限编辑无任何查收记录且未过期的各端通知；普通通知以单文本内容块编辑，保留原类型。
 - 代理商与运营后台代发必须使用学校名义，开关固定开启且不可关闭。
-- 代理商和运营后台无草稿；教师小程序的草稿只保存通知内容并保留在教师端。
+- 代理商和运营后台无草稿；教师小程序草稿保存通知内容和发布设置中已填写的信息，仅教师端可见。
 - 学校 Web 可看到同校教师、学校、代理商和平台端发布的所有通知，不因个人或学校名义隐藏；原编辑权限不变。
-- 小程序原型按要求保留，不改、不发布。
+- 教师、家长小程序当前候选已推送 GitHub；本批 PRD 同步写明图像比例、段首空格、回执按钮和分享权限。
 
 #### 4. 尚待确认
 
@@ -79,3 +81,12 @@ Q70、Q71 仍待确认，详见[全端共通规则第9节](家校通知一期产
 - 文本内容可修改，保存后保持普通通知类型；美文通知编辑方式不变。
 - 教师和家长小程序原型、模板资料不在本轮修改范围内。
 
+
+
+#### V0.12｜小程序现行交互及排版口径（2026-11-24）
+
+- 教师草稿改为保存当前全部通知内容和发布设置已填信息；保存时跳过字段校验，编辑时完整回显；预览/正式发布仍校验。
+- 教师四页签详情按钮、发布者编辑/删除权限、未发送定时任务操作、取消定时、删除确认和模板仅存内容的规则已进入教师 PRD。
+- 学生对象树、人数统计、学生/教师页签保持、定时与截止精确到秒，以及普通通知图片/视频/链接/PDF限制已进入教师 PRD。
+- 教师/家长分享通知的站外、未登录、未匹配、非接收家长、校内教师和离职身份处理已进入两份小程序 PRD。
+- 图片等比缩放与段首两个可编辑全角空格同步进共通规则。原型检查：五个稳定主入口、两个小程序通知直达页均 HTTP 200；本轮 GitHub Pages 部署工作流成功。浏览器视觉验收受本机 Computer Use 许可门阻挡，未宣称已完成。
