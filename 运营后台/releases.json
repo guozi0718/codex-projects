@@ -411,5 +411,14 @@
     "documentation": "versions/v0.80-63e4b256e3/版本说明.md",
     "documentationSHA256": "b5d6919aa0dad297c90c8a0ba26f54560f5a6b915efc8b6303a6ee4d933e50bb",
     "documents": []
+  },
+  {
+    "version": "v0.81",
+    "releaseId": "v0.81-4d0856510a",
+    "bundleHash": "4d0856510a3928a921253dd09d98c4fd5bb82c77c80c8c716a7048ff5358068f",
+    "publishedAt": "2026-11-25T07:23:19.926Z",
+    "documentation": "versions/v0.81-4d0856510a/版本说明.md",
+    "documentationSHA256": "b5d6919aa0dad297c90c8a0ba26f54560f5a6b915efc8b6303a6ee4d933e50bb",
+    "documents": []
   }
 ]
