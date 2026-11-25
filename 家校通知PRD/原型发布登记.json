@@ -5,14 +5,14 @@
   "prdBatch": "V0.12",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "346fbdffbf1a984c47f7c257521c7bf0ebb69f91",
-  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/346fbdffbf1a984c47f7c257521c7bf0ebb69f91",
+  "prototypeCommit": "",
+  "prototypeCommitUrl": "",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
     "githubPath": "家校通知/版本-V25/",
     "sha256": {
-      "app.js": "a81262cff01ca1bf67aaeab0be661e1a67f8f630499fbdbbe40c15d7d097164a",
+      "app.js": "8546a772b82816db4ec36cd7190b57f52c25a4f59498d24936c0b3740f723596",
       "assets/campus.png": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70",
       "assets/campus.svg": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665",
       "assets/demo-panel.css": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e",
@@ -24,78 +24,67 @@
       "assets/活动安排.pdf": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f",
       "assets/轻柔提示音.wav": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0",
       "core.js": "cf4365b985fc80f20a3eac2ec497ebdce648dac350a5289022162c5a6e03921b",
-      "index.html": "627e65f0a045b7bd2280b93f36f78a45268d436da0aeb8353451a877b362ca20",
-      "styles.css": "c3d7261b81775c871d98e3d8014aa1ce8fb9089760f2ae0167e91d39ea79e859",
-      "定版信息.md": "2df4b0779b1e5c113dca44e3248f18e0e605b69faf00b355f66921243deb3b70",
-      "版本说明.md": "3cd4b7311df7ccf58a8bfd53bce3ec4a612d653f0179ada3fd71ed2329d7bf24"
+      "index.html": "a2fc51fb89185ebde96c73bf20f58a4a95176b1688d30294935e95e0d6e43191",
+      "styles.css": "0a86494d57d64a41b3532ad851c28336ad1187d3168d8a5b736aded4f1c39661",
+      "定版信息.md": "4b78c00619c317a0b92be8fd50ee14305ea95602f18b94c1f4242067ab4f8410",
+      "版本说明.md": "fb43fd260cd20373d15066f89c3def6a8cd56ae8076c6e40398790191585eadb"
     },
-    "releaseNote": "V25：普通通知编辑时固定显示一个文本块，不显示新增内容块入口或文本块上移、下移、删除按钮；美文通知编辑方式不变。学校、代理商、运营后台共享页面同步本规则，教师和家长小程序资料保留。PRD 文档批次 V0.11。",
-    "status": "历史源版本；独立 V25/V26 已暂停，不是本轮发布目标",
-    "currentHostCopies": "学校 v0.64、代理商 v0.77、运营后台 v0.80 各自随主端交付"
+    "releaseNote": "V25：三个 Web 端的通知预览改为小程序样式手机边框，长内容在手机框内容区滚动；打印和 PDF 保持独立 A4 版式。普通通知编辑时只显示一个文本块且不能新增、排序或删除。教师、家长小程序原型与模板资料本轮保留。PRD 文档批次 V0.12。"
   },
   "webReleases": [
     {
       "endpoint": "school",
       "baselineOwner": "学校 Web 基线项目",
-      "shellRelease": "releases/v0.64",
-      "noticeFeature": "学校主端内嵌通知副本 v0.64",
+      "shellRelease": "releases/v0.62",
+      "noticeFeature": "V25",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E5%AD%A6%E6%A0%A1%E7%AB%AF/index.html?page=family-notice",
-      "shellUrl": "https://guozi0718.github.io/codex-projects/学校端/releases/v0.64/index.html?page=family-notice&noticeView=list",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/学校端/index.html?page=family-notice&noticeView=list",
+      "shellUrl": "https://guozi0718.github.io/codex-projects/学校端/releases/v0.62/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=school&school=s1&embedded=1",
       "menuPageLinkPath": "学校端/releases/v0.62/assets/page-links-unified.js",
       "prd": "家校通知一期产品需求文档-学校Web.md",
-      "noticeModulePath": "学校端/releases/v0.64/notice/",
-      "publishedCommit": "7a528c47868f175997d76bfc8add98e029cfd42e"
+      "noticeModulePath": "学校端/releases/v0.62/notice/"
     },
     {
       "endpoint": "agent",
       "baselineOwner": "代理商 Web 基线项目",
-      "shellRelease": "root + versions/v0.77-84b49f713f",
-      "noticeFeature": "代理商主端内嵌通知副本 v0.77",
+      "shellRelease": "root + versions/v0.75-179fde266d",
+      "noticeFeature": "V25",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E4%BB%A3%E7%90%86%E5%95%86%E7%AB%AF/index.html?page=family-notice",
-      "shellUrl": "https://guozi0718.github.io/codex-projects/代理商端/versions/v0.77-84b49f713f/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/代理商端/index.html?page=family-notice",
+      "shellUrl": "https://guozi0718.github.io/codex-projects/代理商端/versions/v0.75-179fde266d/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=agent&school=s1&embedded=1",
       "menuPageLinkPaths": [
         "代理商端/assets/page-links-unified.js",
         "代理商端/versions/v0.75-179fde266d/assets/page-links-unified.js"
       ],
       "prd": "家校通知一期产品需求文档-代理商Web.md",
-      "noticeModulePath": "代理商端/versions/v0.77-84b49f713f/notice/",
-      "publishedCommit": "80d17d7044e988cad3d19e762c567b096cf9184b"
+      "noticeModulePath": "家校通知/版本-V25/"
     },
     {
       "endpoint": "operations",
       "baselineOwner": "运营后台基线项目",
-      "shellRelease": "versions/v0.80-63e4b256e3",
-      "noticeFeature": "运营后台主端内嵌通知副本 v0.80",
+      "shellRelease": "versions/v0.76-22c6eb9a5a",
+      "noticeFeature": "V25",
       "menu": "校务管理 → 家校通知",
       "route": "family-notice",
       "stableUrl": "https://guozi0718.github.io/codex-projects/%E8%BF%90%E8%90%A5%E5%90%8E%E5%8F%B0/index.html?page=family-notice",
-      "shellUrl": "https://guozi0718.github.io/codex-projects/运营后台/versions/v0.80-63e4b256e3/index.html?page=family-notice",
-      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/运营后台/index.html?page=family-notice",
+      "shellUrl": "https://guozi0718.github.io/codex-projects/运营后台/versions/v0.76-22c6eb9a5a/index.html?page=family-notice",
+      "noticeModuleUrl": "https://guozi0718.github.io/codex-projects/%E5%AE%B6%E6%A0%A1%E9%80%9A%E7%9F%A5/%E7%89%88%E6%9C%AC-V25/index.html?role=ops&school=s2&embedded=1",
       "menuPageLinkPath": "运营后台/versions/v0.76-22c6eb9a5a/assets/page-links-unified.js",
       "prd": "家校通知一期产品需求文档-运营后台.md",
-      "noticeModulePath": "运营后台/versions/v0.80-63e4b256e3/dependencies/notice/",
-      "publishedCommit": "bb874faeba119146f78b4694cb937837f863821a"
+      "noticeModulePath": "运营后台/versions/v0.76-22c6eb9a5a/dependencies/notice/"
     }
   ],
   "miniPrograms": {
     "teacher": {
-      "status": "教师 v0.31 已推送；Pages 工作流成功；通知直达页 HTTP 200",
-      "release": "r2026.11.24.5",
-      "stableUrl": "https://guozi0718.github.io/codex-projects/小程序端/教师/index.html#sc-notification",
-      "notificationUrl": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.5/端-教师/版本-v0.31/notification.html#sc-notification",
+      "status": "原型、模板资料保留；本轮不修改、不发布",
       "prd": "家校通知一期产品需求文档-教师小程序.md"
     },
     "parent": {
-      "status": "家长 v0.30 已推送；Pages 工作流成功；通知直达页 HTTP 200",
-      "release": "r2026.11.24.5",
-      "stableUrl": "https://guozi0718.github.io/codex-projects/小程序端/家长/index.html#sc-notification",
-      "notificationUrl": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.5/端-家长/版本-v0.30/notification.html#sc-notification",
+      "status": "原型资料保留；本轮不修改、不发布",
       "prd": "家校通知一期产品需求文档-家长小程序.md"
     }
   },
@@ -123,17 +112,17 @@
     "webDrafts": "代理商 Web、运营后台不提供草稿",
     "agentVisibility": "同一代理商机构成员共享全部代发通知；列表只显示预览、编辑，隐藏阅读统计和删除；不显示通知来源筛选或列，目标学校为首位筛选项，移除发布人筛选，并显示目标学校和发布时操作人姓名快照。",
     "operationsVisibility": "运营后台可查看所有学校、所有来源通知；目标学校为首位筛选项，移除发布人筛选；发布、编辑、删除权限仍按原账号管理范围。",
-    "webListReceiptCounts": "三个 Web 端未读、已读人数始终显示数字；已确认和已签字人数仅在对应查收方式下显示数字，其他方式显示“--”。"
+    "webListReceiptCounts": "三个 Web 端未读、已读人数始终显示数字；已确认和已签字人数仅在对应查收方式下显示数字，其他方式显示“--”。",
+    "webPreview": "学校 Web、代理商 Web、运营后台从列表或发布/编辑页面点击预览时展示小程序样式手机边框；只读展示通知内容，内容区可滚动；关闭返回原页面并保留筛选或未保存输入。打印和 PDF 使用独立 A4 版式。教师、家长小程序保持原样。"
   },
   "knownPrototypeDifferences": [],
-  "miniProgramPrototypeModified": true,
+  "miniProgramPrototypeModified": false,
   "validationLimits": [
-    "GitHub Pages 静态评审原型，不连接生产名单、真实身份认证或消息发送服务。",
-    "已核验五端稳定入口、教师/家长通知直达页 HTTP 200，且本次四个 Pages 部署工作流 success。",
-    "当前环境 Computer Use 安全门无法确认页面 URL 允许状态，未完成本轮浏览器视觉验收；不以 HTTP 200 代替视觉验收。"
+    "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
+    "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "主端原型已推送 GitHub，Pages 工作流成功；五端稳定入口及教师/家长通知直达页均 HTTP 200。PRD V0.12 同步推送。",
-  "publicationNote": "V25 普通通知单文本块编辑规则及学校、代理商、运营后台 Web PRD V0.11 已提交至 GitHub；Pages workflow #138 已成功部署。小程序源项目和模板资料本轮保留，未单独修改、发布。",
+  "publicationStatus": "待推送：三个 Web 端手机边框预览、对应 PRD V0.12、学校和运营后台基线副本已更新。",
+  "publicationNote": "手机边框预览与对应 PRD V0.12 已完成本地同步，等待推送及 Pages 部署核对。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
     "来源列单行完整显示；标题最多10字，超出省略，悬停显示全文；创建时间YYYY-MM-DD HH:mm",
@@ -160,10 +149,11 @@
     "三端 Web 的学校名义和定时发送为非必填；学校端默认学校名义，代理商和运营后台固定学校名义。",
     "通知预览标题居中并自动换行，标题长时完整显示。",
     "学校 v0.62 和运营后台 v0.76 基线菜单内的通知页面副本与共享 V25 文件同步。",
-    "三个 Web 端编辑普通通知时仅显示唯一文本块，不显示新增内容块入口及文本块上移、下移、删除按钮；美文通知方式不变。"
+    "三个 Web 端编辑普通通知时仅显示唯一文本块，不显示新增内容块入口及文本块上移、下移、删除按钮；美文通知方式不变。",
+    "三个 Web 端列表和发布/编辑预览改为小程序样式手机边框，手机内容区独立滚动；关闭保留原页面状态；打印及 PDF 继续使用独立 A4 版式。"
   ],
-  "repositoryHead": "a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
-  "metadataCommit": "a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
+  "repositoryHead": "",
+  "metadataCommit": "",
   "operationsVisibility": "运营后台可查看所有学校及所有来源通知；筛选首位为目标学校，不提供发布人筛选；创建时间后显示操作人姓名和发布时角色快照，发布、编辑、删除权限仍按原账号管理范围。",
   "operationPersonDisplay": {
     "schoolWeb": "创建时间后显示发布时的操作人姓名快照；悬停显示老师端、学校端、平台端或平台（代理商名称快照）；平台端指运营后台。",
@@ -171,39 +161,9 @@
     "agentWeb": "保留现有操作人字段，仅显示发布时的姓名快照。"
   },
   "githubPagesDeployment": {
-    "commit": "a5007ed99fff970ee71e0d00ac32d5bcd4e16193",
-    "runId": "45402768384",
-    "status": "success",
-    "url": "https://github.com/guozi0718/codex-projects/actions/runs/45402768384"
-  },
-  "currentMainReleases": [
-    {
-      "endpoint": "school",
-      "release": "v0.64",
-      "commit": "7a528c47868f175997d76bfc8add98e029cfd42e",
-      "tag": "school-v0.64",
-      "stableUrl": "https://guozi0718.github.io/codex-projects/学校端/index.html?page=family-notice&noticeView=list"
-    },
-    {
-      "endpoint": "agent",
-      "release": "v0.77-84b49f713f",
-      "commit": "80d17d7044e988cad3d19e762c567b096cf9184b",
-      "tag": "agent-v0.77-84b49f713f",
-      "stableUrl": "https://guozi0718.github.io/codex-projects/代理商端/index.html?page=family-notice"
-    },
-    {
-      "endpoint": "operations",
-      "release": "v0.80-63e4b256e3",
-      "commit": "bb874faeba119146f78b4694cb937837f863821a",
-      "tag": "operations-v0.80-63e4b256e3",
-      "stableUrl": "https://guozi0718.github.io/codex-projects/运营后台/index.html?page=family-notice"
-    },
-    {
-      "endpoint": "mini-programs",
-      "release": "r2026.11.24.5",
-      "commit": "346fbdffbf1a984c47f7c257521c7bf0ebb69f91",
-      "tag": "miniapp-r2026.11.24.5",
-      "stableUrl": "https://guozi0718.github.io/codex-projects/小程序端/"
-    }
-  ]
+    "commit": "",
+    "runId": "",
+    "status": "待发布",
+    "url": ""
+  }
 }

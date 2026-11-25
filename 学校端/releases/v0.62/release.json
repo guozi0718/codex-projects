@@ -5,7 +5,7 @@
   "entry": "index.html",
   "notice": {
     "version": "pinned-in-school-release",
-    "indexHash": "627e65f0a045b7bd2280b93f36f78a45268d436da0aeb8353451a877b362ca20"
+    "indexHash": "a2fc51fb89185ebde96c73bf20f58a4a95176b1688d30294935e95e0d6e43191"
   },
   "files": [
     {
@@ -231,4 +231,3 @@
   ],
   "scope": "School prototype runtime; local demonstration data only"
 }
-
