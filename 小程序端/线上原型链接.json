@@ -1,39 +1,37 @@
 {
-  "release": "r2026.11.24.2",
-  "status": "教师v0.28、家长v0.27通知分享落地页身份权限评审候选；未业务定版。",
-  "sourceVersion": "智小徽当前完整基线 T-20261123-10 + T-20261123-05 通知模块 v0.29 + T-20261124-02 分享通知落地页身份权限；仅同步本次双端通知功能变更并保留其他基线页面。",
+  "release": "r2026.11.24.3",
+  "status": "教师v0.30、家长v0.29小程序反馈回复称谓精简评审候选；未业务定版。",
+  "sourceVersion": "智小徽小程序完整候选 T-20261124-03（教师v0.29、家长v0.28）+T-20261124-04回复称谓精简；保留T-20261124-01通知模块与T-20261124-02分享身份权限；运营后台或代理商回复统一显示“平台客服 回复”，不显示客服姓名。",
   "entries": [
     {
       "role": "teacher",
       "name": "教师",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-教师/版本-v0.28/index.html",
-      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-教师/版本-v0.28/index.html#sc-home",
-      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-教师/版本-v0.28/index.html#sc-fblist",
-      "submit": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-教师/版本-v0.28/index.html?view=feedback-submit",
-      "notification": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-教师/版本-v0.28/notification.html#sc-notification"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-教师/版本-v0.30/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-教师/版本-v0.30/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-教师/版本-v0.30/index.html#sc-fblist",
+      "submit": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-教师/版本-v0.30/index.html?view=feedback-submit"
     },
     {
       "role": "parent",
       "name": "家长",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-家长/版本-v0.27/index.html",
-      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-家长/版本-v0.27/index.html#sc-home",
-      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-家长/版本-v0.27/index.html#sc-fblist",
-      "submit": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-家长/版本-v0.27/index.html?view=feedback-submit",
-      "notification": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/端-家长/版本-v0.27/notification.html#sc-notification"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-家长/版本-v0.29/index.html",
+      "home": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-家长/版本-v0.29/index.html#sc-home",
+      "feedback": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-家长/版本-v0.29/index.html#sc-fblist",
+      "submit": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/端-家长/版本-v0.29/index.html?view=feedback-submit"
     }
   ],
   "documents": [
     {
       "role": "teacher",
       "name": "教师小程序客户反馈产品需求文档-v1.0.md",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/文档/端-教师/教师小程序客户反馈产品需求文档-v1.0.md",
-      "github": "https://github.com/guozi0718/codex-projects/blob/main/小程序端/发布/r2026.11.24.2/文档/端-教师/教师小程序客户反馈产品需求文档-v1.0.md"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/文档/端-教师/教师小程序客户反馈产品需求文档-v1.0.md",
+      "github": "https://github.com/guozi0718/codex-projects/blob/main/小程序端/发布/r2026.11.24.3/文档/端-教师/教师小程序客户反馈产品需求文档-v1.0.md"
     },
     {
       "role": "parent",
       "name": "家长小程序客户反馈产品需求文档-v0.9.md",
-      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.2/文档/端-家长/家长小程序客户反馈产品需求文档-v0.9.md",
-      "github": "https://github.com/guozi0718/codex-projects/blob/main/小程序端/发布/r2026.11.24.2/文档/端-家长/家长小程序客户反馈产品需求文档-v0.9.md"
+      "entry": "https://guozi0718.github.io/codex-projects/小程序端/发布/r2026.11.24.3/文档/端-家长/家长小程序客户反馈产品需求文档-v0.9.md",
+      "github": "https://github.com/guozi0718/codex-projects/blob/main/小程序端/发布/r2026.11.24.3/文档/端-家长/家长小程序客户反馈产品需求文档-v0.9.md"
     }
   ]
 }
