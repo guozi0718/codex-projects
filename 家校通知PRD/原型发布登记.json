@@ -5,8 +5,8 @@
   "prdBatch": "V0.13",
   "scopeStatus": "第一期新增，修改中、待评审、未定版",
   "repository": "guozi0718/codex-projects",
-  "prototypeCommit": "",
-  "prototypeCommitUrl": "",
+  "prototypeCommit": "1315796647dc5af99bed8fee95fee6f122710180",
+  "prototypeCommitUrl": "https://github.com/guozi0718/codex-projects/commit/1315796647dc5af99bed8fee95fee6f122710180",
   "noticeFeatureSource": {
     "version": "V25",
     "localPath": "任务/T-20261123-02-通知类型来源与跨端编辑规则/端-通知功能/版本-V25",
@@ -121,8 +121,8 @@
     "GitHub Pages 为静态评审原型，不代表生产业务已上线。",
     "本轮未运行自动化测试；未接入真实名单、消息提醒、后台归档或实际 PDF 导出。"
   ],
-  "publicationStatus": "待推送：三端 Web 列表预览手机框和 A4 PDF 分离效果、PRD V0.13、发布包及登记信息已更新。",
-  "publicationNote": "V25 列表预览在屏幕上显示小程序手机框，PDF 使用独立 A4 正文输出；三端 Web PRD 已同步至 V0.13，等待推送及 Pages 部署核对。",
+  "publicationStatus": "已推送并部署：V25 三端 Web 手机边框预览、A4 PDF 分离输出及 PRD V0.13 已发布。",
+  "publicationNote": "GitHub Pages 已部署成功。原型提交 1315796647dc5af99bed8fee95fee6f122710180；部署流程 45566605151 成功。学校、代理商、运营后台的列表预览均显示小程序样式手机边框，PDF 保持独立 A4 公文版式。",
   "uiCorrections": [
     "来源筛选顺序：学校端、教师端、平台端、代理商按系统原配置排序",
     "来源列单行完整显示；标题最多10字，超出省略，悬停显示全文；创建时间YYYY-MM-DD HH:mm",
@@ -153,7 +153,7 @@
     "三个 Web 端列表和发布/编辑预览改为小程序样式手机边框，手机内容区独立滚动；关闭保留原页面状态；打印及 PDF 继续使用独立 A4 版式。",
     "三个 Web 端列表预览和发布/编辑预览使用小程序样式手机边框，手机内容区独立滚动；列表预览页标题和底部按钮固定。点击导出 PDF 时只输出 A4 通知正文，保持公文页边距；教师、家长小程序本轮不修改。"
   ],
-  "repositoryHead": "",
+  "repositoryHead": "1315796647dc5af99bed8fee95fee6f122710180",
   "metadataCommit": "",
   "operationsVisibility": "运营后台可查看所有学校及所有来源通知；筛选首位为目标学校，不提供发布人筛选；创建时间后显示操作人姓名和发布时角色快照，发布、编辑、删除权限仍按原账号管理范围。",
   "operationPersonDisplay": {
@@ -162,9 +162,9 @@
     "agentWeb": "保留现有操作人字段，仅显示发布时的姓名快照。"
   },
   "githubPagesDeployment": {
-    "commit": "",
-    "runId": "",
-    "status": "待发布",
-    "url": ""
+    "commit": "1315796647dc5af99bed8fee95fee6f122710180",
+    "runId": "45566605151",
+    "status": "success",
+    "url": "https://github.com/guozi0718/codex-projects/actions/runs/45566605151"
   }
 }
