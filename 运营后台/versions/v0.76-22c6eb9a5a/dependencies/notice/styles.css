@@ -396,3 +396,13 @@ body.notice-embedded-web-print .school-notice-print-actions{flex:0 0 auto;positi
 .web-phone-preview .article h1{text-align:center;white-space:normal;overflow-wrap:anywhere;word-break:break-word}
 @media(max-height:560px){.web-phone-preview.phone{height:calc(100vh - 220px);min-height:260px}}
 @media(max-width:540px){.phone-preview-dialog{width:min(440px,100%)}.phone-preview-dialog .dialog-body{padding:10px}.web-phone-preview.phone{width:100%;max-width:390px}}
+
+/* Web 列表预览在屏幕上使用手机框；PDF 则只输出公文版式。 */
+.school-notice-preview-stage{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;overflow:auto;overscroll-behavior:contain;padding:14px 18px;background:#f2f5f9}
+.school-notice-preview-stage>.web-phone-preview.phone{height:100%;min-height:0;max-height:720px}
+.phone-preview-back{display:inline-flex;align-items:center;justify-content:flex-start;width:24px;flex:none;pointer-events:none}
+.school-notice-print-sheet.print-only{display:none}
+@media print{
+ body.printing-notice .school-notice-preview-stage{display:none!important}
+ body.printing-notice .school-notice-print-sheet.print-only{display:block!important}
+}

@@ -513,8 +513,8 @@
     },
     {
       "path": "dependencies/notice/app.js",
-      "sha256": "8546a772b82816db4ec36cd7190b57f52c25a4f59498d24936c0b3740f723596",
-      "bytes": 191488
+      "sha256": "d0b2b518c7b92dea7ef70fe8ae84b9395c96e66f8d6811a57069b9032e8dde41",
+      "bytes": 192384
     },
     {
       "path": "dependencies/notice/assets/campus.png",
@@ -573,13 +573,13 @@
     },
     {
       "path": "dependencies/notice/index.html",
-      "sha256": "a2fc51fb89185ebde96c73bf20f58a4a95176b1688d30294935e95e0d6e43191",
+      "sha256": "76320632b3c0801047f9f0339bf3338d789e1c03a628458534fa3c7a02547623",
       "bytes": 757
     },
     {
       "path": "dependencies/notice/styles.css",
-      "sha256": "0a86494d57d64a41b3532ad851c28336ad1187d3168d8a5b736aded4f1c39661",
-      "bytes": 77116
+      "sha256": "efa6889dacfb1395162850c9644781103aa137c3396e9475a90811d7effae423",
+      "bytes": 77844
     },
     {
       "path": "index.html",
