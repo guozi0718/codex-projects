@@ -1,0 +1,233 @@
+{
+  "version": "v0.64",
+  "publishedAt": "2026-11-25T03:25:46.440Z",
+  "sourceIndexHash": "6a2661308e5c22c0c2beeabadfb422b11ab8e39990db14d66f28827dc510d31e",
+  "entry": "index.html",
+  "notice": {
+    "version": "pinned-in-school-release",
+    "indexHash": "d526e03bce86e93febf98b0154fdc3dfad3ba27d4cb4c73e2c203fa3f9db6de0"
+  },
+  "files": [
+    {
+      "path": "assets/action-buttons.css",
+      "sha256": "608e2e7496d7ea4d646339fe8e75fbf81dbf4bc0d12089a8563983a7d76d5f67"
+    },
+    {
+      "path": "assets/action-buttons.js",
+      "sha256": "471cef5539f32ba15cdec812a5009d082ec85dcc39039d34ff9cfe936e91d000"
+    },
+    {
+      "path": "assets/demo-panel.css",
+      "sha256": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e"
+    },
+    {
+      "path": "assets/demo-panel.js",
+      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+    },
+    {
+      "path": "assets/feedback-compose-v7.css",
+      "sha256": "89634096ef3c4afe264df78029ee10b5b389eee2deaa7198f09c2a298742b278"
+    },
+    {
+      "path": "assets/feedback-compose-v7.js",
+      "sha256": "9c22d0c0475e5ba3462c0f875ca3b7b33d6a82c2d2b016c8338156689aa4403d"
+    },
+    {
+      "path": "assets/feedback-engine-v5.js",
+      "sha256": "742b311b5e3d58b004d6e5612b867bac9ff6a3c57208f9e7596dc7d55f272028"
+    },
+    {
+      "path": "assets/feedback-family-data.js",
+      "sha256": "2d78c5d5c8b6a2b9bba1c5ca057a6fdc7bd7a30ece7b94b0595b98b15a141e0b"
+    },
+    {
+      "path": "assets/feedback-list-contract.css",
+      "sha256": "a3e8f61f4435e4cf1ce5ccb911d73f39af14ee7bfee24e593d9df7d135358f18"
+    },
+    {
+      "path": "assets/feedback-navigation.js",
+      "sha256": "10f06b3d6ce15603396cc38607c5bc0a217d09beaf84b5b34b4996516f39a351"
+    },
+    {
+      "path": "assets/feedback-quick-replies.js",
+      "sha256": "ea7d685351d499d9f34138d2cc6a85a50f597274d1590f47469ac9e576dda28c"
+    },
+    {
+      "path": "assets/feedback-region.js",
+      "sha256": "e5d6a18c01ae56b3e0325e563c8526f392e79942cf043f487034f77c60264ad8"
+    },
+    {
+      "path": "assets/feedback-v5.css",
+      "sha256": "17b6fac29fec18fc4ddf2c044e173c80da2435f2d49e6665ceef8bb64bfdde76"
+    },
+    {
+      "path": "assets/feedback-web-v5.js",
+      "sha256": "a83815e69e976eaf7a257b39a8744f2b76c3949c67110307052552862015f1df"
+    },
+    {
+      "path": "assets/filter-layout.css",
+      "sha256": "027ade0caf6d2f4cbe3653afbacd14b1ff45ad7c927d5e73bbbeccf66357f7f5"
+    },
+    {
+      "path": "assets/fixed-ui.css",
+      "sha256": "c8bb887923b5b8abe04e32893900a9be4ce2706f875e36df6b685e95bc7bddf2"
+    },
+    {
+      "path": "assets/global-design.css",
+      "sha256": "ffa3c37c6346fd89db542a1580740c2843aae3ceb53afe632e502344b2b0bfb0"
+    },
+    {
+      "path": "assets/module-demo.js",
+      "sha256": "fb6ee9973ba97b33c585a06166d147fc64045a8d2a95e780e9498b6861033686"
+    },
+    {
+      "path": "assets/notice-host-bridge.js",
+      "sha256": "e1b19ddaaddec8fe4d44ff75c0eb0112a892c627eff04f0e5aa1c9fb01a0798c"
+    },
+    {
+      "path": "assets/page-links-unified.js",
+      "sha256": "0d3febaf2d63c867fac4740be352d09ccaad854fee512401316c987c1e2ba816"
+    },
+    {
+      "path": "assets/page-links.js",
+      "sha256": "95b51424c3b855ebc3828ef5a97b7705082ece0451da5dcde77f01265be05d3a"
+    },
+    {
+      "path": "assets/presentation-cleanup.js",
+      "sha256": "8d6ff64bc867cb70a91c1aa483184709e346b02540986a51e7a65f1c1841a45a"
+    },
+    {
+      "path": "assets/query-router.js",
+      "sha256": "57947c159a6e3a51d3898366185fba33d991e58d172f613517e5330f64168381"
+    },
+    {
+      "path": "assets/regions-data.js",
+      "sha256": "071af994fc356827275bb90f1114304691dddad5c0f172803a0bb3f7e7119265"
+    },
+    {
+      "path": "assets/school-operation-log.css",
+      "sha256": "88b955159b1bc74217f03a7a3459749d2c5a69db066e2fecdd7f67e55aaf1aed"
+    },
+    {
+      "path": "assets/school-operation-log.js",
+      "sha256": "7b8a7d21a9577ecae21c1e3918601ec3f29835cc450500b615b53920a9857fed"
+    },
+    {
+      "path": "assets/shell.css",
+      "sha256": "c4c8360c8314727c09aa14749f1ca80b7b31d43c6e7871944551698f383d052b"
+    },
+    {
+      "path": "assets/shell.js",
+      "sha256": "c9987ab37d30679447941f42ecbe054a0028e9a1985e526156ffb580564f84b6"
+    },
+    {
+      "path": "assets/unified-shell.css",
+      "sha256": "3356b5cb7946f064524940615322d5583c50aa4315200d3b6667344867f3c963"
+    },
+    {
+      "path": "assets/unified-shell.js",
+      "sha256": "df1acd2b4f3cf4f9a513f1d619271b6f1e0917b7a44f55e47d7518df5633f41c"
+    },
+    {
+      "path": "index.html",
+      "sha256": "6a2661308e5c22c0c2beeabadfb422b11ab8e39990db14d66f28827dc510d31e"
+    },
+    {
+      "path": "notice/app.js",
+      "sha256": "7f74c35fcafbefa6712d439f83ceec7485912e754e509b8ad9d312d3e1b83e7f"
+    },
+    {
+      "path": "notice/assets/assets/campus.png",
+      "sha256": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70"
+    },
+    {
+      "path": "notice/assets/assets/campus.svg",
+      "sha256": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665"
+    },
+    {
+      "path": "notice/assets/assets/demo-panel.css",
+      "sha256": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e"
+    },
+    {
+      "path": "notice/assets/assets/demo-panel.js",
+      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+    },
+    {
+      "path": "notice/assets/assets/logo.svg",
+      "sha256": "bf62695555b7cbdcde4991e63e12e3bfc10b7ba4abf72410f759b7126b764505"
+    },
+    {
+      "path": "notice/assets/assets/module-demo.js",
+      "sha256": "c6378d2eca0782580ab46d9c19da631bc1594769898289576ad51003c9d8bc62"
+    },
+    {
+      "path": "notice/assets/assets/signature.svg",
+      "sha256": "9f8324a3a2588b9d12e6ee7b96161f1e45942778a52a7c89b24051973bcb6271"
+    },
+    {
+      "path": "notice/assets/assets/安全课堂.mp4",
+      "sha256": "cd73c4ad98250fe2c232b859a057a590e2277fc0e4acccb003a24141da63ee4d"
+    },
+    {
+      "path": "notice/assets/assets/活动安排.pdf",
+      "sha256": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f"
+    },
+    {
+      "path": "notice/assets/assets/轻柔提示音.wav",
+      "sha256": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0"
+    },
+    {
+      "path": "notice/assets/campus.png",
+      "sha256": "b3f7d1b871b20c19bd9563ab695112fadc07a2c848fe33022654b7599e1d3e70"
+    },
+    {
+      "path": "notice/assets/campus.svg",
+      "sha256": "10b883b0fd834d7abcb8f5665888cf12b0540c827b050245f1e65541772f5665"
+    },
+    {
+      "path": "notice/assets/demo-panel.css",
+      "sha256": "6e3c5b81b7e138c39dafacf59cc5171d319acfd975829a85c1f31f735424fd0e"
+    },
+    {
+      "path": "notice/assets/demo-panel.js",
+      "sha256": "52f34ff3171c684b27753bc0d985394101fdc2eae334d2846dee1ca46f119acc"
+    },
+    {
+      "path": "notice/assets/logo.svg",
+      "sha256": "bf62695555b7cbdcde4991e63e12e3bfc10b7ba4abf72410f759b7126b764505"
+    },
+    {
+      "path": "notice/assets/module-demo.js",
+      "sha256": "c6378d2eca0782580ab46d9c19da631bc1594769898289576ad51003c9d8bc62"
+    },
+    {
+      "path": "notice/assets/signature.svg",
+      "sha256": "9f8324a3a2588b9d12e6ee7b96161f1e45942778a52a7c89b24051973bcb6271"
+    },
+    {
+      "path": "notice/assets/安全课堂.mp4",
+      "sha256": "cd73c4ad98250fe2c232b859a057a590e2277fc0e4acccb003a24141da63ee4d"
+    },
+    {
+      "path": "notice/assets/活动安排.pdf",
+      "sha256": "0b9b5695ad24976965df0f691f405c0c7cf5fa41014a96272b69301af5a9c40f"
+    },
+    {
+      "path": "notice/assets/轻柔提示音.wav",
+      "sha256": "b57e5cf7dcb965e49ac8763303e4aeb5e4197c4cfb820ce1e20f959a226502c0"
+    },
+    {
+      "path": "notice/core.js",
+      "sha256": "cf4365b985fc80f20a3eac2ec497ebdce648dac350a5289022162c5a6e03921b"
+    },
+    {
+      "path": "notice/index.html",
+      "sha256": "d526e03bce86e93febf98b0154fdc3dfad3ba27d4cb4c73e2c203fa3f9db6de0"
+    },
+    {
+      "path": "notice/styles.css",
+      "sha256": "2be0bcfe7630f4fd92df1961667c780ce90dcae199a4e5e077b55db24f9942cb"
+    }
+  ],
+  "scope": "School prototype runtime; local demonstration data only"
+}

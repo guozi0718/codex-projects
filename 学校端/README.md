@@ -1,6 +1,6 @@
 # 学校端原型
 
-当前版本：v0.62。
+当前版本：v0.64。
 
 [打开最新原型](https://guozi0718.github.io/codex-projects/学校端/index.html?page=family-notice)
 
